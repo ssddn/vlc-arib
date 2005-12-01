@@ -182,6 +182,13 @@ EXTRA_DIST += \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/info.nib \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/keyedobjects.nib \
 	extras/MacOSX/Resources/English.lproj/InfoPlist.strings \
+	extras/MacOSX/Delete_Preferences.app/Contents/Info.plist \
+	extras/MacOSX/Delete_Preferences.app/Contents/Pkginfo \
+	extras/MacOSX/Delete_Preferences.app/Contents/MacOS/applet \
+	extras/MacOSX/Delete_Preferences.app/Contents/Resources/description.rtfd/TXT.rtf \
+	extras/MacOSX/Delete_Preferences.app/Contents/Resources/applet.icns \
+	extras/MacOSX/Delete_Preferences.app/Contents/Resources/applet.rsrc \
+	extras/MacOSX/Delete_Preferences.app/Contents/Resources/Scripts/main.scpt \
 	extras/MacOSX/Resources/a52.icns \
 	extras/MacOSX/Resources/aac.icns \
 	extras/MacOSX/Resources/asf.icns \
@@ -1061,7 +1068,7 @@ package-macosx:
 
 # Copy relevant files 
 	cp -R "$(top_builddir)/VLC-release.app" "$(top_builddir)/tmp/VLC.app"
-	cd "$(srcdir)" && cp AUTHORS COPYING ChangeLog README README.MacOSX.rtf THANKS NEWS $(top_builddir)/tmp/ && cp -r extras/MacOSX/Delete\ Preferences.app $(top_builddir)/tmp/
+	cd "$(srcdir)" && cp AUTHORS COPYING ChangeLog README README.MacOSX.rtf THANKS NEWS $(top_builddir)/tmp/ && cp -r extras/MacOSX/Delete_Preferences.app $(top_builddir)/tmp/
 
 # Create disk image 
 	$(srcdir)/extras/MacOSX/macosx-dmg "vlc-${VERSION}" $(top_builddir)/tmp
