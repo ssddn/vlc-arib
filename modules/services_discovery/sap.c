@@ -106,6 +106,10 @@ static const char ipv6_scopes[] = "1456789ABCDE";
        "If this option is selected, a SAP caching mechanism will be used. " \
        "This will result in lower SAP startup time, but you could end up " \
         "with items corresponding to legacy streams." )
+#define SAP_TIMESHIFT_TEXT N_("Allow timeshifting")
+#define SAP_TIMESHIFT_LONGTEXT N_( \
+        "Enable timeshifting automatically for streams " \
+        "discovered through SAP announcements." )
 
 /* Callbacks */
     static int  Open ( vlc_object_t * );
@@ -133,6 +137,8 @@ vlc_module_begin();
                SAP_STRICT_TEXT,SAP_STRICT_LONGTEXT, VLC_TRUE );
     add_bool( "sap-cache", 0 , NULL,
                SAP_CACHE_TEXT,SAP_CACHE_LONGTEXT, VLC_TRUE );
+    add_bool( "sap-timeshift", 0 , NULL,
+              SAP_TIMESHIFT_TEXT,SAP_TIMESHIFT_LONGTEXT, VLC_TRUE );
 
     set_capability( "services_discovery", 0 );
     set_callbacks( Open, Close );
@@ -221,6 +227,7 @@ struct services_discovery_sys_t
     /* Modes */
     vlc_bool_t  b_strict;
     vlc_bool_t  b_parse;
+    vlc_bool_t  b_timeshift;
 
     int i_timeout;
 };
@@ -321,6 +328,10 @@ static int Open( vlc_object_t *p_this )
         msg_Err( p_sd, "unable to read on any address" );
         return VLC_EGENERIC;
     }
+
+    /* Cache sap_timeshift value */
+    p_sys->b_timeshift = var_CreateGetInteger( p_sd, "sap-timeshift" )
+            ? VLC_TRUE : VLC_FALSE;
 
     /* Create our playlist node */
     p_sys->p_playlist = (playlist_t *)vlc_object_find( p_sd,
@@ -783,6 +794,9 @@ sap_announce_t *CreateAnnounce( services_discovery_t *p_sd, uint16_t i_hash,
         free( p_sap );
         return NULL;
     }
+
+    if( p_sd->p_sys->b_timeshift )
+        playlist_ItemAddOption( p_item, ":access-filter=timeshift" );
 
     psz_value = GetAttribute( p_sap->p_sdp, "tool" );
     if( psz_value != NULL )
