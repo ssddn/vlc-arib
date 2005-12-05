@@ -138,7 +138,7 @@ vlc_module_begin();
     add_bool( "sap-cache", 0 , NULL,
                SAP_CACHE_TEXT,SAP_CACHE_LONGTEXT, VLC_TRUE );
     add_bool( "sap-timeshift", 0 , NULL,
-              SAP_TIMESHIFT_TEXT,SAP_TIMESHIFT_LONGTEXT, VLC_TRUE );
+              SAP_TIMESHIFT_TEXT,SAP_TIMESHIFT_LONGTEXT, VLC_FALSE );
 
     set_capability( "services_discovery", 0 );
     set_callbacks( Open, Close );
