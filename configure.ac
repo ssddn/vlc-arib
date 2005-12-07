@@ -3675,11 +3675,11 @@ if test "${CXX}" != "" -a "${enable_cyberlink}" = "yes" || (test "${enable_cyber
       AC_MSG_RESULT(no)
       AC_MSG_ERROR([cannot cd to ${with_cyberlink_tree}])
     fi
-    CXXFLAGS_save="${CXXFLAGS}"
-    CXXFLAGS_cyberlink="-I${real_cyberlink_tree}/include"
-    CXXFLAGS="${CXXFLAGS} ${CXXFLAGS_cyberlink}"
+    CPPFLAGS_save="${CPPFLAGS}"
+    CPPFLAGS_cyberlink="-I${real_cyberlink_tree}/include"
+    CPPFLAGS="${CPPFLAGS} ${CPPFLAGS_cyberlink}"
     AC_CHECK_HEADERS([cybergarage/upnp/MediaServer.h],
-      [ VLC_ADD_CXXFLAGS([upnp], [${CXXFLAGS_cyberlink}])
+      [ VLC_ADD_CXXFLAGS([upnp], [${CPPFLAGS_cyberlink}])
         VLC_ADD_PLUGINS([upnp]) 
       ],[
         AC_MSG_ERROR([cannot find CyberLink for C++ headers])
@@ -3693,7 +3693,7 @@ if test "${CXX}" != "" -a "${enable_cyberlink}" = "yes" || (test "${enable_cyber
       AC_MSG_RESULT(no)
        AC_MSG_ERROR([cannot find ${real_cyberlink_tree}/lib/unix/libclink.a, make sure you compiled CyberLink for C++ in ${with_cyberlink_tree}])
     fi
-    CXXFLAGS="${CXXFLAGS_save}"
+    CPPFLAGS="${CPPFLAGS_save}"
     AC_LANG_POP([C++])
   fi
 fi
