@@ -44,6 +44,9 @@ BUILT_SOURCES = $(BUILT_SOURCES_distclean) $(BUILT_SOURCES_clean)
 
 SUFFIXES = 
 
+DISTCHECK_CONFIGURE_FLAGS = --disable-dvd --disable-mad --disable-libmpeg2 \
+	--disable-ffmpeg --disable-faad --disable-skins2
+
 # Tell aclocal to use -I m4. Wonder if it really works.
 ACLOCAL_AMFLAGS = -I m4
 
@@ -183,7 +186,7 @@ EXTRA_DIST += \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/keyedobjects.nib \
 	extras/MacOSX/Resources/English.lproj/InfoPlist.strings \
 	extras/MacOSX/Delete_Preferences.app/Contents/Info.plist \
-	extras/MacOSX/Delete_Preferences.app/Contents/Pkginfo \
+	extras/MacOSX/Delete_Preferences.app/Contents/PkgInfo \
 	extras/MacOSX/Delete_Preferences.app/Contents/MacOS/applet \
 	extras/MacOSX/Delete_Preferences.app/Contents/Resources/description.rtfd/TXT.rtf \
 	extras/MacOSX/Delete_Preferences.app/Contents/Resources/applet.icns \
@@ -545,7 +548,7 @@ endif
 install-exec-local:
 	for i in "" $(ALIASES) ; do if test -n "$$i" ; then \
 	  rm -f "$(DESTDIR)$(bindir)/$$i" && \
-	  ln -s vlc "$(DESTDIR)$(bindir)/$$i" ; \
+	  ln -sf vlc "$(DESTDIR)$(bindir)/$$i" ; \
 	fi ; done
 	test -z "$(DATA_noinst_libvlc)" || $(INSTALL_PROGRAM) "$(DATA_noinst_libvlc)" "$(DESTDIR)$(libdir)"
 
