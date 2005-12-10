@@ -897,7 +897,7 @@ static struct
       VIDEO_ES, "PAM Image" },
 #endif
 
-#if LIBAVCODEC_BUILD > ((50<<16)+(1<<8)+0)
+#if LIBAVCODEC_BUILD >= ((51<<16)+(0<<8)+0)
     { VLC_FOURCC('b','m','p',' '), CODEC_ID_BMP,
       VIDEO_ES, "BMP Image" },
 #endif
@@ -1017,7 +1017,13 @@ static struct
 #if LIBAVCODEC_BUILD >= ((50<<16)+(0<<8)+1)
     /* QDM2 */
     { VLC_FOURCC('Q','D','M','2'), CODEC_ID_QDM2,
-      AUDIO_ES, "QDM2" },
+      AUDIO_ES, "QDM2 Audio" },
+#endif
+
+#if LIBAVCODEC_BUILD >= ((51<<16)+(0<<8)+0)
+    /* COOK */
+    { VLC_FOURCC('c','o','o','k'), CODEC_ID_COOK,
+      AUDIO_ES, "Cook Audio" },
 #endif
 
     /* PCM */

@@ -59,6 +59,16 @@ typedef struct
     int         i_frame;
     block_t     *p_frame;
 
+    int         i_subpacket_h;
+    int         i_subpacket_size;
+    int         i_coded_frame_size;
+    int         i_frame_size;
+
+    int         i_subpacket;
+    int         i_subpackets;
+    block_t     **p_subpackets;
+    int         i_out_subpacket;
+
 } real_track_t;
 
 struct demux_sys_t
@@ -148,6 +158,14 @@ static void Close( vlc_object_t *p_this )
 
         if( tk->p_frame ) block_Release( tk->p_frame );
         es_format_Clean( &tk->fmt );
+
+        while(  tk->i_subpackets-- )
+        {
+            if( tk->p_subpackets[tk->i_subpackets] )
+                block_Release( tk->p_subpackets[tk->i_subpackets] );
+            if( !tk->i_subpackets ) free( tk->p_subpackets );
+        }
+
         free( tk );
     }
 
@@ -163,10 +181,8 @@ static int Demux( demux_t *p_demux )
 {
     demux_sys_t *p_sys = p_demux->p_sys;
     uint8_t     header[18];
-    int         i_size;
-    int         i_id;
+    int         i_size, i_id, i_flags, i;
     int64_t     i_pts;
-    int         i;
     real_track_t *tk = NULL;
     vlc_bool_t  b_selected;
 
@@ -198,8 +214,7 @@ static int Demux( demux_t *p_demux )
     i_id   = GetWBE( &header[4] );
     i_pts  = 1000 * GetDWBE( &header[6] );
     i_pts += 1000; /* Avoid 0 pts */
-
-    /* header[11] -> flags 0x02 -> keyframe */
+    i_flags= header[11]; /* flags 0x02 -> keyframe */
 
 #if 0
     msg_Dbg( p_demux, "packet %d size=%d id=%d pts=%u",
@@ -473,6 +488,71 @@ static int Demux( demux_t *p_demux )
                 }
             }
         }
+        else if( tk->fmt.i_codec == VLC_FOURCC( 'c', 'o', 'o', 'k' ) ||
+                 tk->fmt.i_codec == VLC_FOURCC('2','8','_','8') )
+        {
+            uint8_t *p_buf = p_sys->buffer;
+            int y = tk->i_subpacket / (tk->i_frame_size /tk->i_subpacket_size);
+            int i_index, i;
+
+            /* Sanity check */
+            if( i_flags & 2 ) y = tk->i_subpacket = 0;
+
+            if( tk->fmt.i_codec == VLC_FOURCC( 'c', 'o', 'o', 'k' ) )
+            for( i = 0; i < tk->i_frame_size / tk->i_subpacket_size; i++ )
+            {
+                block_t *p_block = block_New( p_demux, tk->i_subpacket_size );
+                memcpy( p_block->p_buffer, p_buf, tk->i_subpacket_size );
+                p_buf += tk->i_subpacket_size;
+
+                i_index = tk->i_subpacket_h * i +
+                    ((tk->i_subpacket_h + 1) / 2) * (y&1) + (y>>1);
+
+                p_block->i_dts = p_block->i_pts = i_pts;
+                tk->p_subpackets[i_index] = p_block;
+                tk->i_subpacket++;
+            }
+
+            if( tk->fmt.i_codec == VLC_FOURCC('2','8','_','8') )
+            for( i = 0; i < tk->i_subpacket_h / 2; i++ )
+            {
+                block_t *p_block = block_New( p_demux, tk->i_coded_frame_size);
+                memcpy( p_block->p_buffer, p_buf, tk->i_coded_frame_size );
+                p_buf += tk->i_coded_frame_size;
+
+                i_index = (i * 2 * tk->i_frame_size) /
+                    tk->i_coded_frame_size + y;
+
+                p_block->i_dts = p_block->i_pts = i_pts;
+                tk->p_subpackets[i_index] = p_block;
+                tk->i_subpacket++;
+            }
+
+            while( tk->i_out_subpacket != tk->i_subpackets &&
+                   tk->p_subpackets[tk->i_out_subpacket] )
+            {
+                block_t *p_block = tk->p_subpackets[tk->i_out_subpacket];
+                tk->p_subpackets[tk->i_out_subpacket] = 0;
+
+                if( tk->i_out_subpacket ) p_block->i_dts = p_block->i_pts = 0;
+                es_out_Send( p_demux->out, tk->p_es, p_block );
+
+                tk->i_out_subpacket++;
+            }
+
+            if( tk->i_subpacket == tk->i_subpackets &&
+                tk->i_out_subpacket != tk->i_subpackets )
+            {
+                msg_Warn( p_demux, "i_subpacket != i_out_subpacket, "
+                          "this shouldn't happen" );
+            }
+
+            if( tk->i_subpacket == tk->i_subpackets )
+            {
+                tk->i_subpacket = 0;
+                tk->i_out_subpacket = 0;
+            }
+        }
         else
         {
             block_t *p_block = block_New( p_demux, i_size );
@@ -495,9 +575,7 @@ static int Demux( demux_t *p_demux )
             {
                 memcpy( p_block->p_buffer, p_sys->buffer, i_size );
             }
-            p_block->i_dts =
-            p_block->i_pts = i_pts;
-
+            p_block->i_dts = p_block->i_pts = i_pts;
             es_out_Send( p_demux->out, tk->p_es, p_block );
         }
     }
@@ -898,16 +976,14 @@ static int ReadCodecSpecificData( demux_t *p_demux, int i_len, int i_num )
             break;
 
         case VLC_FOURCC('c','o','o','k'):
-            fmt.i_extra = GetDWBE( p_peek ); p_peek += 4;
-            fmt.p_extra = malloc( fmt.i_extra + 10 );
+            fmt.audio.i_blockalign = i_subpacket_size;
+            if( !(fmt.i_extra = GetDWBE( p_peek )) ) break;
+            fmt.p_extra = malloc( fmt.i_extra );
+            memcpy( fmt.p_extra, p_peek + 4, fmt.i_extra );
+            break;
 
-            ((short*)(fmt.p_extra))[0] = i_subpacket_size;
-            ((short*)(fmt.p_extra))[1] = i_subpacket_h;
-            ((short*)(fmt.p_extra))[2] = i_flavor;
-            ((short*)(fmt.p_extra))[3] = i_coded_frame_size;
-            ((short*)(fmt.p_extra))[4] = fmt.i_extra;
-            if( fmt.i_extra ) memcpy( fmt.p_extra + 10, p_peek, fmt.i_extra );
-            fmt.i_extra += 10;
+        case VLC_FOURCC('2','8','_','8'):
+            fmt.audio.i_blockalign = i_coded_frame_size;
             break;
 
         default:
@@ -918,6 +994,8 @@ static int ReadCodecSpecificData( demux_t *p_demux, int i_len, int i_num )
 
         if( fmt.i_codec != 0 )
         {
+            int i;
+
             msg_Dbg( p_demux, "        - extra data=%d", fmt.i_extra );
 
             tk = malloc( sizeof( real_track_t ) );
@@ -925,6 +1003,33 @@ static int ReadCodecSpecificData( demux_t *p_demux, int i_len, int i_num )
             tk->fmt = fmt;
             tk->i_frame = 0;
             tk->p_frame = NULL;
+
+            tk->i_subpacket_h = i_subpacket_h;
+            tk->i_subpacket_size = i_subpacket_size;
+            tk->i_coded_frame_size = i_coded_frame_size;
+            tk->i_frame_size = i_frame_size;
+
+            tk->i_out_subpacket = 0;
+            tk->i_subpacket = 0;
+            tk->i_subpackets = 0;
+            tk->p_subpackets = NULL;
+            if( fmt.i_codec == VLC_FOURCC('c','o','o','k') )
+            {
+                tk->i_subpackets =
+                    i_subpacket_h * i_frame_size / tk->i_subpacket_size;
+                tk->p_subpackets =
+                    malloc( tk->i_subpackets * sizeof(block_t *) );
+            }
+            else if( fmt.i_codec == VLC_FOURCC('2','8','_','8') )
+            {
+                tk->i_subpackets =
+                    i_subpacket_h * i_frame_size / tk->i_coded_frame_size;
+                tk->p_subpackets =
+                    malloc( tk->i_subpackets * sizeof(block_t *) );
+            }
+
+            for( i = 0; i < tk->i_subpackets; i++ ) tk->p_subpackets[i] = NULL;
+
             tk->p_es = es_out_Add( p_demux->out, &fmt );
 
             TAB_APPEND( p_sys->i_track, p_sys->track, tk );
