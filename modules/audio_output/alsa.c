@@ -315,7 +315,6 @@ static int Open( vlc_object_t *p_this )
     }
     p_sys->b_playing = VLC_FALSE;
     p_sys->start_date = 0;
-    p_sys->p_status = (snd_pcm_status_t *)malloc(snd_pcm_status_sizeof());
     vlc_cond_init( p_aout, &p_sys->wait );
     vlc_mutex_init( p_aout, &p_sys->lock );
 
@@ -727,7 +726,6 @@ static void Close( vlc_object_t *p_this )
     snd_output_close( p_sys->p_snd_stderr );
 #endif
 
-    free( p_sys->p_status );
     free( p_sys );
 }
 
@@ -736,6 +734,9 @@ static void Close( vlc_object_t *p_this )
  *****************************************************************************/
 static int ALSAThread( aout_instance_t * p_aout )
 {
+    p_aout->output.p_sys->p_status =
+        (snd_pcm_status_t *)malloc(snd_pcm_status_sizeof());
+
     /* Wait for the exact time to start playing (avoids resampling) */
     vlc_mutex_lock( &p_aout->output.p_sys->lock );
     if( !p_aout->output.p_sys->start_date )
@@ -750,6 +751,7 @@ static int ALSAThread( aout_instance_t * p_aout )
         ALSAFill( p_aout );
     }
 
+    free( p_aout->output.p_sys->p_status );
     return 0;
 }
 
