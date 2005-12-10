@@ -62,8 +62,9 @@ static int Create( vlc_object_t *p_this )
 {
     aout_filter_t * p_filter = (aout_filter_t *)p_this;
 
-    if ( p_filter->input.i_format != VLC_FOURCC('a','5','2',' ')
-          || p_filter->output.i_format != VLC_FOURCC('s','p','d','i') )
+    if ( p_filter->input.i_format != VLC_FOURCC('a','5','2',' ') ||
+         ( p_filter->output.i_format != VLC_FOURCC('s','p','d','b') &&
+           p_filter->output.i_format != VLC_FOURCC('s','p','d','i') ) )
     {
         return -1;
     }
@@ -80,43 +81,49 @@ static int Create( vlc_object_t *p_this )
 static void DoWork( aout_instance_t * p_aout, aout_filter_t * p_filter,
                     aout_buffer_t * p_in_buf, aout_buffer_t * p_out_buf )
 {
-    /* It is not entirely clear which endianness the AC3 stream should have.
-     * I have been told endianness does not matter, AC3 can be both endian.
-     * But then, I could not get it to work on Mac OS X and a JVC RX-6000R
-     * decoder without using little endian. So right now, I convert to little
-     * endian.
+    /* AC3 is natively big endian. Most SPDIF devices have the native
+     * endianness of the computersystem.
+     * On MAc OS X however, little endian devices are also common.
      */
-
-    static const uint8_t p_sync[6] = { 0x72, 0xF8, 0x1F, 0x4E, 0x01, 0x00 };
+    static const uint8_t p_sync_le[6] = { 0x72, 0xF8, 0x1F, 0x4E, 0x01, 0x00 };
+    static const uint8_t p_sync_be[6] = { 0xF8, 0x72, 0x4E, 0x1F, 0x00, 0x01 };
 #ifndef HAVE_SWAB
     byte_t * p_tmp;
     uint16_t i;
 #endif
-    uint16_t i_length = p_in_buf->i_nb_bytes;
-    uint8_t * pi_length;
+    uint16_t i_frame_size = p_in_buf->i_nb_bytes / 2;
     byte_t * p_in = p_in_buf->p_buffer;
     byte_t * p_out = p_out_buf->p_buffer;
 
     /* Copy the S/PDIF headers. */
-    memcpy( p_out, p_sync, 6 );
-    pi_length = (p_out + 6);
-    *pi_length = (i_length * 8) & 0xff;
-    *(pi_length + 1) = (i_length * 8) >> 8;
-
-#ifdef HAVE_SWAB
-    swab( p_in, p_out + 8, i_length );
-#else
-    p_tmp = p_out + 8;
-    for ( i = i_length / 2 ; i-- ; )
+    if( p_filter->output.i_format == VLC_FOURCC('s','p','d','b') )
     {
-        p_tmp[0] = p_in[1];
-        p_tmp[1] = p_in[0];
-        p_tmp += 2; p_in += 2;
+        p_filter->p_vlc->pf_memcpy( p_out, p_sync_be, 6 );
+        p_out[4] = p_in[5] & 0x7; /* bsmod */
+        p_out[6] = (i_frame_size >> 4) & 0xff;
+        p_out[7] = (i_frame_size << 4) & 0xff;
+        p_filter->p_vlc->pf_memcpy( &p_out[8], p_in, i_frame_size * 2 );
     }
+    else
+    {
+        p_filter->p_vlc->pf_memcpy( p_out, p_sync_le, 6 );
+        p_out[5] = p_in[5] & 0x7; /* bsmod */
+        p_out[6] = (i_frame_size << 4) & 0xff;
+        p_out[7] = (i_frame_size >> 4) & 0xff;
+#ifdef HAVE_SWAB
+        swab( p_in, &p_out[8], i_frame_size * 2 );
+#else
+        p_tmp = &p_out[8];
+        for( i = i_frame_size; i-- ; )
+        {
+            p_tmp[0] = p_in[1];
+            p_tmp[1] = p_in[0];
+            p_tmp += 2; p_in += 2;
+        }
 #endif
-
-    p_filter->p_vlc->pf_memset( p_out + 8 + i_length, 0,
-                               AOUT_SPDIF_SIZE - i_length - 8 );
+    }
+    p_filter->p_vlc->pf_memset( p_out + 8 + i_frame_size * 2, 0,
+                                AOUT_SPDIF_SIZE - i_frame_size * 2 - 8 );
 
     p_out_buf->i_nb_samples = p_in_buf->i_nb_samples;
     p_out_buf->i_nb_bytes = AOUT_SPDIF_SIZE;
