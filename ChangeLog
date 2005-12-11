@@ -1,4 +1,283 @@
 ------------------------------------------------------------------------
+r13684 | babal | 2005-12-11 22:27:01 +0100 (Sun, 11 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/AUTHORS
+   M /branches/0.8.4a/modules/audio_filter/channel_mixer/headphone.c
+
+- backport of revision 13682
+
+------------------------------------------------------------------------
+r13676 | courmisch | 2005-12-11 12:58:57 +0100 (Sun, 11 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/po/POTFILES.in
+
+Fix make update-po - refs #460
+
+------------------------------------------------------------------------
+r13672 | hartman | 2005-12-11 00:20:43 +0100 (Sun, 11 Dec 2005) | 2 lines
+Changed paths:
+   D /branches/0.8.4a/modules/audio_output/coreaudio.c
+
+* missed one changeset in the macosx audio backport merge
+
+------------------------------------------------------------------------
+r13671 | hartman | 2005-12-10 20:26:03 +0100 (Sat, 10 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/Makefile.am
+   M /branches/0.8.4a/configure.ac
+   M /branches/0.8.4a/include/audio_output.h
+   M /branches/0.8.4a/modules/audio_filter/converter/a52tospdif.c
+   M /branches/0.8.4a/modules/audio_filter/converter/dtstospdif.c
+   M /branches/0.8.4a/modules/audio_filter/resampler/Modules.am
+   D /branches/0.8.4a/modules/audio_filter/resampler/coreaudio.c
+   M /branches/0.8.4a/modules/audio_output/Modules.am
+   M /branches/0.8.4a/modules/audio_output/auhal.c
+   M /branches/0.8.4a/modules/audio_output/coreaudio.c
+   M /branches/0.8.4a/src/audio_output/common.c
+
+* Backport of the Mac OS X audio fixes to 0.8.4a (fixes #456)
+
+------------------------------------------------------------------------
+r13661 | gbazin | 2005-12-10 16:41:01 +0100 (Sat, 10 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/codec/ffmpeg/ffmpeg.c
+   M /branches/0.8.4a/modules/codec/realaudio.c
+   M /branches/0.8.4a/modules/demux/real.c
+
+* ALL: backport of the ffmpeg real audio support (13650, 13651, 13655, 13658).
+------------------------------------------------------------------------
+r13660 | gbazin | 2005-12-10 16:36:07 +0100 (Sat, 10 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/access/rtsp/access.c
+   M /branches/0.8.4a/modules/access/rtsp/real_asmrp.c
+   M /branches/0.8.4a/modules/access/rtsp/real_sdpplin.c
+   M /branches/0.8.4a/modules/access/rtsp/rtsp.c
+   M /branches/0.8.4a/modules/audio_output/alsa.c
+   M /branches/0.8.4a/modules/codec/ffmpeg/ffmpeg.c
+   M /branches/0.8.4a/modules/codec/realaudio.c
+   M /branches/0.8.4a/modules/demux/mkv.cpp
+   M /branches/0.8.4a/modules/demux/real.c
+   M /branches/0.8.4a/modules/packetizer/h264.c
+   M /branches/0.8.4a/share/http/admin/browse.html
+
+* ALL: backport of 13468 13539 13545 13547 13548 13550 13578 13601 13602.
+------------------------------------------------------------------------
+r13657 | fkuehne | 2005-12-10 11:54:52 +0100 (Sat, 10 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/codec/ffmpeg/ffmpeg.c
+
+* backport [13656]
+------------------------------------------------------------------------
+r13653 | courmisch | 2005-12-09 23:33:25 +0100 (Fri, 09 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/THANKS
+   M /branches/0.8.4a/modules/services_discovery/upnp.cpp
+
+Backport [13652]
+
+------------------------------------------------------------------------
+r13637 | md | 2005-12-09 10:17:54 +0100 (Fri, 09 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/services_discovery/sap.c
+
+backport [13632]
+
+------------------------------------------------------------------------
+r13635 | fkuehne | 2005-12-08 20:26:36 +0100 (Thu, 08 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/codec/ffmpeg/ffmpeg.c
+
+* backport [13634]
+------------------------------------------------------------------------
+r13619 | courmisch | 2005-12-07 16:38:46 +0100 (Wed, 07 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/configure.ac
+
+Fix UPnP headers check
+
+------------------------------------------------------------------------
+r13616 | courmisch | 2005-12-07 14:51:26 +0100 (Wed, 07 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/Makefile.am
+   M /branches/0.8.4a/po/POTFILES.in
+   M /branches/0.8.4a/toolbox
+
+Backport a bunch of build system fixes
+
+------------------------------------------------------------------------
+r13615 | courmisch | 2005-12-07 14:29:31 +0100 (Wed, 07 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/services_discovery/sap.c
+
+Backport 13614
+
+------------------------------------------------------------------------
+r13576 | courmisch | 2005-12-05 21:57:52 +0100 (Mon, 05 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/src/stream_output/acl.c
+
+Backport 13574
+
+------------------------------------------------------------------------
+r13575 | courmisch | 2005-12-05 21:57:37 +0100 (Mon, 05 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/services_discovery/sap.c
+
+Disable timeshift by default given the current controversy
+
+------------------------------------------------------------------------
+r13528 | courmisch | 2005-12-04 14:06:12 +0100 (Sun, 04 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/activex/Makefile.am
+
+backport 13527
+
+------------------------------------------------------------------------
+r13526 | jpsaman | 2005-12-04 13:57:04 +0100 (Sun, 04 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/misc/rtsp.c
+
+Backport of revision: 13525
+------------------------------------------------------------------------
+r13523 | courmisch | 2005-12-04 13:29:16 +0100 (Sun, 04 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/configure.ac
+
+This is version 0.8.4a
+
+------------------------------------------------------------------------
+r13522 | courmisch | 2005-12-04 13:02:00 +0100 (Sun, 04 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/services_discovery/sap.c
+
+Backport 13518
+
+------------------------------------------------------------------------
+r13521 | zorglub | 2005-12-04 12:55:35 +0100 (Sun, 04 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/configure.ac
+   M /branches/0.8.4a/modules/access_output/bonjour.c
+   M /branches/0.8.4a/modules/services_discovery/bonjour.c
+
+Backport of [13520] 
+
+------------------------------------------------------------------------
+r13519 | courmisch | 2005-12-04 12:51:04 +0100 (Sun, 04 Dec 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/po/POTFILES.in
+
+remove non-existant src/misc/version.c from translated files list
+
+------------------------------------------------------------------------
+r13479 | fkuehne | 2005-12-01 16:05:06 +0100 (Thu, 01 Dec 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/Makefile.am
+   D /branches/0.8.4a/extras/MacOSX/Delete Preferences.app
+   A /branches/0.8.4a/extras/MacOSX/Delete_Preferences.app (from /branches/0.8.4a/extras/MacOSX/Delete Preferences.app:13450)
+
+* backport [13478]
+------------------------------------------------------------------------
+r13473 | dionoea | 2005-11-30 20:34:35 +0100 (Wed, 30 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/demux/mp4/mp4.c
+
+backport AAC fix [13472]
+
+------------------------------------------------------------------------
+r13470 | damienf | 2005-11-30 16:15:25 +0100 (Wed, 30 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/access/dshow/dshow.cpp
+
+dshow.cpp: backport of r13462
+
+------------------------------------------------------------------------
+r13464 | ipkiss | 2005-11-29 20:28:00 +0100 (Tue, 29 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/po/fr.po
+
+ * backport of [13463]
+
+------------------------------------------------------------------------
+r13458 | dionoea | 2005-11-29 16:30:46 +0100 (Tue, 29 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/activex/inplace.bmp
+   M /branches/0.8.4a/activex/vlc16x16.bmp
+
+backport [13457]
+
+------------------------------------------------------------------------
+r13456 | dionoea | 2005-11-29 16:17:00 +0100 (Tue, 29 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/vlc.win32.nsi
+
+backport [13455]
+
+------------------------------------------------------------------------
+r13454 | dionoea | 2005-11-29 15:51:01 +0100 (Tue, 29 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/modules/access_output/file.c
+
+backport [13452]
+
+------------------------------------------------------------------------
+r13451 | fkuehne | 2005-11-29 15:08:47 +0100 (Tue, 29 Nov 2005) | 1 line
+Changed paths:
+   M /branches/0.8.4a/modules/gui/macosx/wizard.m
+   M /branches/0.8.4a/modules/gui/wxwidgets/streamdata.cpp
+
+* backport [13450]
+------------------------------------------------------------------------
+r13447 | zorglub | 2005-11-29 09:58:17 +0100 (Tue, 29 Nov 2005) | 3 lines
+Changed paths:
+   M /branches/0.8.4a/configure.ac
+
+Don't detect avahi versions we can't support - Patch by Diego "Flameeyes" Petten?\195?\178
+Thanks
+
+------------------------------------------------------------------------
+r13435 | bigben | 2005-11-28 00:31:21 +0100 (Mon, 28 Nov 2005) | 3 lines
+Changed paths:
+   M /branches/0.8.4a/modules/audio_output/alsa.c
+
+Backport rev. 13434
+
+
+------------------------------------------------------------------------
+r13433 | zorglub | 2005-11-27 21:52:40 +0100 (Sun, 27 Nov 2005) | 2 lines
+Changed paths:
+   M /branches/0.8.4a/configure.ac
+   M /branches/0.8.4a/modules/services_discovery/hal.c
+   M /branches/0.8.4a/src/libvlc.c
+
+Support for new HAL API 
+
+------------------------------------------------------------------------
+r13431 | zorglub | 2005-11-27 19:52:19 +0100 (Sun, 27 Nov 2005) | 5 lines
+Changed paths:
+   A /branches/0.8.4a (from /tags/0.8.4:13430)
+
+Branch 0.8.4a 
+Todo:
+  - Merge HAL 0.5 support 
+  - Don't detect avahi if we don't support the API
+
+------------------------------------------------------------------------
+r13399 | gbazin | 2005-11-26 17:37:49 +0100 (Sat, 26 Nov 2005) | 1 line
+Changed paths:
+   M /tags/0.8.4/modules/audio_output/waveout.c
+
+* modules/audio_output/waveout.c: backport of 13398.
+------------------------------------------------------------------------
+r13396 | dionoea | 2005-11-26 15:39:23 +0100 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /tags/0.8.4/ChangeLog
+   M /tags/0.8.4/configure.ac
+   M /tags/0.8.4/extras/MacOSX/Resources/English.lproj/InfoPlist.strings
+   M /tags/0.8.4/extras/MacOSX/vlc.pbproj/project.pbxproj
+
+0.8.4
+
+------------------------------------------------------------------------
 r13392 | zorglub | 2005-11-26 12:00:05 +0100 (Sat, 26 Nov 2005) | 3 lines
 Changed paths:
    M /tags/0.8.4/po/sv.po
