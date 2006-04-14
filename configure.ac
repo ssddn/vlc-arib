@@ -1,10 +1,10 @@
 dnl Autoconf settings for vlc
 
-AC_INIT(vlc,0.8.5-test2)
+AC_INIT(vlc,0.8.6-svn)
 VERSION_MAJOR="0"
 VERSION_MINOR="8"
-VERSION_REVISION="5"
-VERSION_EXTRA="test2"
+VERSION_REVISION="6"
+VERSION_EXTRA="svn"
 
 CONFIGURE_LINE="$0 $*"
 CODENAME="Janus"
@@ -16,7 +16,7 @@ AC_CANONICAL_SYSTEM
 
 dnl XXX: we don't put any flags here, because automake 1.5 doesn't support
 dnl them. And we need the comma otherwize automake will choke on it.
-AM_INIT_AUTOMAKE(vlc,0.8.5-test2)
+AM_INIT_AUTOMAKE(vlc,0.8.6-svn)
 AM_CONFIG_HEADER(config.h)
 
 dnl Too many people are not aware of maintainer mode:
@@ -3224,33 +3224,6 @@ if test "${enable_dirac}" = "yes"; then
       VLC_ADD_LDFLAGS([dirac],[$DIRAC_LIBS -lstdc++]) ],[
       AC_MSG_ERROR([libdirac doesn't appear to be installed on you system.])
   ])
-fi
-
-dnl  libvc1 decoder plugin
-dnl
-AC_ARG_ENABLE(libvc1,
-[  --enable-libvc1         VC-1 codec (default disabled)])
-if test "${enable_libvc1}" = "yes"
-then
-  AC_ARG_WITH(libvc1-tree,
-  [    --with-libvc1-tree=PATH libvc1 tree for static linking])
-  if test -n "${with_libvc1_tree}"
-  then
-    AC_MSG_CHECKING(for vc1dec.o in ${with_libvc1_tree})
-    real_libvc1_tree="`cd ${with_libvc1_tree} 2>/dev/null && pwd`"
-    if test -f "${real_libvc1_tree}/src/.libs/vc1dec.o"
-    then
-      VLC_ADD_BUILTINS([libvc1])
-      VLC_ADD_CPPFLAGS([libvc1],[-I${real_libvc1_tree}/src])
-      VLC_ADD_LDFLAGS([libvc1],[${real_libvc1_tree}/src/.libs/libvc1.a])
-      AC_MSG_RESULT(yes)
-    else
-      dnl  The given libvc1 tree wasn't built
-      AC_MSG_RESULT(no)
-      AC_MSG_ERROR([cannot find ${real_libvc1_tree}/src/.libs/vc1dec.o,
-                    make sure you compiled libvc1 in ${with_libvc1_tree}])
-    fi
-  fi
 fi
 
 dnl
