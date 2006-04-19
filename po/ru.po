@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-19 11:52+0200\n"
-"PO-Revision-Date: 2005-06-23 16:39+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2006-04-19 16:01+0200\n"
+"PO-Revision-Date: 2006-04-19 13:45+0000\n"
+"Last-Translator: Pavlov Konstantin <thresh@altlinux.org>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,8 +27,10 @@ msgid ""
 "Written by the VideoLAN team; see the AUTHORS file.\n"
 msgstr ""
 "Эта программа поставляется БЕЗ ГАРАНТИИ, в степени, разрешенной "
-"законодательством.Вы можете пользоваться и передавть ее на условиях Основной "
-"Публичной Лицензии GNU;подробнее смотрите в файле COPYING. \n"
+"законодательством.\n"
+"Вы можете пользоваться и передавть ее на условиях Основной Публичной "
+"Лицензии GNU;\n"
+"подробнее смотрите в файле COPYING. \n"
 "Написано коммандой VideoLAN; подробнее смотрите в файле AUTHORS.\n"
 
 #: include/vlc_config_cat.h:32
@@ -38,7 +40,7 @@ msgstr "Настройки VLC"
 #: include/vlc_config_cat.h:34
 #, fuzzy
 msgid "Select \"Advanced Options\" to see all options."
-msgstr "Нажмите  \"Дополнительные параметры \", чтобы видеть все опции."
+msgstr "Нажмите  \"Дополнительные параметры\", чтобы видеть все опции."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
 #: src/input/input.c:1905 src/input/input.c:1965 src/playlist/item.c:369
@@ -47,7 +49,7 @@ msgstr "Нажмите  \"Дополнительные параметры \", ч
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
 #: modules/visualization/visual/visual.c:113
 msgid "General"
-msgstr "Основные"
+msgstr "Общие"
 
 #: include/vlc_config_cat.h:39 modules/misc/dummy/dummy.c:65
 msgid "Interface"
@@ -66,7 +68,7 @@ msgstr "Главные настройки интерфейса"
 #: include/vlc_config_cat.h:44
 #, fuzzy
 msgid "Main interfaces"
-msgstr "Открыть окно списка для воспроизведения"
+msgstr "Основные интерфейсы"
 
 #: include/vlc_config_cat.h:45
 #, fuzzy
@@ -130,7 +132,7 @@ msgstr "Модули вывода"
 
 #: include/vlc_config_cat.h:69
 msgid "These are general settings for audio output modules."
-msgstr "Это общие параметры модулей вывода "
+msgstr "Это общие параметры модулей вывода"
 
 #: include/vlc_config_cat.h:71 src/libvlc.h:1450
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:578
@@ -212,9 +214,8 @@ msgstr ""
 "настройки HTTP-прокси или кеширования"
 
 #: include/vlc_config_cat.h:109
-#, fuzzy
 msgid "Access filters"
-msgstr "Модули-фильтры доступа"
+msgstr "Фильтры доступа"
 
 #: include/vlc_config_cat.h:111
 msgid ""
@@ -263,7 +264,7 @@ msgstr "Настройки декодеров и кодеров видео, зв
 #: include/vlc_config_cat.h:128
 #, fuzzy
 msgid "General input settings. Use with care."
-msgstr "Дополнительные настройки ввода. Будьте осторожны."
+msgstr "Основные настройки ввода. Будьте осторожны."
 
 #: include/vlc_config_cat.h:131 src/libvlc.h:1387
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:152
@@ -405,9 +406,8 @@ msgid "General playlist behaviour"
 msgstr "Общие настройки работы списка воспроизведения"
 
 #: include/vlc_config_cat.h:188 modules/gui/macosx/playlist.m:488
-#, fuzzy
 msgid "Services discovery"
-msgstr "Поиск служб"
+msgstr "Обзор служб"
 
 #: include/vlc_config_cat.h:189
 #, fuzzy
@@ -687,11 +687,11 @@ msgstr "ISO-9660 Издатель"
 
 #: include/vlc_meta.h:65
 msgid "ISO-9660 Volume"
-msgstr ""
+msgstr "Том ISO-9660"
 
 #: include/vlc_meta.h:66
 msgid "ISO-9660 Volume Set"
-msgstr ""
+msgstr "Набор томов ISO-9660"
 
 #: include/vlc_meta.h:68
 msgid "Codec Name"
@@ -708,9 +708,8 @@ msgid "Disable"
 msgstr "Отключить"
 
 #: src/audio_output/input.c:82 modules/visualization/visual/visual.c:129
-#, fuzzy
 msgid "Spectrometer"
-msgstr "Спектр"
+msgstr "Спектрометр"
 
 #: src/audio_output/input.c:84
 #, fuzzy
@@ -1033,30 +1032,32 @@ msgid " (default disabled)"
 msgstr " (по умолчанию выключено)"
 
 #: src/libvlc.c:2440
-#, fuzzy, c-format
+#, c-format
 msgid "VLC version %s\n"
-msgstr "Остановить поток"
+msgstr "VLC версия %s\n"
 
 #: src/libvlc.c:2441
-#, fuzzy, c-format
+#, c-format
 msgid "Compiled by %s@%s.%s\n"
-msgstr "Быстро"
+msgstr "Скомпилировано %s@%s.%s\n"
 
 #: src/libvlc.c:2443
-#, fuzzy, c-format
+#, c-format
 msgid "Compiler: %s\n"
-msgstr "Быстро"
+msgstr "Компилятор: %s\n"
 
 #: src/libvlc.c:2446
 #, c-format
 msgid "Based upon svn changeset [%s]\n"
-msgstr ""
+msgstr "Основан на снимке svn [%s]\n"
 
 #: src/libvlc.c:2478
 msgid ""
 "\n"
 "Dumped content to vlc-help.txt file.\n"
 msgstr ""
+"\n"
+"Содержимое сохранено в файл vlc-help.txt .\n"
 
 #: src/libvlc.c:2499
 msgid ""
@@ -1072,45 +1073,57 @@ msgstr "Авто"
 
 #: src/libvlc.h:35
 msgid "American English"
-msgstr ""
+msgstr "Американский английский"
 
 #: src/libvlc.h:35
 msgid "British English"
-msgstr ""
+msgstr "Британский английский"
 
 #: src/libvlc.h:36 src/misc/iso-639_def.h:59
 msgid "Catalan"
-msgstr ""
+msgstr "Каталонский"
 
 #: src/libvlc.h:36 src/misc/iso-639_def.h:68
 msgid "Danish"
-msgstr ""
+msgstr "Датский"
 
 #: src/libvlc.h:36 src/misc/iso-639_def.h:80
 msgid "German"
-msgstr ""
+msgstr "Немецкий"
 
 #: src/libvlc.h:36 src/misc/iso-639_def.h:169
 msgid "Spanish"
-msgstr ""
+msgstr "Испанский"
 
 #: src/libvlc.h:36 src/misc/iso-639_def.h:77
 msgid "French"
+msgstr "Французский"
+
+#: src/libvlc.h:37 src/misc/iso-639_def.h:88
+msgid "Hebrew"
+msgstr ""
+
+#: src/libvlc.h:37 src/misc/iso-639_def.h:90
+msgid "Hindi"
+msgstr ""
+
+#: src/libvlc.h:37 src/misc/iso-639_def.h:92
+msgid "Hungarian"
 msgstr ""
 
 #: src/libvlc.h:37 src/misc/iso-639_def.h:99
 msgid "Italian"
-msgstr ""
+msgstr "Итальянский"
 
 #: src/libvlc.h:37 src/misc/iso-639_def.h:101
 msgid "Japanese"
-msgstr ""
+msgstr "Японский"
 
-#: src/libvlc.h:37 src/misc/iso-639_def.h:79
+#: src/libvlc.h:38 src/misc/iso-639_def.h:79
 msgid "Georgian"
 msgstr ""
 
-#: src/libvlc.h:37 src/misc/iso-639_def.h:111
+#: src/libvlc.h:38 src/misc/iso-639_def.h:111
 msgid "Korean"
 msgstr ""
 
@@ -1126,7 +1139,7 @@ msgstr ""
 msgid "Brazilian Portuguese"
 msgstr ""
 
-#: src/libvlc.h:38 src/misc/iso-639_def.h:153
+#: src/libvlc.h:39 src/misc/iso-639_def.h:153
 msgid "Romanian"
 msgstr ""
 
@@ -1187,7 +1200,7 @@ msgstr ""
 "VLC. Они будут запущены на заднем плане в дополнение к интерфейсу значения "
 "по умолчанию. Используйте отделенный запятой список модулей интерфейса. "
 "(обычные значения - регистратор, знаки, sap, дистанционное управление, http "
-"или экранная заставка), "
+"или экранная заставка),"
 
 #: src/libvlc.h:77
 #, fuzzy
@@ -1323,9 +1336,8 @@ msgid "This will force a mono audio output."
 msgstr "Любой звук будет выводиться в режиме моно"
 
 #: src/libvlc.h:140
-#, fuzzy
 msgid "Default audio volume"
-msgstr "Устройство по умолчанию"
+msgstr "Громкость по умолчанию"
 
 #: src/libvlc.h:142
 msgid ""
@@ -1346,9 +1358,8 @@ msgid ""
 msgstr "Это сохраняет громкость вывода звука, при выключении звука"
 
 #: src/libvlc.h:150
-#, fuzzy
 msgid "Audio output volume step"
-msgstr "Громкость вывода звука"
+msgstr "Шаг громкости вывода звука"
 
 #: src/libvlc.h:152
 #, fuzzy
@@ -1430,9 +1441,8 @@ msgstr ""
 "оборудование и воспроизводимый поток их поддерживают"
 
 #: src/libvlc.h:184
-#, fuzzy
 msgid "Force detection of Dolby Surround"
-msgstr "Остановить поток"
+msgstr "Принудительно определять Dolby Surround"
 
 #: src/libvlc.h:186
 msgid ""
@@ -1460,7 +1470,7 @@ msgstr ""
 
 #: src/libvlc.h:200
 msgid "Audio visualizations "
-msgstr "Визуализация звука"
+msgstr "Визуализация звука "
 
 #: src/libvlc.h:202
 #, fuzzy
@@ -1689,11 +1699,11 @@ msgstr "Всегда помещает окно видео поверх оста�
 
 #: src/libvlc.h:283
 msgid "Disable screensaver"
-msgstr ""
+msgstr "Отключать хранитель экрана"
 
 #: src/libvlc.h:284
 msgid "Disable the screensaver during video playback."
-msgstr ""
+msgstr "Отключать хранитель экрана на время воспроизведения видео"
 
 #: src/libvlc.h:286
 msgid "Window decorations"
@@ -1775,7 +1785,7 @@ msgstr ""
 
 #: src/libvlc.h:324
 msgid "Fix HDTV height"
-msgstr ""
+msgstr "Фиксировать высоту HDTV"
 
 #: src/libvlc.h:326
 msgid ""
@@ -1801,10 +1811,13 @@ msgid "Skip frames"
 msgstr "Пропускать кадры"
 
 #: src/libvlc.h:340
+#, fuzzy
 msgid ""
 "This option enables framedropping on MPEG2 stream. Framedropping occurs when "
 "your computer is not powerful enough"
 msgstr ""
+"Эта опция включает пропуск кадров в потоке MPEG2. Пропуск кадров происходит "
+"когда вашему компьютеру не хватает мощности"
 
 #: src/libvlc.h:343
 #, fuzzy
@@ -1819,7 +1832,7 @@ msgstr ""
 
 #: src/libvlc.h:348
 msgid "Quiet synchro"
-msgstr ""
+msgstr "Quiet synchro"
 
 #: src/libvlc.h:350
 msgid ""
@@ -1887,7 +1900,7 @@ msgstr "Включить"
 #: src/libvlc.h:383
 #, fuzzy
 msgid "UDP port"
-msgstr "Пауза"
+msgstr "Порт UDP"
 
 #: src/libvlc.h:385
 #, fuzzy
@@ -1897,7 +1910,7 @@ msgstr ""
 
 #: src/libvlc.h:387
 msgid "MTU of the network interface"
-msgstr ""
+msgstr "MTU сетевого интерфейса"
 
 #: src/libvlc.h:389
 #, fuzzy
@@ -1953,9 +1966,8 @@ msgid ""
 msgstr ""
 
 #: src/libvlc.h:421 modules/gui/wxwidgets/dialogs/open.cpp:778
-#, fuzzy
 msgid "Audio track"
-msgstr "Звуковая дорожка"
+msgstr "Звуковой трек"
 
 #: src/libvlc.h:423
 #, fuzzy
@@ -1964,9 +1976,8 @@ msgstr ""
 "Введите номер звуковой дорожки, которую Вы хотите использовать (от 0 до n)."
 
 #: src/libvlc.h:426 modules/gui/wxwidgets/dialogs/open.cpp:770
-#, fuzzy
 msgid "Subtitles track"
-msgstr "Следующий файл"
+msgstr "Заголовок трека"
 
 #: src/libvlc.h:428
 #, fuzzy
@@ -1974,9 +1985,8 @@ msgid "Stream number of the subtitle track to use (from 0 to n)."
 msgstr "Введите номер субтитров, которые Вы хотите использовать (от 0 до n)."
 
 #: src/libvlc.h:431
-#, fuzzy
 msgid "Audio language"
-msgstr "Выберите язык звука"
+msgstr "Язык звука"
 
 #: src/libvlc.h:433
 #, fuzzy
@@ -1988,9 +1998,8 @@ msgstr ""
 "separted, two or tree letter country code)."
 
 #: src/libvlc.h:436
-#, fuzzy
 msgid "Subtitle language"
-msgstr "Выберите язык субтитров"
+msgstr "Язык субтитров"
 
 #: src/libvlc.h:438
 #, fuzzy
@@ -2129,7 +2138,7 @@ msgstr ""
 #: src/libvlc.h:501
 #, fuzzy
 msgid "Text rendering module"
-msgstr "Прорисовка текста"
+msgstr "Отрисовка текста"
 
 #: src/libvlc.h:503
 msgid ""
@@ -2716,7 +2725,7 @@ msgstr ""
 #: src/libvlc.h:814
 #, fuzzy
 msgid "Collect miscellaneous statistics."
-msgstr "Эти настройки позволяют Вам выбирать интерфейсы управления. "
+msgstr "Эти настройки позволяют Вам выбирать интерфейсы управления."
 
 #: src/libvlc.h:816
 msgid "Run as daemon process"
@@ -3874,25 +3883,13 @@ msgstr ""
 msgid "Gujarati"
 msgstr ""
 
-#: src/misc/iso-639_def.h:88
-msgid "Hebrew"
-msgstr ""
-
 #: src/misc/iso-639_def.h:89
 #, fuzzy
 msgid "Herero"
 msgstr "Стоп"
 
-#: src/misc/iso-639_def.h:90
-msgid "Hindi"
-msgstr ""
-
 #: src/misc/iso-639_def.h:91
 msgid "Hiri Motu"
-msgstr ""
-
-#: src/misc/iso-639_def.h:92
-msgid "Hungarian"
 msgstr ""
 
 #: src/misc/iso-639_def.h:93
@@ -4450,7 +4447,7 @@ msgstr "Быстро"
 
 #: modules/access/cdda.c:511 modules/access/cdda.c:606
 msgid "Audio CD - Track "
-msgstr "Аудио компакт-диск - Дорожка"
+msgstr "Аудио компакт-диск - Дорожка "
 
 #: modules/access/cdda.c:512 modules/access/cdda.c:615
 #, c-format
@@ -7898,7 +7895,7 @@ msgstr ""
 msgid ""
 "Force the specified number of consecutive B-frames to be used, except "
 "possibly before an I-frame. "
-msgstr "Приостановить поток"
+msgstr "Приостановить поток "
 
 #: modules/codec/x264.c:80
 msgid "B-frames usage"
@@ -7944,9 +7941,8 @@ msgid ""
 msgstr ""
 
 #: modules/codec/x264.c:100
-#, fuzzy
 msgid "Skip loop filter"
-msgstr "Предыдущий файл"
+msgstr ""
 
 #: modules/codec/x264.c:101
 msgid "Deactivate the deblocking loop filter (decreases quality)."
@@ -8372,19 +8368,19 @@ msgid "N/A"
 msgstr ""
 
 #: modules/control/hotkeys.c:535
-#, fuzzy, c-format
+#, c-format
 msgid "Aspect ratio: %s"
-msgstr "Следующий файл"
+msgstr ""
 
 #: modules/control/hotkeys.c:561
-#, fuzzy, c-format
+#, c-format
 msgid "Crop: %s"
-msgstr "Быстро"
+msgstr ""
 
 #: modules/control/hotkeys.c:587
-#, fuzzy, c-format
+#, c-format
 msgid "Deinterlace mode: %s"
-msgstr "Открыть окно списка для воспроизведения"
+msgstr ""
 
 #: modules/control/http/http.c:34
 msgid "Host address"
@@ -8523,7 +8519,7 @@ msgstr ""
 "VLC. Они будут запущены на заднем плане в дополнение к интерфейсу значения "
 "по умолчанию. Используйте отделенный запятой список модулей интерфейса. "
 "(обычные значения - регистратор, знаки, sap, дистанционное управление, http "
-"или экранная заставка), "
+"или экранная заставка),"
 
 #: modules/control/ntservice.c:61
 #, fuzzy
@@ -8881,25 +8877,19 @@ msgstr ""
 #: modules/control/rc.c:1070
 #, fuzzy
 msgid "Press menu select or pause to continue."
-msgstr ""
-"\n"
-"Для продолжения нажмите ВВОД\n"
+msgstr "Для продолжения нажмите ВВОД"
 
 #: modules/control/rc.c:1238 modules/control/rc.c:1725
 #: modules/control/rc.c:1795 modules/control/rc.c:1844
 #: modules/control/rc.c:1943
 #, fuzzy
 msgid "Type 'menu select' or 'pause' to continue."
-msgstr ""
-"\n"
-"Для продолжения нажмите ВВОД\n"
+msgstr "Для продолжения нажмите ВВОД"
 
 #: modules/control/rc.c:1385
 #, fuzzy
 msgid "Type 'pause' to continue."
-msgstr ""
-"\n"
-"Для продолжения нажмите ВВОД\n"
+msgstr "Для продолжения нажмите ВВОД"
 
 #: modules/control/rc.c:1928 modules/control/rc.c:1967
 msgid "Please provide one of the following parameters:"
@@ -10957,9 +10947,9 @@ msgstr "Следующий файл"
 
 #: modules/gui/macosx/open.m:530 modules/gui/macosx/open.m:582
 #: modules/gui/macosx/open.m:590 modules/gui/macosx/open.m:598
-#, fuzzy, objc-format
+#, objc-format
 msgid "No %@s found"
-msgstr "Остановить поток"
+msgstr ""
 
 #: modules/gui/macosx/open.m:633
 msgid "Open VIDEO_TS Directory"
@@ -11781,9 +11771,9 @@ msgid "Finish"
 msgstr ""
 
 #: modules/gui/macosx/wizard.m:1376
-#, fuzzy, c-format
+#, c-format
 msgid "%i items"
-msgstr "Показать элементы"
+msgstr ""
 
 #: modules/gui/macosx/wizard.m:1384 modules/gui/macosx/wizard.m:1438
 msgid "yes"
@@ -11867,7 +11857,7 @@ msgstr ""
 "групповом адресе, это появится в их списке воспроизведения, если они "
 "допустят интерфейсу \n"
 " дополнительного пространства SAPЕсли Вы хотите дать название вашему потоку, "
-"введите это здесь, или будет использоваться  значения по умолчанию "
+"введите это здесь, или будет использоваться  значения по умолчанию"
 
 #: modules/gui/macosx/wizard.m:1872
 msgid ""
@@ -11968,7 +11958,7 @@ msgstr ""
 
 #: modules/gui/pda/pda_interface.c:481
 msgid "Network: "
-msgstr "Сеть:"
+msgstr "Сеть: "
 
 #: modules/gui/pda/pda_interface.c:498
 msgid "udp"
@@ -12318,19 +12308,19 @@ msgstr "Обновить"
 
 #: modules/gui/pda/pda_interface.c:1259
 msgid " Clear "
-msgstr " Очистить"
+msgstr " Очистить "
 
 #: modules/gui/pda/pda_interface.c:1290
 msgid " Save "
-msgstr " Сохранить"
+msgstr " Сохранить "
 
 #: modules/gui/pda/pda_interface.c:1295
 msgid " Apply "
-msgstr " Применить"
+msgstr " Применить "
 
 #: modules/gui/pda/pda_interface.c:1300
 msgid " Cancel "
-msgstr " Отмена"
+msgstr " Отмена "
 
 #: modules/gui/pda/pda_interface.c:1305
 msgid "Preference"
@@ -12446,7 +12436,10 @@ msgid ""
 "\n"
 "(WinCE interface)\n"
 "\n"
-msgstr "Открыть окно списка для воспроизведения"
+msgstr ""
+"\n"
+"Открыть окно списка для воспроизведения\n"
+"\n"
 
 #: modules/gui/wince/interface.cpp:497 modules/gui/wxwidgets/interface.cpp:937
 msgid ""
@@ -12457,12 +12450,12 @@ msgstr ""
 #: modules/gui/wince/interface.cpp:498 modules/gui/wxwidgets/interface.cpp:938
 #, fuzzy
 msgid "Compiled by "
-msgstr "Следующий файл"
+msgstr "Следующий файл "
 
 #: modules/gui/wince/interface.cpp:500 modules/gui/wxwidgets/interface.cpp:940
 #, fuzzy
 msgid "Compiler: "
-msgstr "Быстро"
+msgstr "Быстро "
 
 #: modules/gui/wince/interface.cpp:502 modules/gui/wxwidgets/interface.cpp:942
 msgid "Based on SVN revision: "
@@ -12851,9 +12844,9 @@ msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:591
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:811
-#, fuzzy, c-format
+#, c-format
 msgid "%i items in playlist (%i not shown)"
-msgstr "Открыть окно списка для воспроизведения"
+msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:604
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:818
@@ -13175,7 +13168,7 @@ msgstr ""
 "Используйте это для только для чтения часть потока. Вы должны быть в "
 "состоянии управлять поступающим потоком (например, файл или диск, но не "
 "сетевой поток UDP.)\n"
-"Введите начальное и конечное время (в секундах)"
+"Введите начальное и конечное время (в секундах)\n"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:126
 #, fuzzy
@@ -13284,7 +13277,7 @@ msgstr ""
 "групповом адресе, это появится в их списке воспроизведения, если они "
 "допустят интерфейсу \n"
 " дополнительного пространства SAPЕсли Вы хотите дать название вашему потоку, "
-"введите это здесь, или будет использоваться  значения по умолчанию "
+"введите это здесь, или будет использоваться  значения по умолчанию"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:506
 msgid "More information"
@@ -13497,7 +13490,9 @@ msgstr "Настройки...\tCtrl-S"
 msgid ""
 " (wxWidgets interface)\n"
 "\n"
-msgstr "Открыть окно списка для воспроизведения"
+msgstr ""
+" Открыть окно списка для воспроизведения\n"
+"\n"
 
 #: modules/gui/wxwidgets/interface.cpp:949
 msgid ""
@@ -13507,9 +13502,9 @@ msgid ""
 msgstr ""
 
 #: modules/gui/wxwidgets/interface.cpp:952
-#, fuzzy, c-format
+#, c-format
 msgid "About %s"
-msgstr "Модули..."
+msgstr ""
 
 #: modules/gui/wxwidgets/interface.cpp:1496
 #, fuzzy
@@ -15651,7 +15646,7 @@ msgstr ""
 #: modules/video_chroma/i422_yuy2.c:63
 #, fuzzy
 msgid "Conversions from "
-msgstr "Остановить поток"
+msgstr "Остановить поток "
 
 #: modules/video_chroma/i420_ymga.c:48 modules/video_chroma/i420_ymga.c:51
 #: modules/video_chroma/i420_yuy2.c:75 modules/video_chroma/i420_yuy2.c:78
@@ -17254,6 +17249,547 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Снизу"
 
 #, fuzzy
+#~ msgid "delay"
+#~ msgstr "Воспр."
+
+#~ msgid "More info"
+#~ msgstr "Больше информации"
+
+#~ msgid "Control interface settings"
+#~ msgstr "Настройка интерфейса управления"
+
+#~ msgid ""
+#~ "Use the settings of the \"freetype\" module to choose the font you  want "
+#~ "VLC to use for text rendering (to display subtitles for example)."
+#~ msgstr ""
+#~ "Используйте настройки модуля \"freetype \", чтобы выбрать шрифт, который "
+#~ "Вы хотите, чтобы VLC использовал для прорисовки текста (например для "
+#~ "отображения субтитров)."
+
+#~ msgid ""
+#~ "You can enforce the position of the top left corner of the video window "
+#~ "here (x coordinate)."
+#~ msgstr ""
+#~ "Вы можете назначить позицию верхнего левого угла окна видео здесь"
+#~ "(координата x – абсцисса)"
+
+#~ msgid "You can specify a custom video window title here."
+#~ msgstr "Здесь можете указать свой заголовок окна видео."
+
+#, fuzzy
+#~ msgid "Program to select"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Programs to select"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Interfaces"
+#~ msgstr "Интерфейс"
+
+#, fuzzy
+#~ msgid "Go To Position"
+#~ msgstr "Позиция"
+
+#~ msgid "&Shuffle Playlist"
+#~ msgstr "Перемешать список воспроизведения"
+
+#, fuzzy
+#~ msgid "VLC media player - Updates"
+#~ msgstr "Клиент VideoLAN"
+
+#, fuzzy
+#~ msgid "VLM configuration"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Font filename"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Podcast Service Discovery"
+#~ msgstr "Поиск служб"
+
+#, fuzzy
+#~ msgid "Select effect"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Small playlist"
+#~ msgstr "Сохранить список воспроизведения"
+
+#, fuzzy
+#~ msgid "VC-1 decoder module"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "M3U file|*.m3u"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "raw DV demuxer"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Enable CABAC"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Enable loop filter"
+#~ msgstr "Предыдущий файл"
+
+#, fuzzy
+#~ msgid "Analyse mode"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "from "
+#~ msgstr "От "
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Воспр."
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Пауза"
+
+#~ msgid "Save As..."
+#~ msgstr "Сохранить как..."
+
+#, fuzzy
+#~ msgid "type : "
+#~ msgstr "тип "
+
+#, fuzzy
+#~ msgid "URL : "
+#~ msgstr "Адрес URL "
+
+#, fuzzy
+#~ msgid "file size : "
+#~ msgstr "Размер видео "
+
+#, fuzzy
+#~ msgid "Choose a mirror"
+#~ msgstr "Укажите папку"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid ""
+#~ "VLC is an open-source and cross-platform multimedia player for various "
+#~ "audio and video formats (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, Ogg, etc.) as "
+#~ "well as DVDs, VCDs, CD audio, and various streaming protocols.\n"
+#~ "\n"
+#~ "VLC is also a streaming server with transcoding capabilities (UDP unicast "
+#~ "and multicast, HTTP, etc.) mainly designed for high-bandwidth networks.\n"
+#~ "\n"
+#~ "For more information, have a look at the web site."
+#~ msgstr ""
+#~ "VLC – кроссплатформенный проигрыватель мультимедиа с открытым кодом для "
+#~ "различных форматов видео и звука (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, Ogg, "
+#~ "и т.д.), а также для DVD, VCD, Audio-CD различных потоковых протоколов."
+#~ "Это также потоковый сервер с возможностью транскодирования (UDP unicastи "
+#~ "multicast, HTTP, и т.д.), в основном предназначенный для высокоскростных "
+#~ "сетей."
+
+#, fuzzy
+#~ msgid "Jump 3 seconds backwards"
+#~ msgstr "Перейти на 10 секунд назад"
+
+#~ msgid "Jump 10 seconds backwards"
+#~ msgstr "Перейти на 10 секунд назад"
+
+#~ msgid "Jump 1 minute backwards"
+#~ msgstr "Перейти на 1 минуту секунд назад"
+
+#~ msgid "Jump 5 minutes backwards"
+#~ msgstr "Перейти на 5 минут секунд назад"
+
+#, fuzzy
+#~ msgid "Jump 3 seconds forward"
+#~ msgstr "Перейти на 10 секунд вперёд"
+
+#~ msgid "Jump 10 seconds forward"
+#~ msgstr "Перейти на 10 секунд вперёд"
+
+#~ msgid "Jump 1 minute forward"
+#~ msgstr "Перейти на 1 минуту вперёд"
+
+#~ msgid "Jump 5 minutes forward"
+#~ msgstr "Перейти на 5 минут вперёд"
+
+#~ msgid "Settings related to the various access filter used by VLC.\n"
+#~ msgstr "Настройки различных модулей-фильтров доступа VLC.\n"
+
+#, fuzzy
+#~ msgid "Open MRL"
+#~ msgstr "Открыть MRL"
+
+#~ msgid "Channel mixer"
+#~ msgstr "Микшер каналов"
+
+#~ msgid "Choose programs"
+#~ msgstr "Выберите программы"
+
+#~ msgid "Choose audio track"
+#~ msgstr "Выберите звуковую дорожку"
+
+#~ msgid "Choose subtitles track"
+#~ msgstr "Выберите дорожку субтитров"
+
+#, fuzzy
+#~ msgid "Shout"
+#~ msgstr "Модули..."
+
+#~ msgid "Segment "
+#~ msgstr "Сегмент "
+
+#~ msgid "Track "
+#~ msgstr "Дорожка "
+
+#, fuzzy
+#~ msgid "Current version"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Your version"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Mirror"
+#~ msgstr "Ошибка"
+
+#, fuzzy
+#~ msgid "Streamming"
+#~ msgstr "Вещание (поток)"
+
+#, fuzzy
+#~ msgid "Windows GAPI"
+#~ msgstr "Окно"
+
+#, fuzzy
+#~ msgid "Windows GDI"
+#~ msgstr "Окно"
+
+#, fuzzy
+#~ msgid "Access modules settings"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Audio output modules settings"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Decoder modules settings"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Demuxers settings"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Stream output access modules settings"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Choose a stream output"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Loop playlist on end"
+#~ msgstr "Открыть список для воспроизведения"
+
+#, fuzzy
+#~ msgid "CD Audio demux"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Dummy stream ouput"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Truncated stream"
+#~ msgstr "Воспроизвести поток"
+
+#, fuzzy
+#~ msgid "Play List"
+#~ msgstr "Список для воспроизведения"
+
+#, fuzzy
+#~ msgid "GNOME interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#~ msgid "_Open File..."
+#~ msgstr "Открыть файл..."
+
+#~ msgid "Open a file"
+#~ msgstr "Открыть файл"
+
+#~ msgid "Open _Disc..."
+#~ msgstr "Открыть диск..."
+
+#, fuzzy
+#~ msgid "_Network Stream..."
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Select a network stream"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "_Eject Disc"
+#~ msgstr "Открыть файл"
+
+#, fuzzy
+#~ msgid "Eject disc"
+#~ msgstr "Открыть файл"
+
+#~ msgid "_Title"
+#~ msgstr "_Заголовок"
+
+#~ msgid "_Chapter"
+#~ msgstr "_Глава"
+
+#~ msgid "_Language"
+#~ msgstr "Язык"
+
+#~ msgid "_Subtitles"
+#~ msgstr "_Субтитры"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "Во весь экран"
+
+#~ msgid "_Audio"
+#~ msgstr "_Аудио"
+
+#~ msgid "_Video"
+#~ msgstr "_Видео"
+
+#, fuzzy
+#~ msgid "Net"
+#~ msgstr "След."
+
+#~ msgid "Stop Stream"
+#~ msgstr "Остановить поток"
+
+#~ msgid "Play Stream"
+#~ msgstr "Воспроизвести поток"
+
+#~ msgid "Pause Stream"
+#~ msgstr "Приостановить поток"
+
+#~ msgid "Play Slower"
+#~ msgstr "Воспроизводить медленнее"
+
+#~ msgid "Fast"
+#~ msgstr "Быстро"
+
+#~ msgid "Play Faster"
+#~ msgstr "Воспроизводить быстрее"
+
+#~ msgid "Prev"
+#~ msgstr "Пред."
+
+#~ msgid "Previous file"
+#~ msgstr "Предыдущий файл"
+
+#~ msgid "Next File"
+#~ msgstr "Следующий файл"
+
+#~ msgid "Title:"
+#~ msgstr "Заголовок:"
+
+#, fuzzy
+#~ msgid "Chapter:"
+#~ msgstr "Следующий файл"
+
+#~ msgid "Vertical"
+#~ msgstr "Вертикальный"
+
+#, fuzzy
+#~ msgid "Path:"
+#~ msgstr "Пауза"
+
+#, fuzzy
+#~ msgid "Gtk+ interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#~ msgid "_File"
+#~ msgstr "_Файл"
+
+#~ msgid "_Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Exit the program"
+#~ msgstr "Выйти из программы"
+
+#~ msgid "_View"
+#~ msgstr "Вид"
+
+#~ msgid "_Settings"
+#~ msgstr "_Настройки"
+
+#~ msgid "_Help"
+#~ msgstr "Помощь"
+
+#, fuzzy
+#~ msgid "_About..."
+#~ msgstr "Модули..."
+
+#~ msgid "_Play"
+#~ msgstr "Воспроизвести"
+
+#, fuzzy
+#~ msgid "Authors"
+#~ msgstr "Модули..."
+
+#, fuzzy
+#~ msgid "Select a subtitles file"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Select File"
+#~ msgstr "Следующий файл"
+
+#~ msgid "_Select"
+#~ msgstr "_Выбрать"
+
+#~ msgid "Title %d (%d)"
+#~ msgstr "Заголовок %d (%d)"
+
+#~ msgid "Chapter %d"
+#~ msgstr "Глава %d"
+
+#~ msgid "Selected:"
+#~ msgstr "Выбрано:"
+
+#, fuzzy
+#~ msgid "Gtk2 interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#~ msgid "Languages"
+#~ msgstr "Языки"
+
+#, fuzzy
+#~ msgid "KDE interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "Repeat Playlist"
+#~ msgstr "Открыть список для воспроизведения"
+
+#, fuzzy
+#~ msgid "Controls"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#~ msgid "Pause stream"
+#~ msgstr "Приостановить поток"
+
+#~ msgid "Play stream"
+#~ msgstr "Воспроизвести поток"
+
+#, fuzzy
+#~ msgid "Stream:"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Qt interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "Open a network stream"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Simple &Open ..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "Open &Satellite Stream..."
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "&File info..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "&About..."
+#~ msgstr "Модули..."
+
+#, fuzzy
+#~ msgid "&Disable"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "&Select All"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "SAP interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "osd text filter"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Open &file..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "Open &disc..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "&Network stream..."
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Spawn a new interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "New stream"
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Network Stream..."
+#~ msgstr "Остановить поток"
+
+#~ msgid "Next file"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "&Disc..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "&Network..."
+#~ msgstr "Остановить поток"
+
+#, fuzzy
+#~ msgid "Play the selected stream"
+#~ msgstr "Воспроизвести поток"
+
+#, fuzzy
+#~ msgid "Native Windows interface"
+#~ msgstr "Открыть окно списка для воспроизведения"
+
+#, fuzzy
+#~ msgid "All files"
+#~ msgstr "Следующий файл"
+
+#, fuzzy
+#~ msgid "Open disc..."
+#~ msgstr "Открыть файл..."
+
+#, fuzzy
+#~ msgid "Loop filter"
+#~ msgstr "Предыдущий файл"
+
+#, fuzzy
 #~ msgid ""
 #~ "This filters prevents the audio output level from exceeding a defined "
 #~ "value."
@@ -17302,41 +17838,13 @@ msgstr "Открыть окно списка для воспроизведени
 #~ "В этой странице, Вы определите несколько дополнительных параметров для "
 #~ "вашего transcoding"
 
-#, fuzzy
-#~ msgid "delay"
-#~ msgstr "Воспр."
-
-#~ msgid "More info"
-#~ msgstr "Больше информации"
-
-#~ msgid "Control interface settings"
-#~ msgstr "Настройка интерфейса управления"
-
-#~ msgid ""
-#~ "Use the settings of the \"freetype\" module to choose the font you  want "
-#~ "VLC to use for text rendering (to display subtitles for example)."
-#~ msgstr ""
-#~ "Используйте настройки модуля \"freetype \", чтобы выбрать шрифт, который "
-#~ "Вы хотите, чтобы VLC использовал для прорисовки текста (например для "
-#~ "отображения субтитров)."
-
 #~ msgid "This option allows you to select control interfaces. "
 #~ msgstr "Эти настройки позволяют Вам выбирать интерфейсы управления. "
 
 #, fuzzy
 #~ msgid "This option allows you to always open a default stream on start-up."
 #~ msgstr ""
-#~ "Эти настройки позволяют Вам по умолчанию открыть MRL при загрузке VLC. "
-
-#~ msgid ""
-#~ "You can enforce the position of the top left corner of the video window "
-#~ "here (x coordinate)."
-#~ msgstr ""
-#~ "Вы можете назначить позицию верхнего левого угла окна видео здесь"
-#~ "(координата x – абсцисса)"
-
-#~ msgid "You can specify a custom video window title here."
-#~ msgstr "Здесь можете указать свой заголовок окна видео."
+#~ "Эти настройки позволяют Вам по умолчанию открыть MRL при загрузке VLC."
 
 #~ msgid ""
 #~ "If this option is enabled, VLC will always start a video in fullscreen "
@@ -17359,24 +17867,12 @@ msgstr "Открыть окно списка для воспроизведени
 #~ "Позволяет Вам определять формат изображения, в котором будут "
 #~ "сохраненывидеоснимки стопкадров."
 
-#, fuzzy
-#~ msgid "Program to select"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Programs to select"
-#~ msgstr "Остановить поток"
-
 #~ msgid ""
 #~ "This will allow you to add a subpictures filter for instance to overlay a "
 #~ "logo."
 #~ msgstr ""
 #~ "Это позволит Вам добавлять фильтр деталей изображения например к оверлею "
 #~ "эмблемы."
-
-#, fuzzy
-#~ msgid "Interfaces"
-#~ msgstr "Интерфейс"
 
 #, fuzzy
 #~ msgid "Standard filesystem file input"
@@ -17419,10 +17915,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Открыть окно списка для воспроизведения"
 
 #, fuzzy
-#~ msgid "Go To Position"
-#~ msgstr "Позиция"
-
-#, fuzzy
 #~ msgid "Use embedded video output"
 #~ msgstr "Остановить поток"
 
@@ -17450,9 +17942,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "You you need to select a file, you want to save to."
 #~ msgstr "Вы должны выбрать файл для сохранения"
 
-#~ msgid "&Shuffle Playlist"
-#~ msgstr "Перемешать список воспроизведения"
-
 #, fuzzy
 #~ msgid "Destination Target:"
 #~ msgstr "Остановить поток"
@@ -17467,22 +17956,6 @@ msgstr "Открыть окно списка для воспроизведени
 
 #~ msgid "Subtitles options"
 #~ msgstr "Настройка субтитров"
-
-#, fuzzy
-#~ msgid "VLC media player - Updates"
-#~ msgstr "Клиент VideoLAN"
-
-#, fuzzy
-#~ msgid "VLM configuration"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Font filename"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Podcast Service Discovery"
-#~ msgstr "Поиск служб"
 
 #, fuzzy
 #~ msgid "Output URL (deprecated)"
@@ -17523,22 +17996,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "OSD"
 
 #, fuzzy
-#~ msgid "Select effect"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Small playlist"
-#~ msgstr "Сохранить список воспроизведения"
-
-#, fuzzy
-#~ msgid "VC-1 decoder module"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "M3U file|*.m3u"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
 #~ msgid "Allows you to set the desired frame rate."
 #~ msgstr "Открыть окно списка для воспроизведения"
 
@@ -17555,23 +18012,7 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Список для воспроизведения"
 
 #, fuzzy
-#~ msgid "raw DV demuxer"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
 #~ msgid "Text subtitles demux"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Enable CABAC"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Enable loop filter"
-#~ msgstr "Предыдущий файл"
-
-#, fuzzy
-#~ msgid "Analyse mode"
 #~ msgstr "Следующий файл"
 
 #, fuzzy
@@ -17587,117 +18028,15 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Следующий файл"
 
 #, fuzzy
-#~ msgid "from "
-#~ msgstr "От"
-
-#, fuzzy
-#~ msgid "Yes"
-#~ msgstr "Воспр."
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "Пауза"
-
-#~ msgid "Save As..."
-#~ msgstr "Сохранить как..."
-
-#, fuzzy
 #~ msgid "Interface showing control interface"
 #~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "type : "
-#~ msgstr "тип"
-
-#, fuzzy
-#~ msgid "URL : "
-#~ msgstr "Адрес URL"
-
-#, fuzzy
-#~ msgid "file size : "
-#~ msgstr "Размер видео"
-
-#, fuzzy
-#~ msgid "Choose a mirror"
-#~ msgstr "Укажите папку"
 
 #~ msgid "Time To Live"
 #~ msgstr "Время жизни"
 
-#~ msgid " "
-#~ msgstr " "
-
 #, fuzzy
 #~ msgid "CoreAudio output"
 #~ msgstr "Остановить поток"
-
-#~ msgid ""
-#~ "VLC is an open-source and cross-platform multimedia player for various "
-#~ "audio and video formats (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, Ogg, etc.) as "
-#~ "well as DVDs, VCDs, CD audio, and various streaming protocols.\n"
-#~ "\n"
-#~ "VLC is also a streaming server with transcoding capabilities (UDP unicast "
-#~ "and multicast, HTTP, etc.) mainly designed for high-bandwidth networks.\n"
-#~ "\n"
-#~ "For more information, have a look at the web site."
-#~ msgstr ""
-#~ "VLC – кроссплатформенный проигрыватель мультимедиа с открытым кодом для "
-#~ "различных форматов видео и звука (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, Ogg, "
-#~ "и т.д.), а также для DVD, VCD, Audio-CD различных потоковых протоколов."
-#~ "Это также потоковый сервер с возможностью транскодирования (UDP unicastи "
-#~ "multicast, HTTP, и т.д.), в основном предназначенный для высокоскростных "
-#~ "сетей."
-
-#, fuzzy
-#~ msgid "Jump 3 seconds backwards"
-#~ msgstr "Перейти на 10 секунд назад"
-
-#~ msgid "Jump 10 seconds backwards"
-#~ msgstr "Перейти на 10 секунд назад"
-
-#~ msgid "Jump 1 minute backwards"
-#~ msgstr "Перейти на 1 минуту секунд назад"
-
-#~ msgid "Jump 5 minutes backwards"
-#~ msgstr "Перейти на 5 минут секунд назад"
-
-#, fuzzy
-#~ msgid "Jump 3 seconds forward"
-#~ msgstr "Перейти на 10 секунд вперёд"
-
-#~ msgid "Jump 10 seconds forward"
-#~ msgstr "Перейти на 10 секунд вперёд"
-
-#~ msgid "Jump 1 minute forward"
-#~ msgstr "Перейти на 1 минуту вперёд"
-
-#~ msgid "Jump 5 minutes forward"
-#~ msgstr "Перейти на 5 минут вперёд"
-
-#, fuzzy
-#~ msgid "Shout"
-#~ msgstr "Модули..."
-
-#~ msgid "Segment "
-#~ msgstr "Сегмент"
-
-#~ msgid "Track "
-#~ msgstr "Дорожка"
-
-#, fuzzy
-#~ msgid "Windows GAPI"
-#~ msgstr "Окно"
-
-#, fuzzy
-#~ msgid "Windows GDI"
-#~ msgstr "Окно"
-
-#~ msgid "Settings related to the various access filter used by VLC.\n"
-#~ msgstr "Настройки различных модулей-фильтров доступа VLC.\n"
-
-#, fuzzy
-#~ msgid "Open MRL"
-#~ msgstr "Открыть MRL"
 
 #~ msgid "Audio output volume"
 #~ msgstr "Громкость вывода звука"
@@ -17705,40 +18044,12 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Network interface address"
 #~ msgstr "Сетевой адрес интерфейса"
 
-#~ msgid "Choose programs"
-#~ msgstr "Выберите программы"
-
-#~ msgid "Choose audio track"
-#~ msgstr "Выберите звуковую дорожку"
-
-#~ msgid "Choose subtitles track"
-#~ msgstr "Выберите дорожку субтитров"
-
 #, fuzzy
 #~ msgid "Select maximum bitrate stream"
 #~ msgstr "Остановить поток"
 
 #~ msgid "Old playlist open"
 #~ msgstr "Открыть старый список воспроизведения"
-
-#, fuzzy
-#~ msgid "Current version"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Your version"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Mirror"
-#~ msgstr "Ошибка"
-
-#, fuzzy
-#~ msgid "Streamming"
-#~ msgstr "Вещание (поток)"
-
-#~ msgid "Channel mixer"
-#~ msgstr "Микшер каналов"
 
 #~ msgid ""
 #~ "This allows you to choose a specific audio channel mixer. For instance, "
@@ -17755,10 +18066,6 @@ msgstr "Открыть окно списка для воспроизведени
 #, fuzzy
 #~ msgid "Wizard..."
 #~ msgstr "Мастер...\tCtrl-W"
-
-#, fuzzy
-#~ msgid "Controls"
-#~ msgstr "Открыть окно списка для воспроизведения"
 
 #, fuzzy
 #~ msgid "Random effect"
@@ -17792,19 +18099,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Открыть окно списка для воспроизведения"
 
 #, fuzzy
-#~ msgid "GNOME interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#~ msgid "_Open File..."
-#~ msgstr "Открыть файл..."
-
-#~ msgid "Open a file"
-#~ msgstr "Открыть файл"
-
-#~ msgid "Open _Disc..."
-#~ msgstr "Открыть диск..."
-
-#, fuzzy
 #~ msgid "Open Disc Media"
 #~ msgstr "Открыть файл"
 
@@ -17813,30 +18107,12 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Остановить поток"
 
 #, fuzzy
-#~ msgid "Select a network stream"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "_Eject Disc"
-#~ msgstr "Открыть файл"
-
-#, fuzzy
-#~ msgid "Eject disc"
-#~ msgstr "Открыть файл"
-
-#, fuzzy
 #~ msgid "Choose the program"
 #~ msgstr "Следующий файл"
-
-#~ msgid "_Title"
-#~ msgstr "_Заголовок"
 
 #, fuzzy
 #~ msgid "Choose title"
 #~ msgstr "Следующий файл"
-
-#~ msgid "_Chapter"
-#~ msgstr "_Глава"
 
 #, fuzzy
 #~ msgid "Choose chapter"
@@ -17861,35 +18137,16 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Open the messages window"
 #~ msgstr "Открыть окно сообщений"
 
-#~ msgid "_Language"
-#~ msgstr "Язык"
-
 #, fuzzy
 #~ msgid "Select audio channel"
 #~ msgstr "Следующий файл"
-
-#~ msgid "_Subtitles"
-#~ msgstr "_Субтитры"
 
 #, fuzzy
 #~ msgid "Select subtitles channel"
 #~ msgstr "Следующий файл"
 
-#~ msgid "_Fullscreen"
-#~ msgstr "Во весь экран"
-
-#~ msgid "_Audio"
-#~ msgstr "_Аудио"
-
-#~ msgid "_Video"
-#~ msgstr "_Видео"
-
 #~ msgid "Open disc"
 #~ msgstr "Открыть диск"
-
-#, fuzzy
-#~ msgid "Net"
-#~ msgstr "След."
 
 #, fuzzy
 #~ msgid "Open a satellite card"
@@ -17898,37 +18155,8 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Stop stream"
 #~ msgstr "Остановить поток"
 
-#~ msgid "Play stream"
-#~ msgstr "Воспроизвести поток"
-
-#~ msgid "Pause stream"
-#~ msgstr "Приостановить поток"
-
 #~ msgid "Slow"
 #~ msgstr "Медленно"
-
-#~ msgid "Fast"
-#~ msgstr "Быстро"
-
-#~ msgid "Prev"
-#~ msgstr "Пред."
-
-#~ msgid "Previous file"
-#~ msgstr "Предыдущий файл"
-
-#~ msgid "Next file"
-#~ msgstr "Следующий файл"
-
-#~ msgid "Title:"
-#~ msgstr "Заголовок:"
-
-#, fuzzy
-#~ msgid "Chapter:"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "_Network Stream..."
-#~ msgstr "Остановить поток"
 
 #~ msgid "_Jump..."
 #~ msgstr "Перейти..."
@@ -17954,9 +18182,6 @@ msgstr "Открыть окно списка для воспроизведени
 
 #~ msgid "Open Stream"
 #~ msgstr "Открыть поток"
-
-#~ msgid "Vertical"
-#~ msgstr "Вертикальный"
 
 #, fuzzy
 #~ msgid "Satellite"
@@ -17985,51 +18210,21 @@ msgstr "Открыть окно списка для воспроизведени
 
 #, fuzzy
 #~ msgid "Destination Target: "
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Path:"
-#~ msgstr "Пауза"
-
-#, fuzzy
-#~ msgid "Gtk+ interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#~ msgid "_File"
-#~ msgstr "_Файл"
-
-#~ msgid "_Close"
-#~ msgstr "Закрыть"
+#~ msgstr "Остановить поток "
 
 #, fuzzy
 #~ msgid "Close the window"
 #~ msgstr "Открыть окно списка для воспроизведения"
 
-#~ msgid "Exit the program"
-#~ msgstr "Выйти из программы"
-
-#~ msgid "_View"
-#~ msgstr "Вид"
-
 #, fuzzy
 #~ msgid "Hide the main interface window"
 #~ msgstr "Открыть окно списка для воспроизведения"
-
-#~ msgid "_Settings"
-#~ msgstr "_Настройки"
 
 #~ msgid "_Preferences..."
 #~ msgstr "Настройки..."
 
 #~ msgid "Configure the application"
 #~ msgstr "Настроить приложение"
-
-#~ msgid "_Help"
-#~ msgstr "Помощь"
-
-#, fuzzy
-#~ msgid "_About..."
-#~ msgstr "Модули..."
 
 #, fuzzy
 #~ msgid "Open a Satellite Card"
@@ -18039,18 +18234,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Go Backward"
 #~ msgstr "Вернуться назад"
 
-#~ msgid "Play Stream"
-#~ msgstr "Воспроизвести поток"
-
-#~ msgid "Pause Stream"
-#~ msgstr "Приостановить поток"
-
-#~ msgid "Play Slower"
-#~ msgstr "Воспроизводить медленнее"
-
-#~ msgid "Play Faster"
-#~ msgstr "Воспроизводить быстрее"
-
 #~ msgid "Open Playlist"
 #~ msgstr "Открыть список для воспроизведения"
 
@@ -18058,23 +18241,9 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Previous File"
 #~ msgstr "Предыдущий файл"
 
-#~ msgid "Next File"
-#~ msgstr "Следующий файл"
-
-#~ msgid "_Play"
-#~ msgstr "Воспроизвести"
-
-#, fuzzy
-#~ msgid "Authors"
-#~ msgstr "Модули..."
-
 #, fuzzy
 #~ msgid "Open Target"
 #~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Select a subtitles file"
-#~ msgstr "Следующий файл"
 
 #, fuzzy
 #~ msgid "Use stream output"
@@ -18082,11 +18251,7 @@ msgstr "Открыть окно списка для воспроизведени
 
 #, fuzzy
 #~ msgid "Stream output configuration "
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Select File"
-#~ msgstr "Следующий файл"
+#~ msgstr "Остановить поток "
 
 #~ msgid "Jump"
 #~ msgstr "Перейти"
@@ -18098,21 +18263,9 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Selected"
 #~ msgstr "Следующий файл"
 
-#~ msgid "_Select"
-#~ msgstr "_Выбрать"
-
 #, fuzzy
 #~ msgid "Stream output (MRL)"
 #~ msgstr "Остановить поток"
-
-#~ msgid "Title %d (%d)"
-#~ msgstr "Заголовок %d (%d)"
-
-#~ msgid "Chapter %d"
-#~ msgstr "Глава %d"
-
-#~ msgid "Selected:"
-#~ msgstr "Выбрано:"
 
 #~ msgid "Disk type"
 #~ msgstr "Тип диска"
@@ -18121,16 +18274,13 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Начальная позиция"
 
 #~ msgid "Title "
-#~ msgstr "Название"
+#~ msgstr "Название "
 
 #~ msgid "Chapter "
-#~ msgstr "Глава"
+#~ msgstr "Глава "
 
 #~ msgid "Device name "
-#~ msgstr "название устройства"
-
-#~ msgid "Languages"
-#~ msgstr "Языки"
+#~ msgstr "название устройства "
 
 #~ msgid "language"
 #~ msgstr "Язык"
@@ -18198,16 +18348,12 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "Exiting..."
 #~ msgstr "Выход..."
 
-#, fuzzy
-#~ msgid "KDE interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
 #~ msgid "Messages:"
 #~ msgstr "Сообщения..."
 
 #, fuzzy
 #~ msgid "Port "
-#~ msgstr "Пауза"
+#~ msgstr "Пауза "
 
 #~ msgid "&Save"
 #~ msgstr "Сохранить"
@@ -18241,10 +18387,6 @@ msgstr "Открыть окно списка для воспроизведени
 
 #~ msgid "If your stream has video and you want to transcode it, enable this"
 #~ msgstr "Если ваш поток имеет видео, и Вы хотите transcode это, включите это"
-
-#, fuzzy
-#~ msgid "Qt interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
 
 #~ msgid "Video Filters"
 #~ msgstr "Видео фильтры"
@@ -18302,10 +18444,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Остановить поток"
 
 #, fuzzy
-#~ msgid "&Select All"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
 #~ msgid "PLS file"
 #~ msgstr "Следующий файл"
 
@@ -18326,16 +18464,8 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Следующий файл"
 
 #, fuzzy
-#~ msgid "Choose a stream output"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Loop playlist on end"
-#~ msgstr "Открыть список для воспроизведения"
-
-#, fuzzy
 #~ msgid "Real time control interface initialized, `h' for help\n"
-#~ msgstr "Открыть окно списка для воспроизведения"
+#~ msgstr "Открыть окно списка для воспроизведения\n"
 
 #, fuzzy
 #~ msgid "Telnet remote control interface"
@@ -18350,32 +18480,8 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Следующий файл"
 
 #, fuzzy
-#~ msgid "SAP interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
 #~ msgid "IDR frames"
 #~ msgstr "Воспроизвести поток"
-
-#, fuzzy
-#~ msgid "Access modules settings"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Audio output modules settings"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Decoder modules settings"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Demuxers settings"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Stream output access modules settings"
-#~ msgstr "Остановить поток"
 
 #, fuzzy
 #~ msgid "Stream output muxer modules settings"
@@ -18411,10 +18517,6 @@ msgstr "Открыть окно списка для воспроизведени
 
 #, fuzzy
 #~ msgid "&Enable"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "&Disable"
 #~ msgstr "Следующий файл"
 
 #, fuzzy
@@ -18485,10 +18587,6 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgid "fastest"
 #~ msgstr "Пауза"
 
-#, fuzzy
-#~ msgid "Dummy stream ouput"
-#~ msgstr "Остановить поток"
-
 #~ msgid ""
 #~ "This is the VideoLAN Client, a DVD, MPEG and DivX player. It can play "
 #~ "MPEG and MPEG2 files from a file or from a network source."
@@ -18501,16 +18599,8 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Остановить поток"
 
 #, fuzzy
-#~ msgid "Truncated stream"
-#~ msgstr "Воспроизвести поток"
-
-#, fuzzy
 #~ msgid "Open a skin file."
 #~ msgstr "Открыть файл"
-
-#, fuzzy
-#~ msgid "Open a network stream"
-#~ msgstr "Остановить поток"
 
 #, fuzzy
 #~ msgid "Open a satellite stream"
@@ -18523,10 +18613,6 @@ msgstr "Открыть окно списка для воспроизведени
 #, fuzzy
 #~ msgid "Open the playlist"
 #~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "Open &Satellite Stream..."
-#~ msgstr "Остановить поток"
 
 #, fuzzy
 #~ msgid "Video device type"
@@ -18545,23 +18631,7 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Остановить поток"
 
 #, fuzzy
-#~ msgid "Play List"
-#~ msgstr "Список для воспроизведения"
-
-#, fuzzy
-#~ msgid "Repeat Playlist"
-#~ msgstr "Открыть список для воспроизведения"
-
-#, fuzzy
 #~ msgid "Quick &Open ..."
-#~ msgstr "Открыть файл..."
-
-#, fuzzy
-#~ msgid "&About..."
-#~ msgstr "Модули..."
-
-#, fuzzy
-#~ msgid "Simple &Open ..."
 #~ msgstr "Открыть файл..."
 
 #, fuzzy
@@ -18569,23 +18639,7 @@ msgstr "Открыть окно списка для воспроизведени
 #~ msgstr "Приостановить поток"
 
 #, fuzzy
-#~ msgid "CD Audio demux"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
 #~ msgid "CD Audio device"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Gtk2 interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "&File info..."
-#~ msgstr "Открыть файл..."
-
-#, fuzzy
-#~ msgid "Stream:"
 #~ msgstr "Остановить поток"
 
 #, fuzzy
@@ -18597,65 +18651,13 @@ msgstr "Открыть окно списка для воспроизведени
 #~ "воспроизвести MPEG и MPEG-2 файлы из файла или с источника в сети."
 
 #, fuzzy
-#~ msgid "osd text filter"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
-#~ msgid "Open &file..."
-#~ msgstr "Открыть файл..."
-
-#, fuzzy
-#~ msgid "Open &disc..."
-#~ msgstr "Открыть файл..."
-
-#, fuzzy
-#~ msgid "&Network stream..."
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Spawn a new interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
 #~ msgid "Close this popup"
 #~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "New stream"
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Network Stream..."
-#~ msgstr "Остановить поток"
 
 #, fuzzy
 #~ msgid "Set the window on top"
 #~ msgstr "Открыть окно списка для воспроизведения"
 
 #, fuzzy
-#~ msgid "&Disc..."
-#~ msgstr "Открыть файл..."
-
-#, fuzzy
-#~ msgid "&Network..."
-#~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Play the selected stream"
-#~ msgstr "Воспроизвести поток"
-
-#, fuzzy
-#~ msgid "Native Windows interface"
-#~ msgstr "Открыть окно списка для воспроизведения"
-
-#, fuzzy
-#~ msgid "All files"
-#~ msgstr "Следующий файл"
-
-#, fuzzy
 #~ msgid "Stream Output"
 #~ msgstr "Остановить поток"
-
-#, fuzzy
-#~ msgid "Open disc..."
-#~ msgstr "Открыть файл..."
