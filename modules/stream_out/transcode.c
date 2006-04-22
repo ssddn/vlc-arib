@@ -109,6 +109,7 @@
     "Size of the black border to add at the right of the video." )
 
 #define CANVAS_WIDTH_TEXT N_("Video canvas width")
+//\bug [strings] crod -> crop (twice)
 #define CANVAS_WIDTH_LONGTEXT N_( \
     "This will automatically crod and pad the video to a specified width." )
 #define CANVAS_HEIGHT_TEXT N_("Video canvas height")
