@@ -388,7 +388,7 @@ Section "ActiveX plugin" SEC04
 SectionEnd
 
 Section "Context Menus" SEC05
-  SectionIn 2 3
+  SectionIn 2
   !insertmacro MacroAllExtensions AddContextMenu
   !insertmacro AddContextMenu "Directory"
 SectionEnd
@@ -534,6 +534,7 @@ Section "Uninstall" SEC91
 SectionEnd
 
 Section /o "un.Delete preferences and cache" SEC92
+  SectionIn 2 3 RO
   !insertmacro delprefs
 SectionEnd
 
