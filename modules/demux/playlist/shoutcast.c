@@ -127,7 +127,6 @@ static int Demux( demux_t *p_demux )
 
     char *psz_eltname = NULL;
 
-
     p_playlist = (playlist_t *) vlc_object_find( p_demux, VLC_OBJECT_PLAYLIST,
                                                  FIND_ANYWHERE );
     if( !p_playlist )
@@ -137,7 +136,8 @@ static int Demux( demux_t *p_demux )
     }
     p_sys->p_playlist = p_playlist;
 
-    msg_Warn( p_demux, "item: %s", p_sys->p_current->input.psz_name );
+    E_(FindItem)( p_demux, p_playlist, &p_sys->p_current );
+
     playlist_ItemToNode( p_playlist, p_sys->p_current );
     p_sys->p_current->input.i_type = ITEM_TYPE_PLAYLIST;
 
@@ -270,6 +270,7 @@ static int DemuxGenre( demux_t *p_demux )
                              psz_name );
                     p_item = playlist_ItemNew( p_sys->p_playlist, psz_mrl,
                                                psz_name );
+                    p_item->i_flags &= ~PLAYLIST_SKIP_FLAG;
                     free( psz_mrl );
                     playlist_NodeAddItem( p_sys->p_playlist, p_item,
                                           p_sys->p_current->pp_parents[0]->i_view,
