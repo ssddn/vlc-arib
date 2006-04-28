@@ -122,8 +122,6 @@ static int Demux( demux_t *p_demux )
     demux_sys_t *p_sys = p_demux->p_sys;
     playlist_t *p_playlist;
 
-    vlc_bool_t b_play;
-
     xml_t *p_xml;
     xml_reader_t *p_xml_reader;
 
@@ -138,8 +136,6 @@ static int Demux( demux_t *p_demux )
         return -1;
     }
     p_sys->p_playlist = p_playlist;
-
-    b_play = E_(FindItem)( p_demux, p_playlist, &p_sys->p_current );
 
     msg_Warn( p_demux, "item: %s", p_sys->p_current->input.psz_name );
     playlist_ItemToNode( p_playlist, p_sys->p_current );
@@ -182,16 +178,6 @@ static int Demux( demux_t *p_demux )
         /* we're reading a station list */
         free( psz_eltname );
         if( DemuxStation( p_demux ) ) return -1;
-    }
-
-    /* Go back and play the playlist */
-    if( b_play && p_playlist->status.p_item &&
-        p_playlist->status.p_item->i_children > 0 )
-    {
-        playlist_Control( p_playlist, PLAYLIST_VIEWPLAY,
-                          p_playlist->status.i_view,
-                          p_playlist->status.p_item,
-                          p_playlist->status.p_item->pp_children[0] );
     }
 
     vlc_object_release( p_playlist );
