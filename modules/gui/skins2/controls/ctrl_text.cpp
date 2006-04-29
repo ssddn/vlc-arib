@@ -216,7 +216,10 @@ void CtrlText::setText( const UString &rText, uint32_t color )
 
 void CtrlText::onUpdate( Subject<VarText, void*> &rVariable, void* arg )
 {
-    displayText( m_rVariable.get() );
+    if( isVisible() )
+    {
+        displayText( m_rVariable.get() );
+    }
 }
 
 
@@ -365,6 +368,7 @@ void CtrlText::CmdMove::execute()
 
 void CtrlText::CmdUpdateText::execute()
 {
+    fprintf( stderr, "%d\n", m_pParent->m_xPos );
     m_pParent->m_xPos -= MOVING_TEXT_STEP;
     m_pParent->adjust( m_pParent->m_xPos );
 
