@@ -46,7 +46,6 @@ msgid "Settings for VLC's interfaces"
 msgstr "Paramètres des interfaces"
 
 #: include/vlc_config_cat.h:42
-#, fuzzy
 msgid "General interface settings"
 msgstr "Paramètres généraux de l’interface"
 
@@ -2108,15 +2107,14 @@ msgstr ""
 "appelée OSD (On Screen Display)."
 
 #: src/libvlc.h:501
-#, fuzzy
 msgid "Text rendering module"
-msgstr "Rendu du texte"
+msgstr "Module de rendu du texte"
 
 #: src/libvlc.h:503
 msgid ""
 "VLC normally uses Freetype for rendering, but this allows you to use svg for "
 "instance."
-msgstr ""
+msgstr "Normalement VLC utilise Freetype pour le rendu du texte mais cette option vous laisse la possibilité d'utilisé SVG par exemple."
 
 #: src/libvlc.h:506
 msgid "Subpictures filter module"
@@ -2796,9 +2794,8 @@ msgid "Tell VLC that it is being launched due to a file association in the OS"
 msgstr ""
 
 #: src/libvlc.h:841 src/libvlc.h:843
-#, fuzzy
 msgid "Allow only on running instance when started from file"
-msgstr "N’autorise qu’une seule instance"
+msgstr "N’autorise qu’une seule instance lorsque démarrer depuis un fichier"
 
 #: src/libvlc.h:845
 msgid "Increase the priority of the process"
@@ -8561,14 +8558,13 @@ msgid "Host address"
 msgstr "Adresse de l’hôte"
 
 #: modules/control/http/http.c:36
-#, fuzzy
 msgid ""
 "Address and port the HTTP interface will listen on. It defaults to all "
 "network interfaces (0.0.0.0). If you want the HTTP interface to be available "
 "only on the local machine, enter 127.0.0.1"
 msgstr ""
 "Adresse et port d'écoute pour l'interface HTTP. Par défaut, l'interface "
-"écoute sur toutes les interfaces réseau. Si vous souhaitez que l'interface "
+"écoute sur toutes les interfaces réseau (0.0.0.0). Si vous souhaitez que l'interface "
 "HTTP ne soit disponible que pour la machine locale, utilisez 127.0.0.1"
 
 #: modules/control/http/http.c:40 modules/control/http/http.c:41
