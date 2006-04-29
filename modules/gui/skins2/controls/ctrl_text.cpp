@@ -368,7 +368,6 @@ void CtrlText::CmdMove::execute()
 
 void CtrlText::CmdUpdateText::execute()
 {
-    fprintf( stderr, "%d\n", m_pParent->m_xPos );
     m_pParent->m_xPos -= MOVING_TEXT_STEP;
     m_pParent->adjust( m_pParent->m_xPos );
 
