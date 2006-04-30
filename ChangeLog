@@ -1,4 +1,474 @@
 ------------------------------------------------------------------------
+r15458 | dionoea | 2006-04-30 17:31:05 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/doc/skins/skins2-howto.xml
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.cpp
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.hpp
+   M /branches/0.8.5/modules/gui/skins2/parser/builder.cpp
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+Add scrolling="autooff" : same behavior as "auto" except that it starts in the soped state. Use that in the default skin.
+
+------------------------------------------------------------------------
+r15456 | dionoea | 2006-04-30 17:20:36 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/infopanels.cpp
+
+Backport [15455].
+
+------------------------------------------------------------------------
+r15453 | fkuehne | 2006-04-30 16:44:32 +0200 (Sun, 30 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/THANKS
+
+* added Mathias C. Berens | welcome-soft for this contribution to the German translation
+------------------------------------------------------------------------
+r15452 | fkuehne | 2006-04-30 16:39:13 +0200 (Sun, 30 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/po/de.po
+
+* Finished the German translation
+------------------------------------------------------------------------
+r15450 | dionoea | 2006-04-30 15:36:41 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/libvlc.h
+
+Fix languages (missing comma)
+
+------------------------------------------------------------------------
+r15448 | asmax | 2006-04-30 15:14:07 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/share/Makefile.am
+   A /branches/0.8.5/share/skins2/default/main/vol_bg.png (from /trunk/share/skins2/default/main/vol_bg.png:15447)
+   M /branches/0.8.5/share/skins2/default/main/vol_slider.png
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+* backport of [15447]
+
+------------------------------------------------------------------------
+r15446 | xtophe | 2006-04-29 23:01:20 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/da.po
+   M /branches/0.8.5/po/de.po
+   M /branches/0.8.5/po/es.po
+   M /branches/0.8.5/po/fr.po
+   M /branches/0.8.5/po/gl.po
+   M /branches/0.8.5/po/hu.po
+   M /branches/0.8.5/po/it.po
+   M /branches/0.8.5/po/nl.po
+   M /branches/0.8.5/po/pt_BR.po
+   M /branches/0.8.5/po/sv.po
+
+Fix buttons l10n (fix #646)
+
+------------------------------------------------------------------------
+r15443 | fkuehne | 2006-04-29 21:14:39 +0200 (Sat, 29 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/po/de.po
+
+* another update of the German translation. Still 585 fuzzy strings to do. Volounteers are welcome.
+------------------------------------------------------------------------
+r15435 | damienf | 2006-04-29 17:02:03 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/access/dshow/dshow.cpp
+
+dshow.cpp: backport [15375]
+
+------------------------------------------------------------------------
+r15431 | zorglub | 2006-04-29 16:25:23 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/ru.po
+
+Backport [15430]
+
+------------------------------------------------------------------------
+r15427 | dionoea | 2006-04-29 16:19:19 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/ts.c
+
+backport [15229].
+
+------------------------------------------------------------------------
+r15426 | dionoea | 2006-04-29 16:11:45 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+Fix main window width (was 46px too large)
+
+------------------------------------------------------------------------
+r15423 | bigben | 2006-04-29 15:55:16 +0200 (Sat, 29 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/video_output/x11/xcommon.c
+
+* Backport of 15421
+
+
+------------------------------------------------------------------------
+r15420 | dionoea | 2006-04-29 15:39:33 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.cpp
+
+Remove stupid debug :)
+
+------------------------------------------------------------------------
+r15418 | dionoea | 2006-04-29 15:38:33 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.cpp
+
+Don't render invisible text controls.
+
+------------------------------------------------------------------------
+r15417 | zorglub | 2006-04-29 15:37:17 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/configure.ac
+   M /branches/0.8.5/extras/MacOSX/Resources/English.lproj/InfoPlist.strings
+   M /branches/0.8.5/extras/MacOSX/vlc.pbproj/project.pbxproj
+
+Bump version number 
+
+------------------------------------------------------------------------
+r15416 | zorglub | 2006-04-29 15:34:17 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/vars/time.cpp
+
+Backport [15414]
+
+------------------------------------------------------------------------
+r15410 | dionoea | 2006-04-29 15:11:20 +0200 (Sat, 29 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+Make the time displays a bit larger so that they don't scroll
+
+------------------------------------------------------------------------
+r15409 | zorglub | 2006-04-28 23:19:51 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/playlist/shoutcast.c
+
+Fix shoutcast
+
+------------------------------------------------------------------------
+r15408 | zorglub | 2006-04-28 22:47:01 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/playlist/shoutcast.c
+
+Don't autoplay shoutcast genres
+
+------------------------------------------------------------------------
+r15407 | zorglub | 2006-04-28 22:23:50 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/libvlc.h
+
+Backport [15405]
+
+------------------------------------------------------------------------
+r15402 | bigben | 2006-04-28 19:26:10 +0200 (Fri, 28 Apr 2006) | 4 lines
+Changed paths:
+   M /branches/0.8.5/src/interface/interface.c
+   M /branches/0.8.5/src/libvlc.c
+
+* Backport of 15401
+
+
+
+------------------------------------------------------------------------
+r15400 | dionoea | 2006-04-28 19:01:12 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/updatevlc.cpp
+
+Backport [15399]
+
+------------------------------------------------------------------------
+r15398 | dionoea | 2006-04-28 17:32:34 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/vlc.win32.nsi.in
+
+Copy vlc.win32.nsi.in from trunk (== backport recent commits)
+
+------------------------------------------------------------------------
+r15391 | dionoea | 2006-04-28 14:15:50 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/NEWS
+
+backport [15390]
+
+------------------------------------------------------------------------
+r15389 | dionoea | 2006-04-28 14:12:29 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/NEWS
+   M /branches/0.8.5/THANKS
+   M /branches/0.8.5/share/Makefile.am
+   A /branches/0.8.5/share/skins2/default (from /trunk/share/skins2/default:15387)
+
+Backport [15287] new default skin
+
+------------------------------------------------------------------------
+r15388 | dionoea | 2006-04-28 14:11:58 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   D /branches/0.8.5/share/skins2/default
+   D /branches/0.8.5/share/skins2/playtree
+
+Backport [15284] and [15385] skins removal
+
+------------------------------------------------------------------------
+r15386 | dionoea | 2006-04-28 14:09:04 +0200 (Fri, 28 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/playlist/Modules.am
+   M /branches/0.8.5/modules/demux/playlist/playlist.c
+   M /branches/0.8.5/modules/demux/playlist/playlist.h
+   A /branches/0.8.5/modules/demux/playlist/shoutcast.c (from /trunk/modules/demux/playlist/shoutcast.c:15381)
+   M /branches/0.8.5/modules/services_discovery/shout.c
+
+Backport trunk shoutcast changes except Shoutcast TV service discovery submodule.
+
+------------------------------------------------------------------------
+r15376 | fkuehne | 2006-04-27 20:43:20 +0200 (Thu, 27 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/po/de.po
+
+* continued the German translation a bit and fixed some mistakes pointed out by Maik
+------------------------------------------------------------------------
+r15374 | xtophe | 2006-04-27 13:18:02 +0200 (Thu, 27 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/fr.po
+
+fr.po: Fix button translation (refs: 646)
+
+------------------------------------------------------------------------
+r15373 | sigmunau | 2006-04-27 10:45:22 +0200 (Thu, 27 Apr 2006) | 7 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/ts.c
+
+ts.c: Mask continuity counter when incrementing.
+
+Previously, it seems, the continuity counter was incremented freely and the masking was 
+done when using the counter. This is ok, but every now and then some pids would reach 
+the special "pid unused" value and spawn a spurious debug message, which shouldn't 
+happen with this fix
+
+------------------------------------------------------------------------
+r15370 | xtophe | 2006-04-27 01:20:48 +0200 (Thu, 27 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/bookmarks.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/interaction.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/iteminfo.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/messages.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/open.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/preferences.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/streamout.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/subtitles.cpp
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp
+   M /branches/0.8.5/po/POTFILES.in
+   M /branches/0.8.5/po/ca.po
+   M /branches/0.8.5/po/da.po
+   M /branches/0.8.5/po/de.po
+   M /branches/0.8.5/po/en_GB.po
+   M /branches/0.8.5/po/es.po
+   M /branches/0.8.5/po/fr.po
+   M /branches/0.8.5/po/gl.po
+   M /branches/0.8.5/po/he.po
+   M /branches/0.8.5/po/hi.po
+   M /branches/0.8.5/po/hu.po
+   M /branches/0.8.5/po/it.po
+   M /branches/0.8.5/po/ja.po
+   M /branches/0.8.5/po/ka.po
+   M /branches/0.8.5/po/ko.po
+   M /branches/0.8.5/po/nl.po
+   M /branches/0.8.5/po/oc.po
+   M /branches/0.8.5/po/pt_BR.po
+   M /branches/0.8.5/po/ro.po
+   M /branches/0.8.5/po/ru.po
+   M /branches/0.8.5/po/sv.po
+   M /branches/0.8.5/po/tr.po
+   M /branches/0.8.5/po/vlc.pot
+   M /branches/0.8.5/po/zh_CN.po
+   M /branches/0.8.5/po/zh_TW.po
+
+wxwidgets/*: Readd the labels in the buttons. Should solve the l10n problems on win32. (Revert [14249]) (Refs #646)
+po/*: Update the Po to reflect the changes.
+
+------------------------------------------------------------------------
+r15368 | fkuehne | 2006-04-26 23:31:46 +0200 (Wed, 26 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/extras/MacOSX/vlc.pbproj/project.pbxproj
+
+* added *.flac as valid file type
+------------------------------------------------------------------------
+r15366 | ipkiss | 2006-04-26 20:03:19 +0200 (Wed, 26 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/doc/skins/skins2-howto.xml
+   M /branches/0.8.5/modules/gui/skins2/Modules.am
+   A /branches/0.8.5/modules/gui/skins2/commands/cmd_snapshot.cpp
+   A /branches/0.8.5/modules/gui/skins2/commands/cmd_snapshot.hpp
+   M /branches/0.8.5/modules/gui/skins2/parser/interpreter.cpp
+
+ * backport of [15365]
+
+------------------------------------------------------------------------
+r15364 | dionoea | 2006-04-26 11:57:40 +0200 (Wed, 26 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/vlc.win32.nsi.in
+
+backport [15363].
+
+------------------------------------------------------------------------
+r15362 | zorglub | 2006-04-26 10:22:51 +0200 (Wed, 26 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp
+
+Backport bananas from [15361]
+
+------------------------------------------------------------------------
+r15358 | bigben | 2006-04-25 18:49:35 +0200 (Tue, 25 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/src/interface/interface.c
+
+* Backport of the module_Need call from r15357
+
+
+------------------------------------------------------------------------
+r15356 | zorglub | 2006-04-25 12:18:30 +0200 (Tue, 25 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/Modules.am
+   A /branches/0.8.5/modules/gui/wxwidgets/bitmaps/edit.xpm (from /trunk/modules/gui/wxwidgets/bitmaps/edit.xpm:15355)
+   M /branches/0.8.5/modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp
+
+Backport [15355]
+
+------------------------------------------------------------------------
+r15354 | ipkiss | 2006-04-24 23:58:35 +0200 (Mon, 24 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/parser/interpreter.cpp
+
+Backport of [15353]
+
+------------------------------------------------------------------------
+r15343 | bigben | 2006-04-23 22:32:10 +0200 (Sun, 23 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/misc/screensaver.c
+
+* Backport of r15342
+
+
+------------------------------------------------------------------------
+r15338 | courmisch | 2006-04-23 17:59:28 +0200 (Sun, 23 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/en_GB.po
+   M /branches/0.8.5/po/ru.po
+
+Backport recent po updates
+
+------------------------------------------------------------------------
+r15337 | fkuehne | 2006-04-23 17:59:01 +0200 (Sun, 23 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/po/de.po
+
+* another update of the German translation by Mathias C. Berens | welcome-soft <berens@welcome-soft.de>. Thanks again.
+------------------------------------------------------------------------
+r15335 | bigben | 2006-04-23 16:41:49 +0200 (Sun, 23 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/video_output/x11/xcommon.c
+
+* Backport of r15333
+
+
+------------------------------------------------------------------------
+r15328 | bigben | 2006-04-23 15:56:24 +0200 (Sun, 23 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/include/vlc_video.h
+   M /branches/0.8.5/modules/video_output/opengl.c
+   M /branches/0.8.5/src/video_output/video_output.c
+
+* Backport of the latest endianness fixes
+
+
+------------------------------------------------------------------------
+r15314 | xtophe | 2006-04-23 01:04:42 +0200 (Sun, 23 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/tr.po
+
+Possibly fix turkish l10n
+
+------------------------------------------------------------------------
+r15313 | xtophe | 2006-04-23 01:00:02 +0200 (Sun, 23 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/stream_out/transcode.c
+
+transcode.c: mark a string bug
+
+------------------------------------------------------------------------
+r15311 | fkuehne | 2006-04-23 00:05:16 +0200 (Sun, 23 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/extras/contrib/src/Makefile
+
+* do only check-out revision 501 of the x264 library, because 502 breaks the linkage of the x264-module on ppc-platforms
+------------------------------------------------------------------------
+r15299 | xtophe | 2006-04-22 02:59:50 +0200 (Sat, 22 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/configure.ac
+   M /branches/0.8.5/src/network/httpd.c
+
+Backport of [15290] and [15297]
+
+------------------------------------------------------------------------
+r15298 | xtophe | 2006-04-22 02:56:09 +0200 (Sat, 22 Apr 2006) | 2 lines
+Changed paths:
+   A /branches/0.8.5/po/ar.po
+
+add the beginning of an arabic translation by adn and others on rosetta
+
+------------------------------------------------------------------------
+r15294 | dionoea | 2006-04-21 09:56:51 +0200 (Fri, 21 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/control/http/rpn.c
+
+Backport [15289].
+
+------------------------------------------------------------------------
+r15293 | courmisch | 2006-04-20 22:47:12 +0200 (Thu, 20 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/misc/unicode.c
+
+Backport [15290]
+
+------------------------------------------------------------------------
+r15288 | bigben | 2006-04-19 22:50:53 +0200 (Wed, 19 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/macosx/vout.m
+
+backports of 15287 and 15222
+
+
+------------------------------------------------------------------------
+r15285 | fkuehne | 2006-04-19 18:08:51 +0200 (Wed, 19 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/modules/gui/macosx/intf.m
+
+* try to fix a crash in case p_input invalidates while waiting for the variables. Found by joneskoo, fix inspired by Meuuh.
+------------------------------------------------------------------------
+r15284 | dionoea | 2006-04-19 17:34:21 +0200 (Wed, 19 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/control/http/rpn.c
+
+backport [15263] (so E-bola's mirc script can work in 0.8.5)
+
+------------------------------------------------------------------------
+r15283 | fkuehne | 2006-04-19 17:13:11 +0200 (Wed, 19 Apr 2006) | 1 line
+Changed paths:
+   A /branches/0.8.5/po/gl.po
+   A /branches/0.8.5/po/he.po
+
+* you need to add new files if you want to commit them....
+------------------------------------------------------------------------
+r15282 | zorglub | 2006-04-19 16:32:24 +0200 (Wed, 19 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/ChangeLog
+   M /branches/0.8.5/po/fr.po
+
+Fixes to french translation
+Reupdate changelog
+
+------------------------------------------------------------------------
 r15281 | fkuehne | 2006-04-19 16:24:55 +0200 (Wed, 19 Apr 2006) | 2 lines
 Changed paths:
    M /branches/0.8.5/configure.ac
