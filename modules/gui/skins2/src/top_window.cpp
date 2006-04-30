@@ -322,12 +322,22 @@ void TopWindow::refresh( int left, int top, int width, int height )
 
 void TopWindow::setActiveLayout( GenericLayout *pLayout )
 {
+    bool isVisible = getVisibleVar().get();
+    if( m_pActiveLayout && isVisible )
+    {
+        m_pActiveLayout->onHide();
+    }
+
     pLayout->setWindow( this );
     m_pActiveLayout = pLayout;
     // Get the size of the layout and resize the window
     resize( pLayout->getWidth(), pLayout->getHeight() );
+
     updateShape();
-    pLayout->refreshAll();
+    if( isVisible )
+    {
+        pLayout->onShow();
+    }
 }
 
 
@@ -343,13 +353,25 @@ void TopWindow::innerShow()
     if( m_pActiveLayout )
     {
         updateShape();
-        m_pActiveLayout->refreshAll();
+        m_pActiveLayout->onShow();
     }
     // Show the window
     GenericWindow::innerShow();
 }
 
- 
+
+void TopWindow::innerHide()
+{
+    if( m_pActiveLayout )
+    {
+        // Notify the active layout
+        m_pActiveLayout->onHide();
+    }
+    // Hide the window
+    GenericWindow::innerHide();
+}
+
+
 void TopWindow::updateShape()
 {
     // Set the shape of the window
