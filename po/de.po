@@ -1,12 +1,11 @@
-# translation of de.po to German
-# translation of de.po to
 # German translation of VLC
 # (c) 2002-2006 the VideoLAN team
+# $Id$
 #
 # Thanks to Thomas Graf <tgr@reeler.org> for starting a translation in 2002.
 # Thanks to Philipp Weissenbacher <philippweissenbacher@aon.at> for various fixes in 2004.
 # Thanks to Jens Seidel <jensseidel@users.sf.net> for some minor fixes in 2005.
-# Felix Kühne <fkuehne@users.sf.net>, 2003-2005, 2006.
+# Felix Kühne <fkuehne@users.sf.net>, 2003-2006.
 # Mathias C. Berens | welcome-soft <berens@welcome-soft.de>, 2006.
 #
 #
@@ -15,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-27 00:13+0100\n"
-"PO-Revision-Date: 2006-04-29 21:13+0200\n"
+"PO-Revision-Date: 2006-04-30 16:37+0200\n"
 "Last-Translator: Felix Kühne\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -7303,9 +7302,8 @@ msgid "Interlaced motion estimation"
 msgstr "Interlaced Bewegungsabschätzung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:203
-#, fuzzy
 msgid "Enable interlaced motion estimation algorithms. This requires more CPU."
-msgstr "Erlaubt Ihnen die Vorbewegungsabschätzung zu aktivieren."
+msgstr "Interlaced Vorbewegungsabschätzungsalgorithmen aktivieren. Dies benötigt mehr Prozessorleistung."
 
 #: modules/codec/ffmpeg/ffmpeg.h:206
 msgid "Pre-motion estimation"
@@ -7316,14 +7314,12 @@ msgid "Enable the pre-motion estimation algorithm."
 msgstr "Vorbewegungsabschätzungs-Algorithmus aktivieren."
 
 #: modules/codec/ffmpeg/ffmpeg.h:210
-#, fuzzy
 msgid "Strict rate control"
-msgstr "Strikte Ratenkontrolle aktivieren"
+msgstr "Strikte Ratenkontrolle"
 
 #: modules/codec/ffmpeg/ffmpeg.h:211
-#, fuzzy
 msgid "Enable the strict rate control algorithm."
-msgstr "Erlaubt Ihnen, den strikten Ratenkontrollierungsalgorithmus zu aktivieren."
+msgstr "Den strikten Ratenkontrollierungsalgorithmus aktivieren."
 
 #: modules/codec/ffmpeg/ffmpeg.h:214
 msgid "Rate control buffer size"
@@ -7342,22 +7338,18 @@ msgid "Rate control buffer aggressiveness"
 msgstr "Ratenkontrollpufferaggressivität"
 
 #: modules/codec/ffmpeg/ffmpeg.h:220
-#, fuzzy
 msgid "Rate control buffer aggressiveness."
-msgstr "Ratenkontrollpufferaggressivität"
+msgstr "Aggressivität des Ratenkontrollpuffers."
 
 #: modules/codec/ffmpeg/ffmpeg.h:223
 msgid "I quantization factor"
 msgstr "I-Quantisierungsfaktor"
 
 #: modules/codec/ffmpeg/ffmpeg.h:225
-#, fuzzy
 msgid ""
 "Quantization factor of I frames, compared with P frames (for instance 1.0 => "
 "same qscale for I and P frames)."
-msgstr ""
-"Erlaubt Ihnen den Quantisierungsfaktor von I-Frames im Vergleich zu P-Frames "
-"einzustellen (beispielsweise 1.0 => gleicher qscale für I und P Frames)."
+msgstr "Der Quantisierungsfaktor von I-Frames im Vergleich zu P-Frames (beispielsweise 1.0 => gleicher qscale für I und P Frames)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:228 modules/codec/x264.c:228
 #: modules/demux/mod.c:73
@@ -7365,29 +7357,25 @@ msgid "Noise reduction"
 msgstr "Lärmreduzierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:229
-#, fuzzy
 msgid ""
 "Enable a simple noise reduction algorithm to lower the encoding length and "
 "bitrate, at the expense of lower quality frames."
 msgstr ""
-"Erlaubt Ihnen einen einfachen Lärmreduzierungsalgorithmus zu aktivieren, um "
-"die Kodierungslänge und Datenrate zu verringern, was jedoch die Zahl von "
+"Einen einfachen Lärmreduzierungsalgorithmus aktivieren, um "
+"die Encodierungslänge und Datenrate zu verringern, was jedoch die Zahl von "
 "weniger qualitativen Frames erhöht."
 
 #: modules/codec/ffmpeg/ffmpeg.h:233
-#, fuzzy
 msgid "MPEG4 quantization matrix"
-msgstr "MPEG4-Quantisierungsmatrix aktivieren"
+msgstr "MPEG4-Quantisierungsmatrix"
 
 #: modules/codec/ffmpeg/ffmpeg.h:234
-#, fuzzy
 msgid ""
 "Use the MPEG4 quantization matrix for MPEG2 encoding. This generally yields "
 "a better looking picture, while still retaining the compatibility with "
 "standard MPEG2 decoders."
 msgstr ""
-"Erlaubt Ihnen die Benutzung der MPEG4-Quantisierungsmatrix für mpeg2-"
-"Kodierung zu aktivieren. Dies sorgt allgemein für ein besser aussehendes "
+"Die Benutzung der MPEG4-Quantisierungsmatrix für mpeg2-Kodierung aktivieren. Dies sorgt allgemein für ein besser aussehendes "
 "Bild und behält gleichzeitig die Kompatibilität mit Standard-MPEG2-Dekodern "
 "bei."
 
@@ -7396,26 +7384,19 @@ msgid "Quality level"
 msgstr "Qualitätsniveau"
 
 #: modules/codec/ffmpeg/ffmpeg.h:240
-#, fuzzy
 msgid ""
 "Quality level for the encoding of motions vectors (this can slow down the "
 "encoding very much)."
-msgstr ""
-"Erlaubt Ihnen das Qualitätsniveau für die Kodierung von Bewegungsvektoren "
-"festzulegen (dies kann die Kodierung sehr stark verlangsamen)."
+msgstr "Qualitätsniveau für die Encodierung von Bewegungsvektoren (dies kann die Kodierung sehr stark verlangsamen)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:245
-#, fuzzy
 msgid ""
 "The encoder can make on-the-fly quality tradeoffs if your CPU can't keep up "
 "with the encoding rate. It will disable trellis quantization, then the rate "
 "distortion of motion vectors (hq), and raise the noise reduction threshold "
 "to ease the encoder's task."
 msgstr ""
-"Erlaubt Ihnen anzugeben, ob der Encoder on-the-fly Qualitätsabstriche machen "
-"soll, wenn Ihr Prozessor nicht die Kodierungsrate beibehalten kann. Es wird "
-"die Gitterquantisierung deaktivieren, dann die Rateneinstellung von "
-"Bewegungsvektoren (hq) und den Lärmreduzierungsgrenzbereich verringern, um "
+"Der Encoder kann on-the-fly Qualitätsabstriche machen, wenn Ihr Prozessor nicht mit der Encodierungsrate mithalten kann. Er wird die Gitterquantisierung deaktivieren, dann die Rateneinstellung von Bewegungsvektoren (hq) und den Lärmreduzierungsgrenzbereich anheben, um "
 "die Aufgabe des Encoders zu verringern."
 
 #: modules/codec/ffmpeg/ffmpeg.h:251
@@ -7423,105 +7404,78 @@ msgid "Minimum video quantizer scale"
 msgstr "Minimale Bildquantisierungsskalierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:252
-#, fuzzy
 msgid "Minimum video quantizer scale."
-msgstr "Minimale Bildquantisierungsskalierung"
+msgstr "Minimale Bildquantisierungsskalierung."
 
 #: modules/codec/ffmpeg/ffmpeg.h:255
 msgid "Maximum video quantizer scale"
 msgstr "Maximale Bildquantisierungsskalierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:256
-#, fuzzy
 msgid "Maximum video quantizer scale."
-msgstr "Maximale Bildquantisierungsskalierung"
+msgstr "Maximale Bildquantisierungsskalierung."
 
 #: modules/codec/ffmpeg/ffmpeg.h:259
-#, fuzzy
 msgid "Trellis quantization"
-msgstr "Gitterquantisierung aktivieren"
+msgstr "Gitterquantisierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:260
-#, fuzzy
 msgid "Enable trellis quantization (rate distortion for block coefficients)."
-msgstr ""
-"Erlaubt Ihnen Gitterquantisierung zu aktivieren (Ratenverzerrung für "
-"Blockkoeffizienten)."
+msgstr "Gitterquantisierung aktivieren (Ratenverzerrung für Blockkoeffizienten)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:263
-#, fuzzy
 msgid "Fixed quantizer scale"
-msgstr "Feste Quantisierer-Skalierung benutzen."
+msgstr "Feste Quantisierer-Skalierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:264
-#, fuzzy
 msgid ""
 "A fixed video quantizer scale for VBR encoding (accepted values: 0.01 to "
 "255.0)."
-msgstr ""
-"Erlaubte Ihnen eine feste Videoquantisierungsskalierung für VBR-Encoding "
-"festzulegen (akzeptierte Werte: 0.01 bis 255.0)."
+msgstr "Eine feste Videoquantisierungsskalierung für VBR-Encoding (akzeptierte Werte: 0.01 bis 255.0)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:267
 msgid "Strict standard compliance"
 msgstr "Strikte Standardbefolgung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:268
-#, fuzzy
 msgid "Force a strict standard compliance when encoding (accepted values: -1, 0, 1)."
-msgstr ""
-"Erlaubt Ihnen eine strikte Standardbefolgung beim Kodieren zu erzwingen "
-"(akzeptierte Werte: -1, 0, 1)."
+msgstr "Strikte Standardbefolgung beim Encodieren erzwingen (akzeptierte Werte: -1, 0, 1)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:271
 msgid "Luminance masking"
 msgstr "Leuchtkraftmaskierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:272
-#, fuzzy
 msgid "Raise the quantizer for very bright macroblocks (default: 0.0)."
-msgstr ""
-"Erlaubt Ihnen die Geschwindigkeit der Animation zu reduzieren (standardmäßig "
-"6, max. 10)."
+msgstr "Quantisierer für sehr helle Makroblöcke anheben (standardmäßig 0.0)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:275
 msgid "Darkness masking"
 msgstr "Dunkelheitsmaskierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:276
-#, fuzzy
 msgid "Raise the quantizer for very dark macroblocks (default: 0.0)."
-msgstr ""
-"Erlaubt Ihnen die Geschwindigkeit der Animation zu reduzieren (standardmäßig "
-"6, max. 10)."
+msgstr "Quantisierer für sehr dunkle Makroblöcke anheben (standardmäßig 0.0)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:279
-#, fuzzy
 msgid "Motion masking"
-msgstr "Aktionsmapping"
+msgstr "Bewegungsmaskierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:280
-#, fuzzy
 msgid ""
 "Raise the quantizer for macroblocks with a high temporal complexity "
 "(default: 0.0)."
-msgstr ""
-"Erlaubt Ihnen die Geschwindigkeit der Animation zu reduzieren (standardmäßig "
-"6, max. 10)."
+msgstr "Quantisierer für Makroblöcke mit hoher zeitlicher Komplexität anheben (standardmäßig 0.0)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:283
-#, fuzzy
 msgid "Border masking"
-msgstr "Bridge-Eingang"
+msgstr "Rändermaskierung"
 
 #: modules/codec/ffmpeg/ffmpeg.h:284
-#, fuzzy
 msgid ""
 "Raise the quantizer for macroblocks at the border of the frame (default: "
 "0.0)."
-msgstr ""
-"Erlaubt Ihnen die Geschwindigkeit der Animation zu reduzieren (standardmäßig "
-"6, max. 10)."
+msgstr "Quantisierer für Makroblöcke am Rand des Frames anheben (standardmäßig 0.0)."
 
 #: modules/codec/ffmpeg/ffmpeg.h:287
 msgid "Luminance elimination"
@@ -7589,9 +7543,8 @@ msgid "Video decoder using openmash"
 msgstr "Videodekoder mit Openmash-Benutzung"
 
 #: modules/codec/mpeg_audio.c:106
-#, fuzzy
 msgid "MPEG audio layer I/II/III decoder"
-msgstr "MPEG audio layer I/II/III Parser"
+msgstr "MPEG audio layer I/II/III Decoder"
 
 #: modules/codec/mpeg_audio.c:117
 msgid "MPEG audio layer I/II/III packetizer"
@@ -7614,14 +7567,12 @@ msgid "Pseudo raw video packetizer"
 msgstr "Pseudo Raw - Videopacketizer"
 
 #: modules/codec/realaudio.c:61
-#, fuzzy
 msgid "RealAudio library decoder"
-msgstr "QuickTime-Bibliothek - Dekoder"
+msgstr "RealAudio-Bibliothek - Dekoder"
 
 #: modules/codec/sdl_image.c:54
-#, fuzzy
 msgid "SDL_image video decoder"
-msgstr "Dirac Videodekoder"
+msgstr "SDL_image Videodekoder"
 
 #: modules/codec/speex.c:105
 msgid "Speex audio decoder"
@@ -7668,9 +7619,8 @@ msgid "Set the justification of subtitles"
 msgstr "Ausrichtung der Untertitel einstellen"
 
 #: modules/codec/subsdec.c:135
-#, fuzzy
 msgid "UTF-8 subtitles autodetection"
-msgstr "Pfade der automatischen Untertitelfeststellung"
+msgstr "Automatische UTF-8-Untertitel-Erkennung"
 
 #: modules/codec/subsdec.c:136
 msgid "This enables automatic detection of UTF-8 encoding within subtitles files."
@@ -7679,9 +7629,8 @@ msgstr ""
 "Untertiteldateien."
 
 #: modules/codec/subsdec.c:138
-#, fuzzy
 msgid "Formatted Subtitles"
-msgstr "Untertitel"
+msgstr "Formatierte Untertitel"
 
 #: modules/codec/subsdec.c:139
 msgid ""
@@ -7720,14 +7669,10 @@ msgid "Tarkin decoder module"
 msgstr "Tarkin Dekodermodul"
 
 #: modules/codec/theora.c:92 modules/codec/vorbis.c:157
-#, fuzzy
 msgid ""
 "Enforce a quality between 1 (low) and 10 (high), instead of specifying a "
 "particular bitrate. This will produce a VBR stream."
-msgstr ""
-"Erlaubt Ihnen die Qualität von 1 (niedrig) bis 10 (hoch) festzulegen, "
-"anstatt eine spezifische Datenrate festzulegen. Dies wird einen VBR-Stream "
-"erstellen."
+msgstr "Eine Qualität von 1 (niedrig) bis 10 (hoch) festlegen, anstatt eine spezifische Datenrate anzugeben. Dies wird einen VBR-Stream erstellen."
 
 #: modules/codec/theora.c:99
 msgid "Theora video decoder"
@@ -7746,13 +7691,12 @@ msgid "Theora comment"
 msgstr "Theora - Kommentar"
 
 #: modules/codec/twolame.c:52
-#, fuzzy
 msgid ""
 "Force a specific encoding quality between 0.0 (high) and 50.0 (low), instead "
 "of specifying a particular bitrate. This will produce a VBR stream."
 msgstr ""
-"Erlaubt Ihnen eine Qualität zwischen 0.0 (hoch) und 50.0 (niedrig) "
-"festzulegen anstatt einer bestimmten Bitrate. Dies wird einen VBR-Stream "
+"Eine spezifische Encodierungsqualität zwischen 0.0 (hoch) und 50.0 (niedrig) "
+"festlegen, anstatt eine bestimmte Bitrate anzugeben. Dies wird einen VBR-Stream "
 "erzeugen."
 
 #: modules/codec/twolame.c:55
@@ -7780,14 +7724,12 @@ msgid "Integer from -1 (no model) to 4."
 msgstr "Ganzzahl von -1 (kein Modell) bis 4."
 
 #: modules/codec/twolame.c:66
-#, fuzzy
 msgid "Dual mono"
-msgstr "Mono"
+msgstr "Duales Mono"
 
 #: modules/codec/twolame.c:66
-#, fuzzy
 msgid "Joint stereo"
-msgstr "Stereo"
+msgstr "Joint-Stereo"
 
 #: modules/codec/twolame.c:71
 msgid "Libtwolame audio encoder"
@@ -7798,33 +7740,26 @@ msgid "Maximum encoding bitrate"
 msgstr "Maximale Encodingdatenrate"
 
 #: modules/codec/vorbis.c:161
-#, fuzzy
 msgid "Maximum bitrate in kbps. This is useful for streaming applications."
-msgstr ""
-"Erlaubt Ihnen die maximale Datenrate in kbps festzulegen. Nützlich für "
-"Streaminganwendungen."
+msgstr "Xaximale Bitrate in kbps. Dies ist nützlich für Streaminganwendungen."
 
 #: modules/codec/vorbis.c:162
 msgid "Minimum encoding bitrate"
 msgstr "Minimale Encodingdatenrate"
 
 #: modules/codec/vorbis.c:164
-#, fuzzy
 msgid ""
 "Minimum bitrate in kbps. This is useful for encoding for a fixed-size "
 "channel."
-msgstr ""
-"Erlaubt Ihnen eine minimale Datenrate in kbps festzulegen. Nützlich für "
-"dasEncoding für einen Channel mit fester Größe."
+msgstr "Minimale Datenrate in kbps. Dies ist nützlich für das Encoding von einem Channel mit fester Größe."
 
 #: modules/codec/vorbis.c:165
 msgid "CBR encoding"
 msgstr "CBR-Encoding"
 
 #: modules/codec/vorbis.c:167
-#, fuzzy
 msgid "Force a constant bitrate encoding (CBR)."
-msgstr "Erlaubt Ihnen Encoding bei konstanter Bitrate (CBR) zu erzwingen."
+msgstr "Encoding bei konstanter Bitrate (CBR) erzwingen."
 
 #: modules/codec/vorbis.c:171
 msgid "Vorbis audio decoder"
@@ -7843,26 +7778,20 @@ msgid "Vorbis comment"
 msgstr "Vorbis - Kommentar"
 
 #: modules/codec/x264.c:44
-#, fuzzy
 msgid "Maximum GOP size"
-msgstr "Maximale PES-Größe"
+msgstr "Maximale GOP-Größe"
 
 #: modules/codec/x264.c:45
-#, fuzzy
 msgid ""
 "Sets maximum interval between IDR-frames.Larger values save bits, thus "
 "improving quality for a given bitrate at the cost of seeking precision."
-msgstr ""
-"Größere Werte sparen Bits und erhöhen somit die Qualität für die angegebene "
-"Bitrate zu Kosten der Durchsuchpräzision."
+msgstr "Stellt das maximale Intervall zwischen IDR-Frames ein. Größere Werte sparen Bits und verbessern die Qualität für eine gewisse Bitrate auf Kosten der Durchsuchpräzision."
 
 #: modules/codec/x264.c:49
-#, fuzzy
 msgid "Minimum GOP size"
-msgstr "GOP-Größe"
+msgstr "Minimale GOP-Größe"
 
 #: modules/codec/x264.c:50
-#, fuzzy
 msgid ""
 "Sets minimum interval between IDR-frames. In H.264, I-frames do not "
 "necessarily bound a closed GOP because it is allowable for a P-frame to be "
@@ -7873,18 +7802,14 @@ msgid ""
 "If scenecuts appear within this interval, they are still encoded as I-"
 "frames, but do not start a new GOP."
 msgstr ""
-"In H.264 binden I-Frames nicht notwendigerweise ein geschlossenes GOP, da es "
-"P-Frames gestattet ist von mehr als einem Frame vorhergesagt zu werden statt "
-"nur vom vorherigen (siehe auch: frameref). Folglich sind I-Frames nicht "
-"notwendigerweise aufzuspüren. IDR-Frames verhindern, dass nachfolgende P-"
-"Frames auf jegliche Frames vor dem IDR-Frame verweisen könnten."
+"Legt das minimale Intervall zwischen IDR-Frames fest. Bei H.264 müssen I-Frames nicht notwendigerweise an ein geschlossenes GOP gebunden sein, da ein P-Frames von mehr als einem Frame davor vorhergesagt werden darf (siehe frameref). Deshalb sind I-Frames nicht notwendigerweise durchsuchbar. IDR-Frames schränken P-Frames ein, sodass sie sich nicht auf einen Frame vor dem IDR-Frame beziehen können.\n"
+"Wenn Szenenschnitte innerhalb dieses Intervalls auftreten, werden sie immernoch als I-Frames encodiert, aber starten kein neues GOP."
 
 #: modules/codec/x264.c:59
 msgid "Extra I-Frames aggressivity"
 msgstr "Hohe I-Frame Agressivität"
 
 #: modules/codec/x264.c:60
-#, fuzzy
 msgid ""
 "Scene-cut detection. Controls how aggressively to insert extra I-frames. "
 "With small values of scenecut, the codec often has to force an I-frame when "
@@ -7894,34 +7819,31 @@ msgid ""
 "every other keyint frames, which probably leads to ugly encoding artifacts. "
 "(1-100)."
 msgstr ""
-"Kontrolliert, wie aggressiv zusätzliche I-Frames eingesetzt werden. "
-"Beikleinen Scenecut-Werten muss der Codec oft ein I-Frame erzwingen, wenn es "
+"Szenenschnitterkennung. Kontrolliert, wie aggressiv zusätzliche I-Frames eingesetzt werden. "
+"Bei kleinen Scenecut-Werten muss der Codec oft ein I-Frame erzwingen, wenn es "
 "keyint überschreiten würde. Gute Scenecut-Werte können eventuell einen "
 "besseren Ort für das I-Frame finden. Große Scenecut-Werte benutzen mehr I-"
 "Frames als notwendig und verschwenden dadurch Bits. -1 deaktiviert die "
 "Scenecut-Erkennung, sodass I-Frames nur bei jedem keyint-Frame eingesetzt "
-"werden, was wahrscheinlich zu hässlichen Kompressionsartefakten führt."
+"werden, was wahrscheinlich zu hässlichen Kompressionsartefakten führt. (1-100)."
 
 #: modules/codec/x264.c:70
-#, fuzzy
 msgid "B-frames between I and P"
-msgstr "Anzahl von aufeinanderfolgenden B-Frames zwischen I und P-Frames."
+msgstr "B-Frames zwischen I und P"
 
 #: modules/codec/x264.c:71
-#, fuzzy
 msgid "Number of consecutive B-frames between I and P-frames. (1 to 16)"
-msgstr "Anzahl von aufeinanderfolgenden B-Frames zwischen I und P-Frames."
+msgstr "Anzahl von aufeinanderfolgenden B-Frames zwischen I und P-Frames. (1 bis 16)"
 
 #: modules/codec/x264.c:75
 msgid "Adaptive B-frame decision"
 msgstr "Anpassende B-Frame entscheidung"
 
 #: modules/codec/x264.c:76
-#, fuzzy
 msgid ""
 "Force the specified number of consecutive B-frames to be used, except "
 "possibly before an I-frame. "
-msgstr "Anzahl von aufeinanderfolgenden B-Frames zwischen I und P-Frames."
+msgstr "Die Anzahl von aufeinander folgenden B-Frames (außer möglicherweise vor einem I-Frame) erzwingen."
 
 #: modules/codec/x264.c:80
 msgid "B-frames usage"
@@ -7954,55 +7876,46 @@ msgid "CABAC"
 msgstr "CABAC"
 
 #: modules/codec/x264.c:90
-#, fuzzy
 msgid ""
 "CABAC (Context-Adaptive Binary Arithmetic Coding). Slightly slows down "
 "encoding and decoding, but should save 10-15% bitrate."
 msgstr ""
 "CABAC (an den Context Anpassende, Binäre, Arithmetrische Codierung). "
-"Verlangsamt geringfügig die Kodierung und Dekodierung, spart aber 10-15 % "
+"Verlangsamt geringfügig die Encodierung und Dekodierung, spart aber 10-15 % "
 "der Bitrate."
 
 #: modules/codec/x264.c:94
-#, fuzzy
 msgid "Number of reference frames"
-msgstr "Anzahl von P-Frames zwischen 2 I-Frames."
+msgstr "Anzahl von Referenzframes"
 
 #: modules/codec/x264.c:95
-#, fuzzy
 msgid ""
 "Number of previous frames used as predictors. This is effective in Anime, "
 "but seems to make little difference in live-action source material. Some "
 "decoders are unable to deal with large frameref values. From 1 to 16"
-msgstr ""
-"Dies ist effektiv in Anime, scheint aber wenig Unterschied bei Live-Action-"
-"Quellmaterial zu machen. Manche Dekoder sind nicht in der Lage mit großen "
-"frameref-Werten umzugehen."
+msgstr "Die Anzahl von vorherigen Frames, die als Vorhersager benutzt werden. Dies ist effektiv bei Animes, scheint aber wenig Unterschied bei Live-Action-Quellmaterial zu machen. Manche Dekoder können nicht mit großen frameref-Werten umgehen."
 
 #: modules/codec/x264.c:100
-#, fuzzy
 msgid "Skip loop filter"
-msgstr "Logo-Unterfilter"
+msgstr "Loop-Filder überspringen"
 
 #: modules/codec/x264.c:101
-#, fuzzy
 msgid "Deactivate the deblocking loop filter (decreases quality)."
-msgstr "Deblocking-Loop-Filter verwenden (erhöht die Qualität)."
+msgstr "Deaktiviert den entblockenden Loop-Filter (verringert die Qualität)."
 
 #: modules/codec/x264.c:105
 msgid "Set QP"
 msgstr "QP festlegen"
 
 #: modules/codec/x264.c:106
-#, fuzzy
 msgid ""
 "This selects the quantizer to use. Lower values result in better fidelity, "
 "but higher bitrates. 26 is a good default value. From 0 to 51. 0 means "
 "lossless"
 msgstr ""
-"Dies wählt den zu benutzenden Quantisierer (1 bis 51). Niedrigere Werte "
-"sorgen für bessere Wiedergabetreue aber höheren Bitraten. 26 ist ein guter "
-"Standardwert."
+"Dies wählt den zu benutzenden Quantisierer. Niedrigere Werte "
+"sorgen für bessere Wiedergabetreue aber höhere Bitraten. 26 ist ein guter "
+"Standardwert. Von 0 bis 51. 0 bedeutet verlustfrei."
 
 #: modules/codec/x264.c:111
 msgid "Quality-based VBR"
@@ -8021,35 +7934,30 @@ msgid "Minimum quantizer, 15/35 seems to be a useful range."
 msgstr "Minimaler Quantisierer, 15/35 scheint ein nützlicher Bereich zu sein."
 
 #: modules/codec/x264.c:119
-#, fuzzy
 msgid "Max QP"
-msgstr "ax QP"
+msgstr "Max QP"
 
 #: modules/codec/x264.c:120
 msgid "Maximum quantizer parameter."
 msgstr "Maximaler Quantisierungsparameter."
 
 #: modules/codec/x264.c:122
-#, fuzzy
 msgid "Max QP step"
-msgstr "ax QP Schrittweite"
+msgstr "Max QP Schrittweite"
 
 #: modules/codec/x264.c:123
 msgid "Max QP step between frames."
 msgstr "Maximaler QP Unterschied zwischen den einzelnen Frames"
 
 #: modules/codec/x264.c:125
-#, fuzzy
 msgid "Average bitrate tolerance"
-msgstr "Vidiodatenratentoleranz"
+msgstr "Durchschnittliche Datenratentoleranz"
 
 #: modules/codec/x264.c:126
-#, fuzzy
 msgid "Allowed variance in average. bitrate (in kbits/s)."
-msgstr "Legt die erlaubte Abweichung der durchschnittlichen Bitrate fest."
+msgstr "Erlaubte Abweichung der durchschnittlichen Bitrate (in kbit/s)."
 
 #: modules/codec/x264.c:129
-#, fuzzy
 msgid "Max local bitrate"
 msgstr "Maximale lokale Bitrate"
 
@@ -8058,19 +7966,16 @@ msgid "Sets a maximum local bitrate in kbits/s."
 msgstr "Legt eine maximale lokale Bitrate in kbit/s fest."
 
 #: modules/codec/x264.c:132
-#, fuzzy
 msgid "VBV buffer"
-msgstr "Größenversatz"
+msgstr "VBV-Puffer"
 
 #: modules/codec/x264.c:133
-#, fuzzy
 msgid "Averaging period for the maximum local bitrate in kbits."
-msgstr "Durchschnittliche Periode für die maximale lokale Bitrate"
+msgstr "Durchschnittliche Periode für die maximale lokale Bitrate in kbits."
 
 #: modules/codec/x264.c:136
-#, fuzzy
 msgid "Initial VBV buffer occupancy"
-msgstr "Anfängliche Pufferbelegung"
+msgstr "Anfängliche VBV-Pufferbelegung"
 
 #: modules/codec/x264.c:137
 msgid "Sets the initial buffer occupancy as a fraction of the buffer size."
@@ -8101,14 +8006,12 @@ msgid "QP difference between chroma and luma."
 msgstr "QP Differenz zwischen Farbschema und Leuchtkraft"
 
 #: modules/codec/x264.c:149
-#, fuzzy
 msgid "QP curve compression"
-msgstr "DTS-Kompression mit dynamischen Abschnitten"
+msgstr "QP Kurvencompression"
 
 #: modules/codec/x264.c:150
-#, fuzzy
 msgid "QP curve compression. (0.0=CBR to 1.0=QCP)"
-msgstr "DTS-Kompression mit dynamischen Abschnitten"
+msgstr "QP Kurvencompression (0.0=CBR bis 1.0=OCP)"
 
 #: modules/codec/x264.c:152 modules/codec/x264.c:156
 msgid "Reduce fluctuations in QP"
@@ -8153,14 +8056,12 @@ msgstr ""
 "(p4x4 erfordert p8x8. i8x8 erfordert 8x8dct)."
 
 #: modules/codec/x264.c:172
-#, fuzzy
 msgid "Direct MV prediction mode"
-msgstr "DirectMedia Objektdekoder"
+msgstr "Direkter MV Vorhersagemodus"
 
 #: modules/codec/x264.c:173
-#, fuzzy
 msgid "Direct MV prediction mode. "
-msgstr "DirectMedia Objektdekoder"
+msgstr "Direkter MV Vorhersagemodus."
 
 #: modules/codec/x264.c:175
 msgid "Weighted prediction for B-frames"
@@ -8171,9 +8072,8 @@ msgid "Weighted prediction for B-frames."
 msgstr "Gewichtete Vorhersage für B-Frames."
 
 #: modules/codec/x264.c:178
-#, fuzzy
 msgid "Integer pixel motion estimation method"
-msgstr "Vorbewegungsabschätzung aktivieren"
+msgstr "Ganzzahlige Pixel Vorbewegungsabschätzungsmethode"
 
 #: modules/codec/x264.c:179
 msgid ""
@@ -8209,7 +8109,6 @@ msgid "Subpixel motion estimation and partition decision quality"
 msgstr "Zwischenpixel Bewegungsvorhersage und Partitionsentscheidunggsqualität"
 
 #: modules/codec/x264.c:194
-#, fuzzy
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
@@ -8217,7 +8116,7 @@ msgid ""
 msgstr ""
 "Dieser Parameter steuert die Qualität gegenüber Geschwindigkeitsverlusten "
 "beim Bewegungsabschätzungsentscheidungsprozess (niedriger = schneller und "
-"höher = bessere Qualität)."
+"höher = bessere Qualität). Von 1 bis 6."
 
 #: modules/codec/x264.c:198
 msgid "RD based mode decision for B-frames."
@@ -8240,9 +8139,8 @@ msgstr ""
 "im Gegensatz zu nur einer Beziehung je Makroblock."
 
 #: modules/codec/x264.c:207
-#, fuzzy
 msgid "Ignore chroma in motion estimation"
-msgstr "Vorbewegungsabschätzung aktivieren"
+msgstr "Chroma bei Vorbewegungsabschätzung ignorieren"
 
 #: modules/codec/x264.c:208
 msgid "Chroma ME for subpel and mode decision in P-frames."
@@ -8265,9 +8163,8 @@ msgid "SATD-based decision for 8x8 transform in inter-MBs."
 msgstr "SATD-basierte Entscheidung für 8x8 Transformation in innere-MBs."
 
 #: modules/codec/x264.c:218
-#, fuzzy
 msgid "Trellis RD quantization"
-msgstr "Gitterquantisierung aktivieren"
+msgstr "RD-Gitterquantisierung"
 
 #: modules/codec/x264.c:219
 msgid ""
@@ -8296,19 +8193,16 @@ msgid "Dct-domain noise reduction. Adaptive pseudo-deadzone."
 msgstr "Dct-domain Rauschunterdrückung. Anpassende pseudo-deadzone."
 
 #: modules/codec/x264.c:233
-#, fuzzy
 msgid "CPU optimizations"
-msgstr "Polarisierung"
+msgstr "CPU-Optimierungen"
 
 #: modules/codec/x264.c:234
-#, fuzzy
 msgid "Use assembler CPU optimizations."
-msgstr "Polarisierung"
+msgstr "Assembler-CPU-Optimierungen benutzen."
 
 #: modules/codec/x264.c:236
-#, fuzzy
 msgid "PSNR calculation"
-msgstr "Sättigung"
+msgstr "PSNR-Berechnung"
 
 #: modules/codec/x264.c:237
 msgid ""
@@ -8340,9 +8234,8 @@ msgid "umh"
 msgstr "umh"
 
 #: modules/codec/x264.c:247
-#, fuzzy
 msgid "esa"
-msgstr "Bytes"
+msgstr "esa"
 
 #: modules/codec/x264.c:253
 msgid "fast"
@@ -8353,9 +8246,8 @@ msgid "normal"
 msgstr "normal"
 
 #: modules/codec/x264.c:254
-#, fuzzy
 msgid "slow"
-msgstr "Langsam"
+msgstr "langsam"
 
 #: modules/codec/x264.c:254
 msgid "all"
@@ -8370,9 +8262,8 @@ msgid "temporal"
 msgstr "temporal"
 
 #: modules/codec/x264.c:262
-#, fuzzy
 msgid "H.264/MPEG4 AVC encoder (using x264 library)"
-msgstr "h264 Videoencoder mit Benutzung der x264-Bibliothek"
+msgstr "H.264/MPEG4 AVC Encoder (benutzt die x264-Bibliothek)"
 
 #: modules/control/corba/corba.c:687
 msgid "Corba control"
@@ -8407,9 +8298,8 @@ msgid "Trigger button"
 msgstr "Auslöseknopf"
 
 #: modules/control/gestures.c:83
-#, fuzzy
 msgid "Trigger button for mouse gestures."
-msgstr "Hier können Sie den Auslöseknopf für Mausgesten einstellen."
+msgstr "Auslöseknopf für Mausgesten."
 
 #: modules/control/gestures.c:86
 msgid "Middle"
@@ -8424,12 +8314,10 @@ msgid "Mouse gestures control interface"
 msgstr "Mausgebärden-Kontrollinterface"
 
 #: modules/control/hotkeys.c:94
-#, fuzzy
 msgid "Define playlist bookmarks."
-msgstr "Wiedergabelistenlesezeichen 9 festlegen"
+msgstr "Wiedergabelistenlesezeichen festlegen."
 
 #: modules/control/hotkeys.c:97
-#, fuzzy
 msgid "Hotkeys"
 msgstr "Hotkeys"
 
@@ -8452,26 +8340,25 @@ msgid "N/A"
 msgstr "n/v"
 
 #: modules/control/hotkeys.c:535
-#, fuzzy, c-format
+#, c-format
 msgid "Aspect ratio: %s"
-msgstr "Seitenverhältnis"
+msgstr "Seitenverhältnis: %s"
 
 #: modules/control/hotkeys.c:561
-#, fuzzy, c-format
+#, c-format
 msgid "Crop: %s"
-msgstr "Beschneiden"
+msgstr "Beschneiden: %s"
 
 #: modules/control/hotkeys.c:587
-#, fuzzy, c-format
+#, c-format
 msgid "Deinterlace mode: %s"
-msgstr "Deinterlace-Modus"
+msgstr "Deinterlace-Modus: %s"
 
 #: modules/control/http/http.c:34
 msgid "Host address"
 msgstr "Host-Adresse"
 
 #: modules/control/http/http.c:36
-#, fuzzy
 msgid ""
 "Address and port the HTTP interface will listen on. It defaults to all "
 "network interfaces (0.0.0.0). If you want the HTTP interface to be available "
@@ -8479,16 +8366,15 @@ msgid ""
 msgstr ""
 "Adresse und Port auf dem das HTTP Interface bereitgestellt wird. Der "
 "Standard für alle Netzwerkkarten ist 0.0.0.0. Wenn das HTTP Interface nur "
-"auf diesem Rechner erreichbar sein soll, verwende 127.0.0.1."
+"auf diesem Rechner erreichbar sein soll, verwenden Sie 127.0.0.1."
 
 #: modules/control/http/http.c:40 modules/control/http/http.c:41
 msgid "Source directory"
 msgstr "Quellverzeichnis"
 
 #: modules/control/http/http.c:42
-#, fuzzy
 msgid "Charset"
-msgstr "Kabarett"
+msgstr "Zeichencodierung"
 
 #: modules/control/http/http.c:44
 msgid "Charset declared in Content-Type header (default UTF-8)."
@@ -8509,24 +8395,20 @@ msgstr ""
 "php=/usr/bin/php,pl=/usr/bin/perl)."
 
 #: modules/control/http/http.c:50
-#, fuzzy
 msgid "HTTP interface x509 PEM certificate file (enables SSL)."
-msgstr "HTTP-Interface x509-PEM-Zertifikatsdatei (aktiviert SSL)"
+msgstr "HTTP-Interface x509-PEM-Zertifikatsdatei (aktiviert SSL)."
 
 #: modules/control/http/http.c:53
-#, fuzzy
 msgid "HTTP interface x509 PEM private key file."
-msgstr "HTTP-Interface private x509-PEM-Schlüsseldatei"
+msgstr "HTTP-Interface private x509-PEM-Schlüsseldatei."
 
 #: modules/control/http/http.c:55
-#, fuzzy
 msgid "HTTP interface x509 PEM trusted root CA certificates file."
-msgstr "HTTP-Interface verlässliche x509-Basis-CA-Zertifikatsdatei"
+msgstr "HTTP-Interface verlässliche x509-Basis-CA-Zertifikatsdatei."
 
 #: modules/control/http/http.c:58
-#, fuzzy
 msgid "HTTP interace Certificates Revocation List file."
-msgstr "HTTP-Interface Zertifikatswiderrufslisten-Datei"
+msgstr "HTTP-Interface Zertifikatswiderrufslisten-Datei."
 
 #: modules/control/http/http.c:62
 msgid "HTTP remote control interface"
@@ -8545,79 +8427,66 @@ msgid "Act as master"
 msgstr "Als Master fungieren"
 
 #: modules/control/netsync.c:61
-#, fuzzy
 msgid "Should act as the master client for the network synchronisation?"
-msgstr "Als Master für die Netzwerksynchronisation agieren"
+msgstr "Als Master für die Netzwerksynchronisation agieren?"
 
 #: modules/control/netsync.c:65
 msgid "Master client ip address"
 msgstr "IP-Adresse des Master-Clients"
 
 #: modules/control/netsync.c:66
-#, fuzzy
 msgid "IP address of the master client used for the network synchronisation."
-msgstr ""
-"Erlaubt Ihnen die IP-Adresse des Master-Clients festzulegen, der für die "
-"Netzwerksynchronisation benutzt wird."
+msgstr "IP-Adresse des Master-Clients, der für die Netzwerksynchronisierung benutzt wird."
 
 #: modules/control/netsync.c:70
-#, fuzzy
 msgid "Network Sync"
-msgstr "Netzwerk: "
+msgstr "Netzwerksynchronisierung"
 
 #: modules/control/ntservice.c:39
 msgid "Install Windows Service"
 msgstr "Windows-Dienst installieren"
 
 #: modules/control/ntservice.c:41
-#, fuzzy
 msgid "Install the Service and exit."
-msgstr "Wenn aktiviert, wird das Interface den Dienst installieren und sich beenden."
+msgstr "Den Dienst installieren und beenden."
 
 #: modules/control/ntservice.c:42
 msgid "Uninstall Windows Service"
 msgstr "Windows-Dienst deinstallieren"
 
 #: modules/control/ntservice.c:44
-#, fuzzy
 msgid "Uninstall the Service and exit."
-msgstr "Wenn aktiviert, wird das Interface den Dienst installieren und sich beenden."
+msgstr "Den Dienst deinstallieren und beenden."
 
 #: modules/control/ntservice.c:45
 msgid "Display name of the Service"
 msgstr "Bildschirmname des Dienstes"
 
 #: modules/control/ntservice.c:47
-#, fuzzy
 msgid "Change the display name of the Service."
-msgstr "Bildschirmname des Dienstes"
+msgstr "Den Bildschirmnamen des Dienstes ändern."
 
 #: modules/control/ntservice.c:48
 msgid "Configuration options"
 msgstr "Konfigurationsoptionen"
 
 #: modules/control/ntservice.c:50
-#, fuzzy
 msgid ""
 "Configuration options that will be used by the Service (eg. --foo=bar --no-"
 "foobar). It should be specified at install time so the Service is properly "
 "configured."
 msgstr ""
-"Diese Option erlaubt Ihnen Konfigurationsoptionen festzulegen, die vom "
-"Dienst (z.B. --foo=bar --no-foobar) benutzt werden. Sie sollten zur "
+"Konfigurationsoptionen, die vom Dienst (z.B. --foo=bar --no-foobar) benutzt werden. Sie sollten zur "
 "Installationszeit angegeben werden, damit der Dienst korrekt konfiguriert "
 "wird."
 
 #: modules/control/ntservice.c:55
-#, fuzzy
 msgid ""
 "Additional interfaces spawned by the Service. It should be specified at "
 "install time so the Service is properly configured. Use a comma separated "
 "list of interface modules. (common values are: logger, sap, rc, http)"
 msgstr ""
-"Diese Option erlaubt Ihnen zusätzliche Interfaces auszuwählen, die vom "
-"Dienst erzeugt werden. Dies sollte zur Installationszeit angeben sein, damit "
-"der Dienst richtig eingestellt wird. Nutzen Sie eine durch Kommata getrennte "
+"Zusätzliche Interfaces, die vom Dienst erzeugt werden. Dies sollte zur Installationszeit angeben sein, damit der Dienst richtig eingestellt wird. Nutzen Sie eine durch Kommata getrennte "
 "Liste von Interfacemodulen. (übliche Werte sind: logger, sap, rc, http)"
 
 #: modules/control/ntservice.c:61
@@ -8688,328 +8557,265 @@ msgid "Remote control interface"
 msgstr "Remote-Control-Interface"
 
 #: modules/control/rc.c:335
-#, fuzzy
 msgid "Remote control interface initialized. Type `help' for help."
-msgstr "Remote-Control-Interface initialisiert. Geben Sie `h' für Hilfe ein\n"
+msgstr "Remote-Control-Interface initialisiert. Geben Sie `h' für Hilfe ein."
 
 #: modules/control/rc.c:847
-#, fuzzy, c-format
+#, c-format
 msgid "Unknown command `%s'. Type `help' for help."
-msgstr "Unbekannter Befehl `%s'. Geben Sie `help' für Hilfe ein\n"
+msgstr "Unbekannter Befehl `%s'. Geben Sie `help' für Hilfe ein."
 
 #: modules/control/rc.c:880
-#, fuzzy
 msgid "+----[ Remote control commands ]"
-msgstr "+----[ Remote-Control-Befehle ]\n"
+msgstr "+----[ Remote-Control-Befehle ]"
 
 #: modules/control/rc.c:882
-#, fuzzy
 msgid "| add XYZ  . . . . . . . . . . add XYZ to playlist"
-msgstr "| add XYZ  . . . . . . . . .  XYZ der Wiedergabeliste hinzufügen\n"
+msgstr "| add XYZ  . . . . . . . . .  XYZ der Wiedergabeliste hinzufügen"
 
 #: modules/control/rc.c:883
-#, fuzzy
 msgid "| playlist . . .  show items currently in playlist"
-msgstr "| playlist . . . . . aktuelle Objekte der Wiedergabeliste zeigen\n"
+msgstr "| playlist . . . . . aktuelle Objekte der Wiedergabeliste zeigen"
 
 #: modules/control/rc.c:884
-#, fuzzy
 msgid "| play . . . . . . . . . . . . . . . . play stream"
-msgstr "| play . . . . . . . . . . . . . . . . . . .  Stream wiedergeben\n"
+msgstr "| play . . . . . . . . . . . . . . . . . . .  Stream wiedergeben"
 
 #: modules/control/rc.c:885
-#, fuzzy
 msgid "| stop . . . . . . . . . . . . . . . . stop stream"
-msgstr "| stop . . . . . . . . . . . . . . . . . . . . .  Stream stoppen\n"
+msgstr "| stop . . . . . . . . . . . . . . . . . . . . .  Stream stoppen"
 
 #: modules/control/rc.c:886
-#, fuzzy
 msgid "| next . . . . . . . . . . . .  next playlist item"
-msgstr "| next . . . . . . . . . . . . . nächstes Wiedergabelistenobjekt\n"
+msgstr "| next . . . . . . . . . . . . . nächstes Wiedergabelistenobjekt"
 
 #: modules/control/rc.c:887
-#, fuzzy
 msgid "| prev . . . . . . . . . .  previous playlist item"
-msgstr "| prev . . . . . . . . . . . . vorheriges Wiedergabelistenobjekt\n"
+msgstr "| prev . . . . . . . . . . . . vorheriges Wiedergabelistenobjekt"
 
 #: modules/control/rc.c:888
-#, fuzzy
 msgid "| goto . . . . . . . . . . . .  goto item at index"
-msgstr "| gehe zu. . . . . . . . . .  gehe zu Objekt bei gegebenem Index\n"
+msgstr "| gehe zu. . . . . . . . . .  gehe zu Objekt bei gegebenem Index"
 
 #: modules/control/rc.c:889
-#, fuzzy
 msgid "| clear . . . . . . . . . . .   clear the playlist"
-msgstr "| next . . . . . . . . . . . . . nächstes Wiedergabelistenobjekt\n"
+msgstr "| clear . . . . . . . . . . . . . . . . . Wiedergabeliste leeren"
 
 #: modules/control/rc.c:890
-#, fuzzy
 msgid "| status . . . . . . . . . current playlist status"
-msgstr "| next . . . . . . . . . . . . . nächstes Wiedergabelistenobjekt\n"
+msgstr "| status . . . . . . . . . . .  aktueller Wiedergabelistenstatus"
 
 #: modules/control/rc.c:891
-#, fuzzy
 msgid "| title [X]  . . . . set/get title in current item"
-msgstr "| title [X] . . . . .  Titel im aktuellen Objekt ein-/darstellen\n"
+msgstr "| title [X] . . . . .  Titel im aktuellen Objekt ein-/darstellen"
 
 #: modules/control/rc.c:892
-#, fuzzy
 msgid "| title_n  . . . . . .  next title in current item"
-msgstr "| title_n  . . . . . . . . .  nächster Titel im aktuellen Objekt\n"
+msgstr "| title_n  . . . . . . . . .  nächster Titel im aktuellen Objekt"
 
 #: modules/control/rc.c:893
-#, fuzzy
 msgid "| title_p  . . . .  previous title in current item"
-msgstr "| title_p  . . . . . . . .  vorheriger Titel im aktuellen Objekt\n"
+msgstr "| title_p  . . . . . . . .  vorheriger Titel im aktuellen Objekt"
 
 #: modules/control/rc.c:894
-#, fuzzy
 msgid "| chapter [X]  . . set/get chapter in current item"
-msgstr "| chapter [X]  . . . Kapitel im aktuellen Objekt ein-/darstellen\n"
+msgstr "| chapter [X]  . . . Kapitel im aktuellen Objekt ein-/darstellen"
 
 #: modules/control/rc.c:895
-#, fuzzy
 msgid "| chapter_n  . . . .  next chapter in current item"
-msgstr "| chapter_n  . . . . . . .  nächstes Kapitel im aktuellen Objekt\n"
+msgstr "| chapter_n  . . . . . . .  nächstes Kapitel im aktuellen Objekt"
 
 #: modules/control/rc.c:896
-#, fuzzy
 msgid "| chapter_p  . .  previous chapter in current item"
-msgstr "| chapter_p  . . . . . .  vorheriges Kapitel im aktuellen Objekt\n"
+msgstr "| chapter_p  . . . . . .  vorheriges Kapitel im aktuellen Objekt"
 
 #: modules/control/rc.c:898
-#, fuzzy
 msgid "| seek X . seek in seconds, for instance `seek 12'"
-msgstr "| seek X . . . . .  Suchen in Sekunden, beispielsweise `seek 12'\n"
+msgstr "| seek X . . . . .  Suchen in Sekunden, beispielsweise `seek 12'"
 
 #: modules/control/rc.c:899
-#, fuzzy
 msgid "| pause  . . . . . . . . . . . . . .  toggle pause"
-msgstr "| pause  . . . . . . . . . . . . . . . . . . .  Pause umschalten\n"
+msgstr "| pause  . . . . . . . . . . . . . . . . . . .  Pause umschalten"
 
 #: modules/control/rc.c:900
-#, fuzzy
 msgid "| fastforward  . . . . . .  .  set to maximum rate"
-msgstr "| fastforward . . . . . . . . . . . . auf maximale Rate schalten\n"
+msgstr "| fastforward . . . . . . . . . . . . auf maximale Rate schalten"
 
 #: modules/control/rc.c:901
-#, fuzzy
 msgid "| rewind  . . . . . . . . . .  set to minimum rate"
-msgstr "| next . . . . . . . . . . . . . . .  auf minimale Rate schalten\n"
+msgstr "| rewind . . . . . . . . . . . . . .  auf minimale Rate schalten"
 
 #: modules/control/rc.c:902
-#, fuzzy
 msgid "| faster . . . . . . . .  faster playing of stream"
-msgstr "| play . . . . . . . . . . . . . . . . . . .  Stream wiedergeben\n"
+msgstr "| faster . . . . . . . . . . . schnellere Wiedergabe des Streams"
 
 #: modules/control/rc.c:903
-#, fuzzy
 msgid "| slower . . . . . . . .  slower playing of stream"
-msgstr "| play . . . . . . . . . . . . . . . . . . .  Stream wiedergeben\n"
+msgstr "| slower . . . . . . . . . . . langsamere Wiedergabe des Streams"
 
 #: modules/control/rc.c:904
-#, fuzzy
 msgid "| normal . . . . . . . .  normal playing of stream"
-msgstr "| play . . . . . . . . . . . . . . . . . . .  Stream wiedergeben\n"
+msgstr "| normal . . . . . . . . . . . .  normale Wiedergabe des Streams"
 
 #: modules/control/rc.c:905
-#, fuzzy
 msgid "| f [on|off] . . . . . . . . . . toggle fullscreen"
-msgstr "| f  . . . . . . . . . . . . . . . . . . . . Vollbild umschalten\n"
+msgstr "| f [on|off] . . . . . . . . . . . . . . . . Vollbild umschalten"
 
 #: modules/control/rc.c:906
-#, fuzzy
 msgid "| info . . .  information about the current stream"
-msgstr "| info . . . . . . . . . Informationen über den aktuellen Stream\n"
+msgstr "| info . . . . . . . . . Informationen über den aktuellen Stream"
 
 #: modules/control/rc.c:908
-#, fuzzy
 msgid "| volume [X] . . . . . . . .  set/get audio volume"
-msgstr "| volume [X] . . . . . . . . . . . . Lautstärke zeigen/festlegen\n"
+msgstr "| volume [X] . . . . . . . . . . . . Lautstärke zeigen/festlegen"
 
 #: modules/control/rc.c:909
-#, fuzzy
 msgid "| volup [X]  . . . . .  raise audio volume X steps"
-msgstr "| volup [X]  . . . . . . . . . .  Lautstärke um X Stufen erhöhen\n"
+msgstr "| volup [X]  . . . . . . . . . .  Lautstärke um X Stufen erhöhen"
 
 #: modules/control/rc.c:910
-#, fuzzy
 msgid "| voldown [X]  . . . .  lower audio volume X steps"
-msgstr "| voldown [X]  . . . . . . . . Lautstärke um X Stufen verringern\n"
+msgstr "| voldown [X]  . . . . . . . . Lautstärke um X Stufen verringern"
 
 #: modules/control/rc.c:911
-#, fuzzy
 msgid "| adev [X] . . . . . . . . .  set/get audio device"
-msgstr "| adev [X] . . . . . . . . . . . . .  Ton-Device dar-/einstellen\n"
+msgstr "| adev [X] . . . . . . . . . . . . .  Ton-Device dar-/einstellen"
 
 #: modules/control/rc.c:912
-#, fuzzy
 msgid "| achan [X]. . . . . . . .  set/get audio channels"
-msgstr "| achan [X]. . . . . . . . . . . . . Tonkanäle zeigen/einstellen\n"
+msgstr "| achan [X]. . . . . . . . . . . . . Tonkanäle zeigen/einstellen"
 
 #: modules/control/rc.c:913
 msgid "| menu [on|off|up|down|left|right|select] use menu"
 msgstr "| menu [on|off|up|down|left|right|select] use menu"
 
 #: modules/control/rc.c:918
-#, fuzzy
 msgid "| marq-marquee STRING  . . overlay STRING in video"
-msgstr "| marq-marquee ZEICHENKETTE . . ZEICHENKETTE im Video einblenden\n"
+msgstr "| marq-marquee ZEICHENKETTE . . ZEICHENKETTE im Video einblenden"
 
 #: modules/control/rc.c:919
-#, fuzzy
 msgid "| marq-x X . . . . . . . . . . . .offset from left"
-msgstr "| marq-x X . . . . . . . . . . . . . . . . . . Abstand von links\n"
+msgstr "| marq-x X . . . . . . . . . . . . . . . . . . Abstand von links"
 
 #: modules/control/rc.c:920
-#, fuzzy
 msgid "| marq-y Y . . . . . . . . . . . . offset from top"
-msgstr "| marq-y Y  . . . . . . . . . . . . . . . . . . Abstand von oben\n"
+msgstr "| marq-y Y  . . . . . . . . . . . . . . . . . . Abstand von oben"
 
 #: modules/control/rc.c:921
-#, fuzzy
 msgid "| marq-position #. . .  .relative position control"
-msgstr "| marq-position #. . . . . . . . . . relative Positionskontrolle\n"
+msgstr "| marq-position #. . . . . . . . . . relative Positionskontrolle"
 
 #: modules/control/rc.c:922
-#, fuzzy
 msgid "| marq-color # . . . . . . . . . . font color, RGB"
-msgstr "| marq-color # . . . . . . . . . . . . . . . . Schriftfarbe, RGB\n"
+msgstr "| marq-color # . . . . . . . . . . . . . . . . Schriftfarbe, RGB"
 
 #: modules/control/rc.c:923
-#, fuzzy
 msgid "| marq-opacity # . . . . . . . . . . . . . opacity"
-msgstr "| marq-opacity # . . . . . . . . . . . . . . . . . . . Deckkraft\n"
+msgstr "| marq-opacity # . . . . . . . . . . . . . . . . . . . Deckkraft"
 
 #: modules/control/rc.c:924
-#, fuzzy
 msgid "| marq-timeout T. . . . . . . . . . timeout, in ms"
-msgstr "| marq-timeout T . . . . . . . .  Timeout der Einblendung, in ms\n"
+msgstr "| marq-timeout T . . . . . . . .  Timeout der Einblendung, in ms"
 
 #: modules/control/rc.c:925
-#, fuzzy
 msgid "| marq-size # . . . . . . . . font size, in pixels"
-msgstr "| marq-size #  . . . . . . . . . . . . . Schriftgröße, in Pixeln\n"
+msgstr "| marq-size #  . . . . . . . . . . . . . Schriftgröße, in Pixeln"
 
 #: modules/control/rc.c:927
-#, fuzzy
 msgid "| time-format STRING . . . overlay STRING in video"
-msgstr "| time-format ZEICHENKETTE . .  ZEICHENKETTE im Video einblenden\n"
+msgstr "| time-format ZEICHENKETTE . .  ZEICHENKETTE im Video einblenden"
 
 #: modules/control/rc.c:928
-#, fuzzy
 msgid "| time-x X . . . . . . . . . . . .offset from left"
-msgstr "| time-x X . . . . . . . . . . . . . . . . . . Abstand von links\n"
+msgstr "| time-x X . . . . . . . . . . . . . . . . . . Abstand von links"
 
 #: modules/control/rc.c:929
-#, fuzzy
 msgid "| time-y Y . . . . . . . . . . . . offset from top"
-msgstr "| marq-y Y  . . . . . . . . . . . . . . . . . . Abstand von oben\n"
+msgstr "| marq-y Y  . . . . . . . . . . . . . . . . . . Abstand von oben"
 
 #: modules/control/rc.c:930
-#, fuzzy
 msgid "| time-position #. . . . . . . . relative position"
-msgstr "| time-position # . . . . . . . . . . . . . .  relative Position\n"
+msgstr "| time-position # . . . . . . . . . . . . . .  relative Position"
 
 #: modules/control/rc.c:931
-#, fuzzy
 msgid "| time-color # . . . . . . . . . . font color, RGB"
-msgstr "| time-color # . . . . . . . . . . . . . . . . Schriftfarbe, RGB\n"
+msgstr "| time-color # . . . . . . . . . . . . . . . . Schriftfarbe, RGB"
 
 #: modules/control/rc.c:932
-#, fuzzy
 msgid "| time-opacity # . . . . . . . . . . . . . opacity"
-msgstr "| time-opacity # . . . . . . . . . . . . . . . . . . . Deckkraft\n"
+msgstr "| time-opacity # . . . . . . . . . . . . . . . . . . . Deckkraft"
 
 #: modules/control/rc.c:933
-#, fuzzy
 msgid "| time-size # . . . . . . . . font size, in pixels"
-msgstr "| time-size # . . . . . . . . . . . . .  Schriftgröße, in Pixeln\n"
+msgstr "| time-size # . . . . . . . . . . . . .  Schriftgröße, in Pixeln"
 
 #: modules/control/rc.c:935
-#, fuzzy
 msgid "| logo-file STRING . . .the overlay file path/name"
-msgstr "| logo-file ZEICHENKETTE . . . die überlagerte Datei (Pfad/Name)\n"
+msgstr "| logo-file ZEICHENKETTE . . . die überlagerte Datei (Pfad/Name)"
 
 #: modules/control/rc.c:936
-#, fuzzy
 msgid "| logo-x X . . . . . . . . . . . .offset from left"
-msgstr "| logo-x X . . . . . . . . . . . . . . . . . . Abstand von links\n"
+msgstr "| logo-x X . . . . . . . . . . . . . . . . . . Abstand von links"
 
 #: modules/control/rc.c:937
-#, fuzzy
 msgid "| logo-y Y . . . . . . . . . . . . offset from top"
-msgstr "| logo-y Y . . . . . . . . . . . . . . . . . .  Abstand von oben\n"
+msgstr "| logo-y Y . . . . . . . . . . . . . . . . . .  Abstand von oben"
 
 #: modules/control/rc.c:938
-#, fuzzy
 msgid "| logo-position #. . . . . . . . relative position"
-msgstr "| logo-position # . . . . . . . . . . . . . .  relative Position\n"
+msgstr "| logo-position # . . . . . . . . . . . . . .  relative Position"
 
 #: modules/control/rc.c:939
-#, fuzzy
 msgid "| logo-transparency #. . . . . . . . .transparency"
-msgstr "| logo-transparency # . . . . . . . . . . . . . . .  Transparenz\n"
+msgstr "| logo-transparency # . . . . . . . . . . . . . . .  Transparenz"
 
 #: modules/control/rc.c:941
-#, fuzzy
 msgid "| mosaic-alpha # . . . . . . . . . . . . . . alpha"
-msgstr "| mosaic-alpha #. . . . . . . . . . . . . . . . . . . . .  Alpha\n"
+msgstr "| mosaic-alpha #. . . . . . . . . . . . . . . . . . . . .  Alpha"
 
 #: modules/control/rc.c:942
-#, fuzzy
 msgid "| mosaic-height #. . . . . . . . . . . . . .height"
-msgstr "| mosaic-height # . . . . . . . . . . . . . . . . . . . . . Höhe\n"
+msgstr "| mosaic-height # . . . . . . . . . . . . . . . . . . . . . Höhe"
 
 #: modules/control/rc.c:943
-#, fuzzy
 msgid "| mosaic-width # . . . . . . . . . . . . . . width"
-msgstr "| mosaic-width # . . . . . . . . . . . . . . . . . . . .  Breite\n"
+msgstr "| mosaic-width # . . . . . . . . . . . . . . . . . . . .  Breite"
 
 #: modules/control/rc.c:944
-#, fuzzy
 msgid "| mosaic-xoffset # . . . .top left corner position"
-msgstr "| mosaic-xoffset # . . . . . . . Position der linken oberen Ecke\n"
+msgstr "| mosaic-xoffset # . . . . . . . Position der linken oberen Ecke"
 
 #: modules/control/rc.c:945
-#, fuzzy
 msgid "| mosaic-yoffset # . . . .top left corner position"
-msgstr "| mosaic-yoffset # . . . . . . . Position der linken oberen Ecke\n"
+msgstr "| mosaic-yoffset # . . . . . . . Position der linken oberen Ecke"
 
 #: modules/control/rc.c:946
-#, fuzzy
 msgid "| mosaic-align 0..2,4..6,8..10. . .mosaic alignment"
-msgstr "| mosaic-align 0..2,4..6,8..10. . . . . . . . Mosaik-Ausrichtung\n"
+msgstr "| mosaic-align 0..2,4..6,8..10. . . . . . . . Mosaik-Ausrichtung"
 
 #: modules/control/rc.c:947
-#, fuzzy
 msgid "| mosaic-vborder # . . . . . . . . vertical border"
-msgstr "| mosaic-vborder # . . . . . . . . . . . . . . . vertikaler Rand\n"
+msgstr "| mosaic-vborder # . . . . . . . . . . . . . . . vertikaler Rand"
 
 #: modules/control/rc.c:948
-#, fuzzy
 msgid "| mosaic-hborder # . . . . . . . horizontal border"
-msgstr "| mosaic-hborder # . . . . . . . . . . . . . . horizontaler Rand\n"
+msgstr "| mosaic-hborder # . . . . . . . . . . . . . . horizontaler Rand"
 
 #: modules/control/rc.c:949
-#, fuzzy
 msgid "| mosaic-position {0=auto,1=fixed} . . . .position"
-msgstr "| mosaic-position {0=auto,1=fest} . . . . . . . . . . . Position\n"
+msgstr "| mosaic-position {0=auto,1=fest} . . . . . . . . . . . Position"
 
 #: modules/control/rc.c:950
-#, fuzzy
 msgid "| mosaic-rows #. . . . . . . . . . .number of rows"
-msgstr "| mosaic-rows #. . . . . . . . . . . . . . . . Anzahl von Reihen\n"
+msgstr "| mosaic-rows #. . . . . . . . . . . . . . . . Anzahl von Reihen"
 
 #: modules/control/rc.c:951
-#, fuzzy
 msgid "| mosaic-cols #. . . . . . . . . . .number of cols"
-msgstr "| mosaic-cols # . . . . . . . . . . . . . . . Anzahl von Spalten\n"
+msgstr "| mosaic-cols # . . . . . . . . . . . . . . . Anzahl von Spalten"
 
 #: modules/control/rc.c:952
-#, fuzzy
 msgid "| mosaic-keep-aspect-ratio {0,1} . . .aspect ratio"
-msgstr "| mosaic-keep-aspect-ratio {0,1} . . . . . . .  Seitenverhältnis\n"
+msgstr "| mosaic-keep-aspect-ratio {0,1} . . . . . . .  Seitenverhältnis"
 
 #: modules/control/rc.c:954
 msgid ""
@@ -9020,52 +8826,38 @@ msgstr ""
 "|               [undef] [info] [source] [binary] [plugin]"
 
 #: modules/control/rc.c:958
-#, fuzzy
 msgid "| help . . . . . . . . . . . . . this help message"
-msgstr "| help . . . . . . . . . . . . . . . . . . diese Hilfsmitteilung\n"
+msgstr "| help . . . . . . . . . . . . . . . . . . diese Hilfsmitteilung"
 
 #: modules/control/rc.c:959
-#, fuzzy
 msgid "| longhelp . . . . . . . . . a longer help message"
-msgstr "| longhelp . . . . . . . . . . . .  eine längere Hilfsmitteilung\n"
+msgstr "| longhelp . . . . . . . . . . . .  eine längere Hilfsmitteilung"
 
 #: modules/control/rc.c:960
-#, fuzzy
 msgid "| logout . . . . .  exit (if in socket connection)"
-msgstr "| logout . . . . . . . . . . .  Abmelden (bei Socket-Verbindung)\n"
+msgstr "| logout . . . . . . . . . . .  Abmelden (bei Socket-Verbindung)"
 
 #: modules/control/rc.c:961
-#, fuzzy
 msgid "| quit . . . . . . . . . . . . . . . . .  quit vlc"
-msgstr "| quit . . . . . . . . . . . . . . . . . . . . . . . VLC beenden\n"
+msgstr "| quit . . . . . . . . . . . . . . . . . . . . . . . VLC beenden"
 
 #: modules/control/rc.c:963
-#, fuzzy
 msgid "+----[ end of help ]"
-msgstr "+----[ Ende der Hilfe ]\n"
+msgstr "+----[ Ende der Hilfe ]"
 
 #: modules/control/rc.c:1070
-#, fuzzy
 msgid "Press menu select or pause to continue."
-msgstr ""
-"\n"
-"Drücken Sie die Eingabetaste um fortzufahren...\n"
+msgstr "Drücken Sie Menüauswahl oder Pause um fortzufahren."
 
 #: modules/control/rc.c:1238 modules/control/rc.c:1725
 #: modules/control/rc.c:1795 modules/control/rc.c:1844
 #: modules/control/rc.c:1943
-#, fuzzy
 msgid "Type 'menu select' or 'pause' to continue."
-msgstr ""
-"\n"
-"Drücken Sie die Eingabetaste um fortzufahren...\n"
+msgstr "Geben Sie 'menu select' oder 'pause' ein, um fortzufahren."
 
 #: modules/control/rc.c:1385
-#, fuzzy
 msgid "Type 'pause' to continue."
-msgstr ""
-"\n"
-"Drücken Sie die Eingabetaste um fortzufahren...\n"
+msgstr "Geben Sie 'pause' ein, um fortzufahren."
 
 #: modules/control/rc.c:1928 modules/control/rc.c:1967
 msgid "Please provide one of the following parameters:"
@@ -9076,14 +8868,12 @@ msgid "Threshold"
 msgstr "Grenzbereich"
 
 #: modules/control/showintf.c:63
-#, fuzzy
 msgid "Height of the zone triggering the interface."
-msgstr "Höhe der Zone, die das Interface auslöst"
+msgstr "Höhe der Zone, die das Interface auslöst."
 
 #: modules/control/telnet.c:72
-#, fuzzy
 msgid "Host"
-msgstr "House"
+msgstr "Host"
 
 #: modules/control/telnet.c:73
 msgid ""
@@ -9142,31 +8932,26 @@ msgid "Force interleaved method"
 msgstr "ineinanderverschachtelte Methode erzwingen"
 
 #: modules/demux/avi/avi.c:43
-#, fuzzy
 msgid "Force interleaved method."
-msgstr "ineinanderverschachtelte Methode erzwingen"
+msgstr "Ineinanderverschachtelte Methode erzwingen."
 
 #: modules/demux/avi/avi.c:45
 msgid "Force index creation"
 msgstr "Index-Erzeugung erzwingen"
 
 #: modules/demux/avi/avi.c:47
-#, fuzzy
 msgid ""
 "Recreate a index for the AVI file. Use this if your AVI file is damaged or "
 "incomplete (not seekable)."
-msgstr ""
-"Einen Index für die AVI-Datei erzeugen, so dass wir sie zuverlässiger "
-"durchsuchen können."
+msgstr "Erneut einen Index für die AVI-Datei erzeugen. Benutzen Sie dies, wenn Ihre AVI-Datei beschädigt oder nicht komplett ist (nicht durchsuchbar)."
 
 #: modules/demux/avi/avi.c:55
 msgid "AVI demuxer"
 msgstr "AVI Demuxer"
 
 #: modules/demux/avi/avi.c:549
-#, fuzzy
 msgid "AVI Index"
-msgstr "Index"
+msgstr "AVI-Index"
 
 #: modules/demux/avi/avi.c:550
 msgid ""
@@ -9186,31 +8971,24 @@ msgid "Creating AVI Index ..."
 msgstr "Erzeuge AVI Index ..."
 
 #: modules/demux/demuxdump.c:38
-#, fuzzy
 msgid "Dump filename"
-msgstr "Protokoll-Dateiname"
+msgstr "Dateiname des Dumps"
 
 #: modules/demux/demuxdump.c:40
-#, fuzzy
 msgid "Name of the file to which the raw stream will be dumped."
-msgstr "Geben Sie einen Dateinamen ein, unter dem der rohe Stream gesichert wird."
+msgstr "Name der Datei, unter dem der rohe Stream abgelegt wird."
 
 #: modules/demux/demuxdump.c:41
-#, fuzzy
 msgid "Append to existing file"
-msgstr "An Datei anhängen"
+msgstr "An existierende Datei anhängen"
 
 #: modules/demux/demuxdump.c:43
-#, fuzzy
 msgid "If the file already exists, it will not be overwritten."
-msgstr ""
-"Wenn die Datei existiert und diese Option ausgewählt ist, wird die "
-"existierende Datei nicht überschrieben."
+msgstr "Wenn die Datei bereits existiert, wird sie nicht überschrieben."
 
 #: modules/demux/demuxdump.c:52
-#, fuzzy
 msgid "File dumpper"
-msgstr "Dateispeicher-Demuxer"
+msgstr "Datei-Dumper"
 
 #: modules/demux/dts.c:40
 msgid "Raw DTS demuxer"
@@ -9233,7 +9011,6 @@ msgid "Kasenna RTSP dialect"
 msgstr "Kasenna RTSP-Dialekt"
 
 #: modules/demux/livedotcom.cpp:67
-#, fuzzy
 msgid ""
 "Kasenna servers use an old and unstandard dialect of RTSP. When you set this "
 "parameter, VLC will try this dialect for communication. In this mode you "
@@ -9241,8 +9018,7 @@ msgid ""
 msgstr ""
 "Kasenna-Server sprechen einen alten und nicht standardkonformen Dialekt von "
 "RTSP. Wenn Sie diesen Parameter aktivieren, wird VLC versuchen, diesen "
-"Dialekt für die Kommunikation zu verwenden. In diesem Modus können Sie nicht "
-"mit normalen RTSP-Servern sprechen."
+"Dialekt für die Kommunikation zu verwenden. In diesem Modus können Sie sich nicht mit normalen RTSP-Servern verbinden."
 
 #: modules/demux/livedotcom.cpp:73
 msgid "RTP/RTSP/SDP demuxer (using Live555.com)"
@@ -9257,9 +9033,8 @@ msgid "Use RTP over RTSP (TCP)"
 msgstr "RTP über RTSP (TCP) benutzen"
 
 #: modules/demux/livedotcom.cpp:91
-#, fuzzy
 msgid "Client port"
-msgstr "Video-Port"
+msgstr "Client-Port"
 
 #: modules/demux/livedotcom.cpp:92
 msgid "Port to use for the RTP source of the session"
@@ -9270,9 +9045,8 @@ msgid "Tunnel RTSP and RTP over HTTP"
 msgstr "RTSP und RTP über HTTP tunneln"
 
 #: modules/demux/livedotcom.cpp:98
-#, fuzzy
 msgid "HTTP tunnel port"
-msgstr "HTTP Input"
+msgstr "HTTP Tunnel-Port"
 
 #: modules/demux/livedotcom.cpp:100
 msgid "Port to use for tunneling the RTSP/RTP over HTTP"
@@ -9287,18 +9061,14 @@ msgid "Frames per Second"
 msgstr "Frames pro Sekunde"
 
 #: modules/demux/mjpeg.c:44
-#, fuzzy
 msgid ""
 "This is the desired frame rate when playing MJPEG from a file. Use 0 (this "
 "is the default value) for a live stream (from a camera)."
-msgstr ""
-"Erlaubt Ihnen die gewünschte Framerate pro Sekunde festzulegen, wenn Dateien "
-"wiedergegeben werden. Benutzen Sie 0 für live."
+msgstr "Dies ist die gewünschte Framerate, wenn MJPEG aus einer Datei wiedergegeben werden. Benutzen Sie 0 (der Standardwert) für einen Livestream (von einer Kamera)."
 
 #: modules/demux/mjpeg.c:50
-#, fuzzy
 msgid "M-JPEG camera demuxer"
-msgstr "JPEG-Kamerademuxer"
+msgstr "M-JPEG-Kamerademuxer"
 
 #: modules/demux/mkv.cpp:394
 msgid "Matroska stream demuxer"
@@ -9321,9 +9091,8 @@ msgid "Use chapter codecs found in the segment."
 msgstr "Kapitel-Codecs benutzen, wie im Segment gefunden."
 
 #: modules/demux/mkv.cpp:409
-#, fuzzy
 msgid "Preload Directory"
-msgstr "Aufnahmeverzeichnis"
+msgstr "Verzeichnis vorladen"
 
 #: modules/demux/mkv.cpp:410
 msgid ""
@@ -9334,9 +9103,8 @@ msgstr ""
 "(sollte bei defekten Dateien vermieden werden)."
 
 #: modules/demux/mkv.cpp:413
-#, fuzzy
 msgid "Seek based on percent not time"
-msgstr "Prozent basiert suchen, nicht auf Zeit."
+msgstr "Prozent basiert suchen, nicht auf Zeit"
 
 #: modules/demux/mkv.cpp:414
 msgid "Seek based on percent not time."
@@ -9385,29 +9153,24 @@ msgid "Enable noise reduction algorithm"
 msgstr "Rauschen unterdrücken"
 
 #: modules/demux/mod.c:49
-#, fuzzy
 msgid "Enable reverberation"
-msgstr "Audio aktivieren"
+msgstr "Hall aktivieren"
 
 #: modules/demux/mod.c:50
-#, fuzzy
 msgid "Reverberation level (from 0 to 100, default value is 0)."
-msgstr "Hall-Niveau (0-100, standardmäßig 0)"
+msgstr "Hall-Niveau (0-100, standardmäßig 0)."
 
 #: modules/demux/mod.c:52
-#, fuzzy
 msgid "Reverberation delay, in ms. Usual values are from to 40 to 200ms."
-msgstr "Hallverzögerung in ms (üblicherweise 40-200 ms)"
+msgstr "Hallverzögerung in ms. Übliche Werte sind von 40 bis 200 ms."
 
 #: modules/demux/mod.c:54
-#, fuzzy
 msgid "Enable megabass mode"
-msgstr "Höchstwerte aktivieren"
+msgstr "Megabass-Modus aktivieren"
 
 #: modules/demux/mod.c:55
-#, fuzzy
 msgid "Megabass mode level (from 0 to 100, default value is 0)."
-msgstr "Mega-Bass-Niveau (0-100, standardmäßig 0)"
+msgstr "Mega-Bass-Niveau (von 0 bis 100, standardmäßig 0)."
 
 #: modules/demux/mod.c:58
 msgid ""
@@ -9419,14 +9182,12 @@ msgstr ""
 "Werte gehen von 10 bis 100 Hz"
 
 #: modules/demux/mod.c:61
-#, fuzzy
 msgid "Surround effect level (from 0 to 100, default value is 0)."
-msgstr "Surround-Level (0-100, standardmäßig 0)"
+msgstr "Surround-Effekt-Level (von 0 bis 100, standardmäßig 0)."
 
 #: modules/demux/mod.c:63
-#, fuzzy
 msgid "Surround delay, in ms. Usual values are from 5 to 40 ms"
-msgstr "Surround-Verzögerung in ms (üblicherweise 5-40ms)"
+msgstr "Surround-Verzögerung in ms. Übliche Werte sind von 5 bis 40 ms."
 
 #: modules/demux/mod.c:68
 msgid "MOD demuxer (libmodplug)"
@@ -9437,37 +9198,32 @@ msgid "Reverb"
 msgstr "Hall"
 
 #: modules/demux/mod.c:79
-#, fuzzy
 msgid "Reverberation level"
-msgstr "Hall-Niveau (0-100)"
+msgstr "Hall-Niveau"
 
 #: modules/demux/mod.c:81
-#, fuzzy
 msgid "Reverberation delay"
-msgstr "Hallverzögerung (ms)"
+msgstr "Hallverzögerung"
 
 #: modules/demux/mod.c:83
 msgid "Mega bass"
 msgstr "Mega-Bass"
 
 #: modules/demux/mod.c:86
-#, fuzzy
 msgid "Mega bass level"
-msgstr "Mega-Bass-Niveau (0-100)"
+msgstr "Mega-Bass-Niveau"
 
 #: modules/demux/mod.c:88
-#, fuzzy
 msgid "Mega bass cutoff"
-msgstr "Mega-Bass-Begrenzung (Hz)"
+msgstr "Mega-Bass-Begrenzung"
 
 #: modules/demux/mod.c:90
 msgid "Surround"
 msgstr "Surround"
 
 #: modules/demux/mod.c:93
-#, fuzzy
 msgid "Surround level"
-msgstr "Surround-Level (0-100)"
+msgstr "Surround-Level"
 
 #: modules/demux/mod.c:95
 msgid "Surround delay (ms)"
@@ -9478,9 +9234,8 @@ msgid "MP4 stream demuxer"
 msgstr "MP4-Stream Demuxer"
 
 #: modules/demux/mpc.c:46
-#, fuzzy
 msgid "Replay Gain type"
-msgstr "Abspielen und Stoppen"
+msgstr "Verstärkungstyp erneut wiedergeben"
 
 #: modules/demux/mpc.c:47
 msgid ""
@@ -9491,14 +9246,12 @@ msgstr ""
 "Sie aus, welches von beiden Sie benutzen möchten."
 
 #: modules/demux/mpc.c:59
-#, fuzzy
 msgid "MusePack demuxer"
-msgstr "PS Demuxer"
+msgstr "MusePack Demuxer"
 
 #: modules/demux/mpeg/h264.c:40
-#, fuzzy
 msgid "Desired frame rate for the H264 stream."
-msgstr "Erlaubt Ihnen die gewünschte Framerate für die Aufnahme festzulegen."
+msgstr "Gewünschte Framerate für den H.264-Stream."
 
 #: modules/demux/mpeg/h264.c:47
 msgid "H264 video demuxer"
@@ -9513,18 +9266,16 @@ msgid "MPEG-4 video demuxer"
 msgstr "MPEG-4 Videodemuxer"
 
 #: modules/demux/mpeg/mpga.c:46
-#, fuzzy
 msgid "MPEG audio / MP3 demuxer"
-msgstr "MPEG-4 - Audiodemuxer"
+msgstr "MPEG audio /MP3 Demuxer"
 
 #: modules/demux/mpeg/mpgv.c:42
 msgid "MPEG-I/II video demuxer"
 msgstr "MPEG I/II - Videodemuxer"
 
 #: modules/demux/nsc.c:43
-#, fuzzy
 msgid "Windows Media NSC metademux"
-msgstr "Kasenna-MediaBase-Metademux"
+msgstr "Windows Media NSC Metademux"
 
 #: modules/demux/nsv.c:45
 msgid "NullSoft demuxer"
@@ -9535,18 +9286,16 @@ msgid "Nuv demuxer"
 msgstr "Nuv Demuxer"
 
 #: modules/demux/ogg.c:44
-#, fuzzy
 msgid "OGG demuxer"
-msgstr "VOC Demuxer"
+msgstr "OGG Demuxer"
 
 #: modules/demux/playlist/b4s.c:341
 msgid "Listeners"
 msgstr "Zuhörer"
 
 #: modules/demux/playlist/playlist.c:36
-#, fuzzy
 msgid "Auto start"
-msgstr "Autor-Metadaten"
+msgstr "Autostart"
 
 #: modules/demux/playlist/playlist.c:38
 msgid "Automatically start playing the playlist content once it's loaded.\n"
@@ -9569,19 +9318,16 @@ msgid "B4S playlist import"
 msgstr "B4S-Wiedergabelistenimport"
 
 #: modules/demux/playlist/playlist.c:79
-#, fuzzy
 msgid "DVB playlist import"
-msgstr "B4S-Wiedergabelistenimport"
+msgstr "DVB-Wiedergabelistenimport"
 
 #: modules/demux/playlist/playlist.c:84
-#, fuzzy
 msgid "Podcast parser"
-msgstr "CDDB-Kategorie"
+msgstr "Podcast-Parser"
 
 #: modules/demux/playlist/playlist.c:89
-#, fuzzy
 msgid "XSPF playlist import"
-msgstr "PLS-Wiedergabelistenimport"
+msgstr "XSPF-Wiedergabelistenimport"
 
 #: modules/demux/playlist/podcast.c:289 modules/demux/playlist/podcast.c:298
 #: modules/demux/playlist/podcast.c:307 modules/demux/playlist/podcast.c:316
@@ -9591,72 +9337,60 @@ msgstr "PLS-Wiedergabelistenimport"
 #: modules/demux/playlist/podcast.c:404 modules/demux/playlist/podcast.c:412
 #: modules/demux/playlist/podcast.c:420 modules/demux/playlist/podcast.c:428
 #: modules/demux/playlist/podcast.c:436
-#, fuzzy
 msgid "Podcast Info"
-msgstr "Position"
+msgstr "Podcast-Infos"
 
 #: modules/demux/playlist/podcast.c:290
-#, fuzzy
 msgid "Podcast Link"
-msgstr "Position"
+msgstr "Podcast-Link"
 
 #: modules/demux/playlist/podcast.c:299
-#, fuzzy
 msgid "Podcast Copyright"
-msgstr "Copyright"
+msgstr "Podcast-Copyright"
 
 #: modules/demux/playlist/podcast.c:308
-#, fuzzy
 msgid "Podcast Category"
-msgstr "CDDB-Kategorie"
+msgstr "Podcast-Kategorie"
 
 #: modules/demux/playlist/podcast.c:317 modules/demux/playlist/podcast.c:405
 msgid "Podcast Keywords"
 msgstr "Podcaste Keywords"
 
 #: modules/demux/playlist/podcast.c:326 modules/demux/playlist/podcast.c:413
-#, fuzzy
 msgid "Podcast Subtitle"
-msgstr "Untertitel"
+msgstr "Podcast-Untertitel"
 
 #: modules/demux/playlist/podcast.c:336 modules/demux/playlist/podcast.c:421
-#, fuzzy
 msgid "Podcast Summary"
-msgstr "Dummy"
+msgstr "Podcastzusammenfassung"
 
 #: modules/demux/playlist/podcast.c:373
-#, fuzzy
 msgid "Podcast Publication Date"
-msgstr "Modulationstyp"
+msgstr "Podcastveröffentlichungsdatum"
 
 #: modules/demux/playlist/podcast.c:381
-#, fuzzy
 msgid "Podcast Author"
-msgstr "Autor"
+msgstr "Podcast-Autor"
 
 #: modules/demux/playlist/podcast.c:389
-#, fuzzy
 msgid "Podcast Subcategory"
-msgstr "Nach Kategorie"
+msgstr "Podcast-Unterkategorie"
 
 #: modules/demux/playlist/podcast.c:397
-#, fuzzy
 msgid "Podcast Duration"
-msgstr "Sättigung"
+msgstr "Podcast-Dauer"
 
 #: modules/demux/playlist/podcast.c:429
-#, fuzzy
 msgid "Podcast Size"
-msgstr "Paketgröße"
+msgstr "Podcast-Größe"
 
 #: modules/demux/playlist/podcast.c:437
 msgid "Podcast Type"
 msgstr "Podcast Typ"
 
 #: modules/demux/ps.c:47 modules/demux/ps.c:55
-#, fuzzy
 msgid "MPEG-PS demuxer"
-msgstr "PS Demuxer"
+msgstr "MPEG-PS Demuxer"
 
 #: modules/demux/pva.c:43
 msgid "PVA demuxer"
@@ -9671,14 +9405,12 @@ msgid "Real demuxer"
 msgstr "Real-Demuxer"
 
 #: modules/demux/sgimb.c:113
-#, fuzzy
 msgid "Kasenna MediaBase parser"
-msgstr "Kasenna-MediaBase-Metademux"
+msgstr "Kasenna-MediaBase-Parser"
 
 #: modules/demux/subtitle.c:64
-#, fuzzy
 msgid "Text subtitles parser"
-msgstr "Textuntertitel-Dekoder"
+msgstr "Textuntertitelparser"
 
 #: modules/demux/subtitle.c:69 modules/gui/wxwidgets/dialogs/subtitles.cpp:202
 msgid "Frames per second"
@@ -9689,20 +9421,18 @@ msgid "Subtitles delay"
 msgstr "Untertitelverzögerung"
 
 #: modules/demux/subtitle.c:74
-#, fuzzy
 msgid "Subtitles format"
-msgstr "Untertitel einblenden"
+msgstr "Untertitelformat"
 
 #: modules/demux/ts.c:83
 msgid "Extra PMT"
 msgstr "Extra PMT"
 
 #: modules/demux/ts.c:85
-#, fuzzy
 msgid "Allows a user to specify an extra pmt (pmt_pid=pid:stream_type[,...])."
 msgstr ""
 "Erlaubt einem Benutzer eine Extra-PMT (pmt_pid=pid:stream_type[,...]) "
-"festzulegen"
+"festzulegen."
 
 #: modules/demux/ts.c:87
 msgid "Set id of ES to PID"
@@ -9723,18 +9453,16 @@ msgid "Fast udp streaming"
 msgstr "Schnells UDP-Streaming"
 
 #: modules/demux/ts.c:95
-#, fuzzy
 msgid "Sends TS to specific ip:port by udp (you must know what you are doing)."
-msgstr "Sendet TS an bestimmte ip:port via UDP (Sie müssen wissen, was Sie tun)"
+msgstr "Sendet TS an bestimmten ip:port über UDP (Sie müssen wissen, was Sie tun)."
 
 #: modules/demux/ts.c:97
 msgid "MTU for out mode"
 msgstr "MTU für Out-Modus"
 
 #: modules/demux/ts.c:98
-#, fuzzy
 msgid "MTU for out mode."
-msgstr "MTU für Out-Modus"
+msgstr "MTU für Out-Modus."
 
 #: modules/demux/ts.c:100
 msgid "CSA ck"
@@ -9749,18 +9477,16 @@ msgid "Silent mode"
 msgstr "Silent-Modus"
 
 #: modules/demux/ts.c:104
-#, fuzzy
 msgid "Do not complain on encrypted PES."
-msgstr "Nicht über verschlüsselte PES beschweren"
+msgstr "Nicht über verschlüsselte PES beschweren."
 
 #: modules/demux/ts.c:106
 msgid "CAPMT System ID"
 msgstr "CAPMT System-ID"
 
 #: modules/demux/ts.c:107
-#, fuzzy
 msgid "Only forward descriptors from this SysID to the CAM."
-msgstr "nur Deskriptoren von dieser SysID an die CAM weiterleiten"
+msgstr "Nur Deskriptoren von dieser SysID an die CAM weiterleiten."
 
 #: modules/demux/ts.c:109
 msgid "Packet size in bytes to decrypt"
@@ -9780,9 +9506,8 @@ msgid "Filename of dump"
 msgstr "Dateiname des Dumps"
 
 #: modules/demux/ts.c:115
-#, fuzzy
 msgid "Specify a filename where to dump the TS in."
-msgstr "Geben Sie einen Dateinamen ein, unter dem der rohe Stream gesichert wird."
+msgstr "Geben Sie einen Dateinamen ein, unter dem der TS gesichert wird."
 
 #: modules/demux/ts.c:117
 msgid "Append"
@@ -9797,9 +9522,8 @@ msgstr ""
 "existierende Datei nicht überschrieben."
 
 #: modules/demux/ts.c:122
-#, fuzzy
 msgid "Dump buffer size"
-msgstr "Ratenkontrollierungspuffergröße"
+msgstr "Puffergröße als Dump ablegen"
 
 #: modules/demux/ts.c:124
 msgid ""
@@ -10110,14 +9834,12 @@ msgid "Hard rock"
 msgstr "Hard Rock"
 
 #: modules/demux/util/id3tag.c:50
-#, fuzzy
 msgid "ID3 tags parser"
-msgstr "DTS Parser"
+msgstr "ID3-Tags Parser"
 
 #: modules/demux/vobsub.c:48
-#, fuzzy
 msgid "Vobsub subtitles parser"
-msgstr "Vobsub - Textuntertitel-Demuxer"
+msgstr "Vobsub - Untertitelparser"
 
 #: modules/demux/voc.c:42
 msgid "VOC demuxer"
@@ -12449,7 +12171,6 @@ msgid "Authors: the VideoLAN Team, http://www.videolan.org/team/"
 msgstr "Autoren: Das VideoLAN Team, http://www.videolan.org/team/"
 
 #: modules/gui/pda/pda_interface.c:1349
-#, fuzzy
 msgid "(c) 1996-2004 the the VideoLAN team team"
 msgstr "(c) 1996-2004 das VideoLAN Team"
 
@@ -12467,9 +12188,8 @@ msgid "Open a skin file"
 msgstr "Eine Skin-Datei öffnen"
 
 #: modules/gui/skins2/src/dialogs.cpp:224
-#, fuzzy
 msgid "Skin files (*.vlt;*.wsz)|*.vlt;*.wsz|Skin files (*.xml)|*.xml"
-msgstr "Skin-Dateien (*.vlt)|*.vlt|Skin-Dateien (*.xml)|*.xml|"
+msgstr "Skin-Dateien (*.vlt;*.wsz)|*.vlt;*.wsz|Skin-Dateien (*.xml)|*.xml|"
 
 #: modules/gui/skins2/src/dialogs.cpp:231
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:949
@@ -12477,11 +12197,12 @@ msgid "Open playlist"
 msgstr "Wiedergabeliste öffnen"
 
 #: modules/gui/skins2/src/dialogs.cpp:232
-#, fuzzy
 msgid ""
 "All playlists|*.pls;*.m3u;*.asx;*.b4s;*.xspf|M3U files|*.m3u|XSPF playlist|*."
 "xspf"
-msgstr "Alle Wiedergabelisten |*.pls;*.m3u;*.asx;*.b4s|M3U files|*.m3u"
+msgstr ""
+"Alle Wiedergabelisten|*.pls;*.m3u;*.asx;*.b4s;*.xspf|M3U files|*.m3u|XSPF playlist|*."
+"xspf"
 
 #: modules/gui/skins2/src/dialogs.cpp:241
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:933
@@ -12493,14 +12214,12 @@ msgid "M3U file|*.m3u|XSPF playlist|*.xspf"
 msgstr "M3U Datei|*.m3u|XSPF Playlist|*.xspf"
 
 #: modules/gui/skins2/src/skin_main.cpp:343
-#, fuzzy
 msgid "Skin to use"
-msgstr "Skins"
+msgstr "Zu benutzende Skin"
 
 #: modules/gui/skins2/src/skin_main.cpp:344
-#, fuzzy
 msgid "Path to the skin to use."
-msgstr "Kompletter Pfad der zu benutzenden PNG-Datei."
+msgstr "Pfad zur zu benutzenden Skin."
 
 #: modules/gui/skins2/src/skin_main.cpp:345
 msgid "Config of last used skin"
@@ -12557,18 +12276,16 @@ msgstr ""
 "\n"
 
 #: modules/gui/wince/interface.cpp:497 modules/gui/wxwidgets/interface.cpp:937
-#, fuzzy
 msgid ""
 "(c) 1996-2006 - the VideoLAN Team\n"
 "\n"
 msgstr ""
-"(c) 1996-2005 - das VideoLAN Team\n"
+"(c) 1996-2006 - das VideoLAN Team\n"
 "\n"
 
 #: modules/gui/wince/interface.cpp:498 modules/gui/wxwidgets/interface.cpp:938
-#, fuzzy
 msgid "Compiled by "
-msgstr "Komödie"
+msgstr "Kompiliert von"
 
 #: modules/gui/wince/interface.cpp:500 modules/gui/wxwidgets/interface.cpp:940
 msgid "Compiler: "
@@ -12579,14 +12296,12 @@ msgid "Based on SVN revision: "
 msgstr "Basierend auf SVN Revision"
 
 #: modules/gui/wince/interface.cpp:504
-#, fuzzy
 msgid ""
 "The VideoLAN team <videolan@videolan.org>\n"
 "http://www.videolan.org/"
 msgstr ""
 "Das VideoLAN team <videolan@videolan.org>\n"
-"http://www.videolan.org/\n"
-"\n"
+"http://www.videolan.org/"
 
 #: modules/gui/wince/open.cpp:134 modules/gui/wxwidgets/dialogs/open.cpp:626
 msgid "Open:"
@@ -12644,9 +12359,8 @@ msgstr "Bytes"
 #: modules/gui/wxwidgets/dialogs/open.cpp:490
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:195
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
-#, fuzzy
 msgid "&OK"
-msgstr "OK"
+msgstr "&OK"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:108
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:174
@@ -12700,14 +12414,12 @@ msgid "Input has changed "
 msgstr "Input hat gewechselt"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
-#, fuzzy
 msgid "Stream and Media Info"
 msgstr "Stream- und Medieninfo"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:83
-#, fuzzy
 msgid "Advanced information"
-msgstr "Erweiterte Optionen"
+msgstr "Erweiterte Informationen"
 
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:116
 msgid ""
@@ -12726,7 +12438,6 @@ msgid "&No"
 msgstr "&Nein"
 
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:196
-#, fuzzy
 msgid "Don't show further errors"
 msgstr "Weitere Fehler unterdrücken"
 
@@ -12742,9 +12453,8 @@ msgid "Playlist item info"
 msgstr "Titel - Info"
 
 #: modules/gui/wxwidgets/dialogs/messages.cpp:87
-#, fuzzy
 msgid "Save &As..."
-msgstr "Datei sichern"
+msgstr "D&atei sichern..."
 
 #: modules/gui/wxwidgets/dialogs/messages.cpp:205
 msgid "Save Messages As..."
@@ -12771,12 +12481,10 @@ msgid "Open..."
 msgstr "Öffnen..."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:430
-#, fuzzy
 msgid "Stream/Save"
-msgstr "Stream"
+msgstr "Stream/Sichern"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:431
-#, fuzzy
 msgid "Use VLC as a stream server"
 msgstr "VLC als Streamingserver benutzen"
 
@@ -12793,33 +12501,29 @@ msgid "Customize:"
 msgstr "Anpassen:"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:475
-#, fuzzy
 msgid ""
 "You can use this field directly by typing the full MRL you want to open.\n"
 "Alternatively, the field will be filled automatically when you use the "
 "controls above."
 msgstr ""
-"Geben Sie hier die MRL ein\n"
-"Benutzen Sie ansonsten die unten stehenden Elemente."
+"Sie können dieses Feld direkt benutzen, indem Sie die komplette MRL eingeben, die Sie öffnen möchten.\n"
+"Alternativ wird dieses Feld automatisch gefüllt, wenn Sie die obigen Steuerungen benutzen."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:638
 msgid "Use a subtitles file"
 msgstr "Eine Untertiteldatei benutzen"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:639
-#, fuzzy
 msgid "Use an external subtitles file."
-msgstr "Eine Untertiteldatei benutzen"
+msgstr "Eine externe Untertiteldatei benutzen."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:643
-#, fuzzy
 msgid "Advanced Settings..."
 msgstr "Erweiterte Optionen..."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:659
-#, fuzzy
 msgid "File:"
-msgstr "Datei"
+msgstr "Datei:"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:696
 msgid "DVD (menus)"
@@ -12857,9 +12561,8 @@ msgid "RTSP"
 msgstr "RTSP"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:927
-#, fuzzy
 msgid "DVD device to use"
-msgstr "DVD-Device"
+msgstr "Zu benutzendes DVD-Device"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:957
 msgid ""
@@ -12871,9 +12574,8 @@ msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:966
 #: modules/gui/wxwidgets/dialogs/open.cpp:989
-#, fuzzy
 msgid "CD-ROM device to use"
-msgstr "CDDB-Server-Port"
+msgstr "Zu benutzendes CD-ROM-Device"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:984
 msgid ""
@@ -12885,14 +12587,12 @@ msgstr ""
 "durchsucht."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1291
-#, fuzzy
 msgid "Open subtitles file"
-msgstr "Untertiteldatei benutzen"
+msgstr "Untertiteldatei öffnen"
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1668
-#, fuzzy
 msgid "Title number."
-msgstr "Tuner-Nummer"
+msgstr "Titel-Nummer."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1670
 msgid ""
@@ -12917,9 +12617,8 @@ msgid "The first entry (the beginning of the first MPEG track) is 0."
 msgstr "Der erste Eintrag (am Anfang des ersten MPEG Tracks) ist 0."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1705
-#, fuzzy
 msgid "Track number."
-msgstr "Titel-Nummer"
+msgstr "Track-Nummer."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1711
 msgid ""
@@ -12958,12 +12657,10 @@ msgid "Add &Directory..."
 msgstr "Verzeichnis hinzufügen..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:238
-#, fuzzy
 msgid "&Add URL..."
-msgstr "&MRL hinzufügen..."
+msgstr "&URL hinzufügen..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:240
-#, fuzzy
 msgid "Services Discovery"
 msgstr "Services-Discovery"
 
@@ -12976,19 +12673,16 @@ msgid "&Save Playlist..."
 msgstr "Wiedergabeliste &speichern..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:250
-#, fuzzy
 msgid "Sort by &Title"
-msgstr "Nach &Titel sortieren (von A nach Z)"
+msgstr "Nach &Titel sortieren"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:251
-#, fuzzy
 msgid "&Reverse Sort by Title"
-msgstr "Nach Titel sortieren (von Z nach A)"
+msgstr "Umgekeh&rtes Nach Titel sortieren"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:253
-#, fuzzy
 msgid "&Shuffle"
-msgstr "Zufällig"
+msgstr "&Zufällig"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:257
 msgid "D&elete"
@@ -13011,7 +12705,6 @@ msgid "&View items"
 msgstr "&Objekte zeigen"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:275
-#, fuzzy
 msgid "Play this Branch"
 msgstr "Diesen Zweig abspielen"
 
@@ -13021,7 +12714,6 @@ msgid "Preparse"
 msgstr "Vorparsen"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:277
-#, fuzzy
 msgid "Sort this Branch"
 msgstr "Diesen Zweig sortieren"
 
@@ -13031,9 +12723,8 @@ msgid "Info"
 msgstr "Information"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:280
-#, fuzzy
 msgid "Add Node"
-msgstr "Audioencoder"
+msgstr "Knoten hinzufügen"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:358
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:794
@@ -13058,9 +12749,8 @@ msgid "M3U file"
 msgstr "M3U Datei"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:914
-#, fuzzy
 msgid "XSPF playlist"
-msgstr "Wiedergabeliste sichern"
+msgstr "XSPF-Wiedergabeliste"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:921
 msgid "Playlist is empty"
@@ -13077,28 +12767,24 @@ msgid "Normal"
 msgstr "Normal"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1417
-#, fuzzy
 msgid "Sorted by Artist"
 msgstr "Nach Künstler sortiert"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1419
-#, fuzzy
 msgid "Sorted by Album"
-msgstr "Nach Namen sortieren"
+msgstr "Nach Album sortiert"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1624
 msgid "Please enter node name"
 msgstr "Bitte den Zielcomputer angeben"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1625
-#, fuzzy
 msgid "Add node"
-msgstr "Audioencoder"
+msgstr "Knoten hinzufügen"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1625
-#, fuzzy
 msgid "New node"
-msgstr "New Age"
+msgstr "Neuer Knoten"
 
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:208
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:79
@@ -13106,12 +12792,11 @@ msgid "&Save"
 msgstr "&Sichern"
 
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:294
-#, fuzzy
 msgid ""
 "This will reset your VLC media player preferences.\n"
 "Are you sure you want to continue?"
 msgstr ""
-"Achtung. Dies wird die Einstellungen vom VLC media player zurücksetzen.\n"
+"Dies wird die Einstellungen vom VLC media player zurücksetzen.\n"
 "Sind Sie sicher, dass Sie fortfahren möchten?"
 
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:1025
@@ -13135,23 +12820,20 @@ msgid "Shift"
 msgstr "Shift"
 
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:433
-#, fuzzy
 msgid ""
 "Select the desired modules. For more advanced control, the resulting \"chain"
 "\" can be modified."
 msgstr ""
-"Wählen Sie die Module, die Sie möchten. Um mehr fortgeschrittene "
-"Steuerungsmöglichkeiten zu bekommen, wählen Sie die resultierende Kette "
-"selbst."
+"Wählen Sie die gewünschten Modulen. Um mehr fortgeschrittene "
+"Steuerungsmöglichkeiten zu bekommen, kann die resultierende \"Kette\" verändert werden."
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:167
 msgid "Stream output MRL"
 msgstr "Streamausgabe MRL"
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:171
-#, fuzzy
 msgid "Target:"
-msgstr "Ziel öffnen:"
+msgstr "Ziel:"
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:174
 msgid ""
@@ -13162,9 +12844,8 @@ msgstr ""
 "Streameinstellungen automatisch geladen werden."
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:463
-#, fuzzy
 msgid "Outputs"
-msgstr "Ausgabe-URL"
+msgstr "Outputs"
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:471
 msgid "Play locally"
@@ -13220,9 +12901,8 @@ msgid "Subtitles file"
 msgstr "Untertitel-Datei"
 
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:129
-#, fuzzy
 msgid "Options"
-msgstr "Optionen:"
+msgstr "Optionen"
 
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:211
 msgid ""
@@ -13241,9 +12921,8 @@ msgid "Open file"
 msgstr "Datei öffnen"
 
 #: modules/gui/wxwidgets/dialogs/updatevlc.cpp:65
-#, fuzzy
 msgid "Updates"
-msgstr "Aktualisierung"
+msgstr "Updates"
 
 #: modules/gui/wxwidgets/dialogs/updatevlc.cpp:78
 msgid "Check for updates"
@@ -13260,9 +12939,8 @@ msgstr ""
 "(Doppelklicken zum herunterladen)\n"
 
 #: modules/gui/wxwidgets/dialogs/updatevlc.cpp:182
-#, fuzzy
 msgid "Save file..."
-msgstr "Datei sichern"
+msgstr "Datei sichern..."
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:65
 msgid "Broadcasts"
@@ -13273,14 +12951,12 @@ msgid "Load"
 msgstr "Laden"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:217
-#, fuzzy
 msgid "Load Configuration"
-msgstr "VLM-Konfigurationsdatei"
+msgstr "Konfiguration laden"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:231
-#, fuzzy
 msgid "Save Configuration"
-msgstr "VLM-Konfigurationsdatei"
+msgstr "Konfiguration sichern"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:247
 msgid "New broadcast"
@@ -13293,9 +12969,8 @@ msgid "Choose"
 msgstr "Wählen"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:388
-#, fuzzy
 msgid "Output"
-msgstr "Ausgabe-URL"
+msgstr "Ausgabe"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:399
 msgid "Enabled"
@@ -13306,36 +12981,30 @@ msgid "Loop"
 msgstr "In Schleife"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:415
-#, fuzzy
 msgid "Create"
-msgstr "Framerate"
+msgstr "Erstellen"
 
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:560
-#, fuzzy
 msgid "VLM stream"
-msgstr "Stream abspielen"
+msgstr "VLM-Stream"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:86
-#, fuzzy
 msgid "This wizard helps you to stream, transcode or save a stream."
 msgstr ""
 "Dieser Assistent hilft Ihnen beim Streamen, Transcodieren oder Sichern eines "
 "Streams."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:89
-#, fuzzy
 msgid "Use this to stream on a network."
 msgstr "Benutzen Sie dies, um über ein Netzwerk zu streamen."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:91
-#, fuzzy
 msgid "Use this to re-encode a stream and save it to a file."
 msgstr ""
 "Benutzen Sie dies, um einen Stream erneut zu kodieren und ihn in einer Datei "
 "zu speichern."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:93
-#, fuzzy
 msgid ""
 "This wizard only contains a small subset of VLC's streaming and transcoding "
 "capabilities. Use the Open and Stream Output dialogs to access all of them."
@@ -13345,12 +13014,10 @@ msgstr ""
 "Öffnen- und Streamausgabe-Dialoge, um alle erreichen zu können."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:97
-#, fuzzy
 msgid "Use this to stream on a network"
 msgstr "Benutzen Sie dies, um über ein Netzwerk zu streamen."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:99
-#, fuzzy
 msgid ""
 "Saves the stream to a file. The stream must be a format that VLC recognizes. "
 "If desired, the stream can also be transcoded to another format.\n"
@@ -13358,24 +13025,20 @@ msgid ""
 "Please note that VLC is not very suited for file-to-file transcoding. Its "
 "transcoding features are more appropriate for saving network streams."
 msgstr ""
-"Benutzen Sie dies, um einen Stream in einer Datei zu sichern. Sie haben die "
-"Möglichkeit, den Stream erneut zu kodieren. Sie können alles sichern, was "
-"VLC lesen kann.\n"
-"Bitte beachten Sie, dass VLC nicht dafür ausgelegt ist, von eine Datei in "
-"eine andere zu transcodieren. Sie sollten die Transcodierungsfeatures "
-"beispielsweise zum Sichern von Netzwerkstreamen benutzen."
+"Sichert den Stream in einer Datei. Der Stream muss in einem Format sein, dass VLC lesen kann. Wenn gewünscht, kann der Stream auch in ein anderes Format konvertiert werden.\n"
+"\n"
+"Bitte beachten Sie, dass VLC nicht dafür ausgelegt ist, von einer Datei in "
+"eine andere zu transcodieren. Die Transcodierungsfeatures sind für die Sicherung von Netzwerkstreams deutlich passender."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:112
 msgid "You must choose a stream"
 msgstr "Sie müssen einen Stream wählen"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:113
-#, fuzzy
 msgid "Unable to find playlist"
-msgstr "Oh Nein! Kann Wiedergabeliste nicht finden!"
+msgstr "Kann Wiedergabeliste nicht finden"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:115
-#, fuzzy
 msgid ""
 "Use this to read only a part of the stream. To use, enter the starting and "
 "ending times (in seconds).\n"
@@ -13383,91 +13046,73 @@ msgid ""
 "Note: You must be able to control the incoming stream (for example, a file "
 "or a disc, but not a RTP/UDP network stream).\n"
 msgstr ""
-"Benutzen Sie dies, um nur einen Teil des Streams zu lesen. Sie müssen in der "
-"Lage sein, den eingehenden Stream zu kontrollieren (zum Beispiel eine Datei "
-"oder eine Disk, aber kein UDP-Netzwerkstream).\n"
-"Geben Sie die Start- und Endzeiten (in Sekunden) ein."
+"Benutzen Sie dies, um nur einen Teil des Streams zu lesen. Geben Sie dazu die Start- und Endzeiten in Sekunden ein.\n"
+"\n"
+"Anmerkung: Sie müssen in der Lage sein, den eingehenden Stream zu kontrollieren (zum Beispiel eine Datei oder eine Disk, aber kein RTP/UDP-Netzwerkstream).\n"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:126
-#, fuzzy
 msgid ""
 "Changes the compression format of the audio or video tracks. To change only "
 "the container format, proceed to the next page."
 msgstr ""
-"Wenn Sie das Kompressionsformat von den Audio oder Videospuren ändern "
-"möchten, füllen Sie diese Seite aus. (Wenn Sie nur das Containerformat "
-"ändern möchten, fahren Sie mit der nächsten Seite fort.)"
+"Ändert das Kompressionsformat dern Audio oder Videospuren. Um nur das Containerformat "
+"zu ändern, fahren Sie mit der nächsten Seite fort."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:130
-#, fuzzy
 msgid "Transcode video (if available)"
-msgstr "Video transcodieren"
+msgstr "Video transcodieren (falls verfügbar)"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:131
-#, fuzzy
 msgid ""
 "Select the target video codec. Choose a codec to display more information "
 "about it."
 msgstr ""
-"Wählen Sie Ihren Videocodec. Klicken Sie auf einen, um mehr Informationen zu "
-"erhalten"
+"Wählen Sie den Zielvideocodec. Klicken Sie auf einen Codec, um mehr Informationen zu "
+"erhalten."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:134
-#, fuzzy
 msgid "Transcode audio (if available)"
-msgstr "Audio transcodieren"
+msgstr "Audio transcodieren (falls verfügbar)"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:135
-#, fuzzy
 msgid ""
 "Select the target audio codec. Choose a codec to display more information "
 "about it."
 msgstr ""
-"Wählen Sie Ihren Audiocodec. Klicken Sie auf einen, um mehr Informationen zu "
+"Wählen Sie den Zielaudiocodec. Klicken Sie auf einen Codec, um mehr Informationen zu "
 "erhalten."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:140
-#, fuzzy
 msgid "Determines how the input stream will be sent."
-msgstr "Auf dieser Seite werden Sie auswählen, wie Ihr Input-Stream gesendet wird."
+msgstr "Legt fest, wie der Input-Stream gesendet wird."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:143
-#, fuzzy
 msgid "This does not appear to be a valid multicast address"
 msgstr "Dies scheint keine gültige Multicast-Adresse zu sein."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:145
-#, fuzzy
 msgid "Please enter an address"
-msgstr "Sie müssen eine Adresse eingeben."
+msgstr "Bitte geben Sie eine Adresse ein"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:149
-#, fuzzy
 msgid ""
 "Determines how the stream will be encapsulated. Depending on the previous "
 "choices, some formats might not be available."
-msgstr ""
-"Auf dieser Seite werden Sie auswählen, wie der Stream verkapselt wird. "
-"Entsprechend der Auswahlen, die Sie gemacht haben, werden nicht alle Formate "
-"zur Verfügung stehen."
+msgstr "Legt fest, wie der Stream verkapselt wird. Entsprechend der Wahlen, die Sie gemacht haben, werden nicht alle Formate zur Verfügung stehen."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:156
-#, fuzzy
 msgid "Defines a few additional parameters for the transcoding."
-msgstr ""
-"Auf dieser Seite werden Sie ein paar wenige zusätzliche Parameter für Ihr "
-"Transcodieren festlegen."
+msgstr "Legt ein paar wenige zusätzliche Parameter für Ihr Transcodieren fest."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:159
 msgid "You must choose a file to save to"
 msgstr "Sie müssen eine Datei auswählen, in die gesichert wird."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:163
-#, fuzzy
 msgid "Defines a few additional parameters for the stream."
 msgstr ""
-"Auf dieser Seite werden Sie ein paar wenige zusätzliche Parameter für Ihren "
-"Stream festlegen."
+"Legt ein paar wenige zusätzliche Parameter für Ihren "
+"Stream fest."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:166
 msgid ""
@@ -13482,7 +13127,6 @@ msgstr ""
 "möchten, belassen Sie diese Einstellung bei 1."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:171
-#, fuzzy
 msgid ""
 "When streaming using RTP, you can announce your streams using the SAP/SDP "
 "announcing protocol. This way, the clients won't have to type in the "
@@ -13503,19 +13147,14 @@ msgid "More information"
 msgstr "Mehr Informationen"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:1289
-#, fuzzy
 msgid "Save to file"
-msgstr "Datei sichern"
+msgstr "In Datei sichern"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:41
-#, fuzzy
 msgid ""
 "Controls the blending of equalizer bands. The higher this value is, the more "
 "correlated their movement will be."
-msgstr ""
-"Wenn diese Einstellung nicht null ist, werden sich die Bänder zusammen "
-"bewegen, wenn Sie eines bewegen. Je höher der Wert ist, desto mehr wird ihre "
-"Bewegung korreliert."
+msgstr "Kontrolliert die Vermischung der Equalizerbänder. Je höher dieser Wert ist, desto zusammenhängender wird ihre Bewegung sein."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:148
 msgid "Creates several clones of the image"
@@ -13526,9 +13165,8 @@ msgid "Magnify"
 msgstr "Vergrößern"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:153
-#, fuzzy
 msgid "Magnifies part of the image"
-msgstr "Rotiert oder dreht das Bild um"
+msgstr "Vergrößert einen Teil des Bildes"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:270
 msgid "Video Options"
@@ -13539,14 +13177,12 @@ msgid "Aspect Ratio"
 msgstr "Seitenverhältnis"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:402
-#, fuzzy
 msgid "Prevents the audio output level from going over a predefined value."
 msgstr ""
-"Dieser Filter verhindert, dass die Audio-Ausgabelautstärle einen definierten "
+"Verhindert, dass die Audio-Ausgabelautstärle einen definierten "
 "Wert übersteigt."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:466
-#, fuzzy
 msgid ""
 "Enable the equalizer. You can either manually adjust the bands or use a "
 "preset (Audio Menu->Equalizer)."
@@ -13555,14 +13191,10 @@ msgstr ""
 "eine Voreinstellung benutzen (Audio-Menü->Equalizer)."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:473
-#, fuzzy
 msgid "Apply the equalizer twice. The resulting effect will be sharper."
-msgstr ""
-"Wenn Sie diese Einstellung aktivieren, wird der Equalizerfilter zweifach "
-"angewendet. Der Effekt wird schärfer sein."
+msgstr "Der Equalizerfilter zweifach anwenden. Der Effekt wird schärfer sein."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:999
-#, fuzzy
 msgid ""
 "Filtering effects to apply to the video. You must restart the stream for "
 "these settings to take effect.\n"
@@ -13571,13 +13203,9 @@ msgid ""
 "control the order in which they are applied, enter a filters string in the "
 "Video Filter Module inside the preferences."
 msgstr ""
-"Wählen Sie die zu benutzenden Video-Effekt-Filter aus. Sie müssen den Stream "
-"neustarten, damit diese Einstellungen benutzt werden.\n"
-"Um die Filter zu konfigurieren, gehen Sie in die Einstellungen und dann in "
-"Module/Videofilter. Sie können dann jeden Filter konfigurieren.\n"
-"Wenn Sie genaue Kontrolle über die Filter wünschen (um die Reihenfolge "
-"festzulegen, in der sie angewendet werden), müssen Sie manuell einen Filter-"
-"String eingeben (Einstellungen / Allgemein / Video)."
+"Filtereffekt, die auf das Video angewendet werden können. Sie müssen den Stream neustarten, damit diese Einstellungen übernommen werden.\n"
+"\n"
+"Um diese Filter zu konfigurieren, gehen Sie in Einstellungen / Video / Filter. Um die Reihen zu kontrollieren, in der diese angewendet werden, geben Sie einen Filter-String im Video-Filter-Modul in den Einstellungen ein."
 
 #: modules/gui/wxwidgets/input_manager.cpp:180
 msgid "Stopped"
@@ -13644,7 +13272,6 @@ msgid "&Messages...\tCtrl-M"
 msgstr "&Meldungen...\tCtrl-M"
 
 #: modules/gui/wxwidgets/interface.cpp:593
-#, fuzzy
 msgid "Stream and Media &Info...\tCtrl-I"
 msgstr "Stream- und Medien&info...\tCtrl-I"
 
@@ -13653,9 +13280,8 @@ msgid "VLM Control...\tCtrl-V"
 msgstr "VLM Control...\tCtrl-V"
 
 #: modules/gui/wxwidgets/interface.cpp:605
-#, fuzzy
 msgid "About..."
-msgstr "_Über..."
+msgstr "Über..."
 
 #: modules/gui/wxwidgets/interface.cpp:607
 msgid "Check for Updates..."
@@ -13691,9 +13317,8 @@ msgstr "&Hilfe"
 
 #: modules/gui/wxwidgets/interface.cpp:677
 #: modules/gui/wxwidgets/interface.cpp:688
-#, fuzzy
 msgid "Embedded playlist"
-msgstr "Wiedergabeliste öffnen"
+msgstr "Integrierte Wiedergabeliste"
 
 #: modules/gui/wxwidgets/interface.cpp:678
 msgid "Previous playlist item"
@@ -13724,12 +13349,11 @@ msgid "Preference&s...\tCtrl-S"
 msgstr "Ein&stellungen...\tCtrl-S"
 
 #: modules/gui/wxwidgets/interface.cpp:936
-#, fuzzy
 msgid ""
 " (wxWidgets interface)\n"
 "\n"
 msgstr ""
-" (wxWindows Interface)\n"
+" (wxWidgets Interface)\n"
 "\n"
 
 #: modules/gui/wxwidgets/interface.cpp:949
@@ -13748,7 +13372,6 @@ msgid "About %s"
 msgstr "Über %s"
 
 #: modules/gui/wxwidgets/interface.cpp:1496
-#, fuzzy
 msgid "Show/Hide Interface"
 msgstr "Interface anzeigen/ausblenden"
 
@@ -13761,9 +13384,8 @@ msgid "Open &File..."
 msgstr "Datei öffnen..."
 
 #: modules/gui/wxwidgets/menus.cpp:134
-#, fuzzy
 msgid "Open D&irectory..."
-msgstr "Verz&eichnis öffnen..\tCtrl-E"
+msgstr "Verze&ichnis öffnen..\tCtrl-E"
 
 #: modules/gui/wxwidgets/menus.cpp:135
 msgid "Open &Disc..."
@@ -13808,9 +13430,8 @@ msgid ""
 msgstr "MPEG-4 Video codec (zur Benutzung mit MPEG PS, MPEG TS, MPEG1, OGG and RAW)"
 
 #: modules/gui/wxwidgets/streamdata.cpp:56
-#, fuzzy
 msgid "H264 is a new video codec (useable with MPEG TS and MPEG4)"
-msgstr "H264 ist ein neuer Videocodec"
+msgstr "H264 ist ein neuer Videocodec (benutzbar mit MPEG TS und MPEG4)"
 
 #: modules/gui/wxwidgets/streamdata.cpp:59
 msgid "WMV (Windows Media Video) 7 (useable with MPEG TS, MPEG1, ASF and OGG)"
@@ -13825,84 +13446,70 @@ msgid "WMV (Windows Media Video) 9 (useable with MPEG TS, MPEG1, ASF and OGG)"
 msgstr "WMV (Windows Media Video) 9 (zur Benutzung mit MPEG TS, MPEG1, ASF and OGG)"
 
 #: modules/gui/wxwidgets/streamdata.cpp:73
-#, fuzzy
 msgid "Theora is a free general-purpose codec (useable with MPEG TS)"
-msgstr "Theora ist ein freier, allzweck Codec"
+msgstr "Theora ist ein freier, allzweck Codec (benutzbar mit MPEG TS)"
 
 #: modules/gui/wxwidgets/streamdata.cpp:122
-#, fuzzy
 msgid "RTP Unicast"
-msgstr "UDP-Unicast"
+msgstr "RTP-Unicast"
 
 #: modules/gui/wxwidgets/streamdata.cpp:122
-#, fuzzy
 msgid "Stream to a single computer."
-msgstr "Benutzen Sie dies um zu einem einzelnen Computer zu streamen"
+msgstr "Zu einem einzelnen Computer streamen."
 
 #: modules/gui/wxwidgets/streamdata.cpp:125
-#, fuzzy
 msgid "RTP Multicast"
-msgstr "UDP/RTP Multicast"
+msgstr "RTP Multicast"
 
 #: modules/gui/wxwidgets/streamdata.cpp:126
-#, fuzzy
 msgid ""
 "Stream to a dynamic group of computers on a multicast-enabled network. This "
 "is the most efficient method to stream to several computers, but it does not "
 "work over the Internet."
 msgstr ""
-"Benutzen Sie dies, um zu einer dynamischen Gruppe von Computer über ein "
-"multicast-aktiviertes Netzwerk zu streamen. Dies ist die effizienteste "
-"Methode um zu mehreren Computer zu streamen, aber sie funktioniert nicht "
+"Uu einer dynamischen Gruppe von Computern über ein "
+"multicast-aktiviertes Netzwerk streamen. Dies ist die effizienteste "
+"Methode um zu mehreren Computern zu streamen, aber sie funktioniert nicht "
 "über das Internet."
 
 #: modules/gui/wxwidgets/streamdata.cpp:129
-#, fuzzy
 msgid ""
 "Enter the multicast address to stream to. This must be an IP address between "
 "224.0.0.0 an 239.255.255.255. For private use, enter an address beginning "
 "with 239.255."
-msgstr ""
-"Geben Sie die Multicast-Adresse, an die gestreamt werden soll, in dieses "
-"Feld ein. Dies muss eine IP-Adresse zwischen 224.0.0.0 und 239.255.255.255. "
-"Geben Sie für private Benutzung eine mit 239.255 beginnende Adresse ein."
+msgstr "Geben Sie die Multicast-Adresse ein, an die gestreamt werden soll. Dies muss eine IP-Adresse zwischen 224.0.0.0 und 239.255.255.255 sein. Geben Sie für private Benutzung eine mit 239.255 beginnende Adresse ein."
 
 #: modules/gui/wxwidgets/streamdata.cpp:134
-#, fuzzy
 msgid ""
 "Stream to several computers. This method is less efficient, as the server "
 "needs to send the stream several times."
 msgstr ""
-"Benutzen Sie dies, um zu mehreren Computern zu streamen. Dies Methode ist "
+"Zu mehreren Computern streamen. Dies Methode ist "
 "weniger Effizient, weil der Server den Stream mehrmals senden muss."
 
 #: modules/gui/wxwidgets/streamdata.cpp:137
-#, fuzzy
 msgid ""
 "Enter the local addresses you want to listen to. Do not enter anything if "
 "you want to listen to all adresses or if you don't understand. This is "
 "generally the best thing to do. Other computers can then access the stream "
 "at http://yourip:8080 by default."
 msgstr ""
-"Geben Sie die lokalen Adressen ein, nach denen Sie hören möchten. Geben Sie "
+"Geben Sie die lokalen Adressen ein, auf denen Sie hören möchten. Geben Sie "
 "nichts ein, wenn Sie nach allen Adressen hören möchten oder nicht verstehen, "
-"was gemeint ist. Dies ist normalerweise das Beste. Andere Computer greifen "
-"dann standardmäßig auf den Stream über http://IhreIP:8080 zu."
+"was gemeint ist. Dies ist normalerweise das Beste. Andere Computer können"
+"dann auf den Stream über http://IhreIP:8080 zugreifen."
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:89
-#, fuzzy
 msgid "Bookmarks dialog"
-msgstr "Lesezeichendialog zeigen"
+msgstr "Lesezeichendialog"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:90
-#, fuzzy
 msgid "Show bookmarks dialog at startup"
-msgstr "Lesezeichendialog zeigen"
+msgstr "Lesezeichendialog beim Start zeigen"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:91
-#, fuzzy
 msgid "Extended GUI"
-msgstr "Erweiterte VCD-Info zeigen?"
+msgstr "Erweitertes Interface"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:92
 msgid "Show extended GUI (equalizer, image adjust, video filters...) at startup"
@@ -13911,9 +13518,8 @@ msgstr ""
 "Videofilter)"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:94
-#, fuzzy
 msgid "Taskbar"
-msgstr "Tatarisch"
+msgstr "Task-Leiste"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:95
 msgid "Show VLC on the taskbar"
@@ -13924,43 +13530,36 @@ msgid "Minimal interface"
 msgstr "Minimales Interface"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:97
-#, fuzzy
 msgid "Use minimal interface, with no toolbar and fewer menus."
-msgstr "Minimales Interface benutzen, keine Toolbar, weniger Menüs"
+msgstr "Minimales Interface benutzen, ohne Toolbar und weniger Menüs."
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:99
 msgid "Size to video"
 msgstr "An Videogröße anpassen"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:100
-#, fuzzy
 msgid "Resize VLC to match the video resolution."
-msgstr "Passt die Größe von VLC der Videoauflösung an"
+msgstr "Die Größe von VLC der Videoauflösung anpassen."
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:101
-#, fuzzy
 msgid "Systray icon"
-msgstr "Systray-Icon anzeigen"
+msgstr "Systray-Icon"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:102
-#, fuzzy
 msgid "Show a systray icon for VLC"
-msgstr "Systray-Icon anzeigen"
+msgstr "Ein Systray-Icon für VLC anzeigen"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:103
-#, fuzzy
 msgid "Show labels in toolbar"
-msgstr "Texte auf den Knöpfen der Bedienungsleiste anzeigen"
+msgstr "Label in der Bedienungsleiste anzeigen"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:104
-#, fuzzy
 msgid "Show labels below the icons in the toolbar."
-msgstr "Texte unter den Symbolen in der Bedienungsleiste anzeigen"
+msgstr "Label unter den Symbolen in der Bedienungsleiste anzeigen."
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:106
-#, fuzzy
 msgid "Playlist view"
-msgstr "Wiedergabeliste"
+msgstr "Wiedergabelistesansicht"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:107
 msgid ""
@@ -13983,14 +13582,12 @@ msgid "Both"
 msgstr "Beide"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:124
-#, fuzzy
 msgid "wxWidgets interface module"
-msgstr "wxWindows Interfacemodul"
+msgstr "wxWidgets Interfacemodul"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:170
-#, fuzzy
 msgid "wxWidgets dialogs provider"
-msgstr "wxWindows Dialogprovider"
+msgstr "wxWidgets Dialogprovider"
 
 #: modules/misc/dummy/dummy.c:37
 msgid "Dummy image chroma format"
@@ -14009,13 +13606,10 @@ msgid "Save raw codec data"
 msgstr "Rohe Codecdaten sichern"
 
 #: modules/misc/dummy/dummy.c:45
-#, fuzzy
 msgid ""
 "Save the raw codec data if you have selected/forced the dummy decoder in the "
 "main options."
-msgstr ""
-"Diese Option erlaubt Ihnen die rohen Codecdaten zu sichern, wenn Sie den "
-"Dummy-Dekoder in den Hauptoptionen ausgewählt/erzwungen haben."
+msgstr "Die rohen Codecdaten sichern, wenn Sie den Dummy-Dekoder in den Hauptoptionen ausgewählt/erzwungen haben."
 
 #: modules/misc/dummy/dummy.c:51
 msgid ""
@@ -14079,24 +13673,20 @@ msgid "Font"
 msgstr "Schrift"
 
 #: modules/misc/freetype.c:84 modules/misc/win32text.c:55
-#, fuzzy
 msgid "Filename for the font you want to use"
-msgstr ""
-"Geben Sie die Stream-Nummer des Audiotracks ein, den Sie benutzen möchten "
-"(von 0 bis n)."
+msgstr "Dateiname für die Schrift, die Sie benutzen möchten"
 
 #: modules/misc/freetype.c:85 modules/misc/win32text.c:56
 msgid "Font size in pixels"
 msgstr "Schriftgröße in Pixeln"
 
 #: modules/misc/freetype.c:87 modules/misc/win32text.c:58
-#, fuzzy
 msgid ""
 "This is the default size of the fonts that will be rendered on the video. If "
 "set to something different than 0 this option will override the relative "
 "font size. "
 msgstr ""
-"Die Größe der Schrift, die vom OSD-Modul benutzt wird. Wenn Sie auf etwas "
+"Dies ist die Standardgröße der Schriften, wie sie auf dem Video gerendert werden. Wenn dies auf etwas "
 "anderes als 0 eingestellt ist, wird diese Option die relative Schriftgröße "
 "überschreiben."
 
@@ -14107,7 +13697,6 @@ msgid "Opacity"
 msgstr "Deckkraft"
 
 #: modules/misc/freetype.c:92 modules/misc/win32text.c:63
-#, fuzzy
 msgid ""
 "The opacity (inverse of transparency) of the text that will be rendered on "
 "the video. 0 = transparent, 255 = totally opaque. "
@@ -14116,7 +13705,6 @@ msgstr ""
 "transparent, 255 = komplett undurchsichtig."
 
 #: modules/misc/freetype.c:95 modules/misc/win32text.c:66
-#, fuzzy
 msgid "Text default color"
 msgstr "Text-Standardfarbe"
 
@@ -14133,9 +13721,8 @@ msgstr ""
 "#00FF00 = Grün, #FFFF00 = Gelb (Rot + Grün), #FFFFFF = Weiß"
 
 #: modules/misc/freetype.c:100 modules/misc/win32text.c:71
-#, fuzzy
 msgid "Relative font size"
-msgstr "Ratenkontrollierungspuffergröße"
+msgstr "Relative Schriftgröße"
 
 #: modules/misc/freetype.c:101 modules/misc/win32text.c:72
 msgid ""
@@ -14163,9 +13750,8 @@ msgid "Larger"
 msgstr "Größer"
 
 #: modules/misc/freetype.c:108
-#, fuzzy
 msgid "Use YUVP renderer"
-msgstr "Textrenderer"
+msgstr "YUVP-Renderer benutzen"
 
 #: modules/misc/freetype.c:109
 msgid ""
@@ -14176,9 +13762,8 @@ msgstr ""
 "benötigt, wenn Sie DVB Subtitel kodieren möchten."
 
 #: modules/misc/freetype.c:111
-#, fuzzy
 msgid "Font Effect"
-msgstr "Goom Effekt"
+msgstr "Schrifteffekt"
 
 #: modules/misc/freetype.c:113
 msgid ""
@@ -14189,19 +13774,16 @@ msgstr ""
 "Lesbarkeit zu verbessern."
 
 #: modules/misc/freetype.c:121
-#, fuzzy
 msgid "Background"
-msgstr "Zurück"
+msgstr "Hintergrund"
 
 #: modules/misc/freetype.c:121
-#, fuzzy
 msgid "Outline"
-msgstr "Oliv"
+msgstr "Umrandung"
 
 #: modules/misc/freetype.c:122
-#, fuzzy
 msgid "Fat Outline"
-msgstr "Schnell Bilinear"
+msgstr "Dicke Umrandung"
 
 #: modules/misc/freetype.c:129 modules/misc/win32text.c:85
 #: modules/video_filter/marq.c:52 modules/video_filter/rss.c:63
@@ -14312,13 +13894,12 @@ msgid "Diffie-Hellman prime bits"
 msgstr "Diffie-Hellman Primzahlbits"
 
 #: modules/misc/gnutls.c:69
-#, fuzzy
 msgid ""
 "This allows you to modify the Diffie-Hellman prime's number of bits, used "
 "for TLS or SSL-based server-side encryption. This is generally not needed."
 msgstr ""
-"Erlaubt Ihnen die Diffie-Hellan Primzahl von Bits (für TLS oder SSL-"
-"basierte, serverseitige Verschlüsselung benutzt) zu verändern."
+"Erlaubt Ihnen die Änderung der Diffie-Hellan Primzahl von Bits, benutzt für TLS oder SSL-"
+"basierte, serverseitige Verschlüsselung. Dies wird im Allgemeinen nicht benötigt."
 
 #: modules/misc/gnutls.c:73
 msgid "Expiration time for resumed TLS sessions"
@@ -14337,18 +13918,14 @@ msgid "Number of resumed TLS sessions"
 msgstr "Anzahl von wiederaufgenommenen TLS-Sitzungen"
 
 #: modules/misc/gnutls.c:80
-#, fuzzy
 msgid "This is the maximum number of resumed TLS sessions that the cache will hold."
-msgstr ""
-"Erlaubt Ihnen die maximale Anzahl wiederaufgenommenen TLS-Sitzungen zu "
-"ändern, die der Cache halten wird."
+msgstr "Dies ist die maximale Anzahl von wiederaufgenommenen TLS-Sitzungen, die der Cache halten wird."
 
 #: modules/misc/gnutls.c:83
 msgid "Check TLS/SSL server certificate validity"
 msgstr "Gültigkeit des TLS/SSL-Serverzertifikats überprüfen"
 
 #: modules/misc/gnutls.c:85
-#, fuzzy
 msgid ""
 "This ensures that the server certificate is valid (i.e. signed by an "
 "approved Certification Authority)."
@@ -14361,7 +13938,6 @@ msgid "Check TLS/SSL server hostname in certificate"
 msgstr "Hostname des TLS/SSL-Servers im Zertifikat überprüfen"
 
 #: modules/misc/gnutls.c:90
-#, fuzzy
 msgid ""
 "This ensures that the server hostname in certificate matches the requested "
 "host name."
@@ -14374,9 +13950,8 @@ msgid "GnuTLS TLS encryption layer"
 msgstr "GnuTLS TLS-Verschlüsselungslayer"
 
 #: modules/misc/growl.c:59
-#, fuzzy
 msgid "Growl server"
-msgstr "Kein Server"
+msgstr "Growl-Server"
 
 #: modules/misc/growl.c:60
 msgid ""
@@ -14387,37 +13962,32 @@ msgstr ""
 "Normalerweise werden die Benachrichtigungen nur lokal versendet."
 
 #: modules/misc/growl.c:63
-#, fuzzy
 msgid "Growl password"
-msgstr "FTP Passwort"
+msgstr "Growl-Passwort"
 
 #: modules/misc/growl.c:65
 msgid "Growl password on the server."
 msgstr "Growl-Passwort des Servers"
 
 #: modules/misc/growl.c:66
-#, fuzzy
 msgid "Growl UDP port"
-msgstr "UDP-Port"
+msgstr "Growl-UDP-Port"
 
 #: modules/misc/growl.c:68
-#, fuzzy
 msgid "Growl UDP port on the server."
-msgstr "UDP-Port"
+msgstr "Growl-UDP-Port auf dem Server."
 
 #: modules/misc/growl.c:73
-#, fuzzy
 msgid "Growl"
-msgstr "Gruppe"
+msgstr "Growl"
 
 #: modules/misc/growl.c:74
 msgid "Growl Notification Plugin"
 msgstr "Growl-Benachrichtigungs Plugin"
 
 #: modules/misc/growl.c:172 modules/misc/msn.c:202
-#, fuzzy
 msgid "(no title)"
-msgstr "Ohne Titel"
+msgstr "(kein Titel)"
 
 #: modules/misc/growl.c:173 modules/misc/msn.c:203
 msgid "(no artist)"
@@ -14440,13 +14010,10 @@ msgid "Log format"
 msgstr "Log-Format"
 
 #: modules/misc/logger.c:120
-#, fuzzy
 msgid ""
 "Specify the log format. Available choices are \"text\" (default), \"html\", "
 "and \"syslog\" (special mode to send to syslog instead of file."
-msgstr ""
-"Legen Sie das Protokollformat fest. Sie können zwischen \"text\" (Standard) "
-"und \"html\" wählen."
+msgstr "Legen Sie das Protokollformat fest. Mögliche Variaten sind \"text\" (standard), \"html\" und \"syslog\" (spezieller Modus zum Senden an syslog anstatt einer Datei)."
 
 #: modules/misc/logger.c:124
 msgid ""
@@ -14473,9 +14040,8 @@ msgid "Specify the log filename."
 msgstr "Den Log-Datei-Namen festlegen."
 
 #: modules/misc/logger.c:141
-#, fuzzy
 msgid "RRD output file"
-msgstr "Ausgabe-Datei"
+msgstr "RRD-Ausgabe-Datei"
 
 #: modules/misc/logger.c:142
 msgid "Output data for RRDTool in this file."
@@ -14514,24 +14080,20 @@ msgstr ""
 "Titel, {2} Album. Standard:  \"Artist - Title\" ({0} - {1})."
 
 #: modules/misc/msn.c:71
-#, fuzzy
 msgid "MSN"
-msgstr "MMS"
+msgstr "MSN"
 
 #: modules/misc/msn.c:72
-#, fuzzy
 msgid "MSN Now-Playing"
-msgstr "Gerade läuft"
+msgstr "MSN Gerade läuft"
 
 #: modules/misc/network/ipv4.c:96
-#, fuzzy
 msgid "UDP/IPv4 network abstraction layer"
-msgstr "IPv4 Netzwerk Abstraktions-Layer"
+msgstr "UDP/IPv4 Netzwerk Abstraktions-Layer"
 
 #: modules/misc/network/ipv6.c:89
-#, fuzzy
 msgid "UDP/IPv6 network abstraction layer"
-msgstr "IPv6 Netzwerk Abstraktions-Layer"
+msgstr "UDP/IPv6 Netzwerk Abstraktions-Layer"
 
 #: modules/misc/playlist/export.c:44
 msgid "M3U playlist exporter"
@@ -14542,9 +14104,8 @@ msgid "Old playlist exporter"
 msgstr "Alter Wiedergabelistenexporter"
 
 #: modules/misc/playlist/export.c:56
-#, fuzzy
 msgid "XSPF playlist export"
-msgstr "M3U Wiedergabelistenexporter"
+msgstr "XSPF Wiedergabelistenexport"
 
 #: modules/misc/qte_main.cpp:66
 msgid "Run as standalone Qt/Embedded GUI Server"
@@ -14568,28 +14129,23 @@ msgid "video"
 msgstr "Video"
 
 #: modules/misc/rtsp.c:48
-#, fuzzy
 msgid "RTSP host address"
-msgstr "Host-Adresse"
+msgstr "RTSP Host-Adresse"
 
 #: modules/misc/rtsp.c:51
-#, fuzzy
 msgid ""
 "This defines the address, port and path the RTSP VOD server will listen on.\n"
 "Syntax is address:port/path. The default is to listen on all interfaces "
 "(address 0.0.0.0), on port 554, with no path.\n"
 " To listen only on the local interface, use \"localhost\" as address."
 msgstr ""
-"Sie können festlegen, an welche Adresse, Port und Pfad sich das RTSP-"
-"Interface binden wird.\n"
-"Die Syntax ist Adresse:Port/Pfad. Standardmäßig erfolgt die Bindung an die "
-"localhost-Adresse auf Port 554 ohne Pfad. Benutzen Sie 0.0.0.0, um das "
-"Interface an alle Adressen zu binden."
+"Dies legt fest, auf welcher/m Adresse, Port und Pfad der RTSP-VOD-Server hören wird.\n"
+"Die Syntax ist Adresse:Port/Pfad. Standardmäßig erfolgt die Bindung auf allen Interfaces (Adresse 0.0.0.0) auf Port 554 ohne Pfad. \n"
+"Um nur auf dem lokalen Interface zu hören, benutzen Sie \"localhost\" als Adresse."
 
 #: modules/misc/rtsp.c:56
-#, fuzzy
 msgid "Maximum number of connections"
-msgstr "Anzahl der Klone"
+msgstr "Maximale Anzahl der Verbindungen"
 
 #: modules/misc/rtsp.c:57
 msgid ""
@@ -14650,16 +14206,12 @@ msgid "Title to put in ASF comments."
 msgstr "Titel für die ASF Kommentare."
 
 #: modules/mux/asf.c:51
-#, fuzzy
 msgid "Author to put in ASF comments."
-msgstr "Erlaubt Ihnen den Autor festzulegen, der in ASF-Kommentaren ablegt wird."
+msgstr "Autor, der in ASF-Kommentaren ablegt wird."
 
 #: modules/mux/asf.c:53
-#, fuzzy
 msgid "Copyright string to put in ASF comments."
-msgstr ""
-"Erlaubt Ihnen den Copyright-String festzulegen, der in ASF-Kommentaren "
-"ablegt wird."
+msgstr "Copyright-String, der in ASF-Kommentaren ablegt wird."
 
 #: modules/mux/asf.c:54
 msgid "Comment"
@@ -14670,20 +14222,16 @@ msgid "Comment to put in ASF comments."
 msgstr "Kommentare für ASF."
 
 #: modules/mux/asf.c:57
-#, fuzzy
 msgid "\"Rating\" to put in ASF comments."
-msgstr ""
-"Erlaubt Ihnen das \"rating\" (die Bewertung) festzulegen, die in ASF-"
-"Kommentaren ablegt wird."
+msgstr "\"rating\" (die Bewertung), die in ASF-Kommentaren ablegt wird."
 
 #: modules/mux/asf.c:58
 msgid "Packet Size"
 msgstr "Paketgröße"
 
 #: modules/mux/asf.c:59
-#, fuzzy
 msgid "ASF packet size -- default is 4096 bytes"
-msgstr "Die ASF-Paketgröße -- standardmäßig 4096 Bytes"
+msgstr "ASF-Paketgröße -- standardmäßig 4096 Bytes"
 
 #: modules/mux/asf.c:62
 msgid "ASF muxer"
@@ -14702,20 +14250,15 @@ msgid "Dummy/Raw muxer"
 msgstr "Dummy/Raw Muxer"
 
 #: modules/mux/mp4.c:45
-#, fuzzy
 msgid "Create \"Fast Start\" files"
 msgstr "\"Schnellstart\"-Dateien erzeugen"
 
 #: modules/mux/mp4.c:47
-#, fuzzy
 msgid ""
 "Create \"Fast Start\" files. \"Fast Start\" files are optimized for "
 "downloads and allow the user to start previewing the file while it is "
 "downloading."
-msgstr ""
-"Wenn diese Option aktiviert ist, werden \"Schnellstart\"-Dateien erzeugt. "
-"(\"Schnellstart\"-Dateien sind für Downloads optimiert. Sie erlauben dem "
-"Nutzer früh eine Vorschau der Datei während des Downloads zubetrachten)."
+msgstr "Erzeugt \"Schnellstart\"-Dateien. \"Schnellstart\"-Dateien sind für Downloads optimiert und erlauben dem Nutzer früh eine Vorschau der Datei während des Downloads zu betrachten."
 
 #: modules/mux/mp4.c:57
 msgid "MP4/MOV muxer"
@@ -14726,13 +14269,12 @@ msgid "DTS delay (ms)"
 msgstr "DTS-Verzögerung (ms)"
 
 #: modules/mux/mpeg/ps.c:46
-#, fuzzy
 msgid ""
 "Delay the DTS (decoding time stamps) and PTS (presentation timestamps) of "
 "the data in the stream, compared to the SCRs. This allows for some buffering "
 "inside the client decoder."
 msgstr ""
-"Diese Option wird die DTS (Dekodierungszeitmarken) und PTS "
+"Die DTS (Dekodierungszeitmarken) und PTS "
 "(Präsentationszeitmarken) der Daten des Streams verglichen mit den SCRs "
 "verzögern. Dies erlaubt etwas Puffern im Client-Dekoder."
 
@@ -14741,11 +14283,8 @@ msgid "PES maximum size"
 msgstr "Maximale PES-Größe"
 
 #: modules/mux/mpeg/ps.c:52
-#, fuzzy
 msgid "Set the maximum allowed PES size when producing the MPEG PS streams."
-msgstr ""
-"Diese Option wird die maximal erlaubte PES-Größe festlegen, wenn der MPEG PS "
-"Stream erzeugt wird."
+msgstr "Legt die maximal erlaubte PES-Größe fest, wenn der MPEG PS Stream erzeugt wird."
 
 #: modules/mux/mpeg/ps.c:61
 msgid "PS muxer"
@@ -14756,7 +14295,6 @@ msgid "Video PID"
 msgstr "Video-PID"
 
 #: modules/mux/mpeg/ts.c:84
-#, fuzzy
 msgid ""
 "Assign a fixed PID to the video stream. The PCR PID will automatically be "
 "the video."
@@ -14769,7 +14307,6 @@ msgid "Audio PID"
 msgstr "Audio-PID"
 
 #: modules/mux/mpeg/ts.c:87
-#, fuzzy
 msgid "Assign a fixed PID to the audio stream."
 msgstr "Fügt dem Audiostream eine feste PID hinzu."
 
@@ -14778,7 +14315,6 @@ msgid "SPU PID"
 msgstr "SPU-PID"
 
 #: modules/mux/mpeg/ts.c:89
-#, fuzzy
 msgid "Assign a fixed PID to the SPU."
 msgstr "Vergibt der SPU eine feste PID."
 
@@ -14787,7 +14323,6 @@ msgid "PMT PID"
 msgstr "PMT-PID"
 
 #: modules/mux/mpeg/ts.c:91
-#, fuzzy
 msgid "Assign a fixed PID to the PMT"
 msgstr "Fügt der PMT eine feste PID hinzu"
 
@@ -14796,24 +14331,20 @@ msgid "TS ID"
 msgstr "TS-ID"
 
 #: modules/mux/mpeg/ts.c:93
-#, fuzzy
 msgid "Assign a fixed Transport Stream ID."
-msgstr "Ordnet eine feste Transport-Stream-ID zu."
+msgstr "Legt eine feste Transport-Stream-ID fest."
 
 #: modules/mux/mpeg/ts.c:94
-#, fuzzy
 msgid "NET ID"
-msgstr "TS-ID"
+msgstr "NET-ID"
 
 #: modules/mux/mpeg/ts.c:95
-#, fuzzy
 msgid "Assign a fixed Network ID (for SDT table)"
-msgstr "Fügt der PMT eine feste PID hinzu"
+msgstr "Legt eine feste Netzwerk-ID (für SDT-Tabellen) fest."
 
 #: modules/mux/mpeg/ts.c:97
-#, fuzzy
 msgid "PMT Program numbers"
-msgstr "PMT Programmnummer"
+msgstr "PMT Programmnummern"
 
 #: modules/mux/mpeg/ts.c:98
 msgid ""
@@ -14848,7 +14379,6 @@ msgstr ""
 "des ES\" aktiviert sein."
 
 #: modules/mux/mpeg/ts.c:109
-#, fuzzy
 msgid "Set PID to ID of ES"
 msgstr "PID auf ID des ES setzen"
 
@@ -14862,9 +14392,8 @@ msgstr ""
 "zu haben."
 
 #: modules/mux/mpeg/ts.c:114
-#, fuzzy
 msgid "Data alignment"
-msgstr "Mosaic-Ausrichtung"
+msgstr "Datenausrichtung"
 
 #: modules/mux/mpeg/ts.c:115
 msgid ""
@@ -14879,13 +14408,12 @@ msgid "Shaping delay (ms)"
 msgstr "Shaping-Verzögerung (ms)"
 
 #: modules/mux/mpeg/ts.c:119
-#, fuzzy
 msgid ""
 "Cut the stream in slices of the given duration, and ensure a constant "
 "bitrate between the two boundaries. This avoids having huge bitrate peaks, "
 "especially for reference frames."
 msgstr ""
-"Wenn aktiviert wird der TS-Muxer den Stream in Stücke der angegebenen Dauer "
+"Den Stream in Stücke der angegebenen Dauer "
 "schneiden und eine konstante Datenrate zwischen den beiden Grenzen "
 "sicherstellen. Dies verhindert insbesondere hohe Datenratenausschläge für "
 "Referenzframes."
@@ -14913,14 +14441,13 @@ msgid "PCR delay (ms)"
 msgstr "PCR-Verzögerung (ms)"
 
 #: modules/mux/mpeg/ts.c:133
-#, fuzzy
 msgid ""
 "Set at which interval PCRs (Program Clock Reference) will be sent (in "
 "milliseconds). This value should be below 100ms. (default is 70ms)."
 msgstr ""
-"Diese Option erlaubt die Einstellung an welchen Intervallen PCRs (Programm-"
-"Clock-Referenzen) gesendet werden. Dieser Wert sollte unter 100ms sein "
-"(standardmäßig 70)."
+"Legt fest, an welchen Intervallen PCRs (Programm-"
+"Clock-Referenzen) gesendet werden (in Millisekunden). Dieser Wert sollte unter 100ms sein "
+"(standardmäßig 70ms)."
 
 #: modules/mux/mpeg/ts.c:137
 msgid "Minimum B (deprecated)"
@@ -14935,13 +14462,12 @@ msgid "Maximum B (deprecated)"
 msgstr "Maximales B (abgelehnt)"
 
 #: modules/mux/mpeg/ts.c:144
-#, fuzzy
 msgid ""
 "Delay the DTS (decoding time stamps) and PTS (presentation timestamps) of "
 "the data in the stream, compared to the PCRs. This allows for some buffering "
 "inside the client decoder."
 msgstr ""
-"Diese Option wird die DTS (Dekodierungszeitmarken) und PTS "
+"Die DTS (Dekodierungszeitmarken) und PTS "
 "(Präsentationszeitmarken) der Daten des Streams verglichen mit den PCRs "
 "verzögern. Dies erlaubt etwas Puffern im Client-Dekoder."
 
@@ -14954,24 +14480,21 @@ msgid "Crypt audio using CSA"
 msgstr "Audioverschlüsselung durch CSA"
 
 #: modules/mux/mpeg/ts.c:151
-#, fuzzy
 msgid "Crypt video"
-msgstr "Audio verschlüsseln"
+msgstr "Video verschlüsseln"
 
 #: modules/mux/mpeg/ts.c:152
-#, fuzzy
 msgid "Crypt video using CSA"
-msgstr "Audioverschlüsselung durch CSA"
+msgstr "Video mit CSA verschlüsseln"
 
 #: modules/mux/mpeg/ts.c:154
 msgid "CSA Key"
 msgstr "CSA-Schlüssel"
 
 #: modules/mux/mpeg/ts.c:155
-#, fuzzy
 msgid "CSA encryption key. This must be a 16 char string (8 hexadecimal bytes)."
 msgstr ""
-"Definiert den CSA-Verschlüsselungsschlüssel. Dies muss ein String mit 16 "
+"CSA-Verschlüsselungsschlüssel. Dies muss ein String mit 16 "
 "Zeichen sein (8 hexadezimale Bytes)."
 
 #: modules/mux/mpeg/ts.c:158
@@ -14995,24 +14518,18 @@ msgid "Multipart separator string"
 msgstr "Mehrteilige Trennungszeichenkette"
 
 #: modules/mux/mpjpeg.c:33
-#, fuzzy
 msgid ""
 "Multipart strings like MPJPEG use a specific string to separate its content "
 "pieces. You can select this string. Default is --myboundary"
-msgstr ""
-"Mehrteilige Zeichenketten wie MPJPEG benutzen eine Trennungszeichenkette "
-"zwischen Teilstücken. Sie können diese Zeichenkette wählen. Standardmäßig --"
-"myboundary"
+msgstr "Mehrteilige Zeichenketten wie MPJPEG benutzen einen speziellen String, um die Stücke zu trennen. Sie können diesen String festlegen. Standardmäßig --myboundary"
 
 #: modules/mux/mpjpeg.c:50
-#, fuzzy
 msgid "Multipart JPEG muxer"
 msgstr "Multipart-JPEG Muxer"
 
 #: modules/mux/ogg.c:50
-#, fuzzy
 msgid "Ogg/OGM muxer"
-msgstr "Ogg/ogm Muxer"
+msgstr "Ogg/OGM Muxer"
 
 #: modules/mux/wav.c:42
 msgid "WAV muxer"
@@ -15023,9 +14540,8 @@ msgid "Copy packetizer"
 msgstr "Copy-Packetizer"
 
 #: modules/packetizer/h264.c:47
-#, fuzzy
 msgid "H.264 video packetizer"
-msgstr "H264 Videopacketizer"
+msgstr "H.264 Videopacketizer"
 
 #: modules/packetizer/mpeg4audio.c:118
 msgid "MPEG4 audio packetizer"
@@ -15036,9 +14552,8 @@ msgid "MPEG4 video packetizer"
 msgstr "MPEG4 Videopacketizer"
 
 #: modules/packetizer/mpegvideo.c:52
-#, fuzzy
 msgid "Sync on Intra Frame"
-msgstr "Interface anzeigen"
+msgstr "Auf Intra-Frame synchronisieren"
 
 #: modules/packetizer/mpegvideo.c:53
 msgid ""
@@ -15070,9 +14585,8 @@ msgid "DAAP access"
 msgstr "DAAP-Zugriff"
 
 #: modules/services_discovery/hal.c:63
-#, fuzzy
 msgid "HAL devices detection"
-msgstr "HAL-Geräterkennung"
+msgstr "HAL-Geräteerkennung"
 
 #: modules/services_discovery/hal.c:153
 msgid "Devices"
@@ -15089,14 +14603,12 @@ msgstr ""
 "senkrechten Strich), die Sie empfangen möchten."
 
 #: modules/services_discovery/podcast.c:63
-#, fuzzy
 msgid "Podcasts"
-msgstr "Einsetzen"
+msgstr "Podcasts"
 
 #: modules/services_discovery/podcast.c:155
-#, fuzzy
 msgid "Podcast"
-msgstr "Einsetzen"
+msgstr "Podcast"
 
 #: modules/services_discovery/sap.c:79
 msgid "SAP multicast address"
@@ -15111,65 +14623,52 @@ msgstr ""
 "zuhören aus. Sie können trotzdem eine andere Adresse angeben."
 
 #: modules/services_discovery/sap.c:83
-#, fuzzy
 msgid "IPv4 SAP"
-msgstr "IPv6 SAP-Scope"
+msgstr "IPv4 SAP"
 
 #: modules/services_discovery/sap.c:85
-#, fuzzy
 msgid "Listen to IPv4 announcements on the standard address."
-msgstr "Nach SAP-Ankündigungen auf einer anderen Adresse suchen"
+msgstr "Nach IPv4-Ankündigungen auf der Standardadresse suchen."
 
 #: modules/services_discovery/sap.c:87
-#, fuzzy
 msgid "IPv6 SAP"
-msgstr "IPv6 SAP-Scope"
+msgstr "IPv6 SAP"
 
 #: modules/services_discovery/sap.c:89
-#, fuzzy
 msgid "Listen to IPv6 announcements on the standard addresses."
-msgstr "Nach SAP-Ankündigungen auf einer anderen Adresse suchen"
+msgstr "Nach IPv6-Ankündigungen auf der Standardadresse suchen."
 
 #: modules/services_discovery/sap.c:91
 msgid "IPv6 SAP scope"
 msgstr "IPv6 SAP-Scope"
 
 #: modules/services_discovery/sap.c:93
-#, fuzzy
 msgid "Scope for IPv6 announcements (default is 8)."
-msgstr "Setzt den Bereich für IPv6-Ankündungen (standardmäßig 8)"
+msgstr "Bereich für IPv6-Ankündungen (standardmäßig 8)."
 
 #: modules/services_discovery/sap.c:94
 msgid "SAP timeout (seconds)"
 msgstr "SAP Timeout (Sekunden)"
 
 #: modules/services_discovery/sap.c:96
-#, fuzzy
 msgid "Delay after which SAP items get deleted if no new announcement is received."
-msgstr ""
-"Stellt die Zeit ein, bevor SAP-Objekte gelöscht werden, wenn keine neue "
-"Ankündigung empfangen wurde."
+msgstr "Die Zeit bis SAP-Objekte gelöscht werden, wenn keine neue Ankündigung empfangen wurde."
 
 #: modules/services_discovery/sap.c:98
-#, fuzzy
 msgid "Try to parse the announce"
-msgstr "Versuchen, das SAP zu parsen"
+msgstr "Versuchen, die Ankündigung zu parsen"
 
 #: modules/services_discovery/sap.c:100
-#, fuzzy
 msgid ""
 "This enables actual parsing of the announces by the SAP module. Otherwise, "
 "all announcements are parsed by the \"livedotcom\" (RTP/RTSP) module."
-msgstr ""
-"Wenn SAP in der Lage ist, wird es versuchen das SAP zu parsen. Wenn Sie dies "
-"nicht auswählen, werden alle Ankündigungen von livedotcom-Modul geparst."
+msgstr "Dies aktivert tatsächliches Parsen der Ankündigungen durch das SAP-Modul. Sonst werden alle Ankündigungen vom \"livedotcom\" (RTP/RTSP) Modul geparst."
 
 #: modules/services_discovery/sap.c:103
 msgid "SAP Strict mode"
 msgstr "Strikter SAP-Modus"
 
 #: modules/services_discovery/sap.c:105
-#, fuzzy
 msgid ""
 "When this is set, the SAP parser will discard some non-compliant "
 "announcements."
@@ -15182,13 +14681,11 @@ msgid "Use SAP cache"
 msgstr "SAP-Cache benutzen"
 
 #: modules/services_discovery/sap.c:109
-#, fuzzy
 msgid ""
 "This enables a SAP caching mechanism. This will result in lower SAP startup "
 "time, but you could end up with items corresponding to legacy streams."
 msgstr ""
-"Wenn diese Option ausgewählt ist, wird ein SAP-Zwischenspeichermechnismus "
-"benutzt. Dies sorgt für eine langsamere SAP-Startzeit, aber Sie könnten auf "
+"Dies aktiviert einen SAP-Zwischenspeichermechnismus. Dies sorgt für eine langsamere SAP-Startzeit, aber Sie könnten auf "
 "Objekte treffen, die auf verwaiste Streams verweisen."
 
 #: modules/services_discovery/sap.c:113
@@ -15200,9 +14697,8 @@ msgstr ""
 "entdeckt wurden."
 
 #: modules/services_discovery/sap.c:124
-#, fuzzy
 msgid "SAP Announcements"
-msgstr "SAP-Ankündigung"
+msgstr "SAP-Ankündigungen"
 
 #: modules/services_discovery/sap.c:151
 msgid "SDP file parser for UDP"
@@ -15225,14 +14721,12 @@ msgid "User"
 msgstr "Benutzer"
 
 #: modules/services_discovery/shout.c:61
-#, fuzzy
 msgid "Number of streams"
-msgstr "Anzahl der Threads"
+msgstr "Anzahl der Streams"
 
 #: modules/services_discovery/shout.c:63
-#, fuzzy
 msgid "Maximum number of Shoutcast radio streams which would be listed."
-msgstr "Maximale Anzahl von aufgeführten Shoutcast-Servern"
+msgstr "Maximale Anzahl von Shoutcast-Radiostreams, die aufgelistet werden soll."
 
 #: modules/services_discovery/shout.c:68
 msgid "Shoutcast radio listings"
@@ -15259,15 +14753,13 @@ msgstr ""
 "\"find\" diesen Stream wiederzufinden."
 
 #: modules/stream_out/bridge.c:42
-#, fuzzy
 msgid ""
 "Pictures coming from the picture video outputs will be delayed accord to thi "
 "value (in milliseconds, should be >= 100 ms). For high values, you will need "
 "to raise caching values."
 msgstr ""
-"Bilder aus dem Bild-Videooutput werden entsprechend verzöger (in "
-"Millisekunden, >= 100 ms). Für höhere Werte werden Sie das Caching von "
-"Dateien und weitere Werte erhöhen müssen."
+"Bilder aus dem Bild-Videooutput kommen, werden entsprechend verzögert (in "
+"Millisekunden, sollte >= 100 ms sein). Für höhere Werte werden Sie die Caching-Werte erhöhen müssen."
 
 #: modules/stream_out/bridge.c:46
 msgid "ID Offset"
@@ -15330,85 +14822,72 @@ msgid "Output access method"
 msgstr "Ausgabezugriffsmethode"
 
 #: modules/stream_out/es.c:39
-#, fuzzy
 msgid "This is the default output access method that will be used."
-msgstr "Dies ist das standardmäßig benutzte VCD-Device."
+msgstr "Dies ist die standardmäßig benutzte Output-Access-Methode."
 
 #: modules/stream_out/es.c:41
 msgid "Audio output access method"
 msgstr "Audioausgabezugriffsmethode"
 
 #: modules/stream_out/es.c:43
-#, fuzzy
 msgid "This is the output access method that will be used for audio."
-msgstr ""
-"Erlaubt Ihnen die Ausgabezugriffsmethode festzulegen, die für die "
-"Audiostreamingausgabe benutzt wird."
+msgstr "Dies ist die standardmäßig benutzte Output-Access-Methode, die für Audio benutzt wird."
 
 #: modules/stream_out/es.c:44
 msgid "Video output access method"
 msgstr "Videoausgabezugriffsmethode"
 
 #: modules/stream_out/es.c:46
-#, fuzzy
 msgid "This is the output access method that will be used for video."
-msgstr ""
-"Erlaubt Ihnen die Ausgabezugriffsmethode festzulegen, die für die "
-"Videostreamingausgabe benutzt wird."
+msgstr "Dies ist die standardmäßig benutzte Output-Access-Methode, die für Video benutzt wird."
 
 #: modules/stream_out/es.c:48 modules/stream_out/standard.c:43
 msgid "Output muxer"
 msgstr "Ausgabemixer"
 
 #: modules/stream_out/es.c:50
-#, fuzzy
 msgid "This is the default muxer method that will be used."
-msgstr "Dies ist das standardmäßig benutzte Audio-CD - Device."
+msgstr "Dies ist die standardmäßig benutzte Muxermethode."
 
 #: modules/stream_out/es.c:51
 msgid "Audio output muxer"
 msgstr "Audioausgabemuxer"
 
 #: modules/stream_out/es.c:53
-#, fuzzy
 msgid "This is the muxer that will be used for audio."
-msgstr "Erlaubt Ihnen den für die Verbindung benutzten Benutzernamen zu ändern."
+msgstr "Dies ist die standardmäßig benutzte Muxermethode für Audio."
 
 #: modules/stream_out/es.c:54
 msgid "Video output muxer"
 msgstr "Videoausgabemuxer"
 
 #: modules/stream_out/es.c:56
-#, fuzzy
 msgid "This is the muxer that will be used for video."
-msgstr "Erlaubt Ihnen den für die Verbindung benutzten Benutzernamen zu ändern."
+msgstr "Dies ist die standardmäßig benutzte Muxermethode für Video."
 
 #: modules/stream_out/es.c:58
 msgid "Output URL"
 msgstr "Ausgabe-URL"
 
 #: modules/stream_out/es.c:60
-#, fuzzy
 msgid "This is the default output URI."
-msgstr "Dies ist das standardmäßig benutzte VCD-Device."
+msgstr "Dies ist die Standardausgabe-URI."
 
 #: modules/stream_out/es.c:61
 msgid "Audio output URL"
 msgstr "Audioausgabe-URL"
 
 #: modules/stream_out/es.c:63
-#, fuzzy
 msgid "This is the output URI that will be used for audio."
-msgstr "Name der Gruppe, die für die Session angekündigt wird."
+msgstr "Dies ist die Standardausgabe-URI für Audio."
 
 #: modules/stream_out/es.c:64
 msgid "Video output URL"
 msgstr "Videoausgabe-URL"
 
 #: modules/stream_out/es.c:66
-#, fuzzy
 msgid "This is the output URI that will be used for video."
-msgstr "Name der Gruppe, die für die Session angekündigt wird."
+msgstr "Dies ist die Standardausgabe-URI für Video."
 
 #: modules/stream_out/es.c:75
 msgid "Elementary stream output"
@@ -15423,9 +14902,8 @@ msgid "Specify an identifier string for this subpicture"
 msgstr "Geben Sie eine Erkennungszeichenkette für dieses Sub-Bild ein."
 
 #: modules/stream_out/mosaic_bridge.c:113
-#, fuzzy
 msgid "Sample aspect ratio"
-msgstr "Bildseitenverhältnis"
+msgstr "Beispielhaftes Bildseitenverhältnis"
 
 #: modules/stream_out/mosaic_bridge.c:115
 msgid "Sample aspect ratio of the destination (1:1, 3:4, 2:3)."
@@ -15448,16 +14926,14 @@ msgid "SDP"
 msgstr "SDP"
 
 #: modules/stream_out/rtp.c:51
-#, fuzzy
 msgid ""
 "This allows you to specify how the SDP (Session Descriptor) for this RTP "
 "session will be made available. You must use an url: http://location to "
 "access the SDP via HTTP, rtsp://location for RTSP access, and sap:// for the "
 "SDP to be announced via SAP."
 msgstr ""
-"Erlaubt Ihnen die SDP festzulegen, die für die Streamausgabe benutzt wird. "
-"Sie müssen eine URL verwenden: http://Ort um auf die SDP via HTTP "
-"zuzugreifen, rtsp://Ort für RTSP-Zugriff und sap:// damit die SDP via SAP "
+"Erlaubt Ihnen festzulegen, wie der SDP (Sitzungsbeschreiber) diese RTP-Sitzung verfügbar gemacht wird. Sie müssen eine URL verwenden: http://Ort um auf den SDP via HTTP "
+"zuzugreifen, rtsp://Ort für RTSP-Zugriff und sap:// damit derSDP via SAP "
 "angekündigt wird."
 
 #: modules/stream_out/rtp.c:55
@@ -15465,33 +14941,30 @@ msgid "Muxer"
 msgstr "Muxer"
 
 #: modules/stream_out/rtp.c:57
-#, fuzzy
 msgid ""
 "This allows you to specify the muxer used for the streaming output. Default "
 "is to use no muxer (standard RTP stream)."
-msgstr "Erlaubt Ihnen die Ausgabe-URL für die Streamingausgabe festzulegen."
+msgstr "Dies erlaubt Ihnen die Festlegung des für die Streamausgabe benutzten Muxers. Standardmäßig wird kein Muxer benutzt (Standard-RTP-Stream)."
 
 #: modules/stream_out/rtp.c:60 modules/stream_out/standard.c:51
 msgid "Session name"
 msgstr "Session-Name"
 
 #: modules/stream_out/rtp.c:62
-#, fuzzy
 msgid ""
 "This is the name of the session that will be announced in the SDP (Session "
 "Descriptor)."
-msgstr "Name der Session, die mit SAP oder SLP angekündigt wird"
+msgstr "Dies ist der Name der Session, die im SDP (Sitzungsbeschreiber) angekündigt wird."
 
 #: modules/stream_out/rtp.c:64
 msgid "Session description"
 msgstr "Sessionsbeschreibung"
 
 #: modules/stream_out/rtp.c:66
-#, fuzzy
 msgid ""
 "This allows you to give a broader description of the stream, that will be "
 "announced in the SDP (Session Descriptor)."
-msgstr "Erlaubt Ihnen eine breite Beschreibung des Streams anzugeben."
+msgstr "Erlaubt Ihnen eine breite Beschreibung des Streams anzugeben, die im SDP (Sitzungsbeschreiber) bekannt gegeben wird."
 
 #: modules/stream_out/rtp.c:68
 msgid "Session URL"
@@ -15520,10 +14993,9 @@ msgstr ""
 "wird im Session Descriptor SDP bekannt gegeben."
 
 #: modules/stream_out/rtp.c:79
-#, fuzzy
 msgid "This allows you to specify the base port for the RTP streaming."
 msgstr ""
-"Erlaubt Ihnen den Basisport festzulegen, der für das für RTP-Streaming "
+"Dies erlaubt Ihnen den Basisport festzulegen, der für das für RTP-Streaming "
 "benutzt wird."
 
 #: modules/stream_out/rtp.c:80
@@ -15531,36 +15003,28 @@ msgid "Audio port"
 msgstr "Audio-Port"
 
 #: modules/stream_out/rtp.c:82
-#, fuzzy
 msgid "This allows you to specify the default audio port for the RTP streaming."
-msgstr ""
-"Erlaubt Ihnen den standardmäßigen Audio-Port festzulegen, der für RTP-"
-"Streaming benutzt wird."
+msgstr "Dies erlaubt Ihnen den standardmäßigen Audio-Port für das RTP-Streaming festzulegen."
 
 #: modules/stream_out/rtp.c:83
 msgid "Video port"
 msgstr "Video-Port"
 
 #: modules/stream_out/rtp.c:85
-#, fuzzy
 msgid "This allows you to specify the default video port for the RTP streaming."
-msgstr ""
-"Erlaubt Ihnen den standardmäßigen Video-Port festzulegen, der für RTP-"
-"Streaming benutzt wird."
+msgstr "Dies erlaubt Ihnen den standardmäßigen Video-Port für das RTP-Streaming festzulegen."
 
 #: modules/stream_out/rtp.c:89
-#, fuzzy
 msgid "This allows you to specify the Time-To-Live for the output stream."
-msgstr "Erlaubt Ihnen die Time-To-Live für die Streamausgabe festzulegen."
+msgstr "Erlaubt Ihnen die Time-To-Live für den ausgegebenen Stream festzulegen."
 
 #: modules/stream_out/rtp.c:91
 msgid "MP4A LATM"
 msgstr "MP4A LATM"
 
 #: modules/stream_out/rtp.c:93
-#, fuzzy
 msgid "This allows you to stream MPEG4 LATM audio streams (see RFC3016)."
-msgstr "Dies erlaubt Ihnen alle ES (Video, Audio und Untertitel) zu streamen."
+msgstr "Dies erlaubt Ihnen alle MPEG4 LATM Audiostreams zu streamen (siehe RFC 3016)."
 
 #: modules/stream_out/rtp.c:102
 msgid "RTP stream output"
@@ -15571,50 +15035,40 @@ msgid "This is the output access method that will be used."
 msgstr "Dieses Ausgabe-Zugriffsverfahren wird benutzt."
 
 #: modules/stream_out/standard.c:46
-#, fuzzy
 msgid "This is the muxer that will be used."
-msgstr "Dies ist das standardmäßig benutzte VCD-Device."
+msgstr "Dies ist der zu benutzende Muxer."
 
 #: modules/stream_out/standard.c:47
-#, fuzzy
 msgid "Output destination"
-msgstr "Ziel"
+msgstr "Ausgabeziel"
 
 #: modules/stream_out/standard.c:50
-#, fuzzy
 msgid "This is the destination (URL) that will be used for the stream."
-msgstr ""
-"Erlaubt Ihnen den Ziel-Audiocodec festzulegen, der bei der Streamingausgabe "
-"benutzt wird."
+msgstr "Dies ist das Ziel (URL), dass für den Stream benutzt werden wird."
 
 #: modules/stream_out/standard.c:53
-#, fuzzy
 msgid ""
 "This allows you to specify a name for the session, that will be announced if "
 "you choose to use SAP."
-msgstr ""
-"Erlaubt Ihnen die Anzahl von Frames festzulegen, die für einen Keyframe "
-"kodiert werden."
+msgstr "Dies erlaubt Ihnen einen Namen für die Sitzung festzulegen, der bekannt gegeben werden wird, wenn Sie SAP benutzen."
 
 #: modules/stream_out/standard.c:56
 msgid "Session groupname"
 msgstr "Gruppenname der Session"
 
 #: modules/stream_out/standard.c:58
-#, fuzzy
 msgid ""
 "This allows you to specify a group for the session, that will be announced "
 "if you choose to use SAP."
-msgstr "Name der Session, die mit SAP oder SLP angekündigt wird"
+msgstr "Dies erlaubt Ihnen eine Gruppe festzulegen, die bekannt gegeben werden wird, wenn Sie SAP benutzen."
 
 #: modules/stream_out/standard.c:61
 msgid "SAP announcing"
 msgstr "SAP-Ankündigung"
 
 #: modules/stream_out/standard.c:62
-#, fuzzy
 msgid "Announce this session with SAP."
-msgstr "Diese Session mit SAP ankündigen"
+msgstr "Diese Session mit SAP ankündigen."
 
 #: modules/stream_out/standard.c:70
 msgid "Standard"
@@ -15681,9 +15135,8 @@ msgid "Fixed quantizer scale to use."
 msgstr "Feste Quantisierer-Skalierung benutzen."
 
 #: modules/stream_out/switcher.c:103
-#, fuzzy
 msgid "Mute audio"
-msgstr "Audio verschlüsseln"
+msgstr "Audio stumm schalten"
 
 #: modules/stream_out/switcher.c:105
 msgid "Mute audio when command is not 0."
@@ -15698,22 +15151,18 @@ msgid "Video encoder"
 msgstr "Videoencoder"
 
 #: modules/stream_out/transcode.c:48
-#, fuzzy
 msgid ""
 "This is the video encoder module that will be used (and its associated "
 "options)."
-msgstr ""
-"Erlaubt Ihnen den zu benutzenden Videoencoder und dessen Optionen "
-"festzulegen."
+msgstr "Dies ist das Videoencodermodul, dass benutzt werden wird (und dessen Optionen)."
 
 #: modules/stream_out/transcode.c:50
 msgid "Destination video codec"
 msgstr "Zielvideocodec"
 
 #: modules/stream_out/transcode.c:52
-#, fuzzy
 msgid "This is the video codec that will be used."
-msgstr "Dies ist das standardmäßig benutzte DVD-Device."
+msgstr "Dies ist der zubenutzende Videocodec."
 
 #: modules/stream_out/transcode.c:53
 msgid "Video bitrate"
@@ -15738,44 +15187,34 @@ msgid "Video frame-rate"
 msgstr "Video-Framerate"
 
 #: modules/stream_out/transcode.c:61
-#, fuzzy
 msgid "Target output frame rate for the video stream."
-msgstr "Erlaubt Ihnen die gewünschte Framerate für die Aufnahme festzulegen."
+msgstr "Ziel-Ausgabeframerate für den Videostream."
 
 #: modules/stream_out/transcode.c:64
-#, fuzzy
 msgid "Deinterlace the video before encoding."
-msgstr "Erlaubt Ihnen 'deinterlace' auf das Video vor der Kodierung anzuwenden."
+msgstr "'Deinterlace' auf das Video vor der Kodierung anwenden."
 
 #: modules/stream_out/transcode.c:67
-#, fuzzy
 msgid "Specify the deinterlace module to use."
-msgstr ""
-"Legt das zu benutzende Deinterlace-Modul fest (ffmpeg-deinterlace oder "
-"deinterlace)."
+msgstr "Geben Sie das zu benutzende Deinterlace-Modul an."
 
 #: modules/stream_out/transcode.c:74
-#, fuzzy
 msgid "Maximum video width"
-msgstr "Videobreite"
+msgstr "Maximale Videobreite"
 
 #: modules/stream_out/transcode.c:76
-#, fuzzy
 msgid "Maximum output video width."
-msgstr "Videobreite"
+msgstr "Maximale Videoausgabebreite."
 
 #: modules/stream_out/transcode.c:77
-#, fuzzy
 msgid "Maximum video height"
-msgstr "Videohöhe"
+msgstr "Maximale Videohöhe"
 
 #: modules/stream_out/transcode.c:79
-#, fuzzy
 msgid "Maximum output video height."
-msgstr "Videohöhe"
+msgstr "Maximale Videoausgabehöhe."
 
 #: modules/stream_out/transcode.c:80
-#, fuzzy
 msgid "Video filter"
 msgstr "Videofilter"
 
@@ -15788,45 +15227,40 @@ msgstr ""
 "verarbeitet wurden. Die Filter müssen durch Kommata getrennt werden."
 
 #: modules/stream_out/transcode.c:85
-#, fuzzy
 msgid "Video crop (top)"
-msgstr "Video oben beschneiden"
+msgstr "Video beschneiden (oben)"
 
 #: modules/stream_out/transcode.c:87
 msgid "Number of pixels to crop at the top of the video."
 msgstr "Anzahl der Pixel, die am oberen Rand abgeschnitten werden sollen."
 
 #: modules/stream_out/transcode.c:88
-#, fuzzy
 msgid "Video crop (left)"
-msgstr "Video links beschneiden"
+msgstr "Video beschneiden (links)"
 
 #: modules/stream_out/transcode.c:90
 msgid "Number of pixels to crop at the left of the video."
 msgstr "Anzahl der Pixel, die am linken Rand abgeschnitten werden sollen."
 
 #: modules/stream_out/transcode.c:91
-#, fuzzy
 msgid "Video crop (bottom)"
-msgstr "Video unten beschneiden"
+msgstr "Video beschneiden (unten)"
 
 #: modules/stream_out/transcode.c:93
 msgid "Number of pixels to crop at the bottom of the video."
 msgstr "Anzahl der Pixel, die am unteren Rand abgeschnitten werden sollen."
 
 #: modules/stream_out/transcode.c:94
-#, fuzzy
 msgid "Video crop (right)"
-msgstr "Video rechts beschneiden"
+msgstr "Video beschneiden (rechts)"
 
 #: modules/stream_out/transcode.c:96
 msgid "Number of pixels to crop at the right of the video."
 msgstr "Anzahl der Pixel, die am rechten Rand abgeschnitten werden sollen."
 
 #: modules/stream_out/transcode.c:98
-#, fuzzy
 msgid "Video padding (top)"
-msgstr "Video oben beschneiden"
+msgstr "Video auffüllen (oben)"
 
 #: modules/stream_out/transcode.c:100
 msgid "Size of the black border to add at the top of the video."
@@ -15835,9 +15269,8 @@ msgstr ""
 "sollen."
 
 #: modules/stream_out/transcode.c:101
-#, fuzzy
 msgid "Video padding (left)"
-msgstr "Video links beschneiden"
+msgstr "Video auffüllen (links)"
 
 #: modules/stream_out/transcode.c:103
 msgid "Size of the black border to add at the left of the video."
@@ -15846,9 +15279,8 @@ msgstr ""
 "sollen."
 
 #: modules/stream_out/transcode.c:104
-#, fuzzy
 msgid "Video padding (bottom)"
-msgstr "Video unten beschneiden"
+msgstr "Video auffüllen (unten)"
 
 #: modules/stream_out/transcode.c:106
 msgid "Size of the black border to add at the bottom of the video."
@@ -15857,9 +15289,8 @@ msgstr ""
 "werden sollen."
 
 #: modules/stream_out/transcode.c:107
-#, fuzzy
 msgid "Video padding (right)"
-msgstr "Video rechts beschneiden"
+msgstr "Video auffüllen (rechts)"
 
 #: modules/stream_out/transcode.c:109
 msgid "Size of the black border to add at the right of the video."
@@ -15868,9 +15299,8 @@ msgstr ""
 "werden sollen."
 
 #: modules/stream_out/transcode.c:111
-#, fuzzy
 msgid "Video canvas width"
-msgstr "Videobreite"
+msgstr "Videoleinwandbreite"
 
 #: modules/stream_out/transcode.c:114
 msgid "This will automatically crod and pad the video to a specified width."
@@ -15879,9 +15309,8 @@ msgstr ""
 "bestimmte Breite."
 
 #: modules/stream_out/transcode.c:115
-#, fuzzy
 msgid "Video canvas height"
-msgstr "Videohöhe"
+msgstr "Videoleinwandhöhe"
 
 #: modules/stream_out/transcode.c:117
 msgid "This will automatically crod and pad the video to a specified height."
@@ -15890,9 +15319,8 @@ msgstr ""
 "bestimmte Höhe."
 
 #: modules/stream_out/transcode.c:118
-#, fuzzy
 msgid "Video canvas aspect ratio"
-msgstr "Bildseitenverhältnis"
+msgstr "Seitenverhältnis der Videoleinwand"
 
 #: modules/stream_out/transcode.c:120
 msgid ""
@@ -15905,40 +15333,34 @@ msgid "Audio encoder"
 msgstr "Audioencoder"
 
 #: modules/stream_out/transcode.c:125
-#, fuzzy
 msgid ""
 "This is the audio encoder module that will be used (and its associated "
 "options)."
-msgstr ""
-"Erlaubt Ihnen den zu benutzenden Audioencoder und dessen Optionen "
-"festzulegen."
+msgstr "Dies ist das zu benutzende Audioencodermodul (und dessen Optionen)."
 
 #: modules/stream_out/transcode.c:127
 msgid "Destination audio codec"
 msgstr "Ziel-Audiocodec"
 
 #: modules/stream_out/transcode.c:129
-#, fuzzy
 msgid "This is the audio codec that will be used."
-msgstr "Dies ist das standardmäßig benutzte Audio-CD - Device."
+msgstr "Dies ist der zu benutzende Audiocodec."
 
 #: modules/stream_out/transcode.c:130
 msgid "Audio bitrate"
 msgstr "Audiodatenrate"
 
 #: modules/stream_out/transcode.c:132
-#, fuzzy
 msgid "Target bitrate of the transcoded audio stream."
-msgstr "Samplerate des eingehenden Audiostreams in Hz"
+msgstr "Ziel-Bitrate des transcodierten Audiostreams."
 
 #: modules/stream_out/transcode.c:133
 msgid "Audio sample rate"
 msgstr "Audio-Samplerate"
 
 #: modules/stream_out/transcode.c:135
-#, fuzzy
 msgid "Sample rate of the transcoded audio stream (11250, 22500, 44100 or 48000)."
-msgstr "Samplerate des eingehenden Audiostreams in Hz"
+msgstr "Samplerate des transcodierten Audiostreams (11250, 22500, 44100 oder 48000)-"
 
 #: modules/stream_out/transcode.c:136
 msgid "Audio channels"
@@ -15953,13 +15375,10 @@ msgid "Subtitles encoder"
 msgstr "Untertitelencoder"
 
 #: modules/stream_out/transcode.c:142
-#, fuzzy
 msgid ""
 "This is the subtitles encoder module that will be used (and its associated "
 "options)."
-msgstr ""
-"Erlaubt Ihnen den zu benutzenden Untertitelencoder und dessen Optionen "
-"festzulegen."
+msgstr "Dies ist das zu benutzende Untertitelencodermodul (und dessen Optionen)."
 
 #: modules/stream_out/transcode.c:144
 msgid "Destination subtitles codec"
@@ -15970,21 +15389,16 @@ msgid "This is the subtitles coded that will be used."
 msgstr "Dies gibt den Untertitelcodec an, der benutzt wird."
 
 #: modules/stream_out/transcode.c:150
-#, fuzzy
 msgid ""
 "This allows you to add overlays (also known as \"subpictures\" on the "
 "transcoded video stream. The subpictures produced by the filters will be "
 "overlayed directly onto the video. You must specify a comma-separated list "
 "of subpicture modules"
-msgstr ""
-"Erlaubt Ihnen Unterbildfilter anzugeben, die während des Videotranscodings "
-"benutzt werden. Die von den Filtern erzeugten Unterbilder werden direkt in "
-"das Video eingeblendet."
+msgstr "Dies erlaubt Ihnen Einblendungen (auch als \"Unterbilder\" bekannt) dem transcodierten Stream hinzuzufügen. Dies von den Filtern erzeugten Unterbilder werden direkt im Video eingeblendet. Sie müssen eine durch Kommata getrennte Liste von Unterbild-Modulen angeben."
 
 #: modules/stream_out/transcode.c:155 modules/video_filter/osdmenu.c:119
-#, fuzzy
 msgid "OSD menu"
-msgstr "DVD (Menüs)"
+msgstr "OSD-Menü"
 
 #: modules/stream_out/transcode.c:157
 msgid "Stream the On Screen Display menu (using the osdmenu subpicture module)."
@@ -15997,11 +15411,8 @@ msgid "Number of threads"
 msgstr "Anzahl der Threads"
 
 #: modules/stream_out/transcode.c:161
-#, fuzzy
 msgid "Number of threads used for the transcoding."
-msgstr ""
-"Erlaubt Ihnen die Anzahl von Threads festzulegen, die für das Umkodieren "
-"verwendet werden."
+msgstr "Die Anzahl von Threads, die für das Transcodieren verwendet werden."
 
 #: modules/stream_out/transcode.c:162
 msgid "High priority"
@@ -16024,13 +15435,10 @@ msgstr ""
 "mit der Audiospur zu synchronisieren."
 
 #: modules/stream_out/transcode.c:173
-#, fuzzy
 msgid ""
 "The transcoder will drop frames if your CPU can't keep up with the encoding "
 "rate."
-msgstr ""
-"Erlaubt festzulegen, dass der Transcoder Frames fallenlassen soll, wenn Ihre "
-"CPU nicht mit Encodierungsrate mithalten kann."
+msgstr "Der Transcoder wird Frames fallenlassen, wenn Ihre CPU nicht mit der Encodierungsrate mithalten kann."
 
 #: modules/stream_out/transcode.c:188
 msgid "Transcode stream output"
@@ -16074,9 +15482,8 @@ msgid "AltiVec conversions from "
 msgstr "AltiVec-Umwandlungen von "
 
 #: modules/video_filter/adjust.c:60
-#, fuzzy
 msgid "Brightness threshold"
-msgstr "Strikte Ratenkontrolle aktivieren"
+msgstr "Helligkeitsschwelle"
 
 #: modules/video_filter/adjust.c:61
 msgid ""
@@ -16091,45 +15498,40 @@ msgid "Image contrast (0-2)"
 msgstr "Bildkontrast (0-2)"
 
 #: modules/video_filter/adjust.c:65
-#, fuzzy
 msgid "Set the image contrast, between 0 and 2. Defaults to 1."
-msgstr "Den Bildkontrast zwischen 0 und 2 einstellen. Standardmäßig 1."
+msgstr "Stellt den Bildkontrast zwischen 0 und 2 ein. Standardmäßig 1."
 
 #: modules/video_filter/adjust.c:66
 msgid "Image hue (0-360)"
 msgstr "Bildfarbton (0-360)"
 
 #: modules/video_filter/adjust.c:67
-#, fuzzy
 msgid "Set the image hue, between 0 and 360. Defaults to 0."
-msgstr "Den Farbton zwischen 0 und 360 einstellen. Standardmäßig 0."
+msgstr "Stellt den Farbton zwischen 0 und 360 ein. Standardmäßig 0."
 
 #: modules/video_filter/adjust.c:68
 msgid "Image saturation (0-3)"
 msgstr "Bildsättigung (0-3)"
 
 #: modules/video_filter/adjust.c:69
-#, fuzzy
 msgid "Set the image saturation, between 0 and 3. Defaults to 1."
-msgstr "Die Bildsättigung zwischen 0 und 3 einstellen. Standardmäßig 1."
+msgstr "Stellt die Bildsättigung zwischen 0 und 3 ein. Standardmäßig 1."
 
 #: modules/video_filter/adjust.c:70
 msgid "Image brightness (0-2)"
 msgstr "Bildhelligkeit (0-2)"
 
 #: modules/video_filter/adjust.c:71
-#, fuzzy
 msgid "Set the image brightness, between 0 and 2. Defaults to 1."
-msgstr "Die Bildhelligkeit zwischen 0 und 2 einstellen. Standardmäßig 1."
+msgstr "Stellt die Bildhelligkeit zwischen 0 und 2 ein. Standardmäßig 1."
 
 #: modules/video_filter/adjust.c:72
 msgid "Image gamma (0-10)"
 msgstr "Bildgamma (0-10)"
 
 #: modules/video_filter/adjust.c:73
-#, fuzzy
 msgid "Set the image gamma, between 0.01 and 10. Defaults to 1."
-msgstr "Das Bildgamma zwischen 0.01 und 10 einstellen. Standardmäßig 1."
+msgstr "Stelt das Bildgamma zwischen 0.01 und 10 ein. Standardmäßig 1."
 
 #: modules/video_filter/adjust.c:77
 msgid "Image properties filter"
@@ -16148,16 +15550,14 @@ msgid "Number of clones"
 msgstr "Anzahl der Klone"
 
 #: modules/video_filter/clone.c:56
-#, fuzzy
 msgid "Number of video windows in which to clone the video."
 msgstr ""
-"Wählen Sie die Anzahl von Videofenstern, in denen das Video geklont werden "
+"Die Anzahl von Videofenstern, in denen das Video geklont werden "
 "soll."
 
 #: modules/video_filter/clone.c:59
-#, fuzzy
 msgid "Video output modules"
-msgstr "Videoausgabe-Modul"
+msgstr "Videoausgabe-Module"
 
 #: modules/video_filter/clone.c:60
 msgid ""
@@ -16192,9 +15592,8 @@ msgid "Automatic cropping"
 msgstr "Automatisches Freistellen"
 
 #: modules/video_filter/crop.c:58
-#, fuzzy
 msgid "Automatic black border cropping."
-msgstr "'Automatisches Freistellen der schwarzen Ränder aktivieren."
+msgstr "Automatisches Beschneiden der schwarzen Ränder."
 
 #: modules/video_filter/crop.c:61
 msgid "Crop video filter"
@@ -16205,21 +15604,16 @@ msgid "Deinterlace mode"
 msgstr "Deinterlace-Modus"
 
 #: modules/video_filter/deinterlace.c:109
-#, fuzzy
 msgid "Deinterlace method to use for local playback."
-msgstr "Wählen Sie den Hotkey zur Verlangsamung der Wiedergabe."
+msgstr "Für lokale Wiedergabe benutzte Deinterlace-Methode."
 
 #: modules/video_filter/deinterlace.c:111
-#, fuzzy
 msgid "Streaming deinterlace mode"
-msgstr "Deinterlace-Modus"
+msgstr "Streaming-Deinterlace-Modus"
 
 #: modules/video_filter/deinterlace.c:112
-#, fuzzy
 msgid "Deinterlace method to use for streaming."
-msgstr ""
-"Legt das zu benutzende Deinterlace-Modul fest (ffmpeg-deinterlace oder "
-"deinterlace)."
+msgstr "Für Streaming benutzte Deinterlace-Methode."
 
 #: modules/video_filter/deinterlace.c:121
 msgid "Deinterlacing video filter"
@@ -16230,11 +15624,10 @@ msgid "Distort mode"
 msgstr "Verzerrungsmodus"
 
 #: modules/video_filter/distort.c:65
-#, fuzzy
 msgid ""
 "Distort mode, one of \"wave\", \"ripple\", \"gradient\", \"edge\", \"hough\" "
 "and \"psychedelic\"."
-msgstr "Verzerrungsmodus; entweder \"wellenfömig\" oder \"geriffelt\""
+msgstr "Verzerrungsmodus; eines von \"wave\", \"ripple\", \"gradient\", \"edge\", \"hough\" und \"psychedelic\"."
 
 #: modules/video_filter/distort.c:67
 msgid "Gradient image type"
@@ -16249,9 +15642,8 @@ msgstr ""
 "behält die Farben."
 
 #: modules/video_filter/distort.c:71
-#, fuzzy
 msgid "Apply cartoon effect"
-msgstr "Effekt wählen"
+msgstr "Cartooneffekt anwenden"
 
 #: modules/video_filter/distort.c:72
 msgid "Apply cartoon effect. It is only used by \"gradient\" and \"edge\"."
@@ -16266,14 +15658,12 @@ msgid "Ripple"
 msgstr "Kräuselung"
 
 #: modules/video_filter/distort.c:77
-#, fuzzy
 msgid "Gradient"
-msgstr "Grün"
+msgstr "Verlauf"
 
 #: modules/video_filter/distort.c:78
-#, fuzzy
 msgid "Edge"
-msgstr "Bridge"
+msgstr "Rand"
 
 #: modules/video_filter/distort.c:78
 msgid "Hough"
@@ -16292,9 +15682,8 @@ msgid "Color inversion"
 msgstr "Farbumkehrung"
 
 #: modules/video_filter/logo.c:68
-#, fuzzy
 msgid "Logo filenames"
-msgstr "Logo-Dateiname"
+msgstr "Logo-Dateinamen"
 
 #: modules/video_filter/logo.c:69
 msgid ""
@@ -16307,9 +15696,8 @@ msgstr ""
 "[;...]. Wenn Sie nur ein Bild haben, geben Sie einfach den Dateinamen an."
 
 #: modules/video_filter/logo.c:72
-#, fuzzy
 msgid "Logo animation # of loops"
-msgstr "Goom-Animationsgeschwindigkeit"
+msgstr "Logoanimationen von # Durchläufen"
 
 #: modules/video_filter/logo.c:73
 msgid "Number of loops for the logo animation.1 = continuous, 0 = disabled"
@@ -16324,27 +15712,23 @@ msgid "Individual image display time of 0 - 60000 ms."
 msgstr "Individuelle Anzeigezeit des Bildes, zwischen 0 und 60000 ms."
 
 #: modules/video_filter/logo.c:78 modules/video_filter/osdmenu.c:51
-#, fuzzy
 msgid "X coordinate"
-msgstr "Video-Y-Koordinate"
+msgstr "X-Koordinate"
 
 #: modules/video_filter/logo.c:79
-#, fuzzy
 msgid "X coordinate of the logo. You can move the logo by left-clicking it."
 msgstr ""
-"Sie können das Logo bewegen, in dem Sie mit der linken Maustaste darauf "
+"X-Koordinate des Logos. Sie können das Logo bewegen, in dem Sie mit der linken Maustaste darauf "
 "klicken."
 
 #: modules/video_filter/logo.c:81 modules/video_filter/osdmenu.c:54
-#, fuzzy
 msgid "Y coordinate"
-msgstr "Video-Y-Koordinate"
+msgstr "Y-Koordinate"
 
 #: modules/video_filter/logo.c:82
-#, fuzzy
 msgid "Y coordinate of the logo. You can move the logo by left-clicking it."
 msgstr ""
-"Sie können das Logo bewegen, in dem Sie mit der linken Maustaste darauf "
+"Y-Koordinate des Logos. Sie können das Logo bewegen, in dem Sie mit der linken Maustaste darauf "
 "klicken."
 
 #: modules/video_filter/logo.c:84
@@ -16352,12 +15736,11 @@ msgid "Transparency of the logo"
 msgstr "Transparenz des Logos"
 
 #: modules/video_filter/logo.c:85
-#, fuzzy
 msgid ""
 "Logo transparency value (from 0 for full transparency to 255 for full "
 "opacity)."
 msgstr ""
-"Sie können den Logo-Transparenz-Wert hier einstellen (von 0 für volle "
+"Logo-Transparenz-Wert (von 0 für volle "
 "Transparenz bis 255 für komplette Deckkraft)."
 
 #: modules/video_filter/logo.c:87
@@ -16365,14 +15748,13 @@ msgid "Logo position"
 msgstr "Logoposition"
 
 #: modules/video_filter/logo.c:89
-#, fuzzy
 msgid ""
 "Enforce the logo position on the video (0=center, 1=left, 2=right, 4=top, "
 "8=bottom, you can also use combinations of these values, eg 6 = top-right)."
 msgstr ""
-"Sie können die Logoposition im Video festlegen (0=zentriert, 1=links, "
+"Festlegung der Logoposition im Video (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten; Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/logo.c:99
 msgid "Logo video filter"
@@ -16387,58 +15769,49 @@ msgid "Logo sub filter"
 msgstr "Logo-Unterfilter"
 
 #: modules/video_filter/magnify.c:59
-#, fuzzy
 msgid "Magnify/Zoom interactive video filter"
-msgstr "ffmpeg-Deinterlace-Videofilter"
+msgstr "Interaktiver Vergrößerungs-/Zoomvideofilter"
 
 #: modules/video_filter/marq.c:77
-#, fuzzy
 msgid "Marquee text to display."
-msgstr "Anzuzeigender Marquee-Text"
+msgstr "Anzuzeigender Marquee-Text."
 
 #: modules/video_filter/marq.c:78 modules/video_filter/rss.c:134
 #: modules/video_filter/time.c:73
-#, fuzzy
 msgid "X offset"
-msgstr "Zeitversatz"
+msgstr "X-Abstand"
 
 #: modules/video_filter/marq.c:79 modules/video_filter/rss.c:135
-#, fuzzy
 msgid "X offset, from the left screen edge."
-msgstr "X-Abstand von der linken oberen Bildschirmecke"
+msgstr "X-Abstand von der linken oberen Bildschirmecke."
 
 #: modules/video_filter/marq.c:80 modules/video_filter/rss.c:136
 #: modules/video_filter/time.c:75
-#, fuzzy
 msgid "Y offset"
-msgstr "Zeitversatz"
+msgstr "Y-Abstand"
 
 #: modules/video_filter/marq.c:81 modules/video_filter/rss.c:137
-#, fuzzy
 msgid "Y offset, down from the top."
-msgstr "Unterer Y-Abstand von oben"
+msgstr "Y-Abstand von oben."
 
 #: modules/video_filter/marq.c:82
-#, fuzzy
 msgid "Timeout"
-msgstr "Zeit"
+msgstr "Timeout"
 
 #: modules/video_filter/marq.c:83
-#, fuzzy
 msgid ""
 "Number of milliseconds the marquee must remain displayed. Default value is 0 "
 "(remains forever)."
 msgstr ""
-"Legt die Zeit in Millisekunden fest, die das Marquee angezeigt werden muss. "
+"Anzahl von Millisekunden, die das Marquee angezeigt werden muss. "
 "Der Standardwert ist 0 (für immer anzeigen)."
 
 #: modules/video_filter/marq.c:87
-#, fuzzy
 msgid ""
 "Opacity (inverse of transparency) of overlayed text. 0 = transparent, 255 = "
 "totally opaque. "
 msgstr ""
-"Die Deckkraft (Gegenteil von Transparenz) von eingeblendetem Text. 0 = "
+"Die Deckkraft (Gegenteil von Transparenz) des eingeblendeten Texts. 0 = "
 "transparent, 255 = komplett undurchsichtig."
 
 #: modules/video_filter/marq.c:89 modules/video_filter/rss.c:142
@@ -16448,11 +15821,8 @@ msgstr "Schriftgröße, Pixel"
 
 #: modules/video_filter/marq.c:90 modules/video_filter/rss.c:143
 #: modules/video_filter/time.c:82
-#, fuzzy
 msgid "Font size, in pixels. Default is -1 (use default font size)."
-msgstr ""
-"Legt die Schriftgröße in Pixeln fest; wobei -1 = freetype-fontsize benutzen "
-"heißt"
+msgstr "Schriftgröße, in Pixeln. Standardmäßig -1 (Standardschriftgröße benutzen)"
 
 #: modules/video_filter/marq.c:94 modules/video_filter/rss.c:147
 #: modules/video_filter/time.c:86
@@ -16472,7 +15842,6 @@ msgid "Marquee position"
 msgstr "Marquee-Position"
 
 #: modules/video_filter/marq.c:101
-#, fuzzy
 msgid ""
 "You can enforce the marquee position on the video (0=center, 1=left, "
 "2=right, 4=top, 8=bottom, you can also use combinations of these values, eg "
@@ -16480,7 +15849,7 @@ msgid ""
 msgstr ""
 "Sie können die Marquee-Position im Video festlegen (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten. Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/marq.c:115
 msgid "Marquee"
@@ -16491,14 +15860,12 @@ msgid "Misc"
 msgstr "Verschiedenes"
 
 #: modules/video_filter/marq.c:141
-#, fuzzy
 msgid "Marquee display"
-msgstr "Anzuzeigender Marquee-Text"
+msgstr "Marqueeanzeige"
 
 #: modules/video_filter/mosaic.c:90
-#, fuzzy
 msgid "Transparency"
-msgstr "Transparenter Würfel"
+msgstr "Transparenz"
 
 #: modules/video_filter/mosaic.c:91
 msgid ""
@@ -16509,48 +15876,40 @@ msgstr ""
 "undurchsichtig (Standard)."
 
 #: modules/video_filter/mosaic.c:95
-#, fuzzy
 msgid "Total height of the mosaic, in pixels."
-msgstr "Die Höhe des Effekte-Videofensters in Pixeln."
+msgstr "Totale Höhe des Mosaiks in Pixeln."
 
 #: modules/video_filter/mosaic.c:97
-#, fuzzy
 msgid "Total width of the mosaic, in pixels."
-msgstr "Die Breite des Effekte-Videofensters in Pixeln."
+msgstr "Totale Breite des Mosaiks in Pixeln."
 
 #: modules/video_filter/mosaic.c:99
-#, fuzzy
 msgid "Top left corner X coordinate"
-msgstr "X-Koordinate der linken oberen Ecke"
+msgstr "X-Koordinate der linken oberen Ecke."
 
 #: modules/video_filter/mosaic.c:100
-#, fuzzy
 msgid "X Coordinate of the top-left corner of the mosaic."
-msgstr "X-Koordinate des Logos"
+msgstr "X-Koordinate der linken oberen Ecke des Mosaiks."
 
 #: modules/video_filter/mosaic.c:101
-#, fuzzy
 msgid "Top left corner Y coordinate"
-msgstr "X-Koordinate der linken oberen Ecke"
+msgstr "Y-Koordinate der linken oberen Ecke."
 
 #: modules/video_filter/mosaic.c:102
-#, fuzzy
 msgid "Y Coordinate of the top-left corner of the mosaic."
-msgstr "Y-Koordinate des Logos"
+msgstr "Y-Koordinate der linken oberen Ecke des Mosaiks."
 
 #: modules/video_filter/mosaic.c:103
-#, fuzzy
 msgid "Vertical border width"
-msgstr "Vertikale Randbreite in Pixeln"
+msgstr "Vertikale Randbreite"
 
 #: modules/video_filter/mosaic.c:104
 msgid "Width in pixels of the border than can be drawn vertically around the mosaic."
 msgstr "Breite in Pixel von dem Rand, der vertikal um das Mosaik gezeichnet wird."
 
 #: modules/video_filter/mosaic.c:106
-#, fuzzy
 msgid "Horizontal border width"
-msgstr "Horizontale Randbreite in Pixeln"
+msgstr "Horizontale Randbreite"
 
 #: modules/video_filter/mosaic.c:107
 msgid ""
@@ -16563,28 +15922,26 @@ msgid "Mosaic alignment"
 msgstr "Mosaic-Ausrichtung"
 
 #: modules/video_filter/mosaic.c:112
-#, fuzzy
 msgid ""
 "You can enforce the mosaic alignment on the video (0=center, 1=left, "
 "2=right, 4=top, 8=bottom, you can also use combinations of these values, eg "
 "6 = top-right)."
 msgstr ""
-"Sie können die Logoposition im Video festlegen (0=zentriert, 1=links, "
+"Sie können die Mosaikausrichtung im Video festlegen (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten; Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/mosaic.c:116
 msgid "Positioning method"
 msgstr "Positionierungsmethode"
 
 #: modules/video_filter/mosaic.c:117
-#, fuzzy
 msgid ""
 "Positioning method for the mosaic. auto: automatically choose the best "
 "number of rows and columns. fixed: use the user-defined number of rows and "
 "columns."
 msgstr ""
-"Positionierungsmethode: auto: automatische die beste Anzahl von Reihen und "
+"Positionierungsmethode für das Mosaik: auto: automatische die beste Anzahl von Reihen und "
 "Spalten wählen. fixed: die benutzerdefinierte Anzahl von Reihen und Spalten "
 "benutzen."
 
@@ -16613,23 +15970,20 @@ msgstr ""
 "Positionierungsverfahren auf \"fixed\" gesetzt ist)."
 
 #: modules/video_filter/mosaic.c:130
-#, fuzzy
 msgid "Keep the original aspect ratio when resizing mosaic elements."
-msgstr "Seitenverhältnis beim Ändern der Größe beibehalten"
+msgstr "Seitenverhältnis beim Ändern der Größe von Mosaikelementen beibehalten."
 
 #: modules/video_filter/mosaic.c:132
 msgid "Keep original size"
 msgstr "Originalgröße beibehalten"
 
 #: modules/video_filter/mosaic.c:133
-#, fuzzy
 msgid "Keep the original size of mosaic elements."
-msgstr "Originalgröße beibehalten"
+msgstr "Originalgröße der Mosaikelemente beibehalten"
 
 #: modules/video_filter/mosaic.c:135
-#, fuzzy
 msgid "Elements order"
-msgstr "Silent-Modus"
+msgstr "Reihenfolge der Elemente"
 
 #: modules/video_filter/mosaic.c:136
 msgid ""
@@ -16642,20 +15996,17 @@ msgstr ""
 "in dem \"mosaic-bridge\" Modul zugeweisen."
 
 #: modules/video_filter/mosaic.c:141
-#, fuzzy
 msgid ""
 "Pictures coming from the mosaic elements will be delayed according to this "
 "value (in milliseconds). For high values you will need to raise caching at "
 "input."
 msgstr ""
-"Bilder aus dem Bilder-Videooutput werden entsprechend verzögert (in "
-"Millisekunden). Bei höheren Werten, werden Sie das Datei-Caching und andere "
-"Werte erhöhen müssen"
+"Bilder aus den Mosaikelementen werden entsprechend dieses Werts verzögert (in "
+"Millisekunden). Bei höheren Werten, werden Sie das Caching beim Input erhöhen müssen."
 
 #: modules/video_filter/mosaic.c:145
-#, fuzzy
 msgid "Bluescreen"
-msgstr "Vollbild"
+msgstr "Bluescreen"
 
 #: modules/video_filter/mosaic.c:146
 msgid ""
@@ -16694,9 +16045,8 @@ msgstr ""
 "255. Standardwert ist 90 für Blau."
 
 #: modules/video_filter/mosaic.c:157
-#, fuzzy
 msgid "Bluescreen U tolerance"
-msgstr "Bitratentoleranz"
+msgstr "Bluescreen U Toleranz"
 
 #: modules/video_filter/mosaic.c:158
 msgid ""
@@ -16707,9 +16057,8 @@ msgstr ""
 "Wert zwischen 10 und 20 ist sinnvoll."
 
 #: modules/video_filter/mosaic.c:161
-#, fuzzy
 msgid "Bluescreen V tolerance"
-msgstr "Bitratentoleranz"
+msgstr "Bluescreen V Toleranz"
 
 #: modules/video_filter/mosaic.c:162
 msgid ""
@@ -16740,9 +16089,8 @@ msgid "The degree of blurring from 1 to 127."
 msgstr "Der Grad der Weichzeichnung von 1 bis 127."
 
 #: modules/video_filter/motionblur.c:58
-#, fuzzy
 msgid "Motion blur"
-msgstr "Bewegungsverwischungsfilter"
+msgstr "Bewegungsverwischung"
 
 #: modules/video_filter/motionblur.c:59
 msgid "Motion blur filter"
@@ -16753,18 +16101,16 @@ msgid "Description file"
 msgstr "Beschreibungsdatei"
 
 #: modules/video_filter/motiondetect.c:56
-#, fuzzy
 msgid "A file containing a simple playlist"
-msgstr "Beschreibungsdatei - Datei, die eine einfache Wiedergabeliste enthält"
+msgstr "Eine Datei, die eine einfache Wiedergabeliste enthält"
 
 #: modules/video_filter/motiondetect.c:57
 msgid "History parameter"
 msgstr "History-Parameter"
 
 #: modules/video_filter/motiondetect.c:59
-#, fuzzy
 msgid "The umber of frames used for detection."
-msgstr "History-Parameter - die Anzahl von Frames, die zur Erkennung benutzt werden"
+msgstr "Die Anzahl von Frames, die zur Erkennung benutzt werden."
 
 #: modules/video_filter/motiondetect.c:62
 msgid "Motion detect video filter"
@@ -16775,14 +16121,12 @@ msgid "Motion detect"
 msgstr "Bewegungserkennung"
 
 #: modules/video_filter/osdmenu.c:42
-#, fuzzy
 msgid "Configuration file"
-msgstr "VLM-Konfigurationsdatei"
+msgstr "Konfigurationsdatei"
 
 #: modules/video_filter/osdmenu.c:45
-#, fuzzy
 msgid "Configuration file for the OSD Menu"
-msgstr "Konfigurationsoptionen"
+msgstr "Konfigurationsdatei für das OSD-Menü"
 
 #: modules/video_filter/osdmenu.c:46
 msgid "Path to OSD menu images"
@@ -16797,32 +16141,28 @@ msgstr ""
 "Konfigurationsdatei festgelegt wurde."
 
 #: modules/video_filter/osdmenu.c:52 modules/video_filter/osdmenu.c:55
-#, fuzzy
 msgid "You can move the OSD menu by left-clicking on it."
 msgstr ""
-"Sie können das Logo bewegen, in dem Sie mit der linken Maustaste darauf "
+"Sie können das OSD-Menü bewegen, in dem Sie mit der linken Maustaste darauf "
 "klicken."
 
 #: modules/video_filter/osdmenu.c:57
-#, fuzzy
 msgid "Menu position"
-msgstr "Zeitposition"
+msgstr "Menüposition"
 
 #: modules/video_filter/osdmenu.c:59
-#, fuzzy
 msgid ""
 "You can enforce the OSD menu position on the video (0=center, 1=left, "
 "2=right, 4=top, 8=bottom, you can also use combinations of these values, eg. "
 "6 = top-right)."
 msgstr ""
-"Sie können die Logoposition im Video festlegen (0=zentriert, 1=links, "
+"Sie können die OSD-Menü-Position im Video festlegen (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten; Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/osdmenu.c:63
-#, fuzzy
 msgid "Menu timeout"
-msgstr "Marquee-Timeout"
+msgstr "Menü-Timeout"
 
 #: modules/video_filter/osdmenu.c:65
 msgid ""
@@ -16835,9 +16175,8 @@ msgstr ""
 "diese Zeit sichtbar sind."
 
 #: modules/video_filter/osdmenu.c:69
-#, fuzzy
 msgid "Menu update interval"
-msgstr "Key-Intervall"
+msgstr "Aktualisierungsintervall des Menüs"
 
 #: modules/video_filter/osdmenu.c:71
 msgid ""
@@ -16852,18 +16191,16 @@ msgstr ""
 "Darstellen der OSD Menübilder sehr rechenintensiv ist. Werte von 0 - 1000 ms."
 
 #: modules/video_filter/osdmenu.c:118
-#, fuzzy
 msgid "On Screen Display menu"
-msgstr "On Screen Display"
+msgstr "On Screen Display - Menü"
 
 #: modules/video_filter/rss.c:121
 msgid "Feed URLs"
 msgstr "Eingabe URLs (Feed)"
 
 #: modules/video_filter/rss.c:122
-#, fuzzy
 msgid "RSS/Atom feed '|' (pipe) seperated URLs."
-msgstr "Zeitanzeige - Unterfilter"
+msgstr "RSS/Atom Feed '|' (pipe) getrennte URLs."
 
 #: modules/video_filter/rss.c:123
 msgid "Speed of feeds"
@@ -16874,19 +16211,16 @@ msgid "Speed of the RSS/Atom feeds (bigger is slower)."
 msgstr "Geschwindigkeit der RSS/Atom Eingaben (Feeds; je größer desto langsamer)."
 
 #: modules/video_filter/rss.c:125
-#, fuzzy
 msgid "Max length"
-msgstr "Maximales Niveau"
+msgstr "Maximale Länge"
 
 #: modules/video_filter/rss.c:126
-#, fuzzy
 msgid "Maximum number of characters displayed on the screen."
-msgstr "Maximale Anzahl von aufgeführten Shoutcast-Servern"
+msgstr "Maximale Anzahl von auf dem Bildschirm gezeigten Zeichen."
 
 #: modules/video_filter/rss.c:128
-#, fuzzy
 msgid "Refresh time"
-msgstr "Liste aktualisieren"
+msgstr "Aktualisierungszeit"
 
 #: modules/video_filter/rss.c:129
 msgid ""
@@ -16905,39 +16239,34 @@ msgid "Display feed images if available."
 msgstr "Zeige Eingabebilder (Feeds), sofern verfügbar."
 
 #: modules/video_filter/rss.c:139 modules/video_filter/time.c:78
-#, fuzzy
 msgid ""
 "Opacity (inverse of transparency) of overlay text. 0 = transparent, 255 = "
 "totally opaque."
 msgstr ""
-"Die Deckkraft (Gegenteil von Transparenz) von eingeblendetem Text. 0 = "
+"Die Deckkraft (Gegenteil von Transparenz) vom eingeblendeten Text. 0 = "
 "transparent, 255 = komplett undurchsichtig."
 
 #: modules/video_filter/rss.c:152 modules/video_filter/time.c:91
-#, fuzzy
 msgid "Text position"
-msgstr "Zeitposition"
+msgstr "Textposition"
 
 #: modules/video_filter/rss.c:154
-#, fuzzy
 msgid ""
 "You can enforce the text position on the video (0=center, 1=left, 2=right, "
 "4=top, 8=bottom; you can also use combinations of these values, eg 6 = top-"
 "right)."
 msgstr ""
-"Sie können die Zeitposition im Video festlegen (0=zentriert, 1=links, "
+"Sie können die Textposition im Video festlegen (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten. Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/rss.c:197
-#, fuzzy
 msgid "RSS and Atom feed display"
-msgstr "Zeitanzeige - Unterfilter"
+msgstr "RSS und Atom Feedanzeige"
 
 #: modules/video_filter/rv32.c:52
-#, fuzzy
 msgid "RV32 conversion filter"
-msgstr "MMX-Umwandlungen von "
+msgstr "RV32 Konvertierungsfilter"
 
 #: modules/video_filter/scale.c:53 modules/video_filter/swscale/filter.c:74
 msgid "Video scaling filter"
@@ -16948,9 +16277,8 @@ msgid "Scaling mode"
 msgstr "Skalierungsmodus"
 
 #: modules/video_filter/swscale/filter.c:64
-#, fuzzy
 msgid "Scaling mode to use."
-msgstr "Skalierungsmodus"
+msgstr "Zu benutzender Skalierungsmodus."
 
 #: modules/video_filter/swscale/filter.c:68
 msgid "Fast bilinear"
@@ -17001,13 +16329,12 @@ msgid "Time format string (%Y%m%d %H%M%S)"
 msgstr "Zeitformat-Zeichenkette (%Y%m%d %H%M%S)"
 
 #: modules/video_filter/time.c:72
-#, fuzzy
 msgid ""
 "Time format string (%Y = year, %m = month, %d = day, %H = hour, %M = minute, "
 "%S = second)."
 msgstr ""
 "Zeitformat-Zeichenkette (%Y = Jahr, %m = Monat, %d = Tag, %H = Stunde, %M = "
-"Minute, %S = Sekunde)"
+"Minute, %S = Sekunde)."
 
 #: modules/video_filter/time.c:74
 msgid "X offset, from the left screen edge"
@@ -17018,15 +16345,14 @@ msgid "Y offset, down from the top"
 msgstr "Unterer Y-Abstand von oben"
 
 #: modules/video_filter/time.c:93
-#, fuzzy
 msgid ""
 "You can enforce the text position on the video (0=center, 1=left, 2=right, "
 "4=top, 8=bottom, you can also use combinations of these values, e.g. 6 = top-"
 "right)."
 msgstr ""
-"Sie können die Zeitposition im Video festlegen (0=zentriert, 1=links, "
+"Sie können die Textposition im Video festlegen (0=zentriert, 1=links, "
 "2=rechts, 4=oben, 8=unten. Sie können auch Kombinationen dieser Werte "
-"benutzen)."
+"benutzen, z.B. 6 = oben-rechts)."
 
 #: modules/video_filter/time.c:107
 msgid "Time overlay"
@@ -17071,17 +16397,15 @@ msgid "Video transformation filter"
 msgstr "Videotransformationsfilter"
 
 #: modules/video_filter/wall.c:54
-#, fuzzy
 msgid "Number of horizontal windows in which to split the video."
 msgstr ""
-"Wählen Sie die Anzahl der horizontalen Videofenster, auf die das "
-"Videoverteilt werden soll."
+"Die Anzahl der horizontalen Videofenster, auf die das "
+"Video verteilt werden soll."
 
 #: modules/video_filter/wall.c:58
-#, fuzzy
 msgid "Number of vertical windows in which to split the video."
 msgstr ""
-"Wählen Sie die Anzahl der vertikalen Videofenster, auf die das Bild verteilt "
+"Die Anzahl der vertikalen Videofenster, auf die das Bild verteilt "
 "werden soll."
 
 #: modules/video_filter/wall.c:61
@@ -17089,19 +16413,17 @@ msgid "Active windows"
 msgstr "Aktive Fenster"
 
 #: modules/video_filter/wall.c:62
-#, fuzzy
 msgid "Comma-separated list of active windows, defaults to all"
-msgstr "Liste der aktiven Fenster durch Kommata getrennt; Standardmäßig alle"
+msgstr "Durch Kommata getrennte Liste der aktiven Fenster; Standardmäßig alle"
 
 #: modules/video_filter/wall.c:65
 msgid "Element aspect ratio"
 msgstr "Element-Seitenverhältnis"
 
 #: modules/video_filter/wall.c:66
-#, fuzzy
 msgid "Aspect ratio of the individual displays building the wall."
 msgstr ""
-"Das Seitenverhältnis der individuellen Bildschirme, aus denen die "
+"Seitenverhältnis der individuellen Bildschirme, aus denen die "
 "Anzeigewand besteht."
 
 #: modules/video_filter/wall.c:70
@@ -17215,10 +16537,9 @@ msgid "Framebuffer device"
 msgstr "Framebuffer-Device"
 
 #: modules/video_output/fb.c:69
-#, fuzzy
 msgid "Framebuffer device to use for rendering (usually /dev/fb0)."
 msgstr ""
-"Wählen Sie hier das Framepuffer-Device aus, das zum rendern benutzt werden "
+"Das Framepuffer-Device, das zum rendern benutzt werden "
 "soll (üblicherweise /dev/fb0)."
 
 #: modules/video_output/fb.c:77
@@ -17227,18 +16548,16 @@ msgstr "GNU/Linux framebuffer Ausgabe (auf der Konsole)"
 
 #: modules/video_output/ggi.c:56 modules/video_output/x11/glx.c:101
 #: modules/video_output/x11/x11.c:52 modules/video_output/x11/xvideo.c:58
-#, fuzzy
 msgid "X11 display"
-msgstr "X11 Bildschirmname"
+msgstr "X11 Bildschirm"
 
 #: modules/video_output/ggi.c:58
-#, fuzzy
 msgid ""
 "X11 hardware display to use.\n"
 "By default, VLC will use the value of the DISPLAY environment variable."
 msgstr ""
-"Geben Sie den X11-Hardwarebildschirm an, den Sie benutzen möchten.\n"
-"Standardmäßig wird der Bildschirm der DISPLAY-Variablen benutzt."
+"Zu benutzender X11-Hardwarebildschirm\n"
+"Standardmäßig wird VLC den Wert der DISPLAY-Variablen benutzen."
 
 #: modules/video_output/glide.c:64
 msgid "3dfx Glide video output"
@@ -17253,19 +16572,17 @@ msgid "Image format"
 msgstr "Bild-Format"
 
 #: modules/video_output/image.c:49
-#, fuzzy
 msgid "Format of the output images (png or jpg)."
-msgstr "Legt das Format des ausgegebenen Bildes fest."
+msgstr "Format der ausgegebenen Bilder (PNG oder JPG)."
 
 #: modules/video_output/image.c:51
 msgid "Recording ratio"
 msgstr "Aufnahmeverhältnis"
 
 #: modules/video_output/image.c:52
-#, fuzzy
 msgid "Ratio of images to record. 3 means that one image out of three is recorded."
 msgstr ""
-"Stellt das Verhältnis von Bildern ein, die aufgenommen werden. 3 bedeutet, "
+"Verhältnis von Bildern, die aufgenommen werden. 3 bedeutet, "
 "dass eines von dreien aufgenommen wird."
 
 #: modules/video_output/image.c:55
@@ -17273,13 +16590,12 @@ msgid "Filename prefix"
 msgstr "Dateinamenprefix"
 
 #: modules/video_output/image.c:56
-#, fuzzy
 msgid ""
 "Prefix of the output images filenames. Output filenames will have the "
 "\"prefixNUMBER.format\" form."
 msgstr ""
-"Legt das Prefix des Dateinamens fest. Der Ausgabedateiname wird die Form "
-"prefixNUMMER.format"
+"Prefix des Dateinamens der ausgegebenen Bilder. Der Ausgabedateiname wird die Form "
+"\"prefixNUMMER.format\" haben."
 
 #: modules/video_output/image.c:60
 msgid "Always write to the same file"
@@ -17310,9 +16626,8 @@ msgid "Rotation speed of the OpenGL cube effect, if enabled."
 msgstr "Rotationsgeschwindigkeit des OpenDL Würfeleffekts, falls eingeschaltet."
 
 #: modules/video_output/opengl.c:122
-#, fuzzy
 msgid "Effect"
-msgstr "Auswerfen"
+msgstr "Effekt"
 
 #: modules/video_output/opengl.c:124
 msgid "Several visual OpenGL effects are available."
@@ -17327,18 +16642,14 @@ msgid "Transparent Cube"
 msgstr "Transparenter Würfel"
 
 #: modules/video_output/qte/qte.cpp:79
-#, fuzzy
 msgid "QT Embedded display"
-msgstr "QT Bildschirmname"
+msgstr "QT Integrierter Bildschirm"
 
 #: modules/video_output/qte/qte.cpp:81
-#, fuzzy
 msgid ""
 "Qt Embedded hardware display to use. By default VLC will use the value of "
 "the DISPLAY environment variable."
-msgstr ""
-"Geben Sie den QT-Bildschirm an, den Sie benutzen möchten. Standardmäßig wird "
-"der Bildschirm der DISPLAY-Variablen benutzt."
+msgstr "Den zu benutzende, integrierte QT-Hardware-Bildschirm. Standardmäßig wird VLC den Wert der DISPLAY-Umgebungsvariablen benutzen."
 
 #: modules/video_output/qte/qte.cpp:117
 msgid "QT Embedded video output"
@@ -17349,49 +16660,38 @@ msgid "Simple DirectMedia Layer video output"
 msgstr "Simple DirectMedia Layer Videoausgabe"
 
 #: modules/video_output/snapshot.c:60
-#, fuzzy
 msgid "Snapshot width"
 msgstr "Schnappschussbreite"
 
 #: modules/video_output/snapshot.c:61
-#, fuzzy
 msgid "Width of the snapshot image."
-msgstr "Stellt die Breite des Schnappschussbildes ein."
+msgstr "Die Breite des Schnappschussbildes."
 
 #: modules/video_output/snapshot.c:63
-#, fuzzy
 msgid "Snapshot height"
 msgstr "Schnappschusshöhe"
 
 #: modules/video_output/snapshot.c:64
-#, fuzzy
 msgid "Height of the snapshot image."
-msgstr "Stellt die Höhe des Schnappschussbildes ein."
+msgstr "Die Höhe des Schnappschussbildes."
 
 #: modules/video_output/snapshot.c:66
-#, fuzzy
 msgid "Chroma"
 msgstr "Chroma"
 
 #: modules/video_output/snapshot.c:67
-#, fuzzy
 msgid "Output chroma for the snapshot image (a 4 character string, like \"RV32\")."
-msgstr ""
-"Stellt das bevorzugte Chroma für das Schnappschussbild ein (ein 4-Zeichen-"
-"String)."
+msgstr "Ausgabe-Chroma für das Schnappschussbild (ein 4-Zeichen-String, wie \"RV32\")."
 
 #: modules/video_output/snapshot.c:70
-#, fuzzy
 msgid "Cache size (number of images)"
 msgstr "Cachegröße (Anzahl der Bilder)"
 
 #: modules/video_output/snapshot.c:71
-#, fuzzy
 msgid "Snapshot cache size (number of images to keep)."
-msgstr "Stellt die Cachegröße (Anzahl der zubehaltenden Bilder) ein."
+msgstr "Schnappschuss-Cachegröße (Anzahl der zubehaltenden Bilder)."
 
 #: modules/video_output/snapshot.c:75
-#, fuzzy
 msgid "Snapshot module"
 msgstr "Schnappschuss-Modul"
 
@@ -17412,13 +16712,10 @@ msgid "XVideo adaptor number"
 msgstr "XVideo Adapter Nummer"
 
 #: modules/video_output/x11/glx.c:89
-#, fuzzy
 msgid ""
 "If your graphics card provides several adaptors, you have to choose which "
 "one will be used (you shouldn't have to change this)."
-msgstr ""
-"Mit dieser Option können sie den Adapter ihrer Grafikkarte auswählen, falls "
-"sie mehrere besitze (Sie sollten dies eigentlich nicht ändern müssen)."
+msgstr "Wenn Ihre Grafikkarte mehrere Anschlüsse hat, können Sie hier denjenigen wählen, der benutzt wird (Sie sollten dies nicht ändern)."
 
 #: modules/video_output/x11/glx.c:92 modules/video_output/x11/x11.c:43
 #: modules/video_output/x11/xvideo.c:49
@@ -17445,29 +16742,22 @@ msgstr ""
 
 #: modules/video_output/x11/glx.c:103 modules/video_output/x11/x11.c:54
 #: modules/video_output/x11/xvideo.c:60
-#, fuzzy
 msgid ""
 "X11 hardware display to use. By default VLC will use the value of the "
 "DISPLAY environment variable."
-msgstr ""
-"Geben Sie den X11-Bildschirm an, den Sie benutzen wollen. Standardmäßig wird "
-"der Bildschirm der DISPLAY-Variablen benutzt."
+msgstr "Zu benutzender X11-Hardware-Bildschirm. Standardmäßig wird VLC den Wert der DISPLAY-Umgebungsvariablen benutzen."
 
 #: modules/video_output/x11/glx.c:106 modules/video_output/x11/x11.c:61
 #: modules/video_output/x11/xvideo.c:72
-#, fuzzy
 msgid "Screen for fullscreen mode."
-msgstr "Bildschirm, der für den Vollbildmodus benutzt wird."
+msgstr "Bildschirm für Vollbildmodus"
 
 #: modules/video_output/x11/glx.c:108 modules/video_output/x11/x11.c:63
 #: modules/video_output/x11/xvideo.c:74
-#, fuzzy
 msgid ""
 "Screen to use in fullscreen mode. For instance set it to 0 for first screen, "
 "1 for the second."
-msgstr ""
-"Wählen Sie den Bildschirm, der für den Vollbildmodus benutzt werden soll, z."
-"B. 0 für den ersten Bildschirm, 1 für den Zweiten..."
+msgstr "Zu benutzender Bildschirm für den Vollbildmodus, z.B. 0 für den ersten Bildschirm, 1 für den Zweiten..."
 
 #: modules/video_output/x11/x11.c:57 modules/video_output/x11/xvideo.c:68
 msgid "Use shared memory"
@@ -17484,13 +16774,10 @@ msgid "X11 video output"
 msgstr "X11 Videoausgabe"
 
 #: modules/video_output/x11/xvideo.c:46
-#, fuzzy
 msgid ""
 "If your graphics card provides several adaptors, you need to choose which "
 "one will be used (you shouldn't have to change this)."
-msgstr ""
-"Mit dieser Option können sie den Adapter ihrer Grafikkarte auswählen, falls "
-"sie mehrere besitze (Sie sollten dies eigentlich nicht ändern müssen)."
+msgstr "Wenn Ihre Grafikkarte mehrere Anschlüsse besitzt, können Sie hier wählen, welcher benutzt werden sollen (Sie sollten dies nicht ändern)."
 
 #: modules/video_output/x11/xvideo.c:63
 msgid "XVimage chroma format"
@@ -17521,22 +16808,20 @@ msgid "Goom display height"
 msgstr "Goom-Anzeigehöhe"
 
 #: modules/visualization/goom.c:60
-#, fuzzy
 msgid ""
 "This allows you to set the resolution of the Goom display (bigger resolution "
 "will be prettier but more CPU intensive)."
 msgstr ""
-"Erlaubt Ihnen die Auflösung der Goomanzeige zu ändern (höhere Auflösung ist "
-"schöner, braucht aber mehr Leistung)."
+"Dies erlaubt Ihnen die Auflösung der Goomanzeige zu ändern (eine höhere Auflösung wird "
+"schöner sein, braucht aber mehr Prozessorleistung)."
 
 #: modules/visualization/goom.c:63
 msgid "Goom animation speed"
 msgstr "Goom-Animationsgeschwindigkeit"
 
 #: modules/visualization/goom.c:64
-#, fuzzy
 msgid "This allows you to set the animation speed (between 1 and 10, defaults to 6)."
-msgstr "Den Farbton zwischen 0 und 360 einstellen. Standardmäßig 0."
+msgstr "Dies erlaubt Ihnen die Animationsgeschwindigkeit festzulegen (zwischen 1 und 10, standardmäßig 6)."
 
 #: modules/visualization/goom.c:70
 msgid "Goom"
@@ -17551,13 +16836,12 @@ msgid "Effects list"
 msgstr "Effektliste"
 
 #: modules/visualization/visual/visual.c:40
-#, fuzzy
 msgid ""
 "A list of visual effect, separated by commas.\n"
 "Current effects include: dummy, scope, spectrum."
 msgstr ""
 "Eine Liste von visuellen Effekten, getrennt durch Kommata.\n"
-"Derzeitige Effekte sind: dummy, random (zufällig), scope, spectrum (Spektum)."
+"Derzeitige Effekte sind: dummy, scope, spectrum."
 
 #: modules/visualization/visual/visual.c:45
 msgid "The width of the effects video window, in pixels."
@@ -17578,11 +16862,8 @@ msgstr ""
 "20 oder 80 sein."
 
 #: modules/visualization/visual/visual.c:55
-#, fuzzy
 msgid "Number of bands used by the spectrometer, from 20 to 80."
-msgstr ""
-"Anzahl von Bändern, die vom Spektrumanalysierer benutzt werden. Es sollten "
-"20 oder 80 sein."
+msgstr "Die Anzahl der vom Spektrumanalysierer benutzten Bänder werden, von 20 bis 80."
 
 #: modules/visualization/visual/visual.c:57
 msgid "Band separator"
@@ -17617,23 +16898,20 @@ msgid "Enable the \"flat\" spectrum analyzer in the spectrometer."
 msgstr "Aktiviert den  \"flat\" spectrum analyzer in dem Spectrometer."
 
 #: modules/visualization/visual/visual.c:73
-#, fuzzy
 msgid "Enable bands"
-msgstr "Audio aktivieren"
+msgstr "Bänder aktivieren"
 
 #: modules/visualization/visual/visual.c:75
 msgid "Draw bands in the spectrometer."
 msgstr "Zeichnet Fließlinien in das Spektrometer."
 
 #: modules/visualization/visual/visual.c:77
-#, fuzzy
 msgid "Enable base"
-msgstr "Höchstwerte aktivieren"
+msgstr "Basis aktivieren"
 
 #: modules/visualization/visual/visual.c:79
-#, fuzzy
 msgid "Defines whether to draw the base of the bands."
-msgstr "Legt fest, ob Höchstwerte gezeichnet werden."
+msgstr "Legt fest, ob die Basis der Bänder gezeichnet werden soll."
 
 #: modules/visualization/visual/visual.c:81
 msgid "Base pixel radius"
@@ -17644,23 +16922,20 @@ msgid "Defines radius size in pixels, of base of bands(beginning)."
 msgstr "Definiert die Radiugröße in Pixel, basieren auf den Bändern (Anfang)."
 
 #: modules/visualization/visual/visual.c:85
-#, fuzzy
 msgid "Spectral sections"
-msgstr "Auswahl"
+msgstr "Spektralsektionen"
 
 #: modules/visualization/visual/visual.c:87
 msgid "Determines how many sections of spectrum will exist."
 msgstr "Ermittelt, wie viele Sektionen in dem Spektrum existieren."
 
 #: modules/visualization/visual/visual.c:89
-#, fuzzy
 msgid "Peak height"
-msgstr "Videohöhe"
+msgstr "Ausschlaghöhe"
 
 #: modules/visualization/visual/visual.c:91
-#, fuzzy
 msgid "Total pixel height of the peak items."
-msgstr "Dies ist ein Koeffizient, der die Höhe der Bändern verändert."
+msgstr "Totale Pixelhöhe der Ausschläge."
 
 #: modules/visualization/visual/visual.c:93
 msgid "Peak extra width"
@@ -17683,11 +16958,8 @@ msgid "Number of stars"
 msgstr "Anzahl der Sterne"
 
 #: modules/visualization/visual/visual.c:103
-#, fuzzy
 msgid "Number of stars to draw with random effect."
-msgstr ""
-"Legt die Anzahl der Sterne fest, die mit dem 'Zufällig'-Effekt gezeichnet "
-"werden."
+msgstr "Die Anzahl der zuzeichnenden Sterne, die mit dem 'Zufällig'-Effekt gezeichnet werden."
 
 #: modules/visualization/visual/visual.c:109
 msgid "Visualizer"
@@ -17706,9 +16978,8 @@ msgid "Flip vertical position"
 msgstr "Vertikale Position vertauschen"
 
 #: modules/visualization/xosd.c:64
-#, fuzzy
 msgid "Display XOSD output at the bottom of the screen instead of the top."
-msgstr "Die xosd-Ausgabe auf dem Bildschirm unten statt oben anzeigen"
+msgstr "Die XOSD-Ausgabe auf dem Bildschirm unten statt oben anzeigen."
 
 #: modules/visualization/xosd.c:67
 msgid "Vertical offset"
@@ -17733,14 +17004,12 @@ msgstr ""
 "Pixel)."
 
 #: modules/visualization/xosd.c:77
-#, fuzzy
 msgid "Font used to display text in the XOSD output."
-msgstr "Die Schrift, die zur Anzeige des Textes in der xosd Ausgabe benutzt wird"
+msgstr "Die Schrift, die zur Anzeige des Textes in der XOSD-Ausgabe benutzt wird."
 
 #: modules/visualization/xosd.c:79
-#, fuzzy
 msgid "Color used to display text in the XOSD output."
-msgstr "Die Schrift, die zur Anzeige des Textes in der xosd Ausgabe benutzt wird"
+msgstr "Die Farbe, die zur Anzeige des Textes in der XOSD-Ausgabe benutzt wird."
 
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
