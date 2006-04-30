@@ -518,6 +518,29 @@ belongs to an Apple hidden private API, and then can "disapear" at any time*/
     [o_outline_view reloadData];
     [[[[VLCMain sharedInstance] getWizard] getPlaylistWizard] reloadOutlineView];
     [[[[VLCMain sharedInstance] getBookmarks] getDataTable] reloadData];
+
+    playlist_t *p_playlist = vlc_object_find( VLCIntf, VLC_OBJECT_PLAYLIST,
+                                          FIND_ANYWHERE );
+    if(! p_playlist )
+        return;
+
+    if( p_playlist->i_size >= 2 )
+    {
+        [o_status_field setStringValue: [NSString stringWithFormat:
+                    _NS("%i items in the playlist"), p_playlist->i_size]];
+    }
+    else
+    {
+        if( p_playlist->i_size == 0 )
+        {
+            [o_status_field setStringValue: _NS("No items in the playlist")];
+        }
+        else
+        {
+            [o_status_field setStringValue: _NS("1 item in the playlist")];
+        }
+    }
+    vlc_object_release( p_playlist );
 }
 
 - (void)playModeUpdated
