@@ -847,6 +847,19 @@ package-macosx:
 # Clean up
 	rm -Rf "$(top_builddir)/vlc-${VERSION}" ;
 
+package-macosx-plugin:
+if BUILD_MOZILLA
+	rm -rf "$(top_builddir)/macosx-plugin-instdata/"
+	mkdir -p "$(top_builddir)/macosx-plugin-instdata"
+	cp -R "$(top_builddir)/mozilla/VLC Plugin.plugin" "$(top_builddir)/macosx-plugin-instdata"
+	rm -rf "$(top_builddir)/VLC Internet Plug-In.pkg"
+	/Developer/Tools/packagemaker -build -ds -p "$(top_builddir)/VLC Internet Plug-In.pkg" \
+	-f "$(top_builddir)/macosx-plugin-instdata" \
+	-i "$(srcdir)/extras/MacOSX/plugin/InstallerInfo.plist" \
+	-d "$(srcdir)/extras/MacOSX/plugin/InstallerDescription.plist"; true
+	rm -rf "$(top_builddir)/macosx-plugin-instdata/"
+endif
+
 package-translations:
 	@if test -e "$(srcdir)/vlc-translations-${VERSION}"; then \
 	  echo "Error: please remove $(srcdir)/vlc-translations-${VERSION}, it is in the way"; \
