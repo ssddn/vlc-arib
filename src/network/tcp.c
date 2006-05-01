@@ -418,6 +418,9 @@ int __net_Accept( vlc_object_t *p_this, int *pi_fd, mtime_t i_wait )
                          net_strerror( net_errno ) );
             else
             {
+                const int yes = 1;
+                setsockopt( i_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof( yes ));
+
                 /*
                  * This round-robin trick ensures that the first sockets in
                  * pi_fd won't prevent the last ones from getting accept'ed.
