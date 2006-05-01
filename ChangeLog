@@ -1,4 +1,165 @@
 ------------------------------------------------------------------------
+r15496 | courmisch | 2006-05-01 10:29:23 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/network/httpd.c
+   M /branches/0.8.5/src/network/tcp.c
+
+Backport [15472] and [15473]
+
+------------------------------------------------------------------------
+r15495 | courmisch | 2006-05-01 10:26:18 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/audio_output/alsa.c
+
+Backport [15494]
+
+------------------------------------------------------------------------
+r15492 | sigmunau | 2006-04-30 23:48:26 +0200 (Sun, 30 Apr 2006) | 5 lines
+Changed paths:
+   M /branches/0.8.5/modules/mux/mpeg/ts.c
+
+fix memory creep when data is fed to muxer but no pcr is given
+
+Happens in particular if CAM decryption fails on channels where the pcr pid is 
+encrypted but other pids are not encrypted.
+
+------------------------------------------------------------------------
+r15491 | bigben | 2006-04-30 23:09:16 +0200 (Sun, 30 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/macosx/controls.h
+   M /branches/0.8.5/modules/gui/macosx/controls.m
+   M /branches/0.8.5/modules/gui/macosx/misc.m
+
+* Backport of 15488
+
+
+------------------------------------------------------------------------
+r15486 | dionoea | 2006-04-30 21:14:31 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/doc/skins/skins2-howto.xml
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.cpp
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_text.hpp
+   M /branches/0.8.5/modules/gui/skins2/parser/builder.cpp
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+Revert [15458] and change default scrolling behavior to "stoped". You need to click on the text to start the scrolling.
+
+------------------------------------------------------------------------
+r15485 | dionoea | 2006-04-30 21:07:43 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/services_discovery/podcast.c
+
+Fix memleak.
+
+------------------------------------------------------------------------
+r15481 | asmax | 2006-04-30 20:07:40 +0200 (Sun, 30 Apr 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_video.cpp
+   M /branches/0.8.5/modules/gui/skins2/controls/ctrl_video.hpp
+   M /branches/0.8.5/modules/gui/skins2/src/generic_layout.cpp
+   M /branches/0.8.5/modules/gui/skins2/src/generic_layout.hpp
+   M /branches/0.8.5/modules/gui/skins2/src/top_window.cpp
+   M /branches/0.8.5/modules/gui/skins2/src/top_window.hpp
+   M /branches/0.8.5/modules/gui/skins2/src/vlcproc.cpp
+   M /branches/0.8.5/modules/gui/skins2/src/vout_window.cpp
+
+* backport of [15316], [15359] and [15451]
+ (hope it works ;)
+
+------------------------------------------------------------------------
+r15479 | damienf | 2006-04-30 19:44:13 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/Makefile.am
+
+- backported [15478]
+
+------------------------------------------------------------------------
+r15471 | dionoea | 2006-04-30 19:12:01 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/share/Makefile.am
+   D /branches/0.8.5/share/skins2/default/main/Thumbs.db
+   D /branches/0.8.5/share/skins2/default/playlist/Thumbs.db
+
+Remove thumbs.db files
+
+------------------------------------------------------------------------
+r15470 | dionoea | 2006-04-30 19:10:18 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/misc/unicode.c
+
+Backport [15468].
+
+------------------------------------------------------------------------
+r15469 | damienf | 2006-04-30 18:57:48 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/Makefile.am
+   M /branches/0.8.5/extras/MacOSX/plugin/English.lproj/InfoPlist.strings
+   M /branches/0.8.5/extras/MacOSX/plugin/Info.plist
+   A /branches/0.8.5/extras/MacOSX/plugin/InstallerDescription.plist (from /trunk/extras/MacOSX/plugin/InstallerDescription.plist:15463)
+   A /branches/0.8.5/extras/MacOSX/plugin/InstallerInfo.plist (from /trunk/extras/MacOSX/plugin/InstallerInfo.plist:15463)
+   M /branches/0.8.5/mozilla/vlc.r
+
+- backported [15463]
+
+------------------------------------------------------------------------
+r15465 | dionoea | 2006-04-30 18:29:34 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/services_discovery/podcast.c
+
+Fix refcount issue.
+
+------------------------------------------------------------------------
+r15464 | fkuehne | 2006-04-30 18:19:04 +0200 (Sun, 30 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/modules/gui/macosx/playlist.m
+
+* make sure that the count of objects in the playlist is up-to-date
+------------------------------------------------------------------------
+r15462 | dionoea | 2006-04-30 18:02:56 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/playlist/podcast.c
+
+Fix podcast encoding handling ...
+
+------------------------------------------------------------------------
+r15461 | fkuehne | 2006-04-30 18:01:24 +0200 (Sun, 30 Apr 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/po/POTFILES.in
+   M /branches/0.8.5/po/ca.po
+   M /branches/0.8.5/po/da.po
+   M /branches/0.8.5/po/de.po
+   M /branches/0.8.5/po/en_GB.po
+   M /branches/0.8.5/po/es.po
+   M /branches/0.8.5/po/fr.po
+   M /branches/0.8.5/po/gl.po
+   M /branches/0.8.5/po/he.po
+   M /branches/0.8.5/po/hi.po
+   M /branches/0.8.5/po/hu.po
+   M /branches/0.8.5/po/it.po
+   M /branches/0.8.5/po/ja.po
+   M /branches/0.8.5/po/ka.po
+   M /branches/0.8.5/po/ko.po
+   M /branches/0.8.5/po/nl.po
+   M /branches/0.8.5/po/oc.po
+   M /branches/0.8.5/po/pt_BR.po
+   M /branches/0.8.5/po/ro.po
+   M /branches/0.8.5/po/ru.po
+   M /branches/0.8.5/po/sv.po
+   M /branches/0.8.5/po/tr.po
+   M /branches/0.8.5/po/vlc.pot
+   M /branches/0.8.5/po/zh_CN.po
+   M /branches/0.8.5/po/zh_TW.po
+
+* updated the po-files for the final release
+------------------------------------------------------------------------
+r15460 | dionoea | 2006-04-30 17:48:29 +0200 (Sun, 30 Apr 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/ChangeLog
+   M /branches/0.8.5/NEWS
+
+Update NEWS and ChangeLog
+
+------------------------------------------------------------------------
 r15458 | dionoea | 2006-04-30 17:31:05 +0200 (Sun, 30 Apr 2006) | 2 lines
 Changed paths:
    M /branches/0.8.5/doc/skins/skins2-howto.xml
