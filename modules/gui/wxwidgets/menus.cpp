@@ -259,7 +259,7 @@ void PopupMenu( intf_thread_t *p_intf, wxWindow *p_parent,
                                                 FIND_PARENT );
     if( p_object != NULL )
     {
-#if 0
+#ifndef WIN32
 #if (wxCHECK_VERSION(2,5,0))
         ppsz_varnames[i] = "intf-switch";
         pi_objects[i++] = p_object->i_object_id;
@@ -512,11 +512,9 @@ wxMenu *SettingsMenu( intf_thread_t *_p_intf, wxWindow *p_parent,
                                                 FIND_PARENT );
     if( p_object != NULL )
     {
-#if 0
 #if (wxCHECK_VERSION(2,5,0))
         ppsz_varnames[i] = "intf-switch";
         pi_objects[i++] = p_object->i_object_id;
-#endif
 #endif
         ppsz_varnames[i] = "intf-add";
         pi_objects[i++] = p_object->i_object_id;
@@ -642,6 +640,8 @@ static bool IsMenuEmpty( char *psz_var, vlc_object_t *p_object,
 
     if( (i_type & VLC_VAR_TYPE) != VLC_VAR_VARIABLE )
     {
+        /* Very evil hack ! intf-switch can have only one value */
+        if( !strcmp( psz_var, "intf-switch" ) ) return FALSE;
         if( val.i_int == 1 && b_root ) return TRUE;
         else return FALSE;
     }

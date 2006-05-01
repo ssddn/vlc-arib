@@ -329,7 +329,9 @@ static void RunInterface( intf_thread_t *p_intf )
     static char *ppsz_interfaces[] =
     {
         "skins2", "Skins 2",
+#ifndef WIN32
         "wxwidgets", "wxWidgets",
+#endif
         NULL, NULL
     };
     char **ppsz_parser;
@@ -357,6 +359,7 @@ static void RunInterface( intf_thread_t *p_intf )
             {
                 val.psz_string = ppsz_parser[0];
                 text.psz_string = ppsz_parser[1];
+                fprintf( stderr, "Adding %s\n", val.psz_string );
                 var_Change( p_intf, "intf-switch", VLC_VAR_ADDCHOICE,
                             &val, &text );
                 break;
