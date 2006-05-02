@@ -162,10 +162,10 @@ EXTRA_DIST += \
 	extras/MacOSX/Delete_Preferences.app/Contents/Resources/applet.rsrc \
 	extras/MacOSX/Delete_Preferences.app/Contents/Resources/Scripts/main.scpt \
 	extras/MacOSX/plugin/English.lproj/InfoPlist.strings \
-	extras/MacOSX/plugin/English.lproj/InstallerInfo.plist \
-	extras/MacOSX/plugin/English.lproj/Info.plist \
-	extras/MacOSX/plugin/English.lproj/pbdevelopment.plist \
-	extras/MacOSX/plugin/English.lproj/InstallerDescription.plist \
+	extras/MacOSX/plugin/InstallerInfo.plist \
+	extras/MacOSX/plugin/Info.plist \
+	extras/MacOSX/plugin/pbdevelopment.plist \
+	extras/MacOSX/plugin/InstallerDescription.plist \
 	$(NULL)
 
 ###############################################################################
