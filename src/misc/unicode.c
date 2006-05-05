@@ -140,18 +140,18 @@ static char *MB2MB( const char *string, UINT fromCP, UINT toCP )
     int len;
 
     len = MultiByteToWideChar( fromCP, 0, string, -1, NULL, 0 );
-    assert( len > 0 );
-    wide = (wchar_t *)malloc (len * sizeof (wchar_t));
-    if( wide == NULL )
+    if( len == 0 );
         return NULL;
+
+    wchar_t wide[len];
 
     MultiByteToWideChar( fromCP, 0, string, -1, wide, len );
     len = WideCharToMultiByte( toCP, 0, wide, -1, NULL, 0, NULL, NULL );
-    assert( len > 0 );
+    if( len == 0 )
+        return NULL;
     out = malloc( len );
 
     WideCharToMultiByte( toCP, 0, wide, -1, out, len, NULL, NULL );
-    free( wide );
     return out;
 }
 #endif
@@ -306,7 +306,29 @@ void LocaleFree( const char *str )
  */
 FILE *utf8_fopen( const char *filename, const char *mode )
 {
-#if !(defined (WIN32) || defined (UNDER_CE))
+#if defined (WIN32) || defined (UNDER_CE)
+    if( GetVersion() < 0x80000000 )
+    {
+        /* for Windows NT and above */
+        wchar_t wpath[MAX_PATH + 1];
+        size_t len = strlen( mode ) + 1;
+        wchar_t wmode[len];
+
+        if( !MultiByteToWideChar( CP_UTF8, 0, filename, -1, wpath, MAX_PATH )
+         || !MultiByteToWideChar( CP_ACP, 0, mode, len, wmode, len ) )
+        {
+            errno = ENOENT;
+            return NULL;
+        }
+        wpath[MAX_PATH] = L'\0';
+
+        /*
+         * fopen() cannot open files with non-“ANSI” characters on Windows.
+         * We use _wfopen() instead. Same thing for mkdir() and stat().
+         */
+        return _wfopen( wpath, wmode );
+    }
+#endif
     const char *local_name = ToLocale( filename );
 
     if( local_name != NULL )
@@ -317,26 +339,8 @@ FILE *utf8_fopen( const char *filename, const char *mode )
     }
     else
         errno = ENOENT;
+
     return NULL;
-#else
-    wchar_t wpath[MAX_PATH + 1];
-    size_t len = strlen( mode ) + 1;
-    wchar_t wmode[len];
-
-    if( !MultiByteToWideChar( CP_UTF8, 0, filename, -1, wpath, MAX_PATH )
-     || !MultiByteToWideChar( CP_ACP, 0, mode, len, wmode, len ) )
-    {
-        errno = ENOENT;
-        return NULL;
-    }
-    wpath[MAX_PATH] = L'\0';
-
-    /*
-     * fopen() cannot open files with non-“ANSI” characters on Windows.
-     * We use _wfopen() instead. Same thing for mkdir() and stat().
-     */
-    return _wfopen( wpath, wmode );
-#endif
 }
 
 /**
@@ -399,6 +403,7 @@ int utf8_mkdir( const char *dirname )
 
 void *utf8_opendir( const char *dirname )
 {
+    /* TODO: support for WinNT non-ACP filenames */
     const char *local_name = ToLocale( dirname );
 
     if( local_name != NULL )
@@ -493,8 +498,24 @@ int utf8_scandir( const char *dirname, char ***namelist,
 static int utf8_statEx( const char *filename, void *buf,
                         vlc_bool_t deref )
 {
-#if !(defined (WIN32) || defined (UNDER_CE))
-# ifdef HAVE_SYS_STAT_H
+#if defined (WIN32) || defined (UNDER_CE)
+    /* retrieve Windows OS version */
+    if( GetVersion() < 0x80000000 )
+    {
+        /* for Windows NT and above */
+        wchar_t wpath[MAX_PATH + 1];
+
+        if( !MultiByteToWideChar( CP_UTF8, 0, filename, -1, wpath, MAX_PATH ) )
+        {
+            errno = ENOENT;
+            return -1;
+        }
+        wpath[MAX_PATH] = L'\0';
+
+        return _wstati64( wpath, (struct _stati64 *)buf );
+    }
+#endif
+#ifdef HAVE_SYS_STAT_H
     const char *local_name = ToLocale( filename );
 
     if( local_name != NULL )
@@ -505,20 +526,8 @@ static int utf8_statEx( const char *filename, void *buf,
         return res;
     }
     errno = ENOENT;
-# endif
-    return -1;
-#else
-    wchar_t wpath[MAX_PATH + 1];
-
-    if( !MultiByteToWideChar( CP_UTF8, 0, filename, -1, wpath, MAX_PATH ) )
-    {
-        errno = ENOENT;
-        return -1;
-    }
-    wpath[MAX_PATH] = L'\0';
-
-    return _wstati64( wpath, (struct _stati64 *)buf );
 #endif
+    return -1;
 }
 
 
