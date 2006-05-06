@@ -560,6 +560,9 @@ AC_CHECK_LIB(m,pow,[
 AC_CHECK_LIB(m,sqrt,[
   VLC_ADD_LDFLAGS([headphone_channel_mixer normvol speex],[-lm])
 ])
+AC_CHECK_LIB(m,ceil,[
+  VLC_ADD_LDFLAGS([mosaic],[-lm])
+])
 AC_CHECK_LIB(mx,sqrtf,[
   VLC_ADD_LDFLAGS([x264],[-lmx])
 ])
@@ -5073,7 +5076,7 @@ then
   if test "${mozilla}" != "false"
   then
     build_pic=yes
-    AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path} /usr/lib/mozilla)
+    AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla)
     if test "${XPIDL}" = "no"; then
       AC_MSG_ERROR([Please install the Mozilla development tools, xpidl was not found.])
     fi
