@@ -1,4 +1,142 @@
 ------------------------------------------------------------------------
+r15551 | dionoea | 2006-05-06 13:49:50 +0200 (Sat, 06 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/configure.ac
+   M /branches/0.8.5/vlc.win32.nsi.in
+
+Backport mozilla plugin installer fixes [15547], [15548] and [15550].
+
+------------------------------------------------------------------------
+r15543 | damienf | 2006-05-05 22:14:54 +0200 (Fri, 05 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/libvlc.c
+
+backporting [15534]
+
+------------------------------------------------------------------------
+r15542 | dionoea | 2006-05-05 22:07:48 +0200 (Fri, 05 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/misc/unicode.c
+
+Backport win9x file opening fixes ( [15501], [15506], [15509], [15510], [15511], [15512] and [15518])
+
+------------------------------------------------------------------------
+r15540 | xtophe | 2006-05-05 19:11:43 +0200 (Fri, 05 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/po/zh_CN.po
+
+Update Chinese l10n by Wei Mingzhi
+
+------------------------------------------------------------------------
+r15539 | courmisch | 2006-05-05 18:04:18 +0200 (Fri, 05 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/configure.ac
+
+The number of crash reports on Linux make it obvious that 0.8.5 and 0.8.4 are not binary-compatibile, so we should definitely change the entry point name
+
+------------------------------------------------------------------------
+r15533 | dionoea | 2006-05-04 23:26:26 +0200 (Thu, 04 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/control/rc.c
+
+Backport [15532].
+
+------------------------------------------------------------------------
+r15531 | xtophe | 2006-05-03 23:27:32 +0200 (Wed, 03 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/src/interface/interface.c
+
+Remove debug
+
+------------------------------------------------------------------------
+r15529 | bigben | 2006-05-02 22:08:41 +0200 (Tue, 02 May 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/stream_out/es.c
+
+* Backport r15528
+
+
+------------------------------------------------------------------------
+r15526 | bigben | 2006-05-02 21:21:23 +0200 (Tue, 02 May 2006) | 3 lines
+Changed paths:
+   M /branches/0.8.5/modules/video_output/x11/xcommon.c
+
+* Backport of 15525
+
+
+------------------------------------------------------------------------
+r15521 | fkuehne | 2006-05-02 15:55:32 +0200 (Tue, 02 May 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/Makefile.am
+
+* back-port [15520]
+------------------------------------------------------------------------
+r15516 | ipkiss | 2006-05-02 08:49:10 +0200 (Tue, 02 May 2006) | 5 lines
+Changed paths:
+   M /branches/0.8.5/share/skins2/default/theme.xml
+
+ * share/skins2/default/theme.xml:
+   - removed the invalid SliderBackground.x and SliderBackground.y attributes
+   - converted to unix file format
+   - reindented properly
+
+------------------------------------------------------------------------
+r15514 | fox | 2006-05-01 23:22:38 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/demux/mod.c
+
+ Backport of [15513]
+
+------------------------------------------------------------------------
+r15508 | ipkiss | 2006-05-01 15:34:54 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/src/generic_layout.cpp
+
+ * backport of [15507]
+
+------------------------------------------------------------------------
+r15504 | asmax | 2006-05-01 14:08:37 +0200 (Mon, 01 May 2006) | 4 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/skins2/src/vlcproc.cpp
+
+* vlcproc.cpp: don't use a vout when it has been destroyed !
+ (fixes some deadlocks/crashes when switching between layouts with
+ the default skin)
+
+------------------------------------------------------------------------
+r15502 | fkuehne | 2006-05-01 13:40:01 +0200 (Mon, 01 May 2006) | 1 line
+Changed paths:
+   M /branches/0.8.5/Makefile.am
+
+* added the new OSX-plugin files to make dist
+------------------------------------------------------------------------
+r15500 | zorglub | 2006-05-01 12:22:41 +0200 (Mon, 01 May 2006) | 4 lines
+Changed paths:
+   M /branches/0.8.5/modules/gui/wxwidgets/menus.cpp
+   M /branches/0.8.5/src/interface/interface.c
+
+Allow intf-switch 
+  * both ways in !Win32
+  * only wx->skins in Win32
+
+------------------------------------------------------------------------
+r15499 | zorglub | 2006-05-01 10:34:59 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/modules/misc/rtsp.c
+
+Backport [15493]
+
+------------------------------------------------------------------------
+r15497 | zorglub | 2006-05-01 10:32:39 +0200 (Mon, 01 May 2006) | 2 lines
+Changed paths:
+   M /branches/0.8.5/ChangeLog
+   M /branches/0.8.5/configure.ac
+   M /branches/0.8.5/extras/MacOSX/Resources/English.lproj/InfoPlist.strings
+   M /branches/0.8.5/extras/MacOSX/vlc.pbproj/project.pbxproj
+
+test4
+
+------------------------------------------------------------------------
 r15496 | courmisch | 2006-05-01 10:29:23 +0200 (Mon, 01 May 2006) | 2 lines
 Changed paths:
    M /branches/0.8.5/src/network/httpd.c
