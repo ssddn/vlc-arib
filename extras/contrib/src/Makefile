@@ -1,4 +1,4 @@
-# ***************************************************************************
+#***************************************************************************
 # src/Makefile : Dearchive and compile all files necessary
 # ***************************************************************************
 # Copyright (C) 2003 - 2006 the VideoLAN team
@@ -8,8 +8,9 @@
 #          Derk-Jan Hartman <hartman at videolan dot org>
 #          Eric Petit <titer@m0k.org>
 #          Felix Kühne <fkuehne@users.sourceforge.net>
-#          Christophe Mutricy <xtophe@nxtelevision.com>
+#          Christophe Mutricy <xtophe AT xtelevision.com>
 #          Gildas Bazin <gbazin at videolan dot org>
+#          Damien Fouilleul <damienf at videolan dot org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -81,15 +82,25 @@ else
 HOSTCC2=$(HOSTCC)
 endif
 
+# For ffmpeg if not cross compiling
+ifneq ($(CC),)
+  FFMPEGCONF=--cc="$(CC)"
+endif
+
+#
+# cross compiling
+#
 ifneq ($(BUILD),$(HOST))
-# We are cross compiling
-HOSTCONF=--host=$(HOST) --build=$(BUILD)
-FFMPEGCONF=--cross-prefix=$(HOST)-
-X264CONF=--crosscompile=$(HOST)
-else
-   ifneq ($(CC),)
-      FFMPEGCONF=--cc="$(CC)"
-   endif
+    #
+    # Compiling for MinGW under Cygwin could be deemed as cross compiling
+    # unfortunately there isn't a complete separate GCC toolchain for MinGW under Cygwin
+    #
+    HOSTCONF=--host=$(HOST) --build=$(BUILD)
+    ifeq ($(findstring cygwin,$(BUILD)),)
+	# We are REALLY cross compiling
+	FFMPEGCONF=--cross-prefix=$(HOST)-
+	X264CONF=--crosscompile=$(HOST)
+    endif
 endif
 
 #
@@ -108,12 +119,15 @@ FFMPEGCONF+= --enable-mp3lame --enable-faac
 endif
 
 ifdef HAVE_BEOS
-FFMPEGCONF+= --cpu=x86
+FFMPEGCONF+= --cpu=x86 --disable-debug --disable-audio-beos
 endif
 
 ifeq ($(HOST),i686-apple-darwin8)
 FFMPEGCONF += --enable-memalign-hack
 X264CONF += --enable-pic
+ifneq ($(HOST),i686-apple-darwin8)
+FFMPEG_CFLAGS += -DHAVE_LRINTF
+endif
 endif
 
 # ***************************************************************************
@@ -160,7 +174,7 @@ else
 	.FLAC .speex .faad .faac .lame .ebml  .matroska .ffmpeg .dvdcss \
 	.live .goom2k4 .caca .mod .x264  .xml .twolame \
 	.png .gpg-error .gcrypt .gnutls .mpcdec \
-	.gnutls .dvdnav .dvbpsi .wxwidgets .dirac \
+	.dvdnav .dvbpsi .wxwidgets .qt4 .dirac \
 	.dx_headers .dshow_headers .aclocal .gecko-win32 .unicows .libdca
 #	.SDL_image  .daap .cddb .cdio .vcdimager .portaudio 
   else
@@ -176,8 +190,9 @@ else
 	.FLAC .speex .faad .faac .lame .ebml .matroska .ffmpeg .dvdcss \
 	.live .goom2k4 .caca .mod .x264  .xml .twolame\
 	.png .gpg-error .gcrypt .gnutls .mpcdec\
-	.gnutls .dvdnav .dvbpsi .wxwidgets .dirac \
+	.dvdnav .dvbpsi .wxwidgets .dirac \
 	.aclocal .libdca
+#	.png .gpg-error .gcrypt .gnutls .mpcdec\
 #	.SDL_image  .daap .cddb .cdio .vcdimager 
    endif
   endif
@@ -191,14 +206,23 @@ FORCE:
 # ***************************************************************************
 
 define EXTRACT_GZ
-	tar xzf $<
+	rm -rf $@ || true
+	tar xzf $< --exclude='[*?:<>\|]' 
 	mv $(patsubst %.tar.gz,%,$(patsubst %.tgz,%,$(notdir $<))) $@ || true
 	touch $@
 endef
 
 define EXTRACT_BZ2
-	bunzip2 -c $< | tar xf -
+	rm -rf $@ || true
+	bunzip2 -c $< | tar xf - --exclude='[*?:<>\|]' 
 	mv $(patsubst %.tar.bz2,%,$(notdir $<)) $@ || true
+	touch $@
+endef
+
+define EXTRACT_ZIP
+	rm -rf $@ || true
+	unzip $<
+	mv $(patsubst %.zip,%,$(notdir $<)) $@ || true
 	touch $@
 endef
 
@@ -667,10 +691,16 @@ libtheora-$(THEORA_VERSION).tar.bz2:
 libtheora: libtheora-$(THEORA_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
 	patch -p0 < Patches/theora.patch
+	patch -p0 < Patches/theora-1.0a7.patch
 	(cd $@; autoconf)
 
 .theora: libtheora .ogg
+ifdef HAVE_BEOS
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-sdltest --disable-oggtest --disable-vorbistest --disable-asm && make && make install)
+else
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-sdltest --disable-oggtest --disable-vorbistest && make && make install)
+
+endif
 	$(INSTALL_NAME)
 	touch $@
 
@@ -692,7 +722,7 @@ ifdef HAVE_WIN32
 	(cd $@; aclocal && automake)
 endif
   
-.shout: libshout .theora .ogg
+.shout: libshout .theora .ogg .speex
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) &&  make && make install )
 	$(INSTALL_NAME)
 	touch $@
@@ -744,6 +774,9 @@ speex-$(SPEEX_VERSION).tar.gz:
 speex: speex-$(SPEEX_VERSION).tar.gz
 	$(EXTRACT_GZ)
 	patch -p0 < Patches/speex.patch
+ifdef HAVE_BEOS
+	patch -p0 < Patches/speex-BeOS.patch
+endif
 
 .speex: speex
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --enable-ogg=no && make && make install)
@@ -778,7 +811,7 @@ faad: faad2-$(FAAD2_VERSION).tar.bz2
 	touch $@
 
 CLEAN_FILE += .faad
-CLEAN_PKG += faad2
+CLEAN_PKG += faad
 DISTCLEAN_PKG += faad2-$(FAAD2_VERSION).tar.bz2
 
 # ***************************************************************************
@@ -886,19 +919,12 @@ DISTCLEAN_PKG += libmatroska-$(LIBMATROSKA_VERSION).tar.bz2
 # ***************************************************************************
 
 ffmpeg:
-	echo $(FFMPEG_CVSROOT) A > ./ffmpeg.cvs
-	CVS_PASSFILE=./ffmpeg.cvs cvs -z3 -d $(FFMPEG_CVSROOT) co ffmpeg
+	$(SVN) co $(FFMPEG_SVN)  ffmpeg
 ifeq ($(HOST),i586-pc-beos)
-	(cd $@; patch -p 0 < ../Patches/ffmpeg-cvs-beos.patch)
-endif
-ifdef HAVE_WIN32
-	patch -p 0 < Patches/ffmpeg-cvs-win32.patch
+	(cd $@; patch -p 0 < ../Patches/ffmpeg-svn-beos.patch)
 endif
 ifdef HAVE_WINCE
-	patch -p 1 < Patches/ffmpeg-cvs-wince.patch
-endif
-ifeq ($(HOST),i686-apple-darwin8)
-	(cd $@;patch -p 0 < ../Patches/ffmpeg-cvs-mactel.patch)
+	patch -p 1 < Patches/ffmpeg-svn-wince.patch
 endif
 
 ffmpeg-$(FFMPEG_VERSION).tar.gz:
@@ -913,7 +939,7 @@ ifdef HAVE_WINCE
 else
 .ffmpeg: ffmpeg .faac .lame
 endif
-	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-pp --disable-vhook --disable-ffserver --disable-network --enable-a52 --disable-ffplay && make install-libs install-headers)
+	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-pp --disable-vhook --disable-ffserver --disable-network --enable-a52 --disable-ffplay && make install-libs install-headers)
 	touch $@
 
 CLEAN_FILE += .ffmpeg
@@ -1052,8 +1078,8 @@ ifdef HAVE_DARWIN_OS
 	(cd $<; sed -e 's%EXTRA_CFLAGS%$(EXTRA_CFLAGS)%' -e 's%EXTRA_LDFLAGS%$(EXTRA_LDFLAGS)%' -i.orig  config.macosx)
 	(cd $<; ./genMakefiles macosx && make)
 else
-	(cd $<; if [ ! -f groupsock/Makefile.head.orig ] then ; sed -e 's/=/= $$\(EXTRA_CPPFLAGS\)/'  -e 's%EXTRA_CPPFLAGS%$(EXTRA_CPPFLAGS)%' -e 's/$$\(//' -e 's/\)//' -i.orig groupsock/Makefile.head fi )
-	(cd $<; ./genMakefiles && make $(HOSTCC))
+	(cd $<; sed -e 's/=/= EXTRA_CPPFLAGS/' -e 's%EXTRA_CPPFLAGS%-I/include%' -i.orig groupsock/Makefile.head)
+	(cd $<; ./genMakefiles linux && make $(HOSTCC))
 endif
 endif
 endif
@@ -1097,6 +1123,9 @@ endif
 ifdef HAVE_WIN32
 	(cd $@; dos2unix configure.in)
 	patch -p 0 <Patches/goom2k4-0-win32.patch
+endif
+ifndef HAVE_DARWIN_OS
+	(cd goom; patch -p 0 <../Patches/goom2k4-0-nommx.patch; cd -)
 endif
 
 .goom2k4: goom
@@ -1302,6 +1331,25 @@ CLEAN_PKG += wxwidgets
 DISTCLEAN_PKG += wxWidgets-$(WXWIDGETS_VERSION).tar.gz
 
 # ***************************************************************************
+# qt4 (win32 binary)
+# ***************************************************************************
+
+qt4-$(QT4_VERSION)-win32-bin.tar.gz:
+	$(WGET) $(QT4_URL)
+
+qt4: qt4-$(QT4_VERSION)-win32-bin.tar.gz
+	$(EXTRACT_GZ)
+
+
+.qt4: qt4
+	(cd qt4;mkdir -p $(PREFIX)/bin; mkdir -p $(PREFIX)/include;mkdir -p $(PREFIX)/lib/pkgconfig;rm -f $(PREFIX)/lib/pkgconfig/Qt*; sed 's,@@PREFIX@@,$(PREFIX),' lib/pkgconfig/QtCore.pc.in > $(PREFIX)/lib/pkgconfig/QtCore.pc;sed 's,@@PREFIX@@,$(PREFIX),' lib/pkgconfig/QtGui.pc.in > $(PREFIX)/lib/pkgconfig/QtGui.pc;cp -r include/* $(PREFIX)/include;cp lib/*a $(PREFIX)/lib;cp bin/rcc bin/uic bin/moc $(PREFIX)/bin)
+	touch $@
+
+CLEAN_FILE += .qt4
+CLEAN_PKG += qt4
+DISTCLEAN_PKG += qt4-$(QT4_VERSION).tar.gz
+
+# ***************************************************************************
 # zlib
 # ***************************************************************************
 
@@ -1313,7 +1361,7 @@ zlib: zlib-$(ZLIB_VERSION).tar.gz
 	patch -p 0 < Patches/zlib.patch
 
 .zlib: zlib
-	(cd zlib; $(HOSTCC2) ./configure  --prefix=$(PREFIX) && make install)
+	(cd zlib; $(HOSTCC2) ./configure --prefix=$(PREFIX) && make install)
 	$(INSTALL_NAME)
 	touch $@
 
@@ -1380,6 +1428,9 @@ twolame-$(TWOLAME_VERSION).tar.gz:
 
 twolame: twolame-$(TWOLAME_VERSION).tar.gz
 	$(EXTRACT_GZ)
+ifdef HAVE_BEOS
+	patch -p 0 < Patches/twolame-BeOS.patch
+endif
 
 .twolame: twolame
 	(cd twolame; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) && make && make install)
@@ -1404,6 +1455,10 @@ ifdef HAVE_WIN32
 else
 	(cat Patches/libpng-osx.patch | sed -e 's%??PREFIX??%$(PREFIX)%' -e 's%??EXTRA_CFLAGS??%$(EXTRA_CFLAGS)%' -e 's%??EXTRA_LDFLAGS??%$(EXTRA_LDFLAGS)%' | patch -p0)
 endif
+	(patch -p 0 < Patches/libpng-makefile.patch)
+ifeq ($(HOST),i686-apple-darwin8)
+	(patch -p 0 < Patches/libpng-darwin-mactel.patch)
+endif
 
 .png: libpng 
 ifdef HAVE_DARWIN_OS
@@ -1412,7 +1467,11 @@ else
 ifdef HAVE_WIN32
 	(cd $<; rm -f INSTALL; cp scripts/makefile.cygwin Makefile && make $(HOSTCC) && make install-static)
 else
+ifeq ($(PNG_VERSION),1.2.8)
+	(cd $<; PREFIX=$(PREFIX) DESTDIR=$(PREFIX) cp scripts/makefile.linux Makefile && make && make install)
+else
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) && make && make install)
+endif
 endif
 	$(INSTALL_NAME)
 endif 
@@ -1449,6 +1508,7 @@ libgpg-error-$(GPGERROR_VERSION).tar.gz:
 
 libgpg-error: libgpg-error-$(GPGERROR_VERSION).tar.gz
 	$(EXTRACT_GZ)
+	patch -p 0 < Patches/libgpg-error.patch
 
 .gpg-error: libgpg-error
 ifeq ($(HOST),i686-apple-darwin8)
@@ -1916,3 +1976,4 @@ clean-src: clean
 	rm -rf $(DISTCLEAN_PKG)
 
 distclean: clean-src
+
