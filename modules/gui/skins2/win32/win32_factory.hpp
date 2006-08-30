@@ -30,6 +30,7 @@
 #endif
 
 #include <windows.h>
+#include <shellapi.h>
 #include "../src/os_factory.hpp"
 #include <map>
 
@@ -53,8 +54,23 @@ class Win32Factory: public OSFactory
         /// Destroy the instance of OSLoop
         virtual void destroyOSLoop();
 
-        ///
+        /// Minimize all the windows
         virtual void minimize();
+
+        /// Restore the minimized windows
+        virtual void restore();
+
+        /// Add an icon in the system tray
+        virtual void addInTray();
+
+        /// Remove the icon from the system tray
+        virtual void removeFromTray();
+
+        /// Show the task in the task bar
+        virtual void addInTaskBar();
+
+        /// Remove the task from the task bar
+        virtual void removeFromTaskBar();
 
         /// Instantiate an OSTimer with the given command
         virtual OSTimer *createOSTimer( CmdGeneric &rCmd );
@@ -113,6 +129,8 @@ class Win32Factory: public OSFactory
         HINSTANCE m_hInst;
         /// Handle of the parent window
         HWND m_hParentWindow;
+        /// Structure for the system tray
+        NOTIFYICONDATA m_trayIcon;
         /// Handle on msimg32.dll (for TransparentBlt)
         HINSTANCE m_hMsimg32;
         /// Handle on user32.dll (for SetLayeredWindowAttributes)

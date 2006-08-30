@@ -24,10 +24,51 @@
 #include "cmd_minimize.hpp"
 #include "../src/os_factory.hpp"
 
+
 void CmdMinimize::execute()
 {
     // Get the instance of OSFactory
     OSFactory *pOsFactory = OSFactory::instance( getIntf() );
     pOsFactory->minimize();
+}
+
+
+void CmdRestore::execute()
+{
+    // Get the instance of OSFactory
+    OSFactory *pOsFactory = OSFactory::instance( getIntf() );
+    pOsFactory->restore();
+}
+
+
+void CmdAddInTray::execute()
+{
+    // Get the instance of OSFactory
+    OSFactory *pOsFactory = OSFactory::instance( getIntf() );
+    pOsFactory->addInTray();
+}
+
+
+void CmdRemoveFromTray::execute()
+{
+    // Get the instance of OSFactory
+    OSFactory *pOsFactory = OSFactory::instance( getIntf() );
+    pOsFactory->removeFromTray();
+}
+
+
+void CmdAddInTaskBar::execute()
+{
+    // Get the instance of OSFactory
+    OSFactory *pOsFactory = OSFactory::instance( getIntf() );
+    pOsFactory->addInTaskBar();
+}
+
+
+void CmdRemoveFromTaskBar::execute()
+{
+    // Get the instance of OSFactory
+    OSFactory *pOsFactory = OSFactory::instance( getIntf() );
+    pOsFactory->removeFromTaskBar();
 }
 

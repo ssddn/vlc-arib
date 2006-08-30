@@ -74,6 +74,31 @@ void MacOSXFactory::minimize()
     // TODO
 }
 
+void MacOSXFactory::restore()
+{
+    // TODO
+}
+
+void MacOSXFactory::addInTray()
+{
+    // TODO
+}
+
+void MacOSXFactory::removeFromTray()
+{
+    // TODO
+}
+
+void MacOSXFactory::addInTaskBar()
+{
+    // TODO
+}
+
+void MacOSXFactory::removeFromTaskBar()
+{
+    // TODO
+}
+
 OSTimer *MacOSXFactory::createOSTimer( const Callback &rCallback )
 {
     return new MacOSXTimer( getIntf(), rCallback );
@@ -84,7 +109,7 @@ OSWindow *MacOSXFactory::createOSWindow( GenericWindow &rWindow, bool dragDrop,
                                       bool playOnDrop, OSWindow *pParent )
 {
     return new MacOSXWindow( getIntf(), rWindow, dragDrop,
-                          playOnDrop, (MacOSXWindow*)pParent );
+                             playOnDrop, (MacOSXWindow*)pParent );
 }
 
 

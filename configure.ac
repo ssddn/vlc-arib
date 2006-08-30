@@ -291,7 +291,7 @@ fi
 dnl
 dnl Gettext stuff
 dnl
-ALL_LINGUAS="ca da de en_GB es fr gl he hi hu it ja ka ko nl oc pt_BR ro ru sv tr zh_CN zh_TW"
+ALL_LINGUAS="ca cs da de en_GB es fr gl he hi hu it ja ka ko nl oc pt_BR ro ru sv tr zh_CN zh_TW"
 AM_GNU_GETTEXT_VERSION(0.11.5)
 AM_GNU_GETTEXT
 if test "${nls_cv_force_use_gnu_gettext}" = "yes"; then
@@ -801,7 +801,7 @@ dnl Check for hal
 AC_ARG_ENABLE(hal,
   [  --enable-hal            Linux HAL services discovery (default enabled)])
  
-if test "${enable_hal}" != "no" -a "${SYS}" = "linux"
+if test "${enable_hal}" != "no"
 then
   PKG_CHECK_MODULES(HAL, hal >= 0.5.0,
     [ AC_DEFINE( HAVE_HAL_1, [] , [Define if you have the new HAL library API])
@@ -1389,7 +1389,7 @@ AC_ARG_ENABLE(debug,
 test "${enable_debug}" != "yes" && enable_debug="no"
 AH_TEMPLATE(NDEBUG,
             [Define to 1 if debug code should NOT be compiled])
-AS_IF([test "x${enable_debug}" == "xno"], [AC_DEFINE(NDEBUG)])
+AS_IF([test "x${enable_debug}" = "xno"], [AC_DEFINE(NDEBUG)])
 
 dnl
 dnl  Enable release-specific flags
@@ -1938,7 +1938,7 @@ dnl  gnomeVFS access module
 dnl
 AC_ARG_ENABLE(gnomevfs,
   [  --enable-gnomevfs       GnomeVFS access module (default enabled)])
-if test "${enable_gnomevfs}" != "no" -a  "${SYS}" = "linux" 
+if test "${enable_gnomevfs}" != "no"
 then
   PKG_CHECK_MODULES(GNOMEVFS, gnome-vfs-2.0,
     VLC_ADD_LDFLAGS([access_gnomevfs],[$GNOMEVFS_LIBS])
@@ -4195,7 +4195,7 @@ class testclass : public SearchResponseListener, public MediaPlayer
       done
       LIBS="${LIBS_save}"
       dnl should not happen - otherwise this needs fixing - hence FAILURE
-      AS_IF([test "${LIBS_cclink}" == "no"],
+      AS_IF([test "${LIBS_cclink}" = "no"],
         [AC_MSG_FAILURE([cannot find XML parser for CyberLink])])
       AC_MSG_RESULT([${LIBS_cclink}])
       VLC_ADD_LDFLAGS([upnp_cc], [${real_cyberlink_tree}/lib/unix/libclink.a -lpthread ${LIBS_cclink}])
@@ -4217,17 +4217,17 @@ AC_ARG_ENABLE(upnp,
 VLC_ADD_CXXFLAGS([upnp_intel], [ ])
 AS_IF([test "x${enable_upnp}" != "xno"], [
   AC_CHECK_LIB([upnp], [UpnpInit], [has_upnp="yes"], [has_upnp="no"], [-lpthread])
-  AS_IF([test "x${enable_upnp}" != "x" && test "${has_upnp}" == "no"], [
+  AS_IF([test "x${enable_upnp}" != "x" && test "${has_upnp}" = "no"], [
     AC_MSG_ERROR([cannot find Intel UPnP SDK (libupnp)])
   ])
-  AS_IF([test "${has_upnp}" == "yes"], [
+  AS_IF([test "${has_upnp}" = "yes"], [
     VLC_ADD_LDFLAGS([upnp_intel], [-lupnp])
   ])
 ], [
   has_upnp="no"
 ])
 
-AS_IF([test "${has_upnp}" == "yes"], [
+AS_IF([test "${has_upnp}" = "yes"], [
   VLC_ADD_PLUGINS([upnp_intel])
 ])
 
@@ -5013,14 +5013,14 @@ then
     if test "${MOZILLA_CONFIG}" = "no"
     then
       AC_PATH_PROG(XULRUNNER_CONFIG, xulrunner-config, no)
-      if test "${XULRUNNER_CONFIG}" != "no"
+      if test "${XULRUNNER_CONFIG}" = "no"
       then
+        AC_MSG_ERROR([Please install the Mozilla development tools, mozilla-config was not found.])
+      else
         have_xul=true
 	MOZILLA_CONFIG="${XULRUNNER_CONFIG}"
-      else
-        AC_MSG_ERROR([Please install the Mozilla development tools, mozilla-config was not found.])
-       fi
-     fi
+      fi
+    
       if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
         LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
         AC_CHECK_LIB(Xt,XtStrings,
@@ -5054,6 +5054,7 @@ then
         xpidl_path="`${MOZILLA_CONFIG} --prefix`/bin"
       fi	
     fi
+    dnl End of moz_sdk = ""
   else
     dnl special case for mingw32
     if test "${SYS}" = "mingw32"
@@ -5095,11 +5096,11 @@ then
   if test "${mozilla}" != "false"
   then
     build_pic=yes
-    AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla)
+    AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla:/usr/lib/xulrunner:/usr/lib64/xulrunner)
     if test "${XPIDL}" = "no"; then
       AC_MSG_ERROR([Please install the Mozilla development tools, xpidl was not found.])
     fi
-  
+  fi 
 fi
 AM_CONDITIONAL(BUILD_MOZILLA,${mozilla})
 

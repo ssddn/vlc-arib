@@ -36,6 +36,7 @@
 #include "../commands/async_queue.hpp"
 #include "../commands/cmd_quit.hpp"
 #include "../commands/cmd_dialogs.hpp"
+#include "../commands/cmd_minimize.hpp"
 
 
 //---------------------------------------------------------------------------
@@ -48,7 +49,7 @@ extern "C" __declspec( dllexport )
 
 
 //---------------------------------------------------------------------------
-// Local prototypes.
+// Local prototypes
 //---------------------------------------------------------------------------
 static int  Open  ( vlc_object_t * );
 static void Close ( vlc_object_t * );
@@ -57,6 +58,16 @@ static void Run   ( intf_thread_t * );
 static int DemuxOpen( vlc_object_t * );
 static int Demux( demux_t * );
 static int DemuxControl( demux_t *, int, va_list );
+
+//---------------------------------------------------------------------------
+// Prototypes for configuration callbacks
+//---------------------------------------------------------------------------
+static int onSystrayChange( vlc_object_t *pObj, const char *pVariable,
+                            vlc_value_t oldVal, vlc_value_t newVal,
+                            void *pParam );
+static int onTaskBarChange( vlc_object_t *pObj, const char *pVariable,
+                            vlc_value_t oldVal, vlc_value_t newVal,
+                            void *pParam );
 
 
 //---------------------------------------------------------------------------
@@ -338,15 +349,81 @@ static int DemuxControl( demux_t *p_demux, int i_query, va_list args )
 
 
 //---------------------------------------------------------------------------
+// Callbacks
+//---------------------------------------------------------------------------
+
+/// Callback for the systray configuration option
+static int onSystrayChange( vlc_object_t *pObj, const char *pVariable,
+                            vlc_value_t oldVal, vlc_value_t newVal,
+                            void *pParam )
+{
+    intf_thread_t *pIntf =
+        (intf_thread_t*)vlc_object_find( pObj, VLC_OBJECT_INTF, FIND_ANYWHERE );
+
+    if( pIntf == NULL )
+    {
+        return VLC_EGENERIC;
+    }
+
+    AsyncQueue *pQueue = AsyncQueue::instance( pIntf );
+    if( newVal.b_bool )
+    {
+        CmdAddInTray *pCmd = new CmdAddInTray( pIntf );
+        pQueue->push( CmdGenericPtr( pCmd ) );
+    }
+    else
+    {
+        CmdRemoveFromTray *pCmd = new CmdRemoveFromTray( pIntf );
+        pQueue->push( CmdGenericPtr( pCmd ) );
+    }
+
+    vlc_object_release( pIntf );
+    return VLC_SUCCESS;
+}
+
+
+/// Callback for the systray configuration option
+static int onTaskBarChange( vlc_object_t *pObj, const char *pVariable,
+                            vlc_value_t oldVal, vlc_value_t newVal,
+                            void *pParam )
+{
+    intf_thread_t *pIntf =
+        (intf_thread_t*)vlc_object_find( pObj, VLC_OBJECT_INTF, FIND_ANYWHERE );
+
+    if( pIntf == NULL )
+    {
+        return VLC_EGENERIC;
+    }
+
+    AsyncQueue *pQueue = AsyncQueue::instance( pIntf );
+    if( newVal.b_bool )
+    {
+        CmdAddInTaskBar *pCmd = new CmdAddInTaskBar( pIntf );
+        pQueue->push( CmdGenericPtr( pCmd ) );
+    }
+    else
+    {
+        CmdRemoveFromTaskBar *pCmd = new CmdRemoveFromTaskBar( pIntf );
+        pQueue->push( CmdGenericPtr( pCmd ) );
+    }
+
+    vlc_object_release( pIntf );
+    return VLC_SUCCESS;
+}
+
+
+//---------------------------------------------------------------------------
 // Module descriptor
 //---------------------------------------------------------------------------
 #define SKINS2_LAST      N_("Skin to use")
 #define SKINS2_LAST_LONG N_("Path to the skin to use.")
 #define SKINS2_CONFIG      N_("Config of last used skin")
-/// \bug [String] missing "skin". Remove "by the skins module". Add "do not touch"
-#define SKINS2_CONFIG_LONG N_("Windows configuration of the last used. " \
-        "This option is updated automatically by the skins module." )
-
+#define SKINS2_CONFIG_LONG N_("Windows configuration of the last skin used. " \
+        "This option is updated automatically, do not touch it." )
+#define SKINS2_SYSTRAY      N_("Systray icon")
+#define SKINS2_SYSTRAY_LONG N_("Show a systray icon for VLC")
+#define SKINS2_TASKBAR      N_("Show VLC on the taskbar")
+#define SKINS2_TASKBAR_LONG N_("Show VLC on the taskbar")
 #define SKINS2_TRANSPARENCY      N_("Enable transparency effects")
 #define SKINS2_TRANSPARENCY_LONG N_("You can disable all transparency effects"\
     " if you want. This is mainly useful when moving windows does not behave" \
@@ -362,6 +439,10 @@ vlc_module_begin();
                 VLC_TRUE );
         change_autosave();
 #ifdef WIN32
+    add_bool( "skins2-systray", VLC_FALSE, onSystrayChange, SKINS2_SYSTRAY,
+              SKINS2_SYSTRAY_LONG, VLC_FALSE );
+    add_bool( "skins2-taskbar", VLC_TRUE, onTaskBarChange, SKINS2_TASKBAR,
+              SKINS2_TASKBAR_LONG, VLC_FALSE );
     add_bool( "skins2-transparency", VLC_FALSE, NULL, SKINS2_TRANSPARENCY,
               SKINS2_TRANSPARENCY_LONG, VLC_FALSE );
 #endif
