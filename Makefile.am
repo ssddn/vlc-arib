@@ -345,6 +345,8 @@ VLC-release.app: vlc
 	mkdir -p $(top_builddir)/tmp/modules/audio_output
 	mkdir -p $(top_builddir)/tmp/modules/gui/macosx
 	for i in \
+	    AppleRemote.h \
+	    AppleRemote.m \
 	    about.h \
 	    about.m \
 	    applescript.h \
@@ -481,6 +483,8 @@ VLC.app: vlc
 	mkdir -p $(top_builddir)/tmp/modules/audio_output
 	mkdir -p $(top_builddir)/tmp/modules/gui/macosx
 	for i in \
+	    AppleRemote.h \
+	    AppleRemote.m \
 	    about.h \
 	    about.m \
 	    applescript.h \

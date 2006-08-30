@@ -302,6 +302,7 @@
         vlc_object_release( p_playlist );
         return( @"error");
     }
+//NSLog( @"values for %p", p_item ); 
 
     if( [[o_tc identifier] isEqualToString:@"1"] )
     {

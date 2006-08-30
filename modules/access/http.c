@@ -640,7 +640,8 @@ static int ReadICYMeta( access_t *p_access )
         p += strlen( "StreamTitle=" );
         if( *p == '\'' || *p == '"' )
         {
-            char *psz = strchr( &p[1], p[0] );
+            char closing[] = { p[0], ';', '\0' };
+            char *psz = strstr( &p[1], closing );
             if( !psz )
                 psz = strchr( &p[1], ';' );
 
