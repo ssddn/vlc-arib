@@ -33,6 +33,7 @@ SetCompressor /SOLID lzma
 SetOverwrite ifnewer
 CRCCheck on
 
+InstType "Recommended"
 InstType "Minimum"
 InstType "Full"
 InstType "Recommended"
@@ -197,7 +198,7 @@ FunctionEnd
 
 !macro RegisterExtensionSection EXT
   Section /o ${EXT}
-    SectionIn 2 3
+    SectionIn 1 3
     Push $R0
     StrCpy $R0 ${EXT}
     Call RegisterExtension
@@ -238,7 +239,7 @@ FunctionEnd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 !macro delprefs
-  SectionIn 2 3
+  SectionIn 1 3
   StrCpy $0 0
   !define Index 'Line${__LINE__}'
   "${Index}-Loop:"
@@ -260,7 +261,7 @@ FunctionEnd
 Var UninstallLog
 
 !macro OpenUninstallLog
-  FileOpen $UninstallLog "$INSTDIR\uninstall.log" w
+  FileOpen $UninstallLog "$INSTDIR\uninstall.log" a
   FileSeek $UninstallLog 0 END
 !macroend
 
@@ -410,11 +411,11 @@ SectionEnd
 Section "Desktop Shortcut" SEC02b
   SectionIn 1 2 3
   CreateShortCut "$DESKTOP\VLC media player.lnk" \
-    "$INSTDIR\vlc.exe" "--intf wx"
+    "$INSTDIR\vlc.exe" ""
 SectionEnd
 
 Section /o "Mozilla plugin" SEC03
-  SectionIn 2 3
+  SectionIn 1 3
 
   !insertmacro OpenUninstallLog
   !insertmacro InstallFolder mozilla
@@ -458,7 +459,7 @@ Section /o "Mozilla plugin" SEC03
 SectionEnd
 
 Section /o "ActiveX plugin" SEC04
-  SectionIn 2 3
+  SectionIn 1 3
   SetOutPath "$INSTDIR"
   !insertmacro OpenUninstallLog
   !insertmacro InstallFile activex\axvlc.dll
@@ -467,7 +468,7 @@ Section /o "ActiveX plugin" SEC04
 SectionEnd
 
 Section /o "Context Menus" SEC05
-  SectionIn 2
+  SectionIn 3
   !insertmacro MacroAllExtensions AddContextMenu
   !insertmacro AddContextMenu "Directory"
 SectionEnd
@@ -631,7 +632,6 @@ Section "Uninstall" SEC91
     ReadRegStr $R2 HKLM "SOFTWARE\Mozilla\$R0\Extensions" "Plugins"
     StrCmp $R2 "" "${Index}-Loop" ""
 
-    Delete "$R2\vlcintf.xpt"
     Delete "$R2\npvlc.dll"
     Goto "${Index}-Loop"
 
@@ -684,7 +684,7 @@ Section "Uninstall" SEC91
 SectionEnd
 
 Section /o "un.Delete preferences and cache" SEC92
-  SectionIn 2 3
+  SectionIn 1 3
   !insertmacro delprefs
 SectionEnd
 

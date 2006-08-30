@@ -2435,6 +2435,7 @@ static void httpd_HostThread( httpd_host_t *host )
                 struct  sockaddr_storage sock;
 
                 fd = accept( fd, (struct sockaddr *)&sock, &i_sock_size );
+
                 if( fd >= 0 )
                 {
                     int i_state = 1;
@@ -2449,9 +2450,20 @@ static void httpd_HostThread( httpd_host_t *host )
                         ioctlsocket( fd, FIONBIO, &i_dummy );
                     }
 #else
-                    fcntl( fd, F_SETFL, O_NONBLOCK );
-#endif
+                    fcntl( fd, F_SETFD, FD_CLOEXEC );
+                    {
+                        int i_val = fcntl( fd, F_GETFL );
+                        fcntl( fd, F_SETFL,
+                               O_NONBLOCK | (i_val != -1) ? i_val : 0 );
+                    }
 
+                    if( fd >= FD_SETSIZE )
+                    {
+                        net_Close( fd );
+                        fd = -1;
+                    }
+                    else
+#endif
                     if( p_tls != NULL)
                     {
                         switch ( tls_ServerSessionHandshake( p_tls, fd ) )

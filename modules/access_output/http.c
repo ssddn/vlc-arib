@@ -74,11 +74,11 @@ static void Close( vlc_object_t * );
                           "be used for HTTPS." )
 #define KEY_TEXT N_( "Private key file" )
 #define KEY_LONGTEXT N_( "Path to the x509 PEM private key file that will " \
-                         " be used for HTTPS. Leave " \
+                         "be used for HTTPS. Leave " \
                          "empty if you don't have one." )
 #define CA_TEXT N_( "Root CA file" )
 #define CA_LONGTEXT N_( "Path to the x509 PEM trusted root CA certificates " \
-                        "(certificate authority) file that will be used for" \
+                        "(certificate authority) file that will be used for " \
                         "HTTPS. Leave empty if you " \
                         "don't have one." )
 #define CRL_TEXT N_( "CRL file" )
