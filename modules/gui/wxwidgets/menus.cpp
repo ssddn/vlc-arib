@@ -59,7 +59,7 @@ public:
 
 private:
     wxMenu *CreateDummyMenu();
-    void   CreateMenuItem( wxMenu *, char *, vlc_object_t * );
+    void   CreateMenuItem( wxMenu *, const char *, vlc_object_t * );
     wxMenu *CreateChoicesMenu( char *, vlc_object_t *, bool );
 
     DECLARE_EVENT_TABLE();
@@ -192,7 +192,8 @@ int AudioAutoMenuBuilder( vlc_object_t *p_object,
 }
 
 int IntfAutoMenuBuilder( intf_thread_t *p_intf,
-                         vector<int> &ri_objects, vector<string> &rs_varnames )
+                         vector<int> &ri_objects, vector<string> &rs_varnames,
+                         bool is_popup)
 {
     /* vlc_object_find is needed because of the dialogs provider case */
     vlc_object_t *p_object;
@@ -200,6 +201,16 @@ int IntfAutoMenuBuilder( intf_thread_t *p_intf,
                                                 FIND_PARENT );
     if( p_object != NULL )
     {
+        if( is_popup )
+        {
+#ifndef WIN32
+            PUSH_VAR( "intf-switch" );
+#endif
+        }
+        else
+        {
+            PUSH_VAR( "intf-switch" );
+        }
         PUSH_VAR( "intf-add" );
         PUSH_VAR( "intf-skins" );
         vlc_object_release( p_object );
@@ -328,7 +339,7 @@ void MiscPopupMenu( intf_thread_t *p_intf, wxWindow *p_parent,
         InputAutoMenuBuilder( VLC_OBJECT(p_input), ai_objects, as_varnames );
         PUSH_SEPARATOR;
     }
-    IntfAutoMenuBuilder( p_intf, ai_objects, as_varnames );
+    IntfAutoMenuBuilder( p_intf, ai_objects, as_varnames, true );
 
     Menu popupmenu( p_intf, PopupMenu_Events );
     popupmenu.Populate( as_varnames, ai_objects );
@@ -381,7 +392,7 @@ void PopupMenu( intf_thread_t *p_intf, wxWindow *p_parent,
 
     /* Interface menu */
     PUSH_SEPARATOR
-    IntfAutoMenuBuilder( p_intf, ai_objects, as_varnames );
+    IntfAutoMenuBuilder( p_intf, ai_objects, as_varnames, true );
 
     /* Build menu */
     Menu popupmenu( p_intf, PopupMenu_Events );
@@ -509,6 +520,7 @@ wxMenu *SettingsMenu( intf_thread_t *_p_intf, wxWindow *p_parent,
                                                 FIND_PARENT );
     if( p_object != NULL )
     {
+        PUSH_VAR( "intf-switch" );
         PUSH_VAR( "intf-add" );
         vlc_object_release( p_object );
     }
@@ -632,8 +644,13 @@ static bool IsMenuEmpty( char *psz_var, vlc_object_t *p_object,
 
     if( (i_type & VLC_VAR_TYPE) != VLC_VAR_VARIABLE )
     {
+<<<<<<< .working
         /* Very evil hack ! intf-switch can have only one value */
         if( !strcmp( psz_var, "intf-switch" ) ) return FALSE;
+=======
+        /* Very evil hack ! intf-switch can have only one value */ 
+        if( !strcmp( psz_var, "intf-switch" ) ) return FALSE;
+>>>>>>> .merge-right.r15561
         if( val.i_int == 1 && b_root ) return TRUE;
         else return FALSE;
     }
@@ -660,7 +677,7 @@ static bool IsMenuEmpty( char *psz_var, vlc_object_t *p_object,
     return i_result;
 }
 
-void Menu::CreateMenuItem( wxMenu *menu, char *psz_var,
+void Menu::CreateMenuItem( wxMenu *menu, const char *psz_var,
                            vlc_object_t *p_object )
 {
     wxMenuItemExt *menuitem;

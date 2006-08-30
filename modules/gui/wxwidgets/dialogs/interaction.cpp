@@ -2,7 +2,7 @@
  * interaction.cpp: wxWidgets handling of interaction dialogs
  *****************************************************************************
  * Copyright (C) 2000-2004 the VideoLAN team
- * $Id: bookmarks.cpp 13106 2005-11-02 19:20:34Z zorglub $
+ * $Id$
  *
  * Authors: Clément Stenac <zorglub@videolan.org>
  *
@@ -70,7 +70,7 @@ InteractionDialog::InteractionDialog( intf_thread_t *_p_intf,
     widgets_panel->SetSizer( widgets_sizer );
 
     buttons_panel = new wxPanel( this, -1 );
-    buttons_sizer = new wxBoxSizer( wxHORIZONTAL );
+    buttons_sizer = new wxStdDialogButtonSizer;
     buttons_panel->SetSizer( buttons_sizer );
 
     main_sizer = new wxBoxSizer( wxVERTICAL );
@@ -172,8 +172,8 @@ void InteractionDialog::Render()
                                      wxID_OK, wxU( _("&OK") ) );
         wxButton *cancel = new wxButton( buttons_panel,
                                          wxID_CANCEL, wxU( _("&Cancel") ) );
-        buttons_sizer->Add( ok, 0, wxEXPAND | wxRIGHT| wxLEFT | wxALIGN_CENTER, 5 );
-        buttons_sizer->Add( cancel, 0, wxEXPAND | wxRIGHT| wxLEFT | wxALIGN_CENTER, 5 );
+        buttons_sizer->AddButton( ok );
+        buttons_sizer->AddButton( cancel );
     }
     else if( p_dialog->i_flags & DIALOG_YES_NO_CANCEL )
     {
@@ -183,12 +183,9 @@ void InteractionDialog::Render()
                                      wxID_NO, wxU( _("&No") ) );
         wxButton *cancel = new wxButton( buttons_panel,
                                          wxID_CANCEL, wxU( _("&Cancel") ) );
-        buttons_sizer->Add( yes, 0, wxEXPAND | wxRIGHT| wxLEFT |
-                                    wxALIGN_CENTER, 5 );
-        buttons_sizer->Add( no, 0, wxEXPAND | wxRIGHT| wxLEFT |
-                                   wxALIGN_CENTER, 5 );
-        buttons_sizer->Add( cancel, 0, wxEXPAND | wxRIGHT| wxLEFT |
-                                       wxALIGN_CENTER, 5 );
+        buttons_sizer->AddButton( yes );
+        buttons_sizer->AddButton( no );
+        buttons_sizer->AddButton( cancel );
     }
     else if( p_dialog->i_flags & DIALOG_CLEAR_NOSHOW )
     {
@@ -199,17 +196,18 @@ void InteractionDialog::Render()
                                         wxID_CLEAR, wxU( _("&Clear") ) );
         wxButton *close = new wxButton( buttons_panel, wxID_CLOSE,
                                          wxU( _("&Close") ) );
+        close->SetDefault();
         buttons_sizer->Add( noshow, 0, wxEXPAND | wxRIGHT|
                                        wxLEFT | wxALIGN_LEFT, 5 );
         buttons_sizer->Add( 0, 0, 1 );
-        buttons_sizer->Add( clear , 0, wxEXPAND | wxRIGHT|
-                                       wxLEFT | wxALIGN_RIGHT, 5 );
-        buttons_sizer->Add( close , 0, wxEXPAND | wxRIGHT|
-                                       wxLEFT | wxALIGN_RIGHT, 5 );
+        buttons_sizer->AddButton( clear );
+        buttons_sizer->SetNegativeButton( clear );
+        buttons_sizer->AddButton( close );
+        buttons_sizer->SetAffirmativeButton( close );
     }
     widgets_sizer->Layout();
     widgets_panel->SetSizerAndFit( widgets_sizer );
-    buttons_sizer->Layout();
+    buttons_sizer->Realize();
     buttons_panel->SetSizerAndFit( buttons_sizer );
     main_sizer->Layout();
     SetSizerAndFit( main_sizer );

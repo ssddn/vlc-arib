@@ -3,6 +3,10 @@ NULL =
 EXTRA_DIST = $(DIST_rsrc) $(DIST_fonts) \
 	$(skins2_default_vlt_FILES)
 
+nobase_dist_data_DATA = \
+	$(DIST_applications) \
+	$(NULL)
+
 pkgdatadir = $(datadir)/vlc
 
 dist_pkgdata_DATA = \
@@ -246,6 +250,10 @@ DIST_osdmenu_dvd = \
 	osdmenu/dvd/volume/volume04.png \
 	osdmenu/dvd/volume/volume05.png \
 	osdmenu/dvd/unselect/barroff.png \
+	$(NULL)
+
+DIST_applications = \
+	applications/vlc.desktop \
 	$(NULL)
 
 skins2/%.vlt:

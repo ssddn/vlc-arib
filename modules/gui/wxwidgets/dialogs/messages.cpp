@@ -28,12 +28,6 @@
  *****************************************************************************/
 
 /* IDs for the controls and the menu commands */
-enum
-{
-    Close_Event,
-    Clear_Event,
-    Save_Log_Event
-};
 
 BEGIN_EVENT_TABLE(Messages, wxFrame)
     /* Button events */
