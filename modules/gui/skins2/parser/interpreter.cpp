@@ -57,11 +57,17 @@ Interpreter::Interpreter( intf_thread_t *pIntf ): SkinObject( pIntf )
     REGISTER_CMD( "dialogs.directory()", CmdDlgDirectory )
     REGISTER_CMD( "dialogs.disc()", CmdDlgDisc )
     REGISTER_CMD( "dialogs.net()", CmdDlgNet )
+    REGISTER_CMD( "dialogs.playlist()", CmdDlgPlaylist )
     REGISTER_CMD( "dialogs.messages()", CmdDlgMessages )
     REGISTER_CMD( "dialogs.prefs()", CmdDlgPrefs )
     REGISTER_CMD( "dialogs.fileInfo()", CmdDlgFileInfo )
     REGISTER_CMD( "dialogs.streamingWizard()", CmdDlgStreamingWizard )
+
     REGISTER_CMD( "dialogs.popup()", CmdDlgShowPopupMenu )
+    REGISTER_CMD( "dialogs.audioPopup()", CmdDlgShowAudioPopupMenu )
+    REGISTER_CMD( "dialogs.videoPopup()", CmdDlgShowVideoPopupMenu )
+    REGISTER_CMD( "dialogs.miscPopup()", CmdDlgShowMiscPopupMenu )
+
     REGISTER_CMD( "dvd.nextTitle()", CmdDvdNextTitle )
     REGISTER_CMD( "dvd.previousTitle()", CmdDvdPreviousTitle )
     REGISTER_CMD( "dvd.nextChapter()", CmdDvdNextChapter )
@@ -224,24 +230,41 @@ CmdGeneric *Interpreter::parseAction( const string &rAction, Theme *pTheme )
     {
         int leftPos = rAction.find( ".show()" );
         string windowId = rAction.substr( 0, leftPos );
-        TopWindow *pWin = pTheme->getWindowById( windowId );
-        if( pWin )
+
+        if( windowId == "playlist_window" &&
+            !config_GetInt( getIntf(), "skinned-playlist") )
         {
-            pCommand = new CmdShowWindow( getIntf(), pTheme->getWindowManager(),
-                                          *pWin );
+            list<CmdGeneric *> list;
+            list.push_back( new CmdDlgPlaylist( getIntf() ) );
+            TopWindow *pWin = pTheme->getWindowById( windowId );
+            if( pWin )
+                list.push_back( new CmdHideWindow( getIntf(),
+                                                   pTheme->getWindowManager(),
+                                                   *pWin ) );
+            pCommand = new CmdMuxer( getIntf(), list );
         }
         else
         {
-            // It was maybe the id of a popup
-            Popup *pPopup = pTheme->getPopupById( windowId );
-            if( pPopup )
+            TopWindow *pWin = pTheme->getWindowById( windowId );
+            if( pWin )
             {
-                pCommand = new CmdShowPopup( getIntf(), *pPopup );
+                pCommand = new CmdShowWindow( getIntf(),
+                                              pTheme->getWindowManager(),
+                                              *pWin );
             }
             else
             {
-                msg_Err( getIntf(), "unknown window or popup (%s)",
-                         windowId.c_str() );
+                // It was maybe the id of a popup
+                Popup *pPopup = pTheme->getPopupById( windowId );
+                if( pPopup )
+                {
+                    pCommand = new CmdShowPopup( getIntf(), *pPopup );
+                }
+                else
+                {
+                    msg_Err( getIntf(), "unknown window or popup (%s)",
+                             windowId.c_str() );
+                }
             }
         }
     }
@@ -249,15 +272,31 @@ CmdGeneric *Interpreter::parseAction( const string &rAction, Theme *pTheme )
     {
         int leftPos = rAction.find( ".hide()" );
         string windowId = rAction.substr( 0, leftPos );
-        TopWindow *pWin = pTheme->getWindowById( windowId );
-        if( pWin )
+        if( windowId == "playlist_window" &&
+           ! config_GetInt( getIntf(), "skinned-playlist") )
         {
-            pCommand = new CmdHideWindow( getIntf(), pTheme->getWindowManager(),
-                                          *pWin );
+            list<CmdGeneric *> list;
+            list.push_back( new CmdDlgPlaylist( getIntf() ) );
+            TopWindow *pWin = pTheme->getWindowById( windowId );
+            if( pWin )
+                list.push_back( new CmdHideWindow( getIntf(),
+                                                   pTheme->getWindowManager(),
+                                                   *pWin ) );
+            pCommand = new CmdMuxer( getIntf(), list );
         }
         else
         {
-            msg_Err( getIntf(), "unknown window (%s)", windowId.c_str() );
+            TopWindow *pWin = pTheme->getWindowById( windowId );
+            if( pWin )
+            {
+                pCommand = new CmdHideWindow( getIntf(),
+                                              pTheme->getWindowManager(),
+                                              *pWin );
+            }
+            else
+            {
+                msg_Err( getIntf(), "unknown window (%s)", windowId.c_str() );
+            }
         }
     }
 
