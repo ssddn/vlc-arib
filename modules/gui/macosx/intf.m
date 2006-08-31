@@ -979,7 +979,6 @@ static VLCMain *_o_sharedMainInstance = nil;
         return;
     }
 
-#define p_input p_intf->p_sys->p_input
     if( p_intf->p_sys->b_input_update )
     {
         /* Called when new input is opened */
@@ -1001,17 +1000,17 @@ static VLCMain *_o_sharedMainInstance = nil;
 
         vlc_object_release( p_playlist );
 
-        if( ( b_input = ( p_input != NULL ) ) )
+        if( ( b_input = ( p_intf->p_sys->p_input != NULL ) ) )
         {
-            vlc_object_yield( p_input );
+            vlc_object_yield( p_intf->p_sys->p_input );
             /* seekable streams */
-            b_seekable = var_GetBool( p_input, "seekable" );
+            b_seekable = var_GetBool( p_intf->p_sys->p_input, "seekable" );
 
             /* check wether slow/fast motion is possible*/
-            b_control = p_input->input.b_can_pace_control;
+            b_control = p_intf->p_sys->p_input->input.b_can_pace_control;
 
             /* chapters & titles */
-            //b_chapters = p_input->stream.i_area_nb > 1;
+            //b_chapters = p_intf->p_sys->p_input->stream.i_area_nb > 1;
             vlc_object_release( p_intf->p_sys->p_input );
         }
 
@@ -1081,7 +1080,7 @@ static VLCMain *_o_sharedMainInstance = nil;
                     p_playlist->status.p_item->input.psz_name];
             [self setScrollField: o_temp stopAfter:-1];
 
-            p_vout = vlc_object_find( p_input, VLC_OBJECT_VOUT,
+            p_vout = vlc_object_find( p_intf->p_sys->p_input, VLC_OBJECT_VOUT,
                                                     FIND_PARENT );
             if( p_vout != NULL )
             {
@@ -1105,7 +1104,7 @@ static VLCMain *_o_sharedMainInstance = nil;
             p_intf->p_sys->b_current_title_update = FALSE;
         }
 
-        if( p_input && [o_timeslider isEnabled] )
+        if( p_intf->p_sys->p_input && [o_timeslider isEnabled] )
         {
             /* Update the slider */
             vlc_value_t time;
@@ -1114,11 +1113,11 @@ static VLCMain *_o_sharedMainInstance = nil;
             vlc_value_t pos;
             float f_updated;
 
-            var_Get( p_input, "position", &pos );
+            var_Get( p_intf->p_sys->p_input, "position", &pos );
             f_updated = 10000. * pos.f_float;
             [o_timeslider setFloatValue: f_updated];
 
-            var_Get( p_input, "time", &time );
+            var_Get( p_intf->p_sys->p_input, "time", &time );
             i_seconds = time.i_time / 1000000;
 
             o_time = [NSString stringWithFormat: @"%d:%02d:%02d",
@@ -1144,7 +1143,7 @@ static VLCMain *_o_sharedMainInstance = nil;
         }
 
         /* Manage Playing status */
-        var_Get( p_input, "state", &val );
+        var_Get( p_intf->p_sys->p_input, "state", &val );
         if( p_intf->p_sys->i_play_status != val.i_int )
         {
             p_intf->p_sys->i_play_status = val.i_int;
@@ -1161,7 +1160,6 @@ static VLCMain *_o_sharedMainInstance = nil;
         [self setSubmenusEnabled: FALSE];
     }
 
-#undef p_input
 
     [self updateMessageArray];
 
@@ -1261,8 +1259,7 @@ static VLCMain *_o_sharedMainInstance = nil;
 - (void)resetScrollField
 {
     i_end_scroll = -1;
-#define p_input p_intf->p_sys->p_input
-    if( p_input && !p_input->b_die )
+    if( p_intf->p_sys->p_input && !p_intf->p_sys->p_input->b_die )
     {
         NSString *o_temp;
         playlist_t * p_playlist = vlc_object_find( p_intf, VLC_OBJECT_PLAYLIST,
@@ -1280,7 +1277,6 @@ static VLCMain *_o_sharedMainInstance = nil;
         vlc_object_release( p_playlist );
         return;
     }
-#undef p_input
     [self setScrollField: _NS("VLC media player") stopAfter:-1];
 }
 
