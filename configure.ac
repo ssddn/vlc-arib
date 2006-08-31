@@ -5060,7 +5060,7 @@ then
       LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
       AC_CHECK_LIB(Xt,XtStrings,
        [
-         VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}]
+         VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}])
          VLC_ADD_LDFLAGS([mozilla],[${X_LIBS} ${X_PRE_LIBS} -lXt -lX11 -lSM -lICE])
        ],
        [],
