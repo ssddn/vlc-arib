@@ -9,7 +9,7 @@ NULL =
 # which have makefiles with distribution information.
 #  - intl should come before modules and . because all the code uses gettext
 #  - modules should come before . because vlc needs the builtins
-#  - . should come before mozilla/bindings because the plugin needs libvlc_pic.a
+#  - . should come before mozilla/bindings because the plugin needs libvlc.a
 #  - po should come before . because VLC.app needs the pofiles
 #  - loader should come before modules because some plugins need it
 SUBDIRS = intl loader src modules po . mozilla bindings activex share m4 doc
@@ -46,10 +46,6 @@ endif
 
 # Tell aclocal to use -I m4. Wonder if it really works.
 ACLOCAL_AMFLAGS = -I m4
-
-# XXX: these flags could be set in configure.ac, but we set them here
-# because old versions of automake don't support them in configure.ac.
-AUTOMAKE_OPTIONS = dist-bzip2
 
 ###############################################################################
 # MacOS X project
@@ -212,9 +208,11 @@ bin_SCRIPTS = vlc-config
 vlc-config: $(top_builddir)/config.status $(top_builddir)/vlc-config.in
 	$(SHELL) ./config.status --file=$@
 	chmod 0755 $@
+	touch $@
 
 vlc-config.in: vlc-config.in.in
 	./config.status --recheck
+	touch $@
 
 CLEANFILES = $(BUILT_SOURCES_clean) stamp-builtin
 DISTCLEANFILES = $(BUILT_SOURCES_distclean) vlc-config.in compile

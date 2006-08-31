@@ -37,7 +37,7 @@ class VarPercent;
 
 
 /// Cursor of a slider
-class CtrlSliderCursor: public CtrlGeneric, public Observer<VarPercent, void*>
+class CtrlSliderCursor: public CtrlGeneric, public Observer<VarPercent>
 {
     public:
         /// Create a cursor with 3 images (which are NOT copied, be careful)
@@ -98,7 +98,7 @@ class CtrlSliderCursor: public CtrlGeneric, public Observer<VarPercent, void*>
         const Bezier &m_rCurve;
 
         /// Method called when the position variable is modified
-        virtual void onUpdate( Subject<VarPercent,void*> &rVariable, void * );
+        virtual void onUpdate( Subject<VarPercent> &rVariable, void * );
 
         /// Method to compute the resize factors
         void getResizeFactors( float &rFactorX, float &rFactorY ) const;
@@ -109,7 +109,7 @@ class CtrlSliderCursor: public CtrlGeneric, public Observer<VarPercent, void*>
 
 
 /// Slider background
-class CtrlSliderBg: public CtrlGeneric, public Observer<VarPercent, void*>
+class CtrlSliderBg: public CtrlGeneric, public Observer<VarPercent>
 {
     public:
         CtrlSliderBg( intf_thread_t *pIntf,
@@ -157,7 +157,7 @@ class CtrlSliderBg: public CtrlGeneric, public Observer<VarPercent, void*>
         int m_position;
 
         /// Method called when the observed variable is modified
-        virtual void onUpdate( Subject<VarPercent,void*> &rVariable, void* );
+        virtual void onUpdate( Subject<VarPercent> &rVariable, void* );
 
         /// Method to compute the resize factors
         void getResizeFactors( float &rFactorX, float &rFactorY ) const;

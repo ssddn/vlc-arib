@@ -34,7 +34,7 @@ class CmdGeneric;
 
 
 /// Base class for button controls
-class CtrlButton: public CtrlGeneric, public Observer<AnimBitmap, void*>
+class CtrlButton: public CtrlGeneric, public Observer<AnimBitmap>
 {
     public:
         /// Create a button with 3 images
@@ -88,7 +88,7 @@ class CtrlButton: public CtrlGeneric, public Observer<AnimBitmap, void*>
         void setImage( AnimBitmap *pImg );
 
         /// Method called when an animated bitmap changes
-        virtual void onUpdate( Subject<AnimBitmap, void*> &rBitmap, void* );
+        virtual void onUpdate( Subject<AnimBitmap> &rBitmap, void* );
 };
 
 

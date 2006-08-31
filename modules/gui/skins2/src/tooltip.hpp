@@ -35,7 +35,7 @@ class OSGraphics;
 class UString;
 
 
-class Tooltip: public SkinObject, public Observer<VarText, void*>
+class Tooltip: public SkinObject, public Observer<VarText>
 {
     public:
         /// Create a tooltip with the given font and delay (in milliseconds)
@@ -65,7 +65,7 @@ class Tooltip: public SkinObject, public Observer<VarText, void*>
         int m_xPos, m_yPos;
 
         /// Method called when the observed variable is modified
-        virtual void onUpdate( Subject<VarText,void*> &rVariable, void * );
+        virtual void onUpdate( Subject<VarText> &rVariable, void * );
 
         /// Display text of the tooltip
         void displayText( const UString &rText );

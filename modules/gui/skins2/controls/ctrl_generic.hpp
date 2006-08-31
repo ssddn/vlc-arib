@@ -41,7 +41,7 @@ class VarBool;
 
 
 /// Base class for controls
-class CtrlGeneric: public SkinObject, public Observer<VarBool, void*>
+class CtrlGeneric: public SkinObject, public Observer<VarBool>
 {
     public:
         virtual ~CtrlGeneric();
@@ -128,7 +128,7 @@ class CtrlGeneric: public SkinObject, public Observer<VarBool, void*>
         VarBool *m_pVisible;
 
         /// Method called when an observed bool variable is changed
-        virtual void onUpdate( Subject<VarBool, void*> &rVariable , void* );
+        virtual void onUpdate( Subject<VarBool> &rVariable , void* );
 };
 
 typedef CountedPtr<CtrlGeneric> CtrlGenericPtr;

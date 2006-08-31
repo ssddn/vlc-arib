@@ -158,10 +158,11 @@ static int compare_sub_priority( const void *a, const void *b )
 #endif
 }
 
-/* Utility function for scandir */
-static int Filter( const char *psz_dir_content )
+/*
+ * Check if a file ends with a subtitle extension
+ */
+int subtitles_Filter( const char *psz_dir_content )
 {
-    /* does it end with a subtitle extension? */
     const char *tmp = strrchr( psz_dir_content, '.');
     if( tmp == NULL )
         return 0;
@@ -292,8 +293,8 @@ char **subtitles_Detect( input_thread_t *p_this, char *psz_path,
 
         f_fname = malloc( strlen(tmp) );
         if( f_fname )
-            strcpy( f_fname, tmp+1 ); // we skip the seperator, so it will still fit in the allocated space
-        dirlen = strlen(psz_fname) - strlen(tmp) + 1; // add the seperator
+            strcpy( f_fname, tmp+1 ); // we skip the separator, so it will still fit in the allocated space
+        dirlen = strlen(psz_fname) - strlen(tmp) + 2; // add the separator
         f_dir = malloc( dirlen + 1 );
         if( f_dir != NULL )
             strlcpy( f_dir, psz_fname, dirlen );
@@ -344,8 +345,8 @@ char **subtitles_Detect( input_thread_t *p_this, char *psz_path,
             continue;
 
         /* parse psz_src dir */
-        i_dir_content = utf8_scandir( psz_dir, &ppsz_dir_content, Filter,
-                                      NULL );
+        i_dir_content = utf8_scandir( psz_dir, &ppsz_dir_content,
+                                      subtitles_Filter, NULL );
 
         if( i_dir_content != -1 )
         {

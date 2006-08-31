@@ -36,7 +36,7 @@ class CmdGeneric;
 
 
 /// Base class for checkbox controls
-class CtrlCheckbox: public CtrlGeneric, public Observer<AnimBitmap, void*>
+class CtrlCheckbox: public CtrlGeneric, public Observer<AnimBitmap>
 {
     public:
         /// Create a checkbox with 6 images
@@ -109,7 +109,7 @@ class CtrlCheckbox: public CtrlGeneric, public Observer<AnimBitmap, void*>
         virtual void onVarBoolUpdate( VarBool &rVariable );
 
         /// Method called when an animated bitmap changes
-        virtual void onUpdate( Subject<AnimBitmap, void*> &rBitmap, void* );
+        virtual void onUpdate( Subject<AnimBitmap> &rBitmap, void* );
 
         /// Change the current image
         void setImage( AnimBitmap *pImg );

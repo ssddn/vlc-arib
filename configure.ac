@@ -14,9 +14,7 @@ AC_CONFIG_SRCDIR(src/libvlc.c)
 AC_CONFIG_AUX_DIR(autotools)
 AC_CANONICAL_SYSTEM
 
-dnl XXX: we don't put any flags here, because automake 1.5 doesn't support
-dnl them. And we need the comma otherwize automake will choke on it.
-AM_INIT_AUTOMAKE(vlc,0.8.5-1)
+AM_INIT_AUTOMAKE([1.7 check-news dist-bzip2])
 AM_CONFIG_HEADER(config.h)
 
 dnl Too many people are not aware of maintainer mode:
@@ -79,7 +77,7 @@ AC_LIBTOOL_WIN32_DLL
 AC_PROG_LIBTOOL
 
 AC_ARG_ENABLE(libtool,
-    [  --enable-libtool        use libtool (default disabled, EXPERIMENTAL)],
+    [  --enable-libtool        use libtool (default disabled)],
     [],[enable_libtool="no"])
 AM_CONDITIONAL(USE_LIBTOOL, [test "${enable_libtool}" != "no"])
 
@@ -296,7 +294,7 @@ AM_GNU_GETTEXT_VERSION(0.11.5)
 AM_GNU_GETTEXT
 if test "${nls_cv_force_use_gnu_gettext}" = "yes"; then
   AC_DEFINE(HAVE_INCLUDED_GETTEXT, 1, Define if we use the local libintl)
-  INCLUDES="${INCLUDES} -I\$(top_builddir)/intl"
+  AM_CPPFLAGS="${AM_CPPFLAGS} -I\$(top_builddir)/intl"
   AS_IF([test "${enable_libtool}" != "no"], [
     INCLUDED_LIBINTL="${LTLIBINTL}"
   ],[
@@ -1401,7 +1399,6 @@ test "${enable_release}" != "yes" && enable_release="no"
 dnl
 dnl  Is the shared libvlc forced ?
 dnl
-build_pic=no
 AC_ARG_ENABLE(shared-libvlc,
   [  --enable-shared-libvlc  Win32 libvlc.dll build (default disabled)])
 AS_IF([test "${enable_libtool}" != "no" && test "${enable_shared_libvlc}"], [
@@ -2535,10 +2532,13 @@ dnl Those options have to be here because the .pc can be bogus for ffmpeg previo
    if ! fgrep -s "pp_get_context" "${real_ffmpeg_tree}/libavcodec/libavcodec.a"; then
      if test -f "${real_ffmpeg_tree}/libavcodec/libpostproc/libpostproc.a"; then
        VLC_ADD_LDFLAGS([ffmpeg],[-L${real_ffmpeg_tree}/libavcodec/libpostproc ${real_ffmpeg_tree}/libavcodec/libpostproc/libpostproc.a])	
+     elif test -f "${real_ffmpeg_tree}/libpostproc/libpostproc.a"; then 
+	VLC_ADD_LDFLAGS([ffmpeg],[-L${real_ffmpeg_tree}/libpostproc ${real_ffmpeg_tree}/libpostproc/libpostproc.a])
+        VLC_ADD_CPPFLAGS([ffmpeg stream_out_switcher],[-I${real_ffmpeg_tree}])
      else
        dnl  The given libavcodec wasn't built with --enable-pp
        AC_MSG_RESULT(no)
-       AC_MSG_ERROR([${real_ffmpeg_tree}/libavcodec/libavcodec.a was not compiled with postprocessing support, make sure you configured ffmpeg with --enable-pp])
+       AC_MSG_ERROR([cannot find libpostproc.a in ${real_ffmpeg_tree}/[libavcodec/]libpostproc/. Make sure you configured ffmpeg with --enable-pp])
      fi
    fi
    dnl  Use a custom libffmpeg
@@ -5054,19 +5054,21 @@ then
         have_xul=true
 	MOZILLA_CONFIG="${XULRUNNER_CONFIG}"
       fi
+    fi
     
-      if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
-        LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
-        AC_CHECK_LIB(Xt,XtStrings,
-         [
-             VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}])
-             VLC_ADD_LDFLAGS([mozilla],[${X_LIBS} ${X_PRE_LIBS} -lXt -lX11 -lSM -lICE])
-         ],
-         [],
-         [[${X_LIBS} ${X_PRE_LIBS} -lX11 -lSM -lICE]
-        ])
-        LDFLAGS="${LDFLAGS_save}"
-      fi
+    if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
+      LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
+      AC_CHECK_LIB(Xt,XtStrings,
+       [
+         VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}]
+         VLC_ADD_LDFLAGS([mozilla],[${X_LIBS} ${X_PRE_LIBS} -lXt -lX11 -lSM -lICE])
+       ],
+       [],
+       [[${X_LIBS} ${X_PRE_LIBS} -lX11 -lSM -lICE]
+      ])
+      LDFLAGS="${LDFLAGS_save}"
+    fi
+
       mozilla=:
       dnl Workaround for http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=150490
       VLC_ADD_CPPFLAGS([mozilla],[[`${MOZILLA_CONFIG} --cflags plugin xpcom java | sed 's,-I\([^ ]*\)/mozilla/\([^ ]*\),-I\1/\2 -I\1/mozilla/\2,g' | xargs`]])
@@ -5087,7 +5089,6 @@ then
       else
         xpidl_path="`${MOZILLA_CONFIG} --prefix`/bin"
       fi	
-    fi
     dnl End of moz_sdk = ""
   else
     dnl special case for mingw32
@@ -5129,7 +5130,6 @@ then
   
   if test "${enable_mozilla}" != "false"
   then
-    build_pic=yes
     AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla:/usr/lib/xulrunner:/usr/lib64/xulrunner)
     if test "${XPIDL}" = "no"; then
       AC_MSG_ERROR([Please install the Mozilla development tools, xpidl was not found.])
@@ -5145,22 +5145,19 @@ AC_ARG_ENABLE(mediacontrol-python-bindings,
   [  --enable-mediacontrol-python-bindings    Enable Python bindings for MediaControl (default disabled)])
 dnl TODO: look for python dev headers
 AM_CONDITIONAL(BUILD_PYTHON, [test "${enable_mediacontrol_python_bindings}" = "yes"])
-if test "${enable_mediacontrol_python_bindings}" = "yes"
-then
-  build_pic=yes
-fi
 
 dnl
 dnl  Java bindings
 dnl
 AC_ARG_ENABLE(java-bindings,
   [  --enable-java-bindings  Enable Java bindings (default disabled)])
-AM_CONDITIONAL(BUILD_JAVA, [test "${enable_java_bindings}" = "yes"])
-if test "${enable_java_bindings}" = "yes"
+if test "${enable-java-bindings}" = "yes"
 then
-  build_pic=yes
+  AC_PROG_JAVA_CC(javac)
+  AC_PROG_JAVAC
+  AC_PROG_JAVA
 fi
-
+AM_CONDITIONAL(BUILD_JAVA, [test "${enable_java_bindings}" = "yes"])
 
 dnl
 dnl  test plugins
@@ -5294,14 +5291,6 @@ AS_IF([test "${enable_shared_libvlc}" != "no" || test "${enable_libtool}" != "no
   FILE_LIBVLC_DLL="!define LIBVLC_DLL libvlc.dll"],
   FILE_LIBVLC_DLL="" )
 
-pic=no
-AS_IF([test "${build_pic}" = "yes"], [pic=pic])
-AS_IF([test "${SYS}" = "mingw32"], [pic=no])
-AS_IF([test "${pic}" = "no"], [pic=])
-AC_SUBST(pic)
-
-AM_CONDITIONAL(BUILD_PIC, [test "${build_pic}" = "yes" && test "x${pic}" = "xpic"])
-
 dnl Import conditional variables generated by bootstrap
 VLC_CONDITIONALS
 
@@ -5366,7 +5355,7 @@ AC_SUBST(MOZILLA_SDK_PATH)
 AC_SUBST(XPIDL)
 AC_SUBST(XPIDL_INCL)
 AC_SUBST(LIBEXT)
-AC_SUBST(INCLUDES)
+AC_SUBST(AM_CPPFLAGS)
 AC_SUBST(ALL_LINGUAS)
 AC_SUBST(MACOSX_DEPLOYMENT_TARGET)
 AC_SUBST(FILE_LIBVLC_DLL)
