@@ -644,13 +644,8 @@ static bool IsMenuEmpty( char *psz_var, vlc_object_t *p_object,
 
     if( (i_type & VLC_VAR_TYPE) != VLC_VAR_VARIABLE )
     {
-<<<<<<< .working
         /* Very evil hack ! intf-switch can have only one value */
         if( !strcmp( psz_var, "intf-switch" ) ) return FALSE;
-=======
-        /* Very evil hack ! intf-switch can have only one value */ 
-        if( !strcmp( psz_var, "intf-switch" ) ) return FALSE;
->>>>>>> .merge-right.r15561
         if( val.i_int == 1 && b_root ) return TRUE;
         else return FALSE;
     }
