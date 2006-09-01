@@ -282,6 +282,9 @@ static int Open( vlc_object_t *p_this )
     services_discovery_sys_t *p_sys  = (services_discovery_sys_t *)
                                 malloc( sizeof( services_discovery_sys_t ) );
 
+    playlist_view_t     *p_view;
+    vlc_value_t         val;
+
     p_sys->i_timeout = var_CreateGetInteger( p_sd, "sap-timeout" );
 
     p_sd->pf_run = Run;
