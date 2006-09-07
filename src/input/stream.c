@@ -1467,6 +1467,7 @@ char * stream_ReadLine( stream_t *s )
             {
                 input_thread_t *p_input;
                 msg_Dbg( s, "%s BOM detected", psz_encoding );
+                p_input = (input_thread_t *)vlc_object_find( s, VLC_OBJECT_INPUT, FIND_PARENT );
                 if( s->i_char_width > 1 )
                 {
                     s->conv = vlc_iconv_open( "UTF-8", psz_encoding );
@@ -1474,10 +1475,7 @@ char * stream_ReadLine( stream_t *s )
                     {
                         msg_Err( s, "iconv_open failed" );
                     }
-                    var_Create( s->p_parent->p_parent, "subsdec-encoding", VLC_VAR_STRING | VLC_VAR_DOINHERIT );
-                    var_SetString( s->p_parent->p_parent, "subsdec-encoding", "UTF-8" );
                 }
-                p_input = (input_thread_t *)vlc_object_find( s, VLC_OBJECT_INPUT, FIND_PARENT );
                 if( p_input != NULL)
                 {
                     var_Create( p_input, "subsdec-encoding", VLC_VAR_STRING | VLC_VAR_DOINHERIT );

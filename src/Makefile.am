@@ -127,7 +127,7 @@ if USE_LIBTOOL
         		../modules/*.a) echo $$c ;; \
 		esac ; \
 	done | \
-	sed -e 's/^\(.*\)\/\([^\/]*\)\.a$$/cd \1 \&\& $(MAKE) \2_builtin.la/g' | \
+	sed -e 's,^\(.*\)/\([^/]*\)\.a$$,cd \1 \&\& $(MAKE) \2_builtin.la,g' | \
 	while read cmd; do echo $$cmd; eval "($$cmd)" || exit $$? ; done
 endif
 if BUILD_SHARED
@@ -136,7 +136,7 @@ if BUILD_SHARED
 			../modules/*.a) echo $$c ;; \
 		esac ; \
 	done | \
-	sed -e 's/^\(.*\)\/\([^\/]*\)\.a$$/cd \1 \&\& $(MAKE) \2/g' | \
+	sed -e 's,^\(.*\)/\([^/]*\)\.a$$,cd \1 \&\& $(MAKE) \2,g' | \
 	while read cmd; do echo $$cmd.a; eval "($$cmd.a)" || exit $$? ; done
 endif
 	touch $@
