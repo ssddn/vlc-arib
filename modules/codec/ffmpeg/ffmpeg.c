@@ -191,6 +191,12 @@ vlc_module_begin();
     set_capability( "demux2", 2 );
     set_callbacks( E_(OpenDemux), E_(CloseDemux) );
 
+    /* mux submodule */
+    add_submodule();
+    set_description( _("FFmpeg muxer" ) );
+    set_capability( "sout mux", 2 );
+    set_callbacks( E_(OpenMux), E_(CloseMux) );
+
     /* video filter submodule */
     add_submodule();
     set_capability( "video filter2", 50 );
@@ -222,8 +228,8 @@ static int OpenDecoder( vlc_object_t *p_this )
     int i_cat, i_codec_id, i_result;
     char *psz_namecodec;
 
-    AVCodecContext *p_context;
-    AVCodec        *p_codec;
+    AVCodecContext *p_context = NULL;
+    AVCodec        *p_codec = NULL;
 
     /* *** determine codec type *** */
     if( !E_(GetFfmpegCodec)( p_dec->fmt_in.i_codec, &i_cat, &i_codec_id,
@@ -244,7 +250,8 @@ static int OpenDecoder( vlc_object_t *p_this )
     E_(InitLibavcodec)(p_this);
 
     /* *** ask ffmpeg for a decoder *** */
-    if( !( p_codec = avcodec_find_decoder( i_codec_id ) ) )
+    p_codec = avcodec_find_decoder( i_codec_id );
+    if( !p_codec )
     {
         msg_Dbg( p_dec, "codec not found (%s)", psz_namecodec );
         return VLC_EGENERIC;
@@ -252,6 +259,8 @@ static int OpenDecoder( vlc_object_t *p_this )
 
     /* *** get a p_context *** */
     p_context = avcodec_alloc_context();
+    if( !p_context )
+        return VLC_ENOMEM;
     p_context->debug = config_GetInt( p_dec, "ffmpeg-debug" );
     p_context->opaque = (void *)p_this;
 
@@ -325,7 +334,7 @@ static void CloseDecoder( vlc_object_t *p_this )
     {
         if( p_sys->p_context->extradata )
             free( p_sys->p_context->extradata );
-
+        p_sys->p_context->extradata = NULL;
         vlc_mutex_lock( lockval.p_address );
         avcodec_close( p_sys->p_context );
         vlc_mutex_unlock( lockval.p_address );
@@ -376,6 +385,9 @@ static void LibavcodecCallback( void *p_opaque, int i_level,
         i_vlc_level = VLC_MSG_DBG;
         break;
     case AV_LOG_DEBUG:
+        /* Print debug messages if they were requested */
+        if( p_avctx->debug ) vfprintf( stderr, psz_format, va );
+        return;
     default:
         return;
     }
@@ -721,7 +733,7 @@ static struct
       VIDEO_ES, "Windows Media Video 1" },
     { VLC_FOURCC('W','M','V','2'), CODEC_ID_WMV2,
       VIDEO_ES, "Windows Media Video 2" },
-#if 0
+#if LIBAVCODEC_BUILD >= ((51<<16)+(10<<8)+1)
     { VLC_FOURCC('W','M','V','3'), CODEC_ID_WMV3,
       VIDEO_ES, "Windows Media Video 3" },
     { VLC_FOURCC('W','V','C','1'), CODEC_ID_VC1,
@@ -780,10 +792,27 @@ static struct
       VIDEO_ES, "Creative YUV Video" },
 
     /* On2 VP3 Video Codecs */
+    { VLC_FOURCC('V','P','3',' '), CODEC_ID_VP3,
+      VIDEO_ES, "On2's VP3 Video" },
+    { VLC_FOURCC('V','P','3','0'), CODEC_ID_VP3,
+      VIDEO_ES, "On2's VP3 Video" },
     { VLC_FOURCC('V','P','3','1'), CODEC_ID_VP3,
       VIDEO_ES, "On2's VP3 Video" },
     { VLC_FOURCC('v','p','3','1'), CODEC_ID_VP3,
       VIDEO_ES, "On2's VP3 Video" },
+
+#if LIBAVCODEC_BUILD >= ((51<<16)+(14<<8)+0)
+    { VLC_FOURCC('V','P','5',' '), CODEC_ID_VP5,
+      VIDEO_ES, "On2's VP5 Video" },
+    { VLC_FOURCC('V','P','5','0'), CODEC_ID_VP5,
+      VIDEO_ES, "On2's VP5 Video" },
+    { VLC_FOURCC('V','P','6','2'), CODEC_ID_VP6,
+      VIDEO_ES, "On2's VP6.2 Video" },
+    { VLC_FOURCC('v','p','6','2'), CODEC_ID_VP6,
+      VIDEO_ES, "On2's VP6.2 Video" },
+    { VLC_FOURCC('V','P','6','F'), CODEC_ID_VP6F,
+      VIDEO_ES, "On2's VP6.2 Video (Flash)" },
+#endif
 
 #if LIBAVCODEC_BUILD >= 4685
     /* Xiph.org theora */
@@ -903,6 +932,12 @@ static struct
     { VLC_FOURCC('R','T','2','1'), CODEC_ID_INDEO2,
       VIDEO_ES, "Indeo Video v2" },
 #endif
+
+#if LIBAVCODEC_BUILD >= ((51<<16)+(13<<8)+0)
+    { VLC_FOURCC('V','M','n','c'), CODEC_ID_VMNC,
+      VIDEO_ES, "VMware Video" },
+#endif
+
 
     /*
      *  Image codecs

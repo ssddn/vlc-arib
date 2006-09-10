@@ -74,7 +74,7 @@ static int Demux  ( demux_t *p_demux );
 static int Control( demux_t *p_demux, int i_query, va_list args );
 
 static int IORead( void *opaque, uint8_t *buf, int buf_size );
-static int IOSeek( void *opaque, offset_t offset, int whence );
+static offset_t IOSeek( void *opaque, offset_t offset, int whence );
 
 /*****************************************************************************
  * Open
@@ -338,7 +338,7 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
                 *pf = (double)stream_Tell( p_demux->s ) / (double)i64;
             }
 
-            if( p_sys->ic->duration != AV_NOPTS_VALUE && p_sys->i_pcr > 0 )
+            if( (p_sys->ic->duration != AV_NOPTS_VALUE) && (p_sys->i_pcr > 0) )
             {
                 *pf = (double)p_sys->i_pcr / (double)p_sys->ic->duration;
             }
@@ -442,7 +442,7 @@ static int IORead( void *opaque, uint8_t *buf, int buf_size )
     return i_ret ? i_ret : -1;
 }
 
-static int IOSeek( void *opaque, offset_t offset, int whence )
+static offset_t IOSeek( void *opaque, offset_t offset, int whence )
 {
     URLContext *p_url = opaque;
     demux_t *p_demux = p_url->priv_data;

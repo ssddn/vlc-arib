@@ -43,7 +43,7 @@
 #endif
 
 #if LIBAVCODEC_BUILD < 4704
-#   define AV_NOPTS_VALUE 0
+#   define AV_NOPTS_VALUE (int64_t)0
 #endif
 #if LIBAVCODEC_BUILD < 4684
 #    define FF_QP2LAMBDA 118
@@ -51,7 +51,6 @@
 
 #include "ffmpeg.h"
 
-#define AVCODEC_MAX_VIDEO_FRAME_SIZE (3*1024*1024)
 #define HURRY_UP_GUARD1 (450000)
 #define HURRY_UP_GUARD2 (300000)
 #define HURRY_UP_GUARD3 (100000)
@@ -429,7 +428,7 @@ int E_(OpenEncoder)( vlc_object_t *p_this )
             VOUT_ASPECT_FACTOR;
 #endif
 
-        p_sys->p_buffer_out = malloc( AVCODEC_MAX_VIDEO_FRAME_SIZE );
+        p_sys->p_buffer_out = malloc( p_context->height * p_context->width * 3 );
 
         p_enc->fmt_in.i_codec = VLC_FOURCC('I','4','2','0');
         p_context->pix_fmt = E_(GetFfmpegChroma)( p_enc->fmt_in.i_codec );
@@ -867,8 +866,8 @@ static block_t *EncodeVideo( encoder_t *p_enc, picture_t *p_pict )
 #endif
     /* End work-around */
 
-    i_out = avcodec_encode_video( p_sys->p_context, p_sys->p_buffer_out,
-                                  AVCODEC_MAX_VIDEO_FRAME_SIZE, &frame );
+    i_out = avcodec_encode_video( p_sys->p_context, (uint8_t*)p_sys->p_buffer_out,
+                                  p_sys->p_context->height * p_sys->p_context->width * 3, &frame );
 
     if( i_out > 0 )
     {
@@ -958,7 +957,7 @@ static block_t *EncodeAudio( encoder_t *p_enc, aout_buffer_t *p_aout_buf )
     encoder_sys_t *p_sys = p_enc->p_sys;
     block_t *p_block, *p_chain = NULL;
 
-    char *p_buffer = p_aout_buf->p_buffer;
+    uint8_t *p_buffer = p_aout_buf->p_buffer;
     int i_samples = p_aout_buf->i_nb_samples;
     int i_samples_delay = p_sys->i_samples_delay;
 
@@ -991,7 +990,7 @@ static block_t *EncodeAudio( encoder_t *p_enc, aout_buffer_t *p_aout_buf )
             p_samples = (int16_t *)p_buffer;
         }
 
-        i_out = avcodec_encode_audio( p_sys->p_context, p_sys->p_buffer_out,
+        i_out = avcodec_encode_audio( p_sys->p_context, (uint8_t *)p_sys->p_buffer_out,
                                       2 * AVCODEC_MAX_AUDIO_FRAME_SIZE,
                                       p_samples );
 
