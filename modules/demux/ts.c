@@ -68,6 +68,8 @@
 #   endif
 #endif
 
+#undef TS_DEBUG
+
 /* TODO:
  *  - XXX: do not mark options message to be translated, they are too osbcure for now ...
  *  - test it
@@ -2014,7 +2016,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
     p_iod = malloc( sizeof( iod_descriptor_t ) );
     memset( p_iod, 0, sizeof( iod_descriptor_t ) );
 
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n************ IOD ************" );
 #endif
     for( i = 0; i < 255; i++ )
@@ -2043,21 +2045,21 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
         p_iod->i_iod_label = byte2;
         i_iod_tag = byte3;
     }
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n* iod_label:%d", p_iod->i_iod_label );
     fprintf( stderr, "\n* ===========" );
     fprintf( stderr, "\n* tag:0x%x", i_iod_tag );
 #endif
     if( i_iod_tag != 0x02 )
     {
-#ifdef DEBUG
+#ifdef TS_DEBUG
         fprintf( stderr, "\n ERR: tag %02x != 0x02", i_iod_tag );
 #endif
         return p_iod;
     }
 
     i_iod_length = IODDescriptorLength( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n* length:%d", i_iod_length );
 #endif
     if( i_iod_length > i_data )
@@ -2069,7 +2071,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
     i_flags = IODGetByte( &i_data, &p_data );
     p_iod->i_od_id |= i_flags >> 6;
     b_url = ( i_flags >> 5  )&0x01;
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n* od_id:%d", p_iod->i_od_id );
     fprintf( stderr, "\n* url flag:%d", b_url );
     fprintf( stderr, "\n* includeInlineProfileLevel flag:%d", ( i_flags >> 4 )&0x01 );
@@ -2077,7 +2079,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
     if( b_url )
     {
         p_iod->psz_url = IODGetURL( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
         fprintf( stderr, "\n* url string:%s", p_iod->psz_url );
         fprintf( stderr, "\n*****************************\n" );
 #endif
@@ -2093,7 +2095,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
     p_iod->i_audioProfileLevelIndication = IODGetByte( &i_data, &p_data );
     p_iod->i_visualProfileLevelIndication = IODGetByte( &i_data, &p_data );
     p_iod->i_graphicsProfileLevelIndication = IODGetByte( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n* ODProfileLevelIndication:%d", p_iod->i_ODProfileLevelIndication );
     fprintf( stderr, "\n* sceneProfileLevelIndication:%d", p_iod->i_sceneProfileLevelIndication );
     fprintf( stderr, "\n* audioProfileLevelIndication:%d", p_iod->i_audioProfileLevelIndication );
@@ -2121,7 +2123,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                 {
 #define es_descr    p_iod->es_descr[i_es_index]
                     int i_decoderConfigDescr_length;
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n* - ES_Descriptor length:%d", i_length );
 #endif
                     es_descr.b_ok = 1;
@@ -2132,7 +2134,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                     b_url = ( i_flags >> 6 )&0x01;
                     es_descr.b_OCRStreamFlag = ( i_flags >> 5 )&0x01;
                     es_descr.i_streamPriority = i_flags & 0x1f;
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n*   * streamDependenceFlag:%d", es_descr.b_streamDependenceFlag );
                     fprintf( stderr, "\n*   * OCRStreamFlag:%d", es_descr.b_OCRStreamFlag );
                     fprintf( stderr, "\n*   * streamPriority:%d", es_descr.i_streamPriority );
@@ -2140,7 +2142,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                     if( es_descr.b_streamDependenceFlag )
                     {
                         es_descr.i_dependOn_es_id = IODGetWord( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                         fprintf( stderr, "\n*   * dependOn_es_id:%d", es_descr.i_dependOn_es_id );
 #endif
                     }
@@ -2148,7 +2150,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                     if( b_url )
                     {
                         es_descr.psz_url = IODGetURL( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                         fprintf( stderr, "\n* url string:%s", es_descr.psz_url );
 #endif
                     }
@@ -2160,21 +2162,21 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                     if( es_descr.b_OCRStreamFlag )
                     {
                         es_descr.i_OCR_es_id = IODGetWord( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                         fprintf( stderr, "\n*   * OCR_es_id:%d", es_descr.i_OCR_es_id );
 #endif
                     }
 
                     if( IODGetByte( &i_data, &p_data ) != 0x04 )
                     {
-#ifdef DEBUG
+#ifdef TS_DEBUG
                         fprintf( stderr, "\n* ERR missing DecoderConfigDescr" );
 #endif
                         es_descr.b_ok = 0;
                         break;
                     }
                     i_decoderConfigDescr_length = IODDescriptorLength( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n*   - DecoderConfigDesc length:%d", i_decoderConfigDescr_length );
 #endif
 #define dec_descr   es_descr.dec_descr
@@ -2185,7 +2187,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                     dec_descr.i_bufferSizeDB = IODGet3Bytes( &i_data, &p_data );
                     dec_descr.i_maxBitrate = IODGetDWord( &i_data, &p_data );
                     dec_descr.i_avgBitrate = IODGetDWord( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n*     * objectTypeIndication:0x%x", dec_descr.i_objectTypeIndication  );
                     fprintf( stderr, "\n*     * streamType:0x%x", dec_descr.i_streamType );
                     fprintf( stderr, "\n*     * upStream:%d", dec_descr.b_upStream );
@@ -2222,18 +2224,18 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
 
                     if( IODGetByte( &i_data, &p_data ) != 0x06 )
                     {
-#ifdef DEBUG
+#ifdef TS_DEBUG
                         fprintf( stderr, "\n* ERR missing SLConfigDescr" );
 #endif
                         es_descr.b_ok = 0;
                         break;
                     }
                     i_SLConfigDescr_length = IODDescriptorLength( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n*   - SLConfigDescr length:%d", i_SLConfigDescr_length );
 #endif
                     i_predefined = IODGetByte( &i_data, &p_data );
-#ifdef DEBUG
+#ifdef TS_DEBUG
                     fprintf( stderr, "\n*     * i_predefined:0x%x", i_predefined  );
 #endif
                     switch( i_predefined )
@@ -2271,7 +2273,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
                             }
                             break;
                         default:
-#ifdef DEBUG
+#ifdef TS_DEBUG
                             fprintf( stderr, "\n* ERR unsupported SLConfigDescr predefined" );
 #endif
                             es_descr.b_ok = 0;
@@ -2282,7 +2284,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
 #undef  sl_descr
 #undef  es_descr
             default:
-#ifdef DEBUG
+#ifdef TS_DEBUG
                 fprintf( stderr, "\n* - OD tag:0x%x length:%d (Unsupported)", i_tag, i_length );
 #endif
                 break;
@@ -2292,7 +2294,7 @@ static iod_descriptor_t *IODNew( int i_data, uint8_t *p_data )
         i_data = i_data_sav - i_length;
         i_es_index++;
     }
-#ifdef DEBUG
+#ifdef TS_DEBUG
     fprintf( stderr, "\n*****************************\n" );
 #endif
     return p_iod;
