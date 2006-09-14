@@ -27,6 +27,7 @@
 
 #include <vlc/vlc.h>
 #include <vlc/intf.h>
+#include "charset.h"
 
 #include <string>
 using namespace std;
@@ -64,6 +65,26 @@ class ThemeRepository;
        msg_Err( getIntf(), "delete NULL pointer in %s at line %d", \
                 __FILE__, __LINE__ ); \
    }
+
+
+/// Wrapper around FromLocale, to avoid the need to call LocaleFree()
+static inline string sFromLocale( const string &rLocale )
+{
+    char *s = FromLocale( rLocale.c_str() );
+    string res = s;
+    LocaleFree( s );
+    return res;
+}
+
+
+/// Wrapper around ToLocale, to avoid the need to call LocaleFree()
+static inline string sToLocale( const string &rUTF8 )
+{
+    char *s = ToLocale( rUTF8.c_str() );
+    string res = s;
+    LocaleFree( s );
+    return res;
+}
 
 
 //---------------------------------------------------------------------------
