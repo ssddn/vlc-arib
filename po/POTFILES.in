@@ -339,6 +339,7 @@ modules/codec/ffmpeg/demux.c
 modules/codec/ffmpeg/encoder.c
 modules/codec/ffmpeg/ffmpeg.c
 modules/codec/ffmpeg/ffmpeg.h
+modules/codec/ffmpeg/mux.c
 modules/codec/ffmpeg/postprocess.c
 modules/codec/ffmpeg/video.c
 modules/codec/ffmpeg/video_filter.c
@@ -391,7 +392,7 @@ modules/demux/avi/libavi.h
 modules/demux/demuxdump.c
 modules/demux/dts.c
 modules/demux/flac.c
-modules/demux/gme.cpp
+modules/demux/live555.cpp
 modules/demux/livedotcom.cpp
 modules/demux/m3u.c
 modules/demux/mjpeg.c
@@ -464,6 +465,8 @@ modules/gui/beos/VideoOutput.cpp
 modules/gui/beos/VideoWindow.h
 modules/gui/macosx/about.h
 modules/gui/macosx/about.m
+modules/gui/macosx/AppleRemote.h
+modules/gui/macosx/AppleRemote.m
 modules/gui/macosx/applescript.h
 modules/gui/macosx/applescript.m
 modules/gui/macosx/bookmarks.h
@@ -841,6 +844,7 @@ modules/misc/memcpy/memcpy.c
 modules/misc/msn.c
 modules/misc/network/ipv4.c
 modules/misc/network/ipv6.c
+modules/misc/notify.c
 modules/misc/playlist/export.c
 modules/misc/playlist/m3u.c
 modules/misc/playlist/old.c
