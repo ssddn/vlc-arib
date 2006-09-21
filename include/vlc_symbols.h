@@ -495,6 +495,8 @@ struct module_symbols_t
     vlc_bool_t (*input_AddSubtitles_inner) (input_thread_t *, char *, vlc_bool_t);
     int (*utf8_fprintf_inner) (FILE *, const char *, ...);
     int (*utf8_vfprintf_inner) (FILE *stream, const char *fmt, va_list ap);
+    int (*utf8_fprintf_inner) (FILE *, const char *, ...);
+    int (*utf8_vfprintf_inner) (FILE *stream, const char *fmt, va_list ap);
 };
 # if defined (__PLUGIN__)
 #  define aout_FiltersCreatePipeline (p_symbols)->aout_FiltersCreatePipeline_inner
@@ -968,6 +970,8 @@ struct module_symbols_t
 #  define encode_URI_component (p_symbols)->encode_URI_component_inner
 #  define vlc_strlcpy (p_symbols)->vlc_strlcpy_inner
 #  define input_AddSubtitles (p_symbols)->input_AddSubtitles_inner
+#  define utf8_fprintf (p_symbols)->utf8_fprintf_inner
+#  define utf8_vfprintf (p_symbols)->utf8_vfprintf_inner
 #  define utf8_fprintf (p_symbols)->utf8_fprintf_inner
 #  define utf8_vfprintf (p_symbols)->utf8_vfprintf_inner
 # elif defined (HAVE_DYNAMIC_PLUGINS) && !defined (__BUILTIN__)
@@ -1446,6 +1450,8 @@ struct module_symbols_t
     ((p_symbols)->encode_URI_component_inner) = encode_URI_component; \
     ((p_symbols)->vlc_strlcpy_inner) = vlc_strlcpy; \
     ((p_symbols)->input_AddSubtitles_inner) = input_AddSubtitles; \
+    ((p_symbols)->utf8_fprintf_inner) = utf8_fprintf; \
+    ((p_symbols)->utf8_vfprintf_inner) = utf8_vfprintf; \
     ((p_symbols)->utf8_fprintf_inner) = utf8_fprintf; \
     ((p_symbols)->utf8_vfprintf_inner) = utf8_vfprintf; \
     (p_symbols)->net_ConvertIPv4_deprecated = NULL; \

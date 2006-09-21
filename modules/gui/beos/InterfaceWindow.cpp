@@ -319,8 +319,10 @@ InterfaceWindow::InterfaceWindow( intf_thread_t * _p_intf, BRect frame,
 
     /* Add the Show menu */
     fShowMenu = new BMenu( _("Window") );
+#if 0
     ADD_ELLIPSIS( _("Playlist") );
     fShowMenu->AddItem( new BMenuItem( psz_tmp, new BMessage( OPEN_PLAYLIST ), 'P') );
+#endif
     ADD_ELLIPSIS( _("Messages") );
     fShowMenu->AddItem( new BMenuItem( psz_tmp, new BMessage( OPEN_MESSAGES ), 'M' ) );
     ADD_ELLIPSIS( _("Preferences") );

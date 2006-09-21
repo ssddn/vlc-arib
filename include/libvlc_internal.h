@@ -31,10 +31,6 @@ extern "C" {
 
 #include <vlc/vlc.h>
 
-#ifndef WIN32
-#include <X11/Xlib.h>
-#endif
-    
 struct libvlc_instance_t
 {
     vlc_t *p_vlc;

@@ -1447,8 +1447,8 @@ if test "${enable_shout}" = "yes"; then
   PKG_CHECK_MODULES(SHOUT, shout >= 2.1,
     [AC_DEFINE(HAVE_SHOUT, [], [Define if you have the libshout library])
      VLC_ADD_PLUGINS([access_output_shout])
-     VLC_ADD_LDFLAGS([vlc access_output_shout],[$SHOUT_LIBS])
-     VLC_ADD_CFLAGS([vlc access_output_shout],[$SHOUT_CFLAGS])],
+     VLC_ADD_LDFLAGS([access_output_shout],[$SHOUT_LIBS])
+     VLC_ADD_CFLAGS([access_output_shout],[$SHOUT_CFLAGS])],
     [AC_MSG_WARN(libshout library not found)])
 fi
 
@@ -4919,30 +4919,12 @@ AC_ARG_ENABLE(gnutls,
   [  --enable-gnutls         gnutls TLS/SSL support (default enabled)])
 
 AS_IF([test "${enable_gnutls}" != "no"], [
-  gcrypt_LIBS="-lgpg-error"
-  AS_IF([test "${SYS}" = "mingw32"], [
-    gcrypt_LIBS="${gcrypt_LIBS} -lws2_32"
-    VLC_ADD_LDFLAGS([gnutls],[-lws2_32])
-  ])
-
-  gnutls_LIBS="-lgcrypt -lz ${gcrypt_LIBS}"
-  AS_IF([test "${SYS}" = "darwin"], [
-    gnutls_LIBS="-lintl ${gnutls_LIBS}"
-    VLC_ADD_LDFLAGS([gnutls],[-lintl])
-  ])
-
-  AC_CHECK_HEADER(gcrypt.h, [
-    AC_CHECK_LIB(gcrypt, gcry_control, [
-      AC_CHECK_HEADER(gnutls/gnutls.h, [
-        AC_CHECK_LIB(gnutls, gnutls_certificate_verify_peers2,
-          [have_gnutls="yes"],[old_gnutls="yes"],[${gnutls_LIBS}])
-      ])
-    ],,[${gcrypt_LIBS}])
-  ])
+  PKG_CHECK_EXISTS([gnutls >= 1.0.17], [have_gnutls="yes"], [have_gnutls="no"])
 
   AS_IF([test "${have_gnutls}" = "yes"], [
     VLC_ADD_PLUGINS([gnutls])
-    VLC_ADD_LDFLAGS([gnutls], [-lgnutls ${gnutls_LIBS}])
+    VLC_ADD_CFLAGS([gnutls], [$("${PKG_CONFIG}" --cflags gnutls)])
+    VLC_ADD_LDFLAGS([gnutls], [$("${PKG_CONFIG}" --libs gnutls)])
   ], [
     AS_IF([test "${enable_gnutls}" = "yes"], [
       AC_MSG_ERROR([gnutls not present or too old (version 1.0.17 required)])
