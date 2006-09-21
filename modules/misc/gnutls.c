@@ -345,8 +345,9 @@ gnutls_HandshakeAndValidate( tls_session_t *session )
 
     if( status )
     {
+        const error_msg_t *e;
         msg_Err( session, "TLS session: access denied" );
-        for( const error_msg_t *e = cert_errors; e->flag; e++ )
+        for( e = cert_errors; e->flag; e++ )
         {
             if( status & e->flag )
             {

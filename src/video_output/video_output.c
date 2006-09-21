@@ -701,6 +701,8 @@ static void RunThread( vout_thread_t *p_vout)
 
     subpicture_t *  p_subpic = NULL;                   /* subpicture pointer */
 
+    input_thread_t *p_input = NULL ;           /* Parent input, if it exists */
+
     vlc_value_t     val;
     vlc_bool_t      b_drop_late;
 
