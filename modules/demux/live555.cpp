@@ -29,7 +29,6 @@
 #include <vlc/vlc.h>
 #include <vlc/input.h>
 
-#include "vlc_interaction.h"
 #include "network.h"
 
 #include <iostream>
@@ -746,23 +745,7 @@ describe:
         
         if( i_code == 401 )
         {
-            char *psz_login = NULL; char *psz_password = NULL;
-            msg_Dbg( p_demux, "authentication failed" );
-
-            i_ret = intf_UserLoginPassword( p_demux, _("RTSP authentication"),
-                           _("Please enter a valid login name and a password."),
-                                                   &psz_login, &psz_password );
-            if( i_ret == DIALOG_OK_YES )
-            {
-               msg_Dbg( p_demux, "retrying with user=%s, pwd=%s",
-                           psz_login, psz_password );
-               
-               if( psz_login ) psz_user = psz_login;
-               if( psz_password ) psz_pwd = psz_password;
-               goto describe;
-            }
-            if( psz_login ) free( psz_login );
-            if( psz_password ) free( psz_password );
+            msg_Err( p_demux, "RTSP authentication failed" );
         }
         else if( !var_CreateGetBool( p_demux, "rtsp-http" ) )
         {
