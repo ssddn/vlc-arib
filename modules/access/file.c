@@ -178,7 +178,7 @@ static int Open( vlc_object_t *p_this )
             ** explorer can open path such as file:/C:/ or file:///C:/...
             ** hence remove leading / if found
             */
-            ++psz_name;
+            strcpy( psz_name, p_access->psz_path + 1 );
         }
 #endif
 
@@ -257,6 +257,7 @@ static int Open( vlc_object_t *p_this )
         else
         {
             msg_Err( p_access, "unknown file type for `%s'", psz_name );
+            free( psz_name );
             return VLC_EGENERIC;
         }
     }

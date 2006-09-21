@@ -1997,7 +1997,7 @@ static void BlockDecode( demux_t *p_demux, KaxBlock *block, mtime_t i_pts,
                 if ( f_mandatory )
                     p_block->i_dts = p_block->i_pts;
                 else
-                    p_block->i_dts = min( i_pts, tk->i_last_dts + (tk->i_default_duration >> 10));
+                    p_block->i_dts = min( i_pts, tk->i_last_dts + (mtime_t)(tk->i_default_duration >> 10));
                 p_sys->i_pts = p_block->i_dts;
             }
         }
@@ -4923,8 +4923,6 @@ void matroska_segment_c::ParseCluster( )
  *****************************************************************************/
 void matroska_segment_c::InformationCreate( )
 {
-    size_t      i_track;
-
     sys.meta = vlc_meta_New();
 
     if( psz_title )
@@ -4935,6 +4933,7 @@ void matroska_segment_c::InformationCreate( )
     {
         vlc_meta_Add( sys.meta, VLC_META_DATE, psz_date_utc );
     }
+#if 0
     if( psz_segment_filename )
     {
         vlc_meta_Add( sys.meta, _("Segment filename"), psz_segment_filename );
@@ -4948,7 +4947,7 @@ void matroska_segment_c::InformationCreate( )
         vlc_meta_Add( sys.meta, _("Writing application"), psz_writing_application );
     }
 
-    for( i_track = 0; i_track < tracks.size(); i_track++ )
+    for( size_t i_track = 0; i_track < tracks.size(); i_track++ )
     {
         mkv_track_t *tk = tracks[i_track];
         vlc_meta_t *mtk = vlc_meta_New();
@@ -4978,6 +4977,7 @@ void matroska_segment_c::InformationCreate( )
             vlc_meta_Add( sys.meta, VLC_META_URL, tk->psz_codec_download_url );
         }
     }
+#endif
 
     if( i_tags_position >= 0 )
     {
