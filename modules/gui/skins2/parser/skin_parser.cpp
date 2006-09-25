@@ -328,8 +328,9 @@ void SkinParser::handleBeginElement( const string &rName, AttrList_t &attr )
         CheckDefault( "help", "" );
 
         m_curListId = uniqueId( attr["id"] );
-        const BuilderData::List listData( m_curListId, atoi( attr["x"] ) +
+        const BuilderData::Tree treeData( m_curListId, atoi( attr["x"] ) +
                 m_xOffset, atoi( attr["y"] ) + m_yOffset, attr["visible"],
+                attr["flat"],
                 atoi( attr["width"]), atoi( attr["height"] ),
                 attr["lefttop"], attr["rightbottom"],
                 convertBoolean( attr["xkeepratio"] ),
@@ -344,7 +345,7 @@ void SkinParser::handleBeginElement( const string &rName, AttrList_t &attr )
                 attr["selcolor"], attr["help"],
                 m_curLayer, m_curWindowId, m_curLayoutId );
         m_curLayer++;
-        m_pData->m_listList.push_back( listData );
+        m_pData->m_listTree.push_back( treeData );
     }
 
     else if( rName == "Playtree" )
