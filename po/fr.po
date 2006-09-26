@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-23 02:09+0200\n"
+"POT-Creation-Date: 2006-09-26 15:06+0200\n"
 "PO-Revision-Date: 2006-04-19 08:35+0000\n"
 "Last-Translator: Clément Stenac <zorglub@diwi.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -5860,7 +5860,7 @@ msgid "IVTV MPEG Encoding cards input"
 msgstr "Entrée pour cartes MPEG IVTV"
 
 #: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
-#: modules/demux/live555.cpp:62 modules/demux/livedotcom.cpp:61
+#: modules/demux/live555.cpp:62
 msgid "Caching value (ms)"
 msgstr "Taille du cache en ms"
 
@@ -9550,7 +9550,7 @@ msgstr "Démultiplexeur DTS brut"
 msgid "FLAC demuxer"
 msgstr "Démultiplexeur FLAC"
 
-#: modules/demux/live555.cpp:64 modules/demux/livedotcom.cpp:63
+#: modules/demux/live555.cpp:64
 msgid ""
 "Allows you to modify the default caching value for RTSP streams. This value "
 "should be set in millisecond units."
@@ -9558,11 +9558,11 @@ msgstr ""
 "Cette option permet de modifier la taille du cache par défaut pour les flux "
 "RTSP. Cette valeur est en millisecondes."
 
-#: modules/demux/live555.cpp:67 modules/demux/livedotcom.cpp:66
+#: modules/demux/live555.cpp:67
 msgid "Kasenna RTSP dialect"
 msgstr "Dialecte RTSP Kasenna"
 
-#: modules/demux/live555.cpp:68 modules/demux/livedotcom.cpp:67
+#: modules/demux/live555.cpp:68
 msgid ""
 "Kasenna servers use an old and unstandard dialect of RTSP. When you set this "
 "parameter, VLC will try this dialect for communication. In this mode you "
@@ -9573,12 +9573,12 @@ msgstr ""
 "communication. Dans ce mode, VLC ne peut pas se connecter aux autres "
 "serveurs RTSP."
 
-#: modules/demux/live555.cpp:72 modules/demux/livedotcom.cpp:71
+#: modules/demux/live555.cpp:72
 #, fuzzy
 msgid "RTSP user name"
 msgstr "Nom d’utilisateur FTP"
 
-#: modules/demux/live555.cpp:73 modules/demux/livedotcom.cpp:72
+#: modules/demux/live555.cpp:73
 #, fuzzy
 msgid ""
 "Allows you to modify the user name that will be used for authenticating the "
@@ -9587,48 +9587,46 @@ msgstr ""
 "Ceci vous permet de modifier le nom d’utilisateur qui sera utilisé pour la "
 "connexion (authentification basique seulement)."
 
-#: modules/demux/live555.cpp:75 modules/demux/livedotcom.cpp:74
+#: modules/demux/live555.cpp:75
 #, fuzzy
 msgid "RTSP password"
 msgstr "Mot de passe FTP"
 
-#: modules/demux/live555.cpp:76 modules/demux/livedotcom.cpp:75
+#: modules/demux/live555.cpp:76
 #, fuzzy
 msgid "Allows you to modify the password that will be used for the connection."
 msgstr "Mot de passer à utiliser pour la connexion."
 
-#: modules/demux/live555.cpp:80 modules/demux/livedotcom.cpp:79
+#: modules/demux/live555.cpp:80
 #, fuzzy
 msgid "RTP/RTSP/SDP demuxer (using Live555)"
 msgstr "Démultiplexeur RTP/RTSP/SDP (utilisant Live555)"
 
-#: modules/demux/live555.cpp:90 modules/demux/livedotcom.cpp:89
+#: modules/demux/live555.cpp:90
 msgid "RTSP/RTP access and demux"
 msgstr "Access/Démultiplexeur RTSP/RTP"
 
 #: modules/demux/live555.cpp:96 modules/demux/live555.cpp:97
-#: modules/demux/livedotcom.cpp:95 modules/demux/livedotcom.cpp:96
 msgid "Use RTP over RTSP (TCP)"
 msgstr "Utilise le RTP sur RTSP (TCP)"
 
-#: modules/demux/live555.cpp:99 modules/demux/livedotcom.cpp:98
+#: modules/demux/live555.cpp:99
 msgid "Client port"
 msgstr "Port client"
 
-#: modules/demux/live555.cpp:100 modules/demux/livedotcom.cpp:99
+#: modules/demux/live555.cpp:100
 msgid "Port to use for the RTP source of the session"
 msgstr "Port à utiliser pour la source RTP de la session"
 
 #: modules/demux/live555.cpp:103 modules/demux/live555.cpp:104
-#: modules/demux/livedotcom.cpp:102 modules/demux/livedotcom.cpp:103
 msgid "Tunnel RTSP and RTP over HTTP"
 msgstr "Faire passer le RTSP et le RTP par HTTP"
 
-#: modules/demux/live555.cpp:106 modules/demux/livedotcom.cpp:105
+#: modules/demux/live555.cpp:106
 msgid "HTTP tunnel port"
 msgstr "Port du tunnel HTTP"
 
-#: modules/demux/live555.cpp:107 modules/demux/livedotcom.cpp:106
+#: modules/demux/live555.cpp:107
 #, fuzzy
 msgid "Port to use for tunneling the RTSP/RTP over HTTP."
 msgstr "Port à utiliser pour la tunnelisation du RTSP/RTP par HTTP."
