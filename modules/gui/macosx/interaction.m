@@ -122,7 +122,7 @@
         [o_prog_bar setUsesThreadedAnimation: YES];
     }
 
-    NSString *o_title = [NSString stringWithUTF8String:p_dialog->psz_title ? p_dialog->psz_title : "title"];
+    NSString *o_title = [NSString stringWithUTF8String:p_dialog->psz_title ? p_dialog->psz_title : _("Error")];
     NSString *o_description = [NSString stringWithUTF8String:p_dialog->psz_description ? p_dialog->psz_description : ""];
     
     vout_thread_t *p_vout = vlc_object_find( VLCIntf, VLC_OBJECT_VOUT, FIND_ANYWHERE );
@@ -145,13 +145,21 @@
         o_window = [NSApp mainWindow];
     }
     
+#if 0
     msg_Dbg( p_intf, "Title: %s", [o_title UTF8String] );
     msg_Dbg( p_intf, "Description: %s", [o_description UTF8String] );
+#endif
     if( p_dialog->i_id == DIALOG_ERRORS )
     {
         for( i = 0; i < p_dialog->i_widgets; i++ )
         {
-            msg_Err( p_intf, "Error: %s", p_dialog->pp_widgets[i]->psz_text );
+            msg_Dbg( p_intf, "error panel requested" );
+            /* make sure that the descriptive message is filled */
+            if( o_description == NULL || o_description == @"" )
+                o_description = [NSString stringWithUTF8String: p_dialog->pp_widgets[i]->psz_text];
+            NSBeginInformationalAlertSheet( o_title, _NS("OK"), nil, nil, 
+                                            o_window, self, @selector(sheetDidEnd: returnCode: contextInfo:), 
+                                            NULL, nil, o_description );
         }
     }
     else
@@ -173,8 +181,9 @@
         else if( p_dialog->i_flags & DIALOG_YES_NO_CANCEL )
         {
             msg_Dbg( p_intf, "requested flag: DIALOG_YES_NO_CANCEL" );
-            NSBeginInformationalAlertSheet( o_title, @"Yes", @"No", @"Cancel", \
-                o_window, self,@selector(sheetDidEnd: returnCode: contextInfo:),\
+            NSBeginInformationalAlertSheet( o_title, _NS("Yes"), _NS("No"), 
+                _NS("Cancel"), o_window, self,
+                @selector(sheetDidEnd: returnCode: contextInfo:),
                 NULL, nil, o_description );
         }
         else if( p_dialog->i_type & WIDGET_PROGRESS )
