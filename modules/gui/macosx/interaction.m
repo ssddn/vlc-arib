@@ -154,12 +154,6 @@
         for( i = 0; i < p_dialog->i_widgets; i++ )
         {
             msg_Dbg( p_intf, "error panel requested" );
-            /* make sure that the descriptive message is filled */
-            if( o_description == NULL || o_description == @"" )
-                o_description = [NSString stringWithUTF8String: p_dialog->pp_widgets[i]->psz_text];
-            NSBeginInformationalAlertSheet( o_title, _NS("OK"), nil, nil, 
-                                            o_window, self, @selector(sheetDidEnd: returnCode: contextInfo:), 
-                                            NULL, nil, o_description );
         }
     }
     else
