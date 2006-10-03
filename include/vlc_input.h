@@ -285,6 +285,8 @@ static inline input_title_t *vlc_input_title_Duplicate( input_title_t *t )
 enum input_state_e
 {
     INIT_S,
+    OPENING_S,
+    BUFFERING_S,
     PLAYING_S,
     PAUSE_S,
     END_S
