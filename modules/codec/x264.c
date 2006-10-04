@@ -488,8 +488,8 @@ vlc_module_begin();
 /* Input/Output */
 
 #if defined(__DARWIN__) && defined(__INTEL__)
-    add_bool( SOUT_CFG_PREFIX "asm", 1, NULL, ASM_TEXT,
-              ASM_LONGTEXT, VLC_TRUE );
+    add_bool( SOUT_CFG_PREFIX "asm", 0, NULL, ASM_TEXT,
+              ASM_LONGTEXT, VLC_FALSE );
 #else
     add_bool( SOUT_CFG_PREFIX "asm", 1, NULL, ASM_TEXT,
               ASM_LONGTEXT, VLC_FALSE );
