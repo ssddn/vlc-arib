@@ -263,8 +263,6 @@ static int Open( vlc_object_t *p_this )
             i_port= 8080;
     }
 
-    /* Ugly hack to allow to run several HTTP servers on different ports. */
-
     /* maximum port is 65535 , strlen("65535") == 5 */
     psz_tmp = malloc( ( strlen( psz_address ) + 5 ) * sizeof( char) );
 
