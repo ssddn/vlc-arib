@@ -657,7 +657,7 @@ static vlc_bool_t insert_new_item( playlist_t *p_pl, playlist_item_t *p_cur,
                                    playlist_item_t **pp_new, char *psz_location )
 {
     char *psz_uri=NULL;
-    psz_uri = unescape_URI_duplicate( psz_location );
+    psz_uri = decode_URI_duplicate( psz_location );
 
     if ( psz_uri )
     {
