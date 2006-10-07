@@ -34,10 +34,6 @@
 
 #include <vlc/vlc.h>
 
-#ifndef WIN32
-#include <X11/Xlib.h>
-#endif
-
 # ifdef __cplusplus
 extern "C" {
 # endif
