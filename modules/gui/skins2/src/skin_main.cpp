@@ -62,13 +62,14 @@ static int DemuxControl( demux_t *, int, va_list );
 //---------------------------------------------------------------------------
 // Prototypes for configuration callbacks
 //---------------------------------------------------------------------------
+#ifdef WIN32
 static int onSystrayChange( vlc_object_t *pObj, const char *pVariable,
                             vlc_value_t oldVal, vlc_value_t newVal,
                             void *pParam );
 static int onTaskBarChange( vlc_object_t *pObj, const char *pVariable,
                             vlc_value_t oldVal, vlc_value_t newVal,
                             void *pParam );
-
+#endif
 
 //---------------------------------------------------------------------------
 // Open: initialize interface
@@ -351,7 +352,7 @@ static int DemuxControl( demux_t *p_demux, int i_query, va_list args )
 //---------------------------------------------------------------------------
 // Callbacks
 //---------------------------------------------------------------------------
-
+#ifdef WIN32
 /// Callback for the systray configuration option
 static int onSystrayChange( vlc_object_t *pObj, const char *pVariable,
                             vlc_value_t oldVal, vlc_value_t newVal,
@@ -418,7 +419,7 @@ static int onTaskBarChange( vlc_object_t *pObj, const char *pVariable,
     vlc_object_release( pIntf );
     return VLC_SUCCESS;
 }
-
+#endif
 
 //---------------------------------------------------------------------------
 // Module descriptor
