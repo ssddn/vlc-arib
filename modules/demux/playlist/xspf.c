@@ -57,7 +57,7 @@ int E_(Import_xspf)( vlc_object_t *p_this )
     return VLC_SUCCESS;
 }
 
-void E_(Close_xpsf)( vlc_object_t *p_this )
+void E_(Close_xspf)( vlc_object_t *p_this )
 {
     demux_t *p_demux = (demux_t *)p_this;
     msg_Dbg( p_demux, "closing xspf playlist" );	
