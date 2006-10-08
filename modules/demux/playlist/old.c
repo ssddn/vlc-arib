@@ -61,6 +61,12 @@ int E_(Import_Old)( vlc_object_t *p_this )
     return VLC_SUCCESS;
 }
 
+void E_(Close_Old)( vlc_object_t *p_this )
+{
+    demux_t *p_demux = (demux_t *)p_this;
+    msg_Dbg( p_demux, "close old playlist file" );
+}
+
 static int Demux( demux_t *p_demux)
 {
     char *psz_line;

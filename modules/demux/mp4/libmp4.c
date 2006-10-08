@@ -958,8 +958,11 @@ static int MP4_ReadBox_avcC( stream_t *p_stream, MP4_Box_t *p_box )
     p_avcC = p_box->data.p_avcC;
 
     p_avcC->i_avcC = i_read;
-    p_avcC->p_avcC = malloc( p_avcC->i_avcC );
-    memcpy( p_avcC->p_avcC, p_peek, i_read );
+    if( p_avcC->i_avcC > 0 )
+    {
+        p_avcC->p_avcC = malloc( p_avcC->i_avcC );
+        memcpy( p_avcC->p_avcC, p_peek, i_read );
+    }
 
     MP4_GET1BYTE( p_avcC->i_version );
     MP4_GET1BYTE( p_avcC->i_profile );
@@ -1031,6 +1034,12 @@ static void MP4_FreeBox_avcC( MP4_Box_t *p_box )
     MP4_Box_data_avcC_t *p_avcC = p_box->data.p_avcC;
     int i;
 
+    if( p_avcC->i_avcC > 0 )
+    {
+        if( p_avcC->p_avcC )
+             free( p_avcC->p_avcC );
+        p_avcC->p_avcC = NULL;
+    }
     for( i = 0; i < p_avcC->i_sps; i++ )
     {
         FREE( p_avcC->sps[i] );
@@ -1039,8 +1048,20 @@ static void MP4_FreeBox_avcC( MP4_Box_t *p_box )
     {
         FREE( p_avcC->pps[i] );
     }
-    if( p_avcC->i_sps > 0 ) FREE( p_avcC->sps );
-    if( p_avcC->i_pps > 0 ) FREE( p_avcC->pps );
+    if( p_avcC->i_sps > 0 )
+    {
+        FREE( p_avcC->sps );
+        p_avcC->sps = NULL;
+        FREE( p_avcC->i_sps_length );
+        p_avcC->i_sps_length = NULL;
+    }
+    if( p_avcC->i_pps > 0 )
+    {
+        FREE( p_avcC->pps );
+        p_avcC->pps = NULL;
+        FREE( p_avcC->i_pps_length );
+        p_avcC->i_pps_length = NULL;
+    }
 }
 
 static int MP4_ReadBox_sample_soun( stream_t *p_stream, MP4_Box_t *p_box )

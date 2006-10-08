@@ -27,6 +27,7 @@ char *E_(FindPrefix)( demux_t * );
 vlc_bool_t E_(FindItem)( demux_t *, playlist_t *, playlist_item_t **);
 
 int E_(Import_Old) ( vlc_object_t * );
+void E_(Close_Old) ( vlc_object_t *);
 
 int E_(Import_Native) ( vlc_object_t * );
 void E_(Close_Native) ( vlc_object_t * );
@@ -46,7 +47,8 @@ void E_(Close_DVB) ( vlc_object_t * );
 int E_(Import_podcast) ( vlc_object_t * );
 void E_(Close_podcast) ( vlc_object_t * );
 
-int E_(xspf_import_Activate) ( vlc_object_t * );
+int E_(Import_xspf) ( vlc_object_t * );
+void E_(Close_xspf) ( vlc_object_t * );
 
 int E_(Import_Shoutcast) ( vlc_object_t * );
 void E_(Close_Shoutcast) ( vlc_object_t * );
