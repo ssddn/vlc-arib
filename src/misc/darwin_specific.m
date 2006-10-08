@@ -62,6 +62,7 @@ static int FindLanguage( const char * psz_lang )
         "Brazilian Portuguese", "pt_BR",
         "Romanian", "ro",
         "Russian", "ru",
+	"Slovak", "sk",
         "Swedish", "sv",
         "Turkish", "tr",
         "Simplified Chinese", "zh_CN",
