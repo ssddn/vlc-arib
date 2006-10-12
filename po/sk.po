@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slovak translation for VLC Media Player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-09 23:21+0100\n"
-"PO-Revision-Date: 2006-10-07 20:13+0100\n"
+"POT-Creation-Date: 2006-10-12 20:19+0100\n"
+"PO-Revision-Date: 2006-10-12 20:22+0100\n"
 "Last-Translator: Marián Hikaník <podnety@mojepreklady.net>\n"
 "Language-Team: Marián Hikaník, translation controlled by: Pavel Kříž\n"
 "MIME-Version: 1.0\n"
@@ -965,25 +965,25 @@ msgstr "Prepnúť rozhranie"
 msgid "Add Interface"
 msgstr "Pridať rozhranie"
 
+#: src/interface/interface.c:378
+msgid "Console"
+msgstr "Konzola"
+
 #: src/interface/interface.c:380
-#, fuzzy
 msgid "Telnet Interface"
-msgstr "Rozhranie"
+msgstr "Rozhranie Telnet"
 
 #: src/interface/interface.c:382
-#, fuzzy
 msgid "Web Interface"
-msgstr "Rozhranie"
+msgstr "Webové rozhranie"
 
 #: src/interface/interface.c:384
-#, fuzzy
 msgid "Debug logging"
-msgstr "Zaznamenávanie do súboru"
+msgstr "Rozhranie pre záznam informácií pre ladenie"
 
 #: src/interface/interface.c:386
-#, fuzzy
 msgid "Mouse Gestures"
-msgstr "Gestá"
+msgstr "Rozhranie pre gestá pomocou myši"
 
 #: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1684
 #: src/misc/modules.c:1988
@@ -1109,6 +1109,10 @@ msgstr "Japonsky"
 #: src/libvlc.h:40 src/misc/iso-639_def.h:79
 msgid "Georgian"
 msgstr "Gruzínsky"
+
+#: src/libvlc.h:40 src/misc/iso-639_def.h:125
+msgid "Malay"
+msgstr "Malajsky"
 
 #: src/libvlc.h:40 src/misc/iso-639_def.h:111
 msgid "Korean"
@@ -4228,10 +4232,6 @@ msgstr "Maori"
 msgid "Marathi"
 msgstr " Marathi"
 
-#: src/misc/iso-639_def.h:125
-msgid "Malay"
-msgstr "Malajsky"
-
 #: src/misc/iso-639_def.h:126
 msgid "Malagasy"
 msgstr " Malagasy"
@@ -5921,11 +5921,6 @@ msgstr "Oznamovať tento stream pomocou protokolu Bonjour."
 msgid "HTTP stream output"
 msgstr "Výstup HTTP streamu"
 
-#: modules/access_output/http.c:95 modules/control/http/http.c:61
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:472
-msgid "HTTP"
-msgstr "HTTP"
-
 #: modules/access_output/shout.c:58
 msgid "Stream name"
 msgstr "Názov streamu"
@@ -6013,11 +6008,6 @@ msgstr ""
 #: modules/access_output/udp.c:97
 msgid "UDP stream output"
 msgstr "Výstup streamu UDP"
-
-#: modules/access_output/udp.c:98
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:475
-msgid "UDP"
-msgstr "UDP"
 
 #: modules/access/pvr/pvr.c:49
 msgid ""
@@ -7255,7 +7245,7 @@ msgstr "Zvukový výstup Simple Direct Media Layer"
 
 #: modules/audio_output/waveout.c:144
 msgid "Win32 waveOut extension output"
-msgstr "Prípona výstupu Win32 waveOut"
+msgstr "Rozšírený výstup Win32 waveOut"
 
 #: modules/audio_output/waveout.c:386
 msgid "5.1"
@@ -7389,9 +7379,8 @@ msgid "AAC audio decoder (using libfaad2)"
 msgstr "AAC audio-dekodér (s použitím libfaad2)"
 
 #: modules/codec/faad.c:331
-#, fuzzy
 msgid "AAC extension"
-msgstr "Ignorované prípony"
+msgstr "Prípona AAC"
 
 #: modules/codec/fake.c:45 modules/video_output/image.c:79
 msgid "Image file"
@@ -8166,9 +8155,8 @@ msgstr ""
 "Pred otvorením súboru skúste manuálne nastaviť vhodnú znakovú sadu."
 
 #: modules/codec/svcdsub.c:42
-#, fuzzy
 msgid "Enable debug"
-msgstr "Zapnúť video"
+msgstr "Zapnúť analyzovanie"
 
 #: modules/codec/svcdsub.c:45
 msgid ""
@@ -8176,9 +8164,9 @@ msgid ""
 "calls                 1\n"
 "packet assembly info  2\n"
 msgstr ""
-"Táto hodnota (ak sa zobrazí binárne) môže byť aj maskou pre ladenie chýb\n"
-"volanie                 1\n"
-"kompletné informácie o pakete  2\n"
+"Táto hodnota (ak sa zobrazí binárne) môže byť aj maskou pre ladenie chýb:\n"
+"pre zobrazenie volaní zadajte hodnotu 1\n"
+"pre zobrazenie kompletných informácií o pakete zadajte hodnotu 2\n"
 
 #: modules/codec/svcdsub.c:50
 msgid "Philips OGT (SVCD subtitle) decoder"
@@ -8461,9 +8449,8 @@ msgstr ""
 "-6 až 6. Hodnota -6 = jemné filtrovanie, 6 = dôkladné filtrovanie."
 
 #: modules/codec/x264.c:106
-#, fuzzy
 msgid "H.264 level"
-msgstr "Max. úroveň"
+msgstr "Úroveň H.264"
 
 #: modules/codec/x264.c:107
 msgid ""
@@ -8471,20 +8458,22 @@ msgid ""
 "enforced; it's up to the user to select a level compatible with the rest of "
 "the encoding options. Range 1 to 5.1 (10 to 51 is also allowed)."
 msgstr ""
+"Tu môžete špecifikovať úroveň kodeku H.264. Úroveň, ktorú zadáte, si nebude "
+"program vynucovať; je len na užívateľovi, aby vybral úroveň kompatibilnú s "
+"ostatnými nastaveniami kódovania. Hodnoty, ktoré zadáte, musia byť v rozsahu "
+"od 1 do 5.1 (hodnoty od 10 do 51 sú tiež povolené)."
 
 #: modules/codec/x264.c:116
-#, fuzzy
 msgid "Interlaced mode"
-msgstr "Modul rozhrania"
+msgstr "Rozkladový mód"
 
 #: modules/codec/x264.c:117
-#, fuzzy
 msgid "Pure-interlaced mode."
-msgstr "Mód rozkladania"
+msgstr "Čistý rozkladový mód"
 
 #: modules/codec/x264.c:122
 msgid "Set QP"
-msgstr "Nastaviť QP"
+msgstr "Nastaviť kvantizačný parameter"
 
 #: modules/codec/x264.c:123
 msgid ""
@@ -8527,7 +8516,7 @@ msgstr "Max. krok pre nastavenie parametrov kvantizéra"
 
 #: modules/codec/x264.c:138
 msgid "Max QP step between frames."
-msgstr "Maximálny krok QP medzi jednotlivými snímkami."
+msgstr "Maximálny krok medzi jednotlivými snímkami."
 
 #: modules/codec/x264.c:140
 msgid "Average bitrate tolerance"
@@ -8569,55 +8558,61 @@ msgstr ""
 
 #: modules/codec/x264.c:156
 msgid "QP factor between I and P"
-msgstr "QP faktor medzi snímkami I a P"
+msgstr "Kvantizačný faktor medzi snímkami I a P"
 
 #: modules/codec/x264.c:157
 msgid "QP factor between I and P. Range 1.0 to 2.0."
 msgstr ""
-"QP faktor medzi snímkami I a P. Môžete zadávať hodnoty v rozsahu 1.0 - 2.0."
+"Kvantizačný faktor medzi snímkami I a P. Môžete zadávať hodnoty v rozsahu "
+"1.0 - 2.0."
 
 #: modules/codec/x264.c:160
 msgid "QP factor between P and B"
-msgstr "QP faktor medzi snímkami P a B"
+msgstr "Kvantizačný faktor medzi snímkami P a B"
 
 #: modules/codec/x264.c:161
 msgid "QP factor between P and B. Range 1.0 to 2.0."
 msgstr ""
-"QP faktor medzi snímkami P a B. Môžete zadávať hodnoty v rozsahu 1.0 - 2.0."
+"Kvantizačný faktor medzi snímkami P a B. Môžete zadávať hodnoty v rozsahu "
+"1.0 - 2.0."
 
 #: modules/codec/x264.c:163
 msgid "QP difference between chroma and luma"
-msgstr "Rozdiel QP medzi režimami chroma a luma"
+msgstr "Rozdiel kvantizačných parametrov medzi režimami chroma a luma"
 
 #: modules/codec/x264.c:164
 msgid "QP difference between chroma and luma."
-msgstr "Rozdiel QP medzi režimami chroma a luma."
+msgstr "Rozdiel kvantizačných parametrov medzi režimami chroma a luma."
 
 #: modules/codec/x264.c:166
 msgid "QP curve compression"
-msgstr "Kompresia krivky QP"
+msgstr "Kompresia krivky kvantizačného parametra"
 
 #: modules/codec/x264.c:167
 msgid "QP curve compression. Range 0.0 (CBR) to 1.0 (QCP)."
 msgstr ""
-"Kompresia krivky QP. Môžete zadávať hodnoty v rozsahu 0.0 (CBR) -  1.0 (QCP)."
+"Kompresia krivky kvantizačného parametra. Môžete zadávať hodnoty v rozsahu "
+"0.0 (CBR) -  1.0 (QCP)."
 
 #: modules/codec/x264.c:169 modules/codec/x264.c:173
 msgid "Reduce fluctuations in QP"
-msgstr "Redukovať výkyvy v QP"
+msgstr "Redukovať výkyvy v kvantizačných parametroch"
 
 #: modules/codec/x264.c:170
 msgid ""
 "This reduces the fluctuations in QP before curve compression. Temporally "
 "blurs complexity."
 msgstr ""
-"Týmto môžete zredukovať výkyvy v QP ešte predtým, že sa skomprimuje krivka. "
+"Týmto môžete zredukovať výkyvy v kvantizačných parametroch ešte predtým, že "
+"sa skomprimuje krivka. "
 
 #: modules/codec/x264.c:174
 msgid ""
 "This reduces the fluctations in QP after curve compression. Temporally blurs "
 "quants."
-msgstr "Týmto môžete zredukovať výkyvy v QP po kompresií krivky."
+msgstr ""
+"Týmto môžete zredukovať výkyvy v kvantizačných parametroch po kompresií "
+"krivky."
 
 #: modules/codec/x264.c:179
 msgid "Partitions to consider"
@@ -8633,26 +8628,26 @@ msgid ""
 " - all   : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
 "(p4x4 requires p8x8. i8x8 requires 8x8dct)."
 msgstr ""
-"Partície, zahrnuté do analyzačného módu: \n"
-"- žiadne : \n"
-"- rýchlo : i4x4\n"
-"- normálne: i4x4,p8x8,(i8x8)\n"
-"- pomaly:  i4x4,p8x8,(i8x8),b8x8\n"
-"- všetky : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
+"Partície, zahrnuté do analyzačného módu. Príkaz zadávajte v angličtine, v "
+"zátvorke je len preklad príkazu!\n"
+" - none  : (žiadne)\n"
+" - fast  : i4x4 (rýchle)\n"
+" - normal: i4x4,p8x8,(i8x8)   (normálne)\n"
+" - slow  : i4x4,p8x8,(i8x8),b8x8   (pomalé)\n"
+" - all   : i4x4,p8x8,(i8x8),b8x8,p4x4   (všetky)\n"
 "(p4x4 vyžaduje p8x8. i8x8 vyžaduje 8x8dct)."
 
 #: modules/codec/x264.c:188
 msgid "Direct MV prediction mode"
-msgstr "Predpovedný mód Direct MV"
+msgstr "Mód predpovedania Direct MV"
 
 #: modules/codec/x264.c:189
 msgid "Direct MV prediction mode."
-msgstr "Predpovedný mód Direct MV."
+msgstr "Mód predpovedania Direct MV."
 
 #: modules/codec/x264.c:192
-#, fuzzy
 msgid "Direct prediction size"
-msgstr "Predpovedný mód Direct MV"
+msgstr "Veľkosť priamej predpovede"
 
 #: modules/codec/x264.c:193
 msgid ""
@@ -8660,14 +8655,17 @@ msgid ""
 " -  1: 8x8\n"
 " - -1: smallest possible according to level\n"
 msgstr ""
+"Veľkosť priamej predpovede: - 0: 4x4\n"
+" -  1: 8x8\n"
+" - -1: najmenšia možná hodnota zodpovedajúca nastavenej úrovni\n"
 
 #: modules/codec/x264.c:199
 msgid "Weighted prediction for B-frames"
-msgstr "Posudzovanie a predpoveď výskytu B-snímok"
+msgstr "Vážená predpoveď výskytu B-snímok"
 
 #: modules/codec/x264.c:200
 msgid "Weighted prediction for B-frames."
-msgstr "Posudzovanie a predpoveď výskytu B-snímok."
+msgstr "Vážená predpoveď výskytu B-snímok."
 
 #: modules/codec/x264.c:202
 msgid "Integer pixel motion estimation method"
@@ -8750,7 +8748,7 @@ msgstr ""
 
 #: modules/codec/x264.c:238
 msgid "Decide references on a per partition basis"
-msgstr "O ref. snímkach rozhodovať na základe partície"
+msgstr "O referenčných snímkach rozhodovať na základe partície"
 
 #: modules/codec/x264.c:239
 msgid ""
@@ -8832,22 +8830,24 @@ msgstr ""
 "Redukcia šumu na Dct-doméne. Sem môžete zadávať hodnoty v rozsahu 10 - 1000."
 
 #: modules/codec/x264.c:274
-#, fuzzy
 msgid "Inter luma quantization deadzone"
-msgstr "Kvantizačný faktor pre I-snímky"
+msgstr "Neaktívna zóna pri kvantizácií typu Inter luma"
 
 #: modules/codec/x264.c:275
 msgid "Set the size of the inter luma quantization deadzone. Range 0 to 32."
 msgstr ""
+"Tu môžete nastaviť veľkosť neaktívnej zóny, ktorá sa bude používať pri "
+"kvantizácií typu Inter luma. Zadajte hodnotu v rozsahu od 0 do 32."
 
 #: modules/codec/x264.c:278
-#, fuzzy
 msgid "Intra luma quantization deadzone"
-msgstr "Kvantizačný faktor pre I-snímky"
+msgstr "Neaktívna zóna pri kvantizácií typu Inter luma"
 
 #: modules/codec/x264.c:279
 msgid "Set the size of the intra luma quantization deadzone. Range 0 to 32."
 msgstr ""
+"Tu môžete nastaviť veľkosť neaktívnej zóny, ktorá sa bude používať pri "
+"kvantizácií typu Inter luma. Zadajte hodnotu v rozsahu od 0 do 32."
 
 #: modules/codec/x264.c:285
 msgid "CPU optimizations"
@@ -8871,7 +8871,7 @@ msgstr ""
 
 #: modules/codec/x264.c:292
 msgid "SSIM computation"
-msgstr "Vykalkulovanie SMB"
+msgstr "Vykalkulovať SMB"
 
 #: modules/codec/x264.c:293
 msgid ""
@@ -8900,22 +8900,23 @@ msgstr "Zobrazovať štatistiky pre každú snímku."
 
 #: modules/codec/x264.c:303
 msgid "SPS and PPS id numbers"
-msgstr ""
+msgstr "Identifikačné čísla SPS a PPS"
 
 #: modules/codec/x264.c:304
 msgid ""
 "Set SPS and PPS id numbers to allow concatenating streams with different "
 "settings."
 msgstr ""
+"Nastaviť identifikačné čísla SPS a PPS - tieto čísla umožňujú zreťazenie "
+"streamov s rozdielnymi nastaveniami."
 
 #: modules/codec/x264.c:308
-#, fuzzy
 msgid "Access unit delimiters"
-msgstr "Prístupové filtre"
+msgstr "Oddeľovače prístupových bodov"
 
 #: modules/codec/x264.c:309
 msgid "Generate access unit delimiter NAL units."
-msgstr ""
+msgstr "Generovať oddeľovače prístupových bodov pre NAL jednotky."
 
 #: modules/codec/x264.c:315
 msgid "dia"
@@ -9110,6 +9111,11 @@ msgstr "Súbor s certifikátmi dôveryhodných serverov x509 PEM v HTTP rozhran�
 #: modules/control/http/http.c:58
 msgid "HTTP interace Certificates Revocation List file."
 msgstr "Súbor s odvolanými certifikátmi v rozhraní HTTP"
+
+#: modules/control/http/http.c:61
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:472
+msgid "HTTP"
+msgstr "HTTP"
 
 #: modules/control/http/http.c:62
 msgid "HTTP remote control interface"
@@ -10260,9 +10266,10 @@ msgstr "Analyzátor Kasenna MediaBase"
 #: modules/demux/subtitle.c:47
 msgid "Apply a delay to all subtitles (in 1/10s, eg 100 means 10s)."
 msgstr ""
+"Aplikovať oneskorenie na všetky titulky (oneskorenie sa udáva v desatinách "
+"sekundy, hodnota 100 teda napríklad znamená oneskorenie 10s)."
 
 #: modules/demux/subtitle.c:49
-#, fuzzy
 msgid ""
 "Override the normal frames per second settings. This will only work with "
 "MicroDVD and SubRIP (SRT) subtitles."
@@ -10276,6 +10283,10 @@ msgid ""
 "\"ssa1\", \"ssa2-4\", \"ass\", \"vplayer\" \"sami\", \"dvdsubtitle\" and "
 "\"auto\" (meaning autodetection, this should always work)."
 msgstr ""
+"Vynútiť si formát titulkov. Platné hodnoty sú: \"microdvd\", \"subrip\",  "
+"\"ssa1\", \"ssa2-4\", \"ass\", \"vplayer\" \"sami\", \"dvdsubtitle\" a \"auto"
+"\" (Hodnota auto = automaticky detekovať formát titulkov. Táto voľba by mala "
+"fungovať vždy.)."
 
 #: modules/demux/subtitle.c:64
 msgid "Text subtitles parser"
@@ -13856,6 +13867,10 @@ msgstr "MMSH"
 msgid "RTP"
 msgstr "RTP"
 
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:475
+msgid "UDP"
+msgstr "UDP"
+
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:592
 msgid "Group name"
 msgstr "Názov skupiny"
@@ -14189,14 +14204,15 @@ msgstr ""
 
 #: modules/gui/wxwidgets/extrapanel.cpp:485
 msgid "Smooth :"
-msgstr ""
+msgstr "Plynulosť:"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:516
-#, fuzzy
 msgid ""
 "Preamp\n"
 "12.0dB"
-msgstr "Predzosilnenie"
+msgstr ""
+"Predzosilnenie\n"
+"12.0dB"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:999
 msgid ""
@@ -14598,7 +14614,7 @@ msgstr "Modul rozhrania wxWidgets"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:165
 msgid "last config"
-msgstr ""
+msgstr "Posledná konfigurácia"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:170
 msgid "wxWidgets dialogs provider"
@@ -15001,10 +15017,6 @@ msgstr "Growl UDP port"
 msgid "Growl UDP port on the server."
 msgstr "UDP port na Growl-serveri."
 
-#: modules/misc/growl.c:73
-msgid "Growl"
-msgstr "Growl"
-
 #: modules/misc/growl.c:74
 msgid "Growl Notification Plugin"
 msgstr "Notifikačný prídavný modul Growl"
@@ -15105,10 +15117,6 @@ msgid ""
 msgstr ""
 "Formát príkazu, ktorý sa odosiela do siete MSN {0} Umelec, {1} Titul, {2} "
 "Album. Predvolené hodnoty sú \"Umelec - Titul\" ({0} - {1})."
-
-#: modules/misc/msn.c:71
-msgid "MSN"
-msgstr "MSN"
 
 #: modules/misc/msn.c:72
 msgid "MSN Now-Playing"
@@ -18247,6 +18255,12 @@ msgstr "Farba textu zobrazovaného vo výstupe XOSD."
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "Rozhranie XOSD"
+
+#~ msgid "Growl"
+#~ msgstr "Growl"
+
+#~ msgid "MSN"
+#~ msgstr "MSN"
 
 #, fuzzy
 #~ msgid "Select one or more files to open"

@@ -375,7 +375,7 @@ static void RunInterface( intf_thread_t *p_intf )
     text.psz_string = _("Add Interface");
     var_Change( p_intf, "intf-add", VLC_VAR_SETTEXT, &text, NULL );
 
-    val.psz_string = "rc"; text.psz_string = "Console";
+    val.psz_string = "rc"; text.psz_string = _("Console");
     var_Change( p_intf, "intf-add", VLC_VAR_ADDCHOICE, &val, &text );
     val.psz_string = "telnet"; text.psz_string = _("Telnet Interface");
     var_Change( p_intf, "intf-add", VLC_VAR_ADDCHOICE, &val, &text );
