@@ -692,7 +692,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
         else
         {
             if ( VLCIntf && !(p_vout->b_fullscreen) &&
-                        !(var_GetBool( p_real_vout, "macosx-background" )) &&
+                        !(var_GetBool( p_vout, "macosx-background" )) &&
                         var_GetBool( p_vout, "macosx-embedded") )
             {
                 o_return = [[[VLCMain sharedInstance] getEmbeddedList]
@@ -913,8 +913,8 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     b_init_ok = VLC_FALSE;
 
     p_real_vout = [VLCVoutView getRealVout: p_vout];
-    i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
-    b_black = var_GetBool( p_real_vout->p_vlc, "macosx-black" );
+    i_device = var_GetInteger( p_real_vout->p_libvlc, "video-device" );
+    b_black = var_GetBool( p_vout, "macosx-black" );
 
     /* Find out on which screen to open the window */
     if( i_device <= 0 || i_device > (int)[o_screens count] )
@@ -944,7 +944,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
               backing: NSBackingStoreBuffered
               defer: YES screen: o_screen];
 
-        if( var_GetBool( p_real_vout, "macosx-black" ) )
         if( b_black == VLC_TRUE )
         {
             CGAcquireDisplayFadeReservation(kCGMaxDisplayReservationInterval, &token);
@@ -993,7 +992,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
             CGReleaseDisplayFadeReservation( token);
         }
     }
-    else if( var_GetBool( p_real_vout, "macosx-background" ) )
+    else if( var_GetBool( p_vout, "macosx-background" ) )
     {
         NSRect screen_rect = [o_screen frame];
         screen_rect.origin.x = screen_rect.origin.y = 0;
