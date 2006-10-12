@@ -46,6 +46,7 @@ SOURCES_activex = \
     plugin.h \
     axvlc_idl.c \
     axvlc_idl.h \
+    guiddef.h \
     $(NULL)
 
 DIST_rsrc = \
