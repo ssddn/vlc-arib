@@ -1156,6 +1156,8 @@ static void ASF_FreeObject_extended_content_description( asf_object_t *p_obj)
         FREE( p_ec->ppsz_name[i] );
         FREE( p_ec->ppsz_value[i] );
     }
+    FREE( p_ec->ppsz_name );
+    FREE( p_ec->ppsz_value );
 }
 
 

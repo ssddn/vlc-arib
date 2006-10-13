@@ -888,6 +888,7 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
                     {
                         TAB_APPEND( p_input->i_slave, p_input->slave, sub );
                     }
+                    else free( sub );
                 }
                 free( subs[i] );
             }
@@ -923,6 +924,7 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
                 {
                     TAB_APPEND( p_input->i_slave, p_input->slave, slave );
                 }
+                else free( slave );
                 psz = psz_delim;
             }
         }
@@ -1710,6 +1712,7 @@ static vlc_bool_t Control( input_thread_t *p_input, int i_type,
                 }
                 else
                 {
+                    free( slave );
                     msg_Warn( p_input, "failed to add %s as slave",
                               val.psz_string );
                 }
@@ -2700,6 +2703,7 @@ vlc_bool_t input_AddSubtitles( input_thread_t *p_input, char *psz_subtitle,
             var_Change( p_input, "spu-es", VLC_VAR_FREELIST, &list, NULL );
         }
     }
+    else free( sub );
 
     return VLC_TRUE;
 }

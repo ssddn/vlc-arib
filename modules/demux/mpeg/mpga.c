@@ -304,7 +304,9 @@ static int Demux( demux_t *p_demux )
     {
         p_sys->b_start = VLC_FALSE;
         p_block_in = p_sys->p_block_in;
+        p_sys->p_block_in = NULL;
         p_block_out = p_sys->p_block_out;
+        p_sys->p_block_out = NULL;
     }
     else
     {
@@ -355,6 +357,7 @@ static void Close( vlc_object_t * p_this )
     demux_sys_t *p_sys = p_demux->p_sys;
 
     if( p_sys->meta ) vlc_meta_Delete( p_sys->meta );
+    if( p_sys->p_block_out ) block_Release( p_sys->p_block_out );
 
     if( p_sys->p_packetizer && p_sys->p_packetizer->p_module )
         module_Unneed( p_sys->p_packetizer, p_sys->p_packetizer->p_module );
