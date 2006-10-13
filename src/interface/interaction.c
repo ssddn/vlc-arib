@@ -441,10 +441,12 @@ int __intf_UserLoginPassword( vlc_object_t *p_this,
 
     i_ret = intf_Interact( p_this, p_new );
 
-    if( i_ret != DIALOG_CANCELLED )
+    if( i_ret != DIALOG_CANCELLED && i_ret != VLC_EGENERIC )
     {
-        *ppsz_login = strdup( p_new->pp_widgets[1]->val.psz_string );
-        *ppsz_password = strdup( p_new->pp_widgets[2]->val.psz_string );
+        *ppsz_login = p_new->pp_widgets[1]->val.psz_string? 
+                                strdup( p_new->pp_widgets[1]->val.psz_string ) : NULL;
+        *ppsz_password = p_new->pp_widgets[2]->val.psz_string?
+                                strdup( p_new->pp_widgets[2]->val.psz_string ) : NULL;
     }
     return i_ret;
 }
