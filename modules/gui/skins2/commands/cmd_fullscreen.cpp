@@ -36,7 +36,10 @@ void CmdFullscreen::execute()
     }
 
     pVout = (vout_thread_t *)vlc_object_find( getIntf()->p_sys->p_input,
-                                              VLC_OBJECT_VOUT, FIND_ANYWHERE );
+                                            VLC_OBJECT_VOUT, FIND_CHILD );
+    if( !pVout )
+        pVout = (vout_thread_t *)vlc_object_find( getIntf()->p_sys->p_input,
+                                            VLC_OBJECT_VOUT, FIND_ANYWHERE );
     if( pVout )
     {
         // Switch to fullscreen
