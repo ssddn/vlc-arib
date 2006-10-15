@@ -413,7 +413,6 @@ static char *TitleGet( vlc_object_t *p_this )
 
     if( p_input )
     {
-        vlc_object_yield( p_input );
         psz_title = vlc_input_item_GetInfo( p_input->input.p_item,
                         _("Meta-information"), _(VLC_META_TITLE) );
         if( !*psz_title )
