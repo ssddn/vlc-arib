@@ -1208,7 +1208,11 @@ ifeq ($(HOST),i686-apple-darwin8)
 else
 .x264: x264
 endif
+ifeq ($(HOST),i686-apple-darwin8)
+	(cd $<; ./configure $(X264CONF) --prefix="$(PREFIX)" && patch -p0 <../Patches/x264-osx-intel.patch && make && make install)
+else
 	(cd $<; ./configure $(X264CONF) --prefix="$(PREFIX)" && make && make install)
+endif
 	touch $@
 
 CLEAN_FILE += .x264
