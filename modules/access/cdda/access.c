@@ -495,7 +495,7 @@ CDDASeek( access_t * p_access, int64_t i_pos )
     }
     
     p_access->info.i_pos = i_pos;
-
+    p_access->info.b_eof = VLC_FALSE;
     return VLC_SUCCESS;
 }
 
