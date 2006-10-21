@@ -6,13 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slovak translation for VLC Media Player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-12 20:19+0100\n"
+"POT-Creation-Date: 2006-10-21 22:05+0200\n"
 "PO-Revision-Date: 2006-10-12 20:22+0100\n"
 "Last-Translator: Marián Hikaník <podnety@mojepreklady.net>\n"
 "Language-Team: Marián Hikaník, translation controlled by: Pavel Kříž\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: include/vlc/vlc.h:578
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"Tento program je poskytovaný BEZ akejkoľvek záruky.\n"
+"Môžete ho redistribuovať za dodržania podmienok GNU General Public "
+"Licencie;\n"
+"pre detailnejšie informácie si prečítajte text v súbore COPYING.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -25,7 +37,7 @@ msgstr ""
 "\"."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1883 src/input/input.c:1943 src/playlist/item.c:369
+#: src/input/input.c:1886 src/input/input.c:1946 src/playlist/item.c:369
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -65,7 +77,7 @@ msgstr "Nastavenia kontrolných rozhraní programu VLC"
 msgid "Hotkeys settings"
 msgstr "Nastavenia horúcich klávesov"
 
-#: include/vlc_config_cat.h:54 src/input/es_out.c:1592 src/libvlc.h:1178
+#: include/vlc_config_cat.h:54 src/input/es_out.c:1595 src/libvlc.h:1178
 #: modules/gui/beos/InterfaceWindow.cpp:280 modules/gui/macosx/extended.m:81
 #: modules/gui/macosx/intf.m:553 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:96 modules/gui/macosx/wizard.m:421
@@ -111,7 +123,7 @@ msgstr "Toto sú všeobecné nastavenia výstupných modulov zvuku."
 
 #: include/vlc_config_cat.h:71 src/libvlc.h:1508
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:578
-#: modules/gui/wxwidgets/menus.cpp:280 modules/stream_out/transcode.c:279
+#: modules/gui/wxwidgets/menus.cpp:282 modules/stream_out/transcode.c:279
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
@@ -119,7 +131,7 @@ msgstr "Rôzne"
 msgid "Miscellaneous audio settings and modules."
 msgstr "Rôzne nastavenia zvuku a modulov"
 
-#: include/vlc_config_cat.h:75 src/input/es_out.c:1620 src/libvlc.h:1213
+#: include/vlc_config_cat.h:75 src/input/es_out.c:1623 src/libvlc.h:1213
 #: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:566
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:86
 #: modules/gui/macosx/wizard.m:422
@@ -370,7 +382,7 @@ msgstr ""
 msgid "General playlist behaviour"
 msgstr "Všeobecné nastavenia správania sa playlistu"
 
-#: include/vlc_config_cat.h:188 modules/gui/macosx/playlist.m:486
+#: include/vlc_config_cat.h:188 modules/gui/macosx/playlist.m:490
 msgid "Services discovery"
 msgstr "Zisťovacie moduly"
 
@@ -414,7 +426,7 @@ msgstr "Iné pokročilé nastavenia"
 
 #: include/vlc_config_cat.h:203 modules/gui/macosx/open.m:162
 #: modules/gui/macosx/open.m:379 modules/gui/pda/pda_interface.c:548
-#: modules/gui/wxwidgets/dialogs/open.cpp:506
+#: modules/gui/wxwidgets/dialogs/open.cpp:503
 msgid "Network"
 msgstr "Sieť"
 
@@ -485,11 +497,11 @@ msgstr ""
 "pouzite prosim prikazovy riadok, prejdite do priecinka kde je nainstalovany "
 "program VLC a zadajte prikaz  \"vlc -I wx\"\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1293 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:318
+#: modules/gui/macosx/playlist.m:1297 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:156
-#: modules/misc/notify.c:159
+#: modules/misc/notify.c:159 modules/visualization/goom.c:417
 msgid "Meta-information"
 msgstr "Meta-Informácia"
 
@@ -497,20 +509,20 @@ msgstr "Meta-Informácia"
 #: modules/gui/beos/MediaControlView.cpp:1233 modules/gui/macosx/intf.m:548
 #: modules/gui/macosx/intf.m:549 modules/gui/macosx/open.m:168
 #: modules/gui/macosx/playlistinfo.m:57 modules/gui/macosx/wizard.m:391
-#: modules/gui/wxwidgets/dialogs/open.cpp:760
-#: modules/gui/wxwidgets/dialogs/open.cpp:1663 modules/mux/asf.c:48
+#: modules/gui/wxwidgets/dialogs/open.cpp:757
+#: modules/gui/wxwidgets/dialogs/open.cpp:1660 modules/mux/asf.c:48
 msgid "Title"
 msgstr "Titul"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:134 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:134
+#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Autor"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1293
+#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:318
+#: modules/gui/macosx/playlist.m:1297 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
 msgstr "Herec"
 
@@ -548,11 +560,11 @@ msgid "Setting"
 msgstr "Nastavenie"
 
 #: include/vlc_meta.h:40 modules/gui/macosx/open.m:181
-#: modules/gui/wxwidgets/dialogs/open.cpp:874
+#: modules/gui/wxwidgets/dialogs/open.cpp:871
 msgid "URL"
 msgstr "URL adresa"
 
-#: include/vlc_meta.h:41 src/input/es_out.c:1584 src/libvlc.h:96
+#: include/vlc_meta.h:41 src/input/es_out.c:1587 src/libvlc.h:96
 #: modules/gui/beos/InterfaceWindow.cpp:276
 msgid "Language"
 msgstr "Jazyk"
@@ -653,18 +665,6 @@ msgstr "Názov kodeku"
 msgid "Codec Description"
 msgstr "Popis kodeku"
 
-#: include/vlc/vlc.h:578
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"Tento program je poskytovaný BEZ akejkoľvek záruky.\n"
-"Môžete ho redistribuovať za dodržania podmienok GNU General Public "
-"Licencie;\n"
-"pre detailnejšie informácie si prečítajte text v súbore COPYING.\n"
-
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:361 src/libvlc.h:408 src/video_output/video_output.c:379
 #: modules/codec/ffmpeg/postprocess.c:94
@@ -712,7 +712,7 @@ msgstr "Stereo"
 #: src/audio_output/output.c:107 src/audio_output/output.c:143
 #: src/libvlc.h:267 modules/codec/dvbsub.c:64 modules/codec/subsdec.c:129
 #: modules/control/gestures.c:86 modules/video_filter/logo.c:95
-#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:172
+#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:170
 #: modules/video_filter/osdmenu.c:78 modules/video_filter/rss.c:160
 #: modules/video_filter/time.c:99
 msgid "Left"
@@ -721,7 +721,7 @@ msgstr "Doľava"
 #: src/audio_output/output.c:109 src/audio_output/output.c:145
 #: src/libvlc.h:267 modules/codec/dvbsub.c:64 modules/codec/subsdec.c:129
 #: modules/control/gestures.c:86 modules/video_filter/logo.c:95
-#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:172
+#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:170
 #: modules/video_filter/osdmenu.c:78 modules/video_filter/rss.c:160
 #: modules/video_filter/time.c:99
 msgid "Right"
@@ -808,80 +808,80 @@ msgstr "Stopa %i"
 msgid "Program"
 msgstr "Program"
 
-#: src/input/es_out.c:1579 modules/codec/faad.c:329
+#: src/input/es_out.c:1582 modules/codec/faad.c:329
 #, c-format
 msgid "Stream %d"
 msgstr "Tok %d"
 
-#: src/input/es_out.c:1581 modules/gui/macosx/wizard.m:426
+#: src/input/es_out.c:1584 modules/gui/macosx/wizard.m:426
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:832
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:872
 msgid "Codec"
 msgstr "Kodek"
 
-#: src/input/es_out.c:1592 src/input/es_out.c:1620 src/input/es_out.c:1647
+#: src/input/es_out.c:1595 src/input/es_out.c:1623 src/input/es_out.c:1650
 #: modules/gui/macosx/output.m:153
 msgid "Type"
 msgstr "Typ"
 
-#: src/input/es_out.c:1595 modules/codec/faad.c:333
+#: src/input/es_out.c:1598 modules/codec/faad.c:333
 #: modules/gui/macosx/output.m:176
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:857
 msgid "Channels"
 msgstr "Kanály"
 
-#: src/input/es_out.c:1600 modules/codec/faad.c:335
+#: src/input/es_out.c:1603 modules/codec/faad.c:335
 msgid "Sample rate"
 msgstr "Vzorkovacia frekvencia"
 
-#: src/input/es_out.c:1601 modules/codec/faad.c:335
+#: src/input/es_out.c:1604 modules/codec/faad.c:335
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
 
-#: src/input/es_out.c:1607
+#: src/input/es_out.c:1610
 msgid "Bits per sample"
 msgstr "bitov na vzorok"
 
-#: src/input/es_out.c:1612 modules/access/pvr/pvr.c:84
+#: src/input/es_out.c:1615 modules/access/pvr/pvr.c:84
 #: modules/demux/playlist/b4s.c:349 modules/demux/playlist/shoutcast.c:472
 msgid "Bitrate"
 msgstr "Dátový tok"
 
-#: src/input/es_out.c:1613
+#: src/input/es_out.c:1616
 #, c-format
 msgid "%d kb/s"
 msgstr "%d kb/s"
 
-#: src/input/es_out.c:1624
+#: src/input/es_out.c:1627
 msgid "Resolution"
 msgstr "Rozlíšenie"
 
-#: src/input/es_out.c:1630
+#: src/input/es_out.c:1633
 msgid "Display resolution"
 msgstr "Rozlíšenie obrazovky"
 
-#: src/input/es_out.c:1640 modules/access/screen/screen.c:41
+#: src/input/es_out.c:1643 modules/access/screen/screen.c:41
 msgid "Frame rate"
 msgstr "Rýchlosť snímkovania"
 
-#: src/input/es_out.c:1647
+#: src/input/es_out.c:1650
 msgid "Subtitle"
 msgstr "Titulky"
 
-#: src/input/input.c:1897 src/input/input.c:1901
+#: src/input/input.c:1900 src/input/input.c:1904
 #: modules/gui/macosx/output.m:143 modules/gui/macosx/output.m:251
 #: modules/gui/macosx/output.m:391
 msgid "Stream"
 msgstr "Stream"
 
-#: src/input/input.c:1943 src/playlist/item.c:369
+#: src/input/input.c:1946 src/playlist/item.c:369
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:135
 msgid "Duration"
 msgstr "Trvanie"
 
-#: src/input/input.c:2124 src/input/input.c:2196
+#: src/input/input.c:2127 src/input/input.c:2199
 msgid "Errors"
 msgstr "Chyby"
 
@@ -895,7 +895,7 @@ msgstr "Programy"
 
 #: src/input/var.c:142 modules/gui/beos/MediaControlView.cpp:1234
 #: modules/gui/macosx/intf.m:550 modules/gui/macosx/intf.m:551
-#: modules/gui/macosx/open.m:169 modules/gui/wxwidgets/dialogs/open.cpp:765
+#: modules/gui/macosx/open.m:169 modules/gui/wxwidgets/dialogs/open.cpp:762
 msgid "Chapter"
 msgstr "Kapitola"
 
@@ -1590,48 +1590,48 @@ msgstr ""
 
 #: src/libvlc.h:267 modules/codec/dvbsub.c:64 modules/codec/subsdec.c:129
 #: modules/video_filter/logo.c:95 modules/video_filter/marq.c:107
-#: modules/video_filter/mosaic.c:172 modules/video_filter/osdmenu.c:78
+#: modules/video_filter/mosaic.c:170 modules/video_filter/osdmenu.c:78
 #: modules/video_filter/rss.c:160 modules/video_filter/time.c:99
 msgid "Center"
 msgstr "Vycentrovať"
 
 #: src/libvlc.h:267 modules/codec/dvbsub.c:64 modules/video_filter/logo.c:95
-#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:172
+#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:170
 #: modules/video_filter/osdmenu.c:78 modules/video_filter/rss.c:160
 #: modules/video_filter/time.c:99
 msgid "Top"
 msgstr "Nahor"
 
 #: src/libvlc.h:267 modules/codec/dvbsub.c:64 modules/video_filter/logo.c:95
-#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:172
+#: modules/video_filter/marq.c:107 modules/video_filter/mosaic.c:170
 #: modules/video_filter/osdmenu.c:78 modules/video_filter/rss.c:160
 #: modules/video_filter/time.c:99
 msgid "Bottom"
 msgstr "Nadol"
 
 #: src/libvlc.h:268 modules/codec/dvbsub.c:65 modules/video_filter/logo.c:96
-#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:173
+#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:171
 #: modules/video_filter/osdmenu.c:79 modules/video_filter/rss.c:161
 #: modules/video_filter/time.c:100
 msgid "Top-Left"
 msgstr "Doľava-nahor"
 
 #: src/libvlc.h:268 modules/codec/dvbsub.c:65 modules/video_filter/logo.c:96
-#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:173
+#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:171
 #: modules/video_filter/osdmenu.c:79 modules/video_filter/rss.c:161
 #: modules/video_filter/time.c:100
 msgid "Top-Right"
 msgstr "Doprava-nahor"
 
 #: src/libvlc.h:268 modules/codec/dvbsub.c:65 modules/video_filter/logo.c:96
-#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:173
+#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:171
 #: modules/video_filter/osdmenu.c:79 modules/video_filter/rss.c:161
 #: modules/video_filter/time.c:100
 msgid "Bottom-Left"
 msgstr "Doľava-nadol"
 
 #: src/libvlc.h:268 modules/codec/dvbsub.c:65 modules/video_filter/logo.c:96
-#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:173
+#: modules/video_filter/marq.c:108 modules/video_filter/mosaic.c:171
 #: modules/video_filter/osdmenu.c:79 modules/video_filter/rss.c:161
 #: modules/video_filter/time.c:100
 msgid "Bottom-Right"
@@ -2028,7 +2028,7 @@ msgstr ""
 "zoznamu oddeľujte prosím čiarkou. Túto voľbou používajte len vtedy, ak "
 "chcete nechať načítať multi-programový stream (napríklad DVB stream)."
 
-#: src/libvlc.h:448 modules/gui/wxwidgets/dialogs/open.cpp:779
+#: src/libvlc.h:448 modules/gui/wxwidgets/dialogs/open.cpp:776
 msgid "Audio track"
 msgstr "Zvuková stopa"
 
@@ -2036,7 +2036,7 @@ msgstr "Zvuková stopa"
 msgid "Stream number of the audio track to use (from 0 to n)."
 msgstr "Streamovať túto zvukovú stopu (zadajte číslo v rozsahu od 0 do n)."
 
-#: src/libvlc.h:453 modules/gui/wxwidgets/dialogs/open.cpp:771
+#: src/libvlc.h:453 modules/gui/wxwidgets/dialogs/open.cpp:768
 msgid "Subtitles track"
 msgstr "Stopa s titulkami"
 
@@ -2330,7 +2330,7 @@ msgstr ""
 msgid "This is the default Audio CD device to use."
 msgstr "Toto je predvolená jednotka, ktorá sa používa pri čítaní Audio CD."
 
-#: src/libvlc.h:593 modules/gui/wxwidgets/dialogs/open.cpp:841
+#: src/libvlc.h:593 modules/gui/wxwidgets/dialogs/open.cpp:838
 msgid "Force IPv6"
 msgstr "Vynútiť si protokol IPv6"
 
@@ -3124,7 +3124,7 @@ msgstr "Vyberte si klávesu, ktorú chcete používať pre spomalenie prehrávan
 #: modules/gui/macosx/wizard.m:364 modules/gui/macosx/wizard.m:1604
 #: modules/gui/wxwidgets/interface.cpp:693
 #: modules/gui/wxwidgets/interface.cpp:1515
-#: modules/gui/wxwidgets/menus.cpp:259
+#: modules/gui/wxwidgets/menus.cpp:261
 msgid "Next"
 msgstr "Ďalej"
 
@@ -3139,7 +3139,7 @@ msgstr ""
 #: modules/gui/macosx/intf.m:538 modules/gui/macosx/intf.m:615
 #: modules/gui/macosx/intf.m:621 modules/gui/wxwidgets/interface.cpp:692
 #: modules/gui/wxwidgets/interface.cpp:1514
-#: modules/gui/wxwidgets/menus.cpp:258
+#: modules/gui/wxwidgets/menus.cpp:260
 msgid "Previous"
 msgstr "Dozadu"
 
@@ -3157,7 +3157,7 @@ msgstr ""
 #: modules/gui/wxwidgets/interface.cpp:676
 #: modules/gui/wxwidgets/interface.cpp:687
 #: modules/gui/wxwidgets/interface.cpp:1516
-#: modules/gui/wxwidgets/menus.cpp:257 modules/visualization/xosd.c:238
+#: modules/gui/wxwidgets/menus.cpp:259 modules/visualization/xosd.c:238
 msgid "Stop"
 msgstr "Stop"
 
@@ -4593,7 +4593,7 @@ msgid "Aspect-ratio"
 msgstr "Stranový pomer"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dvb/access.c:72 modules/access/dv.c:68
+#: modules/access/dv.c:68 modules/access/dvb/access.c:72
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
@@ -4613,7 +4613,7 @@ msgstr ""
 
 #: modules/access/cdda.c:58 modules/gui/macosx/open.m:176
 #: modules/gui/macosx/open.m:496 modules/gui/macosx/open.m:587
-#: modules/gui/wxwidgets/dialogs/open.cpp:699
+#: modules/gui/wxwidgets/dialogs/open.cpp:696
 msgid "Audio CD"
 msgstr "Audio CD"
 
@@ -4946,7 +4946,7 @@ msgstr ""
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:331
 #: modules/access/cdda/info.c:335 modules/access/dvdread.c:84
 #: modules/access/vcdx/info.c:88 modules/gui/macosx/open.m:161
-#: modules/gui/macosx/open.m:375 modules/gui/wxwidgets/dialogs/open.cpp:504
+#: modules/gui/macosx/open.m:375 modules/gui/wxwidgets/dialogs/open.cpp:501
 msgid "Disc"
 msgstr "Disk"
 
@@ -4959,10 +4959,10 @@ msgid "Tracks"
 msgstr "Stopy"
 
 #: modules/access/cdda/info.c:391 modules/access/cdda/info.c:813
-#: modules/access/cdda/info.c:860 modules/access/vcdx/access.c:472
+#: modules/access/cdda/info.c:860 modules/access/vcdx/access.c:473
 #: modules/access/vcdx/info.c:286 modules/access/vcdx/info.c:287
-#: modules/gui/wxwidgets/dialogs/open.cpp:1710
-#: modules/gui/wxwidgets/dialogs/open.cpp:1728
+#: modules/gui/wxwidgets/dialogs/open.cpp:1707
+#: modules/gui/wxwidgets/dialogs/open.cpp:1725
 msgid "Track"
 msgstr "Stopa"
 
@@ -5221,6 +5221,20 @@ msgstr "Obnoviť zoznam"
 msgid "Configure"
 msgstr "Konfigurovať"
 
+#: modules/access/dv.c:70
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr ""
+"Táto hodnota určuje, aká dĺžka DV streamov sa ukladá do vyrovnávacej pamäte. "
+"Táto hodnota sa udáva v milisekundách."
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr "Vstup pre digitálne video (Firewire/ieee1394)"
+
+#: modules/access/dv.c:75
+msgid "dv"
+msgstr "dv"
+
 #: modules/access/dvb/access.c:74
 msgid ""
 "Caching value for DVB streams. This value should be set in milliseconds."
@@ -5470,20 +5484,6 @@ msgstr "DVB vstup s podporou protokolu v412"
 msgid "HTTP server"
 msgstr "HTTP server"
 
-#: modules/access/dv.c:70
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr ""
-"Táto hodnota určuje, aká dĺžka DV streamov sa ukladá do vyrovnávacej pamäte. "
-"Táto hodnota sa udáva v milisekundách."
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr "Vstup pre digitálne video (Firewire/ieee1394)"
-
-#: modules/access/dv.c:75
-msgid "dv"
-msgstr "dv"
-
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
 msgstr "Uhol snímok na DVD"
@@ -5646,56 +5646,10 @@ msgstr "Vstup súboru"
 #: modules/gui/macosx/open.m:371 modules/gui/macosx/output.m:142
 #: modules/gui/macosx/output.m:230 modules/gui/macosx/output.m:369
 #: modules/gui/pda/pda_interface.c:366
-#: modules/gui/wxwidgets/dialogs/open.cpp:502
+#: modules/gui/wxwidgets/dialogs/open.cpp:499
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:471
 msgid "File"
 msgstr "Súbor"
-
-#: modules/access_filter/record.c:43
-msgid "Record directory"
-msgstr "Priečinok pre nahrávanie"
-
-#: modules/access_filter/record.c:45
-msgid "Directory where the record will be stored."
-msgstr "Priečiok, kam sa uloží nahrávka."
-
-#: modules/access_filter/timeshift.c:44
-msgid "Timeshift granularity"
-msgstr "Granularita (zrnitosť) pri časovom posune"
-
-#: modules/access_filter/timeshift.c:46
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr ""
-"Toto je veľkosť dočasných súborov, do ktorých sa budú ukladať časovo "
-"posunuté streamy."
-
-#: modules/access_filter/timeshift.c:48
-msgid "Timeshift directory"
-msgstr "Priečinok pre ukladanie časovo-posunutých súborov"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr ""
-"Priečinok, do ktorého sa budú ukladať súbory, na ktoré sa uplatil časový "
-"posun."
-
-#: modules/access_filter/timeshift.c:51
-msgid "Force use of the timeshift module"
-msgstr "Vynútiť si použitie modulu pre časový posun"
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-"Vynútiť si použitie modulov pre časový posun aj vtedy, ak prístup deklaruje, "
-"že dokáže kontrolovať rýchlosť, alebo pozastaviť prehrávanie."
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "Časový posun"
 
 #: modules/access/ftp.c:44
 msgid ""
@@ -5835,179 +5789,6 @@ msgstr "Vybrať stream s najväčším dátovým tokom pod touto hranicou."
 #: modules/access/mms/mms.c:62
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Vstup Microsoft Media Server (MMS)"
-
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "Fingovaný výstup streamu"
-
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "Fingovaný"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "Pripojiť k súboru"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr "Pripojenie k súboru (ak už nejaký existuje), nie jeho nahradenie."
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "Výstup streamovania súboru"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "Meno užívateľa"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr "Používateľské meno, ktoré je potrebné pre prístup k streamu."
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr "Používateľské heslo, ktoré je potrebné pre prístup k streamu."
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "MIME typ"
-
-#: modules/access_output/http.c:69
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr ""
-"Hodnota MIME vrátená serverom (ak nie je špecifikovaná tak je súbor "
-"detekovaný automaticky)."
-
-#: modules/access_output/http.c:73
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr ""
-"Cesta k certifikačnému súboru x509 PEM, ktorý sa používa pri prenose pomocou "
-"protokolu HTTPS."
-
-#: modules/access_output/http.c:76
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr ""
-"Cesta k súboru s privátnym kľúčom x509 PEM, ktorý sa používa pri prenose "
-"pomocou protokolu HTTPS. Ak súbor s privátnym kľúčom nemáte, ponechajte "
-"políčko prázdne. "
-
-#: modules/access_output/http.c:80
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr ""
-"Cesta k certifikátom dôveryhodných serverov, ktoré sa používajú pri prenose "
-"pomocou protokolu HTTPS. Ak certifikáty nemáte, ponechajte políčko prázdne."
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-"Cesta k zoznamu s odvolanými certifikátmi X509. Tento zoznam sa používa pri "
-"SSL-spojení. Ak takýto súbor nemáte, ponechajte políčko prázdne."
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr "Oznamovať stream pomocou Bonjour"
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr "Oznamovať tento stream pomocou protokolu Bonjour."
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "Výstup HTTP streamu"
-
-#: modules/access_output/shout.c:58
-msgid "Stream name"
-msgstr "Názov streamu"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr "Názov streamu/kanála, ktorý chcete zadať na server icecast."
-
-#: modules/access_output/shout.c:62
-msgid "Stream description"
-msgstr "Popis streamu"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr "Popis obsahu streamu alebo informácia o Vašom kanáli."
-
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "Streamovať MP 3 súbory"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-"Za normálnych okolností sa pri streamovaní vysielajú väčšinou Ogg-streamy. V "
-"prípade potreba sa však dajú tieto streamy previesť do formátu MP3 a vo "
-"formáte MP3 ich potom môžete odosielať na server icecast."
-
-#: modules/access_output/shout.c:73
-msgid "IceCAST output"
-msgstr "Výstup IceCAST"
-
-#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
-#: modules/demux/live555.cpp:62
-msgid "Caching value (ms)"
-msgstr "Hodnota ukladania do vyrovnávacej pamäte (ms)"
-
-#: modules/access_output/udp.c:77
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr ""
-"Hodnota ukladania do vyrovnávacej pamäte. Táto hodnota sa udáva v "
-"milisekundách."
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1846
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-msgid "Time-To-Live (TTL)"
-msgstr "Max. počet preskočení (TTL)"
-
-#: modules/access_output/udp.c:81
-msgid "Time-To-Live of the outgoing stream."
-msgstr "Maximálny počet preskočení výstupných streamov."
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "Skupinové pakety"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-"Pakety je možné odosielať jednotlivo, alebo v skupinách. Tu môžete určiť, "
-"koľko paketov sa odošle naraz. Odosielaním paketov v skupinách sa šetrí čas "
-"pri načítavaní jednotlivých paketov a zmenšuje sa zaťaženie systémov."
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr "Zápis vo formáte raw"
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-"Pakety sa budú odosielať priamo a ihneď, bez toho, aby si program zoraďoval "
-"pakety podľa veľkosti."
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "Výstup streamu UDP"
 
 #: modules/access/pvr/pvr.c:49
 msgid ""
@@ -6171,6 +5952,11 @@ msgstr "PVR"
 msgid "IVTV MPEG Encoding cards input"
 msgstr "Vstupy kódovacích kariet pre IVTV MPEG"
 
+#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
+#: modules/demux/live555.cpp:62
+msgid "Caching value (ms)"
+msgstr "Hodnota ukladania do vyrovnávacej pamäte (ms)"
+
 #: modules/access/rtsp/access.c:42
 msgid ""
 "Caching value for RTSP streams. This value should be set in milliseconds."
@@ -6291,7 +6077,7 @@ msgstr ""
 
 #: modules/access/udp.c:61 modules/gui/macosx/open.m:183
 #: modules/gui/macosx/open.m:654 modules/gui/macosx/open.m:692
-#: modules/gui/wxwidgets/dialogs/open.cpp:804
+#: modules/gui/wxwidgets/dialogs/open.cpp:801
 msgid "UDP/RTP"
 msgstr "UDP/RTP"
 
@@ -6453,7 +6239,7 @@ msgstr ""
 
 #: modules/access/vcd/vcd.c:46 modules/gui/macosx/open.m:175
 #: modules/gui/macosx/open.m:489 modules/gui/macosx/open.m:579
-#: modules/gui/wxwidgets/dialogs/open.cpp:698
+#: modules/gui/wxwidgets/dialogs/open.cpp:695
 msgid "VCD"
 msgstr "VCD"
 
@@ -6473,23 +6259,23 @@ msgstr "Horeuvedená správa mala neznámu úroveň zaznamenávania"
 msgid "The above message had unknown vcdimager log level"
 msgstr "Horeuvedenená správa má neznámu úroveň zaznamenávania"
 
-#: modules/access/vcdx/access.c:282 modules/access/vcdx/access.c:364
-#: modules/access/vcdx/access.c:690 modules/access/vcdx/info.c:290
+#: modules/access/vcdx/access.c:282 modules/access/vcdx/access.c:365
+#: modules/access/vcdx/access.c:691 modules/access/vcdx/info.c:290
 #: modules/access/vcdx/info.c:291
 msgid "Entry"
 msgstr "Záznam"
 
-#: modules/access/vcdx/access.c:409 modules/access/vcdx/info.c:102
+#: modules/access/vcdx/access.c:410 modules/access/vcdx/info.c:102
 msgid "Segments"
 msgstr "Segmenty"
 
-#: modules/access/vcdx/access.c:428 modules/access/vcdx/access.c:709
+#: modules/access/vcdx/access.c:429 modules/access/vcdx/access.c:710
 #: modules/access/vcdx/info.c:294 modules/access/vcdx/info.c:295
 #: modules/demux/mkv.cpp:5212
 msgid "Segment"
 msgstr "Segment"
 
-#: modules/access/vcdx/access.c:533
+#: modules/access/vcdx/access.c:534
 msgid "LID"
 msgstr "LID"
 
@@ -6634,6 +6420,220 @@ msgstr "Formát, ktorý sa bude používať v playliste, v políčku \"author\""
 #: modules/access/vcdx/vcd.c:143
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "Formát, ktorý sa bude používať v playliste, v políčku \"title\""
+
+#: modules/access_filter/record.c:43
+msgid "Record directory"
+msgstr "Priečinok pre nahrávanie"
+
+#: modules/access_filter/record.c:45
+msgid "Directory where the record will be stored."
+msgstr "Priečiok, kam sa uloží nahrávka."
+
+#: modules/access_filter/timeshift.c:44
+msgid "Timeshift granularity"
+msgstr "Granularita (zrnitosť) pri časovom posune"
+
+#: modules/access_filter/timeshift.c:46
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr ""
+"Toto je veľkosť dočasných súborov, do ktorých sa budú ukladať časovo "
+"posunuté streamy."
+
+#: modules/access_filter/timeshift.c:48
+msgid "Timeshift directory"
+msgstr "Priečinok pre ukladanie časovo-posunutých súborov"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr ""
+"Priečinok, do ktorého sa budú ukladať súbory, na ktoré sa uplatil časový "
+"posun."
+
+#: modules/access_filter/timeshift.c:51
+msgid "Force use of the timeshift module"
+msgstr "Vynútiť si použitie modulu pre časový posun"
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+"Vynútiť si použitie modulov pre časový posun aj vtedy, ak prístup deklaruje, "
+"že dokáže kontrolovať rýchlosť, alebo pozastaviť prehrávanie."
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "Časový posun"
+
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "Fingovaný výstup streamu"
+
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "Fingovaný"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "Pripojiť k súboru"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr "Pripojenie k súboru (ak už nejaký existuje), nie jeho nahradenie."
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "Výstup streamovania súboru"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "Meno užívateľa"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr "Používateľské meno, ktoré je potrebné pre prístup k streamu."
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr "Používateľské heslo, ktoré je potrebné pre prístup k streamu."
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "MIME typ"
+
+#: modules/access_output/http.c:69
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr ""
+"Hodnota MIME vrátená serverom (ak nie je špecifikovaná tak je súbor "
+"detekovaný automaticky)."
+
+#: modules/access_output/http.c:73
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr ""
+"Cesta k certifikačnému súboru x509 PEM, ktorý sa používa pri prenose pomocou "
+"protokolu HTTPS."
+
+#: modules/access_output/http.c:76
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr ""
+"Cesta k súboru s privátnym kľúčom x509 PEM, ktorý sa používa pri prenose "
+"pomocou protokolu HTTPS. Ak súbor s privátnym kľúčom nemáte, ponechajte "
+"políčko prázdne. "
+
+#: modules/access_output/http.c:80
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr ""
+"Cesta k certifikátom dôveryhodných serverov, ktoré sa používajú pri prenose "
+"pomocou protokolu HTTPS. Ak certifikáty nemáte, ponechajte políčko prázdne."
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+"Cesta k zoznamu s odvolanými certifikátmi X509. Tento zoznam sa používa pri "
+"SSL-spojení. Ak takýto súbor nemáte, ponechajte políčko prázdne."
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr "Oznamovať stream pomocou Bonjour"
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr "Oznamovať tento stream pomocou protokolu Bonjour."
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "Výstup HTTP streamu"
+
+#: modules/access_output/shout.c:58
+msgid "Stream name"
+msgstr "Názov streamu"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr "Názov streamu/kanála, ktorý chcete zadať na server icecast."
+
+#: modules/access_output/shout.c:62
+msgid "Stream description"
+msgstr "Popis streamu"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr "Popis obsahu streamu alebo informácia o Vašom kanáli."
+
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "Streamovať MP 3 súbory"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+"Za normálnych okolností sa pri streamovaní vysielajú väčšinou Ogg-streamy. V "
+"prípade potreba sa však dajú tieto streamy previesť do formátu MP3 a vo "
+"formáte MP3 ich potom môžete odosielať na server icecast."
+
+#: modules/access_output/shout.c:73
+msgid "IceCAST output"
+msgstr "Výstup IceCAST"
+
+#: modules/access_output/udp.c:77
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr ""
+"Hodnota ukladania do vyrovnávacej pamäte. Táto hodnota sa udáva v "
+"milisekundách."
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1846
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+msgid "Time-To-Live (TTL)"
+msgstr "Max. počet preskočení (TTL)"
+
+#: modules/access_output/udp.c:81
+msgid "Time-To-Live of the outgoing stream."
+msgstr "Maximálny počet preskočení výstupných streamov."
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "Skupinové pakety"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+"Pakety je možné odosielať jednotlivo, alebo v skupinách. Tu môžete určiť, "
+"koľko paketov sa odošle naraz. Odosielaním paketov v skupinách sa šetrí čas "
+"pri načítavaní jednotlivých paketov a zmenšuje sa zaťaženie systémov."
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr "Zápis vo formáte raw"
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+"Pakety sa budú odosielať priamo a ihneď, bez toho, aby si program zoraďoval "
+"pakety podľa veľkosti."
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "Výstup streamu UDP"
 
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
@@ -7400,7 +7400,7 @@ msgstr "Šírka výstupného videa."
 msgid "Output video height."
 msgstr "Výška výstupného videa."
 
-#: modules/codec/fake.c:54 modules/video_filter/mosaic.c:129
+#: modules/codec/fake.c:54 modules/video_filter/mosaic.c:127
 msgid "Keep aspect ratio"
 msgstr "Dodržiavať stranový pomer"
 
@@ -8015,15 +8015,15 @@ msgstr "1 (Najmenej)"
 msgid "6 (Highest)"
 msgstr "6 (Najviac)"
 
-#: modules/codec/flac.c:171
+#: modules/codec/flac.c:173
 msgid "Flac audio decoder"
 msgstr "Audio-dekodér Flac"
 
-#: modules/codec/flac.c:176
+#: modules/codec/flac.c:178
 msgid "Flac audio encoder"
 msgstr "Audio-enkodér Flac"
 
-#: modules/codec/flac.c:182
+#: modules/codec/flac.c:184
 msgid "Flac audio packetizer"
 msgstr "Paketizér pre zvuk vo formáte Flac"
 
@@ -8087,11 +8087,11 @@ msgstr "Paketizér pre zvuk vo formáte Speex"
 msgid "Speex audio encoder"
 msgstr "Audio-enkodér Speex"
 
-#: modules/codec/speex.c:552 modules/codec/speex.c:569
+#: modules/codec/speex.c:559 modules/codec/speex.c:576
 msgid "Speex comment"
 msgstr "Komentár v súbore Speex"
 
-#: modules/codec/speex.c:552
+#: modules/codec/speex.c:559
 msgid "Mode"
 msgstr "Mód"
 
@@ -8299,7 +8299,7 @@ msgstr "Paketizér pre zvuk vo formáte Vorbis"
 msgid "Vorbis audio encoder"
 msgstr "Audio-enkodér Vorbis"
 
-#: modules/codec/vorbis.c:616
+#: modules/codec/vorbis.c:625
 msgid "Vorbis comment"
 msgstr "Komentár v súbore Vorbis"
 
@@ -8959,7 +8959,7 @@ msgid "temporal"
 msgstr "dočasný"
 
 #: modules/codec/x264.c:328 modules/gui/pda/pda_interface.c:743
-#: modules/video_filter/mosaic.c:168
+#: modules/video_filter/mosaic.c:166
 msgid "auto"
 msgstr "autom."
 
@@ -9655,8 +9655,8 @@ msgstr ""
 
 #: modules/control/telnet.c:77 modules/gui/macosx/open.m:178
 #: modules/gui/macosx/open.m:180 modules/gui/macosx/output.m:147
-#: modules/gui/wxwidgets/dialogs/open.cpp:830
-#: modules/gui/wxwidgets/dialogs/open.cpp:857
+#: modules/gui/wxwidgets/dialogs/open.cpp:827
+#: modules/gui/wxwidgets/dialogs/open.cpp:854
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:531 modules/stream_out/rtp.c:81
 msgid "Port"
 msgstr "Port"
@@ -10417,17 +10417,22 @@ msgstr ""
 msgid "MPEG Transport Stream demuxer"
 msgstr "Demuxér transportných streamov MPEG"
 
-#: modules/demux/ts.c:3139 modules/demux/ts.c:3173
+#: modules/demux/ts.c:3141 modules/demux/ts.c:3175
 msgid "clean effects"
 msgstr "čistiace efekty"
 
-#: modules/demux/ts.c:3143 modules/demux/ts.c:3177
+#: modules/demux/ts.c:3145 modules/demux/ts.c:3179
 msgid "hearing impaired"
 msgstr "poškodený zvuk"
 
-#: modules/demux/ts.c:3147 modules/demux/ts.c:3181
+#: modules/demux/ts.c:3149 modules/demux/ts.c:3183
 msgid "visual impaired commentary"
 msgstr "vizuálne poškodený komentár"
+
+#: modules/demux/tta.c:40
+#, fuzzy
+msgid "TTA demuxer"
+msgstr "Demuxér formátu AU"
 
 #: modules/demux/ty.c:70
 msgid "TY Stream audio/video demux"
@@ -10768,8 +10773,8 @@ msgstr "Storno"
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/open.m:440
 #: modules/gui/macosx/open.m:634 modules/gui/macosx/open.m:738
 #: modules/gui/macosx/open.m:784 modules/gui/wxwidgets/interface.cpp:675
-#: modules/gui/wxwidgets/interface.cpp:686 modules/gui/wxwidgets/menus.cpp:349
-#: modules/gui/wxwidgets/menus.cpp:405
+#: modules/gui/wxwidgets/interface.cpp:686 modules/gui/wxwidgets/menus.cpp:351
+#: modules/gui/wxwidgets/menus.cpp:407
 msgid "Open"
 msgstr "Otvoriť"
 
@@ -10789,7 +10794,7 @@ msgstr "Hlásenia programu"
 #: modules/gui/beos/PlayListWindow.cpp:87 modules/gui/macosx/open.m:439
 #: modules/gui/macosx/open.m:737 modules/gui/macosx/open.m:783
 #: modules/gui/wxwidgets/dialogs.cpp:430
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+#: modules/gui/wxwidgets/dialogs/open.cpp:1261
 msgid "Open File"
 msgstr "Otvoriť súbor"
 
@@ -10877,7 +10882,7 @@ msgid "Edit"
 msgstr "Úpravy"
 
 #: modules/gui/beos/PlayListWindow.cpp:103 modules/gui/macosx/intf.m:531
-#: modules/gui/macosx/playlist.m:481
+#: modules/gui/macosx/playlist.m:485
 msgid "Select All"
 msgstr "Vybrať všetko"
 
@@ -10931,7 +10936,7 @@ msgid "Apply"
 msgstr "Použiť"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:777 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:781 modules/gui/macosx/prefs.m:121
 msgid "Save"
 msgstr "Uložiť"
 
@@ -11011,7 +11016,7 @@ msgstr "Extrahovať"
 msgid "Time"
 msgstr "Čas"
 
-#: modules/gui/macosx/bookmarks.m:136 modules/gui/macosx/playlist.m:773
+#: modules/gui/macosx/bookmarks.m:136 modules/gui/macosx/playlist.m:777
 msgid "Untitled"
 msgstr "Bez názvu"
 
@@ -11081,20 +11086,20 @@ msgid "Random Off"
 msgstr "Náhodné prehrávanie vypnuté"
 
 #: modules/gui/macosx/controls.m:197 modules/gui/macosx/controls.m:725
-#: modules/gui/macosx/intf.m:541 modules/gui/macosx/playlist.m:496
-#: modules/gui/macosx/playlist.m:1240
+#: modules/gui/macosx/intf.m:541 modules/gui/macosx/playlist.m:500
+#: modules/gui/macosx/playlist.m:1244
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:54
 msgid "Repeat One"
 msgstr "Opakovať jedenkrát"
 
 #: modules/gui/macosx/controls.m:202 modules/gui/macosx/controls.m:236
-#: modules/gui/macosx/playlist.m:1259
+#: modules/gui/macosx/playlist.m:1263
 msgid "Repeat Off"
 msgstr "Opakovanie vypnuté"
 
 #: modules/gui/macosx/controls.m:231 modules/gui/macosx/controls.m:732
-#: modules/gui/macosx/intf.m:542 modules/gui/macosx/playlist.m:497
-#: modules/gui/macosx/playlist.m:1248
+#: modules/gui/macosx/intf.m:542 modules/gui/macosx/playlist.m:501
+#: modules/gui/macosx/playlist.m:1252
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:53
 msgid "Repeat All"
 msgstr "Opakovať všetko"
@@ -11125,7 +11130,7 @@ msgid "Fit to Screen"
 msgstr "Roztiahnuť na veľkosť obrazovky"
 
 #: modules/gui/macosx/controls.m:718 modules/gui/macosx/intf.m:540
-#: modules/gui/macosx/playlist.m:490
+#: modules/gui/macosx/playlist.m:494
 msgid "Random"
 msgstr "Náhodne"
 
@@ -11151,14 +11156,14 @@ msgstr "Rýchle dopredu"
 #: modules/gui/macosx/intf.m:534 modules/gui/macosx/intf.m:612
 #: modules/gui/macosx/intf.m:619 modules/gui/macosx/intf.m:1412
 #: modules/gui/macosx/intf.m:1413 modules/gui/macosx/intf.m:1414
-#: modules/gui/macosx/intf.m:1415 modules/gui/macosx/playlist.m:478
+#: modules/gui/macosx/intf.m:1415 modules/gui/macosx/playlist.m:482
 #: modules/gui/pda/pda_interface.c:262 modules/gui/pda/pda_interface.c:263
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:274
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:283
 #: modules/gui/wxwidgets/interface.cpp:677
 #: modules/gui/wxwidgets/interface.cpp:688
 #: modules/gui/wxwidgets/interface.cpp:1216
-#: modules/gui/wxwidgets/menus.cpp:264 modules/gui/wxwidgets/menus.cpp:275
+#: modules/gui/wxwidgets/menus.cpp:266 modules/gui/wxwidgets/menus.cpp:277
 msgid "Play"
 msgstr "Prehrať"
 
@@ -11168,7 +11173,7 @@ msgstr "Prehrať"
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:678
 #: modules/gui/wxwidgets/interface.cpp:689
 #: modules/gui/wxwidgets/interface.cpp:1210
-#: modules/gui/wxwidgets/menus.cpp:266 modules/visualization/xosd.c:243
+#: modules/gui/wxwidgets/menus.cpp:268 modules/visualization/xosd.c:243
 msgid "Pause"
 msgstr "Pozastaviť"
 
@@ -11453,8 +11458,8 @@ msgid "Extended Controls"
 msgstr "Rozšírené ovládanie"
 
 #: modules/gui/macosx/intf.m:597 modules/gui/macosx/intf.m:639
-#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:482
+#: modules/gui/macosx/playlist.m:486 modules/gui/macosx/playlistinfo.m:55
+#: modules/gui/macosx/playlistinfo.m:371
 msgid "Information"
 msgstr "Informácia"
 
@@ -11635,8 +11640,8 @@ msgstr "Vyhľadávač médií (MRL)"
 #: modules/gui/macosx/open.m:242 modules/gui/macosx/output.m:145
 #: modules/gui/macosx/prefs_widgets.m:1183
 #: modules/gui/wince/preferences_widgets.cpp:512
-#: modules/gui/wxwidgets/dialogs/open.cpp:631
-#: modules/gui/wxwidgets/dialogs/open.cpp:665
+#: modules/gui/wxwidgets/dialogs/open.cpp:628
+#: modules/gui/wxwidgets/dialogs/open.cpp:662
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:683
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:501
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:82
@@ -11647,7 +11652,7 @@ msgstr "Prehľadávať..."
 msgid "Treat as a pipe rather than as a file"
 msgstr "Považovať radšej za vedenie, nie za súbor"
 
-#: modules/gui/macosx/open.m:167 modules/gui/wxwidgets/dialogs/open.cpp:723
+#: modules/gui/macosx/open.m:167 modules/gui/wxwidgets/dialogs/open.cpp:720
 msgid "Device name"
 msgstr "Označenie jednotky"
 
@@ -11660,18 +11665,18 @@ msgid "VIDEO_TS directory"
 msgstr "Priečinok VIDEO_TS"
 
 #: modules/gui/macosx/open.m:174 modules/gui/macosx/open.m:595
-#: modules/gui/wxwidgets/dialogs/open.cpp:697
+#: modules/gui/wxwidgets/dialogs/open.cpp:694
 msgid "DVD"
 msgstr "DVD"
 
 #: modules/gui/macosx/open.m:179 modules/gui/macosx/output.m:146
-#: modules/gui/wxwidgets/dialogs/open.cpp:849
+#: modules/gui/wxwidgets/dialogs/open.cpp:846
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:520
 msgid "Address"
 msgstr "Adresa"
 
 #: modules/gui/macosx/open.m:184 modules/gui/macosx/open.m:655
-#: modules/gui/macosx/open.m:704 modules/gui/wxwidgets/dialogs/open.cpp:805
+#: modules/gui/macosx/open.m:704 modules/gui/wxwidgets/dialogs/open.cpp:802
 msgid "UDP/RTP Multicast"
 msgstr "UDP/RTP Multicast"
 
@@ -11680,7 +11685,7 @@ msgstr "UDP/RTP Multicast"
 msgid "HTTP/FTP/MMS/RTSP"
 msgstr "HTTP/FTP/MMS/RTSP"
 
-#: modules/gui/macosx/open.m:186 modules/gui/wxwidgets/dialogs/open.cpp:823
+#: modules/gui/macosx/open.m:186 modules/gui/wxwidgets/dialogs/open.cpp:820
 #: modules/services_discovery/sap.c:112
 msgid "Allow timeshifting"
 msgstr "Povoliť časový posun"
@@ -11690,7 +11695,7 @@ msgid "Load subtitles file:"
 msgstr "Načítať súbor s titulkami:"
 
 #: modules/gui/macosx/open.m:241 modules/gui/macosx/output.m:137
-#: modules/gui/wxwidgets/dialogs/open.cpp:436
+#: modules/gui/wxwidgets/dialogs/open.cpp:433
 msgid "Settings..."
 msgstr "Nastavenia..."
 
@@ -11701,7 +11706,7 @@ msgstr "Nedodržiavať parametre"
 #: modules/gui/macosx/open.m:244
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:218
 #: modules/stream_out/bridge.c:41 modules/stream_out/display.c:41
-#: modules/video_filter/mosaic.c:140
+#: modules/video_filter/mosaic.c:138
 msgid "Delay"
 msgstr "Oneskorenie"
 
@@ -11813,6 +11818,84 @@ msgstr "URL adresa pre SDP"
 msgid "Save File"
 msgstr "Uložiť súbor"
 
+#: modules/gui/macosx/playlist.m:481
+msgid "Save Playlist..."
+msgstr "Uložiť playlist..."
+
+#: modules/gui/macosx/playlist.m:483 modules/gui/pda/pda_interface.c:1254
+#: modules/gui/wxwidgets/dialogs/playlist.cpp:278
+#: modules/gui/wxwidgets/dialogs/playlist.cpp:285
+#: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:105
+msgid "Delete"
+msgstr "Vymazať"
+
+#: modules/gui/macosx/playlist.m:484
+msgid "Expand Node"
+msgstr "Rozbaliť uzol"
+
+#: modules/gui/macosx/playlist.m:487
+msgid "Get Stream Information"
+msgstr "Získať info o streame"
+
+#: modules/gui/macosx/playlist.m:488
+msgid "Sort Node by Name"
+msgstr "Zoradiť uzly podľa názvu"
+
+#: modules/gui/macosx/playlist.m:489
+msgid "Sort Node by Author"
+msgstr "Zoradiť uzol podľa autora"
+
+#: modules/gui/macosx/playlist.m:492 modules/gui/macosx/playlist.m:542
+#: modules/gui/macosx/playlist.m:1591
+msgid "No items in the playlist"
+msgstr "Žiadne položky v playliste"
+
+#: modules/gui/macosx/playlist.m:496
+#: modules/gui/wxwidgets/dialogs/playlist.cpp:323
+msgid "Search"
+msgstr "Hľadať"
+
+#: modules/gui/macosx/playlist.m:498
+msgid "Search in Playlist"
+msgstr "Hľadať v playliste"
+
+#: modules/gui/macosx/playlist.m:499
+msgid "Standard Play"
+msgstr "Štandardné prehrávanie"
+
+#: modules/gui/macosx/playlist.m:502
+msgid "Add Folder to Playlist"
+msgstr "Pridať priečinok do playlistu"
+
+#: modules/gui/macosx/playlist.m:504
+msgid "File Format:"
+msgstr "Formát súboru:"
+
+#: modules/gui/macosx/playlist.m:505
+msgid "Extended M3U"
+msgstr "Rozšírený M3U súbor"
+
+#: modules/gui/macosx/playlist.m:506
+msgid "XML Shareable Playlist Format (XSPF)"
+msgstr "XML formát playlistu (XSPF)"
+
+#: modules/gui/macosx/playlist.m:536 modules/gui/macosx/playlist.m:1585
+#, c-format
+msgid "%i items in the playlist"
+msgstr "%i položiek v playliste"
+
+#: modules/gui/macosx/playlist.m:546 modules/gui/macosx/playlist.m:1595
+msgid "1 item in the playlist"
+msgstr "1 položka v playliste"
+
+#: modules/gui/macosx/playlist.m:780
+msgid "Save Playlist"
+msgstr "Uložiť playlist"
+
+#: modules/gui/macosx/playlist.m:1560
+msgid "Empty Folder"
+msgstr "Prázdny priečinok"
+
 #: modules/gui/macosx/playlistinfo.m:56
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:591
@@ -11877,84 +11960,6 @@ msgstr "Prehrané buffery"
 #: modules/gui/macosx/playlistinfo.m:99
 msgid "Lost buffers"
 msgstr "Stratené buffery"
-
-#: modules/gui/macosx/playlist.m:477
-msgid "Save Playlist..."
-msgstr "Uložiť playlist..."
-
-#: modules/gui/macosx/playlist.m:479 modules/gui/pda/pda_interface.c:1254
-#: modules/gui/wxwidgets/dialogs/playlist.cpp:278
-#: modules/gui/wxwidgets/dialogs/playlist.cpp:285
-#: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:105
-msgid "Delete"
-msgstr "Vymazať"
-
-#: modules/gui/macosx/playlist.m:480
-msgid "Expand Node"
-msgstr "Rozbaliť uzol"
-
-#: modules/gui/macosx/playlist.m:483
-msgid "Get Stream Information"
-msgstr "Získať info o streame"
-
-#: modules/gui/macosx/playlist.m:484
-msgid "Sort Node by Name"
-msgstr "Zoradiť uzly podľa názvu"
-
-#: modules/gui/macosx/playlist.m:485
-msgid "Sort Node by Author"
-msgstr "Zoradiť uzol podľa autora"
-
-#: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlist.m:538
-#: modules/gui/macosx/playlist.m:1587
-msgid "No items in the playlist"
-msgstr "Žiadne položky v playliste"
-
-#: modules/gui/macosx/playlist.m:492
-#: modules/gui/wxwidgets/dialogs/playlist.cpp:323
-msgid "Search"
-msgstr "Hľadať"
-
-#: modules/gui/macosx/playlist.m:494
-msgid "Search in Playlist"
-msgstr "Hľadať v playliste"
-
-#: modules/gui/macosx/playlist.m:495
-msgid "Standard Play"
-msgstr "Štandardné prehrávanie"
-
-#: modules/gui/macosx/playlist.m:498
-msgid "Add Folder to Playlist"
-msgstr "Pridať priečinok do playlistu"
-
-#: modules/gui/macosx/playlist.m:500
-msgid "File Format:"
-msgstr "Formát súboru:"
-
-#: modules/gui/macosx/playlist.m:501
-msgid "Extended M3U"
-msgstr "Rozšírený M3U súbor"
-
-#: modules/gui/macosx/playlist.m:502
-msgid "XML Shareable Playlist Format (XSPF)"
-msgstr "XML formát playlistu (XSPF)"
-
-#: modules/gui/macosx/playlist.m:532 modules/gui/macosx/playlist.m:1581
-#, c-format
-msgid "%i items in the playlist"
-msgstr "%i položiek v playliste"
-
-#: modules/gui/macosx/playlist.m:542 modules/gui/macosx/playlist.m:1591
-msgid "1 item in the playlist"
-msgstr "1 položka v playliste"
-
-#: modules/gui/macosx/playlist.m:776
-msgid "Save Playlist"
-msgstr "Uložiť playlist"
-
-#: modules/gui/macosx/playlist.m:1556
-msgid "Empty Folder"
-msgstr "Prázdny priečinok"
 
 #: modules/gui/macosx/prefs.m:123
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13269,7 +13274,7 @@ msgstr ""
 "Tím VideoLAN <videolan@videolan.org>\n"
 "http://www.videolan.org/"
 
-#: modules/gui/wince/open.cpp:134 modules/gui/wxwidgets/dialogs/open.cpp:626
+#: modules/gui/wince/open.cpp:134 modules/gui/wxwidgets/dialogs/open.cpp:623
 msgid "Open:"
 msgstr "Otvoriť:"
 
@@ -13309,6 +13314,11 @@ msgstr "Modul vzhľadu WinCE"
 msgid "WinCE dialogs provider"
 msgstr "Poskytovateľ dialógov WinCE"
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr "Všetky súbory (*.*)|*|Zvukové súbory (*.mp3, *.ogg, atď.)|"
+
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "Upraviť záložku"
@@ -13321,8 +13331,8 @@ msgstr "Bytov"
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:105
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:172
 #: modules/gui/wxwidgets/dialogs/iteminfo.cpp:78
-#: modules/gui/wxwidgets/dialogs/open.cpp:320
-#: modules/gui/wxwidgets/dialogs/open.cpp:490
+#: modules/gui/wxwidgets/dialogs/open.cpp:317
+#: modules/gui/wxwidgets/dialogs/open.cpp:487
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:195
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
 msgid "&OK"
@@ -13332,8 +13342,8 @@ msgstr "&OK"
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:174
 #: modules/gui/wxwidgets/dialogs/interaction.cpp:185
 #: modules/gui/wxwidgets/dialogs/iteminfo.cpp:81
-#: modules/gui/wxwidgets/dialogs/open.cpp:323
-#: modules/gui/wxwidgets/dialogs/open.cpp:493
+#: modules/gui/wxwidgets/dialogs/open.cpp:320
+#: modules/gui/wxwidgets/dialogs/open.cpp:490
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:211
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:198
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:245
@@ -13406,11 +13416,6 @@ msgstr ""
 msgid "Input has changed "
 msgstr "Vstup sa zmenil"
 
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1267
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr "Všetky súbory (*.*)|*|Zvukové súbory (*.mp3, *.ogg, atď.)|"
-
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
 msgstr "Informácie o dátovom toku alebo médiu"
@@ -13457,48 +13462,48 @@ msgstr "Uložiť &ako..."
 msgid "Save Messages As..."
 msgstr "Uložiť správy ako..."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:259
+#: modules/gui/wxwidgets/dialogs/open.cpp:256
 msgid "Advanced options..."
 msgstr "Pokročilé nastavenia..."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:264
-#: modules/gui/wxwidgets/dialogs/open.cpp:275
-#: modules/gui/wxwidgets/dialogs/open.cpp:420
+#: modules/gui/wxwidgets/dialogs/open.cpp:261
+#: modules/gui/wxwidgets/dialogs/open.cpp:272
+#: modules/gui/wxwidgets/dialogs/open.cpp:417
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:217
 msgid "Advanced options"
 msgstr "Pokročilé nastavenia"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:279
+#: modules/gui/wxwidgets/dialogs/open.cpp:276
 msgid "Options:"
 msgstr "Nastavenia:"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:388
-#: modules/gui/wxwidgets/dialogs/open.cpp:396
+#: modules/gui/wxwidgets/dialogs/open.cpp:385
+#: modules/gui/wxwidgets/dialogs/open.cpp:393
 msgid "Open..."
 msgstr "Otvoriť..."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:430
+#: modules/gui/wxwidgets/dialogs/open.cpp:427
 msgid "Stream/Save"
 msgstr "Streamovať/Ukladať"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:431
+#: modules/gui/wxwidgets/dialogs/open.cpp:428
 msgid "Use VLC as a stream server"
 msgstr ""
 "Po zvolení tejto voľby bude program VLC fungovať ako streamovací server."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:457
+#: modules/gui/wxwidgets/dialogs/open.cpp:454
 msgid "Caching"
 msgstr "Ukladať do vyrovnávacej pamäte"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:458
+#: modules/gui/wxwidgets/dialogs/open.cpp:455
 msgid "Change the default caching value (in milliseconds)"
 msgstr "Tu môžete zmeniť predvolenú hodnotu (v milisekundách)"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:471
+#: modules/gui/wxwidgets/dialogs/open.cpp:468
 msgid "Customize:"
 msgstr "Prispôsobiť:"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:475
+#: modules/gui/wxwidgets/dialogs/open.cpp:472
 msgid ""
 "You can use this field directly by typing the full MRL you want to open.\n"
 "Alternatively, the field will be filled automatically when you use the "
@@ -13508,35 +13513,35 @@ msgstr ""
 "Ak chcete hodnotu nechať vyplniť automaticky, použite ovládacie tlačidlá "
 "hore."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:638
+#: modules/gui/wxwidgets/dialogs/open.cpp:635
 msgid "Use a subtitles file"
 msgstr "Použiť súbor s titulkami"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:639
+#: modules/gui/wxwidgets/dialogs/open.cpp:636
 msgid "Use an external subtitles file."
 msgstr "Použiť externý súbor s titulkami."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:643
+#: modules/gui/wxwidgets/dialogs/open.cpp:640
 msgid "Advanced Settings..."
 msgstr "Pokročilé nastavenia..."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:659
+#: modules/gui/wxwidgets/dialogs/open.cpp:656
 msgid "File:"
 msgstr "Súbor:"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:696
+#: modules/gui/wxwidgets/dialogs/open.cpp:693
 msgid "DVD (menus)"
 msgstr "DVD (menu)"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:702
+#: modules/gui/wxwidgets/dialogs/open.cpp:699
 msgid "Disc type"
 msgstr "Typ disku"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:709
+#: modules/gui/wxwidgets/dialogs/open.cpp:706
 msgid "Probe Disc(s)"
 msgstr "Preveriť disk(y)"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:710
+#: modules/gui/wxwidgets/dialogs/open.cpp:707
 msgid ""
 "Probe for a DVD, VCD or audio CD. First try the Device name entered for the "
 "selected Disc type (DVD, DVD Menu, VCD, audio CD). If that doesn't find "
@@ -13551,19 +13556,19 @@ msgstr ""
 "preveriť jednotky CD-ROM a DVD. Typ disku, názov zariadenia a niektoré "
 "parametre sa odvodzujú práve od druhu média, ktoré sa nájde. "
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:806
+#: modules/gui/wxwidgets/dialogs/open.cpp:803
 msgid "HTTP/HTTPS/FTP/MMS"
 msgstr "HTTP/HTTPS/FTP/MMS"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:807
+#: modules/gui/wxwidgets/dialogs/open.cpp:804
 msgid "RTSP"
 msgstr "RTSP"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:927
+#: modules/gui/wxwidgets/dialogs/open.cpp:924
 msgid "DVD device to use"
 msgstr "DVD jednotka, ktorá bude použitá."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:957
+#: modules/gui/wxwidgets/dialogs/open.cpp:954
 msgid ""
 "Name of CD-ROM device to read Video CD from. If this field is left empty, we "
 "will scan for a CD-ROM with a VCD in it."
@@ -13572,12 +13577,12 @@ msgstr ""
 "prázdne, program preskenuje Váš systém a vyberie tú jednotku, v ktorej je "
 "vložené nejaké Video-CD."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:966
-#: modules/gui/wxwidgets/dialogs/open.cpp:989
+#: modules/gui/wxwidgets/dialogs/open.cpp:963
+#: modules/gui/wxwidgets/dialogs/open.cpp:986
 msgid "CD-ROM device to use"
 msgstr "Jednotka CD-ROM, ktorá bude použitá"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:984
+#: modules/gui/wxwidgets/dialogs/open.cpp:981
 msgid ""
 "Name of CD-ROM device to read audio CD from. If this field is left empty, we "
 "will scan for a CD-ROM with an audio CD in it."
@@ -13586,15 +13591,15 @@ msgstr ""
 "prázdne, program preskenuje Váš systém a vyberie tú jednotku, v ktorej je "
 "vložené nejaké Audio-CD."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1297
+#: modules/gui/wxwidgets/dialogs/open.cpp:1294
 msgid "Open subtitles file"
 msgstr "Otvoriť súbor s titulkami"
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1674
+#: modules/gui/wxwidgets/dialogs/open.cpp:1671
 msgid "Title number."
 msgstr "Číslo titulu."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1676
+#: modules/gui/wxwidgets/dialogs/open.cpp:1673
 msgid ""
 "DVD's can have up to 32 subtitles numbered 0..31. Note this is not the same "
 "thing as a subtitle name (e.g. 'en'). If a value -1 is used, no subtitle "
@@ -13605,25 +13610,25 @@ msgstr ""
 "jazykovej mutácií titulkov. Ak nechcete nechať zobraziť žiadne titulky, "
 "zadajte hodnotu -1."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1679
+#: modules/gui/wxwidgets/dialogs/open.cpp:1676
 msgid "Audio track number. DVD's can have up to 8 audio tracks numbered 0..7."
 msgstr ""
 "Číslo zvukovej stopy. Disky DVD môžu obsahovať až 8 zvukových stôp, ktoré sú "
 "očíslované od 0 po 7."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1700
+#: modules/gui/wxwidgets/dialogs/open.cpp:1697
 msgid "Playback control (PBC) usually starts with number 1."
 msgstr "Kontrola prehrávania (PBC) obyčajne spustí prehrávanie stopy číslo 1."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1706
+#: modules/gui/wxwidgets/dialogs/open.cpp:1703
 msgid "The first entry (the beginning of the first MPEG track) is 0."
 msgstr "Prvý záznam (začiatok prvej MPEG stopy) má zvyčajne číslo 0."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1711
+#: modules/gui/wxwidgets/dialogs/open.cpp:1708
 msgid "Track number."
 msgstr "Číslo stopy."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1717
+#: modules/gui/wxwidgets/dialogs/open.cpp:1714
 msgid ""
 "SVCD's can have up to 4 subtitles numbered 0..3. If a value -1 is used, no "
 "subtitle will be shown."
@@ -13631,14 +13636,14 @@ msgstr ""
 "Disky SVCD môžu obsahovať až 4 podtituly (číslované väčšinou od 0...3). Ak "
 "použijete hodnotu -1, nezobrazí sa žiaden podtitul."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1719
+#: modules/gui/wxwidgets/dialogs/open.cpp:1716
 msgid ""
 "Audio track number. VCD's can have up to 2 audio tracks numbered 0 or 1. "
 msgstr ""
 "Číslo zvukovej stopy. Disky VCD môžu obsahovať až dve zvukové stopy (číslo 0 "
 "alebo číslo 1)."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1731
+#: modules/gui/wxwidgets/dialogs/open.cpp:1728
 msgid ""
 "Audio CDs can have up to 100 tracks, the first track is usually 1. If 0 is "
 "given, then all tracks are played."
@@ -13646,7 +13651,7 @@ msgstr ""
 "Disky Audio CD môžu obsahovať až 100 stôp, prvá stopa má zvyčajne číslo 1. "
 "Ak zadáte hodnotu 0, budú sa prehrávať všetky stopy."
 
-#: modules/gui/wxwidgets/dialogs/open.cpp:1735
+#: modules/gui/wxwidgets/dialogs/open.cpp:1732
 msgid "Audio CDs can have up to 100 tracks, the first track is usually 1."
 msgstr ""
 "Disky Audio CD môžu obsahovať až 100 stôp, prvá stopa má zvyčajne číslo 1."
@@ -14399,43 +14404,43 @@ msgstr "O %s"
 msgid "Show/Hide Interface"
 msgstr "Zobraziť/skryť rozhranie"
 
-#: modules/gui/wxwidgets/menus.cpp:124
+#: modules/gui/wxwidgets/menus.cpp:126
 msgid "Quick &Open File..."
 msgstr "Rýchle otvorenie &súboru..."
 
-#: modules/gui/wxwidgets/menus.cpp:125
+#: modules/gui/wxwidgets/menus.cpp:127
 msgid "Open &File..."
 msgstr "&Otvoriť súbor..."
 
-#: modules/gui/wxwidgets/menus.cpp:126
+#: modules/gui/wxwidgets/menus.cpp:128
 msgid "Open D&irectory..."
 msgstr "Otvoriť &priečinok..."
 
-#: modules/gui/wxwidgets/menus.cpp:127
+#: modules/gui/wxwidgets/menus.cpp:129
 msgid "Open &Disc..."
 msgstr "Otvoriť &disk..."
 
-#: modules/gui/wxwidgets/menus.cpp:128
+#: modules/gui/wxwidgets/menus.cpp:130
 msgid "Open &Network Stream..."
 msgstr "Otvoriť &sieťové médium..."
 
-#: modules/gui/wxwidgets/menus.cpp:129
+#: modules/gui/wxwidgets/menus.cpp:131
 msgid "Open &Capture Device..."
 msgstr "Pripojiť &snímacie zariadenie..."
 
-#: modules/gui/wxwidgets/menus.cpp:136
+#: modules/gui/wxwidgets/menus.cpp:138
 msgid "Media &Info..."
 msgstr "&Informácie o médiu..."
 
-#: modules/gui/wxwidgets/menus.cpp:137
+#: modules/gui/wxwidgets/menus.cpp:139
 msgid "&Messages..."
 msgstr "&Hlásenia programu..."
 
-#: modules/gui/wxwidgets/menus.cpp:138
+#: modules/gui/wxwidgets/menus.cpp:140
 msgid "&Preferences..."
 msgstr "&Nastavenia..."
 
-#: modules/gui/wxwidgets/menus.cpp:573 modules/gui/wxwidgets/menus.cpp:600
+#: modules/gui/wxwidgets/menus.cpp:575 modules/gui/wxwidgets/menus.cpp:602
 msgid "Empty"
 msgstr "Prázdne"
 
@@ -15086,10 +15091,6 @@ msgstr "Výstupný súbor RRD"
 msgid "Output data for RRDTool in this file."
 msgstr "Výstupné dáta pre RRDTool obsahuje tento súbor."
 
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
-
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr "libc memcpy"
@@ -15105,6 +15106,10 @@ msgstr "MMX memcpy"
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
 msgstr "MMX EXT memcpy"
+
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
+msgstr "AltiVec memcpy"
 
 #: modules/misc/msn.c:64
 msgid "MSN Title format string"
@@ -15617,7 +15622,7 @@ msgstr "Muxér pre formát WAV"
 msgid "Copy packetizer"
 msgstr "Paketizér pre kopírovanie"
 
-#: modules/packetizer/h264.c:47
+#: modules/packetizer/h264.c:48
 msgid "H.264 video packetizer"
 msgstr "Paketizér pre video vo formáte H.264"
 
@@ -17008,30 +17013,32 @@ msgid "Y Coordinate of the top-left corner of the mosaic."
 msgstr "Súradnica Y, v ktorej sa začína ľavý horný roh mozaiky"
 
 #: modules/video_filter/mosaic.c:103
-msgid "Vertical border width"
-msgstr "Šírka vertikálneho okraja"
+#, fuzzy
+msgid "Border width"
+msgstr "Šírka videa"
 
 #: modules/video_filter/mosaic.c:104
-msgid ""
-"Width in pixels of the border than can be drawn vertically around the mosaic."
-msgstr "Šírka (v pixeloch) okraja, ktorý sa vykreslí vertikálne okolo mozaiky."
-
-#: modules/video_filter/mosaic.c:106
-msgid "Horizontal border width"
-msgstr "Šírka horizontálneho okraja"
-
-#: modules/video_filter/mosaic.c:107
-msgid ""
-"Width in pixels of the border than can be drawn horizontally around the "
-"mosaic."
+#, fuzzy
+msgid "Width in pixels of the border between miniatures."
 msgstr ""
 "Šírka (v pixeloch) okraja, ktorý sa vykreslí horizontálne okolo mozaiky."
 
-#: modules/video_filter/mosaic.c:110
+#: modules/video_filter/mosaic.c:105
+#, fuzzy
+msgid "Border height"
+msgstr "Výška videa"
+
+#: modules/video_filter/mosaic.c:106
+#, fuzzy
+msgid "Height in pixels of the border between miniatures."
+msgstr ""
+"Šírka (v pixeloch) okraja, ktorý sa vykreslí horizontálne okolo mozaiky."
+
+#: modules/video_filter/mosaic.c:108
 msgid "Mosaic alignment"
 msgstr "Zarovnanie mozaiky"
 
-#: modules/video_filter/mosaic.c:112
+#: modules/video_filter/mosaic.c:110
 msgid ""
 "You can enforce the mosaic alignment on the video (0=center, 1=left, "
 "2=right, 4=top, 8=bottom, you can also use combinations of these values, eg "
@@ -17041,11 +17048,11 @@ msgstr ""
 "1=vľavo, 2=vpravo, 4=hore, 8=dole; môžete však používať aj kombinácie týchto "
 "hodnôt, napr. 6=vpravo hore)."
 
-#: modules/video_filter/mosaic.c:116
+#: modules/video_filter/mosaic.c:114
 msgid "Positioning method"
 msgstr "Metóda pozicovania"
 
-#: modules/video_filter/mosaic.c:117
+#: modules/video_filter/mosaic.c:115
 msgid ""
 "Positioning method for the mosaic. auto: automatically choose the best "
 "number of rows and columns. fixed: use the user-defined number of rows and "
@@ -17055,11 +17062,11 @@ msgstr ""
 "počtu stĺpcov a riadkov. Možnosť fixne = použiť len zadaný počet stĺpcov a "
 "riadkov."
 
-#: modules/video_filter/mosaic.c:122 modules/video_filter/wall.c:57
+#: modules/video_filter/mosaic.c:120 modules/video_filter/wall.c:57
 msgid "Number of rows"
 msgstr "Počet riadkov"
 
-#: modules/video_filter/mosaic.c:123
+#: modules/video_filter/mosaic.c:121
 msgid ""
 "Number of image rows in the mosaic (only used if positionning method is set "
 "to \"fixed\"."
@@ -17067,11 +17074,11 @@ msgstr ""
 "Počet riadkov s obrázkami v mozaike (tento počet sa použije len vtedy, ak je "
 "pozicovanie nastavené na hodnotu \"pevne\"."
 
-#: modules/video_filter/mosaic.c:125 modules/video_filter/wall.c:53
+#: modules/video_filter/mosaic.c:123 modules/video_filter/wall.c:53
 msgid "Number of columns"
 msgstr "Počet stĺpcov"
 
-#: modules/video_filter/mosaic.c:126
+#: modules/video_filter/mosaic.c:124
 msgid ""
 "Number of image columns in the mosaic (only used if positionning method is "
 "set to \"fixed\"."
@@ -17079,23 +17086,23 @@ msgstr ""
 "Počet stĺpcov s obrázkami v mozaike (toto nastavenie má význam iba v "
 "prípade, že pozicovanie je nastavené na hodnotu \"pevne\"."
 
-#: modules/video_filter/mosaic.c:130
+#: modules/video_filter/mosaic.c:128
 msgid "Keep the original aspect ratio when resizing mosaic elements."
 msgstr "Pri zmene šírky elementov v mozaike dodržiavať stranový pomer."
 
-#: modules/video_filter/mosaic.c:132
+#: modules/video_filter/mosaic.c:130
 msgid "Keep original size"
 msgstr "Dodržiavať originálnu veľkosť"
 
-#: modules/video_filter/mosaic.c:133
+#: modules/video_filter/mosaic.c:131
 msgid "Keep the original size of mosaic elements."
 msgstr "Dodržiavať originálnu veľkosť elementov mozaiky."
 
-#: modules/video_filter/mosaic.c:135
+#: modules/video_filter/mosaic.c:133
 msgid "Elements order"
 msgstr "Poradie elementov"
 
-#: modules/video_filter/mosaic.c:136
+#: modules/video_filter/mosaic.c:134
 msgid ""
 "You can enforce the order of the elements on the mosaic. You must give a "
 "comma-separated list of picture ID(s).These IDs are assigned in the \"mosaic-"
@@ -17105,7 +17112,7 @@ msgstr ""
 "obrázkov oddeľujte čiarkou. Ident. čísla obrázkov sú uvedené v module "
 "\"mosaic-bridge\"."
 
-#: modules/video_filter/mosaic.c:141
+#: modules/video_filter/mosaic.c:139
 msgid ""
 "Pictures coming from the mosaic elements will be delayed according to this "
 "value (in milliseconds). For high values you will need to raise caching at "
@@ -17115,11 +17122,11 @@ msgstr ""
 "zadáte (v milisekundách). Pri zadaní vysokých hodnôt oneskorenia by ste mali "
 "zvýšiť aj hodnotu ukladania do vyrovnávacej pamäte na vstupe."
 
-#: modules/video_filter/mosaic.c:145
+#: modules/video_filter/mosaic.c:143
 msgid "Bluescreen"
 msgstr "Bluescreen"
 
-#: modules/video_filter/mosaic.c:146
+#: modules/video_filter/mosaic.c:144
 msgid ""
 "This effect, also known as \"greenscreen\" or \"chroma key\" blends the "
 "\"blue parts\" of the foreground images of the mosaic on the background "
@@ -17134,11 +17141,11 @@ msgstr ""
 "V predvolenom nastavení efektu sú takto vynímané všetky objekty nakreslené "
 "modrou farbou."
 
-#: modules/video_filter/mosaic.c:151
+#: modules/video_filter/mosaic.c:149
 msgid "Bluescreen U value"
 msgstr "Hodnota U pre Bluescreen"
 
-#: modules/video_filter/mosaic.c:152
+#: modules/video_filter/mosaic.c:150
 msgid ""
 "\"U\" value for the bluescreen key color (in YUV values). From 0 to 255. "
 "Defaults to 120 for blue."
@@ -17146,11 +17153,11 @@ msgstr ""
 "\"U\"- hodnota, ktorá sa bude používať pri efekte Bluescreen. Farba môže mať "
 "hodnotu od 0 do 255. Predvolená hodnota (pre modrú farbu) je 120."
 
-#: modules/video_filter/mosaic.c:154
+#: modules/video_filter/mosaic.c:152
 msgid "Bluescreen V value"
 msgstr "Hodnota V pre Bluescreen"
 
-#: modules/video_filter/mosaic.c:155
+#: modules/video_filter/mosaic.c:153
 msgid ""
 "\"V\" value for the bluescreen key color (in YUV values). From 0 to 255. "
 "Defaults to 90 for blue."
@@ -17158,11 +17165,11 @@ msgstr ""
 "\"V\"- hodnota, ktorá sa bude používať pri efekte Bluescreen. Farba môže mať "
 "hodnotu od 0 do 255. Predvolená hodnota (pre modrú farbu) je 90."
 
-#: modules/video_filter/mosaic.c:157
+#: modules/video_filter/mosaic.c:155
 msgid "Bluescreen U tolerance"
 msgstr "Tolerancia pre hodnotu U"
 
-#: modules/video_filter/mosaic.c:158
+#: modules/video_filter/mosaic.c:156
 msgid ""
 "Tolerance of the bluescreen blender on color variations for the U plane. A "
 "value between 10 and 20 seems sensible."
@@ -17170,11 +17177,11 @@ msgstr ""
 "Určuje, do akej miery zmiešavač toleruje farebné odchýlky v rovine U. "
 "Nastavte hodnotu v rozsahu od 10 do 20."
 
-#: modules/video_filter/mosaic.c:161
+#: modules/video_filter/mosaic.c:159
 msgid "Bluescreen V tolerance"
 msgstr "Tolerancia pre hodnotu V"
 
-#: modules/video_filter/mosaic.c:162
+#: modules/video_filter/mosaic.c:160
 msgid ""
 "Tolerance of the bluescreen blender on color variations for the V plane. A "
 "value between 10 and 20 seems sensible."
@@ -17182,15 +17189,15 @@ msgstr ""
 "Určuje, do akej miery zmiešavač toleruje farebné odchýlky v rovine V. "
 "Nastavte hodnotu v rozsahu od 10 do 20."
 
-#: modules/video_filter/mosaic.c:168
+#: modules/video_filter/mosaic.c:166
 msgid "fixed"
 msgstr "fixne"
 
-#: modules/video_filter/mosaic.c:177
+#: modules/video_filter/mosaic.c:175
 msgid "Mosaic video sub filter"
 msgstr "Sub-filter pre mozaiku"
 
-#: modules/video_filter/mosaic.c:178
+#: modules/video_filter/mosaic.c:176
 msgid "Mosaic"
 msgstr "Mozaika"
 
@@ -18255,6 +18262,18 @@ msgstr "Farba textu zobrazovaného vo výstupe XOSD."
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "Rozhranie XOSD"
+
+#~ msgid "Vertical border width"
+#~ msgstr "Šírka vertikálneho okraja"
+
+#~ msgid ""
+#~ "Width in pixels of the border than can be drawn vertically around the "
+#~ "mosaic."
+#~ msgstr ""
+#~ "Šírka (v pixeloch) okraja, ktorý sa vykreslí vertikálne okolo mozaiky."
+
+#~ msgid "Horizontal border width"
+#~ msgstr "Šírka horizontálneho okraja"
 
 #~ msgid "Growl"
 #~ msgstr "Growl"
