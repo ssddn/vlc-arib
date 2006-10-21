@@ -1095,7 +1095,7 @@ dnl
 dnl  default modules
 dnl
 VLC_ADD_PLUGINS([dummy logger memcpy])
-VLC_ADD_PLUGINS([mpgv mpga m4v m4a h264 ps pva avi asf mp4 rawdv nsv real aiff mjpeg demuxdump flac])
+VLC_ADD_PLUGINS([mpgv mpga m4v m4a h264 ps pva avi asf mp4 rawdv nsv real aiff mjpeg demuxdump flac tta])
 VLC_ADD_PLUGINS([cvdsub svcdsub spudec subsdec dvbsub mpeg_audio lpcm a52 dts cinepak flacdec])
 VLC_ADD_PLUGINS([deinterlace invert adjust transform distort motionblur rv32])
 VLC_ADD_PLUGINS([fixed32tos16 s16tofixed32 u8tofixed32])
@@ -4933,6 +4933,9 @@ AS_IF([test "${enable_gnutls}" != "no"], [
     AS_IF([test "${enable_gnutls}" = "yes"], [
       AC_MSG_ERROR([gnutls not present or too old (version 1.2.9 required)])
     ])
+  ])
+  AC_CHECK_LIB([gcrypt], [gcry_control], [
+    VLC_ADD_LDFLAGS([gnutls], [-lgcrypt])
   ])
 ])
 

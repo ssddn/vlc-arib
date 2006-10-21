@@ -434,13 +434,7 @@ static int Open( vlc_object_t *p_this )
         sout_access_out_t *p_grab;
         char *psz_rtpmap, url[NI_MAXHOST + 8], access[17], psz_ttl[5], ipv;
 
-        if( b_rtsp )
-        {
-            msg_Err( p_stream, "muxing is not supported in RTSP mode" );
-            free( p_sys );
-            return VLC_EGENERIC;
-        }
-        else if( !p_sys->psz_destination || *p_sys->psz_destination == '\0' )
+        if( !p_sys->psz_destination || *p_sys->psz_destination == '\0' )
         {
             msg_Err( p_stream, "rtp needs a destination when muxing" );
             free( p_sys );
