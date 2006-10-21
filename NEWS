@@ -1,6 +1,6 @@
 $Id$
 
-Changes between 0.8.5 and 0.8.6:
+Changes between 0.8.5 and 0.8.6-test1:
 --------------------------------
 
 Playlist:
@@ -11,10 +11,15 @@ Input:
  * Support for adding subtitles on the fly
  * Fixed MPEG-PS duration calculation
  * ATSC support for DVB
+ * Support for DVR-ms
 
 Decoders:
  * Native WMV3 / VC-1 support
  * WMA Speech support (through binary codecs)
+ * VP5/VP6 - Flash Video support
+ * The True Audio Lossless codec support
+ * WavPack support
+ * Improved H264 support (interlaced, speed improvements etc)c
 
 Video output:
  * Additional OpenGL effects (cylinder, torus, sphere, ...)
@@ -34,6 +39,7 @@ Localization:
 
 Developers:
  * Updates to the libvlc API
+ * Fixes for the mozilla and activeX plugins
 
 
 Changes between 0.8.4a and 0.8.5:
