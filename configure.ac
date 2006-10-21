@@ -265,6 +265,8 @@ case "${target_os}" in
     VLC_ADD_CXXFLAGS([beos],[])
     VLC_ADD_LDFLAGS([vlc logger],[-lbe])
     VLC_ADD_LDFLAGS([beos],[-lbe -lmedia -ltranslation -ltracker -lgame])
+    VLC_ADD_LDFLAGS([dvdnav dvdread],[-ldl])
+    LDFLAGS_save="${LDFLAGS_save} -lintl"; LDFLAGS="${LDFLAGS_save}"
 
     dnl Check for BONE
     if test -f /boot/beos/system/lib/libbind.so; then

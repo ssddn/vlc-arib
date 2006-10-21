@@ -51,7 +51,7 @@
 # define lstat( a, b ) stat(a, b)
 #endif
 
-#ifdef __APPLE__
+#if defined( __APPLE__ ) || defined( __BEOS__ )
 /* Define this if the OS always use UTF-8 internally */
 # define ASSUME_UTF8 1
 #endif
