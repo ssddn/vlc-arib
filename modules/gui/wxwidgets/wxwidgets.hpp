@@ -108,8 +108,6 @@ DECLARE_LOCAL_EVENT_TYPE( wxEVT_INTF, 1 );
 #   define wxLocaleFree(string) LocaleFree(string)
 #endif
 
-#define wxDnDLocaleFree( string ) wxLocaleFree( string )
-
 /* From Locale functions to use for File Drop targets ... go figure */
 #ifdef wxUSE_UNICODE
 static inline char *wxDnDFromLocale( const wxChar *stupid )
@@ -124,25 +122,24 @@ static inline char *wxDnDFromLocale( const wxChar *stupid )
      * UTF-8 but also Windows-1252(!) and ISO-8859-15(!) or any
      * non-western encoding, it obviously fails.
      */
+    size_t n = 0;
+    while (stupid[n])
+        n++;
 
-    wxString str(stupid);
-    int i;
-
-    size_t n = str.Len();
-
-    char psz_local[n+1];
-
-    for(i=0;i<n;i++)
+    char psz_local[n + 1];
+    for (size_t i = 0; i <= n; i++)
         psz_local[i] = stupid[i];
-    psz_local[n] = '\0';
 
-    if( psz_local[n-1] == '\n' )
-        psz_local[n-1] = '\0';
+    // Kludge for (broken?) apps that adds a LF at the end of DnD
+    if ((n >= 1) && (strchr ("\n\r", stupid[n - 1]) != NULL))
+        psz_local[n - 1] = '\0';
 
     return FromLocaleDup( psz_local );
 }
+#   define wxDnDLocaleFree( string ) free( string )
 #else
 #   define wxDnDFromLocale( string ) wxFromLocale( string )
+#   define wxDnDLocaleFree( string ) wxLocaleFree( string )
 #endif
 
 #define WRAPCOUNT 80
