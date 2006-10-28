@@ -5074,7 +5074,7 @@ if test "${enable_mozilla}" = "yes"
 then
   dnl currently vlc plugin only needs headers, no xpcom support apis are actually used
   need_xpcom_libs=false
-  if test "${with_mozilla_sdk_path}" = ""
+  if test "${with_mozilla_sdk_path}" = "" -o "${with_mozilla_sdk_path}" = "no"
   then
     AC_PATH_PROG(MOZILLA_CONFIG, mozilla-config, no)
     if test "${MOZILLA_CONFIG}" = "no"
@@ -5094,7 +5094,7 @@ then
         MOZILLA_CONFIG="${SEAMONKEY_CONFIG}"
       fi
     fi
-    
+
     if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
       LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
       AC_CHECK_LIB(Xt,XtStrings,
@@ -5139,7 +5139,7 @@ then
           mozilla_sdk_xpcom="/xpcom"
       fi
     fi
-  
+
     real_mozilla_sdk="`cd ${with_mozilla_sdk_path} 2>/dev/null && pwd`"
     CPPFLAGS="${CPPFLAGS_save} -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include"
     AC_CHECK_HEADERS(mozilla-config.h, [
@@ -5147,26 +5147,26 @@ then
       VLC_ADD_CPPFLAGS([mozilla],[-DXPCOM_GLUE -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include -I${real_mozilla_sdk}/embedstring/include -I${real_mozilla_sdk}/xpcom/include -I${real_mozilla_sdk}/nspr/include -I${real_mozilla_sdk}/string/include -I${real_mozilla_sdk}/plugin/include -I${real_mozilla_sdk}/java/include])
       if ${need_xpcom_libs}; then
          VLC_ADD_LDFLAGS([mozilla],[-L${real_mozilla_sdk}/embedstring/bin -L${real_mozilla_sdk}/xpcom/bin -L${real_mozilla_sdk}/nspr/bin -L${real_mozilla_sdk}/string/bin -L${real_mozilla_sdk}/lib -lnspr4 -lplds4 -lplc4 -lxpcomglue])
-	 if test "${SYS}" = "mingw32"; then
-	   dnl latest gecko sdk does not have embedstring
-	   if test -d "${real_mozilla_sdk}/embedstring/bin"
-	   then
-	     VLC_ADD_LDFLAGS([mozilla],[-lembedstring -Wl,--kill-at])
-	   fi
-	 fi
+        if test "${SYS}" = "mingw32"; then
+          dnl latest gecko sdk does not have embedstring
+          if test -d "${real_mozilla_sdk}/embedstring/bin"
+          then
+            VLC_ADD_LDFLAGS([mozilla],[-lembedstring -Wl,--kill-at])
+          fi
+        fi
       fi
-  
+
       MOZILLA_SDK_PATH="${real_mozilla_sdk}"
       XPIDL_INCL="-I${real_mozilla_sdk}${mozilla_sdk_xpcom}/idl"
       xpidl_path="${real_mozilla_sdk}${mozilla_sdk_xpcom}/bin"
-  
+
       if test -n "${CYGPATH}"; then
         real_mozilla_sdk="`${CYGPATH} -w ${real_mozilla_sdk}`"
         XPIDL_INCL="${XPIDL_INCL} -I\"${real_mozilla_sdk}${mozilla_sdk_xpcom}/idl\""
       fi ])
     CPPFLAGS="${CPPFLAGS_save}"
   fi
-  
+
   if test "${enable_mozilla}" != "false"
   then
     AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla:/usr/lib/xulrunner:/usr/lib64/xulrunner)
