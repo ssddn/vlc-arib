@@ -5,7 +5,7 @@
  *
  * $Id: core.c 14187 2006-02-07 16:37:40Z courmisch $
  *
- * Authors: Cl�ent Stenac <zorglub@videolan.org>
+ * Authors: Clément Stenac <zorglub@videolan.org>
  *          Filippo Carone <littlejohn@videolan.org>
  *
  * This program is free software; you can redistribute it and/or modify
