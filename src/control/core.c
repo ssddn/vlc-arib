@@ -107,7 +107,7 @@ libvlc_instance_t * libvlc_new( int argc, char **argv,
     p_new->p_vlm = NULL;
 
     if( !p_new->p_playlist ) RAISENULL( "Playlist creation failed" );
-    
+
     p_new->i_vlc_id = i_vlc_id;
     return p_new;
 }
