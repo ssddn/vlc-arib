@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-27 16:37+0200\n"
+"POT-Creation-Date: 2006-10-28 01:50+0100\n"
 "PO-Revision-Date: 2006-04-19 08:35+0000\n"
 "Last-Translator: Clément Stenac <zorglub@diwi.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -19,19 +19,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-
-#: include/vlc/vlc.h:578
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"Ce programme est fourni SANS AUCUNE GARANTIE, tel que permis par la loi.\n"
-"Vous pouvez le redistribuer selon les termes de la Licence Publique Générale "
-"GNU ;\n"
-"voir le fichier COPYING pour plus de détails.\n"
-"Écrit par l’équipe VideoLAN ; voir le fichier AUTHORS.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -505,9 +492,9 @@ msgstr ""
 "invite de commande, allez dans le répertoire où vous avez installé VLC, et "
 "lancez « vlc -I wx ».\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1297 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
+#: modules/gui/macosx/playlist.m:1297 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:156
 #: modules/misc/notify.c:159 modules/visualization/goom.c:417
 msgid "Meta-information"
@@ -522,15 +509,15 @@ msgstr "Méta-données"
 msgid "Title"
 msgstr "Titre"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:134
-#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
+#: modules/gui/macosx/playlist.m:134 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Auteur"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1297 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310
+#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
+#: modules/gui/macosx/playlist.m:1297
 msgid "Artist"
 msgstr "Artiste"
 
@@ -672,6 +659,19 @@ msgstr "Codec"
 #: include/vlc_meta.h:69
 msgid "Codec Description"
 msgstr "Description du codec"
+
+#: include/vlc/vlc.h:578
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"Ce programme est fourni SANS AUCUNE GARANTIE, tel que permis par la loi.\n"
+"Vous pouvez le redistribuer selon les termes de la Licence Publique Générale "
+"GNU ;\n"
+"voir le fichier COPYING pour plus de détails.\n"
+"Écrit par l’équipe VideoLAN ; voir le fichier AUTHORS.\n"
 
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:361 src/libvlc.h:408 src/video_output/video_output.c:379
@@ -987,8 +987,9 @@ msgid "Web Interface"
 msgstr "Interface Web"
 
 #: src/interface/interface.c:384
+#, fuzzy
 msgid "Debug logging"
-msgstr ""
+msgstr "Module de journalisation dans un fichier"
 
 #: src/interface/interface.c:386
 #, fuzzy
@@ -1796,8 +1797,9 @@ msgstr ""
 "(1.25, 1.3333, etc.)."
 
 #: src/libvlc.h:341
+#, fuzzy
 msgid "Custom crop ratios list"
-msgstr ""
+msgstr "Boucler entre les aspects"
 
 #: src/libvlc.h:343
 msgid ""
@@ -4584,7 +4586,7 @@ msgid "Aspect-ratio"
 msgstr "Aspect"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dv.c:68 modules/access/dvb/access.c:72
+#: modules/access/dvb/access.c:72 modules/access/dv.c:68
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
@@ -5175,18 +5177,6 @@ msgstr "Rafraîchir la liste"
 msgid "Configure"
 msgstr "Configurer"
 
-#: modules/access/dv.c:70
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr "Taille du cache pour les flux DV, en millisecondes."
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr "http://images.cosplay.com/showphoto.php?photo=643526"
-
-#: modules/access/dv.c:75
-msgid "dv"
-msgstr "dv"
-
 #: modules/access/dvb/access.c:74
 msgid ""
 "Caching value for DVB streams. This value should be set in milliseconds."
@@ -5428,6 +5418,18 @@ msgstr "Entrée DVB (V4L2)"
 msgid "HTTP server"
 msgstr "Serveur HTTP"
 
+#: modules/access/dv.c:70
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr "Taille du cache pour les flux DV, en millisecondes."
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr ""
+
+#: modules/access/dv.c:75
+msgid "dv"
+msgstr "dv"
+
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
 msgstr "Angle DVD"
@@ -5589,6 +5591,48 @@ msgstr "Lecture de fichiers"
 msgid "File"
 msgstr "Fichier"
 
+#: modules/access_filter/record.c:43
+msgid "Record directory"
+msgstr "Répertoire d’enregistrement"
+
+#: modules/access_filter/record.c:45
+msgid "Directory where the record will be stored."
+msgstr "Répertoire de sauvegarde de l'enregistrement."
+
+#: modules/access_filter/timeshift.c:44
+msgid "Timeshift granularity"
+msgstr "Granularité en différé"
+
+#: modules/access_filter/timeshift.c:46
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr ""
+"Taille des fichiers temporaires à utiliser pour stocker le flux différé."
+
+#: modules/access_filter/timeshift.c:48
+msgid "Timeshift directory"
+msgstr "Répertoire temporaire pour le différé"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
+
+#: modules/access_filter/timeshift.c:51
+#, fuzzy
+msgid "Force use of the timeshift module"
+msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "Différé"
+
 #: modules/access/ftp.c:44
 msgid ""
 "Caching value for FTP streams. This value should be set in milliseconds."
@@ -5719,6 +5763,173 @@ msgstr ""
 #: modules/access/mms/mms.c:62
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Microsoft Media Server (MMS)"
+
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "Flux de sortie inutile"
+
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "Inutile"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "Ajouter au fichier"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr "Ecrit à la fin du fichier au lieu de le remplacer."
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "Sortie vers un fichier"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "Nom d’utilisateur"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr "Nom d’utilisateur qui sera demandé pour accéder au flux."
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr "Mot de passe qui sera demandé pour accéder au flux."
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "MIME"
+
+#: modules/access_output/http.c:69
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr "Type MIME renvoyé par le serveur (autodétecté si non spécifié)."
+
+#: modules/access_output/http.c:73
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr "Chemin du fichier x509 de certificat à utiliser pour HTTPS."
+
+#: modules/access_output/http.c:76
+#, fuzzy
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr ""
+"Chemin du fichier x509 de clé privée à utiliser pour HTTPS. Ne rien entrer "
+"si vous n'en n'avez pas."
+
+#: modules/access_output/http.c:80
+#, fuzzy
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr ""
+"Chemin du fichier x509 d'autorité de certification qui sera utilisé pour "
+"HTTPS. Ne rien entrer si vous n'en n'avez pas."
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+"Chemin du fichier x509 de liste de révocation de certificats qui sera "
+"utilisé pour HTTPS. Ne rien entrer si vous n'en n'avez pas"
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr "Annoncer avec Bonjour"
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr "Annoncer ce flux par le protocole Bonjour (Zeroconf)."
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "Flux de sortie HTTP"
+
+#: modules/access_output/shout.c:58
+msgid "Stream name"
+msgstr "Nom"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr "Nom à donner à ce flux/canal sur le serveur icecast."
+
+#: modules/access_output/shout.c:62
+msgid "Stream description"
+msgstr "Description du flux"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr "Description du contenu de votre flux et informations sur votre canal."
+
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "Diffuser en MP3"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+"Généralement, la sortie Icecast utilise des flux Ogg. Cette option vous "
+"permet d'utiliser des flux MP3 à la place."
+
+#: modules/access_output/shout.c:73
+msgid "IceCAST output"
+msgstr "Sortie IceCAST"
+
+#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
+#: modules/demux/live555.cpp:62
+msgid "Caching value (ms)"
+msgstr "Taille du cache en ms"
+
+#: modules/access_output/udp.c:77
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr "Taille du cache pour les flux UDP, en millisecondes."
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1846
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+msgid "Time-To-Live (TTL)"
+msgstr "Temps de vie (TTL)"
+
+#: modules/access_output/udp.c:81
+msgid "Time-To-Live of the outgoing stream."
+msgstr "TTL du flux sortant."
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "Groupe les paquets"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+"Les paquets peuvent être envoyés un par un au moment adéquat ou par groupes. "
+"Ceci permet de préciser le nombre de paquets qui seront envoyés en même "
+"temps. Cela réduit la charge de planification sur les systèmes surchargés."
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr "Réécriture brute"
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+"Envoyer les paquets directement, sans passer par le MTU (ie, sans essayer de "
+"construire les plus gros paquets possibles afin d’améliorer la diffusion)."
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "Flux de sortie UDP"
 
 #: modules/access/pvr/pvr.c:49
 msgid ""
@@ -5881,11 +6092,6 @@ msgstr "PVR"
 #: modules/access/pvr/pvr.c:117
 msgid "IVTV MPEG Encoding cards input"
 msgstr "Entrée pour cartes MPEG IVTV"
-
-#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
-#: modules/demux/live555.cpp:62
-msgid "Caching value (ms)"
-msgstr "Taille du cache en ms"
 
 #: modules/access/rtsp/access.c:42
 msgid ""
@@ -6338,210 +6544,6 @@ msgstr "Format à utiliser dans le champ « auteur » de la liste de lecture"
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "Format à utiliser dans le champ « titre » de la liste de lecture"
 
-#: modules/access_filter/record.c:43
-msgid "Record directory"
-msgstr "Répertoire d’enregistrement"
-
-#: modules/access_filter/record.c:45
-msgid "Directory where the record will be stored."
-msgstr "Répertoire de sauvegarde de l'enregistrement."
-
-#: modules/access_filter/timeshift.c:44
-msgid "Timeshift granularity"
-msgstr "Granularité en différé"
-
-#: modules/access_filter/timeshift.c:46
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr ""
-"Taille des fichiers temporaires à utiliser pour stocker le flux différé."
-
-#: modules/access_filter/timeshift.c:48
-msgid "Timeshift directory"
-msgstr "Répertoire temporaire pour le différé"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
-
-#: modules/access_filter/timeshift.c:51
-#, fuzzy
-msgid "Force use of the timeshift module"
-msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "Différé"
-
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "Flux de sortie inutile"
-
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "Inutile"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "Ajouter au fichier"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr "Ecrit à la fin du fichier au lieu de le remplacer."
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "Sortie vers un fichier"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "Nom d’utilisateur"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr "Nom d’utilisateur qui sera demandé pour accéder au flux."
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr "Mot de passe qui sera demandé pour accéder au flux."
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "MIME"
-
-#: modules/access_output/http.c:69
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr "Type MIME renvoyé par le serveur (autodétecté si non spécifié)."
-
-#: modules/access_output/http.c:73
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr "Chemin du fichier x509 de certificat à utiliser pour HTTPS."
-
-#: modules/access_output/http.c:76
-#, fuzzy
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr ""
-"Chemin du fichier x509 de clé privée à utiliser pour HTTPS. Ne rien entrer "
-"si vous n'en n'avez pas."
-
-#: modules/access_output/http.c:80
-#, fuzzy
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr ""
-"Chemin du fichier x509 d'autorité de certification qui sera utilisé pour "
-"HTTPS. Ne rien entrer si vous n'en n'avez pas."
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-"Chemin du fichier x509 de liste de révocation de certificats qui sera "
-"utilisé pour HTTPS. Ne rien entrer si vous n'en n'avez pas"
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr "Annoncer avec Bonjour"
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr "Annoncer ce flux par le protocole Bonjour (Zeroconf)."
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "Flux de sortie HTTP"
-
-#: modules/access_output/shout.c:58
-msgid "Stream name"
-msgstr "Nom"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr "Nom à donner à ce flux/canal sur le serveur icecast."
-
-#: modules/access_output/shout.c:62
-msgid "Stream description"
-msgstr "Description du flux"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr "Description du contenu de votre flux et informations sur votre canal."
-
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "Diffuser en MP3"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-"Généralement, la sortie Icecast utilise des flux Ogg. Cette option vous "
-"permet d'utiliser des flux MP3 à la place."
-
-#: modules/access_output/shout.c:73
-msgid "IceCAST output"
-msgstr "Sortie IceCAST"
-
-#: modules/access_output/udp.c:77
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr "Taille du cache pour les flux UDP, en millisecondes."
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1846
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-msgid "Time-To-Live (TTL)"
-msgstr "Temps de vie (TTL)"
-
-#: modules/access_output/udp.c:81
-msgid "Time-To-Live of the outgoing stream."
-msgstr "TTL du flux sortant."
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "Groupe les paquets"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-"Les paquets peuvent être envoyés un par un au moment adéquat ou par groupes. "
-"Ceci permet de préciser le nombre de paquets qui seront envoyés en même "
-"temps. Cela réduit la charge de planification sur les systèmes surchargés."
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr "Réécriture brute"
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-"Envoyer les paquets directement, sans passer par le MTU (ie, sans essayer de "
-"construire les plus gros paquets possibles afin d’améliorer la diffusion)."
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "Flux de sortie UDP"
-
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
 msgstr "Décodeur Dolby Surround"
@@ -6639,7 +6641,7 @@ msgstr ""
 
 #: modules/audio_filter/converter/a52tofloat32.c:103
 msgid "Enable the internal upmixing algorithm (not recommended)."
-msgstr ""
+msgstr "Active algorithme d'encodage entrelacé (non recommandé)."
 
 #: modules/audio_filter/converter/a52tofloat32.c:107
 #: modules/audio_filter/converter/a52tofloat32.c:116
@@ -8700,8 +8702,9 @@ msgid "Inter luma quantization deadzone"
 msgstr "Facteur de quantization I"
 
 #: modules/codec/x264.c:275
+#, fuzzy
 msgid "Set the size of the inter luma quantization deadzone. Range 0 to 32."
-msgstr ""
+msgstr "Facteur de quantization I"
 
 #: modules/codec/x264.c:278
 #, fuzzy
@@ -8709,8 +8712,9 @@ msgid "Intra luma quantization deadzone"
 msgstr "Facteur de quantization I"
 
 #: modules/codec/x264.c:279
+#, fuzzy
 msgid "Set the size of the intra luma quantization deadzone. Range 0 to 32."
-msgstr ""
+msgstr "Facteur de quantization I"
 
 #: modules/codec/x264.c:285
 msgid "CPU optimizations"
@@ -8723,7 +8727,7 @@ msgstr "Utilisation les optimisations CPU assembleur"
 #: modules/codec/x264.c:288
 #, fuzzy
 msgid "PSNR computation"
-msgstr "Calcul du PSNR"
+msgstr "Domaine SMB"
 
 #: modules/codec/x264.c:289
 msgid ""
@@ -8745,7 +8749,7 @@ msgstr ""
 #: modules/codec/x264.c:296
 #, fuzzy
 msgid "Quiet mode"
-msgstr "Mode silencieux"
+msgstr "Mode « budget »"
 
 #: modules/codec/x264.c:297
 #, fuzzy
@@ -8777,8 +8781,9 @@ msgid "Access unit delimiters"
 msgstr "Filtres d’accès"
 
 #: modules/codec/x264.c:309
+#, fuzzy
 msgid "Generate access unit delimiter NAL units."
-msgstr ""
+msgstr "Filtres d’accès"
 
 #: modules/codec/x264.c:315
 msgid "dia"
@@ -8924,6 +8929,7 @@ msgid "Host address"
 msgstr "Adresse de l’hôte"
 
 #: modules/control/http/http.c:36
+#, fuzzy
 msgid ""
 "Address and port the HTTP interface will listen on. It defaults to all "
 "network interfaces (0.0.0.0). If you want the HTTP interface to be available "
@@ -9682,9 +9688,7 @@ msgstr "Nom d’utilisateur FTP"
 msgid ""
 "Allows you to modify the user name that will be used for authenticating the "
 "connection."
-msgstr ""
-"Ceci vous permet de modifier le nom d’utilisateur qui sera utilisé pour la "
-"connexion (authentification basique seulement)."
+msgstr "Mot de passer à utiliser pour la connexion."
 
 #: modules/demux/live555.cpp:75
 #, fuzzy
@@ -11195,14 +11199,12 @@ msgid "Error"
 msgstr "Erreur"
 
 #: modules/gui/macosx/interaction.m:178
-#, fuzzy
 msgid "Yes"
-msgstr "&Oui"
+msgstr "Oui"
 
 #: modules/gui/macosx/interaction.m:178
-#, fuzzy
 msgid "No"
-msgstr "&Non"
+msgstr "Non"
 
 #: modules/gui/macosx/intf.m:485
 msgid "VLC - Controller"
@@ -11324,8 +11326,8 @@ msgid "Extended Controls"
 msgstr "Contrôles étendus"
 
 #: modules/gui/macosx/intf.m:597 modules/gui/macosx/intf.m:639
-#: modules/gui/macosx/playlist.m:486 modules/gui/macosx/playlistinfo.m:55
-#: modules/gui/macosx/playlistinfo.m:371
+#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
+#: modules/gui/macosx/playlist.m:486
 msgid "Information"
 msgstr "Informations"
 
@@ -11688,6 +11690,71 @@ msgstr "URL du SDP"
 msgid "Save File"
 msgstr "Enregistrer le fichier"
 
+#: modules/gui/macosx/playlistinfo.m:56
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
+msgid "URI"
+msgstr "URI"
+
+#: modules/gui/macosx/playlistinfo.m:63
+msgid "Advanced Information"
+msgstr "Informations avancées"
+
+#: modules/gui/macosx/playlistinfo.m:81
+msgid "Read at media"
+msgstr "Lu à la source"
+
+#: modules/gui/macosx/playlistinfo.m:82
+msgid "Input bitrate"
+msgstr "Débit d'entrée"
+
+#: modules/gui/macosx/playlistinfo.m:83
+msgid "Demuxed"
+msgstr "Démultiplexé"
+
+#: modules/gui/macosx/playlistinfo.m:84
+msgid "Stream bitrate"
+msgstr "Débit du flux"
+
+#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
+msgid "Decoded blocks"
+msgstr "Blocs décodés"
+
+#: modules/gui/macosx/playlistinfo.m:88
+msgid "Displayed frames"
+msgstr "Images affichées"
+
+#: modules/gui/macosx/playlistinfo.m:89
+msgid "Lost frames"
+msgstr "Images perdues"
+
+#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
+#: modules/video_filter/deinterlace.c:137
+msgid "Streaming"
+msgstr "Diffusion"
+
+#: modules/gui/macosx/playlistinfo.m:92
+msgid "Sent packets"
+msgstr "Paquets envoyés"
+
+#: modules/gui/macosx/playlistinfo.m:93
+msgid "Sent bytes"
+msgstr "Octetss envoyés"
+
+#: modules/gui/macosx/playlistinfo.m:94
+msgid "Send rate"
+msgstr "Débit d'envoi"
+
+#: modules/gui/macosx/playlistinfo.m:98
+msgid "Played buffers"
+msgstr "Buffers joués"
+
+#: modules/gui/macosx/playlistinfo.m:99
+msgid "Lost buffers"
+msgstr "Tampons perdus"
+
 #: modules/gui/macosx/playlist.m:481
 msgid "Save Playlist..."
 msgstr "Enregistrer la liste de lecture…"
@@ -11767,71 +11834,6 @@ msgstr "Enregistrer la liste de lecture"
 #: modules/gui/macosx/playlist.m:1560
 msgid "Empty Folder"
 msgstr "Répertoire vide"
-
-#: modules/gui/macosx/playlistinfo.m:56
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
-msgid "URI"
-msgstr "URI"
-
-#: modules/gui/macosx/playlistinfo.m:63
-msgid "Advanced Information"
-msgstr "Informations avancées"
-
-#: modules/gui/macosx/playlistinfo.m:81
-msgid "Read at media"
-msgstr "Lu à la source"
-
-#: modules/gui/macosx/playlistinfo.m:82
-msgid "Input bitrate"
-msgstr "Débit d'entrée"
-
-#: modules/gui/macosx/playlistinfo.m:83
-msgid "Demuxed"
-msgstr "Démultiplexé"
-
-#: modules/gui/macosx/playlistinfo.m:84
-msgid "Stream bitrate"
-msgstr "Débit du flux"
-
-#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
-msgid "Decoded blocks"
-msgstr "Blocs décodés"
-
-#: modules/gui/macosx/playlistinfo.m:88
-msgid "Displayed frames"
-msgstr "Images affichées"
-
-#: modules/gui/macosx/playlistinfo.m:89
-msgid "Lost frames"
-msgstr "Images perdues"
-
-#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
-#: modules/video_filter/deinterlace.c:137
-msgid "Streaming"
-msgstr "Diffusion"
-
-#: modules/gui/macosx/playlistinfo.m:92
-msgid "Sent packets"
-msgstr "Paquets envoyés"
-
-#: modules/gui/macosx/playlistinfo.m:93
-msgid "Sent bytes"
-msgstr "Octetss envoyés"
-
-#: modules/gui/macosx/playlistinfo.m:94
-msgid "Send rate"
-msgstr "Débit d'envoi"
-
-#: modules/gui/macosx/playlistinfo.m:98
-msgid "Played buffers"
-msgstr "Buffers joués"
-
-#: modules/gui/macosx/playlistinfo.m:99
-msgid "Lost buffers"
-msgstr "Tampons perdus"
 
 #: modules/gui/macosx/prefs.m:123
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13170,11 +13172,6 @@ msgstr "Module d’interface WinCE"
 msgid "WinCE dialogs provider"
 msgstr "Fournisseur de dialogues WinCE"
 
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr ""
-
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "Editer le signet"
@@ -13270,6 +13267,11 @@ msgstr ""
 msgid "Input has changed "
 msgstr "L’entrée a changé "
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr ""
+
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
 msgstr "Info flux et média"
@@ -13311,6 +13313,7 @@ msgid "Playlist item info"
 msgstr "Informations sur l’élément"
 
 #: modules/gui/wxwidgets/dialogs/messages.cpp:81
+#, fuzzy
 msgid "Save &As..."
 msgstr "Enregistrer &sous…"
 
@@ -14923,6 +14926,10 @@ msgstr "Fichier de sortie RRD"
 msgid "Output data for RRDTool in this file."
 msgstr "Faire sortir des données pour RRDTool dans ce fichier."
 
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
+msgstr "Module de memcpy optimisé AltiVec"
+
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr "Module de memcpy pour libc"
@@ -14938,10 +14945,6 @@ msgstr "Module de memcpy optimisé MMX"
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
 msgstr "Module de memcpy optimisé MMMEXT"
-
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr "Module de memcpy optimisé AltiVec"
 
 #: modules/misc/msn.c:64
 msgid "MSN Title format string"
@@ -18053,42 +18056,6 @@ msgstr "Couleur utilisée pour afficher le texte dans la sortie xosd."
 msgid "XOSD interface"
 msgstr "Interface XOSD"
 
-#~ msgid "Growl"
-#~ msgstr "Growl"
-
-#~ msgid "MSN"
-#~ msgstr "MSN"
-
-#~ msgid "Vertical border width"
-#~ msgstr "Largeur de la bordure verticale"
-
-#~ msgid ""
-#~ "Width in pixels of the border than can be drawn vertically around the "
-#~ "mosaic."
-#~ msgstr "Largeur en pixels de la bordure à laisser autour de la mosaïque"
-
-#~ msgid "Horizontal border width"
-#~ msgstr "Largeur de la frontière horizontale en pixels"
-
-#~ msgid "Create"
-#~ msgstr "Créer"
-
-#~ msgid " to "
-#~ msgstr " vers "
-
-#~ msgid ""
-#~ "This has no effect on actual encoding quality, it just prevents the stats "
-#~ "from being calculated (for speed)."
-#~ msgstr ""
-#~ "Ceci n'a pas d'effet sur la qualité d'encodage. Les statistiques ne "
-#~ "seront pas calculées afin de gagner du temps."
-
-#~ msgid "Number of streams"
-#~ msgstr "Nombre de flux"
-
-#~ msgid "Maximum number of Shoutcast radio streams which would be listed."
-#~ msgstr "Nombre maximal de flux Shoutcast à lister"
-
 #~ msgid "DCA"
 #~ msgstr "DCA"
 
@@ -18099,6 +18066,35 @@ msgstr "Interface XOSD"
 #~ "Par défaut, les sous-titres expirent 15 secondes après leur délai normal "
 #~ "d'expiration. Ceci permet d'être sûr qu'ils sont visibles au moins "
 #~ "pendant le délai spécifié."
+
+#, fuzzy
+#~ msgid "QP factor between I and P."
+#~ msgstr "Facteur de QP entre I et P"
+
+#, fuzzy
+#~ msgid "QP factor between P and B."
+#~ msgstr "Facteur de QP entre P et B"
+
+#, fuzzy
+#~ msgid ""
+#~ "This parameter controls quality versus speed tradeoffs involved in the "
+#~ "motion estimation decision process (lower = quicker and higher = better "
+#~ "quality). From 1 to 6."
+#~ msgstr ""
+#~ "Ce paramètre contrôle la qualité par rapport aux compromis de vitesses "
+#~ "impliquées dans le processus de choix du mouvement estimé (faible = plus "
+#~ "rapide et élevé = meilleure qualité)."
+
+#, fuzzy
+#~ msgid "PSNR calculation"
+#~ msgstr "Calcul du PSNR"
+
+#~ msgid ""
+#~ "This has no effect on actual encoding quality, it just prevents the stats "
+#~ "from being calculated (for speed)."
+#~ msgstr ""
+#~ "Ceci n'a pas d'effet sur la qualité d'encodage. Les statistiques ne "
+#~ "seront pas calculées afin de gagner du temps."
 
 #~ msgid "Subpicture Filters"
 #~ msgstr "Incrustations"
@@ -18111,6 +18107,10 @@ msgstr "Interface XOSD"
 
 #~ msgid "Image"
 #~ msgstr "Image"
+
+#, fuzzy
+#~ msgid "Timestamp"
+#~ msgstr "Différé"
 
 #~ msgid "(in pixels)"
 #~ msgstr "(en pixels)"
@@ -18145,6 +18145,41 @@ msgstr "Interface XOSD"
 #~ msgid "Right-Bottom"
 #~ msgstr "Bas-Droite"
 
+#~ msgid "Create"
+#~ msgstr "Créer"
+
+#~ msgid "Growl"
+#~ msgstr "Growl"
+
+#~ msgid "MSN"
+#~ msgstr "MSN"
+
+#~ msgid "Number of streams"
+#~ msgstr "Nombre de flux"
+
+#~ msgid "Maximum number of Shoutcast radio streams which would be listed."
+#~ msgstr "Nombre maximal de flux Shoutcast à lister"
+
+#~ msgid " to "
+#~ msgstr " vers "
+
+#~ msgid "Vertical border width"
+#~ msgstr "Largeur de la bordure verticale"
+
+#~ msgid ""
+#~ "Width in pixels of the border than can be drawn vertically around the "
+#~ "mosaic."
+#~ msgstr "Largeur en pixels de la bordure à laisser autour de la mosaïque"
+
+#~ msgid "Horizontal border width"
+#~ msgstr "Largeur de la frontière horizontale en pixels"
+
+#, fuzzy
+#~ msgid ""
+#~ "Width in pixels of the border than can be drawn horizontally around the "
+#~ "mosaic."
+#~ msgstr "Largeur en pixels de la bordure à laisser autour de la mosaïque"
+
 #~ msgid "Adjust Image"
 #~ msgstr "Ajuster l’image"
 
@@ -18162,6 +18197,10 @@ msgstr "Interface XOSD"
 
 #~ msgid "Control interface settings"
 #~ msgstr "Paramètres de l’interface de contrôle"
+
+#, fuzzy
+#~ msgid "Text rendering"
+#~ msgstr "Rendu du texte"
 
 #~ msgid ""
 #~ "Use the settings of the \"freetype\" module to choose the font you  want "
@@ -18388,17 +18427,14 @@ msgstr "Interface XOSD"
 #~ msgid "[0=stereo, 1=dual-mono, 2=joint-stereo]"
 #~ msgstr "[0=stereo, 1=mono-dual, 2=joint-stereo]"
 
-#, fuzzy
 #~ msgid "Current version"
-#~ msgstr "Inversion des couleurs"
+#~ msgstr "Version actuelle"
 
-#, fuzzy
 #~ msgid "Your version"
-#~ msgstr "Inversion des couleurs"
+#~ msgstr "Votre version"
 
-#, fuzzy
 #~ msgid "Mirror"
-#~ msgstr "Erreur"
+#~ msgstr "Miroir"
 
 #~ msgid "UPnP"
 #~ msgstr "UPnP"
@@ -18416,6 +18452,166 @@ msgstr "Interface XOSD"
 #~ msgid "Windows GDI"
 #~ msgstr "Windows GDI"
 
+#~ msgid "Access modules settings"
+#~ msgstr "Paramètres des modules d’accès"
+
+#~ msgid "Audio output modules settings"
+#~ msgstr "Paramètres des modules de sortie audio"
+
+#~ msgid "Decoder modules settings"
+#~ msgstr "Paramètres des modules de décodage"
+
+#~ msgid "Demuxers settings"
+#~ msgstr "Paramètres des démultiplexeurs"
+
+#, fuzzy
+#~ msgid "Stream output access modules settings"
+#~ msgstr "Paramètres des modules de chroma"
+
+#~ msgid "Text renderer settings"
+#~ msgstr "Paramètres du module de rendu de texte"
+
+#~ msgid "Video track"
+#~ msgstr "Piste vidéo"
+
+#~ msgid "Next Chapter"
+#~ msgstr "Chapitre suivant"
+
+#~ msgid "Previous Chapter"
+#~ msgstr "Chapitre précédent"
+
+#~ msgid ""
+#~ "Usage: %s [options] [items]...\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Utilisation : %s [options] [éléments]…\n"
+#~ "\n"
+
+#~ msgid "[module]              [description]\n"
+#~ msgstr "[module] [description]\n"
+
+#~ msgid "Choose channel"
+#~ msgstr "Choisir un canal"
+
+#~ msgid "Choose a stream output"
+#~ msgstr "Choisir un flux de sortie"
+
+#~ msgid "Loop playlist on end"
+#~ msgstr "Tout répéter"
+
+#~ msgid "CD Audio demux"
+#~ msgstr "Démultipléxeur de CD Audio"
+
+#~ msgid "file"
+#~ msgstr "fichier"
+
+#, fuzzy
+#~ msgid "Dummy stream ouput"
+#~ msgstr "Flux de sortie inutile"
+
+#~ msgid "File stream ouput"
+#~ msgstr "Fichier flux de sortie"
+
+#~ msgid "UDP stream ouput"
+#~ msgstr "Flux de sortie UDP"
+
+#~ msgid "udp stream output"
+#~ msgstr "Flux de sortie udp"
+
+#~ msgid "Truncated stream"
+#~ msgstr "Flux tronqué"
+
+#~ msgid "Stream "
+#~ msgstr "Flux "
+
+#~ msgid "Codec name"
+#~ msgstr "Nom du codec"
+
+#, fuzzy
+#~ msgid "Planes"
+#~ msgstr "Pranks"
+
+#~ msgid "Number of Streams"
+#~ msgstr "Nombre de flux"
+
+#, fuzzy
+#~ msgid "Flags"
+#~ msgstr "Plat"
+
+#, fuzzy
+#~ msgid "Audio Bitrate"
+#~ msgstr "Débit audio :"
+
+#, fuzzy
+#~ msgid "playlist metademux"
+#~ msgstr "Liste de lecture (meta-demultiplexeur)"
+
+#, fuzzy
+#~ msgid "Segment Filename"
+#~ msgstr "Nom de fichier du Segment"
+
+#, fuzzy
+#~ msgid "Muxing Application"
+#~ msgstr "Application de multiplexage"
+
+#, fuzzy
+#~ msgid "Writing Application"
+#~ msgstr "Application d’écriture"
+
+#~ msgid "Codec Setting"
+#~ msgstr "Réglages du Codec"
+
+#~ msgid "Codec Info"
+#~ msgstr "Informations sur le codec"
+
+#~ msgid "Codec Download"
+#~ msgstr "Téléchargement de codec"
+
+#~ msgid "Display Resolution"
+#~ msgstr "Résolution d'affichage"
+
+#, fuzzy
+#~ msgid "Instrumental Pop"
+#~ msgstr "Pop instrumentale"
+
+#~ msgid "Instrumental Rock"
+#~ msgstr "Rock instrumental"
+
+#~ msgid "Pop/Funk"
+#~ msgstr "Pop / Funk"
+
+#~ msgid "Psychadelic"
+#~ msgstr "Psychédélique"
+
+#, fuzzy
+#~ msgid "Acid Punk"
+#~ msgstr "Acid punk"
+
+#, fuzzy
+#~ msgid "Acid Jazz"
+#~ msgstr "Acid jazz"
+
+#~ msgid "Rock & Roll"
+#~ msgstr "Rock & Roll"
+
+#~ msgid "Hard Rock"
+#~ msgstr "Hard Rock"
+
+#~ msgid "Prev Chapter"
+#~ msgstr "Chapitre préc"
+
+#~ msgid "Play List"
+#~ msgstr "Liste de lecture"
+
+#~ msgid "VideoLAN Client: Open Subtitle File"
+#~ msgstr "Client VideoLAN : Ouvrir le Fichier de Sous-titres"
+
+#~ msgid "<unknown>"
+#~ msgstr "<inconnu>"
+
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
+
 #~ msgid "GNOME interface"
 #~ msgstr "Interface GNOME"
 
@@ -18427,6 +18623,9 @@ msgstr "Interface XOSD"
 
 #~ msgid "Open _Disc..."
 #~ msgstr "Ouvrir _disque…"
+
+#~ msgid "Open a DVD or VCD"
+#~ msgstr "Ouvrir un DVD ou VCD"
 
 #~ msgid "_Network Stream..."
 #~ msgstr "Flux réseau…"
@@ -18497,6 +18696,9 @@ msgstr "Interface XOSD"
 #~ msgid "Chapter:"
 #~ msgstr "Chapitre :"
 
+#~ msgid "(c) 1996-2003 the VideoLAN team"
+#~ msgstr "(c) 1996-2003 l'équipe VideoLAN"
+
 #~ msgid "HTTP/FTP/MMS"
 #~ msgstr "HTTP/FTP/MMS"
 
@@ -18506,8 +18708,14 @@ msgstr "Interface XOSD"
 #~ msgid "Vertical"
 #~ msgstr "Verticale"
 
+#~ msgid "Url"
+#~ msgstr "URL"
+
 #~ msgid "Path:"
 #~ msgstr "Chemin d’accès :"
+
+#~ msgid "Gtk+"
+#~ msgstr "Gtk+"
 
 #~ msgid "Gtk+ interface"
 #~ msgstr "Interface Gtk+"
@@ -18551,6 +18759,9 @@ msgstr "Interface XOSD"
 #~ msgid "Select File"
 #~ msgstr "Sélectionner le fichier"
 
+#~ msgid "Go to:"
+#~ msgstr "Atteindre :"
+
 #~ msgid "_Invert"
 #~ msgstr "_Inverser"
 
@@ -18566,14 +18777,56 @@ msgstr "Interface XOSD"
 #~ msgid "Selected:"
 #~ msgstr "Sélectionné :"
 
+#~ msgid "Gtk2 interface"
+#~ msgstr "Interface Gtk2"
+
+#~ msgid "_New"
+#~ msgstr "_Nouveau"
+
+#~ msgid "window1"
+#~ msgstr "fenêtre1"
+
+#~ msgid "_Edit"
+#~ msgstr "É_dition"
+
+#~ msgid "_About"
+#~ msgstr "À _propos"
+
 #~ msgid "Languages"
 #~ msgstr "Langues"
 
 #~ msgid "KDE interface"
 #~ msgstr "Interface KDE"
 
+#~ msgid "Fit To Screen"
+#~ msgstr "Redimensionner à la taille de l'écran"
+
+#~ msgid "Repeat Playlist"
+#~ msgstr "Répéter la liste de lecture"
+
 #~ msgid "Controls"
 #~ msgstr "Contrôles"
+
+#~ msgid "TTL"
+#~ msgstr "TTL"
+
+#~ msgid "Ogg"
+#~ msgstr "Ogg"
+
+#~ msgid "MPEG PS"
+#~ msgstr "MPEG PS"
+
+#~ msgid "MPEG 4"
+#~ msgstr "MPEG 4"
+
+#~ msgid "MPEG 1"
+#~ msgstr "MPEG 1"
+
+#~ msgid "Quicktime"
+#~ msgstr "Quicktime"
+
+#~ msgid "ncurses interface"
+#~ msgstr "Interface ncurses"
 
 #~ msgid "Pause stream"
 #~ msgstr "Suspendre le flux"
@@ -18581,11 +18834,377 @@ msgstr "Interface XOSD"
 #~ msgid "Play stream"
 #~ msgstr "Jouer le flux"
 
+#~ msgid "MRL :"
+#~ msgstr "MRL"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "0:00:00"
+#~ msgstr "0:00:00"
+
+#~ msgid "file://"
+#~ msgstr "file://"
+
+#~ msgid "ftp://"
+#~ msgstr "ftp://"
+
+#~ msgid "http://"
+#~ msgstr "http://"
+
+#~ msgid "udp://@:1234"
+#~ msgstr "udp://@:1234"
+
+#~ msgid "udp6://@:1234"
+#~ msgstr "udp6://@:1234"
+
+#~ msgid "rtp://"
+#~ msgstr "rtp://"
+
+#~ msgid "rtp6://"
+#~ msgstr "rtp6://"
+
+#~ msgid "Stream:"
+#~ msgstr "Flux :"
+
+#~ msgid "client"
+#~ msgstr "client"
+
+#~ msgid "/dev/dsp"
+#~ msgstr "/dev/dsp"
+
+#~ msgid "/dev/video"
+#~ msgstr "/dev/video"
+
+#~ msgid "Device :"
+#~ msgstr "Matériel :"
+
+#~ msgid "Codec :"
+#~ msgstr "Codec :"
+
+#, fuzzy
+#~ msgid "huff"
+#~ msgstr "huffyuv"
+
+#~ msgid "Server"
+#~ msgstr "Serveur"
+
+#~ msgid "http://www.videolan.org"
+#~ msgstr "http://www.videolan.org"
+
 #~ msgid "Qt interface"
 #~ msgstr "Interface Qt"
 
+#~ msgid "FileInfo"
+#~ msgstr "InfoFichier"
+
+#~ msgid "Open a DVD or (S)VCD"
+#~ msgstr "Ouvrir un DVD ou un (S)VCD"
+
+#~ msgid "Open a network stream"
+#~ msgstr "Ouvrir un flux réseau"
+
+#~ msgid "Eject the DVD/CD"
+#~ msgstr "Ejecter un DVD/CD"
+
+#~ msgid "Exit this program"
+#~ msgstr "Quitter ce programme"
+
+#~ msgid "Show the program logs"
+#~ msgstr "Montrer le journal du programme"
+
+#~ msgid "About this program"
+#~ msgstr "A propos de..."
+
+#~ msgid "Simple &Open ..."
+#~ msgstr "&Ouverture simple..."
+
+#~ msgid "Open &Satellite Stream..."
+#~ msgstr "Ouvrir un flux &Satellite..."
+
+#~ msgid "&Eject Disc"
+#~ msgstr "&Ejecter le disque"
+
+#~ msgid "E&xit"
+#~ msgstr "&Quitter"
+
+#~ msgid "&File info..."
+#~ msgstr "&Informations Fichier..."
+
+#~ msgid "&About..."
+#~ msgstr "À &propos..."
+
+#~ msgid ""
+#~ " (wxWindows interface)\n"
+#~ "\n"
+#~ msgstr ""
+#~ " (Interface wxWindows)\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "(C) 1996-2003 - the VideoLAN Team\n"
+#~ "\n"
+#~ msgstr ""
+#~ "(C) 1996-2003 - l'équipe VideoLAN↵\n"
+#~ "↵\n"
+#~ "\n"
+
+#~ msgid "Playlist Item options"
+#~ msgstr "Options des listes de lecture"
+
+#, fuzzy
+#~ msgid "Group Info"
+#~ msgstr "Nom du groupe"
+
+#~ msgid "Audio menu"
+#~ msgstr "Menu audio"
+
+#~ msgid "Capture input stream"
+#~ msgstr "Capturer le flux entrant"
+
+#~ msgid "Video For Linux"
+#~ msgstr "La video pour Linux"
+
+#~ msgid "CD Audio"
+#~ msgstr "CD Audio"
+
+#~ msgid "WebCam"
+#~ msgstr "Webcam"
+
+#~ msgid "TV Card"
+#~ msgstr "Carte TV"
+
+#~ msgid "&Simple Add..."
+#~ msgstr "Ajout &Simple..."
+
+#~ msgid "&Disable"
+#~ msgstr "&Désactiver"
+
+#~ msgid "&Select All"
+#~ msgstr "&Tout sélectionner"
+
+#~ msgid "Repeat one"
+#~ msgstr "Répéter un morceau"
+
+#~ msgid "Item Infos"
+#~ msgstr "Informations Eléments"
+
+#~ msgid "no info"
+#~ msgstr "pas d'information"
+
+#~ msgid "General Settings"
+#~ msgstr "Réglages généraux"
+
+#~ msgid "Delay subtitles (in 1/10s)"
+#~ msgstr "Décalage des sous-titres (en dixièmes de seconde)"
+
+#~ msgid "Video Device Advanced Options"
+#~ msgstr "Options avancées de l'appareil Vidéo"
+
+#~ msgid "Audio Options"
+#~ msgstr "Options audio"
+
+#~ msgid "Bitrate Options"
+#~ msgstr "Options liées au débit"
+
+#~ msgid "Filename of Font"
+#~ msgstr "Nom de fichier de la Police"
+
+#~ msgid "Fonts"
+#~ msgstr "Polices"
+
+#~ msgid "HTTP 1.0 daemon"
+#~ msgstr "HTTP 1.0 daemon"
+
+#~ msgid "log filename"
+#~ msgstr "Nom du fichier log"
+
+#~ msgid "file logging interface"
+#~ msgstr "Fichier journal de l'interface"
+
+#~ msgid "SAP interface"
+#~ msgstr "Interface SAP"
+
+#, fuzzy
+#~ msgid "Dummy stream"
+#~ msgstr "Flux de sortie inutile"
+
+#~ msgid "Standard stream"
+#~ msgstr "Flux standard"
+
+#~ msgid "Transcode stream"
+#~ msgstr "Flux transcodé"
+
+#~ msgid "Adjust"
+#~ msgstr "Ajuster"
+
+#, fuzzy
+#~ msgid "List of vout modules"
+#~ msgstr "Liste des modules de sortie vidéo"
+
+#~ msgid "logo"
+#~ msgstr "logo"
+
+#~ msgid "logo video filter"
+#~ msgstr "logo du filtre video"
+
+#~ msgid "X11"
+#~ msgstr "X11"
+
+#~ msgid "XOSD module"
+#~ msgstr "module XOSD"
+
+#~ msgid "xosd interface"
+#~ msgstr "interface XOSD"
+
+#~ msgid "Close Menu"
+#~ msgstr "Fermer le menu"
+
+#~ msgid "Advanced open options"
+#~ msgstr "Options avancées utilisables"
+
+#~ msgid "subtitles"
+#~ msgstr "Sous-titres"
+
+#~ msgid "SAP interface module"
+#~ msgstr "Module d'interface SAP"
+
+#, fuzzy
+#~ msgid "HTTP interface bind port"
+#~ msgstr "Port de l’interface telnet"
+
+#, fuzzy
+#~ msgid "osd text filter"
+#~ msgstr "Filtre vidéo"
+
+#~ msgid "&Title:"
+#~ msgstr "&Titre :"
+
+#~ msgid "&Chapter:"
+#~ msgstr "&Chapitre :"
+
+#~ msgid "Open &file..."
+#~ msgstr "Ouvrir &file..."
+
+#~ msgid "Open &disc..."
+#~ msgstr "Ouvrir &disc..."
+
+#~ msgid "&Network stream..."
+#~ msgstr "&Flux réseau..."
+
+#~ msgid "&Hide interface"
+#~ msgstr "&Cacher l'interface"
+
+#~ msgid "&Add interface"
+#~ msgstr "&Ajouter une interface"
+
+#~ msgid "Spawn a new interface"
+#~ msgstr "Engendrer une nouvelle interface"
+
+#~ msgid "&Controls"
+#~ msgstr "&Contrôles"
+
+#~ msgid "C&hannels"
+#~ msgstr "C&anaux"
+
+#~ msgid "Sc&reen"
+#~ msgstr "Ecran"
+
+#~ msgid "&Title"
+#~ msgstr "&Titre"
+
+#~ msgid "&Chapter"
+#~ msgstr "&Chapitre"
+
+#~ msgid "Select angle"
+#~ msgstr "Selectionner l'angle"
+
+#~ msgid "&Language"
+#~ msgstr "&Langue"
+
+#~ msgid "&Subtitles"
+#~ msgstr "&Sous-titres"
+
+#~ msgid "New stream"
+#~ msgstr "Nouveau flux"
+
+#~ msgid "Network Stream..."
+#~ msgstr "Flux reseau"
+
 #~ msgid "Next file"
 #~ msgstr "Fichier suivant"
+
+#~ msgid "&Add subtitles..."
+#~ msgstr "&Ajouter des sous-titres..."
+
+#~ msgid "Exit"
+#~ msgstr "Quitter"
+
+#~ msgid "&Fullscreen"
+#~ msgstr "Plein &écran"
+
+#~ msgid "Select next title"
+#~ msgstr "Fichier suivant"
+
+#~ msgid "&Mute"
+#~ msgstr "&Muet"
+
+#~ msgid "Open network"
+#~ msgstr "Ouvrir en réseau"
+
+#~ msgid "&Disc..."
+#~ msgstr "&Disque..."
+
+#~ msgid "&Network..."
+#~ msgstr "&Réseau..."
+
+#~ msgid "Delete &all"
+#~ msgstr "Supprimmer tout"
+
+#~ msgid "Play the selected stream"
+#~ msgstr "Jouer le flux sélectionné"
+
+#~ msgid "Add subtitles"
+#~ msgstr "Tous les sous-titres"
+
+#~ msgid "Native Windows interface"
+#~ msgstr "Interface Windows native"
+
+#~ msgid "Language 0x%x"
+#~ msgstr "Langage 0x%x"
+
+#~ msgid "Screen %d"
+#~ msgstr "Ecran %d"
+
+#~ msgid "Open skin"
+#~ msgstr "Ouvrir thème"
+
+#~ msgid "Skin files"
+#~ msgstr "Fichiers Thèmes"
+
+#~ msgid "All files"
+#~ msgstr "Tous les fichiers"
+
+#~ msgid "Add file"
+#~ msgstr "Ajouter un fichier"
+
+#~ msgid "Stream Output MRL"
+#~ msgstr "MRL pour le flux sortant"
+
+#~ msgid "A_udio"
+#~ msgstr "A_udio"
+
+#~ msgid "Open a File"
+#~ msgstr "Ouvrir un fichier"
+
+#~ msgid "Open file..."
+#~ msgstr "Ouvrir fichier..."
+
+#~ msgid "Open disc..."
+#~ msgstr "Ouvrir disque..."
+
+#~ msgid "Network stream..."
+#~ msgstr "Flux réseau..."
 
 #~ msgid "Loop filter"
 #~ msgstr "Filtre de boucle"
@@ -18931,6 +19550,10 @@ msgstr "Interface XOSD"
 #~ msgid "This allows you to change the display name of the Service."
 #~ msgstr "Ceci vous permet de changer le nom du service."
 
+#, fuzzy
+#~ msgid "Telnet Interface host"
+#~ msgstr "Port de l’interface telnet"
+
 #~ msgid "Default to listen on all network interfaces"
 #~ msgstr ""
 #~ "Le comportement par défaut est d'écouter sur toutes les interfaces réseaux"
@@ -18949,6 +19572,10 @@ msgstr "Interface XOSD"
 
 #~ msgid "Size offset"
 #~ msgstr "Position"
+
+#, fuzzy
+#~ msgid "You have to select two bookmarks."
+#~ msgstr "Vous devez sélectionner deux signets"
 
 #, fuzzy
 #~ msgid "Go to specific position"
@@ -19551,6 +20178,9 @@ msgstr "Interface XOSD"
 #~ msgid "Wizard..."
 #~ msgstr "Assistant de diffusion…\tCtrl-W"
 
+#~ msgid "Random effect"
+#~ msgstr "Aléatoire Off"
+
 #~ msgid "SLP attribute identifiers"
 #~ msgstr "Identifiants d’attributs SLP"
 
@@ -20112,6 +20742,14 @@ msgstr "Interface XOSD"
 
 #~ msgid "Faux"
 #~ msgstr "TTY factice"
+
+#, fuzzy
+#~ msgid ""
+#~ "Allows you to modify the user name that will be used for the connection "
+#~ "(Basic authentication only)."
+#~ msgstr ""
+#~ "Ceci vous permet de modifier le nom d’utilisateur qui sera utilisé pour "
+#~ "la connexion (authentification basique seulement)."
 
 #~ msgid "Late delay (ms)"
 #~ msgstr "Délai de retard (ms)"
