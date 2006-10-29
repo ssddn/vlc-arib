@@ -289,7 +289,8 @@ enum input_state_e
     BUFFERING_S,
     PLAYING_S,
     PAUSE_S,
-    END_S
+    END_S,
+    ERROR_S
 };
 
 /* "rate" default, min/max

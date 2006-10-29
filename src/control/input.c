@@ -204,7 +204,8 @@ int libvlc_input_get_state( libvlc_input_t *p_input,
     vlc_value_t val;
 
     p_input_thread = libvlc_get_input_thread ( p_input, p_e);
-    if ( libvlc_exception_raised( p_e ) )  return 0;
+    if ( libvlc_exception_raised( p_e ) )
+        return 6; /* on error return ERROR_S state (see include/vlc_input.h) */
 
     var_Get( p_input_thread, "state", &val );
     vlc_object_release( p_input_thread );

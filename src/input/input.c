@@ -246,7 +246,6 @@ input_thread_t *__input_CreateThread( vlc_object_t *p_parent,
     return __input_CreateThread2( p_parent, p_item, NULL );
 }
 
-
 /* Gruik ! */
 input_thread_t *__input_CreateThread2( vlc_object_t *p_parent,
                                        input_item_t *p_item,
@@ -255,6 +254,9 @@ input_thread_t *__input_CreateThread2( vlc_object_t *p_parent,
     input_thread_t *p_input = NULL;      /* thread descriptor */
 
     p_input = Create( p_parent, p_item, psz_header, VLC_FALSE );
+    if( !p_input )
+        return NULL;
+
     /* Now we can attach our new input */
     vlc_object_attach( p_input, p_parent );
 
@@ -262,6 +264,7 @@ input_thread_t *__input_CreateThread2( vlc_object_t *p_parent,
     if( vlc_thread_create( p_input, "input", Run,
                             VLC_THREAD_PRIORITY_INPUT, VLC_TRUE ) )
     {
+        input_ChangeState( p_input, ERROR_S );
         msg_Err( p_input, "cannot create input thread" );
         vlc_object_detach( p_input );
         vlc_object_destroy( p_input );
@@ -270,7 +273,6 @@ input_thread_t *__input_CreateThread2( vlc_object_t *p_parent,
 
     return p_input;
 }
-
 
 /**
  * Initialize an input thread and run it. This thread will clean after himself,
@@ -287,6 +289,9 @@ int __input_Read( vlc_object_t *p_parent, input_item_t *p_item,
     input_thread_t *p_input = NULL;         /* thread descriptor */
 
     p_input = Create( p_parent, p_item, NULL, VLC_FALSE );
+    if( !p_input )
+        return VLC_EGENERIC;
+
     /* Now we can attach our new input */
     vlc_object_attach( p_input, p_parent );
 
@@ -300,6 +305,7 @@ int __input_Read( vlc_object_t *p_parent, input_item_t *p_item,
         if( vlc_thread_create( p_input, "input", RunAndClean,
                                VLC_THREAD_PRIORITY_INPUT, VLC_TRUE ) )
         {
+            input_ChangeState( p_input, ERROR_S );
             msg_Err( p_input, "cannot create input thread" );
             vlc_object_detach( p_input );
             vlc_object_destroy( p_input );
@@ -323,6 +329,9 @@ int __input_Preparse( vlc_object_t *p_parent, input_item_t *p_item )
 
     /* Allocate descriptor */
     p_input = Create( p_parent, p_item, NULL, VLC_TRUE );
+    if( !p_input )
+        return VLC_EGENERIC;
+
     p_input->i_flags |= OBJECT_FLAGS_QUIET;
     p_input->i_flags |= OBJECT_FLAGS_NOINTERACT;
 
@@ -555,6 +564,7 @@ static void MainLoop( input_thread_t *p_input )
                 {
                     /* End of file - we do not set b_die because only the
                      * playlist is allowed to do so. */
+                    input_ChangeState( p_input, END_S );
                     msg_Dbg( p_input, "EOF reached" );
                     p_input->input.b_eof = VLC_TRUE;
                 }
@@ -663,7 +673,6 @@ static void MainLoop( input_thread_t *p_input )
     }
 }
 
-
 static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
 {
     char *psz;
@@ -715,6 +724,7 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
             p_input->p_sout = sout_NewInstance( p_input, psz );
             if( p_input->p_sout == NULL )
             {
+                input_ChangeState( p_input, ERROR_S );
                 msg_Err( p_input, "cannot start stream output instance, " \
                                   "aborting" );
                 free( psz );
@@ -823,7 +833,6 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
             p_input->i_stop = 0;
         }
 
-
         /* Load subtitles */
         /* Get fps and set it if not already set */
         if( !demux2_Control( p_input->input.p_demux, DEMUX_GET_FPS, &f_fps ) &&
@@ -849,7 +858,6 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
             var_SetTime( p_input, "spu-delay", (mtime_t)i_delay * 100000 );
         }
 
-
         /* Look for and add subtitle files */
         psz_subtitle = var_GetString( p_input, "sub-file" );
         if( *psz_subtitle )
@@ -865,7 +873,6 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
             char **subs = subtitles_Detect( p_input, psz_autopath,
                                             p_input->input.p_item->psz_uri );
             input_source_t *sub;
-
             i = 0;
 
             /* Try to autoselect the first autodetected subtitles file
@@ -1087,11 +1094,13 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
     }
 
     /* initialization is complete */
-    input_ChangeState(p_input, PLAYING_S);
+    input_ChangeState( p_input, PLAYING_S );
 
     return VLC_SUCCESS;
 
 error:
+    input_ChangeState( p_input, ERROR_S );
+
     if( p_input->p_es_out )
         input_EsOutDelete( p_input->p_es_out );
 
@@ -1118,6 +1127,7 @@ static void Error( input_thread_t *p_input )
     while( !p_input->b_die )
     {
         /* Sleep a while */
+        input_ChangeState( p_input, ERROR_S );
         msleep( INPUT_IDLE_SLEEP );
     }
 }
@@ -1132,7 +1142,7 @@ static void End( input_thread_t * p_input )
     msg_Dbg( p_input, "closing input" );
 
     /* We are at the end */
-    input_ChangeState(p_input, END_S);
+    input_ChangeState( p_input, END_S );
 
     /* Clean control variables */
     input_ControlVarClean( p_input );
@@ -1215,6 +1225,10 @@ static inline int ControlPopNoLock( input_thread_t *p_input,
 static void ControlReduce( input_thread_t *p_input )
 {
     int i;
+
+    if( !p_input )
+        return;
+
     for( i = 1; i < p_input->i_control; i++ )
     {
         const int i_lt = p_input->control[i-1].i_type;
@@ -1990,6 +2004,7 @@ static int InputSourceInit( input_thread_t *p_input,
     vlc_value_t val;
 
     if( !in ) return VLC_EGENERIC;
+    if( !p_input ) return VLC_EGENERIC;
 
     /* Split uri */
     if( !b_quick )
@@ -2079,7 +2094,7 @@ static int InputSourceInit( input_thread_t *p_input,
     {
         int64_t i_pts_delay;
 
-        input_ChangeState( p_input, OPENING_S);
+        input_ChangeState( p_input, OPENING_S );
 
         /* Now try a real access */
         in->p_access = access2_New( p_input, psz_access, psz_demux, psz_path,
@@ -2175,7 +2190,7 @@ static int InputSourceInit( input_thread_t *p_input,
             var_Set( p_input, "seekable", val );
         }
 
-        input_ChangeState( p_input, BUFFERING_S);
+        input_ChangeState( p_input, BUFFERING_S );
 
         /* Create the stream_t */
         in->p_stream = stream_AccessNew( in->p_access, b_quick );
@@ -2225,6 +2240,8 @@ static int InputSourceInit( input_thread_t *p_input,
     return VLC_SUCCESS;
 
 error:
+    input_ChangeState( p_input, ERROR_S );
+
     if( in->p_demux )
         demux2_Delete( in->p_demux );
 
@@ -2267,7 +2284,9 @@ static void SlaveDemux( input_thread_t *p_input )
 {
     int64_t i_time;
     int i;
- 
+
+    if( !p_input ) return;
+
     if( demux2_Control( p_input->input.p_demux, DEMUX_GET_TIME, &i_time ) )
     {
         msg_Err( p_input, "demux doesn't like DEMUX_GET_TIME" );
@@ -2320,6 +2339,8 @@ static void SlaveSeek( input_thread_t *p_input )
     int64_t i_time;
     int i;
 
+    if( !p_input ) return;
+
     if( demux2_Control( p_input->input.p_demux, DEMUX_GET_TIME, &i_time ) )
     {
         msg_Err( p_input, "demux doesn't like DEMUX_GET_TIME" );
@@ -2337,6 +2358,7 @@ static void SlaveSeek( input_thread_t *p_input )
         }
     }
 }
+
 /*****************************************************************************
  * InputMetaUser:
  *****************************************************************************/
@@ -2344,6 +2366,9 @@ static vlc_meta_t *InputMetaUser( input_thread_t *p_input )
 {
     vlc_meta_t *p_meta;
     vlc_value_t val;
+
+    if( !p_input )
+        return NULL;
 
     if( ( p_meta = vlc_meta_New() ) == NULL )
         return NULL;
@@ -2531,7 +2556,6 @@ static void MRLSections( input_thread_t *p_input, char *psz_source,
              psz_source, *pi_title_start, *pi_chapter_start,
              *pi_title_end, *pi_chapter_end );
 }
-
 
 /***********************************************************************
  * Info management functions
