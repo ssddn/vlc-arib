@@ -1338,7 +1338,7 @@ STDMETHODIMP VLCControl2::put_StartTime(int seconds)
 
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
 {
     if( NULL == version )
@@ -1348,7 +1348,7 @@ STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
     if( NULL != versionStr )
     {
         *version = BSTRFromCStr(_p_instance->getCodePage(), versionStr);
-        
+
         return NULL == *version ? E_OUTOFMEMORY : NOERROR;
     }
     *version = NULL;
@@ -1364,7 +1364,7 @@ STDMETHODIMP VLCControl2::get_Visible(VARIANT_BOOL *isVisible)
 
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::put_Visible(VARIANT_BOOL isVisible)
 {
     _p_instance->setVisible(isVisible != VARIANT_FALSE);
