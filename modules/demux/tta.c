@@ -198,7 +198,6 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
     demux_sys_t *p_sys = p_demux->p_sys;
     double   f, *pf;
     int64_t i64, *pi64;
-    vlc_meta_t *p_meta;
 
     switch( i_query )
     {
@@ -232,7 +231,7 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
                 return VLC_SUCCESS;
             }
             return VLC_EGENERIC;
-         
+
         case DEMUX_GET_LENGTH:
             pi64 = (int64_t*)va_arg( args, int64_t * );
             *pi64 = I64C(1000000) * p_sys->i_totalframes * TTA_FRAMETIME;
@@ -242,9 +241,8 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
             pi64 = (int64_t*)va_arg( args, int64_t * );
             *pi64 = I64C(1000000) * p_sys->i_currentframe * TTA_FRAMETIME;
             return VLC_SUCCESS;
-            
+
         default:
             return VLC_EGENERIC;
     }
 }
-
