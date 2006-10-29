@@ -836,7 +836,7 @@ STDMETHODIMP VLCControl::playlistClear(void)
     }
     return result;
 };
-        
+
 STDMETHODIMP VLCControl::get_VersionInfo(BSTR *version)
 {
     if( NULL == version )
@@ -846,7 +846,6 @@ STDMETHODIMP VLCControl::get_VersionInfo(BSTR *version)
     if( NULL != versionStr )
     {
         *version = BSTRFromCStr(_p_instance->getCodePage(), versionStr);
-        
         return NULL == *version ? E_OUTOFMEMORY : NOERROR;
     }
     *version = NULL;

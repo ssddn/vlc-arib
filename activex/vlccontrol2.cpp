@@ -1331,7 +1331,7 @@ STDMETHODIMP VLCControl2::get_StartTime(int *seconds)
 
     return S_OK;
 };
-     
+
 STDMETHODIMP VLCControl2::put_StartTime(int seconds)
 {
     _p_instance->setStartTime(seconds);
@@ -1354,7 +1354,7 @@ STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
     *version = NULL;
     return E_FAIL;
 };
- 
+
 STDMETHODIMP VLCControl2::get_Visible(VARIANT_BOOL *isVisible)
 {
     if( NULL == isVisible )
@@ -1380,7 +1380,7 @@ STDMETHODIMP VLCControl2::get_Volume(int *volume)
     *volume  = _p_instance->getVolume();
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::put_Volume(int volume)
 {
     _p_instance->setVolume(volume);
@@ -1442,4 +1442,3 @@ STDMETHODIMP VLCControl2::get_video(IVLCVideo** obj)
     }
     return E_OUTOFMEMORY;
 };
-
