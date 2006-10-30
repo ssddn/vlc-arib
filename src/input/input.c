@@ -432,7 +432,6 @@ static int Run( input_thread_t *p_input )
     {
         /* If we failed, wait before we are killed, and exit */
         p_input->b_error = VLC_TRUE;
-    /* Signal that the thread is launched */
 
         Error( p_input );
 
