@@ -406,14 +406,17 @@ void input_StopThread( input_thread_t *p_input )
  */
 void input_DestroyThread( input_thread_t *p_input )
 {
-    /* Join the thread */
-    vlc_thread_join( p_input );
+    if( p_input )
+    {
+        /* Join the thread */
+        vlc_thread_join( p_input );
 
-    /* Delete input lock (only after thread joined) */
-    vlc_mutex_destroy( &p_input->lock_control );
+        /* Delete input lock (only after thread joined) */
+        vlc_mutex_destroy( &p_input->lock_control );
 
-    /* TODO: maybe input_DestroyThread should also delete p_input instead
-     * of the playlist but I'm not sure if it's possible */
+        /* TODO: maybe input_DestroyThread should also delete p_input instead
+         * of the playlist but I'm not sure if it's possible */
+    }
 }
 
 /*****************************************************************************
@@ -423,13 +426,13 @@ void input_DestroyThread( input_thread_t *p_input )
  *****************************************************************************/
 static int Run( input_thread_t *p_input )
 {
-    /* Signal that the thread is launched */
     vlc_thread_ready( p_input );
 
     if( Init( p_input, VLC_FALSE ) )
     {
         /* If we failed, wait before we are killed, and exit */
         p_input->b_error = VLC_TRUE;
+    /* Signal that the thread is launched */
 
         Error( p_input );
 

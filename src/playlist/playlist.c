@@ -657,6 +657,8 @@ static void RunThread ( playlist_t *p_playlist )
                 /* Destroy input */
                 input_DestroyThread( p_input );
 
+                vlc_mutex_lock( &p_playlist->object_lock );
+
                 /* Unlink current input
                  * (_after_ input_DestroyThread for vout garbage collector) */
                 vlc_object_detach( p_input );
@@ -796,6 +798,9 @@ static void RunThread ( playlist_t *p_playlist )
 
             /* Destroy input */
             input_DestroyThread( p_input );
+
+            vlc_mutex_lock( &p_playlist->object_lock );
+
             /* Unlink current input (_after_ input_DestroyThread for vout
              * garbage collector)*/
             vlc_object_detach( p_input );
