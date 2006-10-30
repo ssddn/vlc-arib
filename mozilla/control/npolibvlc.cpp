@@ -623,7 +623,7 @@ enum LibvlcPlaylistNPObjectMethodIds
     ID_next,
     ID_prev,
     ID_clear,
-    ID_removeitem,
+    ID_removeitem
 };
 
 RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result)
@@ -868,7 +868,7 @@ RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::invoke(int index, const NP
     }
     return INVOKERESULT_GENERIC_ERROR;
 }
- 
+
 void LibvlcPlaylistNPObject::parseOptions(const NPString &s, int *i_options, char*** ppsz_options)
 {
     if( s.utf8length )
@@ -1005,6 +1005,7 @@ const NPUTF8 * const LibvlcVideoNPObject::propertyNames[] =
     "fullscreen",
     "height",
     "width",
+    "aspectRatio"
 };
 
 enum LibvlcVideoNPObjectPropertyIds
@@ -1012,6 +1013,7 @@ enum LibvlcVideoNPObjectPropertyIds
     ID_fullscreen,
     ID_height,
     ID_width,
+    ID_aspectratio
 };
 
 const int LibvlcVideoNPObject::propertyCount = sizeof(LibvlcVideoNPObject::propertyNames)/sizeof(NPUTF8 *);
@@ -1073,6 +1075,22 @@ RuntimeNPObject::InvokeResult LibvlcVideoNPObject::getProperty(int index, NPVari
                 INT32_TO_NPVARIANT(val, result);
                 return INVOKERESULT_NO_ERROR;
             }
+            case ID_aspectratio:
+            {
+                NPUTF8 *psz_aspect = libvlc_video_get_aspect_ratio(p_input, &ex);
+                libvlc_input_free(p_input);
+                if( libvlc_exception_raised(&ex) )
+                {
+                    NPN_SetException(this, libvlc_exception_get_message(&ex));
+                    libvlc_exception_clear(&ex);
+                    return INVOKERESULT_GENERIC_ERROR;
+                }
+                if( !psz_aspect )
+                    return INVOKERESULT_GENERIC_ERROR;
+
+                STRINGZ_TO_NPVARIANT(psz_aspect, result);
+                return INVOKERESULT_NO_ERROR;
+            }
         }
         libvlc_input_free(p_input);
     }
@@ -1107,6 +1125,33 @@ RuntimeNPObject::InvokeResult LibvlcVideoNPObject::setProperty(int index, const 
 
                 int val = NPVARIANT_TO_BOOLEAN(value);
                 libvlc_set_fullscreen(p_input, val, &ex);
+                libvlc_input_free(p_input);
+                if( libvlc_exception_raised(&ex) )
+                {
+                    NPN_SetException(this, libvlc_exception_get_message(&ex));
+                    libvlc_exception_clear(&ex);
+                    return INVOKERESULT_GENERIC_ERROR;
+                }
+                return INVOKERESULT_NO_ERROR;
+            }
+            case ID_aspectratio:
+            {
+                char *psz_aspect = NULL;
+
+                if( ! NPVARIANT_IS_STRING(value) )
+                {
+                    libvlc_input_free(p_input);
+                    return INVOKERESULT_INVALID_VALUE;
+                }
+
+                psz_aspect = stringValue(NPVARIANT_TO_STRING(value));
+                if( !psz_aspect )
+                    return INVOKERESULT_GENERIC_ERROR;
+
+                libvlc_video_set_aspect_ratio(p_input, psz_aspect, &ex);
+                if( psz_aspect )
+                    free(psz_aspect );
+
                 libvlc_input_free(p_input);
                 if( libvlc_exception_raised(&ex) )
                 {
