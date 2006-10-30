@@ -119,7 +119,7 @@ public:
     STDMETHODIMP put_rate(float);
     STDMETHODIMP get_fps(float*);
     STDMETHODIMP get_hasVout(VARIANT_BOOL*);
-    
+
 protected:
     HRESULT loadTypeInfo();
 
@@ -222,8 +222,10 @@ public:
     STDMETHODIMP put_fullscreen(VARIANT_BOOL);
     STDMETHODIMP get_width(int*);
     STDMETHODIMP get_height(int*);
+    STDMETHODIMP get_aspectRatio(BSTR*);
+    STDMETHODIMP put_aspectRatio(BSTR);
     STDMETHODIMP toggleFullscreen();
- 
+
 protected:
     HRESULT loadTypeInfo();
 
