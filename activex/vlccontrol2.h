@@ -222,7 +222,7 @@ public:
     STDMETHODIMP put_fullscreen(VARIANT_BOOL);
     STDMETHODIMP get_width(int*);
     STDMETHODIMP get_height(int*);
-    STDMETHODIMP get_aspectRatio(BSTR*);
+    STDMETHODIMP get_aspectRatio(BSTR);
     STDMETHODIMP put_aspectRatio(BSTR);
     STDMETHODIMP toggleFullscreen();
 
