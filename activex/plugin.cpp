@@ -118,7 +118,7 @@ VLCPluginClass::VLCPluginClass(LONG *p_class_ref, HINSTANCE hInstance, REFCLSID 
         wClass.hbrBackground  = NULL;
         wClass.lpszMenuName   = NULL;
         wClass.lpszClassName  = getInPlaceWndClassName();
-       
+
         _inplace_wndclass_atom = RegisterClass(&wClass);
     }
     else
@@ -138,7 +138,7 @@ VLCPluginClass::VLCPluginClass(LONG *p_class_ref, HINSTANCE hInstance, REFCLSID 
         wClass.hbrBackground  = NULL;
         wClass.lpszMenuName   = NULL;
         wClass.lpszClassName  = getVideoWndClassName();
-       
+
         _video_wndclass_atom = RegisterClass(&wClass);
     }
     else
@@ -570,26 +570,26 @@ HRESULT VLCPlugin::getVLC(libvlc_instance_t** pp_libvlc)
         if( RegOpenKeyEx( HKEY_LOCAL_MACHINE, "Software\\VideoLAN\\VLC",
                           0, KEY_READ, &h_key ) == ERROR_SUCCESS )
         {
-             if( RegQueryValueEx( h_key, "InstallDir", 0, &i_type,
-                                  (LPBYTE)p_data, &i_data ) == ERROR_SUCCESS )
-             {
-                 if( i_type == REG_SZ )
-                 {
-                     strcat( p_data, "\\plugins" );
-		     ppsz_argv[ppsz_argc++] = "--plugin-path";
-                     ppsz_argv[ppsz_argc++] = p_data;
-                 }
-             }
-             RegCloseKey( h_key );
+            if( RegQueryValueEx( h_key, "InstallDir", 0, &i_type,
+                                 (LPBYTE)p_data, &i_data ) == ERROR_SUCCESS )
+            {
+                if( i_type == REG_SZ )
+                {
+                    strcat( p_data, "\\plugins" );
+                    ppsz_argv[ppsz_argc++] = "--plugin-path";
+                    ppsz_argv[ppsz_argc++] = p_data;
+                }
+            }
+            RegCloseKey( h_key );
         }
 
-	char p_path[MAX_PATH+1];
-	DWORD len = GetModuleFileNameA(DllGetModule(), p_path, sizeof(p_path));
-	if( len > 0 )
-	{
-	    p_path[len] = '\0';
-	    ppsz_argv[0] = p_path;
-	}
+        char p_path[MAX_PATH+1];
+        DWORD len = GetModuleFileNameA(DllGetModule(), p_path, sizeof(p_path));
+        if( len > 0 )
+        {
+            p_path[len] = '\0';
+            ppsz_argv[0] = p_path;
+        }
 
         // make sure plugin isn't affected with VLC single instance mode
         ppsz_argv[ppsz_argc++] = "--no-one-instance";
@@ -631,7 +631,7 @@ HRESULT VLCPlugin::getVLC(libvlc_instance_t** pp_libvlc)
         {
             libvlc_audio_set_mute(_p_libvlc, TRUE, NULL);
         }
-            
+
         // initial playlist item
         if( SysStringLen(_bstr_mrl) > 0 )
         {
@@ -803,7 +803,7 @@ HRESULT VLCPlugin::onActivateInPlace(LPMSG lpMesg, HWND hwndParent, LPCRECT lprc
 
     /*
     ** record keeping of control geometry within container
-    */ 
+    */
     _posRect = posRect;
 
     /*
@@ -905,7 +905,7 @@ HRESULT VLCPlugin::onInPlaceDeactivate(void)
     _videownd = NULL;
     DestroyWindow(_inplacewnd);
     _inplacewnd = NULL;
- 
+
     return S_OK;
 };
 
@@ -1162,4 +1162,3 @@ void VLCPlugin::fireOnStopEvent(void)
     DISPPARAMS dispparamsNoArgs = {NULL, NULL, 0, 0};
     vlcConnectionPointContainer->fireEvent(DISPID_StopEvent, &dispparamsNoArgs); 
 };
-

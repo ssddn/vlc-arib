@@ -164,7 +164,7 @@ public:
             _p_pict->AddRef();
         return _p_pict;
     };
-    
+
     BOOL hasFocus(void);
     void setFocus(BOOL fFocus);
 
@@ -272,4 +272,3 @@ private:
 };
 
 #endif
-

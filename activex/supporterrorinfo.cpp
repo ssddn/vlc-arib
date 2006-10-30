@@ -67,4 +67,3 @@ void VLCSupportErrorInfo::setErrorInfo(LPCOLESTR progid, REFIID riid, const char
         SysFreeString(bstrDescription);
     }
 };
-

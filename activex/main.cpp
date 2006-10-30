@@ -193,9 +193,9 @@ static HRESULT RegisterClassID(HKEY hParent, REFCLSID rclsid, unsigned int versi
             keyClose(keySetDef(keyCreate(hProgKey, "CLSID"),
                 psz_CLSID,
                 GUID_STRLEN));
-     
+ 
             //hSubKey = keyClose(keyCreate(hBaseKey, "Insertable"));
-     
+
             RegCloseKey(hProgKey);
         }
         if( isDefault )
@@ -209,7 +209,7 @@ static HRESULT RegisterClassID(HKEY hParent, REFCLSID rclsid, unsigned int versi
                 keyClose(keySetDef(keyCreate(hProgKey, "CLSID"),
                     psz_CLSID,
                     GUID_STRLEN));
-         
+
                 keyClose(keySetDef(keyCreate(hProgKey, "CurVer"),
                     progId));
             }
@@ -298,14 +298,14 @@ STDAPI DllRegisterServer(VOID)
 
     char DllPath[MAX_PATH];
     DWORD DllPathLen=GetModuleFileNameA(h_instance, DllPath, sizeof(DllPath)) ;
-	if( 0 == DllPathLen )
+    if( 0 == DllPathLen )
         return E_UNEXPECTED;
 
     HKEY hBaseKey;
 
     if( ERROR_SUCCESS != RegOpenKeyExA(HKEY_CLASSES_ROOT, "CLSID", 0, KEY_CREATE_SUB_KEY, &hBaseKey) )
         return SELFREG_E_CLASS;
-    
+
     RegisterClassID(hBaseKey, CLSID_VLCPlugin, 1, FALSE, DllPath, DllPathLen);
     RegisterClassID(hBaseKey, CLSID_VLCPlugin2, 2, TRUE, DllPath, DllPathLen);
 
@@ -459,4 +459,3 @@ STDAPI_(BOOL) DllMain(HANDLE hModule, DWORD fdwReason, LPVOID lpReserved )
 };
 
 #endif
-

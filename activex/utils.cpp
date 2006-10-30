@@ -126,11 +126,11 @@ HRESULT GetObjectProperty(LPUNKNOWN object, DISPID dispID, VARIANT& v)
 
 HDC CreateDevDC(DVTARGETDEVICE *ptd)
 {
-	HDC hdc=NULL;
-	if( NULL == ptd )
+    HDC hdc=NULL;
+    if( NULL == ptd )
     {
-		hdc = CreateDC(TEXT("DISPLAY"), NULL, NULL, NULL);
-	}
+        hdc = CreateDC(TEXT("DISPLAY"), NULL, NULL, NULL);
+    }
     else
     {
         LPDEVNAMES lpDevNames;
@@ -184,4 +184,3 @@ void HimetricFromDP(HDC hdc, LPPOINT pt, int count)
         ++pt;
     }
 };
-

@@ -276,7 +276,7 @@ public:
             (*p.first).second = val.second;
         return S_OK;
     };
-   
+
     // custom methods
 
     HRESULT Load(LPSTREAM pStm)
