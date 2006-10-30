@@ -676,6 +676,7 @@ static void RunThread ( playlist_t *p_playlist )
                      p_playlist->status.p_item = NULL;
                 }
 
+                vlc_mutex_unlock( &p_playlist->object_lock );
                 continue;
             }
             /* This input is dying, let it do */
@@ -807,6 +808,7 @@ static void RunThread ( playlist_t *p_playlist )
 
             /* Destroy object */
             vlc_object_destroy( p_input );
+            vlc_mutex_unlock( &p_playlist->object_lock );
             continue;
         }
         else if( p_playlist->p_input->b_die )
