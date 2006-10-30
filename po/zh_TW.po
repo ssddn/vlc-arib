@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-28 01:50+0100\n"
+"POT-Creation-Date: 2006-10-30 13:55+0100\n"
 "PO-Revision-Date: 2005-02-12 12:14+0100\n"
 "Last-Translator: Frank Chao <frank0624@gmail.com>\n"
 "Language-Team: zh_TW\n"
@@ -27,7 +27,7 @@ msgid "Select \"Advanced Options\" to see all options."
 msgstr "點選\"進階選項\"檢視所有選項"
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1886 src/input/input.c:1946 src/playlist/item.c:369
+#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:369
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -834,19 +834,19 @@ msgstr ""
 msgid "Subtitle"
 msgstr "字幕"
 
-#: src/input/input.c:1900 src/input/input.c:1904
+#: src/input/input.c:1916 src/input/input.c:1920
 #: modules/gui/macosx/output.m:143 modules/gui/macosx/output.m:251
 #: modules/gui/macosx/output.m:391
 msgid "Stream"
 msgstr "串流"
 
-#: src/input/input.c:1946 src/playlist/item.c:369
+#: src/input/input.c:1962 src/playlist/item.c:369
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:135
 msgid "Duration"
 msgstr ""
 
-#: src/input/input.c:2127 src/input/input.c:2199
+#: src/input/input.c:2144 src/input/input.c:2216
 #, fuzzy
 msgid "Errors"
 msgstr "錯誤"
@@ -1077,12 +1077,12 @@ msgstr ""
 msgid "Georgian"
 msgstr ""
 
-#: src/libvlc.h:40 src/misc/iso-639_def.h:125
-msgid "Malay"
-msgstr ""
-
 #: src/libvlc.h:40 src/misc/iso-639_def.h:111
 msgid "Korean"
+msgstr ""
+
+#: src/libvlc.h:40 src/misc/iso-639_def.h:125
+msgid "Malay"
 msgstr ""
 
 #: src/libvlc.h:40 src/misc/iso-639_def.h:69
@@ -4336,7 +4336,7 @@ msgid "Audio CD - Track %i"
 msgstr "音訊軌"
 
 #: modules/access/cdda/cdda.c:42 modules/access/directory.c:78
-#: modules/codec/x264.c:321 modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:321 modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "none"
 msgstr ""
 
@@ -6503,8 +6503,7 @@ msgstr "虛擬S/PDIF音訊混音器"
 msgid "Trivial audio mixer"
 msgstr ""
 
-#: modules/audio_output/alsa.c:84 modules/codec/x264.c:315
-#: modules/codec/x264.c:321 modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/audio_output/alsa.c:84
 msgid "default"
 msgstr "預設"
 
@@ -7703,7 +7702,7 @@ msgid ""
 msgstr "頻帶間的空白像素數量"
 
 #: modules/codec/x264.c:78
-msgid "B-frames usage"
+msgid "Influence (bias) B-frames usage"
 msgstr ""
 
 #: modules/codec/x264.c:79
@@ -8026,7 +8025,7 @@ msgstr ""
 
 #: modules/codec/x264.c:243
 #, fuzzy
-msgid "Ignore chroma in motion estimation"
+msgid "Chroma in motion estimation"
 msgstr "啟用交錯編碼"
 
 #: modules/codec/x264.c:244
@@ -8193,29 +8192,29 @@ msgstr "快速"
 msgid "normal"
 msgstr "正常"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:321
 #, fuzzy
 msgid "slow"
 msgstr "慢速"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:321
 msgid "all"
 msgstr "全部"
 
-#: modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "spatial"
 msgstr ""
 
-#: modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "temporal"
 msgstr ""
 
-#: modules/codec/x264.c:328 modules/gui/pda/pda_interface.c:743
+#: modules/codec/x264.c:327 modules/gui/pda/pda_interface.c:743
 #: modules/video_filter/mosaic.c:166
 msgid "auto"
 msgstr "自動"
 
-#: modules/codec/x264.c:337
+#: modules/codec/x264.c:336
 msgid "H.264/MPEG4 AVC encoder (using x264 library)"
 msgstr ""
 

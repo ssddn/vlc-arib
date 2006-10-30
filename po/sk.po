@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slovak translation for VLC Media Player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-28 01:50+0100\n"
+"POT-Creation-Date: 2006-10-30 13:55+0100\n"
 "PO-Revision-Date: 2006-10-27 20:09+0100\n"
 "Last-Translator: Marián Hikaník <podnety@mojepreklady.net>\n"
 "Language-Team: Marián Hikaník, translation controlled by: Pavel Kříž\n"
@@ -25,7 +25,7 @@ msgstr ""
 "\"."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1886 src/input/input.c:1946 src/playlist/item.c:369
+#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:369
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -869,19 +869,19 @@ msgstr "Rýchlosť snímkovania"
 msgid "Subtitle"
 msgstr "Titulky"
 
-#: src/input/input.c:1900 src/input/input.c:1904
+#: src/input/input.c:1916 src/input/input.c:1920
 #: modules/gui/macosx/output.m:143 modules/gui/macosx/output.m:251
 #: modules/gui/macosx/output.m:391
 msgid "Stream"
 msgstr "Stream"
 
-#: src/input/input.c:1946 src/playlist/item.c:369
+#: src/input/input.c:1962 src/playlist/item.c:369
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:135
 msgid "Duration"
 msgstr "Trvanie"
 
-#: src/input/input.c:2127 src/input/input.c:2199
+#: src/input/input.c:2144 src/input/input.c:2216
 msgid "Errors"
 msgstr "Chyby"
 
@@ -1110,13 +1110,13 @@ msgstr "Japonsky"
 msgid "Georgian"
 msgstr "Gruzínsky"
 
-#: src/libvlc.h:40 src/misc/iso-639_def.h:125
-msgid "Malay"
-msgstr "Malajsky"
-
 #: src/libvlc.h:40 src/misc/iso-639_def.h:111
 msgid "Korean"
 msgstr "Kórejsky"
+
+#: src/libvlc.h:40 src/misc/iso-639_def.h:125
+msgid "Malay"
+msgstr "Malajsky"
 
 #: src/libvlc.h:40 src/misc/iso-639_def.h:69
 msgid "Dutch"
@@ -4651,7 +4651,7 @@ msgid "Audio CD - Track %i"
 msgstr "Audio CD - Stopa %i"
 
 #: modules/access/cdda/cdda.c:42 modules/access/directory.c:78
-#: modules/codec/x264.c:321 modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:321 modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "none"
 msgstr "žiaden"
 
@@ -7049,8 +7049,7 @@ msgstr "Fingovaná funkcia zvukového mixéra S/PDIF"
 msgid "Trivial audio mixer"
 msgstr "Triválny mixér zvuku"
 
-#: modules/audio_output/alsa.c:84 modules/codec/x264.c:315
-#: modules/codec/x264.c:321 modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/audio_output/alsa.c:84
 msgid "default"
 msgstr "predvolené"
 
@@ -8375,7 +8374,8 @@ msgstr ""
 "tie snímky, ktoré sa vyskytujú priamo pred I-snímkami."
 
 #: modules/codec/x264.c:78
-msgid "B-frames usage"
+#, fuzzy
+msgid "Influence (bias) B-frames usage"
 msgstr "Použitie B-snímok"
 
 #: modules/codec/x264.c:79
@@ -8759,7 +8759,8 @@ msgstr ""
 "16x8. "
 
 #: modules/codec/x264.c:243
-msgid "Ignore chroma in motion estimation"
+#, fuzzy
+msgid "Chroma in motion estimation"
 msgstr "Ignorovať efekt chroma pri odhadovaní pohybu"
 
 #: modules/codec/x264.c:244
@@ -8942,28 +8943,28 @@ msgstr "rýchlo"
 msgid "normal"
 msgstr "normálne"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:321
 msgid "slow"
 msgstr "pomaly"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:321
 msgid "all"
 msgstr "všetky"
 
-#: modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "spatial"
 msgstr "priestorový"
 
-#: modules/codec/x264.c:328 modules/codec/x264.c:333
+#: modules/codec/x264.c:327 modules/codec/x264.c:332
 msgid "temporal"
 msgstr "dočasný"
 
-#: modules/codec/x264.c:328 modules/gui/pda/pda_interface.c:743
+#: modules/codec/x264.c:327 modules/gui/pda/pda_interface.c:743
 #: modules/video_filter/mosaic.c:166
 msgid "auto"
 msgstr "autom."
 
-#: modules/codec/x264.c:337
+#: modules/codec/x264.c:336
 msgid "H.264/MPEG4 AVC encoder (using x264 library)"
 msgstr "Enkodér H.264/MPEG4 AVC (s použitím knižnice x264)"
 
