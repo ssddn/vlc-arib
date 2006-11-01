@@ -93,8 +93,7 @@ NPError NPP_GetValue( NPP instance, NPPVariable variable, void *value )
             return NPERR_NO_ERROR;
 
         case NPPVpluginDescriptionString:
-            snprintf( psz_desc, sizeof(psz_desc)-1, PLUGIN_DESCRIPTION, VLC_Version() );
-            psz_desc[sizeof(psz_desc)-1] = 0;
+            snprintf( psz_desc, sizeof(psz_desc), PLUGIN_DESCRIPTION, VLC_Version() );
             *((char **)value) = psz_desc;
             return NPERR_NO_ERROR;
 
@@ -140,6 +139,8 @@ NPError NPP_GetValue( NPP instance, NPPVariable variable, void *value )
 #ifdef XP_MACOSX
 int16 NPP_HandleEvent( NPP instance, void * event )
 {
+    static UInt32 lastMouseUp = 0;
+
     if( instance == NULL )
     {
         return false;
@@ -153,7 +154,29 @@ int16 NPP_HandleEvent( NPP instance, void * event )
         case nullEvent:
             break;
         case mouseDown:
+        {
+            if( (myEvent->when - lastMouseUp) < GetDblTime() )
+            {
+                /* double click */
+                libvlc_instance_t *p_vlc = p_plugin->getVLC();
+
+                if( p_vlc )
+                {
+                    if( libvlc_playlist_isplaying(p_vlc, NULL) )
+                    {
+                        libvlc_input_t *p_input = libvlc_playlist_get_input(p_vlc, NULL);
+                        if( p_input )
+                        {
+                            libvlc_toggle_fullscreen(p_input, NULL);
+                            libvlc_input_free(p_input);
+                        }
+                    }
+                }
+            }
+            return true;
+        }
         case mouseUp:
+            lastMouseUp = myEvent->when;
             return true;
         case keyUp:
         case keyDown:
@@ -178,7 +201,7 @@ int16 NPP_HandleEvent( NPP instance, void * event )
             }
 
             const NPWindow *npwindow = p_plugin->getWindow();
-                
+
             if( needsDisplay && npwindow->window )
             {
                 /* draw the beautiful "No Picture" */
@@ -434,14 +457,14 @@ NPError NPP_SetWindow( NPP instance, NPWindow* window )
     {
         if( p_plugin->psz_target )
         {
-            if( VLC_SUCCESS == libvlc_playlist_add( p_vlc, p_plugin->psz_target, NULL, NULL ) )
+            if( libvlc_playlist_add( p_vlc, p_plugin->psz_target, NULL, NULL ) != -1 )
             {
                 if( p_plugin->b_autoplay )
                 {
                     libvlc_playlist_play(p_vlc, 0, 0, NULL, NULL);
                 }
-                p_plugin->b_stream = VLC_TRUE;
             }
+            p_plugin->b_stream = VLC_TRUE;
         }
     }
     return NPERR_NO_ERROR;
@@ -507,7 +530,7 @@ void NPP_StreamAsFile( NPP instance, NPStream *stream, const char* fname )
 
     VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(instance->pdata);
 
-    if( VLC_SUCCESS == libvlc_playlist_add( p_plugin->getVLC(), fname, stream->url, NULL ) )
+    if( libvlc_playlist_add( p_plugin->getVLC(), fname, stream->url, NULL ) != -1 )
     {
         if( p_plugin->b_autoplay )
         {

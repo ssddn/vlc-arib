@@ -330,22 +330,31 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
                 /* skip over protocol part  */
                 char *pathstart = strchr(href, ':');
                 char *pathend;
-                if( '/' == *(++pathstart) )
-                {
-                    if( '/' == *(++pathstart) )
-                    {
-                        ++pathstart;
-                    }
-                }
-                /* skip over host part */
-                pathstart = strchr(pathstart, '/');
-                pathend = href+baseLen;
-                if( ! pathstart )
-                {
-                    // no path, add a / past end of url (over '\0')
-                    pathstart = pathend;
-                    *pathstart = '/';
-                }
+		if( pathstart )
+		{
+		    if( '/' == *(++pathstart) )
+		    {
+			if( '/' == *(++pathstart) )
+			{
+			    ++pathstart;
+			}
+		    }
+		    /* skip over host part */
+		    pathstart = strchr(pathstart, '/');
+		    pathend = href+baseLen;
+		    if( ! pathstart )
+		    {
+			// no path, add a / past end of url (over '\0')
+			pathstart = pathend;
+			*pathstart = '/';
+		    }
+		}
+		else
+		{
+		    /* baseURL is just a path */
+		    pathstart = href;
+		    pathend = href+baseLen;
+		}
 
                 /* relative URL made of an absolute path ? */
                 if( '/' == *url )
