@@ -61,6 +61,7 @@ const NPUTF8 * const LibvlcRootNPObject::propertyNames[] =
 {
     "audio",
     "input",
+    "log",
     "playlist",
     "video",
     "VersionInfo",
@@ -72,6 +73,7 @@ enum LibvlcRootNPObjectPropertyIds
 {
     ID_audio = 0,
     ID_input,
+    ID_log,
     ID_playlist,
     ID_video,
     ID_VersionInfo,
@@ -86,6 +88,9 @@ RuntimeNPObject::InvokeResult LibvlcRootNPObject::getProperty(int index, NPVaria
             return INVOKERESULT_NO_ERROR;
         case ID_input:
             OBJECT_TO_NPVARIANT(NPN_RetainObject(inputObj), result);
+            return INVOKERESULT_NO_ERROR;
+        case ID_log:
+            OBJECT_TO_NPVARIANT(NPN_RetainObject(logObj), result);
             return INVOKERESULT_NO_ERROR;
         case ID_playlist:
             OBJECT_TO_NPVARIANT(NPN_RetainObject(playlistObj), result);
