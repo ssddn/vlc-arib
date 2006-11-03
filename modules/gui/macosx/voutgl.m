@@ -569,17 +569,16 @@ static int aglManage( vout_thread_t * p_vout )
 
             aglSetCurrentContext(p_vout->p_sys->agl_ctx);
             aglSetViewport(p_vout, viewBounds, clipBounds);
-            
+
             HideWindow (p_vout->p_sys->theWindow);
             SetSystemUIMode( kUIModeNormal, 0);
             //CGDisplayShowCursor(kCGDirectMainDisplay);
             //DisposeWindow( p_vout->p_sys->theWindow );
-
         }
         else
         {
             /* Create a window */
-            WindowAttributes	windowAttrs;
+            WindowAttributes    windowAttrs;
             Rect deviceRect;
             Rect viewBounds;    
             Rect clipBounds;
@@ -590,10 +589,10 @@ static int aglManage( vout_thread_t * p_vout )
             int device_height = deviceRect.bottom-deviceRect.top;
             
             windowAttrs =   kWindowStandardDocumentAttributes
-					| kWindowStandardHandlerAttribute
-					| kWindowLiveResizeAttribute
-                    | kWindowNoShadowAttribute;
-					
+                        | kWindowStandardHandlerAttribute
+                        | kWindowLiveResizeAttribute
+                        | kWindowNoShadowAttribute;
+                                        
             windowAttrs &= (~kWindowResizableAttribute);
 
             if( !p_vout->p_sys->theWindow ) CreateNewWindow(kDocumentWindowClass, windowAttrs, &deviceRect, &p_vout->p_sys->theWindow);
@@ -605,19 +604,20 @@ static int aglManage( vout_thread_t * p_vout )
             SetWindowGroupParent( p_vout->p_sys->winGroup, GetWindowGroupOfClass(kDocumentWindowClass) ) ;
             
             // Window title
-            CFStringRef titleKey	= CFSTR("Fullscreen VLC media plugin");
+            CFStringRef titleKey        = CFSTR("Fullscreen VLC media plugin");
             CFStringRef windowTitle = CFCopyLocalizedString(titleKey, NULL);
             SetWindowTitleWithCFString(p_vout->p_sys->theWindow, windowTitle);
             CFRelease(titleKey);
             CFRelease(windowTitle);
             
             //Install event handler
-            const EventTypeSpec win_events[] = {
+            static const EventTypeSpec win_events[] = {
+                { kEventClassMouse, kEventMouseUp },
                 { kEventClassWindow, kEventWindowClosed },
                 { kEventClassWindow, kEventWindowBoundsChanged },
                 { kEventClassCommand, kEventCommandProcess }
             };
-            InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout->p_sys->theWindow, NULL);
+            InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout, NULL);
 
             ShowWindow (p_vout->p_sys->theWindow);
             glClear( GL_COLOR_BUFFER_BIT );
@@ -625,9 +625,10 @@ static int aglManage( vout_thread_t * p_vout )
             aglSetDrawable(p_vout->p_sys->agl_ctx, p_vout->p_sys->agl_drawable);
             aglSetCurrentContext(p_vout->p_sys->agl_ctx);
             aglSetViewport(p_vout, deviceRect, deviceRect);
+            //aglSetFullScreen(p_vout->p_sys->agl_ctx, device_width, device_height, 0, 0);
 
             SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
-            //CGDisplayHideCursor(kCGDirectMainDisplay);
+            CGDisplayHideCursor(kCGDirectMainDisplay);
         }
         p_vout->b_fullscreen = !p_vout->b_fullscreen;
         p_vout->i_changes &= ~VOUT_FULLSCREEN_CHANGE;
@@ -722,53 +723,87 @@ static void aglSetViewport( vout_thread_t *p_vout, Rect viewBounds, Rect clipBou
 }
 
 //default window event handler
-static OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, EventRef event, void *userData)
+static pascal OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, EventRef event, void *userData)
 {
     OSStatus result = noErr;
-	uint32_t d_width;
-	uint32_t d_height;
-	UInt32 class = GetEventClass (event);
-	UInt32 kind = GetEventKind (event); 
+    uint32_t d_width;
+    uint32_t d_height;
+    UInt32 class = GetEventClass (event);
+    UInt32 kind = GetEventKind (event); 
+    vout_thread_t *p_vout = (vout_thread_t *)userData;
 
-	result = CallNextEventHandler(nextHandler, event);
-	if(class == kEventClassCommand)
-	{
-		HICommand theHICommand;
-		GetEventParameter( event, kEventParamDirectObject, typeHICommand, NULL, sizeof( HICommand ), NULL, &theHICommand );
-		
-		switch ( theHICommand.commandID )
-		{
-			
-			default:
-				result = eventNotHandledErr;
-				break;
-		}
-	}
-	else if(class == kEventClassWindow)
-	{
-		WindowRef     window;
-		Rect          rectPort = {0,0,0,0};
-		
-		GetEventParameter(event, kEventParamDirectObject, typeWindowRef, NULL, sizeof(WindowRef), NULL, &window);
-	
-		if(window)
-		{
-			GetPortBounds(GetWindowPort(window), &rectPort);
-		}   
-	
-		switch (kind)
-		{
-			case kEventWindowClosed:
-			case kEventWindowZoomed:
-			case kEventWindowBoundsChanged:
-				break;
-			
-			default:
-				result = eventNotHandledErr;
-				break;
-		}
-	}
-	
+    result = CallNextEventHandler(nextHandler, event);
+    if(class == kEventClassCommand)
+    {
+        HICommand theHICommand;
+        GetEventParameter( event, kEventParamDirectObject, typeHICommand, NULL, sizeof( HICommand ), NULL, &theHICommand );
+        
+        switch ( theHICommand.commandID )
+        {
+            default:
+                result = eventNotHandledErr;
+                break;
+        }
+    }
+    else if(class == kEventClassWindow)
+    {
+        WindowRef     window;
+        Rect          rectPort = {0,0,0,0};
+        
+        GetEventParameter(event, kEventParamDirectObject, typeWindowRef, NULL, sizeof(WindowRef), NULL, &window);
+
+        if(window)
+        {
+            GetPortBounds(GetWindowPort(window), &rectPort);
+        }   
+
+        switch (kind)
+        {
+            case kEventWindowClosed:
+            case kEventWindowZoomed:
+            case kEventWindowBoundsChanged:
+                break;
+            
+            default:
+                result = eventNotHandledErr;
+                break;
+        }
+    }
+    else if(class == kEventClassMouse)
+    {
+        UInt16     button;
+        
+        switch (kind)
+        {
+            case kEventMouseUp:
+                GetEventParameter(event, kEventParamMouseButton, typeMouseButton, NULL, sizeof(button), NULL, &button);
+                switch (button)
+                {
+                    case kEventMouseButtonPrimary:
+                    {
+                        UInt32 clickCount = 0;
+                        GetEventParameter(event, kEventParamClickCount, typeUInt32, NULL, sizeof(clickCount), NULL, &clickCount);
+                        if( clickCount > 1 )
+                        {
+                            vlc_value_t val;
+
+                            val.b_bool = VLC_FALSE;
+                            var_Set((vout_thread_t *) p_vout->p_parent, "fullscreen", val);
+                        }
+                        break;
+                    }
+                    default:
+                        result = eventNotHandledErr;
+                        break;
+                }
+                break;
+            
+            default:
+                result = eventNotHandledErr;
+                break;
+        }
+    }
+        
     return result;
 }
 
