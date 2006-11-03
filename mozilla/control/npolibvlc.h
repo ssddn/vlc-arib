@@ -201,6 +201,11 @@ protected:
         
     virtual ~LibvlcLogNPObject()
     {
+        if( _p_log )
+        {
+            libvlc_log_close(_p_log, NULL);
+            _p_log = NULL;
+        }
         NPN_ReleaseObject(_p_vlcmessages);
     };
 
