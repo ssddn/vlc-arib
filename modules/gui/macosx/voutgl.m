@@ -578,26 +578,23 @@ static int aglManage( vout_thread_t * p_vout )
         }
         else
         {
-            /* Create a window */
-            WindowAttributes    windowAttrs;
             Rect deviceRect;
-            Rect viewBounds;    
-            Rect clipBounds;
             
             GDHandle deviceHdl = GetMainDevice();
             deviceRect = (*deviceHdl)->gdRect;
-            int device_width = deviceRect.right-deviceRect.left;
-            int device_height = deviceRect.bottom-deviceRect.top;
             
-            windowAttrs =   kWindowStandardDocumentAttributes
-                        | kWindowStandardHandlerAttribute
-                        | kWindowLiveResizeAttribute
-                        | kWindowNoShadowAttribute;
-                                        
-            windowAttrs &= (~kWindowResizableAttribute);
-
             if( !p_vout->p_sys->theWindow )
             {
+                /* Create a window */
+                WindowAttributes    windowAttrs;
+
+                windowAttrs = kWindowStandardDocumentAttributes
+                            | kWindowStandardHandlerAttribute
+                            | kWindowLiveResizeAttribute
+                            | kWindowNoShadowAttribute;
+                                            
+                windowAttrs &= (~kWindowResizableAttribute);
+
                 CreateNewWindow(kDocumentWindowClass, windowAttrs, &deviceRect, &p_vout->p_sys->theWindow);
                 if( !p_vout->p_sys->winGroup )
                 {
@@ -622,6 +619,10 @@ static int aglManage( vout_thread_t * p_vout )
                 };
                 InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout, NULL);
             }
+            else
+            {
+                SetWindowBounds(p_vout->p_sys->theWindow, kWindowContentRgn, &deviceRect);
+            }
             glClear( GL_COLOR_BUFFER_BIT );
             p_vout->p_sys->agl_drawable = (AGLDrawable)GetWindowPort(p_vout->p_sys->theWindow);
             aglSetDrawable(p_vout->p_sys->agl_ctx, p_vout->p_sys->agl_drawable);
@@ -631,7 +632,7 @@ static int aglManage( vout_thread_t * p_vout )
 
             ShowWindow (p_vout->p_sys->theWindow);
             SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
-            CGDisplayHideCursor(kCGDirectMainDisplay);
+            //CGDisplayHideCursor(kCGDirectMainDisplay);
         }
         p_vout->b_fullscreen = !p_vout->b_fullscreen;
         p_vout->i_changes &= ~VOUT_FULLSCREEN_CHANGE;
@@ -729,8 +730,6 @@ static void aglSetViewport( vout_thread_t *p_vout, Rect viewBounds, Rect clipBou
 static pascal OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, EventRef event, void *userData)
 {
     OSStatus result = noErr;
-    uint32_t d_width;
-    uint32_t d_height;
     UInt32 class = GetEventClass (event);
     UInt32 kind = GetEventKind (event); 
     vout_thread_t *p_vout = (vout_thread_t *)userData;
