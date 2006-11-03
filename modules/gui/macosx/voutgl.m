@@ -538,6 +538,7 @@ static int aglManage( vout_thread_t * p_vout )
     }
     if( p_vout->i_changes & VOUT_FULLSCREEN_CHANGE )
     {
+        aglSetDrawable(p_vout->p_sys->agl_ctx, NULL);
         Lock( p_vout );
         if( p_vout->b_fullscreen )
         {
@@ -572,7 +573,7 @@ static int aglManage( vout_thread_t * p_vout )
 
             HideWindow (p_vout->p_sys->theWindow);
             SetSystemUIMode( kUIModeNormal, 0);
-            //CGDisplayShowCursor(kCGDirectMainDisplay);
+            CGDisplayShowCursor(kCGDirectMainDisplay);
             //DisposeWindow( p_vout->p_sys->theWindow );
         }
         else
@@ -595,31 +596,32 @@ static int aglManage( vout_thread_t * p_vout )
                                         
             windowAttrs &= (~kWindowResizableAttribute);
 
-            if( !p_vout->p_sys->theWindow ) CreateNewWindow(kDocumentWindowClass, windowAttrs, &deviceRect, &p_vout->p_sys->theWindow);
-            if( !p_vout->p_sys->winGroup )
+            if( !p_vout->p_sys->theWindow )
             {
-                CreateWindowGroup(0, &p_vout->p_sys->winGroup);
+                CreateNewWindow(kDocumentWindowClass, windowAttrs, &deviceRect, &p_vout->p_sys->theWindow);
+                if( !p_vout->p_sys->winGroup )
+                {
+                    CreateWindowGroup(0, &p_vout->p_sys->winGroup);
+                    SetWindowGroup(p_vout->p_sys->theWindow, p_vout->p_sys->winGroup);
+                    SetWindowGroupParent( p_vout->p_sys->winGroup, GetWindowGroupOfClass(kDocumentWindowClass) ) ;
+                }
+                
+                // Window title
+                CFStringRef titleKey        = CFSTR("Fullscreen VLC media plugin");
+                CFStringRef windowTitle = CFCopyLocalizedString(titleKey, NULL);
+                SetWindowTitleWithCFString(p_vout->p_sys->theWindow, windowTitle);
+                CFRelease(titleKey);
+                CFRelease(windowTitle);
+                
+                //Install event handler
+                static const EventTypeSpec win_events[] = {
+                    { kEventClassMouse, kEventMouseUp },
+                    { kEventClassWindow, kEventWindowClosed },
+                    { kEventClassWindow, kEventWindowBoundsChanged },
+                    { kEventClassCommand, kEventCommandProcess }
+                };
+                InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout, NULL);
             }
-            SetWindowGroup(p_vout->p_sys->theWindow, p_vout->p_sys->winGroup);
-            SetWindowGroupParent( p_vout->p_sys->winGroup, GetWindowGroupOfClass(kDocumentWindowClass) ) ;
-            
-            // Window title
-            CFStringRef titleKey        = CFSTR("Fullscreen VLC media plugin");
-            CFStringRef windowTitle = CFCopyLocalizedString(titleKey, NULL);
-            SetWindowTitleWithCFString(p_vout->p_sys->theWindow, windowTitle);
-            CFRelease(titleKey);
-            CFRelease(windowTitle);
-            
-            //Install event handler
-            static const EventTypeSpec win_events[] = {
-                { kEventClassMouse, kEventMouseUp },
-                { kEventClassWindow, kEventWindowClosed },
-                { kEventClassWindow, kEventWindowBoundsChanged },
-                { kEventClassCommand, kEventCommandProcess }
-            };
-            InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout, NULL);
-
-            ShowWindow (p_vout->p_sys->theWindow);
             glClear( GL_COLOR_BUFFER_BIT );
             p_vout->p_sys->agl_drawable = (AGLDrawable)GetWindowPort(p_vout->p_sys->theWindow);
             aglSetDrawable(p_vout->p_sys->agl_ctx, p_vout->p_sys->agl_drawable);
@@ -627,6 +629,7 @@ static int aglManage( vout_thread_t * p_vout )
             aglSetViewport(p_vout, deviceRect, deviceRect);
             //aglSetFullScreen(p_vout->p_sys->agl_ctx, device_width, device_height, 0, 0);
 
+            ShowWindow (p_vout->p_sys->theWindow);
             SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
             CGDisplayHideCursor(kCGDirectMainDisplay);
         }
