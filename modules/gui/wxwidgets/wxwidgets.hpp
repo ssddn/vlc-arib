@@ -107,7 +107,7 @@ DECLARE_LOCAL_EVENT_TYPE( wxEVT_INTF, 1 );
 #endif
 
 /* From Locale functions to use for File Drop targets ... go figure */
-#if defined wxUSE_UNICODE && !defined(WIN32)
+#if defined( wxUSE_UNICODE ) && !defined( WIN32 )
 static inline char *wxDnDFromLocale( const wxChar *stupid )
 {
     /*
