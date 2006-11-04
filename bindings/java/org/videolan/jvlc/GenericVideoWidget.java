@@ -1,14 +1,14 @@
 /*****************************************************************************
- * JLibVLC.java: Main library interface
+ * SWTVideoWidget.java: A component usable in SWT Application, embeds JVLC
  *****************************************************************************
  *
  * Copyright (C) 1998-2006 the VideoLAN team
  * 
- * Author: Filippo Carone <filippo@carone.org>
+ * Author: Kuldipsingh Pabla <Kuldipsingh.Pabla@sun.com>
  * 
- * Created on 28-feb-2006
+ * Created on 10-jun-2006
  *
- * $Id$
+ * $Id $
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public License
@@ -26,6 +26,34 @@
  * 
  */
 
-package org.videolan.jvlc;
 
-public interface JLibVLC extends AudioIntf, VideoIntf, InputIntf, VLMIntf { }
+package org.videolan.jvlc;
+import java.awt.Frame;
+import java.awt.Component;
+
+
+public class GenericVideoWidget {
+    /*
+     * This class implements a Composite container for VLC Video Output
+     */
+
+    /*
+     * The root SWT Frame we embed JVLCCanvas in
+     */
+    public Frame rootFrame;
+    private JVLCCanvas jvlcCanvas;
+    
+    public GenericVideoWidget( Component parent ) {
+    	// allocate the new AWT Frame to embed in the Composite
+    	rootFrame = new Frame ();
+
+    	// add the JVLCCanvas to the Frame
+    	jvlcCanvas = new JVLCCanvas();
+    	rootFrame.add( jvlcCanvas );
+    }
+    
+    
+	public JVLC getJVLC() {
+		return jvlcCanvas.getJVLC();
+	}
+}

@@ -5,7 +5,8 @@
  * Copyright (C) 1998-2006 the VideoLAN team
  * 
  * Author: Filippo Carone <filippo@carone.org>
- * 
+ *         Philippe Morin <phmorin@free.fr>
+ *
  * Created on 28-feb-2006
  *
  * $Id$
@@ -25,126 +26,146 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  * 
  */
-/**
- * @author Filippo Carone <filippo@carone.org>
- */
+
 
 package org.videolan.jvlc;
 
-public class JVLC implements JLibVLC {
+
+public class JVLC implements Runnable {
     
     static {
-        System.load(System.getProperty( "user.dir" ) + "/libjvlc.so" );
+        System.loadLibrary("jvlc" );
     }
 
+    /**
+     * These are set as final since they live along the jvlc object
+     */
+    private final long		_instance;
+    
+    public  final Playlist	playlist;
+    public	final Video		video;
+    public	final Audio		audio;
+    public	final Input		input;
+    public	final VLM		vlm;
+    
+    private boolean beingDestroyed = false;
 
-    private long _instance;
-    public Playlist playlist;
+    /**
+     * This is the time in millis VLC checks for internal status 
+     */
+    private long resolution = 50;
+    
+	private boolean inputPlaying = false;
+	private boolean inputVout = false;
     
     public JVLC() {
-        _instance = createInstance();
-        playlist = new Playlist( _instance );
+        String[] args = new String[1];
+        args[0] = "jvlc";
+        
+        _instance	= createInstance( args );
+        playlist	= new Playlist	( _instance );
+        video		= new Video		( _instance );
+        audio		= new Audio		( _instance );
+        input		= new Input		( _instance );
+        vlm			= new VLM		( _instance );
+        new Thread(this).start();
     }
     
     public JVLC(String[] args) {
-        _instance = createInstance( args );
-        playlist = new Playlist( _instance );
+        _instance	= createInstance( args );
+        playlist	= new Playlist	( _instance );
+        video		= new Video		( _instance );
+        audio		= new Audio		( _instance );
+        input		= new Input		( _instance );
+        vlm			= new VLM		( _instance );
+        
+        new Thread(this).start();
     }
     
-    /*
+    
+    /**
+     * Destroys the current instance of jvlc, cleaning up objects.
+     * This is unreversible.
+     */
+    public void destroy() {
+    	beingDestroyed = true;
+    	_destroy();
+    }
+ 
+
+	/*
      * Core methods
      */
-    private native long createInstance();
     private native long createInstance( String[] args );
-    
-    /*
-     * 	Audio native methods
-     */
-    private native boolean	_getMute();
-    private native void		_setMute( boolean value );
-    private native void		_toggleMute();
-    private native int		_getVolume();
-    private native void		_setVolume( int volume );
-    
-    /*
-     * Video native methods
-     */
-    private native void _toggleFullscreen();
-    private native void _setFullscreen( boolean value);
-    private native boolean _getFullscreen();
- 
-    
-    public boolean getMute() {
-        // TODO Auto-generated method stub
-        return _getMute();
-    }
+    private native void _destroy();   
 
-    public void setMute(boolean value) {
-        _setMute( value );
-        
-    }
-    
-    public void toggleMute() {
-    	_toggleMute();
-    }
-
-    public int getVolume() {
-        return _getVolume();        
-    }
-
-    public void setVolume(int volume) {
-        _setVolume( volume );
-        
-    }
-
-    public void toggleFullscreen() {
-        _toggleFullscreen();
-        
-    }
-
-    public void setFullscreen( boolean value ) {
-        _setFullscreen( value );
-        
-    }
-
-    public boolean getFullscreen() {
-    	return _getFullscreen();        
-    }
-
-    public void getLength() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void getTime() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void getPosition() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public void setTime() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    public double getFPS() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    public long getInstance() {
+    public long getInstance() throws VLCException {
         return _instance;
     }
 
     /*
      * Getters and setters
      */
-	public Playlist getPlaylist() {
+	public Playlist getPlaylist() throws VLCException {
 		return playlist;
 	}
+    
 
+
+	/**
+	 * Checks if the input is playing.
+	 * @return True if there is a playing input.
+	 */
+	public boolean isInputPlaying() {
+		return inputPlaying;
+	}
+
+	/**
+	 * Checks if the input has spawned a video window.
+	 * @return True if there is a video window.
+	 */
+	public boolean hasVout() {
+		return inputVout;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 * 
+	 * In this thread we check the playlist and input status.
+	 */
+	public void run() {
+		while (! beingDestroyed) {
+			try {
+				while (playlist.isRunning()) {
+					if (input.isPlaying()) {
+						inputPlaying = true;
+					}
+					else {
+						inputPlaying = false;
+				    }
+				            
+					if (input.hasVout()) {
+						inputVout = true;
+				    }
+					else {
+						inputVout = false;
+				    }
+					try {
+						Thread.sleep(resolution);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					} 
+				}
+			} catch (VLCException e1) { } // while playlist running
+	           inputPlaying = false;
+	           inputVout = false;
+			try {
+				Thread.sleep(resolution);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} // try
+		} // while ! being destroyed
+	} // run
 }
+
