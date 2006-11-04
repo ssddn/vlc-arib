@@ -1308,7 +1308,7 @@ void wizTranscodeExtraPage::OnWizardPageChanging( wxWizardEvent& event )
     }
     if( event.GetDirection() )
     {
-       p_parent->SetTranscodeOut( file_text->GetValue().mb_str());
+       p_parent->SetTranscodeOut( file_text->GetValue() );
     }
 }
 
@@ -1521,11 +1521,11 @@ void WizardDialog::SetStream( char const *method, char const *address )
     this->address = strdup( address );
 }
 
-void WizardDialog::SetTranscodeOut( char const *address )
+void WizardDialog::SetTranscodeOut( wxString address )
 {
-    char *psz_utf8 = FromLocale( address );
+    char *psz_utf8 = wxFromLocale( address );
     this->address = strdup( psz_utf8 );
-    LocaleFree( psz_utf8 );
+    wxLocaleFree( psz_utf8 );
 }
 
 void WizardDialog::SetMux( char const *mux )
