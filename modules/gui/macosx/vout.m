@@ -51,7 +51,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     vlc_value_t val;
     vout_thread_t *p_vout = (vout_thread_t *)p_this;
 
-    msg_Dbg( p_vout, "set %d", new_val.i_int );
     var_Create( p_vout->p_vlc, "video-device", VLC_VAR_INTEGER );
     var_Set( p_vout->p_vlc, "video-device", new_val );
 
@@ -476,7 +475,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
                ( ( [o_event type] == NSLeftMouseDown ) &&
                  ( [o_event modifierFlags] &  NSControlKeyMask ) ) )
         {
-            msg_Dbg( p_vout, "received NSRightMouseDown (generic method) or Ctrl clic" );
             [NSMenu popUpContextMenu: [[VLCMain sharedInstance] getVoutMenu] withEvent: o_event forView: [[[VLCMain sharedInstance] getControls] getVoutView]];
         }
     }
@@ -502,7 +500,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 {
     if( p_vout && [o_event type] == NSRightMouseDown )
     {
-        msg_Dbg( p_vout, "received NSRightMouseDown (specific method)" );
         [NSMenu popUpContextMenu: [[VLCMain sharedInstance] getVoutMenu] withEvent: o_event forView: [[[VLCMain sharedInstance] getControls] getVoutView]];
     }
 
@@ -547,7 +544,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     {
         /* FIXME: this isn't the appropriate place, but we can't receive
          * NSRightMouseDown some how */
-        msg_Dbg( p_vout, "received NSRightMouseUp" ); 
         [NSMenu popUpContextMenu: [[VLCMain sharedInstance] getVoutMenu] withEvent: o_event forView: [[[VLCMain sharedInstance] getControls] getVoutView]];
     }
 
@@ -913,7 +909,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     b_init_ok = VLC_FALSE;
 
     p_real_vout = [VLCVoutView getRealVout: p_vout];
-    i_device = var_GetInteger( p_real_vout->p_libvlc, "video-device" );
+    i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
     b_black = var_GetBool( p_vout, "macosx-black" );
 
     /* Find out on which screen to open the window */
