@@ -919,6 +919,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     p_real_vout = [VLCVoutView getRealVout: p_vout];
     i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
     b_black = var_GetBool( p_vout, "macosx-black" );
+    b_embedded = var_GetBool( p_vout, "macosx-embedded" );
 
     /* Find out on which screen to open the window */
     if( i_device <= 0 || i_device > (int)[o_screens count] )
@@ -1081,7 +1082,11 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     }
     SetSystemUIMode( kUIModeNormal, 0);
     [super close];
-    [[[[VLCMain sharedInstance] getControls] getFSPanel] orderOut: self];
+
+    /* this does only work in embedded mode */
+    if( b_embedded == VLC_TRUE )
+        [[[[VLCMain sharedInstance] getControls] getFSPanel] orderOut: self];
+    
     return NULL;
 }
 
