@@ -1069,7 +1069,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
         withObject: NULL waitUntilDone: NO];
 }
 
-- (id) closeReal: (id) sender
+- (id)closeReal: (id)sender
 {
     if( b_black == VLC_TRUE )
     {
@@ -1081,6 +1081,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     }
     SetSystemUIMode( kUIModeNormal, 0);
     [super close];
+    [[[[VLCMain sharedInstance] getControls] getFSPanel] orderOut: self];
     return NULL;
 }
 
