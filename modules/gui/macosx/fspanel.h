@@ -51,7 +51,6 @@
 - (void)mouseExited:(NSEvent *)theEvent;
 
 - (void)fadeIn;
-- (void)quickFadeIn;
 - (void)fadeOut;
 
 - (NSTimer *)fadeTimer;

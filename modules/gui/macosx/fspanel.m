@@ -296,7 +296,6 @@
     id view = [super initWithFrame:frameRect];
     fillColor = [[NSColor clearColor] retain];
     NSRect s_rc = [self frame];
-    NSImage * image;
     addButton( o_prev, @"fs_skip_previous" , @"fs_skip_previous_highlight", 174, 15, prev );
     addButton( o_slow, @"fs_rewind"        , @"fs_rewind_highlight"       , 211, 14, slower );
     addButton( o_play, @"fs_play"          , @"fs_play_highlight"         , 267, 10, play );
@@ -369,7 +368,6 @@
 
 - (void)setPlay
 {
-    NSBundle *bundle = [NSBundle mainBundle];
     NSImage *image;
     image = [NSImage imageNamed:@"fs_play"];
     [o_play setImage:image];
@@ -379,7 +377,6 @@
 
 - (void)setPause
 {
-    NSBundle *bundle = [NSBundle mainBundle];
     NSImage *image;
     image = [NSImage imageNamed:@"fs_pause"];
     [o_play setImage:image];
@@ -481,7 +478,6 @@
 @implementation VLCFSTimeSlider
 - (void)drawKnobInRect:(NSRect)knobRect
 {
-    NSBundle *bundle = [NSBundle mainBundle];
     NSRect image_rect;
     NSImage *img = [NSImage imageNamed:@"fs_time_slider_knob_highlight"];
     image_rect.size = [img size];
@@ -515,7 +511,6 @@
 @implementation VLCFSVolumeSlider
 - (void)drawKnobInRect:(NSRect) knobRect
 {
-    NSBundle *bundle = [NSBundle mainBundle];
     NSRect image_rect;
     NSImage *img = [NSImage imageNamed:@"fs_volume_slider_knob"];
     image_rect.size = [img size];
