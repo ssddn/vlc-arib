@@ -2066,6 +2066,7 @@ static int GetFilenames( vlc_t *p_vlc, int i_argc, char *ppsz_argv[] )
                        (char const **)( i_options ? &ppsz_argv[i_opt + 1] :
                                         NULL ), i_options,
                        PLAYLIST_INSERT, 0 );
+            free( psz_target );
         }
         else
 #endif
@@ -2075,8 +2076,8 @@ static int GetFilenames( vlc_t *p_vlc, int i_argc, char *ppsz_argv[] )
                        (char const **)( i_options ? &ppsz_argv[i_opt + 1] :
                                         NULL ), i_options,
                        PLAYLIST_INSERT, 0 );
+            LocaleFree( psz_target );
         }
-        LocaleFree( psz_target );
     }
 
     return VLC_SUCCESS;
