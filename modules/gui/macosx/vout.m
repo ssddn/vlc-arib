@@ -173,11 +173,8 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     p_real_vout = [VLCVoutView getRealVout: p_vout];
 
     /* Get the pref value when this is the first time, otherwise retrieve the device from the top level video-device var */
-    if( var_Type( p_real_vout->p_vlc, "video-device" ) == 0 )
-    {
-        i_device = var_GetInteger( p_vout, "macosx-vdev" );
-    }
-    else
+    i_device = var_GetInteger( p_vout, "macosx-vdev" );
+    if( var_Type( p_real_vout->p_vlc, "video-device" ) != 0 )
     {
         i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
     }
@@ -201,6 +198,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
         var_Change( p_real_vout, "video-device",
                         VLC_VAR_ADDCHOICE, &val2, &text );
         var_Set( p_real_vout, "video-device", val2 );
+        var_AddCallback( p_real_vout, "video-device", DeviceCallback, NULL );
 
         while( (o_screen = [o_enumerator nextObject]) != NULL )
         {
@@ -221,9 +219,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
             }
             i++;
         }
-
-        var_AddCallback( p_real_vout, "video-device", DeviceCallback,
-                         NULL );
 
         val2.b_bool = VLC_TRUE;
         var_Set( p_real_vout, "intf-change", val2 );
