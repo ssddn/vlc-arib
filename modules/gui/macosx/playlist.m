@@ -304,11 +304,15 @@
 
     if( [[o_tc identifier] isEqualToString:@"1"] )
     {
-        o_value = [NSString stringWithUTF8String:
-            p_item->input.psz_name];
-        if( o_value == NULL )
-            o_value = [NSString stringWithCString:
+        /* sanity check to prevent the NSString class from crashing */
+        if( p_item->input.psz_name != NULL )
+        {
+            o_value = [NSString stringWithUTF8String:
                 p_item->input.psz_name];
+            if( o_value == NULL )
+                o_value = [NSString stringWithCString:
+                    p_item->input.psz_name];
+        }
     }
     else if( [[o_tc identifier] isEqualToString:@"2"] )
     {
