@@ -284,7 +284,7 @@ static void Trigger (access_t *access)
         // and there is an off-by-one in the following sprintf().
         return;
 
-    const char *home = access->p_libvlc->psz_homedir;
+    const char *home = access->p_vlc->psz_homedir;
 
     /* Hmm what about the extension?? */
     char filename[strlen (home) + sizeof ("/vlcdump-YYYYYYYYY-MM-DD-HH-MM-SS.ts")];
@@ -343,12 +343,12 @@ static int KeyHandler (vlc_object_t *obj, char const *varname,
                        vlc_value_t oldval, vlc_value_t newval, void *data)
 {
     access_t *access = data;
+    struct hotkey *key;
 
     (void)oldval;
     (void)obj;
 
-    for (struct hotkey *key = access->p_libvlc->p_hotkeys;
-         key->psz_action != NULL; key++)
+    for (key = access->p_libvlc->p_hotkeys; key->psz_action != NULL; key++)
     {
         if (key->i_key == newval.i_int)
         {
