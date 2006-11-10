@@ -119,7 +119,7 @@ static int Open (vlc_object_t *obj)
     }
     p_sys->tmp_max = ((int64_t)var_CreateGetInteger (access, "dump-margin")) << 20;
 
-    var_AddCallback (access->p_libvlc, "key-pressed", KeyHandler, access);
+    var_AddCallback (access->p_vlc, "key-pressed", KeyHandler, access);
 
     return VLC_SUCCESS;
 }
@@ -133,7 +133,7 @@ static void Close (vlc_object_t *obj)
     access_t *access = (access_t *)obj;
     access_sys_t *p_sys = access->p_sys;
 
-    var_DelCallback (access->p_libvlc, "key-pressed", KeyHandler, access);
+    var_DelCallback (access->p_vlc, "key-pressed", KeyHandler, access);
 
     if (p_sys->stream != NULL)
         fclose (p_sys->stream);
@@ -348,7 +348,7 @@ static int KeyHandler (vlc_object_t *obj, char const *varname,
     (void)oldval;
     (void)obj;
 
-    for (key = access->p_libvlc->p_hotkeys; key->psz_action != NULL; key++)
+    for (key = access->p_vlc->p_hotkeys; key->psz_action != NULL; key++)
     {
         if (key->i_key == newval.i_int)
         {
