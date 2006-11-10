@@ -1092,6 +1092,9 @@ static struct
 #endif
 
 #if LIBAVCODEC_BUILD >= ((51<<16)+(4<<8)+0)
+    /* WavPack */
+    { VLC_FOURCC('W','V','P','K'), CODEC_ID_WAVPACK,
+      AUDIO_ES, "WavPack Lossless Audio" },
     /* TTA: The Lossless True Audio */
     { VLC_FOURCC('T','T','A','1'), CODEC_ID_TTA,
       AUDIO_ES, "The Lossless True Audio" },
