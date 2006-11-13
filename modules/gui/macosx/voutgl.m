@@ -524,6 +524,31 @@ static void aglReshape( vout_thread_t * p_vout )
     }
 }
 
+/* private event class */
+enum 
+{
+    kEventClassVLCPlugin = 'vlcp',
+};
+/* private event kinds */
+enum
+{
+    kEventVLCPluginShowFullscreen = 32768,
+    kEventVLCPluginHideFullscreen,
+};
+
+static void sendEventToMainThread(EventTargetRef target, UInt32 class, UInt32 kind)
+{
+    EventRef myEvent;
+    if( noErr == CreateEvent(NULL, class, kind, 0, kEventAttributeNone, &myEvent) )
+    {
+        if( noErr == SetEventParameter(myEvent, kEventParamPostTarget, typeEventTargetRef, sizeof(EventTargetRef), &target) )
+        {
+            PostEventToQueue(GetMainEventQueue(), myEvent, kEventPriorityStandard);
+        }
+        ReleaseEvent(myEvent);
+    }
+}
+
 static int aglManage( vout_thread_t * p_vout )
 {
     if( p_vout->i_changes & VOUT_ASPECT_CHANGE )
@@ -571,10 +596,8 @@ static int aglManage( vout_thread_t * p_vout )
             aglSetCurrentContext(p_vout->p_sys->agl_ctx);
             aglSetViewport(p_vout, viewBounds, clipBounds);
 
-            HideWindow (p_vout->p_sys->theWindow);
-            SetSystemUIMode( kUIModeNormal, 0);
-            CGDisplayShowCursor(kCGDirectMainDisplay);
-            //DisposeWindow( p_vout->p_sys->theWindow );
+            /* Most Carbon APIs are not thread-safe, therefore delagate some GUI visibilty update to the main thread */
+            sendEventToMainThread(GetWindowEventTarget(p_vout->p_sys->theWindow), kEventClassVLCPlugin, kEventVLCPluginHideFullscreen);
         }
         else
         {
@@ -604,7 +627,7 @@ static int aglManage( vout_thread_t * p_vout )
                 }
                 
                 // Window title
-                CFStringRef titleKey        = CFSTR("Fullscreen VLC media plugin");
+                CFStringRef titleKey    = CFSTR("Fullscreen VLC media plugin");
                 CFStringRef windowTitle = CFCopyLocalizedString(titleKey, NULL);
                 SetWindowTitleWithCFString(p_vout->p_sys->theWindow, windowTitle);
                 CFRelease(titleKey);
@@ -615,12 +638,15 @@ static int aglManage( vout_thread_t * p_vout )
                     { kEventClassMouse, kEventMouseUp },
                     { kEventClassWindow, kEventWindowClosed },
                     { kEventClassWindow, kEventWindowBoundsChanged },
-                    { kEventClassCommand, kEventCommandProcess }
+                    { kEventClassCommand, kEventCommandProcess },
+                    { kEventClassVLCPlugin, kEventVLCPluginShowFullscreen },
+                    { kEventClassVLCPlugin, kEventVLCPluginHideFullscreen },
                 };
                 InstallWindowEventHandler (p_vout->p_sys->theWindow, NewEventHandlerUPP (WindowEventHandler), GetEventTypeCount(win_events), win_events, p_vout, NULL);
             }
             else
             {
+                /* just in case device resolution changed */
                 SetWindowBounds(p_vout->p_sys->theWindow, kWindowContentRgn, &deviceRect);
             }
             glClear( GL_COLOR_BUFFER_BIT );
@@ -630,9 +656,8 @@ static int aglManage( vout_thread_t * p_vout )
             aglSetViewport(p_vout, deviceRect, deviceRect);
             //aglSetFullScreen(p_vout->p_sys->agl_ctx, device_width, device_height, 0, 0);
 
-            ShowWindow (p_vout->p_sys->theWindow);
-            SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
-            //CGDisplayHideCursor(kCGDirectMainDisplay);
+            /* Most Carbon APIs are not thread-safe, therefore delagate some GUI visibilty update to the main thread */
+            sendEventToMainThread(GetWindowEventTarget(p_vout->p_sys->theWindow), kEventClassVLCPlugin, kEventVLCPluginShowFullscreen);
         }
         p_vout->b_fullscreen = !p_vout->b_fullscreen;
         p_vout->i_changes &= ~VOUT_FULLSCREEN_CHANGE;
@@ -777,6 +802,24 @@ static pascal OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, Event
         
         switch (kind)
         {
+            case kEventMouseDown:
+                GetEventParameter(event, kEventParamMouseButton, typeMouseButton, NULL, sizeof(button), NULL, &button);
+                switch (button)
+                {
+                    case kEventMouseButtonPrimary:
+                    {
+                        vlc_value_t val;
+
+                        var_Get( p_vout, "mouse-button-down", &val );
+                        val.i_int |= 1;
+                        var_Set( p_vout, "mouse-button-down", val );
+                    }
+                    default:
+                        result = eventNotHandledErr;
+                        break;
+                }
+                break;
+
             case kEventMouseUp:
                 GetEventParameter(event, kEventParamMouseButton, typeMouseButton, NULL, sizeof(button), NULL, &button);
                 switch (button)
@@ -792,6 +835,14 @@ static pascal OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, Event
                             val.b_bool = VLC_FALSE;
                             var_Set((vout_thread_t *) p_vout->p_parent, "fullscreen", val);
                         }
+                        else
+                        {
+                            vlc_value_t val;
+
+                            var_Get( p_vout, "mouse-button-down", &val );
+                            val.i_int &= ~1;
+                            var_Set( p_vout, "mouse-button-down", val );
+                        }
                         break;
                     }
                     default:
@@ -805,7 +856,26 @@ static pascal OSStatus WindowEventHandler(EventHandlerCallRef nextHandler, Event
                 break;
         }
     }
-        
+    else if(class == kEventClassVLCPlugin)
+    {
+        switch (kind)
+        {
+            case kEventVLCPluginShowFullscreen:
+                ShowWindow (p_vout->p_sys->theWindow);
+                SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+                //CGDisplayHideCursor(kCGDirectMainDisplay);
+                break;
+            case kEventVLCPluginHideFullscreen:
+                HideWindow (p_vout->p_sys->theWindow);
+                SetSystemUIMode( kUIModeNormal, 0);
+                CGDisplayShowCursor(kCGDirectMainDisplay);
+                //DisposeWindow( p_vout->p_sys->theWindow );
+                break;
+            default:
+                result = eventNotHandledErr;
+                break;
+        }
+    }
     return result;
 }
 
