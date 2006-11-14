@@ -631,6 +631,7 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 {
     int                 i_version, i_address_type, i_hash, i;
     char                *psz_sdp, *psz_foo, *psz_initial_sdp;
+    uint8_t             *p_decompressed_buffer = NULL;
     sdp_t               *p_sdp;
     vlc_bool_t          b_compressed;
     vlc_bool_t          b_need_delete = VLC_FALSE;
@@ -698,15 +699,14 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
     {
 #ifdef HAVE_ZLIB_H
         int      i_decompressed_size;
-        uint8_t  *p_decompressed_buffer = NULL;
 
         i_decompressed_size = Decompress( (uint8_t *)psz_sdp,
                    &p_decompressed_buffer, i_read - ( psz_sdp - (char *)p_buffer ) );
-        if( i_decompressed_size > 0 && i_decompressed_size < MAX_SAP_BUFFER )
+        if( i_decompressed_size > 0 )
         {
-            memcpy( psz_sdp, p_decompressed_buffer, i_decompressed_size );
+            psz_sdp = (char *)p_decompressed_buffer;
+            realloc( p_decompressed_buffer, i_decompressed_size + 1 );
             psz_sdp[i_decompressed_size] = '\0';
-            free( p_decompressed_buffer );
         }
         else
         {
@@ -806,6 +806,7 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 
     CreateAnnounce( p_sd, i_hash, p_sdp );
 
+    FREE( p_decompressed_buffer );
     return VLC_SUCCESS;
 }
 
