@@ -1331,6 +1331,7 @@ static int Decompress( unsigned char *psz_src, unsigned char **_dst, int i_len )
         if( ( i_result != Z_OK ) && ( i_result != Z_STREAM_END ) )
         {
             printf( "Zlib decompression failed. Result: %d\n", i_result );
+            inflateEnd( &d_stream );
             return( -1 );
         }
     }
