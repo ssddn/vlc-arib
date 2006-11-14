@@ -1,10 +1,10 @@
 dnl Autoconf settings for vlc
 
-AC_INIT(vlc,0.8.6-test1)
+AC_INIT(vlc,0.8.6-test2)
 VERSION_MAJOR="0"
 VERSION_MINOR="8"
 VERSION_REVISION="6"
-VERSION_EXTRA="test1"
+VERSION_EXTRA="test2"
 
 CONFIGURE_LINE="$0 $*"
 CODENAME="Janus"

@@ -1,6 +1,6 @@
 $Id$
 
-Changes between 0.8.5 and 0.8.6-test1:
+Changes between 1.8.5 and 0.8.6-test2:
 --------------------------------
 
 Playlist:
@@ -13,6 +13,7 @@ Input:
  * ATSC support for DVB
  * Partial support for DVR-ms recordings
  * Partial support for MXF fileformat
+ * Improved support for Flash Video files
 
 Decoders:
  * Native WMV3 / VC-1 support
@@ -21,6 +22,8 @@ Decoders:
  * The True Audio Lossless codec support
  * WavPack support
  * Improved H.264 support (interlaced, speed improvements etc)
+ * Fixed a problem with MPEG2 field pictures
+ * Fixed swapped colors on DVB subtitles
  
 Video output:
  * Additional OpenGL effects (cylinder, torus, sphere, ...)
@@ -34,8 +37,8 @@ Interfaces:
    * Systray support in skins
  * OS X
    * Support for Apple Remote control
-   * Fullscreen controller panel
-   * new playmode buttons
+   * Fullscreen controller panel (artwork by Simon Damkjær Andersen)
+   * New playmode buttons (artwork by Simon Damkjær Andersen)
    * right/ctrl-click menu in video outputs
    * Main Menu keeps accessible when playing videos in fullscreen mode
  * Linux
