@@ -642,12 +642,6 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 
     i_address_type = p_buffer[0] & 0x10;
 
-    if( (p_buffer[0] & 0x08) != 0 )
-    {
-        msg_Dbg( p_sd, "reserved bit incorrectly set" );
-        return VLC_EGENERIC;
-    }
-
     if( (p_buffer[0] & 0x04) != 0 )
     {
         msg_Dbg( p_sd, "session deletion packet" );
@@ -692,6 +686,8 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
         }
     }
 
+    char *psz_end;
+
     if( b_compressed )
     {
 #ifdef HAVE_ZLIB_H
@@ -701,9 +697,9 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
                    &p_decompressed_buffer, i_read - ( psz_sdp - (char *)p_buffer ) );
         if( i_decompressed_size > 0 )
         {
-            psz_sdp = (char *)p_decompressed_buffer;
-            realloc( p_decompressed_buffer, i_decompressed_size + 1 );
+            psz_sdp = realloc( p_decompressed_buffer, i_decompressed_size + 1 );
             psz_sdp[i_decompressed_size] = '\0';
+            psz_end = psz_sdp + i_decompressed_size;
         }
         else
         {
@@ -715,6 +711,8 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
         return VLC_EGENERIC;
 #endif
     }
+    else
+        psz_end = ((const char *)p_buffer) + i_read;
 
     /* Add the size of authentification info */
     if( i_read < p_buffer[1] + (psz_sdp - psz_initial_sdp ) )
@@ -744,7 +742,7 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
     {
         msg_Dbg( p_sd, "unhandled content type: %s", psz_foo );
     }
-    if( ( psz_sdp - (char *)p_buffer ) >= i_read )
+    if( psz_sdp >= psz_end )
     {
         msg_Warn( p_sd, "package without content" );
         return VLC_EGENERIC;
