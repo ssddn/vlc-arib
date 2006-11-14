@@ -1305,10 +1305,7 @@ static int Decompress( unsigned char *psz_src, unsigned char **_dst, int i_len )
 
     i_result = inflateInit(&d_stream);
     if( i_result != Z_OK )
-    {
-        printf( "inflateInit() failed. Result: %d\n", i_result );
         return( -1 );
-    }
 #if 0
     p_playlist->pp_items[p_playlist->i_index]->b_autodeletion = VLC_TRUE;
     i_position = p_playlist->i_index;
@@ -1334,7 +1331,6 @@ static int Decompress( unsigned char *psz_src, unsigned char **_dst, int i_len )
         i_result = inflate(&d_stream, Z_NO_FLUSH);
         if( ( i_result != Z_OK ) && ( i_result != Z_STREAM_END ) )
         {
-            printf( "Zlib decompression failed. Result: %d\n", i_result );
             inflateEnd( &d_stream );
             return( -1 );
         }
