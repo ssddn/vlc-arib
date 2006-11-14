@@ -722,7 +722,7 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
     /* Add the size of authentification info */
     if( i_read < p_buffer[1] + (psz_sdp - psz_initial_sdp ) )
     {
-        msg_Warn( p_sd, "too short SAP packet\n");
+        msg_Warn( p_sd, "too short SAP packet");
         return VLC_EGENERIC;
     }
     psz_sdp += p_buffer[1];
@@ -1107,6 +1107,9 @@ static sdp_t *  ParseSDP( vlc_object_t *p_obj, char* psz_sdp )
     if( p_sdp == NULL )
         return NULL;
 
+    /* init to 0 */
+    memset( p_sdp, 0, sizeof( sdp_t ) );
+
     p_sdp->psz_sdp = strdup( psz_sdp );
     if( p_sdp->psz_sdp == NULL )
     {
@@ -1114,23 +1117,12 @@ static sdp_t *  ParseSDP( vlc_object_t *p_obj, char* psz_sdp )
         return NULL;
     }
 
-    p_sdp->psz_sessionname = NULL;
-    p_sdp->psz_media       = NULL;
-    p_sdp->psz_connection  = NULL;
-    p_sdp->psz_uri         = NULL;
-    p_sdp->psz_address     = NULL;
-    p_sdp->psz_address_type= NULL;
-
-    p_sdp->i_media         = 0;
-    p_sdp->i_attributes    = 0;
-    p_sdp->pp_attributes   = NULL;
-
     while( *psz_sdp != '\0' && b_end == VLC_FALSE  )
     {
-        char *psz_eol;
-        char *psz_eof;
-        char *psz_parse;
-        char *psz_sess_id;
+        char *psz_eol = NULL;
+        char *psz_eof = NULL;
+        char *psz_parse = NULL;
+        char *psz_sess_id = NULL;
 
         while( *psz_sdp == '\r' || *psz_sdp == '\n' ||
                *psz_sdp == ' ' || *psz_sdp == '\t' )
