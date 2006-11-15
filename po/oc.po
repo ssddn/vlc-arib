@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc 0.8.5-svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-30 13:55+0100\n"
+"POT-Creation-Date: 2006-11-15 22:19+0100\n"
 "PO-Revision-Date: 2005-12-25 17:59+0100\n"
 "Last-Translator: laurent jonqueres <laurent_jonqueres@yahoo.fr>\n"
 "Language-Team: Occitan\n"
@@ -70,9 +70,9 @@ msgstr "Paramètres intefàcia VLC"
 msgid "Hotkeys settings"
 msgstr "Paramètres acòrchas"
 
-#: include/vlc_config_cat.h:54 src/input/es_out.c:1595 src/libvlc.h:1178
+#: include/vlc_config_cat.h:54 src/input/es_out.c:1595 src/libvlc.h:1180
 #: modules/gui/beos/InterfaceWindow.cpp:280 modules/gui/macosx/extended.m:81
-#: modules/gui/macosx/intf.m:553 modules/gui/macosx/output.m:170
+#: modules/gui/macosx/intf.m:557 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:96 modules/gui/macosx/wizard.m:421
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:335
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:862
@@ -99,7 +99,7 @@ msgid "Audio filters are used to postprocess the audio stream."
 msgstr "Los filtres audio son utilisats per lo post-procès del flus audio"
 
 #: include/vlc_config_cat.h:64 src/audio_output/input.c:78
-#: modules/gui/macosx/intf.m:563 modules/gui/macosx/intf.m:564
+#: modules/gui/macosx/intf.m:567 modules/gui/macosx/intf.m:568
 msgid "Visualizations"
 msgstr "Visualisacion"
 
@@ -115,7 +115,7 @@ msgstr "Sortida"
 msgid "These are general settings for audio output modules."
 msgstr "Paramètres generals per lo module de sortida audio."
 
-#: include/vlc_config_cat.h:71 src/libvlc.h:1508
+#: include/vlc_config_cat.h:71 src/libvlc.h:1510
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:578
 #: modules/gui/wxwidgets/menus.cpp:282 modules/stream_out/transcode.c:279
 msgid "Miscellaneous"
@@ -126,8 +126,8 @@ msgstr "Divèrs"
 msgid "Miscellaneous audio settings and modules."
 msgstr "Paramètres divèrses audio e modulis"
 
-#: include/vlc_config_cat.h:75 src/input/es_out.c:1623 src/libvlc.h:1213
-#: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:566
+#: include/vlc_config_cat.h:75 src/input/es_out.c:1623 src/libvlc.h:1215
+#: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:570
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:86
 #: modules/gui/macosx/wizard.m:422
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:289
@@ -240,7 +240,7 @@ msgstr "Paramètres per codificacion audio e video"
 msgid "General input settings. Use with care."
 msgstr "Paramètres generals d'intrada."
 
-#: include/vlc_config_cat.h:131 src/libvlc.h:1445
+#: include/vlc_config_cat.h:131 src/libvlc.h:1447
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:152
 msgid "Stream output"
 msgstr "Sortida flus"
@@ -329,11 +329,11 @@ msgstr "VOD"
 msgid "VLC's implementation of Video On Demand"
 msgstr ""
 
-#: include/vlc_config_cat.h:182 src/libvlc.h:1554
+#: include/vlc_config_cat.h:182 src/libvlc.h:1556
 #: modules/demux/playlist/playlist.c:53 modules/demux/playlist/playlist.c:54
 #: modules/gui/beos/InterfaceWindow.cpp:230
-#: modules/gui/beos/InterfaceWindow.cpp:323 modules/gui/macosx/intf.m:498
-#: modules/gui/macosx/intf.m:596 modules/gui/pda/pda_interface.c:1264
+#: modules/gui/beos/InterfaceWindow.cpp:323 modules/gui/macosx/intf.m:502
+#: modules/gui/macosx/intf.m:600 modules/gui/pda/pda_interface.c:1264
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:202
 #: modules/gui/wxwidgets/interface.cpp:679
 #: modules/gui/wxwidgets/interface.cpp:690
@@ -351,7 +351,7 @@ msgstr " ..."
 msgid "General playlist behaviour"
 msgstr ""
 
-#: include/vlc_config_cat.h:188 modules/gui/macosx/playlist.m:490
+#: include/vlc_config_cat.h:188 modules/gui/macosx/playlist.m:492
 msgid "Services discovery"
 msgstr "Servicis"
 
@@ -361,7 +361,7 @@ msgid ""
 "playlist."
 msgstr ""
 
-#: include/vlc_config_cat.h:193 src/libvlc.h:1406
+#: include/vlc_config_cat.h:193 src/libvlc.h:1408
 #: modules/gui/macosx/prefs.m:124
 msgid "Advanced"
 msgstr "Avançat"
@@ -462,16 +462,16 @@ msgstr ""
 "the directory where you installed VLC and run \"vlc -I wxwin\"\n"
 
 #: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1297 modules/misc/growl.c:166
+#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:156
 #: modules/misc/notify.c:159 modules/visualization/goom.c:417
 msgid "Meta-information"
 msgstr ""
 
 #: include/vlc_meta.h:29 src/input/var.c:136 modules/demux/mpc.c:55
-#: modules/gui/beos/MediaControlView.cpp:1233 modules/gui/macosx/intf.m:548
-#: modules/gui/macosx/intf.m:549 modules/gui/macosx/open.m:168
+#: modules/gui/beos/MediaControlView.cpp:1233 modules/gui/macosx/intf.m:552
+#: modules/gui/macosx/intf.m:553 modules/gui/macosx/open.m:168
 #: modules/gui/macosx/playlistinfo.m:57 modules/gui/macosx/wizard.m:391
 #: modules/gui/wxwidgets/dialogs/open.cpp:757
 #: modules/gui/wxwidgets/dialogs/open.cpp:1660 modules/mux/asf.c:48
@@ -479,14 +479,14 @@ msgid "Title"
 msgstr "Titol"
 
 #: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:134 modules/gui/macosx/wizard.m:393
+#: modules/gui/macosx/playlist.m:132 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Autor"
 
 #: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:318
-#: modules/gui/macosx/playlist.m:1297
+#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247
 msgid "Artist"
 msgstr "Artista"
 
@@ -661,7 +661,7 @@ msgstr "Spectrum"
 
 #: src/audio_output/input.c:123 modules/audio_filter/equalizer.c:71
 #: modules/gui/macosx/equalizer.m:140 modules/gui/macosx/equalizer.m:155
-#: modules/gui/macosx/intf.m:593 modules/gui/wxwidgets/extrapanel.cpp:177
+#: modules/gui/macosx/intf.m:597 modules/gui/wxwidgets/extrapanel.cpp:177
 msgid "Equalizer"
 msgstr "Egalisaire"
 
@@ -671,8 +671,8 @@ msgid "Audio filters"
 msgstr "Filtres audio"
 
 #: src/audio_output/output.c:102 src/audio_output/output.c:129
-#: modules/access/vcdx/info.c:118 modules/gui/macosx/intf.m:559
-#: modules/gui/macosx/intf.m:560
+#: modules/access/vcdx/info.c:118 modules/gui/macosx/intf.m:563
+#: modules/gui/macosx/intf.m:564
 msgid "Audio Channels"
 msgstr "Sortidas audio"
 
@@ -780,7 +780,7 @@ msgstr "Camin %i"
 
 #: src/input/es_out.c:465 src/input/es_out.c:467 src/input/es_out.c:567
 #: src/input/es_out.c:574 src/input/var.c:125 src/libvlc.h:434
-#: modules/gui/macosx/intf.m:546 modules/gui/macosx/intf.m:547
+#: modules/gui/macosx/intf.m:550 modules/gui/macosx/intf.m:551
 msgid "Program"
 msgstr "Programa"
 
@@ -853,7 +853,7 @@ msgstr "Flus"
 
 #: src/input/input.c:1962 src/playlist/item.c:369
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
-#: modules/gui/macosx/playlist.m:135
+#: modules/gui/macosx/playlist.m:133
 msgid "Duration"
 msgstr "Durada"
 
@@ -871,7 +871,7 @@ msgid "Programs"
 msgstr "Programas"
 
 #: src/input/var.c:142 modules/gui/beos/MediaControlView.cpp:1234
-#: modules/gui/macosx/intf.m:550 modules/gui/macosx/intf.m:551
+#: modules/gui/macosx/intf.m:554 modules/gui/macosx/intf.m:555
 #: modules/gui/macosx/open.m:169 modules/gui/wxwidgets/dialogs/open.cpp:762
 msgid "Chapter"
 msgstr "Capitol"
@@ -881,18 +881,18 @@ msgstr "Capitol"
 msgid "Navigation"
 msgstr "Navegacion"
 
-#: src/input/var.c:163 modules/gui/macosx/intf.m:574
-#: modules/gui/macosx/intf.m:575
+#: src/input/var.c:163 modules/gui/macosx/intf.m:578
+#: modules/gui/macosx/intf.m:579
 msgid "Video Track"
 msgstr "Pista Video"
 
-#: src/input/var.c:169 modules/gui/macosx/intf.m:557
-#: modules/gui/macosx/intf.m:558
+#: src/input/var.c:169 modules/gui/macosx/intf.m:561
+#: modules/gui/macosx/intf.m:562
 msgid "Audio Track"
 msgstr "Pista Audio"
 
-#: src/input/var.c:175 modules/gui/macosx/intf.m:582
-#: modules/gui/macosx/intf.m:583
+#: src/input/var.c:175 modules/gui/macosx/intf.m:586
+#: modules/gui/macosx/intf.m:587
 msgid "Subtitles Track"
 msgstr "Pista Jostitols"
 
@@ -938,8 +938,8 @@ msgstr ""
 msgid "Switch interface"
 msgstr "Interfàcia"
 
-#: src/interface/interface.c:375 modules/gui/macosx/intf.m:509
-#: modules/gui/macosx/intf.m:510
+#: src/interface/interface.c:375 modules/gui/macosx/intf.m:513
+#: modules/gui/macosx/intf.m:514
 msgid "Add Interface"
 msgstr "Ajustar Interfàcia"
 
@@ -975,53 +975,53 @@ msgstr ""
 msgid "Help options"
 msgstr "Opcion de l'Ajuda"
 
-#: src/libvlc.c:2208 src/misc/configuration.c:1248
+#: src/libvlc.c:2221 src/misc/configuration.c:1248
 msgid "string"
 msgstr "string"
 
-#: src/libvlc.c:2225 src/misc/configuration.c:1212
+#: src/libvlc.c:2238 src/misc/configuration.c:1212
 msgid "integer"
 msgstr "integer"
 
-#: src/libvlc.c:2243 src/misc/configuration.c:1237
+#: src/libvlc.c:2256 src/misc/configuration.c:1237
 msgid "float"
 msgstr "float"
 
-#: src/libvlc.c:2249
+#: src/libvlc.c:2262
 msgid " (default enabled)"
 msgstr "(activat per defaut)"
 
-#: src/libvlc.c:2250
+#: src/libvlc.c:2263
 msgid " (default disabled)"
 msgstr "(desactivat per defaut)"
 
-#: src/libvlc.c:2432
+#: src/libvlc.c:2445
 #, c-format
 msgid "VLC version %s\n"
 msgstr "Version de VLC %s\n"
 
-#: src/libvlc.c:2433
+#: src/libvlc.c:2446
 #, c-format
 msgid "Compiled by %s@%s.%s\n"
 msgstr "Compilat per %s@%s.%s\n"
 
-#: src/libvlc.c:2435
+#: src/libvlc.c:2448
 #, c-format
 msgid "Compiler: %s\n"
 msgstr "Compiler: %s\n"
 
-#: src/libvlc.c:2438
+#: src/libvlc.c:2451
 #, c-format
 msgid "Based upon svn changeset [%s]\n"
 msgstr ""
 
-#: src/libvlc.c:2470
+#: src/libvlc.c:2483
 msgid ""
 "\n"
 "Dumped content to vlc-help.txt file.\n"
 msgstr ""
 
-#: src/libvlc.c:2491
+#: src/libvlc.c:2504
 msgid ""
 "\n"
 "Press the RETURN key to continue...\n"
@@ -1805,7 +1805,7 @@ msgstr ""
 #: src/video_output/vout_intf.c:348 modules/access/dshow/dshow.cpp:73
 #: modules/access/dshow/dshow.cpp:75 modules/access/dshow/dshow.cpp:78
 #: modules/audio_output/alsa.c:101 modules/gui/macosx/prefs_widgets.m:1292
-#: modules/gui/macosx/vout.m:199
+#: modules/gui/macosx/vout.m:197
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:275
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:325
 #: modules/video_filter/marq.c:52 modules/video_filter/rss.c:63
@@ -2018,7 +2018,7 @@ msgstr ""
 msgid "You can completely disable the sub-picture processing."
 msgstr ""
 
-#: src/libvlc.h:523 src/libvlc.h:1288 src/misc/iso-639_def.h:143
+#: src/libvlc.h:523 src/libvlc.h:1290 src/misc/iso-639_def.h:143
 #: modules/stream_out/transcode.c:275
 msgid "On Screen Display"
 msgstr ""
@@ -2754,10 +2754,10 @@ msgstr ""
 
 #: src/libvlc.h:948 src/video_output/vout_intf.c:408
 #: modules/gui/beos/VideoOutput.cpp:1057 modules/gui/macosx/applescript.m:121
-#: modules/gui/macosx/controls.m:344 modules/gui/macosx/controls.m:760
-#: modules/gui/macosx/controls.m:790 modules/gui/macosx/embeddedwindow.m:44
-#: modules/gui/macosx/intf.m:495 modules/gui/macosx/intf.m:571
-#: modules/gui/macosx/intf.m:626
+#: modules/gui/macosx/controls.m:455 modules/gui/macosx/controls.m:881
+#: modules/gui/macosx/controls.m:911 modules/gui/macosx/embeddedwindow.m:44
+#: modules/gui/macosx/intf.m:499 modules/gui/macosx/intf.m:575
+#: modules/gui/macosx/intf.m:630
 msgid "Fullscreen"
 msgstr "Plen ecran"
 
@@ -2791,7 +2791,7 @@ msgid "Select the hotkey to use to play."
 msgstr ""
 
 #: src/libvlc.h:956 modules/control/hotkeys.c:684
-#: modules/gui/macosx/controls.m:693 modules/gui/macosx/intf.m:536
+#: modules/gui/macosx/controls.m:814 modules/gui/macosx/intf.m:540
 #: modules/gui/wxwidgets/interface.cpp:695
 msgid "Faster"
 msgstr "Mai viste"
@@ -2801,7 +2801,7 @@ msgid "Select the hotkey to use for fast forward playback."
 msgstr ""
 
 #: src/libvlc.h:958 modules/control/hotkeys.c:692
-#: modules/gui/macosx/controls.m:694 modules/gui/macosx/intf.m:537
+#: modules/gui/macosx/controls.m:815 modules/gui/macosx/intf.m:541
 #: modules/gui/wxwidgets/interface.cpp:694
 msgid "Slower"
 msgstr "Mai lent"
@@ -2811,9 +2811,9 @@ msgid "Select the hotkey to use for slow motion playback."
 msgstr ""
 
 #: src/libvlc.h:960 modules/control/hotkeys.c:651
-#: modules/gui/macosx/controls.m:714 modules/gui/macosx/intf.m:494
-#: modules/gui/macosx/intf.m:539 modules/gui/macosx/intf.m:614
-#: modules/gui/macosx/intf.m:622 modules/gui/macosx/wizard.m:313
+#: modules/gui/macosx/controls.m:835 modules/gui/macosx/intf.m:498
+#: modules/gui/macosx/intf.m:543 modules/gui/macosx/intf.m:618
+#: modules/gui/macosx/intf.m:626 modules/gui/macosx/wizard.m:313
 #: modules/gui/macosx/wizard.m:364 modules/gui/macosx/wizard.m:1604
 #: modules/gui/wxwidgets/interface.cpp:693
 #: modules/gui/wxwidgets/interface.cpp:1515
@@ -2826,9 +2826,9 @@ msgid "Select the hotkey to use to skip to the next item in the playlist."
 msgstr ""
 
 #: src/libvlc.h:962 modules/control/hotkeys.c:663
-#: modules/gui/macosx/controls.m:713 modules/gui/macosx/intf.m:489
-#: modules/gui/macosx/intf.m:538 modules/gui/macosx/intf.m:615
-#: modules/gui/macosx/intf.m:621 modules/gui/wxwidgets/interface.cpp:692
+#: modules/gui/macosx/controls.m:834 modules/gui/macosx/intf.m:493
+#: modules/gui/macosx/intf.m:542 modules/gui/macosx/intf.m:619
+#: modules/gui/macosx/intf.m:625 modules/gui/wxwidgets/interface.cpp:692
 #: modules/gui/wxwidgets/interface.cpp:1514
 #: modules/gui/wxwidgets/menus.cpp:260
 msgid "Previous"
@@ -2838,9 +2838,9 @@ msgstr "Precedent"
 msgid "Select the hotkey to use to skip to the previous item in the playlist."
 msgstr ""
 
-#: src/libvlc.h:964 modules/gui/macosx/controls.m:705
-#: modules/gui/macosx/intf.m:492 modules/gui/macosx/intf.m:535
-#: modules/gui/macosx/intf.m:613 modules/gui/macosx/intf.m:620
+#: src/libvlc.h:964 modules/gui/macosx/controls.m:826
+#: modules/gui/macosx/intf.m:496 modules/gui/macosx/intf.m:539
+#: modules/gui/macosx/intf.m:617 modules/gui/macosx/intf.m:624
 #: modules/gui/pda/pda_interface.c:274 modules/gui/pda/pda_interface.c:275
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:87
 #: modules/gui/wxwidgets/interface.cpp:676
@@ -2856,7 +2856,7 @@ msgstr ""
 
 #: src/libvlc.h:966 modules/gui/macosx/bookmarks.m:101
 #: modules/gui/macosx/bookmarks.m:110 modules/gui/macosx/embeddedwindow.m:46
-#: modules/gui/macosx/intf.m:497 modules/video_filter/marq.c:122
+#: modules/gui/macosx/intf.m:501 modules/video_filter/marq.c:122
 #: modules/video_filter/rss.c:174
 msgid "Position"
 msgstr ""
@@ -3067,9 +3067,9 @@ msgstr ""
 msgid "Select the key to decrease audio volume."
 msgstr ""
 
-#: src/libvlc.h:1030 modules/gui/macosx/controls.m:750
-#: modules/gui/macosx/intf.m:556 modules/gui/macosx/intf.m:616
-#: modules/gui/macosx/intf.m:625
+#: src/libvlc.h:1030 modules/gui/macosx/controls.m:871
+#: modules/gui/macosx/intf.m:560 modules/gui/macosx/intf.m:620
+#: modules/gui/macosx/intf.m:629
 msgid "Mute"
 msgstr ""
 
@@ -3336,44 +3336,52 @@ msgstr ""
 msgid "Record access filter start/stop."
 msgstr ""
 
-#: src/libvlc.h:1101 src/libvlc.h:1102
+#: src/libvlc.h:1100
+msgid "Dump"
+msgstr ""
+
+#: src/libvlc.h:1101
+msgid "Media dump access filter trigger."
+msgstr ""
+
+#: src/libvlc.h:1103 src/libvlc.h:1104
 #, fuzzy
 msgid "Un-Zoom"
 msgstr "Zoom"
 
-#: src/libvlc.h:1104 src/libvlc.h:1105
+#: src/libvlc.h:1106 src/libvlc.h:1107
 msgid "Crop one pixel from the top of the video"
 msgstr ""
 
-#: src/libvlc.h:1106 src/libvlc.h:1107
+#: src/libvlc.h:1108 src/libvlc.h:1109
 msgid "Uncrop one pixel from the top of the video"
 msgstr ""
 
-#: src/libvlc.h:1109 src/libvlc.h:1110
+#: src/libvlc.h:1111 src/libvlc.h:1112
 msgid "Crop one pixel from the left of the video"
 msgstr ""
 
-#: src/libvlc.h:1111 src/libvlc.h:1112
+#: src/libvlc.h:1113 src/libvlc.h:1114
 msgid "Uncrop one pixel from the left of the video"
 msgstr ""
 
-#: src/libvlc.h:1114 src/libvlc.h:1115
+#: src/libvlc.h:1116 src/libvlc.h:1117
 msgid "Crop one pixel from the bottom of the video"
 msgstr ""
 
-#: src/libvlc.h:1116 src/libvlc.h:1117
+#: src/libvlc.h:1118 src/libvlc.h:1119
 msgid "Uncrop one pixel from the bottom of the video"
 msgstr ""
 
-#: src/libvlc.h:1119 src/libvlc.h:1120
+#: src/libvlc.h:1121 src/libvlc.h:1122
 msgid "Crop one pixel from the right of the video"
 msgstr ""
 
-#: src/libvlc.h:1121 src/libvlc.h:1122
+#: src/libvlc.h:1123 src/libvlc.h:1124
 msgid "Uncrop one pixel from the right of the video"
 msgstr ""
 
-#: src/libvlc.h:1126
+#: src/libvlc.h:1128
 #, c-format
 msgid ""
 "Usage: %s [options] [stream] ...\n"
@@ -3410,139 +3418,139 @@ msgid ""
 "  vlc:quit                       Special item to quit VLC\n"
 msgstr ""
 
-#: src/libvlc.h:1236 src/video_output/vout_intf.c:420
-#: modules/gui/macosx/controls.m:328 modules/gui/macosx/controls.m:759
-#: modules/gui/macosx/intf.m:573 modules/gui/macosx/intf.m:627
+#: src/libvlc.h:1238 src/video_output/vout_intf.c:420
+#: modules/gui/macosx/controls.m:439 modules/gui/macosx/controls.m:880
+#: modules/gui/macosx/intf.m:577 modules/gui/macosx/intf.m:631
 #: modules/video_output/snapshot.c:76
 msgid "Snapshot"
 msgstr ""
 
-#: src/libvlc.h:1249
+#: src/libvlc.h:1251
 msgid "Window properties"
 msgstr "Proprietats Fenèstra"
 
-#: src/libvlc.h:1289
+#: src/libvlc.h:1291
 msgid "Subpictures"
 msgstr ""
 
-#: src/libvlc.h:1296 modules/codec/subsdec.c:144 modules/demux/subtitle.c:63
+#: src/libvlc.h:1298 modules/codec/subsdec.c:144 modules/demux/subtitle.c:63
 #: modules/gui/beos/InterfaceWindow.cpp:277
 msgid "Subtitles"
 msgstr "Jostitols"
 
-#: src/libvlc.h:1313 modules/stream_out/transcode.c:148
+#: src/libvlc.h:1315 modules/stream_out/transcode.c:148
 msgid "Overlays"
 msgstr "Overlays"
 
-#: src/libvlc.h:1321
+#: src/libvlc.h:1323
 msgid "Track settings"
 msgstr "Paramètres Pista"
 
-#: src/libvlc.h:1343
+#: src/libvlc.h:1345
 msgid "Playback control"
 msgstr ""
 
-#: src/libvlc.h:1358
+#: src/libvlc.h:1360
 msgid "Default devices"
 msgstr ""
 
-#: src/libvlc.h:1367
+#: src/libvlc.h:1369
 msgid "Network settings"
 msgstr "Paramètres Ret"
 
-#: src/libvlc.h:1379
+#: src/libvlc.h:1381
 msgid "Socks proxy"
 msgstr ""
 
-#: src/libvlc.h:1388
+#: src/libvlc.h:1390
 msgid "Metadata"
 msgstr ""
 
-#: src/libvlc.h:1418
+#: src/libvlc.h:1420
 msgid "Decoders"
 msgstr ""
 
-#: src/libvlc.h:1425 modules/gui/macosx/playlistinfo.m:80
+#: src/libvlc.h:1427 modules/gui/macosx/playlistinfo.m:80
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:264
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:378
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:106
 msgid "Input"
 msgstr ""
 
-#: src/libvlc.h:1461 modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:522
+#: src/libvlc.h:1463 modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:522
 msgid "VLM"
 msgstr ""
 
-#: src/libvlc.h:1492
+#: src/libvlc.h:1494
 msgid "CPU"
 msgstr ""
 
-#: src/libvlc.h:1507
+#: src/libvlc.h:1509
 msgid "Special modules"
 msgstr ""
 
-#: src/libvlc.h:1513
+#: src/libvlc.h:1515
 msgid "Plugins"
 msgstr ""
 
-#: src/libvlc.h:1519
+#: src/libvlc.h:1521
 msgid "Performance options"
 msgstr ""
 
-#: src/libvlc.h:1625
+#: src/libvlc.h:1627
 msgid "Hot keys"
 msgstr ""
 
-#: src/libvlc.h:1928
+#: src/libvlc.h:1934
 msgid "Jump sizes"
 msgstr ""
 
-#: src/libvlc.h:2007
+#: src/libvlc.h:2013
 msgid "main program"
 msgstr ""
 
-#: src/libvlc.h:2014
+#: src/libvlc.h:2020
 msgid "print help for VLC (can be combined with --advanced)"
 msgstr ""
 
-#: src/libvlc.h:2016
+#: src/libvlc.h:2022
 msgid ""
 "print help for VLC and all its modules (can be combined with --advanced)"
 msgstr ""
 
-#: src/libvlc.h:2018
+#: src/libvlc.h:2024
 msgid "print help for the advanced options"
 msgstr ""
 
-#: src/libvlc.h:2020
+#: src/libvlc.h:2026
 msgid "ask for extra verbosity when displaying help"
 msgstr ""
 
-#: src/libvlc.h:2022
+#: src/libvlc.h:2028
 msgid "print a list of available modules"
 msgstr ""
 
-#: src/libvlc.h:2024
+#: src/libvlc.h:2030
 msgid "print help on a specific module (can be combined with --advanced)"
 msgstr ""
 
-#: src/libvlc.h:2026
+#: src/libvlc.h:2032
 msgid "save the current command line options in the config"
 msgstr ""
 
-#: src/libvlc.h:2028
+#: src/libvlc.h:2034
 msgid "reset the current config to the default values"
 msgstr ""
 
-#: src/libvlc.h:2030
+#: src/libvlc.h:2036
 msgid "use alternate config file"
 msgstr ""
 
-#: src/libvlc.h:2032
+#: src/libvlc.h:2038
 msgid "resets the current plugins cache"
 msgstr ""
 
-#: src/libvlc.h:2034
+#: src/libvlc.h:2040
 msgid "print version information"
 msgstr ""
 
@@ -4155,8 +4163,8 @@ msgstr ""
 msgid "Undefined"
 msgstr ""
 
-#: src/video_output/video_output.c:377 modules/gui/macosx/intf.m:584
-#: modules/gui/macosx/intf.m:585 modules/video_filter/deinterlace.c:122
+#: src/video_output/video_output.c:377 modules/gui/macosx/intf.m:588
+#: modules/gui/macosx/intf.m:589 modules/video_filter/deinterlace.c:122
 msgid "Deinterlace"
 msgstr ""
 
@@ -4200,13 +4208,13 @@ msgstr "1:1 Original"
 msgid "2:1 Double"
 msgstr "2:1 Doble"
 
-#: src/video_output/vout_intf.c:256 modules/gui/macosx/intf.m:578
-#: modules/gui/macosx/intf.m:579 modules/video_filter/crop.c:62
+#: src/video_output/vout_intf.c:256 modules/gui/macosx/intf.m:582
+#: modules/gui/macosx/intf.m:583 modules/video_filter/crop.c:62
 msgid "Crop"
 msgstr ""
 
-#: src/video_output/vout_intf.c:343 modules/gui/macosx/intf.m:576
-#: modules/gui/macosx/intf.m:577
+#: src/video_output/vout_intf.c:343 modules/gui/macosx/intf.m:580
+#: modules/gui/macosx/intf.m:581
 msgid "Aspect-ratio"
 msgstr ""
 
@@ -5562,7 +5570,7 @@ msgid "Bitmask that will get used by the audio part of the card."
 msgstr ""
 
 #: modules/access/pvr/pvr.c:98 modules/access/vcdx/info.c:97
-#: modules/gui/macosx/intf.m:496 modules/gui/wxwidgets/interface.cpp:1380
+#: modules/gui/macosx/intf.m:500 modules/gui/wxwidgets/interface.cpp:1380
 msgid "Volume"
 msgstr ""
 
@@ -5645,7 +5653,7 @@ msgstr ""
 msgid "Screen Input"
 msgstr ""
 
-#: modules/access/screen/screen.c:63 modules/gui/macosx/vout.m:210
+#: modules/access/screen/screen.c:63 modules/gui/macosx/vout.m:209
 msgid "Screen"
 msgstr ""
 
@@ -6458,8 +6466,8 @@ msgstr ""
 #: modules/audio_output/auhal.c:966 modules/audio_output/directx.c:401
 #: modules/audio_output/oss.c:132 modules/audio_output/portaudio.c:394
 #: modules/audio_output/sdl.c:177 modules/audio_output/sdl.c:195
-#: modules/audio_output/waveout.c:371 modules/gui/macosx/intf.m:561
-#: modules/gui/macosx/intf.m:562
+#: modules/audio_output/waveout.c:371 modules/gui/macosx/intf.m:565
+#: modules/gui/macosx/intf.m:566
 msgid "Audio Device"
 msgstr ""
 
@@ -7264,8 +7272,8 @@ msgid ""
 "0.0). The H264 specification recommends 7."
 msgstr ""
 
-#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:586
-#: modules/gui/macosx/intf.m:587
+#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:590
+#: modules/gui/macosx/intf.m:591
 msgid "Post processing"
 msgstr ""
 
@@ -7289,7 +7297,7 @@ msgstr ""
 msgid "Flac audio packetizer"
 msgstr ""
 
-#: modules/codec/libmpeg2.c:96
+#: modules/codec/libmpeg2.c:97
 msgid "MPEG I/II video decoder (using libmpeg2)"
 msgstr ""
 
@@ -7405,7 +7413,7 @@ msgstr ""
 msgid "Text subtitles decoder"
 msgstr ""
 
-#: modules/codec/subsdec.c:364
+#: modules/codec/subsdec.c:366
 msgid ""
 "failed to convert subtitle encoding.\n"
 "Try manually setting a character-encoding before you open the file."
@@ -9828,7 +9836,7 @@ msgid "Open files from all sub-folders as well?"
 msgstr ""
 
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
-#: modules/gui/macosx/controls.m:49 modules/gui/macosx/interaction.m:121
+#: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
 #: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
 #: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
@@ -9850,8 +9858,8 @@ msgid "Preferences"
 msgstr "Preférencias"
 
 #: modules/gui/beos/InterfaceWindow.cpp:235
-#: modules/gui/beos/InterfaceWindow.cpp:326 modules/gui/macosx/intf.m:501
-#: modules/gui/macosx/intf.m:598 modules/gui/wxwidgets/dialogs/messages.cpp:47
+#: modules/gui/beos/InterfaceWindow.cpp:326 modules/gui/macosx/intf.m:505
+#: modules/gui/macosx/intf.m:602 modules/gui/wxwidgets/dialogs/messages.cpp:47
 msgid "Messages"
 msgstr "Messatges"
 
@@ -9898,14 +9906,14 @@ msgstr "Sautar cap al capitol"
 msgid "Speed"
 msgstr "Velocitat"
 
-#: modules/gui/beos/InterfaceWindow.cpp:321 modules/gui/macosx/intf.m:589
+#: modules/gui/beos/InterfaceWindow.cpp:321 modules/gui/macosx/intf.m:593
 msgid "Window"
 msgstr "Finèstra"
 
 #: modules/gui/beos/InterfaceWindow.cpp:400 modules/gui/macosx/bookmarks.m:106
 #: modules/gui/macosx/bookmarks.m:233 modules/gui/macosx/bookmarks.m:241
 #: modules/gui/macosx/bookmarks.m:292 modules/gui/macosx/bookmarks.m:302
-#: modules/gui/macosx/controls.m:50 modules/gui/macosx/extended.m:602
+#: modules/gui/macosx/controls.m:59 modules/gui/macosx/extended.m:602
 #: modules/gui/macosx/open.m:157 modules/gui/macosx/open.m:254
 #: modules/gui/macosx/output.m:138 modules/gui/macosx/playlistinfo.m:59
 #: modules/gui/macosx/update.m:86 modules/gui/macosx/wizard.m:631
@@ -9940,14 +9948,14 @@ msgid "Close"
 msgstr "Tampar"
 
 #: modules/gui/beos/PlayListWindow.cpp:101 modules/gui/macosx/bookmarks.m:95
-#: modules/gui/macosx/intf.m:526
+#: modules/gui/macosx/intf.m:530
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:165
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:100
 msgid "Edit"
 msgstr "Editar"
 
-#: modules/gui/beos/PlayListWindow.cpp:103 modules/gui/macosx/intf.m:531
-#: modules/gui/macosx/playlist.m:485
+#: modules/gui/beos/PlayListWindow.cpp:103 modules/gui/macosx/intf.m:535
+#: modules/gui/macosx/playlist.m:487
 msgid "Select All"
 msgstr "Tot seleccionar"
 
@@ -9988,7 +9996,7 @@ msgid "Path"
 msgstr "Camin"
 
 #: modules/gui/beos/PlayListWindow.cpp:147 modules/gui/macosx/bookmarks.m:108
-#: modules/gui/macosx/playlist.m:133
+#: modules/gui/macosx/playlist.m:131
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:97
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:72
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_panel.cpp:372
@@ -10001,7 +10009,7 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:781 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
 msgid "Save"
 msgstr "Salvar"
 
@@ -10041,7 +10049,7 @@ msgstr "Totjorn davant"
 msgid "Take Screen Shot"
 msgstr ""
 
-#: modules/gui/macosx/about.m:73 modules/gui/macosx/intf.m:505
+#: modules/gui/macosx/about.m:73 modules/gui/macosx/intf.m:509
 msgid "About VLC media player"
 msgstr "A prepaus"
 
@@ -10055,7 +10063,7 @@ msgstr ""
 msgid "Compiled by %s"
 msgstr "Compilat per %s@%s.%s\n"
 
-#: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:595
+#: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:599
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:139
 msgid "Bookmarks"
 msgstr "Favorits"
@@ -10065,7 +10073,7 @@ msgstr "Favorits"
 msgid "Add"
 msgstr "Ajustar"
 
-#: modules/gui/macosx/bookmarks.m:94 modules/gui/macosx/intf.m:530
+#: modules/gui/macosx/bookmarks.m:94 modules/gui/macosx/intf.m:534
 #: modules/gui/wxwidgets/dialogs/messages.cpp:77
 msgid "Clear"
 msgstr "Netejar"
@@ -10081,7 +10089,7 @@ msgstr "Extraire"
 msgid "Time"
 msgstr "Temps"
 
-#: modules/gui/macosx/bookmarks.m:136 modules/gui/macosx/playlist.m:777
+#: modules/gui/macosx/bookmarks.m:136 modules/gui/macosx/playlist.m:774
 msgid "Untitled"
 msgstr "Sens Nom"
 
@@ -10123,98 +10131,95 @@ msgstr ""
 msgid "The stream must be playing or paused for bookmarks to work."
 msgstr ""
 
-#: modules/gui/macosx/controls.m:48 modules/gui/macosx/controls.m:741
+#: modules/gui/macosx/controls.m:57 modules/gui/macosx/controls.m:862
 msgid "Jump To Time"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:51
+#: modules/gui/macosx/controls.m:60
 msgid "sec."
 msgstr ""
 
-#: modules/gui/macosx/controls.m:52
+#: modules/gui/macosx/controls.m:61
 msgid "Jump to time"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:163
+#: modules/gui/macosx/controls.m:172
 msgid "Random On"
 msgstr "Aleatòri activat"
 
-#: modules/gui/macosx/controls.m:168
+#: modules/gui/macosx/controls.m:177
 msgid "Random Off"
 msgstr "Aleatòri desactivat"
 
-#: modules/gui/macosx/controls.m:197 modules/gui/macosx/controls.m:725
-#: modules/gui/macosx/intf.m:541 modules/gui/macosx/playlist.m:500
-#: modules/gui/macosx/playlist.m:1244
+#: modules/gui/macosx/controls.m:244 modules/gui/macosx/controls.m:308
+#: modules/gui/macosx/controls.m:846 modules/gui/macosx/intf.m:545
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:54
 msgid "Repeat One"
 msgstr "Repetir un còp"
 
-#: modules/gui/macosx/controls.m:202 modules/gui/macosx/controls.m:236
-#: modules/gui/macosx/playlist.m:1263
-msgid "Repeat Off"
-msgstr "De pas repetir"
-
-#: modules/gui/macosx/controls.m:231 modules/gui/macosx/controls.m:732
-#: modules/gui/macosx/intf.m:542 modules/gui/macosx/playlist.m:501
-#: modules/gui/macosx/playlist.m:1252
+#: modules/gui/macosx/controls.m:260 modules/gui/macosx/controls.m:342
+#: modules/gui/macosx/controls.m:853 modules/gui/macosx/intf.m:546
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:53
 msgid "Repeat All"
 msgstr "Tot repetir"
 
-#: modules/gui/macosx/controls.m:314 modules/gui/macosx/controls.m:755
-#: modules/gui/macosx/intf.m:567
+#: modules/gui/macosx/controls.m:276 modules/gui/macosx/controls.m:313
+#: modules/gui/macosx/controls.m:347
+msgid "Repeat Off"
+msgstr "De pas repetir"
+
+#: modules/gui/macosx/controls.m:425 modules/gui/macosx/controls.m:876
+#: modules/gui/macosx/intf.m:571
 msgid "Half Size"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:316 modules/gui/macosx/controls.m:756
-#: modules/gui/macosx/intf.m:568
+#: modules/gui/macosx/controls.m:427 modules/gui/macosx/controls.m:877
+#: modules/gui/macosx/intf.m:572
 msgid "Normal Size"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:318 modules/gui/macosx/controls.m:757
-#: modules/gui/macosx/intf.m:569
+#: modules/gui/macosx/controls.m:429 modules/gui/macosx/controls.m:878
+#: modules/gui/macosx/intf.m:573
 msgid "Double Size"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:320 modules/gui/macosx/controls.m:761
-#: modules/gui/macosx/controls.m:772 modules/gui/macosx/intf.m:572
+#: modules/gui/macosx/controls.m:431 modules/gui/macosx/controls.m:882
+#: modules/gui/macosx/controls.m:893 modules/gui/macosx/intf.m:576
 msgid "Float on Top"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:322 modules/gui/macosx/controls.m:758
-#: modules/gui/macosx/intf.m:570
+#: modules/gui/macosx/controls.m:433 modules/gui/macosx/controls.m:879
+#: modules/gui/macosx/intf.m:574
 msgid "Fit to Screen"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:718 modules/gui/macosx/intf.m:540
-#: modules/gui/macosx/playlist.m:494
+#: modules/gui/macosx/controls.m:839 modules/gui/macosx/intf.m:544
 msgid "Random"
 msgstr "Aleatòri"
 
-#: modules/gui/macosx/controls.m:739 modules/gui/macosx/intf.m:543
+#: modules/gui/macosx/controls.m:860 modules/gui/macosx/intf.m:547
 msgid "Step Forward"
 msgstr ""
 
-#: modules/gui/macosx/controls.m:740 modules/gui/macosx/intf.m:544
+#: modules/gui/macosx/controls.m:861 modules/gui/macosx/intf.m:548
 msgid "Step Backward"
 msgstr ""
 
-#: modules/gui/macosx/embeddedwindow.m:42 modules/gui/macosx/intf.m:490
+#: modules/gui/macosx/embeddedwindow.m:42 modules/gui/macosx/intf.m:494
 #: modules/gui/pda/pda_interface.c:238 modules/gui/pda/pda_interface.c:239
 msgid "Rewind"
 msgstr ""
 
-#: modules/gui/macosx/embeddedwindow.m:43 modules/gui/macosx/intf.m:493
+#: modules/gui/macosx/embeddedwindow.m:43 modules/gui/macosx/intf.m:497
 msgid "Fast Forward"
 msgstr "Lèu endavant"
 
 #: modules/gui/macosx/embeddedwindow.m:45
-#: modules/gui/macosx/embeddedwindow.m:72 modules/gui/macosx/intf.m:491
-#: modules/gui/macosx/intf.m:534 modules/gui/macosx/intf.m:612
-#: modules/gui/macosx/intf.m:619 modules/gui/macosx/intf.m:1412
-#: modules/gui/macosx/intf.m:1413 modules/gui/macosx/intf.m:1414
-#: modules/gui/macosx/intf.m:1415 modules/gui/macosx/playlist.m:482
+#: modules/gui/macosx/embeddedwindow.m:72 modules/gui/macosx/intf.m:495
+#: modules/gui/macosx/intf.m:538 modules/gui/macosx/intf.m:616
+#: modules/gui/macosx/intf.m:623 modules/gui/macosx/intf.m:1459
+#: modules/gui/macosx/intf.m:1460 modules/gui/macosx/intf.m:1461
+#: modules/gui/macosx/intf.m:1462 modules/gui/macosx/playlist.m:484
 #: modules/gui/pda/pda_interface.c:262 modules/gui/pda/pda_interface.c:263
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:274
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:283
@@ -10225,9 +10230,9 @@ msgstr "Lèu endavant"
 msgid "Play"
 msgstr "Legir"
 
-#: modules/gui/macosx/embeddedwindow.m:66 modules/gui/macosx/intf.m:1403
-#: modules/gui/macosx/intf.m:1404 modules/gui/macosx/intf.m:1405
-#: modules/gui/macosx/intf.m:1406 modules/gui/pda/pda_interface.c:250
+#: modules/gui/macosx/embeddedwindow.m:66 modules/gui/macosx/intf.m:1449
+#: modules/gui/macosx/intf.m:1450 modules/gui/macosx/intf.m:1451
+#: modules/gui/macosx/intf.m:1452 modules/gui/pda/pda_interface.c:250
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:678
 #: modules/gui/wxwidgets/interface.cpp:689
 #: modules/gui/wxwidgets/interface.cpp:1210
@@ -10375,7 +10380,7 @@ msgid ""
 "can be set in the Preferences, Video / Filters section."
 msgstr ""
 
-#: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:630
+#: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:634
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:81
 msgid "Error"
 msgstr "Error"
@@ -10389,200 +10394,200 @@ msgstr "Òc"
 msgid "No"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:485
+#: modules/gui/macosx/intf.m:489
 msgid "VLC - Controller"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:486 modules/gui/macosx/intf.m:990
-#: modules/gui/macosx/intf.m:1312 modules/gui/pda/pda_interface.c:212
+#: modules/gui/macosx/intf.m:490 modules/gui/macosx/intf.m:1030
+#: modules/gui/macosx/intf.m:1357 modules/gui/pda/pda_interface.c:212
 #: modules/gui/pda/pda_interface.c:1355
 msgid "VLC media player"
 msgstr "Lector media VLC"
 
-#: modules/gui/macosx/intf.m:502
+#: modules/gui/macosx/intf.m:506
 msgid "Open CrashLog"
 msgstr "Dobrir CrashLog"
 
-#: modules/gui/macosx/intf.m:507
+#: modules/gui/macosx/intf.m:511
 msgid "Check for Update..."
 msgstr ""
 
-#: modules/gui/macosx/intf.m:508
+#: modules/gui/macosx/intf.m:512
 msgid "Preferences..."
 msgstr "Preférencias..."
 
-#: modules/gui/macosx/intf.m:511
+#: modules/gui/macosx/intf.m:515
 msgid "Services"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:512
+#: modules/gui/macosx/intf.m:516
 msgid "Hide VLC"
 msgstr "Amagar VLC"
 
-#: modules/gui/macosx/intf.m:513
+#: modules/gui/macosx/intf.m:517
 msgid "Hide Others"
 msgstr "Amagar autris"
 
-#: modules/gui/macosx/intf.m:514
+#: modules/gui/macosx/intf.m:518
 msgid "Show All"
 msgstr "Tot vèire"
 
-#: modules/gui/macosx/intf.m:515 modules/gui/wxwidgets/interface.cpp:1508
+#: modules/gui/macosx/intf.m:519 modules/gui/wxwidgets/interface.cpp:1508
 msgid "Quit VLC"
 msgstr "Quitar VLC"
 
-#: modules/gui/macosx/intf.m:517
+#: modules/gui/macosx/intf.m:521
 msgid "1:File"
 msgstr "1:Fiquièr"
 
-#: modules/gui/macosx/intf.m:518
+#: modules/gui/macosx/intf.m:522
 msgid "Open File..."
 msgstr "Dobrir Fiquièrs..."
 
-#: modules/gui/macosx/intf.m:519
+#: modules/gui/macosx/intf.m:523
 msgid "Quick Open File..."
 msgstr "Dobrir..."
 
-#: modules/gui/macosx/intf.m:520
+#: modules/gui/macosx/intf.m:524
 msgid "Open Disc..."
 msgstr "Dobrir Disc..."
 
-#: modules/gui/macosx/intf.m:521
+#: modules/gui/macosx/intf.m:525
 msgid "Open Network..."
 msgstr "Dobrir Ret..."
 
-#: modules/gui/macosx/intf.m:522
+#: modules/gui/macosx/intf.m:526
 msgid "Open Recent"
 msgstr "Dobrir Recents"
 
-#: modules/gui/macosx/intf.m:523 modules/gui/macosx/intf.m:1953
+#: modules/gui/macosx/intf.m:527 modules/gui/macosx/intf.m:2001
 msgid "Clear Menu"
 msgstr "Netejar Menut"
 
-#: modules/gui/macosx/intf.m:524
+#: modules/gui/macosx/intf.m:528
 msgid "Streaming/Exporting Wizard..."
 msgstr ""
 
-#: modules/gui/macosx/intf.m:527
+#: modules/gui/macosx/intf.m:531
 msgid "Cut"
 msgstr "Copar"
 
-#: modules/gui/macosx/intf.m:528
+#: modules/gui/macosx/intf.m:532
 msgid "Copy"
 msgstr "Copiar"
 
-#: modules/gui/macosx/intf.m:529
+#: modules/gui/macosx/intf.m:533
 msgid "Paste"
 msgstr "Pegar"
 
-#: modules/gui/macosx/intf.m:533
+#: modules/gui/macosx/intf.m:537
 msgid "Playback"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:554 modules/gui/macosx/intf.m:623
+#: modules/gui/macosx/intf.m:558 modules/gui/macosx/intf.m:627
 msgid "Volume Up"
 msgstr "Volume +"
 
-#: modules/gui/macosx/intf.m:555 modules/gui/macosx/intf.m:624
+#: modules/gui/macosx/intf.m:559 modules/gui/macosx/intf.m:628
 msgid "Volume Down"
 msgstr "Volume -"
 
-#: modules/gui/macosx/intf.m:580 modules/gui/macosx/intf.m:581
-#: modules/gui/macosx/vout.m:193
+#: modules/gui/macosx/intf.m:584 modules/gui/macosx/intf.m:585
+#: modules/gui/macosx/vout.m:191
 msgid "Video Device"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:590
+#: modules/gui/macosx/intf.m:594
 msgid "Minimize Window"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:591
+#: modules/gui/macosx/intf.m:595
 msgid "Close Window"
 msgstr "Tampar Finèstra"
 
-#: modules/gui/macosx/intf.m:592
+#: modules/gui/macosx/intf.m:596
 msgid "Controller"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:594
+#: modules/gui/macosx/intf.m:598
 msgid "Extended Controls"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:597 modules/gui/macosx/intf.m:639
+#: modules/gui/macosx/intf.m:601 modules/gui/macosx/intf.m:643
 #: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:486
+#: modules/gui/macosx/playlist.m:488
 #, fuzzy
 msgid "Information"
 msgstr "Mai d'Opcions"
 
-#: modules/gui/macosx/intf.m:600
+#: modules/gui/macosx/intf.m:604
 msgid "Bring All to Front"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:602
+#: modules/gui/macosx/intf.m:606
 msgid "Help"
 msgstr "Ajuda"
 
-#: modules/gui/macosx/intf.m:603
+#: modules/gui/macosx/intf.m:607
 msgid "ReadMe..."
 msgstr "De Legir..."
 
-#: modules/gui/macosx/intf.m:604
+#: modules/gui/macosx/intf.m:608
 msgid "Online Documentation"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:605
+#: modules/gui/macosx/intf.m:609
 msgid "Report a Bug"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:606
+#: modules/gui/macosx/intf.m:610
 msgid "VideoLAN Website"
 msgstr "Siti VideoLAN"
 
-#: modules/gui/macosx/intf.m:607
+#: modules/gui/macosx/intf.m:611
 msgid "License"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:608
+#: modules/gui/macosx/intf.m:612
 msgid "Make a donation"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:609
+#: modules/gui/macosx/intf.m:613
 msgid "Online Forum"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:631
+#: modules/gui/macosx/intf.m:635
 msgid ""
 "An error has occurred which probably prevented the proper execution of the "
 "program:"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:633
+#: modules/gui/macosx/intf.m:637
 msgid "If you believe that it is a bug, please follow the instructions at:"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:635
+#: modules/gui/macosx/intf.m:639
 msgid "Open Messages Window"
 msgstr "Dobrir Finèstra Messatges"
 
-#: modules/gui/macosx/intf.m:636
+#: modules/gui/macosx/intf.m:640
 msgid "Dismiss"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:637
+#: modules/gui/macosx/intf.m:641
 msgid "Do not display further errors"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1167
+#: modules/gui/macosx/intf.m:1211
 #, c-format
 msgid "Volume: %d%%"
 msgstr "Volume: %d%%"
 
-#: modules/gui/macosx/intf.m:1820
+#: modules/gui/macosx/intf.m:1868
 msgid "No CrashLog found"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1820
+#: modules/gui/macosx/intf.m:1868
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
@@ -10931,84 +10936,80 @@ msgstr "Mai viste"
 msgid "Lost buffers"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:481
+#: modules/gui/macosx/playlist.m:483
 msgid "Save Playlist..."
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:483 modules/gui/pda/pda_interface.c:1254
+#: modules/gui/macosx/playlist.m:485 modules/gui/pda/pda_interface.c:1254
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:278
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:285
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:105
 msgid "Delete"
 msgstr "Suprimir"
 
-#: modules/gui/macosx/playlist.m:484
+#: modules/gui/macosx/playlist.m:486
 msgid "Expand Node"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:487
+#: modules/gui/macosx/playlist.m:489
 #, fuzzy
 msgid "Get Stream Information"
 msgstr "Mai d'Opcions"
 
-#: modules/gui/macosx/playlist.m:488
+#: modules/gui/macosx/playlist.m:490
 msgid "Sort Node by Name"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:489
+#: modules/gui/macosx/playlist.m:491
 msgid "Sort Node by Author"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:492 modules/gui/macosx/playlist.m:542
-#: modules/gui/macosx/playlist.m:1591
+#: modules/gui/macosx/playlist.m:494 modules/gui/macosx/playlist.m:540
+#: modules/gui/macosx/playlist.m:1541
 msgid "No items in the playlist"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:496
+#: modules/gui/macosx/playlist.m:497
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:323
 msgid "Search"
 msgstr "Cercar"
 
-#: modules/gui/macosx/playlist.m:498
+#: modules/gui/macosx/playlist.m:499
 msgid "Search in Playlist"
 msgstr "Cercar dins la Tièra de Lectura"
 
-#: modules/gui/macosx/playlist.m:499
-msgid "Standard Play"
-msgstr ""
-
-#: modules/gui/macosx/playlist.m:502
+#: modules/gui/macosx/playlist.m:500
 msgid "Add Folder to Playlist"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:504
+#: modules/gui/macosx/playlist.m:502
 #, fuzzy
 msgid "File Format:"
 msgstr "Pista jos-titols"
 
-#: modules/gui/macosx/playlist.m:505
+#: modules/gui/macosx/playlist.m:503
 #, fuzzy
 msgid "Extended M3U"
 msgstr "Espandit GUI"
 
-#: modules/gui/macosx/playlist.m:506
+#: modules/gui/macosx/playlist.m:504
 msgid "XML Shareable Playlist Format (XSPF)"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:536 modules/gui/macosx/playlist.m:1585
+#: modules/gui/macosx/playlist.m:534 modules/gui/macosx/playlist.m:1535
 #, c-format
 msgid "%i items in the playlist"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:546 modules/gui/macosx/playlist.m:1595
+#: modules/gui/macosx/playlist.m:544 modules/gui/macosx/playlist.m:1545
 msgid "1 item in the playlist"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:780
+#: modules/gui/macosx/playlist.m:777
 msgid "Save Playlist"
 msgstr ""
 
-#: modules/gui/macosx/playlist.m:1560
+#: modules/gui/macosx/playlist.m:1510
 msgid "Empty Folder"
 msgstr ""
 
@@ -14481,19 +14482,19 @@ msgstr "Anóncia SAP"
 msgid "SDP file parser for UDP"
 msgstr ""
 
-#: modules/services_discovery/sap.c:322
+#: modules/services_discovery/sap.c:319
 msgid "Session Announcements (SAP)"
 msgstr ""
 
-#: modules/services_discovery/sap.c:847 modules/services_discovery/sap.c:852
+#: modules/services_discovery/sap.c:842 modules/services_discovery/sap.c:847
 msgid "Session"
 msgstr ""
 
-#: modules/services_discovery/sap.c:848
+#: modules/services_discovery/sap.c:843
 msgid "Tool"
 msgstr ""
 
-#: modules/services_discovery/sap.c:853
+#: modules/services_discovery/sap.c:848
 msgid "User"
 msgstr ""
 
