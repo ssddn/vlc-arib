@@ -600,6 +600,8 @@ static char *SDPGenerate( sap_handler_t *p_sap,
     char *psz_group, *psz_name, psz_uribuf[NI_MAXNUMERICHOST], *psz_uri,
          *psz_sdp;
     char ipv;
+    char *sfilter = NULL;
+    int res;
 
     psz_group = p_session->psz_group;
     psz_name = p_session->psz_name;
@@ -623,7 +625,6 @@ static char *SDPGenerate( sap_handler_t *p_sap,
     else
         psz_uri = p_session->psz_uri;
 
-    char *sfilter = NULL;
     if (b_ssm)
     {
         if (asprintf (&sfilter, "a=source-filter: incl IN IP%c * %s\r\n",
@@ -632,7 +633,7 @@ static char *SDPGenerate( sap_handler_t *p_sap,
     }
 
     /* see the lists in modules/stream_out/rtp.c for compliance stuff */
-    int res = asprintf (&psz_sdp,
+    res = asprintf (&psz_sdp,
                         "v=0\r\n"
                         "o=- "I64Fd" %d IN IP%c %s\r\n"
                         "s=%s\r\n"
