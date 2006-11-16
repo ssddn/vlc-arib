@@ -1584,13 +1584,15 @@ static void ToggleFullScreen ( vout_thread_t *p_vout )
         else
 #endif
         {
-            /* The window wasn't necessarily created at the requested size */
-            p_vout->p_sys->p_win->i_x = p_vout->p_sys->p_win->i_y = 0;
-
 #ifdef HAVE_XF86VIDMODE
             XF86VidModeModeLine mode;
             int i_dummy;
+#endif
+            /* The window wasn't necessarily created at the requested size */
+            p_vout->p_sys->p_win->i_x = p_vout->p_sys->p_win->i_y = 0;
 
+
+#ifdef HAVE_XF86VIDMODE
             if( XF86VidModeGetModeLine( p_vout->p_sys->p_display,
                                         p_vout->p_sys->i_screen, &i_dummy,
                                         &mode ) )
