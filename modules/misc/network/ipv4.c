@@ -191,6 +191,7 @@ static int OpenUDP( vlc_object_t * p_this )
     setsockopt( i_handle, SOL_SOCKET, SO_REUSEADDR, (void *) &i_opt,
                     sizeof( i_opt ) );
 #ifdef SO_REUSEPORT
+    i_opt = 1;
     setsockopt( i_handle, SOL_SOCKET, SO_REUSEPORT, (void *) &i_opt,
                     sizeof( i_opt ) );
 #endif
