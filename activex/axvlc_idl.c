@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 6.00.0361 */
-/* at Wed Nov 15 18:43:43 2006
+/* at Thu Nov 16 09:55:42 2006
  */
 /* Compiler settings for axvlc.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)

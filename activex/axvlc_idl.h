@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 6.00.0361 */
-/* at Wed Nov 15 18:43:43 2006
+/* at Thu Nov 16 09:55:42 2006
  */
 /* Compiler settings for axvlc.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
@@ -2709,7 +2709,7 @@ EXTERN_C const IID IID_IVLCVideo;
             /* [retval][out] */ long *height) = 0;
         
         virtual /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE get_aspectRatio( 
-            /* [retval][out] */ BSTR aspect) = 0;
+            /* [retval][out] */ BSTR *aspect) = 0;
         
         virtual /* [helpstring][propput] */ HRESULT STDMETHODCALLTYPE put_aspectRatio( 
             /* [in] */ BSTR aspect) = 0;
@@ -2782,7 +2782,7 @@ EXTERN_C const IID IID_IVLCVideo;
         
         /* [helpstring][propget] */ HRESULT ( STDMETHODCALLTYPE *get_aspectRatio )( 
             IVLCVideo * This,
-            /* [retval][out] */ BSTR aspect);
+            /* [retval][out] */ BSTR *aspect);
         
         /* [helpstring][propput] */ HRESULT ( STDMETHODCALLTYPE *put_aspectRatio )( 
             IVLCVideo * This,
@@ -2905,7 +2905,7 @@ void __RPC_STUB IVLCVideo_get_height_Stub(
 
 /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE IVLCVideo_get_aspectRatio_Proxy( 
     IVLCVideo * This,
-    /* [retval][out] */ BSTR aspect);
+    /* [retval][out] */ BSTR *aspect);
 
 
 void __RPC_STUB IVLCVideo_get_aspectRatio_Stub(
