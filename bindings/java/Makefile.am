@@ -2,8 +2,8 @@
 # VLC Java Bindings
 #######################################################################
 
-#SUBDIRS= src
-DIST_SUBDIRS = src
+SUBDIRS= . src
+
 
 EXTRA_DIST= \
 	    FAQ \
