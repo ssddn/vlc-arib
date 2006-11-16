@@ -1,6 +1,6 @@
 $Id$
 
-Changes between 0.8.5 and 0.8.6-test2:
+Changes between 0.8.5 and 0.8.6-test2a:
 --------------------------------
 
 Playlist:
@@ -10,17 +10,16 @@ Input:
  * Support for RTSP authentication
  * Support for adding subtitles on the fly
  * Fixed MPEG-PS duration calculation
- * ATSC support for DVB
- * Partial support for DVR-ms recordings
- * Partial support for MXF fileformat
+ * ATSC support for DVB input
+ * Partial reading support for DVR-ms recordings
+ * Partial reading support for MXF and GXF fileformat
  * Improved support for Flash Video files
 
 Decoders:
- * Native WMV3 / VC-1 support
+ * Native WMV9 / VC-1 support
  * WMA Speech support (through binary codecs)
  * VP5/VP6 - Flash Video support
  * The True Audio Lossless codec support
- * WavPack support
  * Improved H.264 support (interlaced, speed improvements etc)
  * Fixed a problem with MPEG2 field pictures
  * Fixed swapped colors on DVB subtitles
@@ -40,7 +39,7 @@ Interfaces:
    * Fullscreen controller panel (artwork by Simon Damkjær Andersen)
    * New playmode buttons (artwork by Simon Damkjær Andersen)
    * right/ctrl-click menu in video outputs
-   * Main Menu keeps accessible when playing videos in fullscreen mode
+   * Main Menu uses autohide when playing videos in fullscreen mode
  * Linux
    * Notifications using notification-daemon
 

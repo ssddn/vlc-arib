@@ -1,10 +1,10 @@
 dnl Autoconf settings for vlc
 
-AC_INIT(vlc,0.8.6-test2)
+AC_INIT(vlc,0.8.6-test2a)
 VERSION_MAJOR="0"
 VERSION_MINOR="8"
 VERSION_REVISION="6"
-VERSION_EXTRA="test2"
+VERSION_EXTRA="test2a"
 
 CONFIGURE_LINE="$0 $*"
 CODENAME="Janus"
@@ -3993,7 +3993,7 @@ then
     ],[
       AC_MSG_ERROR([You don't have libglide. Install it or do not use --enable-glide])
      ])
-   CFAGS="${CFLAGS_save}"
+   CFLAGS="${CFLAGS_save}"
 fi
 
 dnl
