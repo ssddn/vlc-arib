@@ -5428,6 +5428,7 @@ AC_CONFIG_FILES([
   activex/axvlc.inf
   bindings/Makefile
   bindings/java/Makefile
+  bindings/java/src/Makefile
   bindings/mediacontrol-python/Makefile
   doc/Makefile
   intl/Makefile
