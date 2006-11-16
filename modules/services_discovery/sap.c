@@ -627,7 +627,7 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
 static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 {
     int                 i_version, i_address_type, i_hash, i;
-    char                *psz_sdp, *psz_foo, *psz_initial_sdp;
+    char                *psz_sdp, *psz_foo, *psz_initial_sdp, *psz_end;
     uint8_t             *p_decompressed_buffer = NULL;
     sdp_t               *p_sdp;
     vlc_bool_t          b_compressed;
@@ -685,8 +685,6 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
             return VLC_EGENERIC;
         }
     }
-
-    char *psz_end;
 
     if( b_compressed )
     {
@@ -911,6 +909,7 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
     char *psz_parse = NULL;
     char *psz_uri = NULL;
     char *psz_proto = NULL;
+    char psz_source[258] = "";
     int i_port = 0;
 
     /* Parse c= field */
@@ -1064,7 +1063,6 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
 
     /* handle SSM case */
     psz_parse = GetAttribute( p_sdp, "source-filter" );
-    char psz_source[258] = "";
     if (psz_parse != NULL)
     {
         char psz_source_ip[256];
