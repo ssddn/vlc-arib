@@ -266,7 +266,7 @@ void E_(DirectXEventThread)( event_thread_t *p_event )
                     val.i_int |= KEY_MODIFIER_ALT;
                 }
 
-                var_Set( p_event->p_libvlc, "key-pressed", val );
+                var_Set( p_event->p_vlc, "key-pressed", val );
             }
             break;
 
@@ -294,7 +294,7 @@ void E_(DirectXEventThread)( event_thread_t *p_event )
                     val.i_int |= KEY_MODIFIER_ALT;
                 }
 
-                var_Set( p_event->p_libvlc, "key-pressed", val );
+                var_Set( p_event->p_vlc, "key-pressed", val );
             }
             break;
 
