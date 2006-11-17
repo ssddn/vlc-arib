@@ -893,13 +893,13 @@ AC_CACHE_CHECK([if \$CC accepts -Wsign-compare],
 
 if test "${ac_cv_c_Wall}" != "no"; then
     CFLAGS_save="-Wall ${CFLAGS_save}"; CFLAGS="${CFLAGS_save}"
-    CXXFLAGS_save="-Wall ${CFLAGS_save}"; CXXFLAGS="${CXXFLAGS_save}"
+    CXXFLAGS_save="-Wall ${CXXFLAGS_save}"; CXXFLAGS="${CXXFLAGS_save}"
     OBJCFLAGS_save="-Wall ${OBJCFLAGS_save}"; OBJCFLAGS="${OBJCFLAGS_save}"
 fi
 
 if test "${ac_cv_c_Wsign_compare}" != "no"; then
     CFLAGS_save="-Wsign-compare ${CFLAGS_save}"; CFLAGS="${CFLAGS_save}"
-    CXXFLAGS_save="-Wsign-compare ${CFLAGS_save}"; CXXFLAGS="${CXXFLAGS_save}"
+    CXXFLAGS_save="-Wsign-compare ${CXXFLAGS_save}"; CXXFLAGS="${CXXFLAGS_save}"
     OBJCFLAGS_save="-Wsign-compare ${OBJCFLAGS_save}"; OBJCFLAGS="${OBJCFLAGS_save}"
 fi
 
