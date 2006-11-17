@@ -121,6 +121,12 @@ struct vout_sys_t
     HGLRC hGLRC;
 #endif
 
+#ifdef MODULE_NAME_IS_direct3d
+    LPDIRECT3D9             p_d3dobj;
+    LPDIRECT3DDEVICE9       p_d3ddev;
+    D3DPRESENT_PARAMETERS   d3dpp;
+    HINSTANCE               hd3d9_dll;       /* handle of the opened d3d9 dll */
+#endif
     event_thread_t *p_event;
     vlc_mutex_t    lock;
 };
