@@ -16,7 +16,7 @@ Input:
  * Improved support for Flash Video files
 
 Decoders:
- * Native WMV9 / VC-1 support
+ * Native WMV9/VC-1 support
  * WMA Speech support (through binary codecs)
  * VP5/VP6 - Flash Video support
  * The True Audio Lossless codec support
@@ -45,6 +45,13 @@ Interfaces:
 
 Windows port:
  * Support for Unicode filenames (Windows NT and above)
+   Windows 9x/ME users: 
+     - Please note that these versions of Windows are not officially supported
+     - Unicode support for Windows 9x/ME applications is available through the
+       Microsoft Layer for Unicode available from the following location:
+       http://www.microsoft.com.nsatc.net/globaldev/handson/dev/mslu_announce.mspx
+       Download the MSLU package (unicows) and extract the content into the folder
+       C:\Windows\System
  * Fixed IPv6 support on the client side
 
 Localization:
