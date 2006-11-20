@@ -291,11 +291,15 @@ static void ParseDevice( services_discovery_t *p_sd, char *psz_device )
                                                         psz_device,
                                                         "volume.disc.type" );
 #endif
-        if( !strcmp( psz_disc_type, "dvd_rom" ) )
+        if( !strncmp( psz_disc_type, "dvd_r", 5 ) )
         {
-            AddDvd( p_sd, psz_device );
+#ifdef HAVE_HAL_1
+            if (libhal_device_get_property_bool( p_sys->p_ctx, psz_device,
+                        "volume.disc.is_videodvd", NULL ) )
+#endif
+                AddDvd( p_sd, psz_device );
         }
-        else if( !strcmp( psz_disc_type, "cd_rom" ) )
+        else if( !strncmp( psz_disc_type, "cd_r", 4 ) )
         {
 #ifdef HAVE_HAL_1
             if( libhal_device_get_property_bool( p_sys->p_ctx, psz_device,
