@@ -120,7 +120,7 @@ NPError NPP_GetValue( NPP instance, NPPVariable variable, void *value )
     {
         case NPPVpluginScriptableNPObject:
             /* create an instance and return it */
-            *(NPObject**)value = NPN_CreateObject(instance, p_plugin->getScriptClass());
+            *(NPObject**)value = p_plugin->getScriptObject();
             if( NULL == *(NPObject**)value )
             {
                 return NPERR_OUT_OF_MEMORY_ERROR;
@@ -292,12 +292,14 @@ NPError NPP_New( NPMIMEType pluginType, NPP instance, uint16 mode, int16 argc,
 
 NPError NPP_Destroy( NPP instance, NPSavedData** save )
 {
-    if( instance == NULL )
-    {
+    if( NULL == instance )
         return NPERR_INVALID_INSTANCE_ERROR;
-    }
 
     VlcPlugin* p_plugin = reinterpret_cast<VlcPlugin*>(instance->pdata);
+    if( NULL == p_plugin )
+        return NPERR_NO_ERROR;
+
+    instance->pdata = NULL;
 
 #if XP_WIN
     HWND win = (HWND)p_plugin->getWindow()->window;
@@ -311,8 +313,6 @@ NPError NPP_Destroy( NPP instance, NPSavedData** save )
 
     if( p_plugin )
         delete p_plugin;
-
-    instance->pdata = NULL;
 
     return NPERR_NO_ERROR;
 }

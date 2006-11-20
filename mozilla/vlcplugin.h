@@ -71,9 +71,12 @@ public:
     void                setWindow(const NPWindow *window)
                             { npwindow = *window; };
 
-    NPClass*            getScriptClass()
-                            { return scriptClass; };
+    NPObject*           getScriptObject();
 
+    void                setLog(libvlc_log_t *log)
+                            { libvlc_log = log; };
+    libvlc_log_t*       getLog()
+                            { return libvlc_log; };
 #if XP_WIN
     WNDPROC             getWindowProc()
                             { return pf_wndproc; };
@@ -94,8 +97,10 @@ public:
 
 private:
     /* VLC reference */
-    libvlc_instance_t *libvlc_instance;
-    NPClass           *scriptClass;
+    libvlc_instance_t   *libvlc_instance;
+    libvlc_log_t        *libvlc_log;
+    NPClass             *p_scriptClass;
+    NPObject            *p_scriptObject;
 
     /* browser reference */
     NPP     p_browser;

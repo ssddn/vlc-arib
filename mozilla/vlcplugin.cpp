@@ -44,7 +44,9 @@ VlcPlugin::VlcPlugin( NPP instance, uint16 mode ) :
     b_autoplay(1),
     psz_target(NULL),
     libvlc_instance(NULL),
-    scriptClass(NULL),
+    libvlc_log(NULL),
+    p_scriptClass(NULL),
+    p_scriptObject(NULL),
     p_browser(instance),
     psz_baseURL(NULL)
 #if XP_WIN
@@ -58,7 +60,7 @@ VlcPlugin::VlcPlugin( NPP instance, uint16 mode ) :
     memset(&npwindow, 0, sizeof(NPWindow));
 }
 
-static int boolValue(const char *value) {
+static bool boolValue(const char *value) {
     return ( !strcmp(value, "1") || 
              !strcasecmp(value, "true") ||
              !strcasecmp(value, "yes") );
@@ -122,7 +124,7 @@ NPError VlcPlugin::init(int argc, char* const argn[], char* const argv[])
     ppsz_argv[ppsz_argc++] = "--intf";
     ppsz_argv[ppsz_argc++] = "dummy";
 
-    const char *version = NULL;
+    const char *progid = NULL;
 
     /* parse plugin arguments */
     for( int i = 0; i < argc ; i++ )
@@ -171,9 +173,10 @@ NPError VlcPlugin::init(int argc, char* const argn[], char* const argv[])
                 ppsz_argv[ppsz_argc++] = "--no-loop";
             }
         }
-        else if( !strcmp( argn[i], "version") )
+        else if( !strcmp( argn[i], "version")
+              || !strcmp( argn[i], "progid") )
         {
-            version = argv[i];
+            progid = argv[i];
         }
     }
 
@@ -227,15 +230,15 @@ NPError VlcPlugin::init(int argc, char* const argn[], char* const argv[])
     }
 
     /* assign plugin script root class */
-    if( (NULL != version) && (!strcmp(version, "VideoLAN.VLCPlugin.2")) )
+    if( (NULL != progid) && (!strcmp(progid, "VideoLAN.VLCPlugin.2")) )
     {
         /* new APIs */
-        scriptClass = RuntimeNPClass<LibvlcRootNPObject>::getClass();
+        p_scriptClass = RuntimeNPClass<LibvlcRootNPObject>::getClass();
     }
     else
     {
         /* legacy APIs */
-        scriptClass = RuntimeNPClass<VlcNPObject>::getClass();
+        p_scriptClass = RuntimeNPClass<VlcNPObject>::getClass();
     }
 
     return NPERR_NO_ERROR;
@@ -278,6 +281,10 @@ VlcPlugin::~VlcPlugin()
 {
     delete psz_baseURL;
     delete psz_target;
+    if( p_scriptObject )
+        NPN_ReleaseObject(p_scriptObject);
+    if( libvlc_log )
+        libvlc_log_close(libvlc_log, NULL);
     if( libvlc_instance )
         libvlc_destroy(libvlc_instance);
 }
@@ -394,6 +401,15 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
         }
     }
     return NULL;
+}
+
+NPObject* VlcPlugin::getScriptObject()
+{
+    if( NULL == p_scriptObject )
+    {
+        p_scriptObject = NPN_CreateObject(p_browser, p_scriptClass);
+    }
+    return NPN_RetainObject(p_scriptObject);
 }
 
 #if XP_UNIX

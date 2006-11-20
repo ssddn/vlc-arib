@@ -81,32 +81,44 @@ enum LibvlcRootNPObjectPropertyIds
 
 RuntimeNPObject::InvokeResult LibvlcRootNPObject::getProperty(int index, NPVariant &result)
 {
-    switch( index )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        case ID_audio:
-            OBJECT_TO_NPVARIANT(NPN_RetainObject(audioObj), result);
-            return INVOKERESULT_NO_ERROR;
-        case ID_input:
-            OBJECT_TO_NPVARIANT(NPN_RetainObject(inputObj), result);
-            return INVOKERESULT_NO_ERROR;
-        case ID_log:
-            OBJECT_TO_NPVARIANT(NPN_RetainObject(logObj), result);
-            return INVOKERESULT_NO_ERROR;
-        case ID_playlist:
-            OBJECT_TO_NPVARIANT(NPN_RetainObject(playlistObj), result);
-            return INVOKERESULT_NO_ERROR;
-        case ID_video:
-            OBJECT_TO_NPVARIANT(NPN_RetainObject(videoObj), result);
-            return INVOKERESULT_NO_ERROR;
-        case ID_VersionInfo:
-            NPUTF8 *versionStr = NULL;
-
-            versionStr = strdup( VLC_Version() );
-            if (!versionStr)
-                return INVOKERESULT_GENERIC_ERROR;
-
-            STRINGZ_TO_NPVARIANT(versionStr, result);
-            return INVOKERESULT_NO_ERROR;
+        switch( index )
+        {
+            case ID_audio:
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(audioObj), result);
+                return INVOKERESULT_NO_ERROR;
+            case ID_input:
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(inputObj), result);
+                return INVOKERESULT_NO_ERROR;
+            case ID_log:
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(logObj), result);
+                return INVOKERESULT_NO_ERROR;
+            case ID_playlist:
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(playlistObj), result);
+                return INVOKERESULT_NO_ERROR;
+            case ID_video:
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(videoObj), result);
+                return INVOKERESULT_NO_ERROR;
+            case ID_VersionInfo:
+            {
+                int len = strlen(VLC_Version());
+                NPUTF8 *retval =(NPUTF8*)NPN_MemAlloc(len);
+                if( retval )
+                {
+                    memcpy(retval, VLC_Version(), len);
+                    STRINGN_TO_NPVARIANT(retval, len, result);
+                }
+                else
+                {
+                    NULL_TO_NPVARIANT(result);
+                }
+                return INVOKERESULT_NO_ERROR;
+            }
+            default:
+                ;
+        }
     }
     return INVOKERESULT_GENERIC_ERROR;
 }
@@ -147,7 +159,7 @@ RuntimeNPObject::InvokeResult LibvlcRootNPObject::invoke(int index, const NPVari
                 }
                 return INVOKERESULT_NO_SUCH_METHOD;
             default:
-                return INVOKERESULT_NO_SUCH_METHOD;
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -205,6 +217,8 @@ RuntimeNPObject::InvokeResult LibvlcAudioNPObject::getProperty(int index, NPVari
                 INT32_TO_NPVARIANT(volume, result);
                 return INVOKERESULT_NO_ERROR;
             }
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -248,6 +262,8 @@ RuntimeNPObject::InvokeResult LibvlcAudioNPObject::setProperty(int index, const 
                     return INVOKERESULT_NO_ERROR;
                 }
                 return INVOKERESULT_INVALID_VALUE;
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -293,7 +309,7 @@ RuntimeNPObject::InvokeResult LibvlcAudioNPObject::invoke(int index, const NPVar
                 }
                 return INVOKERESULT_NO_SUCH_METHOD;
             default:
-                return INVOKERESULT_NO_SUCH_METHOD;
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -445,6 +461,8 @@ RuntimeNPObject::InvokeResult LibvlcInputNPObject::getProperty(int index, NPVari
                 BOOLEAN_TO_NPVARIANT(val, result);
                 return INVOKERESULT_NO_ERROR;
             }
+            default:
+                ;
         }
         libvlc_input_free(p_input);
     }
@@ -534,6 +552,8 @@ RuntimeNPObject::InvokeResult LibvlcInputNPObject::setProperty(int index, const 
                 }
                 return INVOKERESULT_NO_ERROR;
             }
+            default:
+                ;
         }
         libvlc_input_free(p_input);
     }
@@ -573,84 +593,90 @@ enum LibvlcMessageNPObjectPropertyIds
 
 RuntimeNPObject::InvokeResult LibvlcMessageNPObject::getProperty(int index, NPVariant &result)
 {
-    switch( index )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        case ID_severity:
+        switch( index )
         {
-            INT32_TO_NPVARIANT(_msg.i_severity, result);
-            return INVOKERESULT_NO_ERROR;
-        }
-        case ID_type:
-        {
-            if( _msg.psz_type )
+            case ID_severity:
             {
-                int len = strlen(_msg.psz_type);
-                NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
-                if( retval )
+                INT32_TO_NPVARIANT(_msg.i_severity, result);
+                return INVOKERESULT_NO_ERROR;
+            }
+            case ID_type:
+            {
+                if( _msg.psz_type )
                 {
-                    memcpy(retval, _msg.psz_type, len);
-                    STRINGN_TO_NPVARIANT(retval, len, result);
+                    int len = strlen(_msg.psz_type);
+                    NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
+                    if( retval )
+                    {
+                        memcpy(retval, _msg.psz_type, len);
+                        STRINGN_TO_NPVARIANT(retval, len, result);
+                    }
                 }
-            }
-            else
-            {
-                NULL_TO_NPVARIANT(result);
-            }
-            return INVOKERESULT_NO_ERROR;
-        }
-        case ID_name:
-        {
-            if( _msg.psz_name )
-            {
-                int len = strlen(_msg.psz_name);
-                NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
-                if( retval )
+                else
                 {
-                    memcpy(retval, _msg.psz_name, len);
-                    STRINGN_TO_NPVARIANT(retval, len, result);
+                    NULL_TO_NPVARIANT(result);
                 }
+                return INVOKERESULT_NO_ERROR;
             }
-            else
+            case ID_name:
             {
-                NULL_TO_NPVARIANT(result);
-            }
-            return INVOKERESULT_NO_ERROR;
-        }
-        case ID_header:
-        {
-            if( _msg.psz_header )
-            {
-                int len = strlen(_msg.psz_header);
-                NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
-                if( retval )
+                if( _msg.psz_name )
                 {
-                    memcpy(retval, _msg.psz_header, len);
-                    STRINGN_TO_NPVARIANT(retval, len, result);
+                    int len = strlen(_msg.psz_name);
+                    NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
+                    if( retval )
+                    {
+                        memcpy(retval, _msg.psz_name, len);
+                        STRINGN_TO_NPVARIANT(retval, len, result);
+                    }
                 }
-            }
-            else
-            {
-                NULL_TO_NPVARIANT(result);
-            }
-            return INVOKERESULT_NO_ERROR;
-        }
-        case ID_message:
-        {
-            if( _msg.psz_message )
-            {
-                int len = strlen(_msg.psz_message);
-                NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
-                if( retval )
+                else
                 {
-                    memcpy(retval, _msg.psz_message, len);
-                    STRINGN_TO_NPVARIANT(retval, len, result);
+                    NULL_TO_NPVARIANT(result);
                 }
+                return INVOKERESULT_NO_ERROR;
             }
-            else
+            case ID_header:
             {
-                NULL_TO_NPVARIANT(result);
+                if( _msg.psz_header )
+                {
+                    int len = strlen(_msg.psz_header);
+                    NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
+                    if( retval )
+                    {
+                        memcpy(retval, _msg.psz_header, len);
+                        STRINGN_TO_NPVARIANT(retval, len, result);
+                    }
+                }
+                else
+                {
+                    NULL_TO_NPVARIANT(result);
+                }
+                return INVOKERESULT_NO_ERROR;
             }
-            return INVOKERESULT_NO_ERROR;
+            case ID_message:
+            {
+                if( _msg.psz_message )
+                {
+                    int len = strlen(_msg.psz_message);
+                    NPUTF8* retval = (NPUTF8*)NPN_MemAlloc(len);
+                    if( retval )
+                    {
+                        memcpy(retval, _msg.psz_message, len);
+                        STRINGN_TO_NPVARIANT(retval, len, result);
+                    }
+                }
+                else
+                {
+                    NULL_TO_NPVARIANT(result);
+                }
+                return INVOKERESULT_NO_ERROR;
+            }
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -667,16 +693,26 @@ const int LibvlcMessageNPObject::methodCount = sizeof(LibvlcMessageNPObject::met
 ** implementation of libvlc message iterator object
 */
 
-void LibvlcMessageIteratorNPObject::setLog(LibvlcLogNPObject* p_vlclog)
+LibvlcMessageIteratorNPObject::LibvlcMessageIteratorNPObject(NPP instance, const NPClass *aClass) :
+    RuntimeNPObject(instance, aClass),
+    _p_iter(NULL)
 {
-    _p_vlclog = p_vlclog;
-    if( p_vlclog->_p_log )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        _p_iter = libvlc_log_get_iterator(p_vlclog->_p_log, NULL);
+        libvlc_log_t *p_log = p_plugin->getLog();
+        if( p_log )
+        {
+            _p_iter = libvlc_log_get_iterator(p_log, NULL);
+        }
     }
-    else
-        _p_iter = NULL;
 };
+
+LibvlcMessageIteratorNPObject::~LibvlcMessageIteratorNPObject()
+{
+    if( _p_iter )
+        libvlc_log_iterator_free(_p_iter, NULL);
+}
 
 const NPUTF8 * const LibvlcMessageIteratorNPObject::propertyNames[] = 
 {
@@ -692,28 +728,34 @@ enum LibvlcMessageIteratorNPObjectPropertyIds
 
 RuntimeNPObject::InvokeResult LibvlcMessageIteratorNPObject::getProperty(int index, NPVariant &result)
 {
-    switch( index )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        case ID_hasNext:
+        switch( index )
         {
-            if( _p_iter &&  _p_vlclog->_p_log )
+            case ID_hasNext:
             {
-                libvlc_exception_t ex;
-                libvlc_exception_init(&ex);
-
-                BOOLEAN_TO_NPVARIANT(libvlc_log_iterator_has_next(_p_iter, &ex), result);
-                if( libvlc_exception_raised(&ex) )
+                if( _p_iter && p_plugin->getLog() )
                 {
-                    NPN_SetException(this, libvlc_exception_get_message(&ex));
-                    libvlc_exception_clear(&ex);
-                    return INVOKERESULT_GENERIC_ERROR;
+                    libvlc_exception_t ex;
+                    libvlc_exception_init(&ex);
+
+                    BOOLEAN_TO_NPVARIANT(libvlc_log_iterator_has_next(_p_iter, &ex), result);
+                    if( libvlc_exception_raised(&ex) )
+                    {
+                        NPN_SetException(this, libvlc_exception_get_message(&ex));
+                        libvlc_exception_clear(&ex);
+                        return INVOKERESULT_GENERIC_ERROR;
+                    }
                 }
+                else
+                {
+                    BOOLEAN_TO_NPVARIANT(0, result);
+                }
+                return INVOKERESULT_NO_ERROR;
             }
-            else
-            {
-                BOOLEAN_TO_NPVARIANT(0, result);
-            }
-            return INVOKERESULT_NO_ERROR;
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -733,7 +775,8 @@ enum LibvlcMessageIteratorNPObjectMethodIds
 
 RuntimeNPObject::InvokeResult LibvlcMessageIteratorNPObject::invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result)
 {
-    if( _p_iter &&  _p_vlclog->_p_log )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
         libvlc_exception_t ex;
         libvlc_exception_init(&ex);
@@ -743,32 +786,37 @@ RuntimeNPObject::InvokeResult LibvlcMessageIteratorNPObject::invoke(int index, c
             case ID_messageiterator_next:
                 if( argCount == 0 )
                 {
-                    struct libvlc_log_message_t buffer;
-
-                    buffer.sizeof_msg = sizeof(buffer);
-
-                    libvlc_log_iterator_next(_p_iter, &buffer, &ex);
-                    if( libvlc_exception_raised(&ex) )
+                    if( _p_iter && p_plugin->getLog() )
                     {
-                        NPN_SetException(this, libvlc_exception_get_message(&ex));
-                        libvlc_exception_clear(&ex);
-                        return INVOKERESULT_GENERIC_ERROR;
-                    }
-                    else
-                    {
-                        LibvlcMessageNPObject* message =
-                            static_cast<LibvlcMessageNPObject*>(NPN_CreateObject(_instance, RuntimeNPClass<LibvlcMessageNPObject>::getClass()));
-                        if( message )
+                        struct libvlc_log_message_t buffer;
+
+                        buffer.sizeof_msg = sizeof(buffer);
+
+                        libvlc_log_iterator_next(_p_iter, &buffer, &ex);
+                        if( libvlc_exception_raised(&ex) )
                         {
-                            message->setMessage(buffer);
-                            OBJECT_TO_NPVARIANT(message, result);
-                            return INVOKERESULT_NO_ERROR;
+                            NPN_SetException(this, libvlc_exception_get_message(&ex));
+                            libvlc_exception_clear(&ex);
+                            return INVOKERESULT_GENERIC_ERROR;
                         }
-                        return INVOKERESULT_OUT_OF_MEMORY;
+                        else
+                        {
+                            LibvlcMessageNPObject* message =
+                                static_cast<LibvlcMessageNPObject*>(NPN_CreateObject(_instance, RuntimeNPClass<LibvlcMessageNPObject>::getClass()));
+                            if( message )
+                            {
+                                message->setMessage(buffer);
+                                OBJECT_TO_NPVARIANT(message, result);
+                                return INVOKERESULT_NO_ERROR;
+                            }
+                            return INVOKERESULT_OUT_OF_MEMORY;
+                        }
                     }
+                    return INVOKERESULT_GENERIC_ERROR;
                 }
-            default:
                 return INVOKERESULT_NO_SUCH_METHOD;
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -792,29 +840,35 @@ enum LibvlcMessagesNPObjectPropertyIds
 
 RuntimeNPObject::InvokeResult LibvlcMessagesNPObject::getProperty(int index, NPVariant &result)
 {
-    switch( index )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        case ID_count:
+        switch( index )
         {
-            libvlc_log_t *p_log = _p_vlclog->_p_log;
-            if( p_log )
+            case ID_count:
             {
-                libvlc_exception_t ex;
-                libvlc_exception_init(&ex);
-
-                INT32_TO_NPVARIANT(libvlc_log_count(p_log, &ex), result);
-                if( libvlc_exception_raised(&ex) )
+                libvlc_log_t *p_log = p_plugin->getLog();
+                if( p_log )
                 {
-                    NPN_SetException(this, libvlc_exception_get_message(&ex));
-                    libvlc_exception_clear(&ex);
-                    return INVOKERESULT_GENERIC_ERROR;
+                    libvlc_exception_t ex;
+                    libvlc_exception_init(&ex);
+
+                    INT32_TO_NPVARIANT(libvlc_log_count(p_log, &ex), result);
+                    if( libvlc_exception_raised(&ex) )
+                    {
+                        NPN_SetException(this, libvlc_exception_get_message(&ex));
+                        libvlc_exception_clear(&ex);
+                        return INVOKERESULT_GENERIC_ERROR;
+                    }
                 }
+                else
+                {
+                    INT32_TO_NPVARIANT(0, result);
+                }
+                return INVOKERESULT_NO_ERROR;
             }
-            else
-            {
-                INT32_TO_NPVARIANT(0, result);
-            }
-            return INVOKERESULT_NO_ERROR;
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -836,46 +890,49 @@ enum LibvlcMessagesNPObjectMethodIds
 
 RuntimeNPObject::InvokeResult LibvlcMessagesNPObject::invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result)
 {
-    libvlc_exception_t ex;
-    libvlc_exception_init(&ex);
-
-    switch( index )
+    VlcPlugin *p_plugin = reinterpret_cast<VlcPlugin *>(_instance->pdata);
+    if( p_plugin )
     {
-        case ID_messages_clear:
-            if( argCount == 0 )
-            {
-                libvlc_log_t *p_log = _p_vlclog->_p_log;
-                if( p_log )
-                {
-                    libvlc_log_clear(p_log, &ex);
-                    if( libvlc_exception_raised(&ex) )
-                    {
-                        NPN_SetException(this, libvlc_exception_get_message(&ex));
-                        libvlc_exception_clear(&ex);
-                        return INVOKERESULT_GENERIC_ERROR;
-                    }
-                }
-                return INVOKERESULT_NO_ERROR;
-            }
-            return INVOKERESULT_NO_SUCH_METHOD;
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
 
-        case ID_iterator:
-            if( argCount == 0 )
-            {
-                LibvlcMessageIteratorNPObject* iter =
-                    static_cast<LibvlcMessageIteratorNPObject*>(NPN_CreateObject(_instance, RuntimeNPClass<LibvlcMessageIteratorNPObject>::getClass()));
-                if( iter )
+        switch( index )
+        {
+            case ID_messages_clear:
+                if( argCount == 0 )
                 {
-                    iter->setLog(_p_vlclog);
-                    OBJECT_TO_NPVARIANT(iter, result);
+                    libvlc_log_t *p_log = p_plugin->getLog();
+                    if( p_log )
+                    {
+                        libvlc_log_clear(p_log, &ex);
+                        if( libvlc_exception_raised(&ex) )
+                        {
+                            NPN_SetException(this, libvlc_exception_get_message(&ex));
+                            libvlc_exception_clear(&ex);
+                            return INVOKERESULT_GENERIC_ERROR;
+                        }
+                    }
                     return INVOKERESULT_NO_ERROR;
                 }
-                return INVOKERESULT_OUT_OF_MEMORY;
-            }
-            return INVOKERESULT_NO_SUCH_METHOD;
+                return INVOKERESULT_NO_SUCH_METHOD;
 
-        default:
-            return INVOKERESULT_NO_SUCH_METHOD;
+            case ID_iterator:
+                if( argCount == 0 )
+                {
+                    LibvlcMessageIteratorNPObject* iter =
+                        static_cast<LibvlcMessageIteratorNPObject*>(NPN_CreateObject(_instance, RuntimeNPClass<LibvlcMessageIteratorNPObject>::getClass()));
+                    if( iter )
+                    {
+                        OBJECT_TO_NPVARIANT(iter, result);
+                        return INVOKERESULT_NO_ERROR;
+                    }
+                    return INVOKERESULT_OUT_OF_MEMORY;
+                }
+                return INVOKERESULT_NO_SUCH_METHOD;
+
+            default:
+                ;
+        }
     }
     return INVOKERESULT_GENERIC_ERROR;
 }
@@ -883,6 +940,17 @@ RuntimeNPObject::InvokeResult LibvlcMessagesNPObject::invoke(int index, const NP
 /*
 ** implementation of libvlc message object
 */
+
+LibvlcLogNPObject::LibvlcLogNPObject(NPP instance, const NPClass *aClass) :
+    RuntimeNPObject(instance, aClass)
+{
+    _p_vlcmessages = static_cast<LibvlcMessagesNPObject*>(NPN_CreateObject(instance, RuntimeNPClass<LibvlcMessagesNPObject>::getClass()));
+};
+    
+LibvlcLogNPObject::~LibvlcLogNPObject()
+{
+    NPN_ReleaseObject(_p_vlcmessages);
+};
 
 const NPUTF8 * const LibvlcLogNPObject::propertyNames[] = 
 {
@@ -915,7 +983,7 @@ RuntimeNPObject::InvokeResult LibvlcLogNPObject::getProperty(int index, NPVarian
             }
             case ID_verbosity:
             {
-                if( _p_log )
+                if( p_plugin->getLog() )
                 {
                     INT32_TO_NPVARIANT(libvlc_get_log_verbosity(p_plugin->getVLC(),
                                                                     &ex), result);
@@ -933,6 +1001,8 @@ RuntimeNPObject::InvokeResult LibvlcLogNPObject::getProperty(int index, NPVarian
                 }
                 return INVOKERESULT_NO_ERROR;
             }
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -952,18 +1022,20 @@ RuntimeNPObject::InvokeResult LibvlcLogNPObject::setProperty(int index, const NP
                 if( isNumberValue(value) )
                 {
                     libvlc_instance_t* p_libvlc = p_plugin->getVLC();
+                    libvlc_log_t *p_log = p_plugin->getLog();
                     int verbosity = numberValue(value);
                     if( verbosity >= 0 )
                     {
-                        if( ! _p_log )
+                        if( ! p_log )
                         {
-                            _p_log = libvlc_log_open(p_libvlc, &ex);
+                            p_log = libvlc_log_open(p_libvlc, &ex);
                             if( libvlc_exception_raised(&ex) )
                             {
                                 NPN_SetException(this, libvlc_exception_get_message(&ex));
                                 libvlc_exception_clear(&ex);
                                 return INVOKERESULT_GENERIC_ERROR;
                             }
+                            p_plugin->setLog(p_log);
                         }
                         libvlc_set_log_verbosity(p_libvlc, (unsigned)verbosity, &ex);
                         if( libvlc_exception_raised(&ex) )
@@ -973,11 +1045,11 @@ RuntimeNPObject::InvokeResult LibvlcLogNPObject::setProperty(int index, const NP
                             return INVOKERESULT_GENERIC_ERROR;
                         }
                     }
-                    else if( _p_log )
+                    else if( p_log )
                     {
                         /* close log  when verbosity is set to -1 */
-                        libvlc_log_close(_p_log, &ex);
-                        _p_log = NULL;
+                        p_plugin->setLog(NULL);
+                        libvlc_log_close(p_log, &ex);
                         if( libvlc_exception_raised(&ex) )
                         {
                             NPN_SetException(this, libvlc_exception_get_message(&ex));
@@ -988,6 +1060,8 @@ RuntimeNPObject::InvokeResult LibvlcLogNPObject::setProperty(int index, const NP
                     return INVOKERESULT_NO_ERROR;
                 }
                 return INVOKERESULT_INVALID_VALUE;
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -1053,6 +1127,8 @@ RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::getProperty(int index, NPV
                 BOOLEAN_TO_NPVARIANT(val, result);
                 return INVOKERESULT_NO_ERROR;
             }
+            default:
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;
@@ -1323,7 +1399,7 @@ RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::invoke(int index, const NP
                 }
                 return INVOKERESULT_NO_SUCH_METHOD;
             default:
-                return INVOKERESULT_NO_SUCH_METHOD;
+                ;
         }
     }
     return INVOKERESULT_GENERIC_ERROR;

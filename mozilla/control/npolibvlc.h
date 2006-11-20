@@ -125,16 +125,11 @@ class LibvlcLogNPObject;
 
 class LibvlcMessageIteratorNPObject: public RuntimeNPObject
 {
-public:
-    void setLog(LibvlcLogNPObject* p_vlclog);
-
 protected:
     friend class RuntimeNPClass<LibvlcMessageIteratorNPObject>;
 
-    LibvlcMessageIteratorNPObject(NPP instance, const NPClass *aClass) :
-        RuntimeNPObject(instance, aClass) {};
-        
-    virtual ~LibvlcMessageIteratorNPObject() {};
+    LibvlcMessageIteratorNPObject(NPP instance, const NPClass *aClass);
+    virtual ~LibvlcMessageIteratorNPObject();
 
     static const int propertyCount;
     static const NPUTF8 * const propertyNames[];
@@ -147,24 +142,16 @@ protected:
     InvokeResult invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result);
 
 private:
-    LibvlcLogNPObject*      _p_vlclog;
     libvlc_log_iterator_t*  _p_iter;
 };
 
 class LibvlcMessagesNPObject: public RuntimeNPObject
 {
-public:
-    void setLog(LibvlcLogNPObject *p_log)
-    {
-        _p_vlclog = p_log;
-    }
-    
 protected:
     friend class RuntimeNPClass<LibvlcMessagesNPObject>;
 
     LibvlcMessagesNPObject(NPP instance, const NPClass *aClass) :
-        RuntimeNPObject(instance, aClass),
-        _p_vlclog(NULL) {};
+        RuntimeNPObject(instance, aClass) {};
         
     virtual ~LibvlcMessagesNPObject() {};
 
@@ -177,37 +164,15 @@ protected:
     static const NPUTF8 * const methodNames[];
 
     InvokeResult invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result);
-
-private:
-    LibvlcLogNPObject* _p_vlclog;
 };
 
 class LibvlcLogNPObject: public RuntimeNPObject
 {
 protected:
     friend class RuntimeNPClass<LibvlcLogNPObject>;
-    friend class LibvlcMessagesNPObject;
-    friend class LibvlcMessageIteratorNPObject;
 
-    libvlc_log_t    *_p_log;
-
-    LibvlcLogNPObject(NPP instance, const NPClass *aClass) :
-        RuntimeNPObject(instance, aClass),
-        _p_log(NULL)
-    {
-        _p_vlcmessages = static_cast<LibvlcMessagesNPObject*>(NPN_CreateObject(instance, RuntimeNPClass<LibvlcMessagesNPObject>::getClass()));
-        _p_vlcmessages->setLog(this);
-    };
-        
-    virtual ~LibvlcLogNPObject()
-    {
-        if( _p_log )
-        {
-            libvlc_log_close(_p_log, NULL);
-            _p_log = NULL;
-        }
-        NPN_ReleaseObject(_p_vlcmessages);
-    };
+    LibvlcLogNPObject(NPP instance, const NPClass *aClass);
+    virtual ~LibvlcLogNPObject();
 
     static const int propertyCount;
     static const NPUTF8 * const propertyNames[];
