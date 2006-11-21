@@ -51,12 +51,12 @@
 /*****************************************************************************
  * Local prototypes.
  *****************************************************************************/
-static vlm_message_t *vlm_Show( vlm_t *, vlm_media_t *, vlm_schedule_t *, char * );
+static vlm_message_t *vlm_Show( vlm_t *, vlm_media_t *, vlm_schedule_t *, const char * );
 static vlm_message_t *vlm_Help( vlm_t *, char * );
 
 static vlm_media_instance_t *vlm_MediaInstanceSearch( vlm_t *, vlm_media_t *, const char * );
 
-static vlm_message_t *vlm_MessageNew( char *, const char *, ... );
+static vlm_message_t *vlm_MessageNew( const char *, const char *, ... );
 static vlm_message_t *vlm_MessageAdd( vlm_message_t *, vlm_message_t * );
 
 static vlm_schedule_t *vlm_ScheduleSearch( vlm_t *, const char * );
@@ -621,6 +621,12 @@ static int ExecuteCommand( vlm_t *p_vlm, const char *psz_command,
                 psz_instance = ppsz_command[2];
 
                 if( i_command < 4 ) goto syntax_error;
+
+                if( strcmp( ppsz_command[3], "play" ) &&
+                    strcmp( ppsz_command[3], "stop" ) &&
+                    strcmp( ppsz_command[3], "pause" ) &&
+                    strcmp( ppsz_command[3], "seek" ) )
+                    goto syntax_error;
             }
 
             psz_command = ppsz_command[i_index];
@@ -1263,16 +1269,57 @@ int vlm_MediaControl( vlm_t *vlm, vlm_media_t *media, const char *psz_id,
     if( !strcmp( psz_command, "seek" ) )
     {
         vlc_value_t val;
-        float f_percentage;
 
         if( psz_args )
         {
-            f_percentage = i18n_atof( psz_args );
-            if( f_percentage >= 0.0 && f_percentage <= 100.0 )
+            vlc_bool_t i_rel;
+            float f_value = i18n_atof( psz_args );
+            if( psz_args[0] == '+' || psz_args[0] == '-' )
+               i_rel = VLC_TRUE;
+            else
+               i_rel = VLC_FALSE;
+            if( strstr( psz_args, "ms" ) )
             {
-                val.f_float = f_percentage / 100.0 ;
-                var_Set( p_instance->p_input, "position", val );
-                return VLC_SUCCESS;
+               /* milliseconds */
+               int64_t i_msec =  1000 * (int64_t)atoi( psz_args );
+               if( i_rel )
+               {
+                  var_SetTime( p_instance->p_input, "time-offset", i_msec );
+               }
+               else if( i_msec >= 0
+               && i_msec < var_GetTime( p_instance->p_input, "length" ) )
+               {
+                  var_SetTime( p_instance->p_input, "time", i_msec );
+               }
+            }
+            else if( strchr( psz_args, 's' ) )
+            {
+               /* seconds */
+               int64_t i_sec = 1000000 * (int64_t)atoi( psz_args );
+               if( i_rel )
+               {
+                  var_SetTime( p_instance->p_input, "time-offset", i_sec );
+               }
+               else if( i_sec >= 0
+                     && i_sec < var_GetTime( p_instance->p_input, "length" ) )
+               {
+                  var_SetTime( p_instance->p_input, "time", i_sec );
+               }
+            }
+            else
+            {
+               /* percentage */
+               f_value /= 100.;
+               if( i_rel )
+               {
+                  float f_orig = var_GetFloat( p_instance->p_input, "position" );
+                  f_value += f_orig;
+               }
+               if( f_value >= 0.0 && f_value <= 1.0 )
+               {
+                  var_SetFloat( p_instance->p_input, "position", f_value );
+                  return VLC_SUCCESS;
+               }
             }
         }
     }
@@ -1315,7 +1362,7 @@ int vlm_MediaControl( vlm_t *vlm, vlm_media_t *media, const char *psz_id,
 /*****************************************************************************
  * Schedule handling
  *****************************************************************************/
-static int64_t vlm_Date()
+static int64_t vlm_Date( void )
 {
 #ifdef WIN32
     struct timeb tm;
@@ -1578,7 +1625,7 @@ int vlm_ScheduleSetup( vlm_schedule_t *schedule, const char *psz_cmd,
 /*****************************************************************************
  * Message handling functions
  *****************************************************************************/
-static vlm_message_t *vlm_MessageNew( char *psz_name,
+static vlm_message_t *vlm_MessageNew( const char *psz_name,
                                       const char *psz_format, ... )
 {
     vlm_message_t *p_message;
@@ -1641,7 +1688,7 @@ static vlm_message_t *vlm_MessageAdd( vlm_message_t *p_message,
  * Misc utility functions
  *****************************************************************************/
 static vlm_message_t *vlm_Show( vlm_t *vlm, vlm_media_t *media,
-                                vlm_schedule_t *schedule, char *psz_filter )
+                                vlm_schedule_t *schedule, const char *psz_filter )
 {
     if( media != NULL )
     {
@@ -2010,7 +2057,7 @@ static vlm_message_t *vlm_Help( vlm_t *vlm, char *psz_filter )
         MessageAddChild( "play" );
         MessageAddChild( "pause" );
         MessageAddChild( "stop" );
-        MessageAddChild( "seek (percentage)" );
+        MessageAddChild( "seek [+-](percentage) | [+-](seconds)s | [+-](milliseconds)ms" );
 
         return message;
     }
