@@ -1070,7 +1070,7 @@ void PrefsPanel::ApplyChanges()
         case CONFIG_ITEM_MODULE_LIST:
         case CONFIG_ITEM_MODULE_LIST_CAT:
             config_PutPsz( p_intf, control->GetName().mb_str(),
-                           control->GetPszValue().mb_str() );
+                           control->GetPszValue().mb_str(wxConvUTF8) );
             break;
         case CONFIG_ITEM_KEY:
             /* So you don't need to restart to have the changes take effect */
