@@ -935,9 +935,9 @@ void Playlist::OnSave( wxCommandEvent& WXUNUSED(event) )
 
     if( dialog.ShowModal() == wxID_OK )
     {
-        if( dialog.GetPath().mb_str() )
+        if( dialog.GetPath().mb_str(wxConvUTF8) )
         {
-            playlist_Export( p_playlist, dialog.GetPath().mb_str(),
+            playlist_Export( p_playlist, dialog.GetPath().mb_str(wxConvUTF8),
                              formats[dialog.GetFilterIndex()].psz_module );
         }
     }
@@ -951,7 +951,7 @@ void Playlist::OnOpen( wxCommandEvent& WXUNUSED(event) )
 
     if( dialog.ShowModal() == wxID_OK )
     {
-        playlist_Import( p_playlist, dialog.GetPath().mb_str() );
+        playlist_Import( p_playlist, dialog.GetPath().mb_str(wxConvUTF8) );
     }
 }
 

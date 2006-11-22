@@ -718,7 +718,7 @@ void wizInputPage::OnWizardPageChanging(wxWizardEvent& event)
         }
         else
         {
-            p_parent->SetMrl( (const char *)mrl_text->GetValue().mb_str() );
+            p_parent->SetMrl( (const char *)mrl_text->GetValue().mb_str(wxConvUTF8) );
         }
     }
     else
