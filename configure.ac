@@ -3008,7 +3008,7 @@ if test "${enable_dts}" != "no"; then
             AC_MSG_ERROR([the specified tree hasn't been compiled])
           fi
         ])
-      ])
+      ], [-lm])
       LDFLAGS="${LDFLAGS_save}"
     else
       AC_MSG_RESULT(no)
@@ -3029,7 +3029,7 @@ if test "${enable_dts}" != "no"; then
             AC_MSG_ERROR([Could not find libdts on your system: you may get it from http://www.videolan.org/dtsdec.html])
           fi
         ])
-      ])
+      ], [-lm])
     ])
     LDFLAGS="${LDFLAGS_save}"
   fi
