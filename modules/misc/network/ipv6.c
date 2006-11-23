@@ -154,7 +154,7 @@ static int OpenUDP( vlc_object_t * p_this )
     p_socket->i_handle = -1;
 
     /* Build the local socket */
-    if ( BuildAddr( p_this, &sock, psz_bind_addr, i_bind_port ) == -1 )        
+    if ( BuildAddr( p_this, &sock, psz_bind_addr, i_bind_port ) == -1 )
         return 0;
 
     /* Open a SOCK_DGRAM (UDP) socket, in the AF_INET6 domain, automatic (0)
@@ -295,7 +295,7 @@ static int OpenUDP( vlc_object_t * p_this )
             if( res == -1 )
             {
                 msg_Err( p_this, "cannot join multicast group" );
-            } 
+            }
         }
     }
 
