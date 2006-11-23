@@ -1171,7 +1171,7 @@ void OpenDialog::OnOk( wxCommandEvent& WXUNUSED(event) )
 
         /* Insert options */
         while( i + 1 < (int)mrl.GetCount() &&
-               ((const char *)mrl[i + 1].mb_str())[0] == ':' )
+               ((const char *)mrl[i + 1].mb_str(wxConvUTF8))[0] == ':' )
         {
             psz_utf8 = wxFromLocale( mrl[i + 1] );
             playlist_ItemAddOption( p_item, psz_utf8 );

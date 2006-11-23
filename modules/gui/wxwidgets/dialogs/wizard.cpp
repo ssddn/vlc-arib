@@ -1291,7 +1291,7 @@ void wizTranscodeExtraPage::OnSelectFile( wxCommandEvent &event)
 
     if( file_dialog && file_dialog->ShowModal() == wxID_OK )
     {
-        if( file_dialog->GetFilename().mb_str() )
+        if( file_dialog->GetFilename().mb_str(wxConvUTF8) )
         {
             file_text->SetValue( file_dialog->GetPath() );
         }
@@ -1375,7 +1375,7 @@ void wizStreamingExtraPage::OnWizardPageChanging(wxWizardEvent& event)
         else
         {
             p_parent->SetSAP( true,
-                             (const char *)sap_text->GetValue().mb_str() );
+                  (const char *)sap_text->GetValue().mb_str(wxConvUTF8) );
         }
     }
     else
