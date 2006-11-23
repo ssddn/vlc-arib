@@ -379,8 +379,8 @@ static int OpenUDP( vlc_object_t * p_this )
             }
          }
     }
-    else
 #endif
+
     if( *psz_server_addr )
     {
         /* Build socket for remote connection */
