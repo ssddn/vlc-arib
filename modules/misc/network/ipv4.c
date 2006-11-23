@@ -264,7 +264,8 @@ static int OpenUDP( vlc_object_t * p_this )
         /* If we have a source address, we use IP_ADD_SOURCE_MEMBERSHIP
            so that IGMPv3 aware OSes running on IGMPv3 aware networks
            will do an IGMPv3 query on the network */
-        if( *psz_server_addr )
+        if (( *psz_server_addr )
+         && ((ntohl (sock.sin_addr.s_addr) >> 24) == 232))
         {
             struct ip_mreq_source imr;
 

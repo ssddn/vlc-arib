@@ -54,13 +54,9 @@ static const struct in6_addr in6addr_any = {{IN6ADDR_ANY_INIT}};
 # define close closesocket
 #endif
 
-#ifndef MCAST_JOIN_SOURCE_GROUP
-# ifdef WIN32
-/* Most (all?) Mingw32 versions in use are yet to pick up Vista stuff */
+#if defined (WIN32) && !defined (MCAST_JOIN_SOURCE_GROUP)
+/* Interim Vista definitions */
 #  define MCAST_JOIN_SOURCE_GROUP 45 /* from <ws2ipdef.h> */
-# else
-#  define MCAST_JOIN_SOURCE_GROUP 46
-# endif
 struct group_source_req
 {
        uint32_t           gsr_interface;  /* interface index */
@@ -243,7 +239,8 @@ static int OpenUDP( vlc_object_t * p_this )
     /* Join the multicast group if the socket is a multicast address */
     if( IN6_IS_ADDR_MULTICAST(&sock.sin6_addr) )
     {
-        if(*psz_server_addr)
+        if ((*psz_server_addr)
+         && ((U32_AT (&sock.sin6_addr) & 0xff30ffff) == 0xff300000))
         {
             struct group_source_req imr;
             struct sockaddr_in6 *p_sin6;
