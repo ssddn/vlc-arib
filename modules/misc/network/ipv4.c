@@ -263,7 +263,7 @@ static int OpenUDP( vlc_object_t * p_this )
            so that IGMPv3 aware OSes running on IGMPv3 aware networks
            will do an IGMPv3 query on the network */
         if (( rem.sin_addr.s_addr != INADDR_ANY )
-         /*&& ((ntohl (sock.sin_addr.s_addr) >> 24) == 232)*/)
+         /*&& ((ntohl (loc.sin_addr.s_addr) >> 24) == 232)*/)
         {
 #ifndef IP_ADD_SOURCE_MEMBERSHIP
             errno = ENOSYS;
@@ -333,7 +333,7 @@ igmpv2:
                 }
 
                 if( hiphlpapi && OurGetBestInterface && OurGetIpAddrTable &&
-                    OurGetBestInterface( sock.sin_addr.s_addr,
+                    OurGetBestInterface( loc.sin_addr.s_addr,
                                          &i_index ) == NO_ERROR )
                 {
                     PMIB_IPADDRTABLE p_table;
