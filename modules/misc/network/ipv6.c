@@ -279,10 +279,11 @@ static int OpenUDP( vlc_object_t * p_this )
             }
         }
         else
+mldv1:
         {
             struct ipv6_mreq     imr;
             int                  res;
-mldv1:
+
             imr.ipv6mr_interface = sock.sin6_scope_id;
             imr.ipv6mr_multiaddr = sock.sin6_addr;
             msg_Dbg( p_this, "IPV6_JOIN_GROUP multicast request" );
@@ -301,6 +302,10 @@ mldv1:
             }
         }
     }
+
+#ifdef __FreeBSD__
+    else
+#endif
 
     if( *psz_server_addr )
     {

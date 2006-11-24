@@ -260,13 +260,15 @@ static int OpenUDP( vlc_object_t * p_this )
         /* Determine interface to be used for multicast */
         char * psz_if_addr = config_GetPsz( p_this, "miface-addr" );
 
-#ifdef IP_ADD_SOURCE_MEMBERSHIP
         /* If we have a source address, we use IP_ADD_SOURCE_MEMBERSHIP
            so that IGMPv3 aware OSes running on IGMPv3 aware networks
            will do an IGMPv3 query on the network */
         if (( *psz_server_addr )
          /*&& ((ntohl (sock.sin_addr.s_addr) >> 24) == 232)*/)
         {
+#ifndef IP_ADD_SOURCE_MEMBERSHIP
+            errno = ENOSYS;
+#else
             struct ip_mreq_source imr;
 
             imr.imr_multiaddr.s_addr = sock.sin_addr.s_addr;
@@ -287,20 +289,20 @@ static int OpenUDP( vlc_object_t * p_this )
             if( setsockopt( i_handle, IPPROTO_IP, IP_ADD_SOURCE_MEMBERSHIP,
                          (char*)&imr,
                          sizeof(struct ip_mreq_source) ) == -1 )
+#endif
             {
                 msg_Warn( p_this, "Source specific multicast failed (%s) -"
-                          "check if your OS really supports IGMPv3",
+                          " check if your OS really supports IGMPv3",
                           strerror(errno) );
                 goto igmpv2;
             }
         }
-         /* If there is no source address, we use IP_ADD_MEMBERSHIP */
-         else
-#endif
+        /* If there is no source address, we use IP_ADD_MEMBERSHIP */
+        else
+igmpv2:
         {
             struct ip_mreq imr;
 
-        igmpv2:
             imr.imr_interface.s_addr = INADDR_ANY;
             imr.imr_multiaddr.s_addr = sock.sin_addr.s_addr;
             if( psz_if_addr != NULL && *psz_if_addr
@@ -379,6 +381,10 @@ static int OpenUDP( vlc_object_t * p_this )
             }
          }
     }
+#endif
+
+#ifdef __FreeBSD__
+    else
 #endif
 
     if( *psz_server_addr )
