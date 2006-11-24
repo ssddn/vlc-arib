@@ -225,8 +225,7 @@ void VlcProc::dropVout()
 {
     if( m_pVout )
     {
-        if( vout_Control( m_pVout, VOUT_REPARENT, 0 ) != VLC_SUCCESS )
-            vout_Control( m_pVout, VOUT_CLOSE );
+        vout_Control( m_pVout, VOUT_CLOSE );
         m_pVout = NULL;
     }
 }
