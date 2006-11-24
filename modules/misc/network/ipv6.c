@@ -240,7 +240,7 @@ static int OpenUDP( vlc_object_t * p_this )
     if( IN6_IS_ADDR_MULTICAST(&sock.sin6_addr) )
     {
         if ((*psz_server_addr)
-         && ((U32_AT (&sock.sin6_addr) & 0xff30ffff) == 0xff300000))
+         /*&& ((U32_AT (&sock.sin6_addr) & 0xff30ffff) == 0xff300000)*/)
         {
 #ifndef MCAST_JOIN_SOURCE_GROUP
             errno = ENOSYS;

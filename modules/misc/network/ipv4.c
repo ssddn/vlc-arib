@@ -265,7 +265,7 @@ static int OpenUDP( vlc_object_t * p_this )
            so that IGMPv3 aware OSes running on IGMPv3 aware networks
            will do an IGMPv3 query on the network */
         if (( *psz_server_addr )
-         && ((ntohl (sock.sin_addr.s_addr) >> 24) == 232))
+         /*&& ((ntohl (sock.sin_addr.s_addr) >> 24) == 232)*/)
         {
             struct ip_mreq_source imr;
 
