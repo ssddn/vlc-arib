@@ -217,7 +217,7 @@ static int OpenUDP( vlc_object_t * p_this )
     /* Under Win32 and for multicasting, we bind to IN6ADDR_ANY */
     if( IN6_IS_ADDR_MULTICAST(&loc.sin6_addr) )
     {
-        struct sockaddr_in6 sockany = sock;
+        struct sockaddr_in6 sockany = loc;
         sockany.sin6_addr = in6addr_any;
         sockany.sin6_scope_id = 0;
 
