@@ -220,7 +220,7 @@ static int OpenUDP( vlc_object_t * p_this )
      */
     if( IN_MULTICAST( ntohl( loc.sin_addr.s_addr ) ) )
     {
-        struct sockaddr_in stupid = sock;
+        struct sockaddr_in stupid = loc;
         stupid.sin_addr.s_addr = INADDR_ANY;
 
         if( bind( i_handle, (struct sockaddr *)&stupid, sizeof( stupid ) ) < 0 )
