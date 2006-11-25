@@ -85,6 +85,7 @@ static int Open (vlc_object_t *obj)
 {
     access_t *access = (access_t*)obj;
     access_t *src = access->p_source;
+    access_sys_t *p_sys;
 
     if (!var_CreateGetBool (access, "dump-force"))
     {
@@ -106,7 +107,7 @@ static int Open (vlc_object_t *obj)
     access->pf_control = Control;
     access->info = src->info;
 
-    access_sys_t *p_sys = access->p_sys = malloc (sizeof (*p_sys));
+    p_sys = access->p_sys = malloc (sizeof (*p_sys));
     if (p_sys == NULL)
         return VLC_ENOMEM;
     memset (p_sys, 0, sizeof (*p_sys));
@@ -145,12 +146,13 @@ static void Dump (access_t *access, const uint8_t *buffer, size_t len)
 {
     access_sys_t *p_sys = access->p_sys;
     FILE *stream = p_sys->stream;
+    size_t needed;
 
     if ((stream == NULL) /* not dumping */
      || (access->info.i_pos < p_sys->dumpsize) /* already known data */)
         return;
 
-    size_t needed = access->info.i_pos - p_sys->dumpsize;
+    needed = access->info.i_pos - p_sys->dumpsize;
     if (len < needed)
         return; /* gap between data and dump offset (seek too far ahead?) */
 
@@ -226,6 +228,7 @@ static int Seek (access_t *access, int64_t offset)
 {
     access_t *src = access->p_source;
     access_sys_t *p_sys = access->p_sys;
+    int ret;
 
     if (p_sys->tmp_max == -1)
     {
@@ -237,7 +240,7 @@ static int Seek (access_t *access, int64_t offset)
         msg_Dbg (access, "seeking - dump might not work");
 
     src->info.i_update = access->info.i_update;
-    int ret = src->pf_seek (src, offset);
+    ret = src->pf_seek (src, offset);
     access->info = src->info;
     return ret;
 }
@@ -265,6 +268,10 @@ static inline struct tm *localtime_r (const time_t *now, struct tm *res)
 static void Trigger (access_t *access)
 {
     access_sys_t *p_sys = access->p_sys;
+    const char *home = access->p_vlc->psz_homedir;
+    FILE *newstream, *oldstream;
+    struct tm t;
+    time_t now;
 
     if (p_sys->stream == NULL)
         return; // too late
@@ -272,10 +279,8 @@ static void Trigger (access_t *access)
     if (p_sys->tmp_max == -1)
         return; // already triggered - should we stop? FIXME
 
-    time_t now;
     time (&now);
 
-    struct tm t;
     if (localtime_r (&now, &t) == NULL)
         return; // No time, eh? Well, I'd rather not run on your computer.
 
@@ -283,26 +288,26 @@ static void Trigger (access_t *access)
         // Humanity is about 300 times older than when this was written,
         // and there is an off-by-one in the following sprintf().
         return;
-
-    const char *home = access->p_vlc->psz_homedir;
-
-    /* Hmm what about the extension?? */
-    char filename[strlen (home) + sizeof ("/vlcdump-YYYYYYYYY-MM-DD-HH-MM-SS.ts")];
-    sprintf (filename, "%s/vlcdump-%04u-%02u-%02u-%02u-%02u-%02u.ts", home,
-             t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec);
-
-    msg_Info (access, "dumping media to \"%s\"...", filename);
-
-    FILE *newstream = fopen (filename, "wb");
-    if (newstream == NULL)
+    else
     {
-        msg_Err (access, "cannot create dump file \"%s\": %s", filename,
-                 strerror (errno));
-        return;
+        /* Hmm what about the extension?? */
+        char filename[strlen (home) + sizeof ("/vlcdump-YYYYYYYYY-MM-DD-HH-MM-SS.ts")];
+        sprintf (filename, "%s/vlcdump-%04u-%02u-%02u-%02u-%02u-%02u.ts", home,
+                t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec);
+
+        msg_Info (access, "dumping media to \"%s\"...", filename);
+
+        newstream = fopen (filename, "wb");
+        if (newstream == NULL)
+        {
+            msg_Err (access, "cannot create dump file \"%s\": %s", filename,
+                    strerror (errno));
+            return;
+        }
     }
 
     /* This might cause excessive hard drive work :( */
-    FILE *oldstream = p_sys->stream;
+    oldstream = p_sys->stream;
     rewind (oldstream);
 
     for (;;)
