@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-15 22:19+0100\n"
-"PO-Revision-Date: 2006-04-19 08:35+0000\n"
-"Last-Translator: Clément Stenac <zorglub@diwi.org>\n"
+"POT-Creation-Date: 2006-11-26 18:50+0000\n"
+"PO-Revision-Date: 2006-11-25 17:24+0100\n"
+"Last-Translator: Christophe Mutricy <xtophe@videolan.org>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -495,8 +495,8 @@ msgstr ""
 #: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
 #: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
 #: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
-#: modules/misc/growl.c:169 modules/misc/notify.c:156
-#: modules/misc/notify.c:159 modules/visualization/goom.c:417
+#: modules/misc/growl.c:169 modules/misc/notify.c:180
+#: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
 msgstr "Méta-données"
 
@@ -529,7 +529,7 @@ msgstr "Genre"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: include/vlc_meta.h:34 modules/misc/growl.c:170 modules/misc/notify.c:160
+#: include/vlc_meta.h:34 modules/misc/growl.c:170 modules/misc/notify.c:184
 msgid "Album/movie/show title"
 msgstr "Titre"
 
@@ -564,7 +564,7 @@ msgstr "URL"
 msgid "Language"
 msgstr "Langue"
 
-#: include/vlc_meta.h:42 modules/misc/notify.c:180
+#: include/vlc_meta.h:42 modules/misc/notify.c:206
 msgid "Now Playing"
 msgstr "Actuellement"
 
@@ -974,9 +974,8 @@ msgid "Add Interface"
 msgstr "Ajouter une interface"
 
 #: src/interface/interface.c:378
-#, fuzzy
 msgid "Console"
-msgstr "Contrôleur"
+msgstr "Console"
 
 #: src/interface/interface.c:380
 msgid "Telnet Interface"
@@ -987,14 +986,12 @@ msgid "Web Interface"
 msgstr "Interface Web"
 
 #: src/interface/interface.c:384
-#, fuzzy
 msgid "Debug logging"
-msgstr "Module de journalisation dans un fichier"
+msgstr "Enregistrement des messages"
 
 #: src/interface/interface.c:386
-#, fuzzy
 msgid "Mouse Gestures"
-msgstr "Mouvements"
+msgstr "Mouvements de la souris"
 
 #: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1684
 #: src/misc/modules.c:1988
@@ -1129,7 +1126,11 @@ msgstr "Coréen"
 msgid "Malay"
 msgstr "Malais"
 
-#: src/libvlc.h:40 src/misc/iso-639_def.h:69
+#: src/libvlc.h:40 src/misc/iso-639_def.h:135
+msgid "Nepali"
+msgstr "Népalais"
+
+#: src/libvlc.h:41 src/misc/iso-639_def.h:69
 msgid "Dutch"
 msgstr "Néerlandais"
 
@@ -1145,7 +1146,7 @@ msgstr "Portugais brésilien"
 msgid "Romanian"
 msgstr "Roumain"
 
-#: src/libvlc.h:41 src/misc/iso-639_def.h:155
+#: src/libvlc.h:42 src/misc/iso-639_def.h:155
 msgid "Russian"
 msgstr "Russe"
 
@@ -1290,18 +1291,14 @@ msgstr ""
 "(en plein écran)."
 
 #: src/libvlc.h:117
-#, fuzzy
 msgid "Interface interaction"
-msgstr "Prédiction de mouvement entrelacé"
+msgstr ""
 
 #: src/libvlc.h:119
-#, fuzzy
 msgid ""
 "When this is enabled, the interface will show a dialog box each time some "
 "user input is required."
 msgstr ""
-"Montrer l'interface lorsque la souris est déplacée vers le bord de l'écran "
-"(en plein écran)."
 
 #: src/libvlc.h:129
 msgid ""
@@ -1729,7 +1726,6 @@ msgstr ""
 "vidéo."
 
 #: src/libvlc.h:306
-#, fuzzy
 msgid "Video snapshot directory (or filename)"
 msgstr "Répertoire des captures"
 
@@ -1738,9 +1734,8 @@ msgid "Directory where the video snapshots will be stored."
 msgstr "Répertoire où les captures d'écran seront stockées."
 
 #: src/libvlc.h:310 src/libvlc.h:312
-#, fuzzy
 msgid "Video snapshot file prefix"
-msgstr "Format des captures d’écran"
+msgstr "Préfix des captures d’écran"
 
 #: src/libvlc.h:314
 msgid "Video snapshot format"
@@ -2883,12 +2878,10 @@ msgid "Tell VLC that it is being launched due to a file association in the OS"
 msgstr ""
 
 #: src/libvlc.h:868
-#, fuzzy
 msgid "One instance when started from file"
-msgstr "N’autorise qu’une seule instance lorsque démarrer depuis un fichier"
+msgstr "Une seule instance lorsque démarrer depuis un fichier"
 
 #: src/libvlc.h:870
-#, fuzzy
 msgid "Allow only one running instance when started from file."
 msgstr "N’autorise qu’une seule instance lorsque démarrer depuis un fichier"
 
@@ -3666,7 +3659,8 @@ msgstr "Enregistrer"
 msgid "Record access filter start/stop."
 msgstr "Démarrer/arrêter le filtre d’enregistrement"
 
-#: src/libvlc.h:1100
+#: src/libvlc.h:1100 modules/access_filter/dump.c:51
+#: modules/access_filter/dump.c:52
 #, fuzzy
 msgid "Dump"
 msgstr "Aller à"
@@ -3682,9 +3676,8 @@ msgid "Un-Zoom"
 msgstr "Zoom"
 
 #: src/libvlc.h:1106 src/libvlc.h:1107
-#, fuzzy
 msgid "Crop one pixel from the top of the video"
-msgstr "Nombre de pixels à rogner en haut de la vidéo."
+msgstr "Rogner un pixel en haut de la vidéo."
 
 #: src/libvlc.h:1108 src/libvlc.h:1109
 #, fuzzy
@@ -3887,7 +3880,6 @@ msgid "print help for VLC (can be combined with --advanced)"
 msgstr "Afficher l’aide de VLC (peut être combiné avec --advanced)"
 
 #: src/libvlc.h:2022
-#, fuzzy
 msgid ""
 "print help for VLC and all its modules (can be combined with --advanced)"
 msgstr ""
@@ -4275,10 +4267,6 @@ msgstr "Ndébélé du Sud"
 msgid "Ndonga"
 msgstr "Ndonga"
 
-#: src/misc/iso-639_def.h:135
-msgid "Nepali"
-msgstr "Népalais"
-
 #: src/misc/iso-639_def.h:136
 msgid "Norwegian"
 msgstr "Norvégien"
@@ -4519,7 +4507,7 @@ msgstr "Zoulou"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/misc/vlm.c:1140 src/misc/vlm.c:1247
+#: src/misc/vlm.c:1146 src/misc/vlm.c:1253
 #, c-format
 msgid "Media: %s"
 msgstr "Média: %s"
@@ -5601,6 +5589,25 @@ msgstr "Lecture de fichiers"
 msgid "File"
 msgstr "Fichier"
 
+#: modules/access_filter/dump.c:39
+#, fuzzy
+msgid "Force use of dump module"
+msgstr "Imposer l'utilisation de module «timeshift»"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr ""
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr ""
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
+
 #: modules/access_filter/record.c:43
 msgid "Record directory"
 msgstr "Répertoire d’enregistrement"
@@ -5629,9 +5636,8 @@ msgid "Directory used to store the timeshift temporary files."
 msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
 
 #: modules/access_filter/timeshift.c:51
-#, fuzzy
 msgid "Force use of the timeshift module"
-msgstr "Répertoire utilisé pour stocker les fichiers temporaires du différé"
+msgstr "Imposer l'utilisation de module «timeshift»"
 
 #: modules/access_filter/timeshift.c:52
 msgid ""
@@ -5819,7 +5825,6 @@ msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
 msgstr "Chemin du fichier x509 de certificat à utiliser pour HTTPS."
 
 #: modules/access_output/http.c:76
-#, fuzzy
 msgid ""
 "Path to the x509 PEM private key file that will be used for HTTPS. Leave "
 "empty if you don't have one."
@@ -5828,7 +5833,6 @@ msgstr ""
 "si vous n'en n'avez pas."
 
 #: modules/access_output/http.c:80
-#, fuzzy
 msgid ""
 "Path to the x509 PEM trusted root CA certificates (certificate authority) "
 "file that will be used for HTTPS. Leave empty if you don't have one."
@@ -6401,7 +6405,7 @@ msgstr "Segments"
 
 #: modules/access/vcdx/access.c:429 modules/access/vcdx/access.c:710
 #: modules/access/vcdx/info.c:294 modules/access/vcdx/info.c:295
-#: modules/demux/mkv.cpp:5212
+#: modules/demux/mkv.cpp:5214
 msgid "Segment"
 msgstr "Segment"
 
@@ -7422,9 +7426,8 @@ msgid "FFmpeg demuxer"
 msgstr "Démultiplexeur ffmpeg"
 
 #: modules/codec/ffmpeg/ffmpeg.c:196
-#, fuzzy
 msgid "FFmpeg muxer"
-msgstr "Démultiplexeur ffmpeg"
+msgstr "Multiplexeur FFmpeg"
 
 #: modules/codec/ffmpeg/ffmpeg.c:204
 msgid "FFmpeg video filter"
@@ -9600,7 +9603,7 @@ msgstr ""
 
 #: modules/demux/avi/avi.c:56
 msgid "Ask"
-msgstr ""
+msgstr "Demander"
 
 #: modules/demux/avi/avi.c:56
 #, fuzzy
@@ -9609,7 +9612,7 @@ msgstr "Toujours au-dessus"
 
 #: modules/demux/avi/avi.c:57
 msgid "Never fix"
-msgstr ""
+msgstr "Ne Jamais réparer"
 
 #: modules/demux/avi/avi.c:61
 msgid "AVI demuxer"
@@ -9815,31 +9818,31 @@ msgstr ""
 "Lis et ignore les éléments EBML inconnus (mauvais pour les fichiers "
 "endommagés)"
 
-#: modules/demux/mkv.cpp:3159
+#: modules/demux/mkv.cpp:3161
 msgid "---  DVD Menu"
 msgstr "---  Menu DVD"
 
-#: modules/demux/mkv.cpp:3165
+#: modules/demux/mkv.cpp:3167
 msgid "First Played"
 msgstr "Premier Lu"
 
-#: modules/demux/mkv.cpp:3167
+#: modules/demux/mkv.cpp:3169
 msgid "Video Manager"
 msgstr "Gestionaire vidéo"
 
-#: modules/demux/mkv.cpp:3173
+#: modules/demux/mkv.cpp:3175
 msgid "----- Title"
 msgstr "----- Titre"
 
-#: modules/demux/mkv.cpp:4939
+#: modules/demux/mkv.cpp:4941
 msgid "Segment filename"
 msgstr "Nom de fichier du Segment"
 
-#: modules/demux/mkv.cpp:4943
+#: modules/demux/mkv.cpp:4945
 msgid "Muxing application"
 msgstr "Application de multiplexage"
 
-#: modules/demux/mkv.cpp:4947
+#: modules/demux/mkv.cpp:4949
 msgid "Writing application"
 msgstr "Application d’écriture"
 
@@ -10310,9 +10313,8 @@ msgid "visual impaired commentary"
 msgstr ""
 
 #: modules/demux/tta.c:40
-#, fuzzy
 msgid "TTA demuxer"
-msgstr "Démultiplexeur AU"
+msgstr "Démultiplexeur TTA"
 
 #: modules/demux/ty.c:70
 msgid "TY Stream audio/video demux"
@@ -10866,9 +10868,9 @@ msgid "Compiled by %s, based on SVN revision %s"
 msgstr "Compilé par %s, basé sur la révision SVN %s"
 
 #: modules/gui/macosx/about.m:85
-#, fuzzy, c-format
+#, c-format
 msgid "Compiled by %s"
-msgstr "Compilé par "
+msgstr "Compilé par  %s"
 
 #: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:599
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:139
@@ -11200,6 +11202,11 @@ msgstr ""
 "dans les sous-sections de Video/Filters.\n"
 "Pour choisir l'ordre d'application, une chaîne d'option peut être indiquée à "
 "ce même endroit."
+
+#: modules/gui/macosx/fspanel.m:307
+#, fuzzy
+msgid "(no item is being played)"
+msgstr "%i élements dans la liste de lecture"
 
 #: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:634
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:81
@@ -11814,9 +11821,8 @@ msgid "File Format:"
 msgstr "Format de sous-titres"
 
 #: modules/gui/macosx/playlist.m:503
-#, fuzzy
 msgid "Extended M3U"
-msgstr "Interface étendue"
+msgstr "M3U étendu"
 
 #: modules/gui/macosx/playlist.m:504
 msgid "XML Shareable Playlist Format (XSPF)"
@@ -13236,11 +13242,14 @@ msgid "Edit the properties of a bookmark"
 msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:173
+#, fuzzy
 msgid ""
 "If you select two or more bookmarks, this will launch the streaming/"
 "transcoding wizard to allow you to stream or save the part of the stream "
 "between these bookmarks"
 msgstr ""
+"Si vous selectionnez deux ou plus signets, cela lancera l'assistant de "
+"streamming"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:347
 msgid "You must select two bookmarks"
@@ -14868,15 +14877,15 @@ msgstr "Port UDP du serveur Growl."
 msgid "Growl Notification Plugin"
 msgstr "Plugin d'annonce Growl"
 
-#: modules/misc/growl.c:172 modules/misc/msn.c:202 modules/misc/notify.c:162
+#: modules/misc/growl.c:172 modules/misc/msn.c:202 modules/misc/notify.c:187
 msgid "(no title)"
 msgstr "(Sans titre)"
 
-#: modules/misc/growl.c:173 modules/misc/msn.c:203 modules/misc/notify.c:163
+#: modules/misc/growl.c:173 modules/misc/msn.c:203 modules/misc/notify.c:188
 msgid "(no artist)"
 msgstr "(Pas d'artiste)"
 
-#: modules/misc/growl.c:174 modules/misc/msn.c:204 modules/misc/notify.c:164
+#: modules/misc/growl.c:174 modules/misc/msn.c:204 modules/misc/notify.c:189
 msgid "(no album)"
 msgstr "(Pas d'album)"
 
@@ -14971,24 +14980,24 @@ msgstr "MSN En cours de lecture"
 msgid "UDP/IPv4 network abstraction layer"
 msgstr "Couche d’abstraction de réseau UDP/IPv4"
 
-#: modules/misc/network/ipv6.c:81
+#: modules/misc/network/ipv6.c:77
 msgid "UDP/IPv6 network abstraction layer"
 msgstr "Couche d’abstraction de réseau UDP/IPv6"
 
-#: modules/misc/notify.c:55
+#: modules/misc/notify.c:60
 #, fuzzy
 msgid "Timeout (ms)"
 msgstr "Délai d'expiration"
 
-#: modules/misc/notify.c:56
+#: modules/misc/notify.c:61
 msgid "How long the notification will be displayed "
 msgstr ""
 
-#: modules/misc/notify.c:61
+#: modules/misc/notify.c:66
 msgid "Notify"
 msgstr ""
 
-#: modules/misc/notify.c:62
+#: modules/misc/notify.c:67
 #, fuzzy
 msgid "LibNotify Notification Plugin"
 msgstr "Plugin d'annonce Growl"
@@ -15626,15 +15635,15 @@ msgstr "Parseur de fichiers SDP pour UDP"
 msgid "Session Announcements (SAP)"
 msgstr "Annonces de sessions (SAP)"
 
-#: modules/services_discovery/sap.c:842 modules/services_discovery/sap.c:847
+#: modules/services_discovery/sap.c:840 modules/services_discovery/sap.c:845
 msgid "Session"
 msgstr "Session"
 
-#: modules/services_discovery/sap.c:843
+#: modules/services_discovery/sap.c:841
 msgid "Tool"
 msgstr "Outil"
 
-#: modules/services_discovery/sap.c:848
+#: modules/services_discovery/sap.c:846
 msgid "User"
 msgstr "Utilisateur"
 
@@ -17365,6 +17374,11 @@ msgstr "Sortie vidéo en art ASCII en couleurs"
 msgid "DirectFB video output http://www.directfb.org/"
 msgstr "Sorties vidéos DirectFB http://www.directfb.org/"
 
+#: modules/video_output/directx/direct3d.c:101
+#, fuzzy
+msgid "DirectX 3D video output"
+msgstr "Sortie vidéo DirectX"
+
 #: modules/video_output/directx/directx.c:127
 msgid "Use hardware YUV->RGB conversions"
 msgstr "Utiliser les conversions YUV->RGB matérielles"
@@ -17616,7 +17630,7 @@ msgstr ""
 
 #: modules/video_output/opengl.c:150
 msgid "OpenGL Cylinder radius"
-msgstr ""
+msgstr "Rayon du cylindre OpenGL"
 
 #: modules/video_output/opengl.c:151
 #, fuzzy
