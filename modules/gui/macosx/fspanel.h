@@ -4,8 +4,8 @@
  * Copyright (C) 2006 the VideoLAN team
  * $Id: fspanel.h 16935 2006-10-04 08:19:38Z fkuehne $
  *
- * Authors: Jérôme Decoodt <djc at videolan dot org>
- *          Felix Kühne <fkuehne at videolan dot org>
+ * Authors: J√©r√¥me Decoodt <djc at videolan dot org>
+ *          Felix K√ºhne <fkuehne at videolan dot org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,9 @@
     BOOL b_keptVisible;
     BOOL b_alreadyCounting;
     int i_timeToKeepVisibleInSec;
+    
+    BOOL b_displayed;
+    BOOL b_voutWasUpdated;
 }
 - (id)initWithContentRect: (NSRect)contentRect 
                 styleMask: (unsigned int)aStyle 
@@ -61,6 +64,8 @@
 - (void)mouseDown:(NSEvent *)theEvent;
 - (void)mouseDragged:(NSEvent *)theEvent;
 
+- (BOOL)isDisplayed;
+- (void)setVoutWasUpdated;
 @end
 
 @interface VLCFSPanelView : NSView
