@@ -1128,7 +1128,7 @@ void OpenDialog::UpdateMRL( int i_access_method )
         }
         else
         {
-            int i_value = config_GetInt( p_intf, caching_name.mb_str() );
+            int i_value = config_GetInt( p_intf, caching_name.mb_str(wxConvUTF8) );
             caching_value->SetValue( i_value );
         }
     }
