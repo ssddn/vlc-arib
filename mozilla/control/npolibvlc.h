@@ -187,14 +187,33 @@ private:
     LibvlcMessagesNPObject* _p_vlcmessages;
 };
 
+class LibvlcPlaylistItemsNPObject: public RuntimeNPObject
+{
+protected:
+    friend class RuntimeNPClass<LibvlcPlaylistItemsNPObject>;
+
+    LibvlcPlaylistItemsNPObject(NPP instance, const NPClass *aClass) :
+        RuntimeNPObject(instance, aClass) {};
+    virtual ~LibvlcPlaylistItemsNPObject() {};
+
+    static const int propertyCount;
+    static const NPUTF8 * const propertyNames[];
+
+    InvokeResult getProperty(int index, NPVariant &result);
+
+    static const int methodCount;
+    static const NPUTF8 * const methodNames[];
+
+    InvokeResult invoke(int index, const NPVariant *args, uint32_t argCount, NPVariant &result);
+};
+
 class LibvlcPlaylistNPObject: public RuntimeNPObject
 {
 protected:
     friend class RuntimeNPClass<LibvlcPlaylistNPObject>;
 
-    LibvlcPlaylistNPObject(NPP instance, const NPClass *aClass) :
-        RuntimeNPObject(instance, aClass) {};
-    virtual ~LibvlcPlaylistNPObject() {};
+    LibvlcPlaylistNPObject(NPP instance, const NPClass *aClass);
+    virtual ~LibvlcPlaylistNPObject();
 
     static const int propertyCount;
     static const NPUTF8 * const propertyNames[];
@@ -208,6 +227,9 @@ protected:
 
     void parseOptions(const NPString &s, int *i_options, char*** ppsz_options);
     void parseOptions(NPObject *obj, int *i_options, char*** ppsz_options);
+
+private:
+    LibvlcPlaylistItemsNPObject* _p_vlcplaylistitems;
 };
 
 class LibvlcVideoNPObject: public RuntimeNPObject
