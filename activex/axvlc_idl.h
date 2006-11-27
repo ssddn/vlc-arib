@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 6.00.0361 */
-/* at Thu Nov 16 09:55:42 2006
+/* at Mon Nov 27 17:47:26 2006
  */
 /* Compiler settings for axvlc.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
@@ -105,6 +105,12 @@ typedef interface IVLCControl2 IVLCControl2;
 #define __DVLCEvents_FWD_DEFINED__
 typedef interface DVLCEvents DVLCEvents;
 #endif 	/* __DVLCEvents_FWD_DEFINED__ */
+
+
+#ifndef __IVLCPlaylistItems_FWD_DEFINED__
+#define __IVLCPlaylistItems_FWD_DEFINED__
+typedef interface IVLCPlaylistItems IVLCPlaylistItems;
+#endif 	/* __IVLCPlaylistItems_FWD_DEFINED__ */
 
 
 #ifndef __VLCPlugin_FWD_DEFINED__
@@ -2353,7 +2359,7 @@ EXTERN_C const IID IID_IVLCPlaylist;
     IVLCPlaylist : public IDispatch
     {
     public:
-        virtual /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE get_itemCount( 
+        virtual /* [helpstring][propget][hidden] */ HRESULT STDMETHODCALLTYPE get_itemCount( 
             /* [retval][out] */ long *count) = 0;
         
         virtual /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE get_isPlaying( 
@@ -2363,12 +2369,12 @@ EXTERN_C const IID IID_IVLCPlaylist;
             /* [in] */ BSTR uri,
             /* [optional][in] */ VARIANT name,
             /* [optional][in] */ VARIANT options,
-            /* [retval][out] */ long *item) = 0;
+            /* [retval][out] */ long *itemId) = 0;
         
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE play( void) = 0;
         
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE playItem( 
-            /* [in] */ long item) = 0;
+            /* [in] */ long itemId) = 0;
         
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE togglePause( void) = 0;
         
@@ -2378,10 +2384,13 @@ EXTERN_C const IID IID_IVLCPlaylist;
         
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE prev( void) = 0;
         
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE clear( void) = 0;
+        virtual /* [helpstring][hidden] */ HRESULT STDMETHODCALLTYPE clear( void) = 0;
         
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE removeItem( 
+        virtual /* [helpstring][hidden] */ HRESULT STDMETHODCALLTYPE removeItem( 
             /* [in] */ long item) = 0;
+        
+        virtual /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE get_items( 
+            /* [retval][out] */ IVLCPlaylistItems **obj) = 0;
         
     };
     
@@ -2431,7 +2440,7 @@ EXTERN_C const IID IID_IVLCPlaylist;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
-        /* [helpstring][propget] */ HRESULT ( STDMETHODCALLTYPE *get_itemCount )( 
+        /* [helpstring][propget][hidden] */ HRESULT ( STDMETHODCALLTYPE *get_itemCount )( 
             IVLCPlaylist * This,
             /* [retval][out] */ long *count);
         
@@ -2444,14 +2453,14 @@ EXTERN_C const IID IID_IVLCPlaylist;
             /* [in] */ BSTR uri,
             /* [optional][in] */ VARIANT name,
             /* [optional][in] */ VARIANT options,
-            /* [retval][out] */ long *item);
+            /* [retval][out] */ long *itemId);
         
         /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *play )( 
             IVLCPlaylist * This);
         
         /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *playItem )( 
             IVLCPlaylist * This,
-            /* [in] */ long item);
+            /* [in] */ long itemId);
         
         /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *togglePause )( 
             IVLCPlaylist * This);
@@ -2465,12 +2474,16 @@ EXTERN_C const IID IID_IVLCPlaylist;
         /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *prev )( 
             IVLCPlaylist * This);
         
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *clear )( 
+        /* [helpstring][hidden] */ HRESULT ( STDMETHODCALLTYPE *clear )( 
             IVLCPlaylist * This);
         
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *removeItem )( 
+        /* [helpstring][hidden] */ HRESULT ( STDMETHODCALLTYPE *removeItem )( 
             IVLCPlaylist * This,
             /* [in] */ long item);
+        
+        /* [helpstring][propget] */ HRESULT ( STDMETHODCALLTYPE *get_items )( 
+            IVLCPlaylist * This,
+            /* [retval][out] */ IVLCPlaylistItems **obj);
         
         END_INTERFACE
     } IVLCPlaylistVtbl;
@@ -2514,14 +2527,14 @@ EXTERN_C const IID IID_IVLCPlaylist;
 #define IVLCPlaylist_get_isPlaying(This,playing)	\
     (This)->lpVtbl -> get_isPlaying(This,playing)
 
-#define IVLCPlaylist_add(This,uri,name,options,item)	\
-    (This)->lpVtbl -> add(This,uri,name,options,item)
+#define IVLCPlaylist_add(This,uri,name,options,itemId)	\
+    (This)->lpVtbl -> add(This,uri,name,options,itemId)
 
 #define IVLCPlaylist_play(This)	\
     (This)->lpVtbl -> play(This)
 
-#define IVLCPlaylist_playItem(This,item)	\
-    (This)->lpVtbl -> playItem(This,item)
+#define IVLCPlaylist_playItem(This,itemId)	\
+    (This)->lpVtbl -> playItem(This,itemId)
 
 #define IVLCPlaylist_togglePause(This)	\
     (This)->lpVtbl -> togglePause(This)
@@ -2541,6 +2554,9 @@ EXTERN_C const IID IID_IVLCPlaylist;
 #define IVLCPlaylist_removeItem(This,item)	\
     (This)->lpVtbl -> removeItem(This,item)
 
+#define IVLCPlaylist_get_items(This,obj)	\
+    (This)->lpVtbl -> get_items(This,obj)
+
 #endif /* COBJMACROS */
 
 
@@ -2548,7 +2564,7 @@ EXTERN_C const IID IID_IVLCPlaylist;
 
 
 
-/* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_get_itemCount_Proxy( 
+/* [helpstring][propget][hidden] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_get_itemCount_Proxy( 
     IVLCPlaylist * This,
     /* [retval][out] */ long *count);
 
@@ -2577,7 +2593,7 @@ void __RPC_STUB IVLCPlaylist_get_isPlaying_Stub(
     /* [in] */ BSTR uri,
     /* [optional][in] */ VARIANT name,
     /* [optional][in] */ VARIANT options,
-    /* [retval][out] */ long *item);
+    /* [retval][out] */ long *itemId);
 
 
 void __RPC_STUB IVLCPlaylist_add_Stub(
@@ -2600,7 +2616,7 @@ void __RPC_STUB IVLCPlaylist_play_Stub(
 
 /* [helpstring] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_playItem_Proxy( 
     IVLCPlaylist * This,
-    /* [in] */ long item);
+    /* [in] */ long itemId);
 
 
 void __RPC_STUB IVLCPlaylist_playItem_Stub(
@@ -2654,7 +2670,7 @@ void __RPC_STUB IVLCPlaylist_prev_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [helpstring] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_clear_Proxy( 
+/* [helpstring][hidden] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_clear_Proxy( 
     IVLCPlaylist * This);
 
 
@@ -2665,12 +2681,24 @@ void __RPC_STUB IVLCPlaylist_clear_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [helpstring] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_removeItem_Proxy( 
+/* [helpstring][hidden] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_removeItem_Proxy( 
     IVLCPlaylist * This,
     /* [in] */ long item);
 
 
 void __RPC_STUB IVLCPlaylist_removeItem_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE IVLCPlaylist_get_items_Proxy( 
+    IVLCPlaylist * This,
+    /* [retval][out] */ IVLCPlaylistItems **obj);
+
+
+void __RPC_STUB IVLCPlaylist_get_items_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
@@ -3596,6 +3624,179 @@ EXTERN_C const IID DIID_DVLCEvents;
 
 
 #endif 	/* __DVLCEvents_DISPINTERFACE_DEFINED__ */
+
+
+#ifndef __IVLCPlaylistItems_INTERFACE_DEFINED__
+#define __IVLCPlaylistItems_INTERFACE_DEFINED__
+
+/* interface IVLCPlaylistItems */
+/* [object][oleautomation][dual][helpstring][uuid] */ 
+
+
+EXTERN_C const IID IID_IVLCPlaylistItems;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("FD37FE32-82BC-4A25-B056-315F4DBB194D")
+    IVLCPlaylistItems : public IDispatch
+    {
+    public:
+        virtual /* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE get_count( 
+            /* [retval][out] */ long *count) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE clear( void) = 0;
+        
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE remove( 
+            /* [in] */ long itemId) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IVLCPlaylistItemsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVLCPlaylistItems * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVLCPlaylistItems * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVLCPlaylistItems * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVLCPlaylistItems * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVLCPlaylistItems * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVLCPlaylistItems * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVLCPlaylistItems * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [helpstring][propget] */ HRESULT ( STDMETHODCALLTYPE *get_count )( 
+            IVLCPlaylistItems * This,
+            /* [retval][out] */ long *count);
+        
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *clear )( 
+            IVLCPlaylistItems * This);
+        
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *remove )( 
+            IVLCPlaylistItems * This,
+            /* [in] */ long itemId);
+        
+        END_INTERFACE
+    } IVLCPlaylistItemsVtbl;
+
+    interface IVLCPlaylistItems
+    {
+        CONST_VTBL struct IVLCPlaylistItemsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IVLCPlaylistItems_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define IVLCPlaylistItems_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define IVLCPlaylistItems_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define IVLCPlaylistItems_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define IVLCPlaylistItems_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define IVLCPlaylistItems_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define IVLCPlaylistItems_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+
+#define IVLCPlaylistItems_get_count(This,count)	\
+    (This)->lpVtbl -> get_count(This,count)
+
+#define IVLCPlaylistItems_clear(This)	\
+    (This)->lpVtbl -> clear(This)
+
+#define IVLCPlaylistItems_remove(This,itemId)	\
+    (This)->lpVtbl -> remove(This,itemId)
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+/* [helpstring][propget] */ HRESULT STDMETHODCALLTYPE IVLCPlaylistItems_get_count_Proxy( 
+    IVLCPlaylistItems * This,
+    /* [retval][out] */ long *count);
+
+
+void __RPC_STUB IVLCPlaylistItems_get_count_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring] */ HRESULT STDMETHODCALLTYPE IVLCPlaylistItems_clear_Proxy( 
+    IVLCPlaylistItems * This);
+
+
+void __RPC_STUB IVLCPlaylistItems_clear_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring] */ HRESULT STDMETHODCALLTYPE IVLCPlaylistItems_remove_Proxy( 
+    IVLCPlaylistItems * This,
+    /* [in] */ long itemId);
+
+
+void __RPC_STUB IVLCPlaylistItems_remove_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+
+#endif 	/* __IVLCPlaylistItems_INTERFACE_DEFINED__ */
 
 
 EXTERN_C const CLSID CLSID_VLCPlugin;
