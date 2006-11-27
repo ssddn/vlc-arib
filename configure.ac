@@ -183,7 +183,7 @@ case "${target_os}" in
       freebsd*)
         CPPFLAGS_save="${CPPFLAGS_save} -I/usr/local/include"
         CPPFLAGS="${CPPFLAGS_save}"
-        LDFLAGS_save="${LDFLAGS_save} -L/usr/local/lib"
+        LDFLAGS_save="${LDFLAGS_save} -L/usr/local/lib -pthread"
         LDFLAGS="${LDFLAGS_save}"
         ;;
     esac
