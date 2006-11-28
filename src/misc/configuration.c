@@ -942,7 +942,7 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
                             (p_item->psz_value && p_item->psz_value_orig &&
                              strcmp(p_item->psz_value,p_item->psz_value_orig)))
                             p_item->psz_value_saved = p_item->psz_value ?
-                                convert( p_item->psz_value ) : 0;
+                                strdup( p_item->psz_value ) : 0;
 
                         vlc_mutex_unlock( p_item->p_lock );
 
