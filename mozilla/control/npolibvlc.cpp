@@ -1210,6 +1210,7 @@ const NPUTF8 * const LibvlcPlaylistNPObject::propertyNames[] =
 {
     "itemCount", /* deprecated */
     "isPlaying",
+    "items",
 };
 
 const int LibvlcPlaylistNPObject::propertyCount = sizeof(LibvlcPlaylistNPObject::propertyNames)/sizeof(NPUTF8 *);
@@ -1218,6 +1219,7 @@ enum LibvlcPlaylistNPObjectPropertyIds
 {
     ID_playlist_itemcount,
     ID_playlist_isplaying,
+    ID_playlist_items,
 };
 
 RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::getProperty(int index, NPVariant &result)
@@ -1252,6 +1254,11 @@ RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::getProperty(int index, NPV
                     return INVOKERESULT_GENERIC_ERROR;
                 }
                 BOOLEAN_TO_NPVARIANT(val, result);
+                return INVOKERESULT_NO_ERROR;
+            }
+            case ID_playlist_items:
+            {
+                OBJECT_TO_NPVARIANT(NPN_RetainObject(_p_vlcplaylistitems), result);
                 return INVOKERESULT_NO_ERROR;
             }
             default:
