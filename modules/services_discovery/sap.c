@@ -693,15 +693,18 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 
         i_decompressed_size = Decompress( (uint8_t *)psz_sdp,
                    &p_decompressed_buffer, i_read - ( psz_sdp - (char *)p_buffer ) );
-        if( i_decompressed_size > 0 )
+        if( i_decompressed_size > 0 && 
+                i_decompressed_size < ( MAX_SAP_BUFFER - 20 ) )
         {
-            psz_sdp = realloc( p_decompressed_buffer, i_decompressed_size + 1 );
+            memcpy( psz_sdp, p_decompressed_buffer, i_decompressed_size );
             psz_sdp[i_decompressed_size] = '\0';
             psz_end = psz_sdp + i_decompressed_size;
+            FREE( p_decompressed_buffer );
         }
         else
         {
-            msg_Warn( p_sd, "decompression of sap packet failed" );
+            msg_Warn( p_sd, "error in decompression of sap packet" );
+            FREE( p_decompressed_buffer );
             return VLC_EGENERIC;
         }
 #else
@@ -799,7 +802,6 @@ static int ParseSAP( services_discovery_t *p_sd, uint8_t *p_buffer, int i_read )
 
     CreateAnnounce( p_sd, i_hash, p_sdp );
 
-    FREE( p_decompressed_buffer );
     return VLC_SUCCESS;
 }
 
