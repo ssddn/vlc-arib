@@ -322,7 +322,7 @@ relativeurl:
         if( psz_baseURL )
         {
             size_t baseLen = strlen(psz_baseURL);
-            char *href = new char[baseLen+strlen(url)];
+            char *href = new char[baseLen+strlen(url)+1];
             if( href )
             {
                 /* prepend base URL */
