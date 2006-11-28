@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slovak translation for VLC Media Player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-15 22:19+0100\n"
-"PO-Revision-Date: 2006-10-27 20:09+0100\n"
+"POT-Creation-Date: 2006-11-28 20:15+0000\n"
+"PO-Revision-Date: 2006-11-26 14:32+0100\n"
 "Last-Translator: Marián Hikaník <podnety@mojepreklady.net>\n"
 "Language-Team: Marián Hikaník, translation controlled by: Pavel Kříž\n"
 "MIME-Version: 1.0\n"
@@ -488,8 +488,8 @@ msgstr ""
 #: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
 #: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
 #: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
-#: modules/misc/growl.c:169 modules/misc/notify.c:156
-#: modules/misc/notify.c:159 modules/visualization/goom.c:417
+#: modules/misc/growl.c:169 modules/misc/notify.c:180
+#: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
 msgstr "Meta-Informácia"
 
@@ -522,7 +522,7 @@ msgstr "Žáner"
 msgid "Copyright"
 msgstr "Autorské práva (copyright)"
 
-#: include/vlc_meta.h:34 modules/misc/growl.c:170 modules/misc/notify.c:160
+#: include/vlc_meta.h:34 modules/misc/growl.c:170 modules/misc/notify.c:184
 msgid "Album/movie/show title"
 msgstr "Album/film/zobrazenie titulu"
 
@@ -557,7 +557,7 @@ msgstr "URL adresa"
 msgid "Language"
 msgstr "Jazyk"
 
-#: include/vlc_meta.h:42 modules/misc/notify.c:180
+#: include/vlc_meta.h:42 modules/misc/notify.c:206
 msgid "Now Playing"
 msgstr "Práve sa prehráva"
 
@@ -1118,7 +1118,11 @@ msgstr "Kórejsky"
 msgid "Malay"
 msgstr "Malajsky"
 
-#: src/libvlc.h:40 src/misc/iso-639_def.h:69
+#: src/libvlc.h:40 src/misc/iso-639_def.h:135
+msgid "Nepali"
+msgstr "Nepálsky"
+
+#: src/libvlc.h:41 src/misc/iso-639_def.h:69
 msgid "Dutch"
 msgstr "Holandská nemčina"
 
@@ -1134,7 +1138,7 @@ msgstr "Portugalsky (brazílska portugalčina)"
 msgid "Romanian"
 msgstr "Rumunsky"
 
-#: src/libvlc.h:41 src/misc/iso-639_def.h:155
+#: src/libvlc.h:42 src/misc/iso-639_def.h:155
 msgid "Russian"
 msgstr "Rusky"
 
@@ -3678,15 +3682,14 @@ msgstr "Nahrať"
 msgid "Record access filter start/stop."
 msgstr "Spustiť/zastaviť nahrávanie pomocou prístupového filtra."
 
-#: src/libvlc.h:1100
-#, fuzzy
+#: src/libvlc.h:1100 modules/access_filter/dump.c:51
+#: modules/access_filter/dump.c:52
 msgid "Dump"
-msgstr "Fingovaný"
+msgstr "Analyzovať"
 
 #: src/libvlc.h:1101
-#, fuzzy
 msgid "Media dump access filter trigger."
-msgstr "Spustiť/zastaviť nahrávanie pomocou prístupového filtra."
+msgstr "Spúšťač prístupového filtra pre analyzáciu médií"
 
 #: src/libvlc.h:1103 src/libvlc.h:1104
 msgid "Un-Zoom"
@@ -4282,10 +4285,6 @@ msgstr " Ndebele, sever"
 msgid "Ndonga"
 msgstr " Ndonga"
 
-#: src/misc/iso-639_def.h:135
-msgid "Nepali"
-msgstr "Nepálsky"
-
 #: src/misc/iso-639_def.h:136
 msgid "Norwegian"
 msgstr "Nórsky"
@@ -4526,7 +4525,7 @@ msgstr "Zulu"
 msgid "Unknown"
 msgstr "Neznámy"
 
-#: src/misc/vlm.c:1140 src/misc/vlm.c:1247
+#: src/misc/vlm.c:1146 src/misc/vlm.c:1253
 #, c-format
 msgid "Media: %s"
 msgstr "Médium: %s"
@@ -4983,6 +4982,11 @@ msgstr "MRL"
 #: modules/access/cdda/info.c:860
 msgid "Track Number"
 msgstr "Číslo stopy"
+
+#: modules/access/dc1394.c:64
+#, fuzzy
+msgid "dc1394 input"
+msgstr "Žiaden vstup"
 
 #: modules/access/directory.c:70
 msgid "Subdirectory behavior"
@@ -5660,6 +5664,25 @@ msgstr "Vstup súboru"
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:471
 msgid "File"
 msgstr "Súbor"
+
+#: modules/access_filter/dump.c:39
+#, fuzzy
+msgid "Force use of dump module"
+msgstr "Vynútiť si použitie modulu pre časový posun"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr ""
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr ""
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
 
 #: modules/access_filter/record.c:43
 msgid "Record directory"
@@ -6495,7 +6518,7 @@ msgstr "Segmenty"
 
 #: modules/access/vcdx/access.c:429 modules/access/vcdx/access.c:710
 #: modules/access/vcdx/info.c:294 modules/access/vcdx/info.c:295
-#: modules/demux/mkv.cpp:5212
+#: modules/demux/mkv.cpp:5216
 msgid "Segment"
 msgstr "Segment"
 
@@ -8384,9 +8407,8 @@ msgstr ""
 "tie snímky, ktoré sa vyskytujú priamo pred I-snímkami."
 
 #: modules/codec/x264.c:78
-#, fuzzy
 msgid "Influence (bias) B-frames usage"
-msgstr "Použitie B-snímok"
+msgstr "Vplyv použitia B-snímok"
 
 #: modules/codec/x264.c:79
 msgid ""
@@ -8769,9 +8791,8 @@ msgstr ""
 "16x8. "
 
 #: modules/codec/x264.c:243
-#, fuzzy
 msgid "Chroma in motion estimation"
-msgstr "Ignorovať efekt chroma pri odhadovaní pohybu"
+msgstr "Aplikovať efekt chroma aj pri odhadovaní pohybu"
 
 #: modules/codec/x264.c:244
 msgid "Chroma ME for subpel and mode decision in P-frames."
@@ -9886,31 +9907,31 @@ msgstr ""
 msgid "M-JPEG camera demuxer"
 msgstr "Demuxér formátu M-JPEG camera"
 
-#: modules/demux/mkv.cpp:394
+#: modules/demux/mkv.cpp:395
 msgid "Matroska stream demuxer"
 msgstr "Demuxér streamov typu Matroska"
 
-#: modules/demux/mkv.cpp:401
+#: modules/demux/mkv.cpp:402
 msgid "Ordered chapters"
 msgstr "Usporiadané kapitoly"
 
-#: modules/demux/mkv.cpp:402
+#: modules/demux/mkv.cpp:403
 msgid "Play ordered chapters as specified in the segment."
 msgstr "Prehrať usporiadané kapitoly tak, ako sú špecifikované v segmente."
 
-#: modules/demux/mkv.cpp:405
+#: modules/demux/mkv.cpp:406
 msgid "Chapter codecs"
 msgstr "Kodeky kapitoly"
 
-#: modules/demux/mkv.cpp:406
+#: modules/demux/mkv.cpp:407
 msgid "Use chapter codecs found in the segment."
 msgstr "Použiť pre kapitolu tie kodeky, ktoré sa nájdu v segmente."
 
-#: modules/demux/mkv.cpp:409
+#: modules/demux/mkv.cpp:410
 msgid "Preload Directory"
 msgstr "Načítať priečinok v predstihu"
 
-#: modules/demux/mkv.cpp:410
+#: modules/demux/mkv.cpp:411
 msgid ""
 "Preload matroska files from the same family in the same directory (not good "
 "for broken files)."
@@ -9918,49 +9939,49 @@ msgstr ""
 "Načítať súbory filtra matroska do toho istého priečinka (táto voľba nie je "
 "vhodná, ak sú súbory porušené)."
 
-#: modules/demux/mkv.cpp:413
+#: modules/demux/mkv.cpp:414
 msgid "Seek based on percent not time"
 msgstr "Vyhľadávanie založené na percentách, nie na čase"
 
-#: modules/demux/mkv.cpp:414
+#: modules/demux/mkv.cpp:415
 msgid "Seek based on percent not time."
 msgstr "Vyhľadávanie založené na percentách, nie na čase."
 
-#: modules/demux/mkv.cpp:417
+#: modules/demux/mkv.cpp:418
 msgid "Dummy Elements"
 msgstr "Poškodené elementy"
 
-#: modules/demux/mkv.cpp:418
+#: modules/demux/mkv.cpp:419
 msgid "Read and discard unknown EBML elements (not good for broken files)."
 msgstr ""
 "Načítať a zahodiť neznáme EBML elementy (nepoužívajte túto voľbu pri "
 "poškodených súboroch)."
 
-#: modules/demux/mkv.cpp:3159
+#: modules/demux/mkv.cpp:3163
 msgid "---  DVD Menu"
 msgstr "---  DVD Menu"
 
-#: modules/demux/mkv.cpp:3165
+#: modules/demux/mkv.cpp:3169
 msgid "First Played"
 msgstr "Prvýkrát prehrávané"
 
-#: modules/demux/mkv.cpp:3167
+#: modules/demux/mkv.cpp:3171
 msgid "Video Manager"
 msgstr "Video-manažér"
 
-#: modules/demux/mkv.cpp:3173
+#: modules/demux/mkv.cpp:3177
 msgid "----- Title"
 msgstr "----- Titul"
 
-#: modules/demux/mkv.cpp:4939
+#: modules/demux/mkv.cpp:4943
 msgid "Segment filename"
 msgstr "Názov súboru so segmentom"
 
-#: modules/demux/mkv.cpp:4943
+#: modules/demux/mkv.cpp:4947
 msgid "Muxing application"
 msgstr "Muxovací program"
 
-#: modules/demux/mkv.cpp:4947
+#: modules/demux/mkv.cpp:4951
 msgid "Writing application"
 msgstr "Zapisovací program"
 
@@ -11331,6 +11352,11 @@ msgstr ""
 "Video/Filtre.\n"
 "Ak chcete zmeniť poradie, v ktorom budú filtre aplikované, toto poradie "
 "môžete zmeniť taktiež v Nastaveniach, v sekcii Video / Filtre."
+
+#: modules/gui/macosx/fspanel.m:327
+#, fuzzy
+msgid "(no item is being played)"
+msgstr "%i položiek v playliste"
 
 #: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:634
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:81
@@ -15029,15 +15055,15 @@ msgstr "UDP port na Growl-serveri."
 msgid "Growl Notification Plugin"
 msgstr "Notifikačný prídavný modul Growl"
 
-#: modules/misc/growl.c:172 modules/misc/msn.c:202 modules/misc/notify.c:162
+#: modules/misc/growl.c:172 modules/misc/msn.c:202 modules/misc/notify.c:187
 msgid "(no title)"
 msgstr "(bez názvu)"
 
-#: modules/misc/growl.c:173 modules/misc/msn.c:203 modules/misc/notify.c:163
+#: modules/misc/growl.c:173 modules/misc/msn.c:203 modules/misc/notify.c:188
 msgid "(no artist)"
 msgstr "(bez udania umelca)"
 
-#: modules/misc/growl.c:174 modules/misc/msn.c:204 modules/misc/notify.c:164
+#: modules/misc/growl.c:174 modules/misc/msn.c:204 modules/misc/notify.c:189
 msgid "(no album)"
 msgstr "(bez udania albumu)"
 
@@ -15134,23 +15160,23 @@ msgstr "MSN: Hlásenie o práve prehrávanej stope"
 msgid "UDP/IPv4 network abstraction layer"
 msgstr "Abstraktná vrstva siete UDP/IPv4"
 
-#: modules/misc/network/ipv6.c:81
+#: modules/misc/network/ipv6.c:77
 msgid "UDP/IPv6 network abstraction layer"
 msgstr "Abstraktná vrstva siete UDP/IPv6"
 
-#: modules/misc/notify.c:55
+#: modules/misc/notify.c:60
 msgid "Timeout (ms)"
 msgstr "Časový limit (v ms)"
 
-#: modules/misc/notify.c:56
+#: modules/misc/notify.c:61
 msgid "How long the notification will be displayed "
 msgstr "Určuje, ako dlho sa bude zobrazovať upozornenie"
 
-#: modules/misc/notify.c:61
+#: modules/misc/notify.c:66
 msgid "Notify"
 msgstr "Upozorniť"
 
-#: modules/misc/notify.c:62
+#: modules/misc/notify.c:67
 msgid "LibNotify Notification Plugin"
 msgstr "Prídavný notifikačný modul LibNotify "
 
@@ -15799,15 +15825,15 @@ msgstr "Analyzátor súborov SDP pre protokol UDP"
 msgid "Session Announcements (SAP)"
 msgstr "Oznamovanie relácie (cez SAP)"
 
-#: modules/services_discovery/sap.c:842 modules/services_discovery/sap.c:847
+#: modules/services_discovery/sap.c:840 modules/services_discovery/sap.c:845
 msgid "Session"
 msgstr "Sesia"
 
-#: modules/services_discovery/sap.c:843
+#: modules/services_discovery/sap.c:841
 msgid "Tool"
 msgstr "Nástroj"
 
-#: modules/services_discovery/sap.c:848
+#: modules/services_discovery/sap.c:846
 msgid "User"
 msgstr "Používateľ"
 
@@ -17565,6 +17591,10 @@ msgstr "Farba video-výstupu ASCII-art"
 msgid "DirectFB video output http://www.directfb.org/"
 msgstr "Video-výstup DirectFB, http://www.directfb.org/"
 
+#: modules/video_output/directx/direct3d.c:101
+msgid "DirectX 3D video output"
+msgstr "DirectX 3D video-výstup"
+
 #: modules/video_output/directx/directx.c:127
 msgid "Use hardware YUV->RGB conversions"
 msgstr "Používať hardvérovú konverziu YUV->RGB"
@@ -18600,10 +18630,6 @@ msgstr "Rozhranie XOSD"
 #~ msgid "Enables an interactive Zoom feature"
 #~ msgstr "Zapne funkciu interaktívneho približovania"
 
-#, fuzzy
-#~ msgid "(no item is being played)"
-#~ msgstr "%i položiek v playliste"
-
 #~ msgid "Password:"
 #~ msgstr "Heslo:"
 
@@ -18795,9 +18821,6 @@ msgstr "Rozhranie XOSD"
 
 #~ msgid "Wave video filter"
 #~ msgstr "Video filter Wave"
-
-#~ msgid "DirectX 3D video output"
-#~ msgstr "DirectX 3D video-výstup"
 
 #, fuzzy
 #~ msgid "Connecting..."
