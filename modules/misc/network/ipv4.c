@@ -382,7 +382,12 @@ igmpv2:
             }
          }
     }
+
+#if !defined (__linux__) && !defined (WIN32)
+    else
 #endif
+
+#endif /* !defined SYS_BEOS */
 
     if( rem.sin_addr.s_addr != INADDR_ANY )
     {

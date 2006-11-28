@@ -299,6 +299,10 @@ mldv1:
         }
     }
 
+#if !defined (__linux__) && !defined (WIN32)
+    else
+#endif
+
     if( memcmp (&rem.sin6_addr, &in6addr_any, 16) )
     {
         int ttl;
