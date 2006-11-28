@@ -825,6 +825,17 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
         /* The config file is organized in sections, one per module. Look for
          * the interesting section ( a section is of the form [foo] ) */
         fseek( file, 0L, SEEK_SET );
+
+        /* Look for UTF-8 Byte Order Mark */
+        char * (*convert) (const char *) = FromLocaleDup;
+        char bom[3];
+
+        if ((fread (bom, 1, 3, file) == 3)
+         && (memcmp (bom, "\xEF\xBB\xBF", 3) == 0))
+            convert = strdup;
+        else
+            rewind (file); // no BOM, rewind
+
         while( fgets( line, 1024, file ) )
         {
             if( (line[0] == '[')
@@ -922,7 +933,7 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
                             free( p_item->psz_value );
 
                         p_item->psz_value = *psz_option_value ?
-                            strdup( psz_option_value ) : NULL;
+                            convert( psz_option_value ) : NULL;
 
                         if( p_item->psz_value_saved )
                             free( p_item->psz_value_saved );
@@ -931,7 +942,7 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
                             (p_item->psz_value && p_item->psz_value_orig &&
                              strcmp(p_item->psz_value,p_item->psz_value_orig)))
                             p_item->psz_value_saved = p_item->psz_value ?
-                                strdup( p_item->psz_value ) : 0;
+                                convert( p_item->psz_value ) : 0;
 
                         vlc_mutex_unlock( p_item->p_lock );
 
@@ -1150,7 +1161,7 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
         return -1;
     }
 
-    fprintf( file, "###\n###  " COPYRIGHT_MESSAGE "\n###\n\n"
+    fprintf( file, "\xEF\xBB\xBF###\n###  " COPYRIGHT_MESSAGE "\n###\n\n"
        "###\n### lines begining with a '#' character are comments\n###\n\n" );
 
     /* Look for the selected module, if NULL then save everything */
@@ -1171,7 +1182,7 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
 
         fprintf( file, "[%s]", p_parser->psz_object_name );
         if( p_parser->psz_longname )
-            utf8_fprintf( file, " # %s\n\n", p_parser->psz_longname );
+            fprintf( file, " # %s\n\n", p_parser->psz_longname );
         else
             fprintf( file, "\n\n" );
 
@@ -1207,11 +1218,11 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
             case CONFIG_ITEM_BOOL:
             case CONFIG_ITEM_INTEGER:
                 if( p_item->psz_text )
-                    utf8_fprintf( file, "# %s (%s)\n", p_item->psz_text,
+                    fprintf( file, "# %s (%s)\n", p_item->psz_text,
                              (p_item->i_type == CONFIG_ITEM_BOOL) ?
                              _("boolean") : _("integer") );
                 if( i_value == p_item->i_value_orig )
-                    fprintf( file, "#" );
+                    fputc( '#', file );
                 fprintf( file, "%s=%i\n", p_item->psz_name, i_value );
 
                 p_item->i_value_saved = i_value;
@@ -1219,10 +1230,10 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
 
             case CONFIG_ITEM_KEY:
                 if( p_item->psz_text )
-                    utf8_fprintf( file, "# %s (%s)\n", p_item->psz_text,
+                    fprintf( file, "# %s (%s)\n", p_item->psz_text,
                              _("key") );
                 if( i_value == p_item->i_value_orig )
-                    fprintf( file, "#" );
+                    fputc( '#', file );
                 psz_key = ConfigKeyToString( i_value );
                 fprintf( file, "%s=%s\n", p_item->psz_name,
                          psz_key ? psz_key : "" );
@@ -1233,10 +1244,10 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
 
             case CONFIG_ITEM_FLOAT:
                 if( p_item->psz_text )
-                    utf8_fprintf( file, "# %s (%s)\n", p_item->psz_text,
+                    fprintf( file, "# %s (%s)\n", p_item->psz_text,
                              _("float") );
                 if( f_value == p_item->f_value_orig )
-                    fprintf( file, "#" );
+                    fputc( '#', file );
                 fprintf( file, "%s=%f\n", p_item->psz_name, (double)f_value );
 
                 p_item->f_value_saved = f_value;
@@ -1244,12 +1255,12 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
 
             default:
                 if( p_item->psz_text )
-                    utf8_fprintf( file, "# %s (%s)\n", p_item->psz_text,
+                    fprintf( file, "# %s (%s)\n", p_item->psz_text,
                              _("string") );
                 if( (!psz_value && !p_item->psz_value_orig) ||
                     (psz_value && p_item->psz_value_orig &&
                      !strcmp( psz_value, p_item->psz_value_orig )) )
-                    fprintf( file, "#" );
+                    fputc( '#', file );
                 fprintf( file, "%s=%s\n", p_item->psz_name,
                          psz_value ? psz_value : "" );
 
@@ -1264,7 +1275,7 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
             }
         }
 
-        fprintf( file, "\n" );
+        fputc( '\n', file );
     }
 
     vlc_list_release( p_list );
