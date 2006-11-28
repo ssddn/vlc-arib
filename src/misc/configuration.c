@@ -814,6 +814,9 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
 
     for( i_index = 0; i_index < p_list->i_count; i_index++ )
     {
+        char * (*convert) (const char *) = FromLocaleDup;
+        char bom[3];
+
         p_parser = (module_t *)p_list->p_values[i_index].p_object ;
 
         if( psz_module_name
@@ -827,8 +830,6 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
         fseek( file, 0L, SEEK_SET );
 
         /* Look for UTF-8 Byte Order Mark */
-        char * (*convert) (const char *) = FromLocaleDup;
-        char bom[3];
 
         if ((fread (bom, 1, 3, file) == 3)
          && (memcmp (bom, "\xEF\xBB\xBF", 3) == 0))
