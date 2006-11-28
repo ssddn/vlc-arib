@@ -639,23 +639,18 @@ HRESULT VLCPlugin::getVLC(libvlc_instance_t** pp_libvlc)
 
             if( SysStringLen(_bstr_baseurl) > 0 )
             {
-                DWORD len = INTERNET_MAX_URL_LENGTH;
-                LPOLESTR abs_url = (LPOLESTR)CoTaskMemAlloc(sizeof(OLECHAR)*len);
+                /*
+                ** if the MRL a relative URL, we should end up with an absolute URL
+                */
+                LPWSTR abs_url = CombineURL(_bstr_baseurl, _bstr_mrl);
                 if( NULL != abs_url )
                 {
-                    /*
-                    ** if the MRL a relative URL, we should end up with an absolute URL
-                    */
-                    if( SUCCEEDED(UrlCombineW(_bstr_baseurl, _bstr_mrl, abs_url, &len,
-                                    URL_ESCAPE_UNSAFE|URL_PLUGGABLE_PROTOCOL)) )
-                    {
-                        psz_mrl = CStrFromBSTR(CP_UTF8, abs_url);
-                    }
-                    else
-                    {
-                        psz_mrl = CStrFromBSTR(CP_UTF8, _bstr_mrl);
-                    }
+                    psz_mrl = CStrFromWSTR(CP_UTF8, abs_url, wcslen(abs_url));
                     CoTaskMemFree(abs_url);
+                }
+                else
+                {
+                    psz_mrl = CStrFromBSTR(CP_UTF8, _bstr_mrl);
                 }
             }
             else

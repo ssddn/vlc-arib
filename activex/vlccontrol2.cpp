@@ -1500,23 +1500,18 @@ STDMETHODIMP VLCPlaylist::add(BSTR uri, VARIANT name, VARIANT options, long* ite
         char *psz_uri = NULL;
         if( SysStringLen(_p_instance->getBaseURL()) > 0 )
         {
-            DWORD len = INTERNET_MAX_URL_LENGTH;
-            LPOLESTR abs_url = (LPOLESTR)CoTaskMemAlloc(sizeof(OLECHAR)*len);
+            /*
+            ** if the MRL a relative URL, we should end up with an absolute URL
+            */
+            LPWSTR abs_url = CombineURL(_p_instance->getBaseURL(), uri);
             if( NULL != abs_url )
             {
-                /*
-                ** if the MRL a relative URL, we should end up with an absolute URL
-                */
-                if( SUCCEEDED(UrlCombineW(_p_instance->getBaseURL(), uri, abs_url, &len,
-                                URL_ESCAPE_UNSAFE|URL_PLUGGABLE_PROTOCOL)) )
-                {
-                    psz_uri = CStrFromBSTR(CP_UTF8, abs_url);
-                }
-                else
-                {
-                    psz_uri = CStrFromBSTR(CP_UTF8, uri);
-                }
+                psz_uri = CStrFromWSTR(CP_UTF8, abs_url, wcslen(abs_url));
                 CoTaskMemFree(abs_url);
+            }
+            else
+            {
+                psz_uri = CStrFromBSTR(CP_UTF8, uri);
             }
         }
         else

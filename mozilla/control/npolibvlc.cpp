@@ -1313,10 +1313,11 @@ RuntimeNPObject::InvokeResult LibvlcPlaylistNPObject::invoke(int index, const NP
                     if( s )
                     {
                         url = p_plugin->getAbsoluteURL(s);
-                        delete s;
-                        if( ! url )
-                            // what happened ?
-                            return INVOKERESULT_GENERIC_ERROR;
+                        if( url )
+                            delete s;
+                        else
+                            // problem with combining url, use argument
+                            url = s;
                     }
                     else
                         return INVOKERESULT_OUT_OF_MEMORY;

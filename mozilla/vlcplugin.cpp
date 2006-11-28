@@ -35,6 +35,8 @@
 #include "control/npovlc.h"
 #include "control/npolibvlc.h"
 
+#include <ctype.h>
+
 /*****************************************************************************
  * VlcPlugin constructor and destructor
  *****************************************************************************/
@@ -226,7 +228,8 @@ NPError VlcPlugin::init(int argc, char* const argn[], char* const argv[])
     if( psz_target )
     {
         // get absolute URL from src
-        psz_target = getAbsoluteURL(psz_target);
+        char *psz_absurl = getAbsoluteURL(psz_target);
+        psz_target = psz_absurl ? psz_absurl : strdup(psz_target);
     }
 
     /* assign plugin script root class */
@@ -304,15 +307,17 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
             // validate protocol header
             const char *start = url;
             while( start != end ) {
-                char c = *start | 0x20;
+                char c = tolower(*start);
                 if( (c < 'a') || (c > 'z') )
                     // not valid protocol header, assume relative URL
-                    break;
+                    goto relativeurl;
                 ++start;
             }
             /* we have a protocol header, therefore URL is absolute */
             return strdup(url);
         }
+
+relativeurl:
 
         if( psz_baseURL )
         {
@@ -337,31 +342,36 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
                 /* skip over protocol part  */
                 char *pathstart = strchr(href, ':');
                 char *pathend;
-		if( pathstart )
-		{
-		    if( '/' == *(++pathstart) )
-		    {
-			if( '/' == *(++pathstart) )
-			{
-			    ++pathstart;
-			}
-		    }
-		    /* skip over host part */
-		    pathstart = strchr(pathstart, '/');
-		    pathend = href+baseLen;
-		    if( ! pathstart )
-		    {
-			// no path, add a / past end of url (over '\0')
-			pathstart = pathend;
-			*pathstart = '/';
-		    }
-		}
-		else
-		{
-		    /* baseURL is just a path */
-		    pathstart = href;
-		    pathend = href+baseLen;
-		}
+                if( pathstart )
+                {
+                    if( '/' == *(++pathstart) )
+                    {
+                        if( '/' == *(++pathstart) )
+                        {
+                            ++pathstart;
+                        }
+                    }
+                    /* skip over host part */
+                    pathstart = strchr(pathstart, '/');
+                    pathend = href+baseLen;
+                    if( ! pathstart )
+                    {
+                        // no path, add a / past end of url (over '\0')
+                        pathstart = pathend;
+                        *pathstart = '/';
+                    }
+                }
+                else
+                {
+                    /* baseURL is just a UNIX path */
+                    if( '/' != *href )
+                    {
+                        /* baseURL is not an absolute path */
+                        return NULL;
+                    }
+                    pathstart = href;
+                    pathend = href+baseLen;
+                }
 
                 /* relative URL made of an absolute path ? */
                 if( '/' == *url )
@@ -372,7 +382,8 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
                 }
 
                 /* find last path component and replace it */ 
-                while( '/' != *pathend) --pathend;
+                while( '/' != *pathend)
+                    --pathend;
 
                 /*
                 ** if relative url path starts with one or more '../',
@@ -385,17 +396,42 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
                     if( '.' != *p )
                         break;
                     ++p;
+                    if( '\0' == *p  )
+                    {
+                        /* relative url is just '.' */
+                        url = p;
+                        break;
+                    }
+                    if( '/' == *p  )
+                    {
+                        /* relative url starts with './' */
+                        url = ++p;
+                        continue;
+                    }
                     if( '.' != *p ) 
                         break;
-                    ++p;
-                    if( '/' != *p ) 
-                        break;
-                    ++p;
+                    if( '\0' == *p )
+                    {
+                        /* relative url is '..' */
+                    }
+                    else
+                    {
+                        if( '/' != *p ) 
+                            break;
+                        /* relative url starts with '../' */
+                        ++p;
+                    }
                     url = p;
-                    while( '/' != *pathend ) --pathend;
+                    do
+                    {
+                        --pathend;
+                    }
+                    while( '/' != *pathend );
                 }
+                /* skip over '/' separator */
+                ++pathend;
                 /* concatenate remaining base URL and relative URL */
-                strcpy(pathend+1, url);
+                strcpy(pathend, url);
             }
             return href;
         }
