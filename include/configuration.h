@@ -154,7 +154,6 @@ struct module_config_t
     vlc_mutex_t *p_lock;            /* Lock to use when modifying the config */
     vlc_bool_t   b_dirty;          /* Dirty flag to indicate a config change */
     vlc_bool_t   b_advanced;          /* Flag to indicate an advanced option */
-    vlc_bool_t   b_internal;   /* Flag to indicate option is not to be shown */
 
     /* Original option values */
     char        *psz_value_orig;
@@ -166,7 +165,6 @@ struct module_config_t
     int          i_value_saved;
     float        f_value_saved;
     vlc_bool_t   b_autosave;       /* Config will be auto-saved at exit time */
-    vlc_bool_t   b_unsaveable;       /* confg should be saved*/
 };
 
 /*****************************************************************************
@@ -397,12 +395,5 @@ int config_AutoSaveConfigFile( vlc_object_t * );
       action_text; \
     p_config[i_config].i_action++;
 
-#define change_internal() \
-    p_config[i_config].b_internal = VLC_TRUE;
-
 #define change_autosave() \
     p_config[i_config].b_autosave = VLC_TRUE;
-
-#define change_unsaveable() \
-    p_config[i_config].b_unsaveable = VLC_TRUE;
-
