@@ -12,13 +12,12 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 18:50+0000\n"
-"PO-Revision-Date: 2006-11-25 17:24+0100\n"
+"PO-Revision-Date: 2006-11-29 19:46+0100\n"
 "Last-Translator: Christophe Mutricy <xtophe@videolan.org>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -1292,13 +1291,14 @@ msgstr ""
 
 #: src/libvlc.h:117
 msgid "Interface interaction"
-msgstr ""
+msgstr "Interaction avec l'utilisateur"
 
 #: src/libvlc.h:119
+#, fuzzy
 msgid ""
 "When this is enabled, the interface will show a dialog box each time some "
 "user input is required."
-msgstr ""
+msgstr "Quand cette option est activée, l'interface affichera une boite de dialogue chaque fois que l'utilisateur doit entrer des données."
 
 #: src/libvlc.h:129
 msgid ""
@@ -1755,11 +1755,11 @@ msgstr "Afficher une prévisualisation de la capture d'écran sur la vidéo."
 
 #: src/libvlc.h:322
 msgid "Use sequential numbers instead of timestamps"
-msgstr ""
+msgstr "Utiliser une numérotation séquentielle au lieu de la date et l'heure"
 
 #: src/libvlc.h:324
 msgid "Use sequential numbers instead of timestamps for snapshot numbering"
-msgstr ""
+msgstr "Utiliser une numérotation séquentielle au lieu de la date et l'heure pour enregistrer les captures d'écran"
 
 #: src/libvlc.h:326
 msgid "Video cropping"
@@ -2871,11 +2871,11 @@ msgstr ""
 
 #: src/libvlc.h:863
 msgid "VLC is started from file association"
-msgstr ""
+msgstr "VLC a été demarré par l'ouverture d'un fichier associé"
 
 #: src/libvlc.h:865
 msgid "Tell VLC that it is being launched due to a file association in the OS"
-msgstr ""
+msgstr "Informe VLC qu'il a été lancé à cause d'une association à un type de fichier par le système d'exploitation"
 
 #: src/libvlc.h:868
 msgid "One instance when started from file"
@@ -5422,7 +5422,7 @@ msgstr "Taille du cache pour les flux DV, en millisecondes."
 
 #: modules/access/dv.c:74
 msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr ""
+msgstr "Entrée Digital Video (Firewire/ieee1394)"
 
 #: modules/access/dv.c:75
 msgid "dv"
@@ -5600,7 +5600,7 @@ msgstr ""
 
 #: modules/access_filter/dump.c:43
 msgid "Maximum size of temporary file (Mb)"
-msgstr ""
+msgstr "Taille maximum d'un fichier temporaire (Mo)"
 
 #: modules/access_filter/dump.c:44
 msgid ""
@@ -9273,7 +9273,7 @@ msgstr ""
 
 #: modules/control/rc.c:930
 msgid "| is_playing . .  1 if a stream plays, 0 otherwise"
-msgstr ""
+msgstr "| is_playing . .  1 si un élément est joué, 0 sinon"
 
 #: modules/control/rc.c:931
 #, fuzzy
@@ -10002,7 +10002,7 @@ msgstr "Démarrer automatiquement la playlist lorsqu'elle est chargée.\n"
 
 #: modules/demux/playlist/playlist.c:41
 msgid "Show shoutcast adult content"
-msgstr ""
+msgstr "Afficher le contenu pour adultes sur shoutcast"
 
 #: modules/demux/playlist/playlist.c:42
 msgid "Show NC17 rated video streams when using shoutcast video playlists."
@@ -10151,7 +10151,7 @@ msgstr "Démultiplexeur Kasenna MediaBase"
 
 #: modules/demux/subtitle.c:47
 msgid "Apply a delay to all subtitles (in 1/10s, eg 100 means 10s)."
-msgstr ""
+msgstr "Ajouter un délai à tous les sous-titres (en 1/10s, 100 = 10 secondes)."
 
 #: modules/demux/subtitle.c:49
 #, fuzzy
@@ -10167,7 +10167,7 @@ msgid ""
 "Force the subtiles format. Valid values are : \"microdvd\", \"subrip\",  "
 "\"ssa1\", \"ssa2-4\", \"ass\", \"vplayer\" \"sami\", \"dvdsubtitle\" and "
 "\"auto\" (meaning autodetection, this should always work)."
-msgstr ""
+msgstr "Force le format des sous-titres. Les valeurs valides sont : \"microdvd\", \"subrip\", \"ssa1\", \"ssa2-4\", \"ass\", \"vplayer\", \"sami\", \"dvdsubtitle\" et \"auto\" (autodetection du format)."
 
 #: modules/demux/subtitle.c:64
 msgid "Text subtitles parser"
@@ -10306,11 +10306,11 @@ msgstr "Aléatoire Off"
 
 #: modules/demux/ts.c:3145 modules/demux/ts.c:3179
 msgid "hearing impaired"
-msgstr ""
+msgstr "Malentendants"
 
 #: modules/demux/ts.c:3149 modules/demux/ts.c:3183
 msgid "visual impaired commentary"
-msgstr ""
+msgstr "Commentaire pour les malvoyants"
 
 #: modules/demux/tta.c:40
 msgid "TTA demuxer"
@@ -11826,7 +11826,7 @@ msgstr "M3U étendu"
 
 #: modules/gui/macosx/playlist.m:504
 msgid "XML Shareable Playlist Format (XSPF)"
-msgstr ""
+msgstr "XSPF (Format de Liste de Lecture échangeable XML)"
 
 #: modules/gui/macosx/playlist.m:534 modules/gui/macosx/playlist.m:1535
 #, c-format
@@ -13225,7 +13225,7 @@ msgstr "Effacer"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:169
 msgid "Adds a bookmark at the current position in the stream"
-msgstr ""
+msgstr "Ajouter un marque page à la position courante du flux"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:170
 #, fuzzy
@@ -13239,7 +13239,7 @@ msgstr "Liste des signets pour un flux"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:172
 msgid "Edit the properties of a bookmark"
-msgstr ""
+msgstr "Éditer les propriétés d'un marque page"
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:173
 #, fuzzy
@@ -13283,7 +13283,7 @@ msgstr "L’entrée a changé "
 #: modules/gui/wxwidgets/dialogs.cpp:433
 #: modules/gui/wxwidgets/dialogs/open.cpp:1264
 msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr ""
+msgstr "Tous les fichiers (*.*)|*|Fichiers Audio (*.mp3, *.ogg, etc)|"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
@@ -14477,7 +14477,7 @@ msgstr "Module d’interface wxWidgets"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:165
 msgid "last config"
-msgstr ""
+msgstr "Dernière configuration"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:170
 msgid "wxWidgets dialogs provider"
@@ -14991,16 +14991,15 @@ msgstr "Délai d'expiration"
 
 #: modules/misc/notify.c:61
 msgid "How long the notification will be displayed "
-msgstr ""
+msgstr "Combien de temps la notification sera affichée"
 
 #: modules/misc/notify.c:66
 msgid "Notify"
-msgstr ""
+msgstr "Notifications"
 
 #: modules/misc/notify.c:67
-#, fuzzy
 msgid "LibNotify Notification Plugin"
-msgstr "Plugin d'annonce Growl"
+msgstr "Plugin de notifications libnotify"
 
 #: modules/misc/playlist/export.c:44
 msgid "M3U playlist exporter"
@@ -17375,7 +17374,6 @@ msgid "DirectFB video output http://www.directfb.org/"
 msgstr "Sorties vidéos DirectFB http://www.directfb.org/"
 
 #: modules/video_output/directx/direct3d.c:101
-#, fuzzy
 msgid "DirectX 3D video output"
 msgstr "Sortie vidéo DirectX"
 
