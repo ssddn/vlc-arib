@@ -1161,6 +1161,15 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
         vlc_mutex_unlock( &p_this->p_vlc->config_lock );
         return -1;
     }
+    
+#ifdef WIN32
+    /* Ugly kludge to not save --started-from-file (and not break the ABI). 
+     * See [17898] and   #871 */
+    /* Just use the first mofule found*/
+    config_PutInt( (module_t *)p_list->p_values[0].p_object, 
+                   "started-from-file", 0 );
+
+#endif
 
     fprintf( file, "\xEF\xBB\xBF###\n###  " COPYRIGHT_MESSAGE "\n###\n\n"
        "###\n### lines begining with a '#' character are comments\n###\n\n" );
