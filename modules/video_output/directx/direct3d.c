@@ -155,6 +155,11 @@ static int OpenVideo( vlc_object_t *p_this )
     SetRectEmpty( &p_vout->p_sys->rect_display );
     SetRectEmpty( &p_vout->p_sys->rect_parent );
 
+    var_Create( p_vout, "directx-hw-yuv", VLC_VAR_BOOL | VLC_VAR_DOINHERIT );
+    var_Create( p_vout, "directx-device", VLC_VAR_STRING | VLC_VAR_DOINHERIT );
+    var_Create( p_vout, "video-title", VLC_VAR_STRING | VLC_VAR_DOINHERIT );
+    var_Create( p_vout, "disable-screensaver", VLC_VAR_BOOL | VLC_VAR_DOINHERIT );
+
     p_vout->p_sys->b_cursor_hidden = 0;
     p_vout->p_sys->i_lastmoved = mdate();
 
@@ -285,6 +290,10 @@ static void CloseVideo( vlc_object_t *p_this )
 static int Init( vout_thread_t *p_vout )
 {
     int i_ret;
+    vlc_value_t val;
+
+    var_Get( p_vout, "directx-hw-yuv", &val );
+    p_vout->p_sys->b_hw_yuv = val.b_bool;
 
     /* Initialise Direct3D */
     if( VLC_SUCCESS != Direct3DVoutOpen( p_vout ) )
@@ -796,34 +805,41 @@ static D3DFORMAT Direct3DVoutSelectFormat( vout_thread_t *p_vout, D3DFORMAT targ
 
 D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT target)
 {
+    if( p_vout->p_sys->b_hw_yuv )
+    {
+        switch( i_chroma )
+        {
+            case VLC_FOURCC('U','Y','V','Y'):
+            case VLC_FOURCC('U','Y','N','V'):
+            case VLC_FOURCC('Y','4','2','2'):
+            {
+                static const D3DFORMAT formats[] =
+                    { D3DFMT_UYVY, D3DFMT_YUY2, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
+                return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
+            }
+            case VLC_FOURCC('I','4','2','0'):
+            case VLC_FOURCC('I','4','2','2'):
+            case VLC_FOURCC('Y','V','1','2'):
+            {
+                /* typically 3D textures don't support planar format
+                ** fallback to packed version and use CPU for the conversion
+                */
+                static const D3DFORMAT formats[] = 
+                    { D3DFMT_YUY2, D3DFMT_UYVY, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
+                return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
+            }
+            case VLC_FOURCC('Y','U','Y','2'):
+            case VLC_FOURCC('Y','U','N','V'):
+            {
+                static const D3DFORMAT formats[] = 
+                    { D3DFMT_YUY2, D3DFMT_UYVY, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
+                return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
+            }
+        }
+    }
+
     switch( i_chroma )
     {
-        case VLC_FOURCC('U','Y','V','Y'):
-        case VLC_FOURCC('U','Y','N','V'):
-        case VLC_FOURCC('Y','4','2','2'):
-        {
-            static const D3DFORMAT formats[] =
-                { D3DFMT_UYVY, D3DFMT_YUY2, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
-            return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
-        }
-        case VLC_FOURCC('I','4','2','0'):
-        case VLC_FOURCC('I','4','2','2'):
-        case VLC_FOURCC('Y','V','1','2'):
-        {
-            /* typically 3D textures don't support planar format
-            ** fallback to packed version and use CPU for the conversion
-            */
-            static const D3DFORMAT formats[] = 
-                { D3DFMT_YUY2, D3DFMT_UYVY, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
-            return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
-        }
-        case VLC_FOURCC('Y','U','Y','2'):
-        case VLC_FOURCC('Y','U','N','V'):
-        {
-            static const D3DFORMAT formats[] = 
-                { D3DFMT_YUY2, D3DFMT_UYVY, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
-            return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
-        }
         case VLC_FOURCC('R', 'V', '1', '5'):
         {
             static const D3DFORMAT formats[] = 
@@ -849,7 +865,18 @@ D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT 
             return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
         }
         default:
-            ;
+        {
+            /* use display default format */
+            LPDIRECT3D9 p_d3dobj = p_vout->p_sys->p_d3dobj;
+            D3DDISPLAYMODE d3ddm;
+
+            HRESULT hr = IDirect3D9_GetAdapterDisplayMode(p_d3dobj, D3DADAPTER_DEFAULT, &d3ddm );
+            if( SUCCEEDED(hr))
+            {
+                msg_Dbg( p_vout, "defaulting to adpater pixel format");
+                return Direct3DVoutSelectFormat(p_vout, target, &d3ddm.Format, 1);
+            }
+        }
     }
     return D3DFMT_UNKNOWN;
 }
@@ -863,6 +890,9 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
             break;
         case D3DFMT_UYVY:
             p_vout->output.i_chroma = VLC_FOURCC('U', 'Y', 'V', 'Y');
+            break;
+        case D3DFMT_R8G8B8:
+            p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '2', '4');
             break;
         case D3DFMT_X8R8G8B8:
         case D3DFMT_A8R8G8B8:
