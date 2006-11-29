@@ -68,7 +68,7 @@ BSTR BSTRFromCStr(UINT codePage, LPCSTR s)
 
             ZeroMemory(wideStr, wideLen*sizeof(WCHAR));
             MultiByteToWideChar(codePage, 0, s, -1, wideStr, wideLen);
-            bstr = SysAllocStringLen(wideStr, wideLen);
+            bstr = SysAllocStringLen(wideStr, wideLen-1);
             CoTaskMemFree(wideStr);
 
             return bstr;
