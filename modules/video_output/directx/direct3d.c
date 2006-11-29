@@ -873,8 +873,26 @@ D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT 
             HRESULT hr = IDirect3D9_GetAdapterDisplayMode(p_d3dobj, D3DADAPTER_DEFAULT, &d3ddm );
             if( SUCCEEDED(hr))
             {
-                msg_Dbg( p_vout, "defaulting to adpater pixel format");
-                return Direct3DVoutSelectFormat(p_vout, target, &d3ddm.Format, 1);
+                /*
+                ** some professional cards could use some advanced pixel format as default, 
+                ** make sure we stick with chromas that we can handle internally
+                */
+                switch( d3ddm.Format )
+                {
+                    case D3DFMT_R8G8B8:
+                    case D3DFMT_X8R8G8B8:
+                    case D3DFMT_A8R8G8B8:
+                        msg_Dbg( p_vout, "defaulting to adpater pixel format");
+                        return Direct3DVoutSelectFormat(p_vout, target, &d3ddm.Format, 1);
+                    default:
+                    {
+                        /* if we fall here, that probably means that we need to render some YUV format */
+                        static const D3DFORMAT formats[] = 
+                            { D3DFMT_R8G8B8, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8 };
+                        msg_Dbg( p_vout, "defaulting to built-in pixel format");
+                        return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
+                    }
+                }
             }
         }
     }
