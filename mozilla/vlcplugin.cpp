@@ -410,6 +410,7 @@ relativeurl:
                     }
                     if( '.' != *p ) 
                         break;
+                    ++p;
                     if( '\0' == *p )
                     {
                         /* relative url is '..' */
