@@ -932,6 +932,9 @@ endif
 ifdef HAVE_WIN32
 	(cd $@; patch -p 0 < ../Patches/ffmpeg-alignment.patch)
 endif
+ifdef HAVE_BEOS
+	(cd $@; patch -p0 < ../Patches/ffmpeg-alignment.patch)
+endif
 
 ffmpeg-$(FFMPEG_VERSION).tar.gz:
 	$(WGET) $(FFMPEG_URL)
