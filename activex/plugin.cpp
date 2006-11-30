@@ -302,6 +302,7 @@ VLCPlugin::~VLCPlugin()
         _p_pict->Release();
 
     SysFreeString(_bstr_mrl);
+    SysFreeString(_bstr_baseurl);
 
     _p_class->Release();
 };
