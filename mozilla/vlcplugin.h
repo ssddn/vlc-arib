@@ -119,12 +119,10 @@ private:
 /*******************************************************************************
  * Plugin properties.
  ******************************************************************************/
-#define PLUGIN_NAME         "VLC multimedia plugin"
+#define PLUGIN_NAME         "VLC Multimedia Plugin"
 #define PLUGIN_DESCRIPTION \
-    "VLC multimedia plugin <br>" \
-    " <br>" \
-    "version %s <br>" \
-    "VideoLAN WWW: <a href=\"http://www.videolan.org/\">http://www.videolan.org/</a>"
+    "Version %s, Copyright 1996-2006 The VideoLAN Team" \
+    "<br><a href=\"http://www.videolan.org/\">http://www.videolan.org/</a>"
 
 #define PLUGIN_MIMETYPES \
     /* MPEG-1 and MPEG-2 */ \
@@ -143,20 +141,26 @@ private:
     "video/x-msvideo:avi:AVI video;" \
     /* QuickTime */ \
     "video/quicktime:mov,qt:QuickTime video;" \
-    /* Ogg */ \
+    /* OGG */ \
     "application/x-ogg:ogg:Ogg stream;" \
     "application/ogg:ogg:Ogg stream;" \
-    /* explicit plugin call */ \
-    "application/x-vlc-plugin::VLC plugin;" \
-    /* windows media */ \
+    /* VLC */ \
+    "application/x-vlc-plugin:vlc:VLC plugin;" \
+    /* Windows Media */ \
     "video/x-ms-asf-plugin:asf,asx:Windows Media Video;" \
     "video/x-ms-asf:asf,asx:Windows Media Video;" \
     "application/x-mplayer2::Windows Media;" \
     "video/x-ms-wmv:wmv:Windows Media;" \
-    /* Google VLC mime */ \
-    "application/x-google-vlc-plugin::Google VLC plugin" \
-    /* Misc */ \
-    "audio/wav::WAV audio" \
-    "audio/x-wav::WAV audio" \
+    /* Google VLC */ \
+    "application/x-google-vlc-plugin::Google VLC plugin;" \
+    /* WAV audio */ \
+    "audio/wav:wav:WAV audio;" \
+    "audio/x-wav:wav:WAV audio;" \
+    /* 3GPP */ \
+    "audio/3gpp:3gp,3gpp:3GPP audio;" \
+    "video/3gpp:3gp,3gpp:3GPP video;" \
+    /* 3GPP2 */ \
+    "audio/3gpp2:3g2,3gpp2:3GPP2 audio;" \
+    "video/3gpp2:3g2,3gpp2:3GPP2 video;" \
 
 #endif
