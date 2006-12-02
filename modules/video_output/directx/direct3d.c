@@ -163,6 +163,9 @@ static int OpenVideo( vlc_object_t *p_this )
     p_vout->p_sys->b_cursor_hidden = 0;
     p_vout->p_sys->i_lastmoved = mdate();
 
+    var_Create( p_vout, "video-title", VLC_VAR_STRING | VLC_VAR_DOINHERIT );
+    var_Create( p_vout, "disable-screensaver", VLC_VAR_BOOL | VLC_VAR_DOINHERIT );
+
     /* Set main window's size */
     p_vout->p_sys->i_window_width = p_vout->i_window_width;
     p_vout->p_sys->i_window_height = p_vout->i_window_height;
@@ -318,6 +321,9 @@ static int Init( vout_thread_t *p_vout )
         msg_Err(p_vout, "Direct3D picture pool initialization failed !");
         return i_ret;
     }
+
+    /* Change the window title bar text */
+    PostMessage( p_vout->p_sys->hwnd, WM_VLC_CHANGE_TEXT, 0, 0 );
 
     p_vout->fmt_out.i_chroma = p_vout->output.i_chroma;
     return VLC_SUCCESS;
@@ -914,60 +920,70 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
             break;
         case D3DFMT_X8R8G8B8:
         case D3DFMT_A8R8G8B8:
-/*
-** FIXME: some custom masks are not handled properly in rgb_yuv converter,
-**        ARGB do NOT work !
-*/
             p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '3', '2');
-            p_vout->output.i_rmask = 0x000000ff;
+            p_vout->output.i_rmask = 0x00ff0000;
             p_vout->output.i_gmask = 0x0000ff00;
-            p_vout->output.i_bmask = 0x00ff0000;
-            p_vout->output.i_lrshift = 8;
+            p_vout->output.i_bmask = 0x000000ff;
+#       if defined( WORDS_BIGENDIAN )
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 24;
+            p_vout->output.i_rgshift = 0;
             p_vout->output.i_lgshift = 16;
+            p_vout->output.i_rbshift = 0;
+            p_vout->output.i_lbshift = 8;
+#       else
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 8;
+            p_vout->output.i_rgshift = 0;
+            p_vout->output.i_lgshift = 16;
+            p_vout->output.i_rbshift = 0;
             p_vout->output.i_lbshift = 24;
+#       endif
             break;
         case D3DFMT_R5G6B5:
             p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '1', '6');
-#       if defined( WORDS_BIGENDIAN )
             p_vout->output.i_rmask = (0x1fL)<<11;
             p_vout->output.i_gmask = (0x3fL)<<5;
             p_vout->output.i_bmask = (0x1fL)<<0;
-            //p_vout->output.i_rshift = 11;
-            //p_vout->output.i_gshift = 5;
-            //p_vout->output.i_bshift = 0;
+#       if defined( WORDS_BIGENDIAN )
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 11;
+            p_vout->output.i_rgshift = 0;
+            p_vout->output.i_lgshift = 5;
+            p_vout->output.i_rbshift = 0;
+            p_vout->output.i_lbshift = 0;
 #       else
-/*
-** FIXME: in little endian mode, following masking is not byte aligned,
-**        therefore green bits will not be sequentially merged !
-*/
-            p_vout->output.i_rmask = (0x1fL)<<0;
-            p_vout->output.i_gmask = (0x3fL)<<5;
-            p_vout->output.i_bmask = (0x1fL)<<11;
-            //p_vout->output.i_rshift = 0;
-            //p_vout->output.i_gshift = 5;
-            //p_vout->output.i_bshift = 11;
+	    /* FIXME: since components are not byte aligned,
+	              there is not chance that this will work */
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 0;
+            p_vout->output.i_rgshift = 0;
+            p_vout->output.i_lgshift = 5;
+            p_vout->output.i_rbshift = 0;
+            p_vout->output.i_lbshift = 11;
 #       endif
             break;
         case D3DFMT_X1R5G5B5:
             p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '1', '5');
-#       if defined( WORDS_BIGENDIAN )
             p_vout->output.i_rmask = (0x1fL)<<10;
             p_vout->output.i_gmask = (0x1fL)<<5;
             p_vout->output.i_bmask = (0x1fL)<<0;
-            //p_vout->output.i_rshift = 10;
-            //p_vout->output.i_gshift = 5;
-            //p_vout->output.i_bshift = 0;
+#       if defined( WORDS_BIGENDIAN )
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 10;
+            p_vout->output.i_rgshift = 0;
+            p_vout->output.i_lgshift = 5;
+            p_vout->output.i_rbshift = 0;
+            p_vout->output.i_lbshift = 0;
 #       else
-/*
-** FIXME: in little endian mode, following masking is not byte aligned,
-**        therefore green bits will not be sequentially merged !
-*/
-            p_vout->output.i_rmask = (0x1fL)<<1;
-            p_vout->output.i_gmask = (0x1fL)<<6;
-            p_vout->output.i_bmask = (0x1fL)<<11;
-            //p_vout->output.i_rshift = 1;
-            //p_vout->output.i_gshift = 5;
-            //p_vout->output.i_bshift = 11;
+	    /* FIXME: since components are not byte aligned,
+	              there is not chance that this will work */
+            p_vout->output.i_rrshift = 0;
+            p_vout->output.i_lrshift = 1;
+            p_vout->output.i_rgshift = 0;
+            p_vout->output.i_lgshift = 5;
+            p_vout->output.i_rbshift = 0;
+            p_vout->output.i_lbshift = 11;
 #       endif
             break;
         default:
