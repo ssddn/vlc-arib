@@ -1190,7 +1190,7 @@ CLEAN_PKG += libdca
 
 ifdef SVN
 x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 501 x264
+	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 604 x264
 ifdef HAVE_WIN32
 	(cd x264; patch -p 0 < ../Patches/x264-svn-win32.patch )
 endif
@@ -1208,16 +1208,8 @@ else
 endif
 endif
 
-ifeq ($(HOST),i686-apple-darwin8)
-.x264: x264 .nasm
-else
 .x264: x264
-endif
-ifeq ($(HOST),i686-apple-darwin8)
-	(cd $<; ./configure $(X264CONF) --prefix="$(PREFIX)" && patch -p0 <../Patches/x264-osx-intel.patch && make && make install)
-else
 	(cd $<; ./configure $(X264CONF) --prefix="$(PREFIX)" && make && make install)
-endif
 	touch $@
 
 CLEAN_FILE += .x264
