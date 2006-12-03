@@ -1050,19 +1050,9 @@ static void ChangeVFiltersString( intf_thread_t *p_intf,
     vout_thread_t *p_vout;
     char *psz_parser, *psz_string;
 
-    /* first, look if a vout-filter has been set at runtime */
-    p_vout = (vout_thread_t *)vlc_object_find( p_intf, VLC_OBJECT_VOUT,
-                                              FIND_ANYWHERE ); 
-    psz_string = ( p_vout ) ?
-            var_GetString( p_vout, "vout-filter" ) : strdup("");
+    psz_string = config_GetPsz( p_intf, "vout-filter" );
 
-    /* else, look if vout-filter has been set in the config */
-    if( !*psz_string )
-    {
-        free( psz_string );
-        psz_string = config_GetPsz( p_intf, "vout-filter" );
-        if( !psz_string ) psz_string = strdup("");
-    }
+    if( !psz_string ) psz_string = strdup("");
 
     psz_parser = strstr( psz_string, psz_name );
 
@@ -1077,7 +1067,6 @@ static void ChangeVFiltersString( intf_thread_t *p_intf,
         }
         else
         {
-            if( p_vout ) vlc_object_release( p_vout );
             return;
         }
     }
@@ -1097,7 +1086,6 @@ static void ChangeVFiltersString( intf_thread_t *p_intf,
         }
         else
         {
-            if( p_vout ) vlc_object_release( p_vout );
             free( psz_string );
             return;
         }
@@ -1106,6 +1094,8 @@ static void ChangeVFiltersString( intf_thread_t *p_intf,
     config_PutPsz( p_intf, "vout-filter", psz_string );
 
     /* Try to set on the fly */
+    p_vout = (vout_thread_t *)vlc_object_find( p_intf, VLC_OBJECT_VOUT,
+                                              FIND_ANYWHERE );
     if( p_vout )
     {
         var_SetString( p_vout, "vout-filter", psz_string );
