@@ -67,6 +67,7 @@ static int FindLanguage( const char * psz_lang )
         "Slovak", "sk",
         "Slovenian", "sl",
         "Swedish", "sv",
+	"Thai", "th",
         "Turkish", "tr",
         "Simplified Chinese", "zh_CN",
         "Chinese Traditional", "zh_TW",
