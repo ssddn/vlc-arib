@@ -655,7 +655,10 @@ Section "Uninstall" SEC91
     ReadRegStr $R2 HKLM "SOFTWARE\Mozilla\$R0\Extensions" "Plugins"
     StrCmp $R2 "" "${Index}-Loop" ""
 
-    Delete "$R2\npvlc.dll"
+    ; old files that may be lying around
+    Delete /REBOOTOK "$R2\npvlc.dll"
+    Delete /REBOOTOK "$R2\libvlc.dll"
+    Delete /REBOOTOK "$R2\vlcintf.xpt"
     Goto "${Index}-Loop"
 
   "${Index}-End:"
