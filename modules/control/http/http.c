@@ -125,8 +125,8 @@ static int Open( vlc_object_t *p_this )
     int           i_port       = 0;
     char          *psz_src;
 
-    var_Create(p_intf->p_libvlc, "http-host", VLC_VAR_STRING );
-    psz_address=var_GetString(p_intf->p_libvlc, "http-host");
+    var_Create( p_intf->p_libvlc, "http-host", VLC_VAR_STRING );
+    psz_address = var_GetString( p_intf->p_libvlc, "http-host");
     if( !psz_address || !*psz_address )
     {
         psz_address = config_GetPsz( p_intf, "http-host" );
@@ -148,9 +148,7 @@ static int Open( vlc_object_t *p_this )
     {
         return( VLC_ENOMEM );
     }
-    p_sys->p_playlist = NULL;
-    p_sys->p_input    = NULL;
-    p_sys->p_vlm      = NULL;
+    memset( p_intf->p_sys, 0, sizeof( intf_sys_t ) );
     p_sys->psz_address = psz_address;
     p_sys->i_port     = i_port;
 
