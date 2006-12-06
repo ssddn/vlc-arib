@@ -438,7 +438,7 @@ Section "Desktop Shortcut" SEC02b
 SectionEnd
 
 Section /o "Mozilla plugin" SEC03
-  SectionIn 1 3
+  SectionIn 3
 
   SetOutPath "$INSTDIR"
   !insertmacro OpenUninstallLog
@@ -655,7 +655,7 @@ Section "Uninstall" SEC91
     ReadRegStr $R2 HKLM "SOFTWARE\Mozilla\$R0\Extensions" "Plugins"
     StrCmp $R2 "" "${Index}-Loop" ""
 
-    ; old files that may be lying around
+    ; old files (0.8.5 and before) that may be lying around
     Delete /REBOOTOK "$R2\npvlc.dll"
     Delete /REBOOTOK "$R2\libvlc.dll"
     Delete /REBOOTOK "$R2\vlcintf.xpt"
