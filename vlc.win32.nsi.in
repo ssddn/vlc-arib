@@ -36,7 +36,6 @@ CRCCheck on
 InstType "Recommended"
 InstType "Minimum"
 InstType "Full"
-InstType "Recommended"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; NSIS Modern User Interface configuration ;
@@ -197,7 +196,7 @@ NoOwn:
 FunctionEnd
 
 !macro RegisterExtensionSection EXT
-  Section /o ${EXT}
+  Section ${EXT}
     SectionIn 1 3
     Push $R0
     StrCpy $R0 ${EXT}
@@ -239,7 +238,6 @@ FunctionEnd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 !macro delprefs
-  SectionIn 1 3
   StrCpy $0 0
   !define Index 'Line${__LINE__}'
   "${Index}-Loop:"
@@ -480,7 +478,7 @@ Section /o "Mozilla plugin" SEC03
 
 SectionEnd
 
-Section /o "ActiveX plugin" SEC04
+Section "ActiveX plugin" SEC04
   SectionIn 1 3
   SetOutPath "$INSTDIR"
   !insertmacro OpenUninstallLog
@@ -711,7 +709,6 @@ Section "Uninstall" SEC91
 SectionEnd
 
 Section /o "un.Delete preferences and cache" SEC92
-  SectionIn 1 3
   !insertmacro delprefs
 SectionEnd
 
