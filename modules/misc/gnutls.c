@@ -181,6 +181,30 @@ _get_Bool( vlc_object_t *p_this, const char *var )
 #define get_Bool( a, b ) _get_Bool( (vlc_object_t *)(a), (b) )
 
 
+static int gnutls_Error (vlc_object_t *obj, int val)
+{
+    switch (val)
+    {
+        case GNUTLS_E_AGAIN:
+            errno = EAGAIN;
+            break;
+
+        case GNUTLS_E_INTERRUPTED:
+            errno = EINTR;
+            break;
+
+        default:
+            msg_Err (obj, "%s", gnutls_strerror (val));
+#ifdef DEBUG
+            if (!gnutls_error_is_fatal (val))
+                msg_Err (obj, "Error above should be handled");
+#endif
+            errno = ECONNRESET;
+    }
+    return -1;
+}
+
+
 /**
  * Sends data through a TLS session.
  */
@@ -193,8 +217,7 @@ gnutls_Send( void *p_session, const void *buf, int i_length )
     p_sys = (tls_session_sys_t *)(((tls_session_t *)p_session)->p_sys);
 
     val = gnutls_record_send( p_sys->session, buf, i_length );
-    /* TODO: handle fatal error */
-    return val < 0 ? -1 : val;
+    return (val < 0) ? gnutls_Error ((vlc_object_t *)p_session, val) : val;
 }
 
 
@@ -210,8 +233,7 @@ gnutls_Recv( void *p_session, void *buf, int i_length )
     p_sys = (tls_session_sys_t *)(((tls_session_t *)p_session)->p_sys);
 
     val = gnutls_record_recv( p_sys->session, buf, i_length );
-    /* TODO: handle fatal error */
-    return val < 0 ? -1 : val;
+    return (val < 0) ? gnutls_Error ((vlc_object_t *)p_session, val) : val;
 }
 
 
@@ -244,7 +266,7 @@ gnutls_ContinueHandshake( tls_session_t *p_session)
 #ifdef WIN32
         msg_Dbg( p_session, "Winsock error %d", WSAGetLastError( ) );
 #endif
-        msg_Err( p_session, "TLS handshake failed: %s",
+        msg_Err( p_session, "TLS handshake error: %s",
                  gnutls_strerror( val ) );
         p_session->pf_close( p_session );
         return -1;
