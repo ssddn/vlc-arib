@@ -199,7 +199,11 @@ static int gnutls_Error (vlc_object_t *obj, int val)
             if (!gnutls_error_is_fatal (val))
                 msg_Err (obj, "Error above should be handled");
 #endif
+#if defined(WIN32)
+            WSASetLastError(WSAECONNRESET);
+#else
             errno = ECONNRESET;
+#endif
     }
     return -1;
 }
