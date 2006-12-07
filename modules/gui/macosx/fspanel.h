@@ -30,6 +30,7 @@
     BOOL b_keptVisible;
     BOOL b_alreadyCounting;
     int i_timeToKeepVisibleInSec;
+    int i_outputScreen;
     
     BOOL b_displayed;
     BOOL b_voutWasUpdated;

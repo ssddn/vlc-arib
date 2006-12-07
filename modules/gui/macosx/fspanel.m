@@ -42,7 +42,7 @@
                   backing:(NSBackingStoreType)bufferingType 
                     defer:(BOOL)flag
 {
-    id win=[super initWithContentRect:contentRect styleMask:NSTexturedBackgroundWindowMask backing:bufferingType defer:flag];
+    id win = [super initWithContentRect:contentRect styleMask:NSTexturedBackgroundWindowMask backing:bufferingType defer:flag];
     [win setOpaque:NO];
     [win setHasShadow: NO];
     [win setBackgroundColor:[NSColor clearColor]];
@@ -50,37 +50,20 @@
     /* let the window sit on top of everything else and start out completely transparent */
     [win setLevel:NSFloatingWindowLevel];
     [win setAlphaValue:0.0];
-    
-    /* centre the panel in the lower third of the screen */
-    NSPoint theCoordinate;
-    NSRect theScreensFrame;
-    NSRect theWindowsFrame;
-    int i_outputScreen;
-    
-    i_outputScreen = var_GetInteger( VLCIntf, "video-device" );
-    if( i_outputScreen <=0 || i_outputScreen > (signed int)[[NSScreen screens] count] )
-        /* invalid preferences or none specified, using main screen */
-        theScreensFrame = [[NSScreen mainScreen] frame];
-    else
-        /* user-defined screen */
-        theScreensFrame = [[[NSScreen screens] objectAtIndex: i_outputScreen] frame];
 
-    theWindowsFrame = [win frame];
-    theCoordinate.x = (theScreensFrame.size.width - theWindowsFrame.size.width) / 2;
-    theCoordinate.y = (theScreensFrame.size.height / 3) - theWindowsFrame.size.height;
-    [win setFrameTopLeftPoint: theCoordinate];
+    [win center];
     return win;
 }
 
 - (void)awakeFromNib
 {
     [self setContentView:[[VLCFSPanelView alloc] initWithFrame: [self frame]]];
-    BOOL isInside=(NSPointInRect([NSEvent mouseLocation],[self frame]));
+    BOOL isInside = (NSPointInRect([NSEvent mouseLocation],[self frame]));
     [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:isInside];
     if (isInside)
-    [self mouseEntered:NULL];
+        [self mouseEntered:NULL];
     if (!isInside)
-    [self mouseExited:NULL];
+        [self mouseExited:NULL];
 }
 
 /* Windows created with NSBorderlessWindowMask normally can't be key, but we want ours to be */
@@ -100,6 +83,29 @@
         [hideAgainTimer release];
     [self setFadeTimer:nil];
     [super dealloc];
+}
+
+-(void)center
+{
+    /* centre the panel in the lower third of the screen */
+    NSPoint theCoordinate;
+    NSRect theScreensFrame;
+    NSRect theWindowsFrame;
+    
+    i_outputScreen = var_GetInteger( VLCIntf->p_vlc, "video-device" );
+
+    if( i_outputScreen <= 0 || i_outputScreen > (signed int)[[NSScreen screens] count] )
+        /* invalid preferences or none specified, using main screen */
+        theScreensFrame = [[NSScreen mainScreen] frame];
+    else
+        /* user-defined screen */
+        theScreensFrame = [[[NSScreen screens] objectAtIndex: i_outputScreen-1] frame];
+
+    theWindowsFrame = [self frame];
+    
+    theCoordinate.x = (theScreensFrame.size.width - theWindowsFrame.size.width) / 2 + theScreensFrame.origin.x;
+    theCoordinate.y = (theScreensFrame.size.height / 3) - theWindowsFrame.size.height + theScreensFrame.origin.y;
+    [self setFrameTopLeftPoint: theCoordinate];
 }
 
 - (void)setPlay
@@ -198,6 +204,9 @@
 
 - (void)fadeIn
 {
+    if( i_outputScreen != var_GetInteger( VLCIntf->p_vlc, "video-device" ) )
+        [self center];
+
     if( [self alphaValue] < 1.0 )
     {
         if (![self fadeTimer])
@@ -407,20 +416,14 @@
 
 - (void)setPlay
 {
-    NSImage *image;
-    image = [NSImage imageNamed:@"fs_play"];
-    [o_play setImage:image];
-    image = [NSImage imageNamed:@"fs_play_highlight"];
-    [o_play setAlternateImage:image];
+    [o_play setImage:[NSImage imageNamed:@"fs_play"]];
+    [o_play setAlternateImage: [NSImage imageNamed:@"fs_play_highlight"]];
 }
 
 - (void)setPause
 {
-    NSImage *image;
-    image = [NSImage imageNamed:@"fs_pause"];
-    [o_play setImage:image];
-    image = [NSImage imageNamed:@"fs_pause_highlight"];
-    [o_play setAlternateImage:image];
+    [o_play setImage: [NSImage imageNamed:@"fs_pause"]];
+    [o_play setAlternateImage: [NSImage imageNamed:@"fs_pause_highlight"]];
 }
 
 - (void)setStreamTitle:(NSString *)o_title
