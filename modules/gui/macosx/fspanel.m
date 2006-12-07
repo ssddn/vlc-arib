@@ -50,6 +50,7 @@
     /* let the window sit on top of everything else and start out completely transparent */
     [win setLevel:NSFloatingWindowLevel];
     [win setAlphaValue:0.0];
+    i_device = 0;
 
     [win center];
     return win;
@@ -91,15 +92,13 @@
     NSPoint theCoordinate;
     NSRect theScreensFrame;
     NSRect theWindowsFrame;
-    
-    i_outputScreen = var_GetInteger( VLCIntf->p_vlc, "video-device" );
 
-    if( i_outputScreen <= 0 || i_outputScreen > (signed int)[[NSScreen screens] count] )
+    if( i_device < 0 || i_device >= (signed int)[[NSScreen screens] count] )
         /* invalid preferences or none specified, using main screen */
         theScreensFrame = [[NSScreen mainScreen] frame];
     else
         /* user-defined screen */
-        theScreensFrame = [[[NSScreen screens] objectAtIndex: i_outputScreen-1] frame];
+        theScreensFrame = [[[NSScreen screens] objectAtIndex: i_device] frame];
 
     theWindowsFrame = [self frame];
     
@@ -204,9 +203,6 @@
 
 - (void)fadeIn
 {
-    if( i_outputScreen != var_GetInteger( VLCIntf->p_vlc, "video-device" ) )
-        [self center];
-
     if( [self alphaValue] < 1.0 )
     {
         if (![self fadeTimer])
@@ -219,6 +215,9 @@
 
 - (void)fadeOut
 {
+    if( NSPointInRect([NSEvent mouseLocation],[self frame]))
+        return;
+
     if( ( [self alphaValue] > 0.0 ) )
     {
         if (![self fadeTimer])
@@ -301,9 +300,14 @@
     return b_displayed;
 }
 
-- (void)setVoutWasUpdated
+- (void)setVoutWasUpdated: (int)i_newdevice;
 {
     b_voutWasUpdated = YES;
+    if( i_newdevice != i_device )
+    {
+        i_device = i_newdevice;
+        [self center];
+    }
 }
 @end
 
