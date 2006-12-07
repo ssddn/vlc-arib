@@ -102,7 +102,7 @@ static int Create( vlc_object_t *p_this )
         return VLC_ENOMEM;
     }
     p_sys->p_prev_sample = malloc(
-        aout_FormatNbChannels( &p_filter->input ) * sizeof(int32_t) );
+        p_filter->input.i_channels * sizeof(int32_t) );
     if( p_sys->p_prev_sample == NULL )
     {
         msg_Err( p_filter, "out of memory" );
@@ -143,7 +143,7 @@ static void DoWork( aout_instance_t * p_aout, aout_filter_t * p_filter,
     float *p_in, *p_out = (float *)p_out_buf->p_buffer;
     float *p_prev_sample = (float *)p_sys->p_prev_sample;
 
-    int i_nb_channels = aout_FormatNbChannels( &p_filter->input );
+    int i_nb_channels = p_filter->input.i_channels;
     int i_in_nb = p_in_buf->i_nb_samples;
     int i_chan, i_in, i_out = 0;
 
