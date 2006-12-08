@@ -36,6 +36,7 @@
 #include "video_output.h"
 #include "vlc_image.h"
 #include "vlc_spu.h"
+#include "charset.h"
 
 #include <snapshot.h>
 
@@ -633,14 +634,14 @@ int vout_Snapshot( vout_thread_t *p_vout, picture_t *p_pic )
     /*
      * Did the user specify a directory? If not, path = NULL.
      */
-    path = opendir ( (const char *)val.psz_string  );
+    path = utf8_opendir ( (const char *)val.psz_string  );
 
     if ( path != NULL )
     {
         char *psz_prefix = var_GetString( p_vout, "snapshot-prefix" );
         if( !psz_prefix ) psz_prefix = strdup( "vlcsnap-" );
 
-        closedir( path );
+        vlc_closedir_wrapper( path );
         if( var_GetBool( p_vout, "snapshot-sequential" ) == VLC_TRUE )
         {
             int i_num = var_GetInteger( p_vout, "snapshot-num" );
@@ -650,7 +651,7 @@ int vout_Snapshot( vout_thread_t *p_vout, picture_t *p_pic )
                 asprintf( &psz_filename, "%s/%s%05d.%s", val.psz_string,
                           psz_prefix, i_num++, format.psz_string );
             }
-            while( ( p_file = fopen( psz_filename, "r" ) ) && !fclose( p_file ) );
+            while( ( p_file = utf8_fopen( psz_filename, "r" ) ) && !fclose( p_file ) );
             var_SetInteger( p_vout, "snapshot-num", i_num );
         }
         else
