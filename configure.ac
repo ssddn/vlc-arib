@@ -3371,6 +3371,9 @@ if test "${enable_x264}" != "no"; then
       AC_CHECK_LIB(x264, x264_encoder_open, [
         VLC_ADD_BUILTINS([x264])
         VLC_ADD_LDFLAGS([x264],[-lx264])
+        if test "${SYS}" = "darwin"; then
+          VLC_ADD_LDFLAGS([x264],[-read_only_relocs warning])
+        fi
       ],[
         AC_MSG_ERROR([the specified tree hasn't been compiled])
       ])
@@ -3385,6 +3388,9 @@ if test "${enable_x264}" != "no"; then
       AC_CHECK_LIB(x264, x264_encoder_open, [
         VLC_ADD_PLUGINS([x264])
         VLC_ADD_LDFLAGS([x264],[-lx264])
+        if test "${SYS}" = "darwin"; then
+          VLC_ADD_LDFLAGS([x264],[-read_only_relocs warning])
+        fi
       ],[
         if test "${enable_x264}" = "yes"; then
             AC_MSG_ERROR([Could not find libx264 on your system: you may get it from http://www.videolan.org/x264.html])
