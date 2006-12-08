@@ -186,11 +186,12 @@ static int gnutls_Error (vlc_object_t *obj, int val)
     switch (val)
     {
         case GNUTLS_E_AGAIN:
-#if ! defined(WIN32)
+#if defined(WIN32)
+            WSASetLastError(WSAEWOULDBLOCK);
+#else
             errno = EAGAIN;
-            break;
 #endif
-            /* WinSock does not return EAGAIN, return EINTR instead */
+            break;
 
         case GNUTLS_E_INTERRUPTED:
 #if defined(WIN32)
