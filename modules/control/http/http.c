@@ -292,7 +292,7 @@ static int Open( vlc_object_t *p_this )
         psz_src = malloc( strlen(psz_vlcpath) + strlen("/share/http" ) + 1 );
         if( !psz_src ) return VLC_ENOMEM;
 #if defined(WIN32)
-        sprintf( psz_src, "%s/http", psz_vlcpath );
+        sprintf( psz_src, "%s\\http", psz_vlcpath );
 #else
         sprintf( psz_src, "%s/share/http", psz_vlcpath );
 #endif
