@@ -228,16 +228,31 @@ STDMETHODIMP VLCControl::get_Time(int *seconds)
         }
     }
     else
-        *seconds = _p_instance->getTime();
+        *seconds = _p_instance->getStartTime();
 
     return result;
 };
 
 STDMETHODIMP VLCControl::put_Time(int seconds)
 {
-    _p_instance->setTime(seconds);
+    if( seconds < 0 )
+        seconds = 0;
 
-    return NOERROR;
+    HRESULT result = NOERROR;
+    if( _p_instance->isRunning() )
+    {
+        int i_vlc;
+        result = _p_instance->getVLCObject(&i_vlc);
+        if( SUCCEEDED(result) )
+        {
+            VLC_TimeSet(i_vlc, seconds, VLC_FALSE);
+        }
+    }
+    else if( seconds != _p_instance->getStartTime() )
+    {
+        _p_instance->setStartTime(seconds);
+    }
+    return result;
 };
 
 STDMETHODIMP VLCControl::shuttle(int seconds)
@@ -845,7 +860,7 @@ STDMETHODIMP VLCControl::get_VersionInfo(BSTR *version)
     const char *versionStr = VLC_Version();
     if( NULL != versionStr )
     {
-        *version = BSTRFromCStr(_p_instance->getCodePage(), versionStr);
+        *version = BSTRFromCStr(CP_UTF8, versionStr);
         return NULL == *version ? E_OUTOFMEMORY : NOERROR;
     }
     *version = NULL;

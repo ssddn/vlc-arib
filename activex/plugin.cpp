@@ -947,26 +947,6 @@ void VLCPlugin::setVolume(int volume)
     }
 };
 
-void VLCPlugin::setTime(int seconds)
-{
-    if( seconds < 0 )
-        seconds = 0;
-
-    if( seconds != _i_time )
-    {
-        setStartTime(_i_time);
-        if( isRunning() )
-        {
-            libvlc_input_t *p_input = libvlc_playlist_get_input(_p_libvlc, NULL);
-            if( NULL != p_input )
-            {
-                libvlc_input_set_time(p_input, _i_time, NULL);
-                libvlc_input_free(p_input);
-            }
-        }
-    }
-};
-
 void VLCPlugin::setFocus(BOOL fFocus)
 {
     if( fFocus )

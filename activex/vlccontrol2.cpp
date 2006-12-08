@@ -2244,7 +2244,7 @@ STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
     const char *versionStr = VLC_Version();
     if( NULL != versionStr )
     {
-        *version = BSTRFromCStr(_p_instance->getCodePage(), versionStr);
+        *version = BSTRFromCStr(CP_UTF8, versionStr);
         
         return NULL == *version ? E_OUTOFMEMORY : NOERROR;
     }
