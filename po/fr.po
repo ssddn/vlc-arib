@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 21:47+0100\n"
+"POT-Creation-Date: 2006-12-09 02:38+0100\n"
 "PO-Revision-Date: 2006-11-29 19:46+0100\n"
 "Last-Translator: Christophe Mutricy <xtophe@videolan.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -1161,7 +1161,11 @@ msgstr "Slovène"
 msgid "Swedish"
 msgstr "Suédois"
 
-#: src/libvlc.h:42 src/misc/iso-639_def.h:187
+#: src/libvlc.h:42 src/misc/iso-639_def.h:181
+msgid "Thai"
+msgstr "Thaï"
+
+#: src/libvlc.h:43 src/misc/iso-639_def.h:187
 msgid "Turkish"
 msgstr "Turc"
 
@@ -1686,7 +1690,7 @@ msgstr ""
 "(capacité à afficher la vidéo directement). VLC tentera de l'utiliser par "
 "défaut."
 
-#: src/libvlc.h:288 src/video_output/vout_intf.c:399
+#: src/libvlc.h:288 src/video_output/vout_intf.c:400
 msgid "Always on top"
 msgstr "Toujours au-dessus"
 
@@ -1929,8 +1933,8 @@ msgstr ""
 "Synchroniser les horloges du serveur et des clients. Les réglages détaillés "
 "sont dans Avancé / Synchronisation"
 
-#: src/libvlc.h:408 src/video_output/vout_intf.c:261
-#: src/video_output/vout_intf.c:348 modules/access/dshow/dshow.cpp:73
+#: src/libvlc.h:408 src/video_output/vout_intf.c:262
+#: src/video_output/vout_intf.c:349 modules/access/dshow/dshow.cpp:73
 #: modules/access/dshow/dshow.cpp:75 modules/access/dshow/dshow.cpp:78
 #: modules/audio_output/alsa.c:101 modules/gui/macosx/prefs_widgets.m:1292
 #: modules/gui/macosx/vout.m:197
@@ -3027,7 +3031,7 @@ msgstr "Stopper la liste de lecture après chaque élément."
 msgid "These settings are the global VLC key bindings, known as \"hotkeys\"."
 msgstr "Réglages des raccourcis clavier (« hotkeys »)."
 
-#: src/libvlc.h:948 src/video_output/vout_intf.c:408
+#: src/libvlc.h:948 src/video_output/vout_intf.c:409
 #: modules/gui/beos/VideoOutput.cpp:1057 modules/gui/macosx/applescript.m:121
 #: modules/gui/macosx/controls.m:455 modules/gui/macosx/controls.m:881
 #: modules/gui/macosx/controls.m:911 modules/gui/macosx/embeddedwindow.m:44
@@ -3790,7 +3794,7 @@ msgstr ""
 "  vlc:pause                      Mettre en pause la liste de lecture\n"
 "  vlc:quit                       Quitter VLC\n"
 
-#: src/libvlc.h:1238 src/video_output/vout_intf.c:420
+#: src/libvlc.h:1238 src/video_output/vout_intf.c:421
 #: modules/gui/macosx/controls.m:439 modules/gui/macosx/controls.m:880
 #: modules/gui/macosx/intf.m:577 modules/gui/macosx/intf.m:631
 #: modules/video_output/snapshot.c:76
@@ -4425,10 +4429,6 @@ msgstr "Tadjik"
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: src/misc/iso-639_def.h:181
-msgid "Thai"
-msgstr "Thaï"
-
 #: src/misc/iso-639_def.h:182
 msgid "Tibetan"
 msgstr "Tibétain"
@@ -4513,7 +4513,7 @@ msgstr "Zoulou"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/misc/vlm.c:1146 src/misc/vlm.c:1253
+#: src/misc/vlm.c:1139 src/misc/vlm.c:1246
 #, c-format
 msgid "Media: %s"
 msgstr "Média: %s"
@@ -4559,32 +4559,32 @@ msgstr "Bob"
 msgid "Linear"
 msgstr "Linéaire"
 
-#: src/video_output/vout_intf.c:211
+#: src/video_output/vout_intf.c:212
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/video_output/vout_intf.c:223
+#: src/video_output/vout_intf.c:224
 msgid "1:4 Quarter"
 msgstr "1/4"
 
-#: src/video_output/vout_intf.c:225
+#: src/video_output/vout_intf.c:226
 msgid "1:2 Half"
 msgstr "1/2"
 
-#: src/video_output/vout_intf.c:227
+#: src/video_output/vout_intf.c:228
 msgid "1:1 Original"
 msgstr "Taille normale"
 
-#: src/video_output/vout_intf.c:229
+#: src/video_output/vout_intf.c:230
 msgid "2:1 Double"
 msgstr "Taille double"
 
-#: src/video_output/vout_intf.c:256 modules/gui/macosx/intf.m:582
+#: src/video_output/vout_intf.c:257 modules/gui/macosx/intf.m:582
 #: modules/gui/macosx/intf.m:583 modules/video_filter/crop.c:62
 msgid "Crop"
 msgstr "Rogner"
 
-#: src/video_output/vout_intf.c:343 modules/gui/macosx/intf.m:580
+#: src/video_output/vout_intf.c:344 modules/gui/macosx/intf.m:580
 #: modules/gui/macosx/intf.m:581
 msgid "Aspect-ratio"
 msgstr "Aspect"
@@ -11217,7 +11217,7 @@ msgstr ""
 "Pour choisir l'ordre d'application, une chaîne d'option peut être indiquée à "
 "ce même endroit."
 
-#: modules/gui/macosx/fspanel.m:327
+#: modules/gui/macosx/fspanel.m:340
 #, fuzzy
 msgid "(no item is being played)"
 msgstr "%i élements dans la liste de lecture"
@@ -11605,7 +11605,7 @@ msgid "Override parametters"
 msgstr "Outrepasser les paramètres"
 
 #: modules/gui/macosx/open.m:244
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:218
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:215
 #: modules/stream_out/bridge.c:41 modules/stream_out/display.c:41
 #: modules/video_filter/mosaic.c:138
 msgid "Delay"
@@ -13096,15 +13096,26 @@ msgstr ""
 "Ceci est principalement utile si vous rencontrez des erreurs lors du "
 "déplacement des fenêtres."
 
-#: modules/gui/skins2/src/skin_main.cpp:461
+#: modules/gui/skins2/src/skin_main.cpp:440
+#, fuzzy
+msgid "Enable skinned playlist"
+msgstr "Impossible de trouver la liste de lecture"
+
+#: modules/gui/skins2/src/skin_main.cpp:441
+msgid ""
+"You can choose whether the playlist window is rendered using the skin or the "
+"default GUI."
+msgstr ""
+
+#: modules/gui/skins2/src/skin_main.cpp:464
 msgid "Skins"
 msgstr "Skins"
 
-#: modules/gui/skins2/src/skin_main.cpp:462
+#: modules/gui/skins2/src/skin_main.cpp:465
 msgid "Skinnable Interface"
 msgstr "Interface skinnable"
 
-#: modules/gui/skins2/src/skin_main.cpp:469
+#: modules/gui/skins2/src/skin_main.cpp:472
 msgid "Skins loader demux"
 msgstr "Demultiplexeur de chargement de skin"
 
@@ -13216,7 +13227,7 @@ msgstr "Octets"
 #: modules/gui/wxwidgets/dialogs/open.cpp:317
 #: modules/gui/wxwidgets/dialogs/open.cpp:487
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:195
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:239
 msgid "&OK"
 msgstr "&Ok"
 
@@ -13228,7 +13239,7 @@ msgstr "&Ok"
 #: modules/gui/wxwidgets/dialogs/open.cpp:490
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:211
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:198
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:245
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
 msgid "&Cancel"
 msgstr "&Annuler"
 
@@ -13797,7 +13808,7 @@ msgstr "Fichier de sous-titres"
 msgid "Options"
 msgstr "Options"
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:211
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:208
 msgid ""
 "Override frames per second. It will only work with MicroDVD and SubRIP "
 "subtitles."
@@ -13805,11 +13816,11 @@ msgstr ""
 "Remplacer le nombre d'images par seconde. Ne fonctionne qu’avec les sous-"
 "titres MicroDVD et SubRIP."
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:227
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:224
 msgid "Set subtitle delay (in 1/10s)"
 msgstr "Délai des sous-titres (en 1/10 s)"
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:286
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:283
 msgid "Open file"
 msgstr "Ouvrir un fichier"
 

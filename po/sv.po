@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 21:47+0100\n"
+"POT-Creation-Date: 2006-12-09 02:38+0100\n"
 "PO-Revision-Date: 2006-11-29 18:56+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -1147,7 +1147,11 @@ msgstr "Slovenska"
 msgid "Swedish"
 msgstr "Svenska"
 
-#: src/libvlc.h:42 src/misc/iso-639_def.h:187
+#: src/libvlc.h:42 src/misc/iso-639_def.h:181
+msgid "Thai"
+msgstr "Thailändska"
+
+#: src/libvlc.h:43 src/misc/iso-639_def.h:187
 msgid "Turkish"
 msgstr "Turkiska"
 
@@ -1665,7 +1669,7 @@ msgid ""
 "to render video directly). VLC will try to use it by default."
 msgstr ""
 
-#: src/libvlc.h:288 src/video_output/vout_intf.c:399
+#: src/libvlc.h:288 src/video_output/vout_intf.c:400
 msgid "Always on top"
 msgstr "Alltid överst"
 
@@ -1886,8 +1890,8 @@ msgid ""
 "detailed settings are available in Advanced / Network Sync."
 msgstr ""
 
-#: src/libvlc.h:408 src/video_output/vout_intf.c:261
-#: src/video_output/vout_intf.c:348 modules/access/dshow/dshow.cpp:73
+#: src/libvlc.h:408 src/video_output/vout_intf.c:262
+#: src/video_output/vout_intf.c:349 modules/access/dshow/dshow.cpp:73
 #: modules/access/dshow/dshow.cpp:75 modules/access/dshow/dshow.cpp:78
 #: modules/audio_output/alsa.c:101 modules/gui/macosx/prefs_widgets.m:1292
 #: modules/gui/macosx/vout.m:197
@@ -2885,7 +2889,7 @@ msgstr ""
 "Dessa inställningar är de globala VLC-tangentbindningarna, kända som "
 "\"snabbtangenter\"."
 
-#: src/libvlc.h:948 src/video_output/vout_intf.c:408
+#: src/libvlc.h:948 src/video_output/vout_intf.c:409
 #: modules/gui/beos/VideoOutput.cpp:1057 modules/gui/macosx/applescript.m:121
 #: modules/gui/macosx/controls.m:455 modules/gui/macosx/controls.m:881
 #: modules/gui/macosx/controls.m:911 modules/gui/macosx/embeddedwindow.m:44
@@ -3554,7 +3558,7 @@ msgid ""
 "  vlc:quit                       Special item to quit VLC\n"
 msgstr ""
 
-#: src/libvlc.h:1238 src/video_output/vout_intf.c:420
+#: src/libvlc.h:1238 src/video_output/vout_intf.c:421
 #: modules/gui/macosx/controls.m:439 modules/gui/macosx/controls.m:880
 #: modules/gui/macosx/intf.m:577 modules/gui/macosx/intf.m:631
 #: modules/video_output/snapshot.c:76
@@ -4187,10 +4191,6 @@ msgstr "Tajik"
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: src/misc/iso-639_def.h:181
-msgid "Thai"
-msgstr "Thailändska"
-
 #: src/misc/iso-639_def.h:182
 msgid "Tibetan"
 msgstr "Tibetanska"
@@ -4275,7 +4275,7 @@ msgstr "Zulu"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: src/misc/vlm.c:1146 src/misc/vlm.c:1253
+#: src/misc/vlm.c:1139 src/misc/vlm.c:1246
 #, c-format
 msgid "Media: %s"
 msgstr "Media: %s"
@@ -4321,32 +4321,32 @@ msgstr ""
 msgid "Linear"
 msgstr "Linjär"
 
-#: src/video_output/vout_intf.c:211
+#: src/video_output/vout_intf.c:212
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/video_output/vout_intf.c:223
+#: src/video_output/vout_intf.c:224
 msgid "1:4 Quarter"
 msgstr "1:4 Kvarts"
 
-#: src/video_output/vout_intf.c:225
+#: src/video_output/vout_intf.c:226
 msgid "1:2 Half"
 msgstr "1:2 Halv"
 
-#: src/video_output/vout_intf.c:227
+#: src/video_output/vout_intf.c:228
 msgid "1:1 Original"
 msgstr "1:1 Original"
 
-#: src/video_output/vout_intf.c:229
+#: src/video_output/vout_intf.c:230
 msgid "2:1 Double"
 msgstr "2:1 Dubbel"
 
-#: src/video_output/vout_intf.c:256 modules/gui/macosx/intf.m:582
+#: src/video_output/vout_intf.c:257 modules/gui/macosx/intf.m:582
 #: modules/gui/macosx/intf.m:583 modules/video_filter/crop.c:62
 msgid "Crop"
 msgstr "Beskär"
 
-#: src/video_output/vout_intf.c:343 modules/gui/macosx/intf.m:580
+#: src/video_output/vout_intf.c:344 modules/gui/macosx/intf.m:580
 #: modules/gui/macosx/intf.m:581
 msgid "Aspect-ratio"
 msgstr "Bildformat"
@@ -10641,7 +10641,7 @@ msgid ""
 "can be set in the Preferences, Video / Filters section."
 msgstr ""
 
-#: modules/gui/macosx/fspanel.m:327
+#: modules/gui/macosx/fspanel.m:340
 #, fuzzy
 msgid "(no item is being played)"
 msgstr "%i objekt i spellistan"
@@ -11014,7 +11014,7 @@ msgid "Override parametters"
 msgstr "Åsidosätt parametrar"
 
 #: modules/gui/macosx/open.m:244
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:218
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:215
 #: modules/stream_out/bridge.c:41 modules/stream_out/display.c:41
 #: modules/video_filter/mosaic.c:138
 msgid "Delay"
@@ -12448,15 +12448,26 @@ msgid ""
 "when moving windows does not behave correctly."
 msgstr ""
 
-#: modules/gui/skins2/src/skin_main.cpp:461
+#: modules/gui/skins2/src/skin_main.cpp:440
+#, fuzzy
+msgid "Enable skinned playlist"
+msgstr "%i objekt i spellistan"
+
+#: modules/gui/skins2/src/skin_main.cpp:441
+msgid ""
+"You can choose whether the playlist window is rendered using the skin or the "
+"default GUI."
+msgstr ""
+
+#: modules/gui/skins2/src/skin_main.cpp:464
 msgid "Skins"
 msgstr "Skal"
 
-#: modules/gui/skins2/src/skin_main.cpp:462
+#: modules/gui/skins2/src/skin_main.cpp:465
 msgid "Skinnable Interface"
 msgstr "Skalbart gränssnitt"
 
-#: modules/gui/skins2/src/skin_main.cpp:469
+#: modules/gui/skins2/src/skin_main.cpp:472
 msgid "Skins loader demux"
 msgstr ""
 
@@ -12564,7 +12575,7 @@ msgstr "Byte"
 #: modules/gui/wxwidgets/dialogs/open.cpp:317
 #: modules/gui/wxwidgets/dialogs/open.cpp:487
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:195
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:239
 msgid "&OK"
 msgstr "&OK"
 
@@ -12576,7 +12587,7 @@ msgstr "&OK"
 #: modules/gui/wxwidgets/dialogs/open.cpp:490
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:211
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:198
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:245
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:242
 msgid "&Cancel"
 msgstr "&Avbryt"
 
@@ -13120,17 +13131,17 @@ msgstr "Textremsfil"
 msgid "Options"
 msgstr "Alternativ"
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:211
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:208
 msgid ""
 "Override frames per second. It will only work with MicroDVD and SubRIP "
 "subtitles."
 msgstr ""
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:227
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:224
 msgid "Set subtitle delay (in 1/10s)"
 msgstr ""
 
-#: modules/gui/wxwidgets/dialogs/subtitles.cpp:286
+#: modules/gui/wxwidgets/dialogs/subtitles.cpp:283
 msgid "Open file"
 msgstr "Öppna fil"
 
@@ -17580,10 +17591,6 @@ msgstr "XOSD-gränssnitt"
 #, fuzzy
 #~ msgid "Send bitrate"
 #~ msgstr "Sändhastighet"
-
-#, fuzzy
-#~ msgid "Use a skinned playlist"
-#~ msgstr "%i objekt i spellistan"
 
 #~ msgid "One level"
 #~ msgstr "En nivå"
