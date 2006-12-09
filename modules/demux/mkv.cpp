@@ -1496,8 +1496,8 @@ static int Open( vlc_object_t * p_this )
 
             if (p_src_dir != NULL)
             {
-                char *psz_file;
-                while ((psz_file = (char *)utf8_readdir(p_src_dir)) != NULL)
+                const char *psz_file;
+                while ((psz_file = utf8_readdir(p_src_dir)) != NULL)
                 {
                     if (strlen(psz_file) > 4)
                     {
@@ -1546,7 +1546,7 @@ static int Open( vlc_object_t * p_this )
                             }
                         }
                     }
-                    free (psz_file);
+                    LocaleFree (psz_file);
                 }
                 vlc_closedir_wrapper( p_src_dir );
             }
