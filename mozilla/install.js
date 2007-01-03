@@ -13,9 +13,9 @@ if ( ! fileExists( tmpFolder) )
 
 setPackageFolder( tmpFolder );
 
-addFile( "http://downloads.videolan.org/pub/videolan/vlc/0.8.6/win32/vlc-0.8.6-win32.exe" );
+addFile( "http://downloads.videolan.org/pub/videolan/vlc/0.8.6/win32/vlc-0.8.6a-win32.exe" );
 
-var exe  = getFolder(tmpFolder, "vlc-0.8.6-win32.exe");
+var exe  = getFolder(tmpFolder, "vlc-0.8.6a-win32.exe");
 File.execute( exe );
 
 performInstall();
