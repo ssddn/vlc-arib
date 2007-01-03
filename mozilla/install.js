@@ -1,4 +1,4 @@
-var version = "0.8.6";
+var version = "0.8.6a";
 
 initInstall( "VideoLAN", "VLC", version, 1);
 
