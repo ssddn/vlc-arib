@@ -97,12 +97,12 @@ vlc_module_begin();
                      VLC_FALSE );
     add_bool( "macosx-wizard-keep", 1, NULL, WIZARD_OPTIONS_SAVING_TEXT,
                 WIZARD_OPTIONS_SAVING_LONGTEXT, VLC_TRUE );
+    add_bool( "macosx-fspanel", 1, NULL, FSPANEL_TEXT, FSPANEL_LONGTEXT,
+        set_capability( "video output", 100 );
 
     add_submodule();
         set_description( _("Quartz video") );
                      VLC_FALSE );
-    add_bool( "macosx-fspanel", 1, NULL, FSPANEL_TEXT, FSPANEL_LONGTEXT,
-        set_capability( "video output", 100 );
         set_category( CAT_VIDEO);
         set_subcategory( SUBCAT_VIDEO_VOUT );
         set_callbacks( E_(OpenVideoQT), E_(CloseVideoQT) );
