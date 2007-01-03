@@ -1,7 +1,7 @@
 /*****************************************************************************
  * macosx.m: Mac OS X module for vlc
  *****************************************************************************
- * Copyright (C) 2001-2005 the VideoLAN team
+ * Copyright (C) 2001-2007 the VideoLAN team
  * $Id$
  *
  * Authors: Colin Delacroix <colin@zoy.org>
@@ -78,7 +78,11 @@ void E_(CloseVideoGL) ( vlc_object_t * );
 #define BACKGROUND_TEXT N_("Use as Desktop Background")
 #define BACKGROUND_LONGTEXT N_("Use the video as the Desktop Background " \
         "Desktop icons cannot be interacted with in this mode." )
-        
+
+#define FSPANEL_TEXT N_("Show Fullscreen controller")
+#define FSPANEL_LONGTEXT N_("Shows a lucent controller when moving the mouse " \
+                            "in fullscreen mode.") 
+
 #define WIZARD_OPTIONS_SAVING_TEXT N_("Remember wizard options")
 #define WIZARD_OPTIONS_SAVING_LONGTEXT N_("Remember the options in the " \
         "wizard during one session of VLC.") 
@@ -96,6 +100,8 @@ vlc_module_begin();
 
     add_submodule();
         set_description( _("Quartz video") );
+                     VLC_FALSE );
+    add_bool( "macosx-fspanel", 1, NULL, FSPANEL_TEXT, FSPANEL_LONGTEXT,
         set_capability( "video output", 100 );
         set_category( CAT_VIDEO);
         set_subcategory( SUBCAT_VIDEO_VOUT );

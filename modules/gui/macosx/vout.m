@@ -1,7 +1,7 @@
 /*****************************************************************************
  * vout.m: MacOS X video output module
  *****************************************************************************
- * Copyright (C) 2001-2006 the VideoLAN team
+ * Copyright (C) 2001-2007 the VideoLAN team
  * $Id$
  *
  * Authors: Colin Delacroix <colin@zoy.org>
@@ -374,9 +374,9 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     val.b_bool = !val.b_bool;
     var_Set( p_real_vout, "fullscreen", val );
     if( [self isFullscreen] )
-        [[[[VLCMain sharedInstance] getControls] getFSPanel] orderFront: self];
+        [[[[VLCMain sharedInstance] getControls] getFSPanel] setActive: nil];
     else
-        [[[[VLCMain sharedInstance] getControls] getFSPanel] orderOut: self];    
+        [[[[VLCMain sharedInstance] getControls] getFSPanel] setNonActive: nil];    
 }
 
 - (BOOL)isFullscreen

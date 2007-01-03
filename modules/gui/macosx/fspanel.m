@@ -1,7 +1,7 @@
 /*****************************************************************************
  * fspanel.m: MacOS X full screen panel
  *****************************************************************************
- * Copyright (C) 2006 the VideoLAN team
+ * Copyright (C) 2006-2007 the VideoLAN team
  * $Id: fspanel.m 17038 2006-10-12 18:24:34Z fkuehne $
  *
  * Authors: Jérôme Decoodt <djc at videolan dot org>
@@ -65,6 +65,20 @@
         [self mouseEntered:NULL];
     if (!isInside)
         [self mouseExited:NULL];
+    
+    /* get a notification if VLC isn't the active app anymore */
+    [[NSNotificationCenter defaultCenter]
+    addObserver: self
+       selector: @selector(setNonActive:)
+           name: NSApplicationDidResignActiveNotification
+         object: NSApp];
+    
+    /* get a notification if VLC is the active app again */
+    [[NSNotificationCenter defaultCenter]
+    addObserver: self
+       selector: @selector(setActive:)
+           name: NSApplicationDidBecomeActiveNotification
+         object: NSApp];
 }
 
 /* Windows created with NSBorderlessWindowMask normally can't be key, but we want ours to be */
@@ -80,6 +94,8 @@
 
 -(void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    
     if( hideAgainTimer )
         [hideAgainTimer release];
     [self setFadeTimer:nil];
@@ -135,6 +151,27 @@
 - (void)setVolumeLevel: (float)f_volumeLevel
 {
     [[self contentView] setVolumeLevel: f_volumeLevel];
+}
+
+- (void)setNonActive:(id)noData
+{
+    b_nonActive = YES;
+    [self orderOut: self];
+    
+    /* here's fadeOut, just without visibly fading */
+    b_displayed = NO;
+    [self setAlphaValue:0.0];
+    [self setFadeTimer:nil];
+    b_fadeQueued = NO;
+}
+
+- (void)setActive:(id)noData
+{
+    if( [[[[VLCMain sharedInstance] getControls] getVoutView] isFullscreen] )
+    {
+        b_nonActive = NO;
+        [self fadeIn];
+    }
 }
 
 /* This routine is called repeatedly to fade in the window */
@@ -203,7 +240,13 @@
 
 - (void)fadeIn
 {
-    if( [self alphaValue] < 1.0 )
+    /* in case that the user don't want us to appear, just return here */
+    if(! config_GetInt( VLCIntf, "macosx-fspanel" ) || b_nonActive )
+        return;
+    
+    [self orderFront: nil];
+    
+    if( [self alphaValue] < 1.0 || b_displayed != YES )
     {
         if (![self fadeTimer])
             [self setFadeTimer:[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(focus:) userInfo:[NSNumber numberWithShort:1] repeats:YES]];
@@ -349,9 +392,9 @@
     fillColor = [[NSColor clearColor] retain];
     NSRect s_rc = [self frame];
     addButton( o_prev, @"fs_skip_previous" , @"fs_skip_previous_highlight", 174, 15, prev );
-    addButton( o_slow, @"fs_rewind"        , @"fs_rewind_highlight"       , 211, 14, slower );
+    addButton( o_bwd, @"fs_rewind"        , @"fs_rewind_highlight"       , 211, 14, backward );
     addButton( o_play, @"fs_play"          , @"fs_play_highlight"         , 267, 10, play );
-    addButton( o_fast, @"fs_forward"       , @"fs_forward_highlight"      , 313, 14, faster );
+    addButton( o_fwd, @"fs_forward"       , @"fs_forward_highlight"      , 313, 14, forward );
     addButton( o_next, @"fs_skip_next"     , @"fs_skip_next_highlight"    , 365, 15, next );
     addButton( o_fullscreen, @"fs_exit_fullscreen", @"fs_exit_fullscreen_hightlight", 507, 13, windowAction );
 /*
@@ -409,9 +452,9 @@
     [o_fs_volumeSlider release];
     [o_prev release];
     [o_next release];
-    [o_slow release];
+    [o_bwd release];
     [o_play release];
-    [o_fast release];
+    [o_fwd release];
     [o_fullscreen release];
     [o_streamTitle_txt release];
     [o_streamPosition_txt release];
@@ -443,8 +486,8 @@
 
 - (void)setSeekable:(BOOL)b_seekable
 {
-    [o_slow setEnabled: b_seekable];
-    [o_fast setEnabled: b_seekable];
+    [o_bwd setEnabled: b_seekable];
+    [o_fwd setEnabled: b_seekable];
     [o_fs_timeSlider setEnabled: b_seekable];
 }
 
@@ -458,14 +501,14 @@
     [[[VLCMain sharedInstance] getControls] play: sender];
 }
 
-- (IBAction)faster:(id)sender
+- (IBAction)forward:(id)sender
 {
-    [[[VLCMain sharedInstance] getControls] faster: sender];
+    [[[VLCMain sharedInstance] getControls] forward: sender];
 }
 
-- (IBAction)slower:(id)sender
+- (IBAction)backward:(id)sender
 {
-    [[[VLCMain sharedInstance] getControls] slower: sender];
+    [[[VLCMain sharedInstance] getControls] backward: sender];
 }
 
 - (IBAction)prev:(id)sender

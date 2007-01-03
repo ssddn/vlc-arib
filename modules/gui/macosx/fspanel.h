@@ -1,7 +1,7 @@
 /*****************************************************************************
  * fspanel.h: MacOS X full screen panel
  *****************************************************************************
- * Copyright (C) 2006 the VideoLAN team
+ * Copyright (C) 2006-2007 the VideoLAN team
  * $Id: fspanel.h 16935 2006-10-04 08:19:38Z fkuehne $
  *
  * Authors: Jérôme Decoodt <djc at videolan dot org>
@@ -31,6 +31,7 @@
     BOOL b_alreadyCounting;
     int i_timeToKeepVisibleInSec;
     
+    BOOL b_nonActive;
     BOOL b_displayed;
     BOOL b_voutWasUpdated;
     int i_device;
@@ -49,6 +50,9 @@
 - (void)setStreamPos:(float) f_pos andTime:(NSString *)o_time;
 - (void)setSeekable:(BOOL) b_seekable;
 - (void)setVolumeLevel: (float)f_volumeLevel;
+
+- (void)setNonActive:(id)noData;
+- (void)setActive:(id)noData;
 
 - (void)focus:(NSTimer *)timer;
 - (void)unfocus:(NSTimer *)timer;
@@ -72,7 +76,7 @@
 @interface VLCFSPanelView : NSView
 {
     NSColor *fillColor;
-    NSButton *o_prev, *o_next, *o_slow, *o_fast, *o_play, *o_fullscreen;
+    NSButton *o_prev, *o_next, *o_bwd, *o_fwd, *o_play, *o_fullscreen;
     NSTextField *o_streamTitle_txt, *o_streamPosition_txt;
     NSSlider *o_fs_timeSlider, *o_fs_volumeSlider;
 }
@@ -88,8 +92,8 @@
 - (IBAction)play:(id)sender;
 - (IBAction)prev:(id)sender;
 - (IBAction)next:(id)sender;
-- (IBAction)faster:(id)sender;
-- (IBAction)slower:(id)sender;
+- (IBAction)forward:(id)sender;
+- (IBAction)backward:(id)sender;
 - (IBAction)fsTimeSliderUpdate:(id)sender;
 - (IBAction)fsVolumeSliderUpdate:(id)sender;
 
