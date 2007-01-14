@@ -143,7 +143,7 @@ mtime_t mdate( void )
          */
 
         freq = ( QueryPerformanceFrequency( (LARGE_INTEGER *)&freq ) &&
-                 (freq == I64C(1193182) || freq == I64C(3579545) ) )
+                 (buf.QuadPart == I64C(1193182) || buf.QuadPart == I64C(3579545) ) )
                ? freq : 0;
     }
 
