@@ -1,7 +1,7 @@
 #***************************************************************************
 # src/Makefile : Dearchive and compile all files necessary
 # ***************************************************************************
-# Copyright (C) 2003 - 2006 the VideoLAN team
+# Copyright (C) 2003 - 2007 the VideoLAN team
 # $Id$
 #
 # Authors: Christophe Massiot <massiot@via.ecp.fr>
@@ -1190,7 +1190,7 @@ CLEAN_PKG += libdca
 
 ifdef SVN
 x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 604 x264
+	$(SVN) co svn://svn.videolan.org/x264/trunk/ x264
 ifdef HAVE_WIN32
 	(cd x264; patch -p 0 < ../Patches/x264-svn-win32.patch )
 endif
@@ -1415,9 +1415,15 @@ twolame: twolame-$(TWOLAME_VERSION).tar.gz
 ifdef HAVE_BEOS
 	patch -p 0 < Patches/twolame-BeOS.patch
 endif
+ifdef HAVE_DARWIN_OS
+	patch -p 0 < Patches/twolame-osx.patch
+endif
 
 .twolame: twolame
-	(cd twolame; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) && make && make install)
+ifdef HAVE_WIN32
+	(cd twolame/win32; wget "http://twolame.svn.sourceforge.net/viewvc/*checkout*/twolame/trunk/win32/winutil.h")
+endif	
+	(cd twolame; $(HOSTCC) CFLAGS="${CFLAGS}  -DLIBTWOLAME_STATIC" ./configure $(HOSTCONF) --prefix=$(PREFIX) && cd libtwolame &&  make && make install)
 	$(INSTALL_NAME)
 	touch $@
 
