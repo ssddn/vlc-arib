@@ -637,6 +637,7 @@ static char *SDPGenerate( sap_handler_t *p_sap,
                         "v=0\r\n"
                         "o=- "I64Fd" %d IN IP%c %s\r\n"
                         "s=%s\r\n"
+                        "i=N/A\r\n"
                         "c=IN IP%c %s/%d\r\n"
                         "t=0 0\r\n"
                         "a=tool:"PACKAGE_STRING"\r\n"
