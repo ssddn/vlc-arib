@@ -652,7 +652,7 @@ static char *SDPGenerate( sap_handler_t *p_sap,
                         p_session->i_ttl ?: (config_GetInt( p_sap, "ttl" ) ?: 1),
                         (sfilter != NULL) ? sfilter : "",
                         psz_group ? "a=x-plgroup:" : "",
-                        psz_group ? psz_group : "", psz_group ? "\r\n" : ""
+                        psz_group ? psz_group : "", psz_group ? "\r\n" : "",
                         p_session->i_port,
                         p_session->b_rtp ? "RTP/AVP" : "udp",
                         p_session->i_payload);
