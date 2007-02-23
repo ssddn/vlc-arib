@@ -445,7 +445,7 @@ static VLCWizard *_o_sharedInstance = nil;
     [o_t6_btn_mrInfo_sap setTitle: _NS("More Info")];
     [o_t6_ckb_local setTitle: _NS("Local playback")];
     [o_t6_btn_mrInfo_local setTitle: _NS("More Info")];
-    [o_t6_ckb_soverlay setTitle: _NS("Add Subtitles to transcoded video")];
+    [o_t6_ckb_soverlay setTitle: _NS("Add subtitles to transcoded video")];
 
     /* page seven ("Transcode 2") */
     [o_t7_title setStringValue: _NS("Additional transcode options")];
@@ -454,7 +454,7 @@ static VLCWizard *_o_sharedInstance = nil;
     [o_t7_txt_saveFileTo setStringValue: _NS("Select the file to save to")];
     [o_t7_btn_chooseFile setTitle: _NS("Choose...")];
     [o_t7_ckb_local setTitle: _NS("Local playback")];
-    [o_t7_ckb_soverlay setTitle: _NS("Add Subtitles to transcoded video")];
+    [o_t7_ckb_soverlay setTitle: _NS("Add subtitles to transcoded video")];
     [o_t7_ckb_soverlay setToolTip: _NS("Adds available subtitles directly to " \
                                        "the video. These cannot be disabled " \
                                        "by the receiving user as they become " \
