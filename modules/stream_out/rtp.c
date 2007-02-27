@@ -526,7 +526,7 @@ static int Open( vlc_object_t *p_this )
 	   a= source-filter: we need our source address
            a= x-plgroup: (missing)
            RTP packets need to get the correct src IP address  */
-        if( (ipv4 == 4)
+        if( (ipv == 4)
          && net_AddressIsMulticast( (vlc_object_t *)p_stream, p_sys->psz_destination ) )
         {
             snprintf( psz_ttl, sizeof( psz_ttl ), "/%d", p_sys->i_ttl );
