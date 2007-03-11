@@ -176,11 +176,11 @@ struct picture_sys_t
 #define PROP_MWM_HINTS_ELEMENTS 5
 typedef struct mwmhints_t
 {
-    uint32_t flags;
-    uint32_t functions;
-    uint32_t decorations;
-    int32_t  input_mode;
-    uint32_t status;
+    unsigned long flags;
+    unsigned long functions;
+    unsigned long decorations;
+    signed   long input_mode;
+    unsigned long status;
 
 } mwmhints_t;
 
