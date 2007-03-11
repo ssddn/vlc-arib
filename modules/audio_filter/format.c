@@ -423,7 +423,7 @@ static block_t *S16toFloat32( filter_t *p_filter, block_t *p_block )
 static block_t *U16toFloat32( filter_t *p_filter, block_t *p_block )
 {
     block_t *p_block_out;
-    int16_t *p_in;
+    uint16_t *p_in;
     float *p_out;
     int i;
 
@@ -435,7 +435,7 @@ static block_t *U16toFloat32( filter_t *p_filter, block_t *p_block )
         return NULL;
     }
 
-    p_in = (int16_t *)p_block->p_buffer;
+    p_in = (uint16_t *)p_block->p_buffer;
     p_out = (float *)p_block_out->p_buffer;
 
     for( i = p_block->i_buffer / 2; i--; )
@@ -556,8 +556,8 @@ static block_t *U16toU8( filter_t *p_filter, block_t *p_block )
 static block_t *U16toS16( filter_t *p_filter, block_t *p_block )
 {
     int i;
-    int16_t *p_in = (int16_t *)p_block->p_buffer;
-    uint16_t *p_out = (uint16_t *)p_in;
+    uint16_t *p_in = (uint16_t *)p_block->p_buffer;
+    int16_t *p_out = (int16_t *)p_in;
 
     for( i = p_block->i_buffer / 2; i--; )
         *p_out++ = (int)(*p_in++) - 32768;
