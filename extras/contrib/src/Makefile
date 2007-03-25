@@ -116,7 +116,7 @@ ifdef HAVE_WINCE
 HOSTCONF+= --without-pic --disable-shared
 FFMPEGCONF+= --enable-mingwce --cpu=armv4l --disable-debug --disable-encoders --disable-muxers --disable-mpegaudio-hp --disable-decoder=snow --disable-decoder=vc9 --disable-decoder=wmv3 --disable-decoder=vorbis --disable-decoder=dvdsub --disable-decoder=dvbsub --disable-protocols
 else
-FFMPEGCONF+= --enable-libmp3lame --enable-libfaac
+FFMPEGCONF+= --enable-mp3lame --enable-faac
 endif
 
 ifdef HAVE_BEOS
@@ -860,7 +860,7 @@ DISTCLEAN_PKG += lame-$(LAME_VERSION).tar.gz
 
 ifdef SVN
 libebml: 
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml libebml
+	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml -r 1254 libebml
 else
 libebml-$(LIBEBML_VERSION).tar.bz2:
 	$(WGET) $(LIBEBML_URL)
@@ -891,7 +891,7 @@ DISTCLEAN_PKG += libebml-$(LIBEBML_VERSION).tar.bz2
 
 ifdef SVN
 libmatroska:
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska libmatroska
+	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska -r 1254 libmatroska
 else
 libmatroska-$(LIBMATROSKA_VERSION).tar.bz2:
 	$(WGET) $(LIBMATROSKA_URL)
@@ -947,7 +947,7 @@ ifdef HAVE_WINCE
 else
 .ffmpeg: ffmpeg .faac .lame
 endif
-	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-pp --disable-vhook --disable-ffserver --disable-network --enable-liba52 --disable-ffplay --disable-swscaler && make install-libs install-headers)
+	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-pp --disable-vhook --disable-ffserver --disable-network --enable-a52 --disable-ffplay && make install-libs install-headers)
 	touch $@
 
 CLEAN_FILE += .ffmpeg
@@ -1190,7 +1190,7 @@ CLEAN_PKG += libdca
 
 ifdef SVN
 x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ x264
+	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 604 x264
 ifdef HAVE_WIN32
 	(cd x264; patch -p 0 < ../Patches/x264-svn-win32.patch )
 endif
