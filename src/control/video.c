@@ -227,34 +227,45 @@ int libvlc_video_get_width( libvlc_input_t *p_input,
 vlc_bool_t libvlc_input_has_vout( libvlc_input_t *p_input,
                                   libvlc_exception_t *p_e )
 {
-    vout_thread_t *p_vout = GetVout( p_input, p_e );
+    input_thread_t *p_input_thread = GetInput(p_input, p_e);
+    vlc_bool_t has_vout = VLC_FALSE;
 
-    /* GetVout will raise the exception for us */
-    if( !p_vout )
+    if( p_input_thread )
     {
-        return VLC_FALSE;
+        vout_thread_t *p_vout;
+
+        p_vout = vlc_object_find( p_input_thread, VLC_OBJECT_VOUT, FIND_CHILD );
+        if( p_vout )
+        {
+            has_vout = VLC_TRUE;
+            vlc_object_release( p_vout );
+        }
+        vlc_object_release( p_input_thread );
     }
-
-    vlc_object_release( p_vout );
-
-    return VLC_TRUE;
+    return has_vout;
 }
 
 int libvlc_video_reparent( libvlc_input_t *p_input, libvlc_drawable_t d,
                            libvlc_exception_t *p_e )
 {
     vout_thread_t *p_vout = GetVout( p_input, p_e );
-    vout_Control( p_vout , VOUT_REPARENT, d);
-    vlc_object_release( p_vout );
 
+    if( p_vout )
+    {
+        vout_Control( p_vout , VOUT_REPARENT, d);
+        vlc_object_release( p_vout );
+    }
     return 0;
 }
 
 void libvlc_video_resize( libvlc_input_t *p_input, int width, int height, libvlc_exception_t *p_e )
 {
     vout_thread_t *p_vout = GetVout( p_input, p_e );
-    vout_Control( p_vout, VOUT_SET_SIZE, width, height );
-    vlc_object_release( p_vout );
+    if( p_vout )
+    {
+        vout_Control( p_vout, VOUT_SET_SIZE, width, height );
+        vlc_object_release( p_vout );
+    }
 }
 
 /* global video settings */

@@ -76,7 +76,6 @@ inline void libvlc_exception_raise( libvlc_exception_t *p_exception,
     vasprintf( &p_exception->psz_message, psz_format, args );
     va_end( args );
 
-    if( p_exception == NULL ) return;
     p_exception->b_raised = 1;
 }
 
