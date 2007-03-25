@@ -4,6 +4,7 @@
  * Copyright (C) 2006 the VideoLAN team
  *
  * Authors: Damien Fouilleul <Damien.Fouilleul@laposte.net>
+ *          Jean-Paul Saman <jpsaman _at_ m2x _dot_ nl>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -198,9 +199,105 @@ STDMETHODIMP VLCAudio::put_volume(long volume)
     return hr;
 };
 
-STDMETHODIMP VLCAudio::toggleMute()
+STDMETHODIMP VLCAudio::get_track(long* track)
+{
+    if( NULL == track )
+        return E_POINTER;
+
+    libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        libvlc_input_t *p_input = libvlc_playlist_get_input(p_libvlc, &ex);
+        *track = libvlc_audio_get_track(p_input, &ex);
+        libvlc_input_free(p_input);
+        if( libvlc_exception_raised(&ex) )
+        {
+            _p_instance->setErrorInfo(IID_IVLCAudio, libvlc_exception_get_message(&ex));
+            libvlc_exception_clear(&ex);
+            return E_FAIL;
+        }
+        return NOERROR;
+    }
+    return hr;
+};
+
+STDMETHODIMP VLCAudio::put_track(long track)
 {
     libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        libvlc_input_t *p_input = libvlc_playlist_get_input(p_libvlc, &ex);
+        libvlc_audio_set_track(p_input, track, &ex);
+        libvlc_input_free(p_input);
+        if( libvlc_exception_raised(&ex) )
+        {
+            _p_instance->setErrorInfo(IID_IVLCAudio, libvlc_exception_get_message(&ex));
+            libvlc_exception_clear(&ex);
+            return E_FAIL;
+        }
+        return NOERROR;
+    }
+    return hr;
+};
+
+STDMETHODIMP VLCAudio::get_channel(long *channel)
+{
+    if( NULL == channel )
+        return E_POINTER;
+
+    libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        *channel = libvlc_audio_get_channel(p_libvlc, &ex);
+        if( libvlc_exception_raised(&ex) )
+        {
+            _p_instance->setErrorInfo(IID_IVLCAudio,
+                        libvlc_exception_get_message(&ex));
+            libvlc_exception_clear(&ex);
+            return E_FAIL;
+        }
+	return NOERROR;
+    }
+    return hr;
+};
+
+STDMETHODIMP VLCAudio::put_channel(long channel)
+{
+    libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        libvlc_audio_set_channel(p_libvlc, channel, &ex);
+        if( libvlc_exception_raised(&ex) )
+        {
+            _p_instance->setErrorInfo(IID_IVLCAudio,
+                         libvlc_exception_get_message(&ex));
+            libvlc_exception_clear(&ex);
+            return E_FAIL;
+        }
+        return NOERROR;
+    }
+    return hr;
+};
+
+STDMETHODIMP VLCAudio::toggleMute()
+{
+    libvlc_instance_t* p_libvlc = NULL;
     HRESULT hr = _p_instance->getVLC(&p_libvlc);
     if( SUCCEEDED(hr) )
     {
@@ -210,7 +307,8 @@ STDMETHODIMP VLCAudio::toggleMute()
         libvlc_audio_toggle_mute(p_libvlc, &ex);
         if( libvlc_exception_raised(&ex) )
         {
-            _p_instance->setErrorInfo(IID_IVLCAudio, libvlc_exception_get_message(&ex));
+            _p_instance->setErrorInfo(IID_IVLCAudio, 
+			              libvlc_exception_get_message(&ex));
             libvlc_exception_clear(&ex);
             return E_FAIL;
         }
@@ -527,6 +625,7 @@ STDMETHODIMP VLCInput::get_fps(double* fps)
     if( NULL == fps )
         return E_POINTER;
 
+    *fps = 0.0;
     libvlc_instance_t* p_libvlc;
     HRESULT hr = _p_instance->getVLC(&p_libvlc);
     if( SUCCEEDED(hr) )
@@ -1974,12 +2073,13 @@ STDMETHODIMP VLCVideo::get_aspectRatio(BSTR* aspect)
                 if( NULL == psz_aspect )
                     return E_OUTOFMEMORY;
 
-                *aspect = SysAllocStringByteLen(psz_aspect, strlen(psz_aspect));
+                *aspect = BSTRFromCStr(CP_UTF8, psz_aspect);
                 free( psz_aspect );
                 psz_aspect = NULL;
-                return NOERROR;
+                return (NULL == aspect) ? E_OUTOFMEMORY : NOERROR;
             }
             if( psz_aspect ) free( psz_aspect );
+            psz_aspect = NULL;
         }
         _p_instance->setErrorInfo(IID_IVLCVideo, libvlc_exception_get_message(&ex));
         libvlc_exception_clear(&ex);
@@ -2009,9 +2109,7 @@ STDMETHODIMP VLCVideo::put_aspectRatio(BSTR aspect)
         {
             psz_aspect = CStrFromBSTR(CP_UTF8, aspect);
             if( NULL == psz_aspect )
-            {
                 return E_OUTOFMEMORY;
-            }
 
             libvlc_video_set_aspect_ratio(p_input, psz_aspect, &ex);
 
@@ -2024,6 +2122,58 @@ STDMETHODIMP VLCVideo::put_aspectRatio(BSTR aspect)
                 libvlc_exception_clear(&ex);
                 return E_FAIL;
             }
+        }
+        return NOERROR;
+    }
+    return hr;
+};
+ 
+STDMETHODIMP VLCVideo::get_subtitle(long* spu)
+{
+    if( NULL == spu )
+        return E_POINTER;
+
+    libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        libvlc_input_t *p_input = libvlc_playlist_get_input(p_libvlc, &ex);
+        if( ! libvlc_exception_raised(&ex) )
+        {
+            *spu = libvlc_video_get_spu(p_input, &ex);
+            libvlc_input_free(p_input);
+            if( ! libvlc_exception_raised(&ex) )
+            {
+                return NOERROR;
+            }
+        }
+        _p_instance->setErrorInfo(IID_IVLCVideo, libvlc_exception_get_message(&ex));
+        libvlc_exception_clear(&ex);
+        return E_FAIL;
+    }
+    return hr;
+};
+
+STDMETHODIMP VLCVideo::put_subtitle(long spu)
+{
+    libvlc_instance_t* p_libvlc;
+    HRESULT hr = _p_instance->getVLC(&p_libvlc);
+    if( SUCCEEDED(hr) )
+    {
+        libvlc_exception_t ex;
+        libvlc_exception_init(&ex);
+
+        libvlc_input_t *p_input = libvlc_playlist_get_input(p_libvlc, &ex);
+        libvlc_video_set_spu(p_input, spu, &ex);
+        libvlc_input_free(p_input);
+        if( libvlc_exception_raised(&ex) )
+        {
+            _p_instance->setErrorInfo(IID_IVLCVideo, libvlc_exception_get_message(&ex));
+            libvlc_exception_clear(&ex);
+            return E_FAIL;
         }
         return NOERROR;
     }
@@ -2228,14 +2378,14 @@ STDMETHODIMP VLCControl2::get_StartTime(long *seconds)
 
     return S_OK;
 };
-     
+
 STDMETHODIMP VLCControl2::put_StartTime(long seconds)
 {
     _p_instance->setStartTime(seconds);
 
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
 {
     if( NULL == version )
@@ -2245,13 +2395,13 @@ STDMETHODIMP VLCControl2::get_VersionInfo(BSTR *version)
     if( NULL != versionStr )
     {
         *version = BSTRFromCStr(CP_UTF8, versionStr);
-        
+
         return NULL == *version ? E_OUTOFMEMORY : NOERROR;
     }
     *version = NULL;
     return E_FAIL;
 };
- 
+
 STDMETHODIMP VLCControl2::get_Visible(VARIANT_BOOL *isVisible)
 {
     if( NULL == isVisible )
@@ -2261,7 +2411,7 @@ STDMETHODIMP VLCControl2::get_Visible(VARIANT_BOOL *isVisible)
 
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::put_Visible(VARIANT_BOOL isVisible)
 {
     _p_instance->setVisible(isVisible != VARIANT_FALSE);
@@ -2277,7 +2427,7 @@ STDMETHODIMP VLCControl2::get_Volume(long *volume)
     *volume  = _p_instance->getVolume();
     return NOERROR;
 };
-        
+
 STDMETHODIMP VLCControl2::put_Volume(long volume)
 {
     _p_instance->setVolume(volume);

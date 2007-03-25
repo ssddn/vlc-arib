@@ -4,6 +4,7 @@
  * Copyright (C) 2006 the VideoLAN team
  *
  * Authors: Damien Fouilleul <Damien.Fouilleul@laposte.net>
+ *          Jean-Paul Saman <jpsaman _at_ m2x _dot_ nl>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -198,6 +199,16 @@ library AXVLC
 
         [helpstring("Mute/unmute audio playback.")]
         HRESULT toggleMute();
+
+        [propget, helpstring("Returns/sets audio track used/to use.")]
+        HRESULT track([out, retval] long* track);
+        [propput, helpstring("Returns/sets audio track used/to use.")]
+        HRESULT track([in] long track);
+
+        [propget, helpstring("Returns audio channel [1-5] indicating; stereo, reverse stereo, left, right, dolby.")]
+        HRESULT channel([out, retval] long* channel);
+        [propput, helpstring("Sets audio channel to [1-5] indicating; stereo, reverse stereo, left, right, dolby.")]
+        HRESULT channel([in] long channel);
     };
 
     [
@@ -410,6 +421,11 @@ library AXVLC
         HRESULT aspectRatio([out, retval] BSTR* aspect);
         [propput, helpstring("Sets video aspect ratio.")]
         HRESULT aspectRatio([in] BSTR aspect);
+
+        [propget, helpstring("Returns video subtitle used.")]
+        HRESULT subtitle([out, retval] long* spu);
+        [propput, helpstring("Sets video subtitle to use.")]
+        HRESULT subtitle([in] long spu);
 
         [helpstring("toggle fullscreen/windowed state.")]
         HRESULT toggleFullscreen();
