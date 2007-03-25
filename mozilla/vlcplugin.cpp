@@ -48,7 +48,6 @@ VlcPlugin::VlcPlugin( NPP instance, uint16 mode ) :
     libvlc_instance(NULL),
     libvlc_log(NULL),
     p_scriptClass(NULL),
-    p_scriptObject(NULL),
     p_browser(instance),
     psz_baseURL(NULL)
 #if XP_WIN
@@ -284,8 +283,6 @@ VlcPlugin::~VlcPlugin()
 {
     delete psz_baseURL;
     delete psz_target;
-    if( p_scriptObject )
-        NPN_ReleaseObject(p_scriptObject);
     if( libvlc_log )
         libvlc_log_close(libvlc_log, NULL);
     if( libvlc_instance )
@@ -438,15 +435,6 @@ relativeurl:
         }
     }
     return NULL;
-}
-
-NPObject* VlcPlugin::getScriptObject()
-{
-    if( NULL == p_scriptObject )
-    {
-        p_scriptObject = NPN_CreateObject(p_browser, p_scriptClass);
-    }
-    return NPN_RetainObject(p_scriptObject);
 }
 
 #if XP_UNIX
