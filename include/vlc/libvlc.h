@@ -5,6 +5,7 @@
  * $Id: vlc.h 13701 2005-12-12 17:58:56Z zorglub $
  *
  * Authors: Clément Stenac <zorglub@videolan.org>
+ *          Jean-Paul Saman <jpsaman _at_ m2x _dot_ nl>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -346,6 +347,22 @@ char *libvlc_video_get_aspect_ratio( libvlc_input_t *, libvlc_exception_t * );
 void libvlc_video_set_aspect_ratio( libvlc_input_t *, char *, libvlc_exception_t * );
 
 /**
+ * Get current video subtitle
+ * \param p_input the input
+ * \param p_exception an initialized exception
+ * \return the video subtitle selected
+ */
+int libvlc_video_get_spu( libvlc_input_t *, libvlc_exception_t * );
+
+/**
+ * Set new video subtitle
+ * \param p_input the input
+ * \param i_spu new video subtitle to select
+ * \param p_exception an initialized exception
+ */
+void libvlc_video_set_spu( libvlc_input_t *, int , libvlc_exception_t * );
+
+/**
  * Take a snapshot of the current video window
  * \param p_input the input
  * \param psz_filepath the path where to save the screenshot to
@@ -474,7 +491,41 @@ int libvlc_audio_get_volume( libvlc_instance_t *, libvlc_exception_t * );
  * \param p_exception an initialized exception
  * \return void
  */
-void libvlc_audio_set_volume( libvlc_instance_t *, int , libvlc_exception_t *);
+void libvlc_audio_set_volume( libvlc_instance_t *, int, libvlc_exception_t *);
+
+/**
+ * Get current audio track
+ * \param p_input input instance
+ * \param p_exception an initialized exception
+ * \return the audio track (int)
+ */
+int libvlc_audio_get_track( libvlc_input_t *, libvlc_exception_t * );
+
+/**
+ * Set current audio track
+ * \param p_input input instance
+ * \param i_track the track (int)
+ * \param p_exception an initialized exception
+ * \return void
+ */
+void libvlc_audio_set_track( libvlc_input_t *, int, libvlc_exception_t * );
+
+/**
+ * Get current audio channel
+ * \param p_instance input instance
+ * \param p_exception an initialized exception
+ * \return the audio channel (int)
+ */
+int libvlc_audio_get_channel( libvlc_instance_t *, libvlc_exception_t * );
+
+/**
+ * Set current audio channel
+ * \param p_instance input instance
+ * \param psz_channel the audio channel (int)
+ * \param p_exception an initialized exception
+ * \return void
+ */
+void libvlc_audio_set_channel( libvlc_instance_t *, int, libvlc_exception_t * );
 
 /** @} */
 
