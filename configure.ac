@@ -5107,49 +5107,104 @@ dnl  Mozilla plugin
 dnl
 mozilla=false
 AC_ARG_ENABLE(mozilla,
-  [  --enable-mozilla        build a vlc-based Mozilla plugin (default disabled)])
+  [  --enable-mozilla        build a vlc-based Firefox/Mozilla plugin (default disabled)])
 AC_ARG_WITH(mozilla-sdk-path,
   [    --with-mozilla-sdk-path=PATH path to mozilla sdk])
-
+AC_LANG_PUSH(C++)
 if test "${enable_mozilla}" = "yes" 
 then
   dnl currently vlc plugin only needs headers, no xpcom support apis are actually used
   need_xpcom_libs=false
+
   if test "${with_mozilla_sdk_path}" = "" -o "${with_mozilla_sdk_path}" = "no"
   then
-    AC_PATH_PROG(MOZILLA_CONFIG, mozilla-config, no)
-    if test "${MOZILLA_CONFIG}" = "no"
-    then
-      AC_PATH_PROG(SEAMONKEY_CONFIG, seamonkey-config, no)
-      if test "${SEAMONKEY_CONFIG}" = "no"
-      then
-        AC_PATH_PROG(XULRUNNER_CONFIG, xulrunner-config, no)
-        if test "${XULRUNNER_CONFIG}" = "no"
-        then
-          AC_MSG_ERROR([Please install the Mozilla development tools, mozilla-config was not found.])
-        else
-          have_xul=true
-          MOZILLA_CONFIG="${XULRUNNER_CONFIG}"
+    dnl New firefox-1.5 SDK api
+    PKG_CHECK_MODULES([FIREFOX], [firefox-plugin],
+      [
+        PKG_CHECK_MODULES([FIREFOX_XPCOM], [firefox-xpcom],
+          [],
+          [
+            PKG_CHECK_MODULES([MOZILLA_NSPR], [mozilla-nspr],
+              [],
+              [
+                PKG_CHECK_MODULES([NSPR], [nspr],
+                  [],
+                  [
+                    AC_MSG_ERROR([Please install the nspr development tools.])
+                  ]
+                )
+              ]
+            )
+          ])
+        CPPFLAGS="${CPPFLAGS_save} ${FIREFOX_CFLAGS} ${FIREFOX_XPCOM_CFLAGS} ${MOZILLA_NSPR_CFLAGS} ${NSPR_CFLAGS} ${MOZILLA_CPPFLAGS}"
+        MOZILLA_REQUIRED_HEADERS=1
+        AC_CHECK_HEADERS(mozilla-config.h,,MOZILLA_REQUIRED_HEADERS=0)
+        AC_CHECK_HEADERS(npapi.h,,MOZILLA_REQUIRED_HEADERS=0)
+        AC_CHECK_HEADERS(npruntime.h,,MOZILLA_REQUIRED_HEADERS=0,
+          [#if HAVE_NPAPI_H
+           # include <npapi.h>
+           #endif
+          ])
+        if test "${MOZILLA_REQUIRED_HEADERS}" = "0"; then
+            AC_MSG_ERROR([Please install the Firefox development tools; mozilla-config.h, plugin/npapi.h and plugin/npruntime.h were not found.])
         fi
-      else
-        MOZILLA_CONFIG="${SEAMONKEY_CONFIG}"
+        MOZILLA_REQUIRED_HEADERS=
+        mozilla=:
+        firefox_include=`pkg-config --variable=includedir firefox-plugin`
+        if test -f "${firefox_include}/mozilla-config.h" -a -f "${firefox_include}/mozilla-config32.h"; then
+            MOZILLA_CONFIG_H="${firefox_include}/mozilla-config32.h"
+        elif test -f "${firefox_include}/mozilla-config.h" -a -f "${firefox_include}/mozilla-config64.h"; then
+            MOZILLA_CONFIG_H="${firefox_include}/mozilla-config64.h"
+        else
+            MOZILLA_CONFIG_H="${firefox_include}/mozilla-config.h"
+        fi
+        if grep '^#define MOZ_X11 1' ${MOZILLA_CONFIG_H} 2>&1 > /dev/null ; then
+            VLC_ADD_LDFLAGS([mozilla], [${X_LIBS} ${X_PRE_LIBS} -lX11 -lXt])
+        fi
+        VLC_ADD_CPPFLAGS([mozilla],[${CPPFLAGS}])
+        VLC_ADD_LDFLAGS([mozilla],[${FIREFOX_LIBS} ${MOZILLA_NSPR_LIBS} ${NSPR_LIBS} ${MOZILLA_LDFLAGS}])
+        VLC_ADD_PLUGINS([mozilla])
+        MOZILLA_CONFIG=
+        CPPFLAGS="${CPPFLAGS_save}"
+      ],
+      [
+        AC_PATH_PROG(MOZILLA_CONFIG, mozilla-config, no)
+        if test "${MOZILLA_CONFIG}" = "no"
+        then
+          AC_PATH_PROG(SEAMONKEY_CONFIG, seamonkey-config, no)
+          if test "${SEAMONKEY_CONFIG}" = "no"
+          then
+            AC_PATH_PROG(XULRUNNER_CONFIG, xulrunner-config, no)
+            if test "${XULRUNNER_CONFIG}" = "no"
+            then
+              AC_MSG_ERROR([Please install the Mozilla development tools, mozilla-config was not found.])
+            else
+              have_xul=true
+              MOZILLA_CONFIG="${XULRUNNER_CONFIG}"
+            fi
+          else
+            MOZILLA_CONFIG="${SEAMONKEY_CONFIG}"
+          fi
+        fi
+      ]
+    )
+    if test ! -z "${MOZILLA_CONFIG}"
+    then
+      if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
+        LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
+        AC_CHECK_LIB(Xt,XtStrings,
+         [
+           VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}])
+           VLC_ADD_LDFLAGS([mozilla],[${X_LIBS} ${X_PRE_LIBS} -lXt -lX11 -lSM -lICE])
+         ],
+         [],
+         [[${X_LIBS} ${X_PRE_LIBS} -lX11 -lSM -lICE]
+        ])
+        LDFLAGS="${LDFLAGS_save}"
       fi
-    fi
-
-    if ${MOZILLA_CONFIG} --defines | grep -q 'MOZ_X11=1'; then
-      LDFLAGS="${LDFLAGS_save} ${X_LIBS} ${X_PRE_LIBS}"
-      AC_CHECK_LIB(Xt,XtStrings,
-       [
-         VLC_ADD_CPPFLAGS([mozilla],[${X_CFLAGS}])
-         VLC_ADD_LDFLAGS([mozilla],[${X_LIBS} ${X_PRE_LIBS} -lXt -lX11 -lSM -lICE])
-       ],
-       [],
-       [[${X_LIBS} ${X_PRE_LIBS} -lX11 -lSM -lICE]
-      ])
-      LDFLAGS="${LDFLAGS_save}"
-    fi
 
       mozilla=:
+      PLUGINS_BINDINGS="${PLUGINS_BINDINGS} mozilla"
       dnl Workaround for http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=150490
       VLC_ADD_CPPFLAGS([mozilla],[[`${MOZILLA_CONFIG} --cflags plugin xpcom java | sed 's,-I\([^ ]*\)/mozilla/\([^ ]*\),-I\1/\2 -I\1/mozilla/\2,g' | xargs`]])
       if ${need_xpcom_libs}; then
@@ -5158,17 +5213,22 @@ then
          VLC_ADD_LDFLAGS([mozilla],[`${MOZILLA_CONFIG} --libs plugin`])
       fi
       CPPFLAGS="${CPPFLAGS_save} ${CPPFLAGS_mozilla}"
-      AC_CHECK_HEADERS(mozilla-config.h)
+      MOZILLA_REQUIRED_HEADERS=1
+      AC_CHECK_HEADERS(mozilla-config.h,,MOZILLA_REQUIRED_HEADERS=0)
+      AC_CHECK_HEADERS(npapi.h,,MOZILLA_REQUIRED_HEADERS=0)
+      AC_CHECK_HEADERS(npruntime.h,,MOZILLA_REQUIRED_HEADERS=0,
+        [#if HAVE_NPAPI_H
+         # include <npapi.h>
+         #endif
+        ])
+      if test "${MOZILLA_REQUIRED_HEADERS}" = "0"
+      then
+        AC_MSG_ERROR([Please install the Mozilla development tools, required headers were not found.])
+      fi
+      MOZILLA_REQUIRED_HEADERS=
       CPPFLAGS="${CPPFLAGS_save}"
       MOZILLA_SDK_PATH="`${MOZILLA_CONFIG} --prefix`"
-      XPIDL_INCL="`${MOZILLA_CONFIG} --cflags plugin xpcom java` \
-      `${MOZILLA_CONFIG} --idlflags plugin xpcom java` "
-      if ${have_xul}
-      then
-        xpidl_path="`${MOZILLA_CONFIG} --prefix`/lib/xulrunner"
-      else
-        xpidl_path="`${MOZILLA_CONFIG} --prefix`/bin"
-      fi	
+    fi
     dnl End of moz_sdk = ""
   else
     dnl special case for mingw32
@@ -5183,39 +5243,41 @@ then
 
     real_mozilla_sdk="`cd ${with_mozilla_sdk_path} 2>/dev/null && pwd`"
     CPPFLAGS="${CPPFLAGS_save} -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include"
-    AC_CHECK_HEADERS(mozilla-config.h, [
-      mozilla=:
-      VLC_ADD_CPPFLAGS([mozilla],[-DXPCOM_GLUE -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include -I${real_mozilla_sdk}/embedstring/include -I${real_mozilla_sdk}/xpcom/include -I${real_mozilla_sdk}/nspr/include -I${real_mozilla_sdk}/string/include -I${real_mozilla_sdk}/plugin/include -I${real_mozilla_sdk}/java/include])
-      if ${need_xpcom_libs}; then
-         VLC_ADD_LDFLAGS([mozilla],[-L${real_mozilla_sdk}/embedstring/bin -L${real_mozilla_sdk}/xpcom/bin -L${real_mozilla_sdk}/nspr/bin -L${real_mozilla_sdk}/string/bin -L${real_mozilla_sdk}/lib -lnspr4 -lplds4 -lplc4 -lxpcomglue])
-        if test "${SYS}" = "mingw32"; then
-          dnl latest gecko sdk does not have embedstring
-          if test -d "${real_mozilla_sdk}/embedstring/bin"
-          then
-            VLC_ADD_LDFLAGS([mozilla],[-lembedstring -Wl,--kill-at])
-          fi
+    MOZILLA_REQUIRED_HEADERS=1
+    AC_CHECK_HEADERS(mozilla-config.h,,MOZILLA_REQUIRED_HEADERS=0)
+    AC_CHECK_HEADERS(npapi.h,,MOZILLA_REQUIRED_HEADERS=0)
+    AC_CHECK_HEADERS(npruntime.h,,MOZILLA_REQUIRED_HEADERS=0,
+        [#if HAVE_NPAPI_H
+          #include <npapi.h>
+          #endif
+        ])
+    if test "${MOZILLA_REQUIRED_HEADERS}" = "0"
+    then
+        AC_MSG_ERROR([Please install the Mozilla development tools, required headers were not found.])
+    fi
+    MOZILLA_REQUIRED_HEADERS=
+    mozilla=:
+    PLUGINS_BINDINGS="${PLUGINS_BINDINGS} mozilla"
+    VLC_ADD_CPPFLAGS([mozilla],[-DXPCOM_GLUE -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include -I${real_mozilla_sdk}/embedstring/include -I${real_mozilla_sdk}/xpcom/include -I${real_mozilla_sdk}/nspr/include -I${real_mozilla_sdk}/string/include -I${real_mozilla_sdk}/plugin/include -I${real_mozilla_sdk}/java/include])
+    if ${need_xpcom_libs}; then
+       VLC_ADD_LDFLAGS([mozilla],[-L${real_mozilla_sdk}/embedstring/bin -L${real_mozilla_sdk}/xpcom/bin -L${real_mozilla_sdk}/nspr/bin -L${real_mozilla_sdk}/string/bin -L${real_mozilla_sdk}/lib -lnspr4 -lplds4 -lplc4 -lxpcomglue])
+      if test "${SYS}" = "mingw32"; then
+        dnl latest gecko sdk does not have embedstring
+        if test -d "${real_mozilla_sdk}/embedstring/bin"
+        then
+          VLC_ADD_LDFLAGS([mozilla],[-lembedstring -Wl,--kill-at])
         fi
       fi
+    fi
+    MOZILLA_SDK_PATH="${real_mozilla_sdk}"
 
-      MOZILLA_SDK_PATH="${real_mozilla_sdk}"
-      XPIDL_INCL="-I${real_mozilla_sdk}${mozilla_sdk_xpcom}/idl"
-      xpidl_path="${real_mozilla_sdk}${mozilla_sdk_xpcom}/bin"
-
-      if test -n "${CYGPATH}"; then
-        real_mozilla_sdk="`${CYGPATH} -w ${real_mozilla_sdk}`"
-        XPIDL_INCL="${XPIDL_INCL} -I\"${real_mozilla_sdk}${mozilla_sdk_xpcom}/idl\""
-      fi ])
+    if test -n "${CYGPATH}"; then
+      real_mozilla_sdk="`${CYGPATH} -w ${real_mozilla_sdk}`"
+    fi
     CPPFLAGS="${CPPFLAGS_save}"
   fi
-
-  if test "${enable_mozilla}" != "false"
-  then
-    AC_PATH_PROG(XPIDL, xpidl, no, ${xpidl_path}:/usr/lib/mozilla:/usr/lib64/mozilla:/usr/lib/xulrunner:/usr/lib64/xulrunner)
-    if test "${XPIDL}" = "no"; then
-      AC_MSG_ERROR([Please install the Mozilla development tools, xpidl was not found.])
-    fi
-  fi 
 fi
+AC_LANG_POP(C++)
 AM_CONDITIONAL(BUILD_MOZILLA,${mozilla})
 
 dnl
