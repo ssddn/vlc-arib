@@ -316,12 +316,21 @@ static void Swap( vout_thread_t * p_vout )
 static int Lock( vout_thread_t * p_vout )
 {
     vlc_mutex_lock( &p_vout->p_sys->lock );
+
+#if __INTEL__
+    CGLLockContext( (CGLContextObj)p_vout->p_sys->agl_ctx ); 
+#endif
+
     return 0;
 }
 
 static void Unlock( vout_thread_t * p_vout )
 {
     vlc_mutex_unlock( &p_vout->p_sys->lock );
+
+#if __INTEL__
+    CGLUnlockContext( (CGLContextObj)p_vout->p_sys->agl_ctx ); 
+#endif
 }
 
 /*****************************************************************************
