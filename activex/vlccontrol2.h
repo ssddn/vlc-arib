@@ -66,10 +66,6 @@ public:
     STDMETHODIMP put_mute(VARIANT_BOOL);
     STDMETHODIMP get_volume(long*);
     STDMETHODIMP put_volume(long);
-    STDMETHODIMP get_track(long*);
-    STDMETHODIMP put_track(long);
-    STDMETHODIMP get_channel(long*);
-    STDMETHODIMP put_channel(long);
     STDMETHODIMP toggleMute();
 
 protected:
@@ -248,7 +244,7 @@ public:
     // IVLCMessageIterator methods
     STDMETHODIMP get_hasNext(VARIANT_BOOL*);
     STDMETHODIMP next(IVLCMessage**);
-    
+
 protected:
     HRESULT loadTypeInfo();
 
@@ -522,8 +518,6 @@ public:
     STDMETHODIMP get_height(long*);
     STDMETHODIMP get_aspectRatio(BSTR*);
     STDMETHODIMP put_aspectRatio(BSTR);
-    STDMETHODIMP get_subtitle(long*);
-    STDMETHODIMP put_subtitle(long);
     STDMETHODIMP toggleFullscreen();
 
 protected:
