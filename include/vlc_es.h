@@ -289,6 +289,8 @@ static inline void es_format_Clean( es_format_t *fmt )
         }
         free(fmt->p_extra_languages);
     }
+    fmt->i_extra_languages = 0;
+    fmt->p_extra_languages = NULL;
 }
 
 #endif
