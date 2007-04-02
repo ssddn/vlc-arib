@@ -734,7 +734,7 @@ int playlist_Clear( playlist_t * p_playlist )
     int i;
     for( i = p_playlist->i_size; i > 0 ; i-- )
     {
-        playlist_LockDelete( p_playlist, p_playlist->pp_items[0]->input.i_id );
+        playlist_Delete( p_playlist, p_playlist->pp_items[0]->input.i_id );
     }
     for( i = 0 ; i< p_playlist->i_views; i++ )
     {
