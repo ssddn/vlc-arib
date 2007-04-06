@@ -63,7 +63,7 @@ static void Direct3DVoutRelease   ( vout_thread_t * );
 static int  Direct3DVoutOpen      ( vout_thread_t * );
 static void Direct3DVoutClose     ( vout_thread_t * );
 
-static int Direct3DVoutResetDevice( vout_thread_t *, UINT , UINT );
+static int Direct3DVoutResetDevice( vout_thread_t * );
 
 static int Direct3DVoutCreatePictures   ( vout_thread_t *, size_t );
 static void Direct3DVoutReleasePictures ( vout_thread_t * );
@@ -578,6 +578,12 @@ static void Display( vout_thread_t *p_vout, picture_t *p_pic )
     HRESULT hr = IDirect3DDevice9_Present(p_d3ddev, NULL, NULL, NULL, NULL);
     if( FAILED(hr) )
         msg_Dbg( p_vout, "%s:%d (hr=0x%0lX)", __FUNCTION__, __LINE__, hr);
+
+    /* if set, remove the black brush to avoid flickering in repaint operations */
+    if( 0UL != GetClassLong( p_vout->p_sys->hvideownd, GCL_HBRBACKGROUND) )
+    {
+        SetClassLong( p_vout->p_sys->hvideownd, GCL_HBRBACKGROUND, 0UL);
+    }
 }
 
 /*****************************************************************************
@@ -651,20 +657,12 @@ static void Direct3DVoutRelease( vout_thread_t *p_vout )
         p_vout->p_sys->hd3d9_dll = NULL;
     }
 }
-       
-/*****************************************************************************
- * DirectD3DVoutOpen: Takes care of all the Direct3D9 initialisations
- *****************************************************************************
- * This function creates Direct3D device
- * this must be called from the vout thread for performance reason, as
- * all Direct3D Device APIs are used in a non multithread safe environment
- *****************************************************************************/
-static int Direct3DVoutOpen( vout_thread_t *p_vout )
+
+static int Direct3DFillPresentationParameters(vout_thread_t *p_vout, D3DPRESENT_PARAMETERS *d3dpp)
 {
-    HRESULT hr = S_OK;
-    LPDIRECT3D9 p_d3dobj = p_vout->p_sys->p_d3dobj;;
+    LPDIRECT3D9 p_d3dobj = p_vout->p_sys->p_d3dobj;
     D3DDISPLAYMODE d3ddm;
-    LPDIRECT3DDEVICE9 p_d3ddev;
+    HRESULT hr;
 
     /*
     ** Get the current desktop display mode, so we can set up a back
@@ -677,19 +675,48 @@ static int Direct3DVoutOpen( vout_thread_t *p_vout )
        return VLC_EGENERIC;
     }
 
+    /* keep a copy of current desktop format */
+    p_vout->p_sys->bbFormat = d3ddm.Format;
+
     /* Set up the structure used to create the D3DDevice. */
-    ZeroMemory( &p_vout->p_sys->d3dpp, sizeof(D3DPRESENT_PARAMETERS) );
-    p_vout->p_sys->d3dpp.Windowed               = TRUE;
-    p_vout->p_sys->d3dpp.hDeviceWindow          = p_vout->p_sys->hvideownd;
-    p_vout->p_sys->d3dpp.SwapEffect             = D3DSWAPEFFECT_DISCARD;
-    p_vout->p_sys->d3dpp.PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
-    p_vout->p_sys->d3dpp.BackBufferFormat       = d3ddm.Format;
-    p_vout->p_sys->d3dpp.BackBufferCount        = 1;
-    p_vout->p_sys->d3dpp.EnableAutoDepthStencil = FALSE;
+    ZeroMemory( d3dpp, sizeof(D3DPRESENT_PARAMETERS) );
+    d3dpp->Flags                  = D3DPRESENTFLAG_VIDEO;
+    d3dpp->Windowed               = TRUE;
+    d3dpp->hDeviceWindow          = p_vout->p_sys->hvideownd;
+    d3dpp->BackBufferWidth        = p_vout->render.i_width;
+    d3dpp->BackBufferHeight       = p_vout->render.i_height;
+    d3dpp->SwapEffect             = D3DSWAPEFFECT_DISCARD;
+    d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
+    d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
+    d3dpp->BackBufferFormat       = d3ddm.Format;
+    d3dpp->BackBufferCount        = 1;
+    d3dpp->EnableAutoDepthStencil = FALSE;
+
+    return VLC_SUCCESS;
+}
+
+/*****************************************************************************
+ * DirectD3DVoutOpen: Takes care of all the Direct3D9 initialisations
+ *****************************************************************************
+ * This function creates Direct3D device
+ * this must be called from the vout thread for performance reason, as
+ * all Direct3D Device APIs are used in a non multithread safe environment
+ *****************************************************************************/
+static int Direct3DVoutOpen( vout_thread_t *p_vout )
+{
+    LPDIRECT3D9 p_d3dobj = p_vout->p_sys->p_d3dobj;
+    LPDIRECT3DDEVICE9 p_d3ddev;
+    D3DPRESENT_PARAMETERS d3dpp;
+    HRESULT hr;
+
+    if( VLC_SUCCESS != Direct3DFillPresentationParameters(p_vout, &d3dpp) )
+	return VLC_EGENERIC;
 
     // Create the D3DDevice
-    hr = IDirect3D9_CreateDevice(p_d3dobj, D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, NULL,
-                D3DCREATE_SOFTWARE_VERTEXPROCESSING, &(p_vout->p_sys->d3dpp), &p_d3ddev );
+    hr = IDirect3D9_CreateDevice(p_d3dobj, D3DADAPTER_DEFAULT,
+                                 D3DDEVTYPE_HAL, p_vout->p_sys->hvideownd,
+                                 D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+				 &d3dpp, &p_d3ddev );
     if( FAILED(hr) )                                      
     {
        msg_Err(p_vout, "Could not create the D3D device! (hr=0x%lX)", hr);
@@ -721,17 +748,14 @@ static void Direct3DVoutClose( vout_thread_t *p_vout )
  * All resources must be deallocated before the reset occur, they will be
  * realllocated once the reset has been performed successfully
  *****************************************************************************/
-static int Direct3DVoutResetDevice( vout_thread_t *p_vout, UINT i_width, UINT i_height )
+static int Direct3DVoutResetDevice( vout_thread_t *p_vout )
 {
     LPDIRECT3DDEVICE9       p_d3ddev = p_vout->p_sys->p_d3ddev;
     D3DPRESENT_PARAMETERS   d3dpp;
     HRESULT hr;
 
-    memcpy(&d3dpp, &(p_vout->p_sys->d3dpp), sizeof(d3dpp));
-    if( i_width )
-        d3dpp.BackBufferWidth  = i_width;
-    if( i_height )
-        d3dpp.BackBufferHeight = i_height;
+    if( VLC_SUCCESS != Direct3DFillPresentationParameters(p_vout, &d3dpp) )
+	return VLC_EGENERIC;
 
     // release all D3D objects
     Direct3DVoutReleasePictures( p_vout );
@@ -742,8 +766,6 @@ static int Direct3DVoutResetDevice( vout_thread_t *p_vout, UINT i_width, UINT i_
         // re-create them
         if( (VLC_SUCCESS == Direct3DVoutCreatePictures(p_vout, 1)) )
         {
-            p_vout->p_sys->d3dpp.BackBufferWidth  = i_width;
-            p_vout->p_sys->d3dpp.BackBufferHeight = i_height;
             return VLC_SUCCESS;
         }
         return VLC_EGENERIC;
@@ -1003,7 +1025,7 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
 static int Direct3DVoutCreatePictures( vout_thread_t *p_vout, size_t i_num_pics )
 {
     LPDIRECT3DDEVICE9       p_d3ddev  = p_vout->p_sys->p_d3ddev;
-    D3DFORMAT               format    = p_vout->p_sys->d3dpp.BackBufferFormat;
+    D3DFORMAT               format;
     HRESULT hr;
     size_t c;
 
@@ -1014,7 +1036,7 @@ static int Direct3DVoutCreatePictures( vout_thread_t *p_vout, size_t i_num_pics 
     ** the requested chroma which is usable by the hardware in an offscreen surface, as they
     ** typically support more formats than textures
     */ 
-    format = Direct3DVoutFindFormat(p_vout, p_vout->render.i_chroma, format);
+    format = Direct3DVoutFindFormat(p_vout, p_vout->render.i_chroma, p_vout->p_sys->bbFormat);
     if( VLC_SUCCESS != Direct3DVoutSetOutputFormat(p_vout, format) )
     {
         msg_Err(p_vout, "surface pixel format is not supported.");
@@ -1210,7 +1232,7 @@ static void Direct3DVoutRenderSurface( vout_thread_t *p_vout, picture_t *p_pic )
     if( FAILED(hr) )
     {
         if( (D3DERR_DEVICENOTRESET != hr)
-         || (VLC_SUCCESS != Direct3DVoutResetDevice(p_vout, 0, 0)) )
+         || (VLC_SUCCESS != Direct3DVoutResetDevice(p_vout)) )
         {
             // device is not usable at present (lost device, out of video mem ?)
             return;
