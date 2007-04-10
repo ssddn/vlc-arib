@@ -582,7 +582,23 @@ static void Display( vout_thread_t *p_vout, picture_t *p_pic )
     /* if set, remove the black brush to avoid flickering in repaint operations */
     if( 0UL != GetClassLong( p_vout->p_sys->hvideownd, GCL_HBRBACKGROUND) )
     {
+        OSVERSIONINFO winVer;
+        winVer.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+
         SetClassLong( p_vout->p_sys->hvideownd, GCL_HBRBACKGROUND, 0UL);
+        /*
+        ** According to virtual dub blog, Vista has problems rendering 3D child windows
+        ** created by a different thread than its parent. Try the workaround in
+        ** http://www.virtualdub.org/blog/pivot/entry.php?id=149
+        */
+        if( GetVersionEx(&winVer) )
+        {
+            if( winVer.dwMajorVersion > 5 )
+            {
+                SetWindowPos( p_vout->p_sys->hvideownd, 0, 0, 0, 0, 0,
+                              SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_FRAMECHANGED);
+            }
+        }
     }
 }
 
@@ -710,13 +726,13 @@ static int Direct3DVoutOpen( vout_thread_t *p_vout )
     HRESULT hr;
 
     if( VLC_SUCCESS != Direct3DFillPresentationParameters(p_vout, &d3dpp) )
-	return VLC_EGENERIC;
+        return VLC_EGENERIC;
 
     // Create the D3DDevice
     hr = IDirect3D9_CreateDevice(p_d3dobj, D3DADAPTER_DEFAULT,
                                  D3DDEVTYPE_HAL, p_vout->p_sys->hvideownd,
                                  D3DCREATE_SOFTWARE_VERTEXPROCESSING,
-				 &d3dpp, &p_d3ddev );
+                                 &d3dpp, &p_d3ddev );
     if( FAILED(hr) )                                      
     {
        msg_Err(p_vout, "Could not create the D3D device! (hr=0x%lX)", hr);
@@ -755,7 +771,7 @@ static int Direct3DVoutResetDevice( vout_thread_t *p_vout )
     HRESULT hr;
 
     if( VLC_SUCCESS != Direct3DFillPresentationParameters(p_vout, &d3dpp) )
-	return VLC_EGENERIC;
+        return VLC_EGENERIC;
 
     // release all D3D objects
     Direct3DVoutReleasePictures( p_vout );
@@ -787,18 +803,18 @@ static D3DFORMAT Direct3DVoutSelectFormat( vout_thread_t *p_vout, D3DFORMAT targ
     {
         HRESULT hr;
         D3DFORMAT format = formats[c];
-	/* test whether device can create a surface of that format */
-	hr = IDirect3D9_CheckDeviceFormat(p_d3dobj, D3DADAPTER_DEFAULT,
-		D3DDEVTYPE_HAL, target, 0, D3DRTYPE_SURFACE, format);
-	if( SUCCEEDED(hr) )
-	{
-	    /* test whether device can perform color-conversion
-	    ** from that format to target format
-	    */
-	    hr = IDirect3D9_CheckDeviceFormatConversion(p_d3dobj,
-		    D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL,
-		    format, target);
-	}
+        /* test whether device can create a surface of that format */
+        hr = IDirect3D9_CheckDeviceFormat(p_d3dobj, D3DADAPTER_DEFAULT,
+                D3DDEVTYPE_HAL, target, 0, D3DRTYPE_SURFACE, format);
+        if( SUCCEEDED(hr) )
+        {
+            /* test whether device can perform color-conversion
+            ** from that format to target format
+            */
+            hr = IDirect3D9_CheckDeviceFormatConversion(p_d3dobj,
+                    D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL,
+                    format, target);
+        }
         if( SUCCEEDED(hr) )
         {
             // found a compatible format
@@ -984,8 +1000,8 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
             p_vout->output.i_rbshift = 0;
             p_vout->output.i_lbshift = 0;
 #       else
-	    /* FIXME: since components are not byte aligned,
-	              there is not chance that this will work */
+            /* FIXME: since components are not byte aligned,
+                      there is not chance that this will work */
             p_vout->output.i_rrshift = 0;
             p_vout->output.i_lrshift = 0;
             p_vout->output.i_rgshift = 0;
@@ -1007,8 +1023,8 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
             p_vout->output.i_rbshift = 0;
             p_vout->output.i_lbshift = 0;
 #       else
-	    /* FIXME: since components are not byte aligned,
-	              there is not chance that this will work */
+            /* FIXME: since components are not byte aligned,
+                      there is not chance that this will work */
             p_vout->output.i_rrshift = 0;
             p_vout->output.i_lrshift = 1;
             p_vout->output.i_rgshift = 0;
