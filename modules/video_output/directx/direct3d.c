@@ -683,8 +683,8 @@ static int Direct3DFillPresentationParameters(vout_thread_t *p_vout, D3DPRESENT_
     d3dpp->Flags                  = D3DPRESENTFLAG_VIDEO;
     d3dpp->Windowed               = TRUE;
     d3dpp->hDeviceWindow          = p_vout->p_sys->hvideownd;
-    d3dpp->BackBufferWidth        = p_vout->render.i_width;
-    d3dpp->BackBufferHeight       = p_vout->render.i_height;
+    d3dpp->BackBufferWidth        = p_vout->output.i_width;
+    d3dpp->BackBufferHeight       = p_vout->output.i_height;
     d3dpp->SwapEffect             = D3DSWAPEFFECT_DISCARD;
     d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
     d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
@@ -787,9 +787,18 @@ static D3DFORMAT Direct3DVoutSelectFormat( vout_thread_t *p_vout, D3DFORMAT targ
     {
         HRESULT hr;
         D3DFORMAT format = formats[c];
-        hr = IDirect3D9_CheckDeviceFormatConversion(p_d3dobj,
-                D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL,
-                format, target);
+	/* test whether device can create a surface of that format */
+	hr = IDirect3D9_CheckDeviceFormat(p_d3dobj, D3DADAPTER_DEFAULT,
+		D3DDEVTYPE_HAL, target, 0, D3DRTYPE_SURFACE, format);
+	if( SUCCEEDED(hr) )
+	{
+	    /* test whether device can perform color-conversion
+	    ** from that format to target format
+	    */
+	    hr = IDirect3D9_CheckDeviceFormatConversion(p_d3dobj,
+		    D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL,
+		    format, target);
+	}
         if( SUCCEEDED(hr) )
         {
             // found a compatible format
@@ -1179,7 +1188,7 @@ static int Direct3DVoutLockSurface( vout_thread_t *p_vout, picture_t *p_pic )
         return VLC_EGENERIC;
 
     /* Lock the surface to get a valid pointer to the picture buffer */
-    hr = IDirect3DSurface9_LockRect(p_d3dsurf, &d3drect, NULL, D3DLOCK_DISCARD);
+    hr = IDirect3DSurface9_LockRect(p_d3dsurf, &d3drect, NULL, 0);
     if( FAILED(hr) )
     {
         msg_Dbg( p_vout, "%s:%d (hr=0x%0lX)", __FUNCTION__, __LINE__, hr);
