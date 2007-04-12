@@ -960,9 +960,23 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
         psz_eof = strchr( psz_parse, '/' );
 
         if( psz_eof )
+        {
             *psz_eof = '\0';
+            if (p_sdp->i_in == 4)
+            {
+                /* Skip IPv4-specific TTL indication */
+                psz_eof = strchr (psz_parse, '/');
+            }
 
-        if( ( p_sdp->i_in == 6 ) && strchr( psz_parse, ':' ) )
+            if ((psz_eof != NULL) && (atoi (psz_eof + 1) != 1))
+            {
+                msg_Warn (p_obj, "unsupported layered stream (%s layers)",
+                          psz_eof + 1);
+                return VLC_EGENERIC;
+            }
+	}
+
+        if( strchr( psz_parse, ':' ) != NULL )
         {
             if( asprintf( &psz_uri, "[%s]", psz_parse ) == -1 )
                 psz_uri = NULL;
