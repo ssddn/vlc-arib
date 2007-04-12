@@ -960,16 +960,12 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
         psz_eof = strchr( psz_parse, '/' );
 
         if( psz_eof )
-        {
             *psz_eof = '\0';
-        }
-        else
+
+        if( p_sdp->i_in == 6 )
         {
-            msg_Dbg( p_obj, "incorrect c field, %s", p_sdp->psz_connection );
-        }
-        if( p_sdp->i_in == 6 && ( isxdigit( *psz_parse ) || *psz_parse == ':' ) )
-        {
-            asprintf( &psz_uri, "[%s]", psz_parse );
+            if( asprintf( &psz_uri, "[%s]", psz_parse ) == -1 )
+                psz_uri = NULL;
         }
         else psz_uri = strdup( psz_parse );
 
