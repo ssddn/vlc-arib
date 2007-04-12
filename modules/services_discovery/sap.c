@@ -962,7 +962,7 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
         if( psz_eof )
             *psz_eof = '\0';
 
-        if( p_sdp->i_in == 6 )
+        if( ( p_sdp->i_in == 6 ) && strchr( psz_parse, ':' ) )
         {
             if( asprintf( &psz_uri, "[%s]", psz_parse ) == -1 )
                 psz_uri = NULL;
