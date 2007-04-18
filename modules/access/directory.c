@@ -276,6 +276,7 @@ static int Read( access_t *p_access, uint8_t *p_buffer, int i_len)
         if( !p_item )
         {
             msg_Dbg( p_playlist, "unable to find item in playlist");
+            vlc_object_release( p_playlist );
             return -1;
         }
         b_play = VLC_FALSE;

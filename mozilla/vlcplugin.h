@@ -71,7 +71,8 @@ public:
     void                setWindow(const NPWindow *window)
                             { npwindow = *window; };
 
-    NPObject*           getScriptObject();
+    NPClass*            getScriptClass()
+                            { return p_scriptClass; };
 
     void                setLog(libvlc_log_t *log)
                             { libvlc_log = log; };
@@ -100,7 +101,6 @@ private:
     libvlc_instance_t   *libvlc_instance;
     libvlc_log_t        *libvlc_log;
     NPClass             *p_scriptClass;
-    NPObject            *p_scriptObject;
 
     /* browser reference */
     NPP     p_browser;
@@ -121,7 +121,7 @@ private:
  ******************************************************************************/
 #define PLUGIN_NAME         "VLC Multimedia Plugin"
 #define PLUGIN_DESCRIPTION \
-    "Version %s, copyright 1996-2006 The VideoLAN Team" \
+    "Version %s, copyright 1996-2007 The VideoLAN Team" \
     "<br><a href=\"http://www.videolan.org/\">http://www.videolan.org/</a>"
 
 #define PLUGIN_MIMETYPES \

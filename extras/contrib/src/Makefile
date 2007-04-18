@@ -1,7 +1,7 @@
 #***************************************************************************
 # src/Makefile : Dearchive and compile all files necessary
 # ***************************************************************************
-# Copyright (C) 2003 - 2006 the VideoLAN team
+# Copyright (C) 2003 - 2007 the VideoLAN team
 # $Id$
 #
 # Authors: Christophe Massiot <massiot@via.ecp.fr>
@@ -860,7 +860,7 @@ DISTCLEAN_PKG += lame-$(LAME_VERSION).tar.gz
 
 ifdef SVN
 libebml: 
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml libebml
+	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml -r 1254 libebml
 else
 libebml-$(LIBEBML_VERSION).tar.bz2:
 	$(WGET) $(LIBEBML_URL)
@@ -891,7 +891,7 @@ DISTCLEAN_PKG += libebml-$(LIBEBML_VERSION).tar.bz2
 
 ifdef SVN
 libmatroska:
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska libmatroska
+	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska -r 1254 libmatroska
 else
 libmatroska-$(LIBMATROSKA_VERSION).tar.bz2:
 	$(WGET) $(LIBMATROSKA_URL)
@@ -921,7 +921,7 @@ DISTCLEAN_PKG += libmatroska-$(LIBMATROSKA_VERSION).tar.bz2
 # ***************************************************************************
 
 ffmpeg:
-	$(SVN) co $(FFMPEG_SVN)  ffmpeg
+	$(SVN) co $(FFMPEG_SVN) -r 7407 ffmpeg
 ifeq ($(HOST),i586-pc-beos)
 	(cd $@; patch -p 0 < ../Patches/ffmpeg-svn-beos.patch)
 endif
@@ -1174,7 +1174,7 @@ DISTCLEAN_PKG += libcaca-$(LIBCACA_VERSION).tar.gz
 # ***************************************************************************
 
 libdca:
-	$(SVN) co $(LIBDCA_SVN) libdca
+	$(SVN) co $(LIBDCA_SVN) -r 35 libdca
 	(cd $@; ./bootstrap)
 
 .libdca: libdca
@@ -1415,9 +1415,15 @@ twolame: twolame-$(TWOLAME_VERSION).tar.gz
 ifdef HAVE_BEOS
 	patch -p 0 < Patches/twolame-BeOS.patch
 endif
+ifdef HAVE_DARWIN_OS
+	patch -p 0 < Patches/twolame-osx.patch
+endif
 
 .twolame: twolame
-	(cd twolame; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) && make && make install)
+ifdef HAVE_WIN32
+	(cd twolame/win32; wget "http://twolame.svn.sourceforge.net/viewvc/*checkout*/twolame/trunk/win32/winutil.h")
+endif	
+	(cd twolame; $(HOSTCC) CFLAGS="${CFLAGS}  -DLIBTWOLAME_STATIC" ./configure $(HOSTCONF) --prefix=$(PREFIX) && cd libtwolame &&  make && make install)
 	$(INSTALL_NAME)
 	touch $@
 
@@ -1605,13 +1611,14 @@ gnutls-$(GNUTLS_VERSION).tar.bz2:
 gnutls: gnutls-$(GNUTLS_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
 	patch -p0 < Patches/gnutls-win32.patch
+	(cd $@; cd lgl; ln -sf alloca_.h alloca.h) 
 
 .gnutls: gnutls .gcrypt .gpg-error
 ifdef HAVE_WIN32
-	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --target=i586-mingw32msvc --program-prefix="" && cd gl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
+	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --target=i586-mingw32msvc && cd gl && make && cd ../lgl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
 else
-	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" && cd gl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
-endif
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --disable-cxx && cd gl && make && cd ../lgl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
+endif 
 	$(INSTALL_NAME)
 	touch $@
 

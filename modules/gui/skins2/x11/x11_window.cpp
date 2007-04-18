@@ -76,7 +76,7 @@ X11Window::X11Window( intf_thread_t *pIntf, GenericWindow &rWindow,
         unsigned long flags;
         unsigned long functions;
         unsigned long decorations;
-        long input_mode;
+        signed   long input_mode;
         unsigned long status;
     } motifWmHints;
     Atom hints_atom = XInternAtom( XDISPLAY, "_MOTIF_WM_HINTS", False );
@@ -84,7 +84,7 @@ X11Window::X11Window( intf_thread_t *pIntf, GenericWindow &rWindow,
     motifWmHints.decorations = 0;
     XChangeProperty( XDISPLAY, m_wnd, hints_atom, hints_atom, 32,
                      PropModeReplace, (unsigned char *)&motifWmHints,
-                     sizeof( motifWmHints ) / sizeof( long ) );
+                     sizeof( motifWmHints ) / sizeof( uint32_t ) );
 
     // Drag & drop
     if( m_dragDrop )

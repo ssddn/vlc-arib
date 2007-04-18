@@ -207,43 +207,44 @@ static int AVI_ChunkRead_list( stream_t *s, avi_chunk_t *p_container )
     i_read = stream_Read( s, p_read, i_read ); \
     if( i_read < (int64_t)__EVEN(p_chk->common.i_chunk_size ) + 8 ) \
     { \
+        free( p_buff ); \
         return VLC_EGENERIC; \
     }\
     p_read += 8; \
     i_read -= 8
 
+#define AVI_READ( res, func, size ) \
+    if( i_read < size ) { \
+        free( p_buff); \
+        return VLC_EGENERIC; \
+    } \
+    i_read -= size; \
+    res = func( p_read ); \
+    p_read += size \
+
 #define AVI_READCHUNK_EXIT( code ) \
     free( p_buff ); \
-    if( i_read < 0 ) \
-    { \
-        msg_Warn( (vlc_object_t*)s, "not enough data" ); \
-    } \
     return code
 
+static inline uint8_t GetB( uint8_t *ptr )
+{
+    return *ptr;
+}
+
 #define AVI_READ1BYTE( i_byte ) \
-    i_byte = *p_read; \
-    p_read++; \
-    i_read--
+    AVI_READ( i_byte, GetB, 1 )
 
 #define AVI_READ2BYTES( i_word ) \
-    i_word = GetWLE( p_read ); \
-    p_read += 2; \
-    i_read -= 2
+    AVI_READ( i_word, GetWLE, 2 )
 
 #define AVI_READ4BYTES( i_dword ) \
-    i_dword = GetDWLE( p_read ); \
-    p_read += 4; \
-    i_read -= 4
+    AVI_READ( i_dword, GetDWLE, 4 )
 
-#define AVI_READ8BYTES( i_dword ) \
-    i_dword = GetQWLE( p_read ); \
-    p_read += 8; \
-    i_read -= 8
+#define AVI_READ8BYTES( i_qword ) \
+    AVI_READ( i_qword, GetQWLE, 8 )
 
 #define AVI_READFOURCC( i_dword ) \
-    i_dword = GetFOURCC( p_read ); \
-    p_read += 4; \
-    i_read -= 4
+    AVI_READ( i_dword, GetFOURCC, 4 )
 
 static int AVI_ChunkRead_avih( stream_t *s, avi_chunk_t *p_chk )
 {
@@ -731,8 +732,10 @@ int  _AVI_ChunkRead( stream_t *s, avi_chunk_t *p_chk, avi_chunk_t *p_father )
     {
         return AVI_Chunk_Function[i_index].AVI_ChunkRead_function( s, p_chk );
     }
-    else if( ((char*)&p_chk->common.i_chunk_fourcc)[0] == 'i' &&
-             ((char*)&p_chk->common.i_chunk_fourcc)[1] == 'x' )
+    else if( ( ((char*)&p_chk->common.i_chunk_fourcc)[0] == 'i' &&
+               ((char*)&p_chk->common.i_chunk_fourcc)[1] == 'x' ) || 
+             ( ((char*)&p_chk->common.i_chunk_fourcc)[2] == 'i' &&
+               ((char*)&p_chk->common.i_chunk_fourcc)[3] == 'x' ) )
     {
         p_chk->common.i_chunk_fourcc = AVIFOURCC_indx;
         return AVI_ChunkRead_indx( s, p_chk );

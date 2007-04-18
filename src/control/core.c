@@ -45,7 +45,7 @@ void libvlc_exception_clear( libvlc_exception_t *p_exception )
 
 inline int libvlc_exception_raised( libvlc_exception_t *p_exception )
 {
-    return p_exception->b_raised;
+    return (NULL != p_exception) && p_exception->b_raised;
 }
 
 inline char* libvlc_exception_get_message( libvlc_exception_t *p_exception )
@@ -76,7 +76,6 @@ inline void libvlc_exception_raise( libvlc_exception_t *p_exception,
     vasprintf( &p_exception->psz_message, psz_format, args );
     va_end( args );
 
-    if( p_exception == NULL ) return;
     p_exception->b_raised = 1;
 }
 

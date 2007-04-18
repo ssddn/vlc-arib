@@ -141,10 +141,11 @@ mtime_t mdate( void )
          * the RTC rather than the TSC.  If it's anything else, we
          * presume that the performance counter is unreliable.
          */
+        LARGE_INTEGER buf;
 
-        freq = ( QueryPerformanceFrequency( (LARGE_INTEGER *)&freq ) &&
-                 (freq == I64C(1193182) || freq == I64C(3579545) ) )
-               ? freq : 0;
+        freq = ( QueryPerformanceFrequency( &buf ) &&
+                 (buf.QuadPart == I64C(1193182) || buf.QuadPart == I64C(3579545) ) )
+               ? buf.QuadPart : 0;
     }
 
     if( freq != 0 )

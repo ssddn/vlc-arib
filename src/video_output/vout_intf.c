@@ -40,6 +40,9 @@
 
 #include <snapshot.h>
 
+#define DIR_SEP "\\"
+#define DIR_SEP "/"
+
 /*****************************************************************************
  * Local prototypes
  *****************************************************************************/
@@ -601,7 +604,7 @@ int vout_Snapshot( vout_thread_t *p_vout, picture_t *p_pic )
 
         if( p_mypicturesdir == NULL )
         {
-            asprintf( &val.psz_string, "%s/" CONFIG_DIR,
+            asprintf( &val.psz_string, "%s\\" CONFIG_DIR,
                       p_vout->p_vlc->psz_homedir );
         }
         else
@@ -648,7 +651,7 @@ int vout_Snapshot( vout_thread_t *p_vout, picture_t *p_pic )
             FILE *p_file;
             do
             {
-                asprintf( &psz_filename, "%s/%s%05d.%s", val.psz_string,
+                asprintf( &psz_filename, "%s" DIR_SEP "%s%05d.%s", val.psz_string,
                           psz_prefix, i_num++, format.psz_string );
             }
             while( ( p_file = utf8_fopen( psz_filename, "r" ) ) && !fclose( p_file ) );
@@ -656,7 +659,7 @@ int vout_Snapshot( vout_thread_t *p_vout, picture_t *p_pic )
         }
         else
         {
-            asprintf( &psz_filename, "%s/%s%u.%s", val.psz_string,
+            asprintf( &psz_filename, "%s" DIR_SEP "%s%u.%s", val.psz_string,
                       psz_prefix,
                       (unsigned int)(p_pic->date / 100000) & 0xFFFFFF,
                       format.psz_string );
@@ -801,7 +804,12 @@ static void InitWindowSize( vout_thread_t *p_vout, unsigned *pi_width,
         goto initwsize_end;
     }
 
-    if( p_vout->fmt_in.i_sar_num >= p_vout->fmt_in.i_sar_den )
+    if( p_vout->fmt_in.i_sar_num == 0 || p_vout->fmt_in.i_sar_den == 0 ) {
+        msg_Warn( p_vout, "fucked up aspect" );
+        *pi_width = (int)( p_vout->fmt_in.i_visible_width * ll_zoom / FP_FACTOR );
+        *pi_height = (int)( p_vout->fmt_in.i_visible_height * ll_zoom /FP_FACTOR);
+    }
+    else if( p_vout->fmt_in.i_sar_num >= p_vout->fmt_in.i_sar_den )
     {
         *pi_width = (int)( p_vout->fmt_in.i_visible_width * ll_zoom *
             p_vout->fmt_in.i_sar_num / p_vout->fmt_in.i_sar_den / FP_FACTOR );
