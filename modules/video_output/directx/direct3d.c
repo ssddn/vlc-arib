@@ -91,7 +91,7 @@ static int get_capability_for_osversion(void)
         if( winVer.dwMajorVersion > 5 )
         {
             /* Windows Vista or above, make this module the default */
-	    _got_vista_or_above = VLC_TRUE;
+        _got_vista_or_above = VLC_TRUE;
             return 150;
         }
     }
@@ -402,7 +402,8 @@ static int Manage( vout_thread_t *p_vout )
 
             SetWindowPos( p_vout->p_sys->hwnd, 0, 0, 0,
                           rect_parent.right - rect_parent.left,
-                          rect_parent.bottom - rect_parent.top, 0 );
+                          rect_parent.bottom - rect_parent.top, 
+              SWP_NOZORDER );
         }
     }
     else
@@ -605,7 +606,9 @@ static void Display( vout_thread_t *p_vout, picture_t *p_pic )
     LPDIRECT3DDEVICE9       p_d3ddev = p_vout->p_sys->p_d3ddev;
     // Present the back buffer contents to the display
     // stretching and filtering happens here
-    HRESULT hr = IDirect3DDevice9_Present(p_d3ddev, NULL, NULL, NULL, NULL);
+    HRESULT hr = IDirect3DDevice9_Present(p_d3ddev, 
+                     &(p_vout->p_sys->rect_src_clipped), 
+                     NULL, NULL, NULL);
     if( FAILED(hr) )
         msg_Dbg( p_vout, "%s:%d (hr=0x%0lX)", __FUNCTION__, __LINE__, hr);
 
@@ -620,8 +623,8 @@ static void Display( vout_thread_t *p_vout, picture_t *p_pic )
         */
         if( _got_vista_or_above )
         {
-	    SetWindowPos( p_vout->p_sys->hvideownd, 0, 0, 0, 0, 0,
-			  SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_FRAMECHANGED);
+            SetWindowPos( p_vout->p_sys->hvideownd, 0, 0, 0, 0, 0,
+                  SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_FRAMECHANGED);
         }
     }
 }
@@ -725,7 +728,7 @@ static int Direct3DFillPresentationParameters(vout_thread_t *p_vout, D3DPRESENT_
     d3dpp->hDeviceWindow          = p_vout->p_sys->hvideownd;
     d3dpp->BackBufferWidth        = p_vout->output.i_width;
     d3dpp->BackBufferHeight       = p_vout->output.i_height;
-    d3dpp->SwapEffect             = D3DSWAPEFFECT_DISCARD;
+    d3dpp->SwapEffect             = D3DSWAPEFFECT_COPY;
     d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
     d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
     d3dpp->BackBufferFormat       = d3ddm.Format;
@@ -882,11 +885,10 @@ static D3DFORMAT Direct3DVoutSelectFormat( vout_thread_t *p_vout, D3DFORMAT targ
     return D3DFMT_UNKNOWN;
 }
 
-D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT target)
+static D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT target)
 {
-    if( p_vout->p_sys->b_hw_yuv && ! _got_vista_or_above )
+    if( p_vout->p_sys->b_hw_yuv )
     {
-	/* it sounds like vista does not support YUV surfaces at all */
         switch( i_chroma )
         {
             case VLC_FOURCC('U','Y','V','Y'):
@@ -962,7 +964,7 @@ D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3DFORMAT 
                     case D3DFMT_R8G8B8:
                     case D3DFMT_X8R8G8B8:
                     case D3DFMT_A8R8G8B8:
-                        msg_Dbg( p_vout, "defaulting to adpater pixel format");
+                        msg_Dbg( p_vout, "defaulting to adapter pixel format");
                         return Direct3DVoutSelectFormat(p_vout, target, &d3ddm.Format, 1);
                     default:
                     {
@@ -998,67 +1000,18 @@ static int Direct3DVoutSetOutputFormat(vout_thread_t *p_vout, D3DFORMAT format)
             p_vout->output.i_rmask = 0x00ff0000;
             p_vout->output.i_gmask = 0x0000ff00;
             p_vout->output.i_bmask = 0x000000ff;
-#       if defined( WORDS_BIGENDIAN )
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 24;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 16;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 8;
-#       else
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 8;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 16;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 24;
-#       endif
             break;
         case D3DFMT_R5G6B5:
             p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '1', '6');
             p_vout->output.i_rmask = (0x1fL)<<11;
             p_vout->output.i_gmask = (0x3fL)<<5;
             p_vout->output.i_bmask = (0x1fL)<<0;
-#       if defined( WORDS_BIGENDIAN )
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 11;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 5;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 0;
-#       else
-            /* FIXME: since components are not byte aligned,
-                      there is no chance that this will work */
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 0;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 5;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 11;
-#       endif
             break;
         case D3DFMT_X1R5G5B5:
             p_vout->output.i_chroma = VLC_FOURCC('R', 'V', '1', '5');
             p_vout->output.i_rmask = (0x1fL)<<10;
             p_vout->output.i_gmask = (0x1fL)<<5;
             p_vout->output.i_bmask = (0x1fL)<<0;
-#       if defined( WORDS_BIGENDIAN )
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 10;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 5;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 0;
-#       else
-            /* FIXME: since components are not byte aligned,
-                      there is no chance that this will work */
-            p_vout->output.i_rrshift = 0;
-            p_vout->output.i_lrshift = 1;
-            p_vout->output.i_rgshift = 0;
-            p_vout->output.i_lgshift = 5;
-            p_vout->output.i_rbshift = 0;
-            p_vout->output.i_lbshift = 11;
-#       endif
             break;
         default:
             return VLC_EGENERIC;
