@@ -69,9 +69,9 @@ struct audio_format_t
      */
 
     /* FIXME ? (used by the codecs) */
-    int i_channels;
-    int i_blockalign;
-    int i_bitspersample;
+    unsigned i_channels;
+    unsigned i_blockalign;
+    unsigned i_bitspersample;
 };
 
 #ifdef WORDS_BIGENDIAN
