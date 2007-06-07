@@ -412,6 +412,15 @@ void E_(I420_RGB16)( vout_thread_t *p_vout, picture_t *p_src,
             p_v += i_source_margin_c;
         }
     }
+#if defined (MODULE_NAME_IS_i420_rgb_mmx)
+    /* re-enable FPU registers */
+#   if defined (HAVE_MMX_INTRINSICS)
+    _mm_empty();
+#   else
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
+#   endif
+#endif
 }
 
 /*****************************************************************************
@@ -575,6 +584,15 @@ void E_(I420_RGB32)( vout_thread_t *p_vout, picture_t *p_src,
             p_v += i_source_margin_c;
         }
     }
+#if defined (MODULE_NAME_IS_i420_rgb_mmx)
+    /* re-enable FPU registers */
+#   if defined (HAVE_MMX_INTRINSICS)
+    _mm_empty();
+#   else
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
+#   endif
+#endif
 }
 
 /* Following functions are local */

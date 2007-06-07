@@ -287,6 +287,11 @@ static void I420_YUY2( vout_thread_t *p_vout, picture_t *p_source,
         p_line1 += i_dest_margin;
         p_line2 += i_dest_margin;
     }
+#if defined (MODULE_NAME_IS_i420_yuy2_mmx)
+    /* re-enable FPU registers */
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
+#endif
 
 #if defined (MODULE_NAME_IS_i420_yuy2_altivec)
     }
@@ -341,6 +346,11 @@ static void I420_YVYU( vout_thread_t *p_vout, picture_t *p_source,
         p_line1 += i_dest_margin;
         p_line2 += i_dest_margin;
     }
+#if defined (MODULE_NAME_IS_i420_yuy2_mmx)
+    /* re-enable FPU registers */
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
+#endif
 }
 
 /*****************************************************************************
@@ -394,9 +404,10 @@ static void I420_UYVY( vout_thread_t *p_vout, picture_t *p_source,
         p_line1 += i_dest_margin;
         p_line2 += i_dest_margin;
     }
-
 #if defined (MODULE_NAME_IS_i420_yuy2_mmx)
-    __asm__ __volatile__("emms" :: );
+    /* re-enable FPU registers */
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
 #endif
 }
 
@@ -461,6 +472,11 @@ static void I420_cyuv( vout_thread_t *p_vout, picture_t *p_source,
         p_line1 += i_dest_margin;
         p_line2 += i_dest_margin;
     }
+#if defined (MODULE_NAME_IS_i420_yuy2_mmx)
+    /* re-enable FPU registers */
+    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
+                                     "mm4", "mm5", "mm6", "mm7" );
+#endif
 }
 #endif // !defined (MODULE_NAME_IS_i420_yuy2_altivec)
 
