@@ -56,7 +56,7 @@ int aout_InputNew( aout_instance_t * p_aout, aout_input_t * p_input )
 
     aout_FormatPrint( p_aout, "input", &p_input->input );
 
-    p_input->i_nb_filters = 0;
+    p_input->i_nb_resamplers = p_input->i_nb_filters = 0;
 
     /* Prepare FIFO. */
     aout_FifoInit( p_aout, &p_input->fifo, p_aout->mixer.mixer.i_rate );
