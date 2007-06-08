@@ -1072,15 +1072,21 @@ live555-$(LIVEDOTCOM_VERSION).tar.gz:
 live: live555-$(LIVEDOTCOM_VERSION).tar.gz
 	$(EXTRACT_GZ)
 	patch -p 0 < Patches/live.patch
-	patch -p 0 < Patches/livedotcom-win32.patch
-	patch -p 0 < Patches/live-osx.patch
+ifdef HAVE_WIN32 
+	patch -p0 < Patches/livedotcom-win32.patch
+endif
+ifdef HAVE_DARWIN_OS
+	patch -p0 < Patches/live-osx.patch
+endif
+	patch -p0 < Patches/live-starttime.patch
+	patch -p0 < Patches/live-config.patch
+ifdef HAVE_UCLIBC
+	patch -p0 < Patches/live-noapps.patch
+endif
 
 .live: live
 ifdef HAVE_WIN32 
 	(cd $<;./genMakefiles mingw && make $(HOSTCC))
-else
-ifeq ($(HOST),ppc-darwin)
-	(cd $<; ./genMakefiles macosx-before-version-10.4 && make )
 else
 ifdef HAVE_DARWIN_OS
 	(cd $<; sed -e 's%EXTRA_CFLAGS%$(EXTRA_CFLAGS)%' -e 's%EXTRA_LDFLAGS%$(EXTRA_LDFLAGS)%' -i.orig  config.macosx)
@@ -1088,7 +1094,6 @@ ifdef HAVE_DARWIN_OS
 else
 	(cd $<; sed -e 's/=/= EXTRA_CPPFLAGS/' -e 's%EXTRA_CPPFLAGS%-I/include%' -i.orig groupsock/Makefile.head)
 	(cd $<; ./genMakefiles linux && make $(HOSTCC))
-endif
 endif
 endif
 	touch $@
