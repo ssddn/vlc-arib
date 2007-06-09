@@ -102,6 +102,8 @@ void E_(CloseIntf) ( vlc_object_t *p_this )
 /*****************************************************************************
  * Run: main loop
  *****************************************************************************/
+jmp_buf jmpbuffer;
+
 static void Run( intf_thread_t *p_intf )
 {
     /* Do it again - for some unknown reason, vlc_thread_create() often
@@ -110,8 +112,11 @@ static void Run( intf_thread_t *p_intf )
     vlc_thread_set_priority( p_intf, VLC_THREAD_PRIORITY_LOW );
     [[VLCMain sharedInstance] setIntf: p_intf];
     [NSBundle loadNibNamed: @"MainMenu" owner: NSApp];
-    [NSApp run];
-    [[VLCMain sharedInstance] terminate];
+
+    /* Install a jmpbuffer to where we can go back before the NSApp exit
+     * see applicationWillTerminate: */
+    if(setjmp(jmpbuffer) == 0)
+        [NSApp run];
 }
 
 int ExecuteOnMainThread( id target, SEL sel, void * p_arg )
@@ -1517,8 +1522,9 @@ static VLCMain *_o_sharedMainInstance = nil;
 #undef p_input
 }
 
-- (void)terminate
+- (void)applicationWillTerminate:(NSNotification *)notification
 {
+    NSLog(@"applicationWillTerminate");
     playlist_t * p_playlist;
     vout_thread_t * p_vout;
 

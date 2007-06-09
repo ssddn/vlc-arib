@@ -492,6 +492,7 @@ static int AddIntfCallback( vlc_object_t *p_this, char const *psz_cmd,
 - (void)terminate: (id)sender
 {
     o_vlc->b_die = VLC_TRUE;
+    [super terminate: sender];
 }
 
 @end
