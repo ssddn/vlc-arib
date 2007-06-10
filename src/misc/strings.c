@@ -54,6 +54,8 @@ char *unescape_URI_duplicate( const char *psz )
 void unescape_URI( char *psz )
 {
     unsigned char *in = (unsigned char *)psz, *out = in, c;
+    if( psz == NULL )
+        return;
 
     while( ( c = *in++ ) != '\0' )
     {
@@ -135,6 +137,8 @@ char *decode_URI_duplicate( const char *psz )
 void decode_URI( char *psz )
 {
     unsigned char *in = (unsigned char *)psz, *out = in, c;
+    if( psz == NULL )
+        return;
 
     while( ( c = *in++ ) != '\0' )
     {
