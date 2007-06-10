@@ -118,6 +118,7 @@ void libvlc_destroy( libvlc_instance_t *p_instance )
     vlc_object_release( p_instance->p_vlc );
     VLC_CleanUp( p_instance->i_vlc_id );
     VLC_Destroy( p_instance->i_vlc_id );
+    free( p_instance );
 }
 
 int libvlc_get_vlc_id( libvlc_instance_t *p_instance )
