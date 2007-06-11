@@ -243,7 +243,7 @@ static picture_t *DecodeBlock( decoder_t *p_dec, block_t **pp_block )
                     if( (p_pic = GetNewPicture( p_dec, buf )) == NULL )
                         break;
                     mpeg2_set_buf( p_sys->p_mpeg2dec, buf, p_pic );
-                    mpeg2_stride( p_sys->p_mpeg2dec, p_pic->format.i_width );
+                    mpeg2_stride( p_sys->p_mpeg2dec, p_pic->p[Y_PLANE].i_pitch );
                 }
                 p_sys->p_picture_to_destroy = p_pic;
 
@@ -320,7 +320,7 @@ static picture_t *DecodeBlock( decoder_t *p_dec, block_t **pp_block )
             }
 
             mpeg2_set_buf( p_sys->p_mpeg2dec, buf, p_pic );
-            mpeg2_stride( p_sys->p_mpeg2dec, p_pic->format.i_width );
+            mpeg2_stride( p_sys->p_mpeg2dec, p_pic->p[Y_PLANE].i_pitch );
 
             /* This picture will never go through display_picture. */
             p_pic->date = 0;
@@ -438,7 +438,7 @@ static picture_t *DecodeBlock( decoder_t *p_dec, block_t **pp_block )
                 }
 
                 mpeg2_set_buf( p_sys->p_mpeg2dec, buf, p_pic );
-                mpeg2_stride( p_sys->p_mpeg2dec, p_pic->format.i_width );
+                mpeg2_stride( p_sys->p_mpeg2dec, p_pic->p[Y_PLANE].i_pitch );
             }
         }
         break;
@@ -520,7 +520,7 @@ static picture_t *DecodeBlock( decoder_t *p_dec, block_t **pp_block )
                 if( (p_pic = GetNewPicture( p_dec, buf )) == NULL )
                     break;
                 mpeg2_set_buf( p_sys->p_mpeg2dec, buf, p_pic );
-                mpeg2_stride( p_sys->p_mpeg2dec, p_pic->format.i_width );
+                mpeg2_stride( p_sys->p_mpeg2dec, p_pic->p[Y_PLANE].i_pitch );
             }
             p_sys->p_picture_to_destroy = p_pic;
 
