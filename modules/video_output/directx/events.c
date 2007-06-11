@@ -996,7 +996,7 @@ static int Control( vout_thread_t *p_vout, int i_query, va_list args )
         return vout_vaControlDefault( p_vout, i_query, args );
 
     case VOUT_SET_STAY_ON_TOP:
-        if( p_vout->p_sys->hparent )
+        if( p_vout->p_sys->hparent && !var_GetBool( p_vout, "fullscreen" ) )
             return vout_ControlWindow( p_vout,
                     (void *)p_vout->p_sys->hparent, i_query, args );
 

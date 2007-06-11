@@ -335,6 +335,7 @@ static int Init( vout_thread_t *p_vout )
     E_(DirectXUpdateRects)( p_vout, VLC_TRUE );
 
     /*  create picture pool */
+    p_vout->output.i_chroma = 0;
     i_ret = Direct3DVoutCreatePictures(p_vout, 1);
     if( VLC_SUCCESS != i_ret )
     {
@@ -961,16 +962,17 @@ static D3DFORMAT Direct3DVoutFindFormat(vout_thread_t *p_vout, int i_chroma, D3D
                 */
                 switch( d3ddm.Format )
                 {
-                    case D3DFMT_R8G8B8:
                     case D3DFMT_X8R8G8B8:
                     case D3DFMT_A8R8G8B8:
+                    case D3DFMT_R5G6B5:
+                    case D3DFMT_X1R5G5B5:
                         msg_Dbg( p_vout, "defaulting to adapter pixel format");
                         return Direct3DVoutSelectFormat(p_vout, target, &d3ddm.Format, 1);
                     default:
                     {
                         /* if we fall here, that probably means that we need to render some YUV format */
                         static const D3DFORMAT formats[] = 
-                            { D3DFMT_R8G8B8, D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8 };
+                            { D3DFMT_X8R8G8B8, D3DFMT_A8R8G8B8, D3DFMT_R5G6B5, D3DFMT_X1R5G5B5 };
                         msg_Dbg( p_vout, "defaulting to built-in pixel format");
                         return Direct3DVoutSelectFormat(p_vout, target, formats, sizeof(formats)/sizeof(D3DFORMAT));
                     }
@@ -1033,6 +1035,8 @@ static int Direct3DVoutCreatePictures( vout_thread_t *p_vout, size_t i_num_pics 
     D3DFORMAT               format;
     HRESULT hr;
     size_t c;
+    // if vout is already running, use current chroma, otherwise choose from upstream
+    int i_chroma = p_vout->output.i_chroma ? : p_vout->render.i_chroma;
 
     I_OUTPUTPICTURES = 0;
 
@@ -1041,7 +1045,7 @@ static int Direct3DVoutCreatePictures( vout_thread_t *p_vout, size_t i_num_pics 
     ** the requested chroma which is usable by the hardware in an offscreen surface, as they
     ** typically support more formats than textures
     */ 
-    format = Direct3DVoutFindFormat(p_vout, p_vout->render.i_chroma, p_vout->p_sys->bbFormat);
+    format = Direct3DVoutFindFormat(p_vout, i_chroma, p_vout->p_sys->bbFormat);
     if( VLC_SUCCESS != Direct3DVoutSetOutputFormat(p_vout, format) )
     {
         msg_Err(p_vout, "surface pixel format is not supported.");
