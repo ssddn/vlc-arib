@@ -171,8 +171,7 @@ static void I422_YUY2( vout_thread_t *p_vout, picture_t *p_source,
     }
 #if defined (MODULE_NAME_IS_i422_yuy2_mmx)
     /* re-enable FPU registers */
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #endif
 }
 
@@ -211,8 +210,7 @@ static void I422_YVYU( vout_thread_t *p_vout, picture_t *p_source,
     }
 #if defined (MODULE_NAME_IS_i422_yuy2_mmx)
     /* re-enable FPU registers */
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #endif
 }
 
@@ -251,8 +249,7 @@ static void I422_UYVY( vout_thread_t *p_vout, picture_t *p_source,
     }
 #if defined (MODULE_NAME_IS_i422_yuy2_mmx)
     /* re-enable FPU registers */
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #endif
 }
 
@@ -300,8 +297,7 @@ static void I422_cyuv( vout_thread_t *p_vout, picture_t *p_source,
     }
 #if defined (MODULE_NAME_IS_i422_yuy2_mmx)
     /* re-enable FPU registers */
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #endif
 }
 

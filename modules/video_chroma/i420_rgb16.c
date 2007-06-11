@@ -417,8 +417,7 @@ void E_(I420_RGB16)( vout_thread_t *p_vout, picture_t *p_src,
 #   if defined (HAVE_MMX_INTRINSICS)
     _mm_empty();
 #   else
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #   endif
 #endif
 }
@@ -589,8 +588,7 @@ void E_(I420_RGB32)( vout_thread_t *p_vout, picture_t *p_src,
 #   if defined (HAVE_MMX_INTRINSICS)
     _mm_empty();
 #   else
-    __asm__ __volatile__ ("emms" ::: "mm0", "mm1", "mm2", "mm3",
-                                     "mm4", "mm5", "mm6", "mm7" );
+    __asm__ __volatile__ ("emms");
 #   endif
 #endif
 }
