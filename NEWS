@@ -8,14 +8,17 @@ Various bugfixes, notably:
  * Fullscreen change crash on Mac OS X
  * RSS filter string overflow
  * Few memory leaks
- * Embedded subtitles (GAB2 format) in AVI
  * MKV demuxer crash (related to seeking)
 
- CDDA / Vorbis / Theora / SAP plugins:
+CDDA / Vorbis / Theora / SAP plugins:
  * Security updates (VideoLAN-SA-0702)
+
+Demuxers:
+ * Fixed a problem with detecting embedded subtitles (GAB2 format) in AVI
 
 Localisation:
  * New localisation: Arabic, Persian
+
 
 Changes between 0.8.6a and 0.8.6b:
 ----------------------------------
@@ -120,7 +123,7 @@ Developers:
 
 
 Changes between 0.8.4a and 0.8.5:
-----------------------------------
+---------------------------------
 
 Core support:
  * Statistics collection (bitrates, packets, connections, ...)
@@ -202,6 +205,7 @@ Developers:
  * Java bindings
  * A bit more automatic testing
 
+
 Changes between 0.8.4 and 0.8.4a:
 ---------------------------------
 
@@ -225,6 +229,7 @@ Services Discovery:
 Interfaces:
  * Mac OS X
     - fixed encoding of H.264/H.263 content when using the wizard 
+
 
 Changes between 0.8.2 and 0.8.4:
 --------------------------------
@@ -307,6 +312,7 @@ Translations:
  * Simplified Chinese
  The following languages were re-added:
  * Swedish
+
 
 Changes between 0.8.1 and 0.8.2:
 --------------------------------
@@ -473,6 +479,7 @@ Stream Output:
  * Stream output:
    * Support of playlist group announcement
 
+
 Changes between 0.7.2 and 0.8.0:
 -----------------------------------------------------
 
@@ -597,6 +604,7 @@ Misc:
  * Cisco IP/TV streams supported
  * VLM enhancements
 
+
 Changes between 0.7.1 and 0.7.2:
 --------------------------------
 
@@ -687,6 +695,7 @@ Misc:
  * Improvements to the Goom visualisation plugin.
  * Roku HD1000 audio output.
 
+
 Changes between 0.7.1 and 0.7.1a:
 ---------------------------------
 
@@ -738,6 +747,7 @@ Mac OS X port:
 Win32 port:
  * A few improvements to the DirectShow input plugin.
  * Fixed ipv6 name resolution.
+
 
 Changes between 0.6.2 and 0.7.0:
 ---------------------------------
@@ -851,6 +861,7 @@ Miscellaneous:
  * Spanish, Portuguese Brazilian and Hungarian translations.
  * libcaca video output (colored ascii)
 
+
 Changes between 0.6.1 and 0.6.2:
 ---------------------------------
 
@@ -883,6 +894,7 @@ Miscellaneous:
  * Ffmpeg decoder now generates proper pts and can be used to play
    mpeg1/2 videos.
 
+
 Changes between 0.6.0 and 0.6.1:
 ---------------------------------
 
@@ -909,6 +921,7 @@ Miscellaneous:
  * Text subtitles now centered on the picture.
  * Ffmpeg decoder now generates proper pts and can be used to play
    mpeg1/2 videos.
+
 
 Changes between 0.6.0 and 0.6.1:
 ---------------------------------
@@ -1035,6 +1048,7 @@ BeOS port:
  * Screensaver disabled if playing in fullscreen
  * A few new keyboard shortcuts
  * New full-featured Preferences window
+
 
 Changes between 0.5.2 and 0.5.3:
 ---------------------------------
