@@ -41,6 +41,7 @@ static int FindLanguage( const char * psz_lang )
     const char ** ppsz_parser;
     const char * ppsz_all[] =
     {
+	"Arabic", "ar",
         "Catalan", "ca",
 	"Czech", "cs",
         "Danish", "da",
@@ -48,6 +49,7 @@ static int FindLanguage( const char * psz_lang )
         "British", "en_GB",
         "English", "en",
         "Spanish", "es",
+	"Persian", "fa",
         "French", "fr",
         "Galician", "gl",
         "Hebrew", "he",

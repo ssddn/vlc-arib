@@ -173,6 +173,8 @@ static int Open( vlc_object_t *p_this )
 
         /* Skip this chunk */
         i_size += 8;
+        if( (i_size % 2) != 0 )
+            i_size++;
         if( stream_Read( p_demux->s, NULL, i_size ) != (int)i_size )
         {
             msg_Warn( p_demux, "incomplete file" );
@@ -184,7 +186,7 @@ static int Open( vlc_object_t *p_this )
     p_sys->i_ssnd_end   = p_sys->i_ssnd_start + p_sys->i_ssnd_size;
 
     p_sys->i_ssnd_fsize = p_sys->fmt.audio.i_channels *
-                          ( p_sys->fmt.audio.i_bitspersample + 7 ) / 8;
+                          ((p_sys->fmt.audio.i_bitspersample + 7) / 8);
 
     if( p_sys->i_ssnd_fsize <= 0 )
     {
