@@ -30,7 +30,7 @@
 #if defined (WIN32) || defined (__APPLE__)
 static char *ppsz_language[] =
 { "auto", "en", "en_GB", "ar", "ca", "cs", "da", "de", "es", "fa", "fr", "gl",
-  "he", "hu", "it", "ja", "ka", "ko", "ms", "ne", "nl", "oc", "pt_BR", "ro",
+  "he", "hu", "it", "ja", "ka", "ko", "ms", "ne", "nl", "oc", "pl", "pt_BR", "ro",
   "ru", "sk", "sl",  "sv", "th", "tr", "zh_CN", "zh_TW" };
 
 static char *ppsz_language_text[] =
@@ -38,7 +38,7 @@ static char *ppsz_language_text[] =
 N_("Arabic"), N_("Catalan"), N_("Czech"), N_("Danish"), N_("German"), 
 N_("Spanish"), N_("Persian"),N_("French"), N_("Galician"), N_("Hebrew"),
 N_("Hungarian"),N_("Italian"),N_("Japanese"),N_("Georgian"), N_("Korean"),
-N_("Malay"), N_("Nepali"), N_("Dutch"), N_("Occitan"), 
+N_("Malay"), N_("Nepali"), N_("Dutch"), N_("Occitan"), N_("Polish"), 
 N_("Brazilian Portuguese"), N_("Romanian"), N_("Russian"), N_("Slovak"), 
 N_("Slovenian"), N_("Swedish"), N_("Thai"), N_("Turkish"),
 N_("Simplified Chinese"), N_("Chinese Traditional") };
