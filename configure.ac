@@ -5574,7 +5574,6 @@ AC_CONFIG_FILES([
   modules/codec/spudec/Makefile
   modules/control/Makefile
   modules/control/http/Makefile
-  modules/control/corba/Makefile
   modules/demux/Makefile
   modules/demux/asf/Makefile
   modules/demux/avi/Makefile
