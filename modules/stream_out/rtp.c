@@ -1855,6 +1855,12 @@ static int RtspCallbackId( httpd_callback_sys_t *p_args,
         case HTTPD_MSG_SETUP:
         {
             char *psz_transport = httpd_MsgGet( query, "Transport" );
+            if( psz_transport == NULL )
+            {
+                answer->i_status = 400;
+                answer->psz_status = strdup( "Bad request" );
+                break;
+            }
 
             //fprintf( stderr, "HTTPD_MSG_SETUP: transport=%s\n", psz_transport );
 
