@@ -549,8 +549,8 @@ void DialogsProvider::OnExitThread( wxCommandEvent& WXUNUSED(event) )
 void DialogsProvider::OnUpdateVLC( wxCommandEvent& WXUNUSED(event) )
 {
     /* Show/hide the file info window */
-    if( !p_updatevlc_dialog )
-        p_updatevlc_dialog = new UpdateVLC( p_intf, this );
+    /*if( !p_updatevlc_dialog )
+        p_updatevlc_dialog = new UpdateVLC( p_intf, this );*/
 
     if( p_updatevlc_dialog )
     {

@@ -820,10 +820,10 @@ static void Run( intf_thread_t *p_intf )
 
             Help( p_intf, b_longhelp );
         }
-        else if( !strcmp( psz_cmd, "check-updates" ) )
+        /*else if( !strcmp( psz_cmd, "check-updates" ) )
         {
             checkUpdates( p_intf, psz_arg );
-        }
+        }*/
         else switch( psz_cmd[0] )
         {
         case 'f':

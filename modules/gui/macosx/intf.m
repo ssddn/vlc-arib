@@ -1763,13 +1763,13 @@ static VLCMain *_o_sharedMainInstance = nil;
 
 - (IBAction)checkForUpdate:(id)sender
 {
-    if (!nib_update_loaded)
+    /*if (!nib_update_loaded)
     {
         nib_update_loaded = [NSBundle loadNibNamed:@"Update" owner:self];
         [o_update showUpdateWindow];
     } else {
         [o_update showUpdateWindow];
-    }
+    }*/
 }
 
 - (IBAction)closeError:(id)sender
