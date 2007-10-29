@@ -295,13 +295,20 @@ dnl  Check for Mac OS X SDK settings
 dnl
 AC_ARG_WITH(macosx-sdk,
    [  --with-macosx-sdk       compile for Mac OS X 10.3 SDK],[], with_macosx_sdk=no)
-if test "${with_macosx_sdk}" != "no" ; then
+if test "${with_macosx_sdk}" != "no" -a "${target_cpu}" = "powerpc"; then
   CFLAGS_save="${CFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; CFLAGS="${CFLAGS_save}"
   CXXFLAGS_save="${CXXFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; CXXFLAGS="${CXXFLAGS_save}"
   OBJCFLAGS_save="${OBJCFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; OBJCFLAGS="${OBJCFLAGS_save}"
   LDFLAGS_save="${LDFLAGS_save} -isysroot /Developer/SDKs/MacOSX10.3.9.sdk -Wl,-syslibroot,/Developer/SDKs/MacOSX10.3.9.sdk"; LDFLAGS="${LDFLAGS_save}"
   export MACOSX_DEPLOYMENT_TARGET=10.3
   MACOSX_DEPLOYMENT_TARGET="10.3"
+elif test "${with_macosx_sdk}" != "no" -a "${target_cpu}" != "powerpc"; then
+  CFLAGS_save="${CFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; CFLAGS="${CFLAGS_save}"
+  CXXFLAGS_save="${CXXFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; CXXFLAGS="${CXXFLAGS_save}"
+  OBJCFLAGS_save="${OBJCFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; OBJCFLAGS="${OBJCFLAGS_save}"
+  LDFLAGS_save="${LDFLAGS_save} -isysroot /Developer/SDKs/MacOSX10.4u.sdk -Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk"; LDFLAGS="${LDFLAGS_save}"
+  export MACOSX_DEPLOYMENT_TARGET=10.4
+  MACOSX_DEPLOYMENT_TARGET="10.4"
 fi
 
 dnl
