@@ -459,6 +459,9 @@
             var_Get( p_playlist, "fullscreen", &val );
             var_Set( p_playlist, "fullscreen", (vlc_value_t)!val.b_bool );
         }
+        else
+            NSLog( sender );
+        
         if( p_playlist ) vlc_object_release( (vlc_object_t *)p_playlist );
     }
 
