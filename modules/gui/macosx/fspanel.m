@@ -51,8 +51,8 @@
     [win setLevel:NSFloatingWindowLevel];
     [win setAlphaValue:0.0];
     i_device = 0;
-
     [win center];
+
     return win;
 }
 
@@ -115,7 +115,7 @@
     else
         /* user-defined screen */
         theScreensFrame = [[[NSScreen screens] objectAtIndex: i_device] frame];
-
+    
     theWindowsFrame = [self frame];
     
     theCoordinate.x = (theScreensFrame.size.width - theWindowsFrame.size.width) / 2 + theScreensFrame.origin.x;
@@ -194,7 +194,7 @@
         if( b_fadeQueued )
         {
             b_fadeQueued=NO;
-            [self setFadeTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(unfocus:) userInfo:NULL repeats:YES]];
+            [self setFadeTimer:[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(unfocus:) userInfo:NULL repeats:YES]];
         }
     }
 }
@@ -211,8 +211,8 @@
         return;
     }
     if( [self alphaValue] > 0.0 )
-        [self setAlphaValue:[self alphaValue]-0.1];
-    if( [self alphaValue] <= 0.1 )
+        [self setAlphaValue:[self alphaValue]-0.05];
+    if( [self alphaValue] <= 0.05 )
     {
         b_displayed = NO;
         [self setAlphaValue:0.0];
@@ -248,7 +248,7 @@
     if( [self alphaValue] < 1.0 || b_displayed != YES )
     {
         if (![self fadeTimer])
-            [self setFadeTimer:[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(focus:) userInfo:[NSNumber numberWithShort:1] repeats:YES]];
+            [self setFadeTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(focus:) userInfo:[NSNumber numberWithShort:1] repeats:YES]];
         else if ([[[self fadeTimer] userInfo] shortValue]==0)
             b_fadeQueued=YES;
     }
@@ -302,6 +302,7 @@
     i_timeToKeepVisibleInSec -= 1;
     if( i_timeToKeepVisibleInSec < 1 )
     {
+        [NSCursor setHiddenUntilMouseMoves: YES];
         [self fadeOut];
         [timer invalidate];
         [timer release];

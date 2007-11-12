@@ -373,6 +373,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     var_Get( p_real_vout, "fullscreen", &val );
     val.b_bool = !val.b_bool;
     var_Set( p_real_vout, "fullscreen", val );
+
     if( [self isFullscreen] )
         [[[[VLCMain sharedInstance] getControls] getFSPanel] setActive: nil];
     else
@@ -748,6 +749,11 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 
 - (void)closeVout
 {
+    [[[[VLCMain sharedInstance] getControls] getFSPanel] fadeOut];
+
+    if( MACOS_VERSION > 10.3f )
+        [[self window] disableScreenUpdatesUntilFlush];
+
     [o_window closeWindow];
     [o_window setAcceptsMouseMovedEvents: NO];
     i_time_mouse_last_moved = 0;
