@@ -112,9 +112,9 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 
 - (BOOL)windowContainsEmbedded: (id)o_window
 {
-/*    if( ![[o_window className] isEqualToString: @"VLCWindow"] )
+/*    if( ![[o_window className] isEqualToString: @"VLCVoutWindow"] )
     {
-        NSLog( @"We were not given a VLCWindow" );
+        NSLog( @"We were not given a VLCVoutWindow" );
     }*/
     return ([self getViewForWindow: o_window] == nil ? NO : YES );
 }
@@ -373,11 +373,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     var_Get( p_real_vout, "fullscreen", &val );
     val.b_bool = !val.b_bool;
     var_Set( p_real_vout, "fullscreen", val );
-
-    if( [self isFullscreen] )
-        [[[[VLCMain sharedInstance] getControls] getFSPanel] setActive: nil];
-    else
-        [[[[VLCMain sharedInstance] getControls] getFSPanel] setNonActive: nil];    
 }
 
 - (BOOL)isFullscreen
@@ -713,6 +708,18 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     return o_return;
 }
 
+- (void)enterFullscreen
+{
+    [[o_view class] performSelectorOnMainThread:@selector(resetVout:) withObject:[NSValue valueWithPointer:p_vout] waitUntilDone:YES];
+    [[[[VLCMain sharedInstance] getControls] getFSPanel] setActive: nil];
+}
+
+- (void)leaveFullscreen
+{
+    [[o_view class] performSelectorOnMainThread:@selector(resetVout:) withObject:[NSValue valueWithPointer:p_vout] waitUntilDone:YES];
+    [[[[VLCMain sharedInstance] getControls] getFSPanel] setNonActive: nil];
+}
+
 @end
 
 /*****************************************************************************
@@ -732,7 +739,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 {
     BOOL b_return = [super setVout: p_arg_vout subView: view frame:s_arg_frame];
     i_time_mouse_last_moved = mdate();
-    o_window = [[VLCWindow alloc] initWithVout: p_arg_vout view: self
+    o_window = [[VLCVoutWindow alloc] initWithVout: p_arg_vout view: self
                                                     frame: s_arg_frame];
     [self updateTitle];
     [view setFrame: [self frame]];
@@ -861,6 +868,10 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 @end
 
 @implementation VLCDetachedEmbeddedVoutView
+- (void)awakeFromNib
+{
+    o_embeddedwindow = [self window];
+}
 
 - (BOOL)setVout: (vout_thread_t *) p_arg_vout subView: (NSView *) view
                      frame: (NSRect *) s_arg_frame
@@ -883,12 +894,23 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     [super closeVout];
 }
 
+- (void)enterFullscreen
+{
+    /* We are in a VLCEmbeddedWindow */
+    [o_embeddedwindow performSelectorOnMainThread: @selector(enterFullscreen) withObject: NULL waitUntilDone: YES];
+}
+
+- (void)leaveFullscreen
+{
+    /* We are in a VLCEmbeddedWindow */
+    [o_embeddedwindow performSelectorOnMainThread: @selector(leaveFullscreen) withObject: NULL waitUntilDone: YES];
+}
 @end
 
 /*****************************************************************************
- * VLCWindow implementation
+ * VLCVoutWindow implementation
  *****************************************************************************/
-@implementation VLCWindow
+@implementation VLCVoutWindow
 
 - (id) initWithVout: (vout_thread_t *) vout view: (VLCVoutView *) view
                      frame: (NSRect *) frame

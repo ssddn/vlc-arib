@@ -22,6 +22,37 @@
  *****************************************************************************/
 
 /*****************************************************************************
+ * NSScreen (VLCAdditions)
+ *
+ *  Missing extension to NSScreen
+ *****************************************************************************/
+
+@interface NSScreen (VLCAdditions)
+
++ (NSScreen *)screenWithDisplayID: (CGDirectDisplayID)displayID;
+- (BOOL)isMainScreen;
+- (BOOL)isScreen: (NSScreen*)screen;
+- (CGDirectDisplayID)displayID;
+- (void)blackoutOtherScreens;
++ (void)unblackoutScreens;
+@end
+
+/*****************************************************************************
+ * VLCWindow
+ *
+ *  Missing extension to NSWindow
+ *****************************************************************************/
+
+@interface VLCWindow : NSWindow
+{
+    BOOL b_canBecomeKeyWindow;
+    BOOL b_isset_canBecomeKeyWindow;
+}
+
+- (void)setCanBecomeKeyWindow: (BOOL)canBecomeKey;
+@end
+
+/*****************************************************************************
  * VLCControllerWindow
  *****************************************************************************/
 

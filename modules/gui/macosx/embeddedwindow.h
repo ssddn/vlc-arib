@@ -25,6 +25,7 @@
  * VLCEmbeddedWindow interface
  *****************************************************************************/
 
+#import "misc.h"
 
 @interface VLCEmbeddedWindow : NSWindow
 {
@@ -34,6 +35,7 @@
     IBOutlet id o_btn_play;
     IBOutlet id o_slider;
     IBOutlet id o_time;
+    IBOutlet id o_view;
 
     NSImage * o_img_play;
     NSImage * o_img_play_pressed;
@@ -41,6 +43,15 @@
     NSImage * o_img_pause_pressed;
     
     NSRect o_saved_frame;
+
+    VLCWindow       * o_fullscreen_window;
+    NSViewAnimation * o_fullscreen_anim1;
+    NSViewAnimation * o_fullscreen_anim2;
+    NSView          * o_temp_view;
+    /* set to yes if we are fullscreen and all animations are over */
+    BOOL              b_fullscreen;
+    BOOL              b_animation_lock_alreadylocked;
+    NSRecursiveLock * o_animation_lock;
 }
 
 - (void)setTime:(NSString *)o_arg_ime position:(float)f_position;
@@ -48,5 +59,20 @@
 - (void)setSeekable:(BOOL)b_seekable;
 - (void)setFullscreen:(BOOL)b_fullscreen;
 
+- (BOOL)isFullscreen;
+
+- (void)lockFullscreenAnimation;
+- (void)unlockFullscreenAnimation;
+
+- (void)enterFullscreen;
+- (void)leaveFullscreen;
+/* Allows to leave fullscreen by simply fading out the display */
+- (void)leaveFullscreenAndFadeOut: (BOOL)fadeout;
+
+/* private */
+- (void)hasEndedFullscreen;
+- (void)hasBecomeFullscreen;
+
+- (void)setFrameOnMainThread:(NSData*)packedargs;
 @end
 
