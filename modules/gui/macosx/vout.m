@@ -250,6 +250,10 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 
 - (void)closeVout
 {
+    /* Make sure we don't see a white flash */
+    if( MACOS_VERSION > 10.3f )
+        [[self window] disableScreenUpdatesUntilFlush];
+
     [o_view removeFromSuperview];
     o_view = nil;
     p_vout = NULL;
