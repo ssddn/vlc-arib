@@ -102,9 +102,9 @@
     [o_slider setEnabled: b_seekable];
 }
 
-- (void)setFullscreen:(BOOL)b_fullscreen
+- (void)setFullscreen:(BOOL)b_fullscreen_state
 {
-    [o_btn_fullscreen setState: b_fullscreen];
+    [o_btn_fullscreen setState: b_fullscreen_state];
 }
 
 - (void)zoom:(id)sender
