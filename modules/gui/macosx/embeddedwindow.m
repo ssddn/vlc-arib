@@ -32,6 +32,7 @@
 #include "vout.h"
 #include "embeddedwindow.h"
 #import "fspanel.h"
+#import "controls.h"
 
 /*****************************************************************************
  * VLCEmbeddedWindow Implementation
@@ -61,7 +62,6 @@
     [o_temp_view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
 
     o_fullscreen_window = nil;
-    o_fullscreen_anim1 = o_fullscreen_anim2 = nil;
 
     /* Not fullscreen when we wake up */
     [o_btn_fullscreen setState: NO];
@@ -170,7 +170,6 @@
 
 - (void)enterFullscreen
 {
-    NSMutableDictionary *dict1, *dict2;
     NSScreen *screen;
     NSRect screen_rect;
     NSRect rect;
@@ -263,9 +262,6 @@
 
 - (void)leaveFullscreenAndFadeOut: (BOOL)fadeout
 {
-    NSMutableDictionary *dict1, *dict2;
-    NSRect frame;
-
     [self lockFullscreenAnimation];
 
     b_fullscreen = NO;

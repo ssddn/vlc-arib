@@ -46,7 +46,7 @@ static NSMutableArray *blackoutWindows = NULL;
 
 + (NSScreen *)screenWithDisplayID: (CGDirectDisplayID)displayID
 {
-    int i;
+    unsigned int i;
  
     for( i = 0; i < [[NSScreen screens] count]; i++ )
     {
