@@ -59,6 +59,8 @@
 - (void)setSeekable:(BOOL)b_seekable;
 - (void)setFullscreen:(BOOL)b_fullscreen;
 
+- (NSView *)mainView;
+
 - (BOOL)isFullscreen;
 
 - (void)lockFullscreenAnimation;

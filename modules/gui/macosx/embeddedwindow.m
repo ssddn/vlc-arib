@@ -141,6 +141,14 @@
     return YES;
 }
 
+- (NSView *)mainView
+{
+    if (o_fullscreen_window)
+        return o_temp_view;
+    else
+        return o_view;
+}
+
 /*****************************************************************************
  * Fullscreen support
  */
