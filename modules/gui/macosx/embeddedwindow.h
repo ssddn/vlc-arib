@@ -55,7 +55,7 @@
 - (void)setTime:(NSString *)o_arg_ime position:(float)f_position;
 - (void)playStatusUpdated:(int)i_status;
 - (void)setSeekable:(BOOL)b_seekable;
-- (void)setFullscreen:(BOOL)b_fullscreen;
+- (void)setFullscreen:(BOOL)b_fullscreen_state;
 
 - (NSView *)mainView;
 
