@@ -281,7 +281,12 @@ void input_ClockSetPCR( input_thread_t *p_input,
              * stream ?). */
             msg_Warn( p_input, "clock gap, unexpected stream discontinuity" );
             input_ClockInit( cl, cl->b_master, cl->i_cr_average );
-            /* FIXME needed ? */
+            /* Feed synchro with a new reference point. */
+            msg_Warn( p_input, "feeding synchro with a new reference point trying to recover from clock gap" );
+            ClockNewRef( cl, i_clock,
+                         cl->last_pts + CR_MEAN_PTS_GAP > mdate() ?
+                         cl->last_pts + CR_MEAN_PTS_GAP : mdate() );
+            cl->i_synchro_state = SYNCHRO_OK;
 #if 0
             input_EscapeDiscontinuity( p_input );
 #endif
