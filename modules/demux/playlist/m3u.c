@@ -135,9 +135,6 @@ static int Demux( demux_t *p_demux )
     char       *psz_artist = NULL;
     int        i_parsed_duration = 0;
     mtime_t    i_duration = -1;
-    char       **ppsz_options = NULL;
-    int        i_options = 0, i;
-
     playlist_item_t *p_item, *p_current;
 
     vlc_bool_t b_play;
@@ -189,19 +186,6 @@ static int Demux( demux_t *p_demux )
                 if ( psz_artist )
                     psz_artist = strdup( psz_artist );
             }
-            else if( !strncasecmp( psz_parse, "EXTVLCOPT:",
-                                   sizeof("EXTVLCOPT:") -1 ) )
-            {
-                /* VLC Option */
-                char *psz_option;
-                psz_parse += sizeof("EXTVLCOPT:") -1;
-                if( !*psz_parse ) goto error;
-
-                psz_option = MaybeFromLocaleDup( psz_parse );
-                if( psz_option )
-                    INSERT_ELEM( ppsz_options, i_options, i_options,
-                                 psz_option );
-            }
         }
         else if( *psz_parse )
         {
@@ -219,10 +203,6 @@ static int Demux( demux_t *p_demux )
             if( !psz_mrl ) goto error;
 
             p_item = playlist_ItemNew( p_playlist, psz_mrl, psz_name );
-            for( i = 0; i< i_options; i++ )
-            {
-                playlist_ItemAddOption( p_item, ppsz_options[i] );
-            }
             p_item->input.i_duration = i_duration;
             if ( psz_artist && *psz_artist )
                 vlc_input_item_AddInfo( &p_item->input, _(VLC_META_INFO_CAT),
@@ -252,9 +232,6 @@ static int Demux( demux_t *p_demux )
         if( b_cleanup )
         {
             /* Cleanup state */
-            while( i_options-- ) free( ppsz_options[i_options] );
-            if( ppsz_options ) free( ppsz_options );
-            ppsz_options = NULL; i_options = 0;
             if( psz_name ) free( psz_name );
             psz_name = NULL;
             if ( psz_artist ) free( psz_artist );
