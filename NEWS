@@ -7,7 +7,7 @@ Various bugfixes:
  * Fix invalid free in bookmarks loading code.
  * Mozilla plugin: supports a reasonable amount of MIME types on Windows
  * Linux: Fixed S/PDIF passthrough with ALSA
- * Automatic recovery on unexpected stream discontinuities
+ * Automatic recovery on unexpected stream discontinuity (clock gap) occurances in input
  * Use field order (top/bottom) for correct bob/linear deinterlacing
 
 Active X plugin:
@@ -16,7 +16,7 @@ Active X plugin:
 Mac OS X Interface & Port:
  * Apple Remote support on Mac OS X 10.5 Leopard with enhanced functionality
  * Improved Video Output compatibility for Mac OS X 10.5 Leopard
- * Improved behaviour of the Fullscreen Controller and mode changes between Fullscreen and windowed video output
+ * Improved behaviour of the Fullscreen Controller and mode changes between Fullscreen and Windowed Video Output
  * Softened the white flashes artefacts that may appear during the transition between two differents movies.
  * Support for current Ogg file formats
  NOTE: This release requires Mac OS X 10.4 or higher. Mac OS X 10.3 is not supported anymore.
