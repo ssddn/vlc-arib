@@ -1773,13 +1773,13 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 
 - (IBAction)checkForUpdate:(id)sender
 {
-    /*if (!nib_update_loaded)
+    if (!nib_update_loaded)
     {
         nib_update_loaded = [NSBundle loadNibNamed:@"Update" owner:self];
         [o_update showUpdateWindow];
     } else {
         [o_update showUpdateWindow];
-    }*/
+    }
 }
 
 - (IBAction)closeError:(id)sender
