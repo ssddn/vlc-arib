@@ -718,6 +718,20 @@ createnew:
                  p_sys->env->getResultMsg() );
         return VLC_EGENERIC;
     }
+
+    /* Kasenna enables KeepAlive by analysing the User-Agent string. 
+     * Appending _KA to the string should be enough to enable this feature, 
+     * however, there is a bug where the _KA doesn't get parsed from the 
+     * standard User-Agent string as used above. The but is probably due to
+     * spaces in the string or the string being too long when Live55 also
+     * appends it's own name to the string */
+    if( var_CreateGetBool( p_demux, "rtsp-kasenna" ))
+    {
+#if LIVEMEDIA_LIBRARY_VERSION_INT > 1130457500
+        p_sys->rtsp->setUserAgentString( "VLC_MEDIA_PLAYER_KA" );
+#endif
+    }
+
     psz_url = (char*)malloc( strlen( p_sys->psz_path ) + 8 );
     sprintf( psz_url, "rtsp://%s", p_sys->psz_path );
 
