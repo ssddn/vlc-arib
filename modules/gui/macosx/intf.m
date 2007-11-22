@@ -1534,9 +1534,10 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-    NSLog(@"applicationWillTerminate");
     playlist_t * p_playlist;
     vout_thread_t * p_vout;
+    
+    msg_Dbg( p_intf, "applicationWillTerminate" );
 
 #define p_input p_intf->p_sys->p_input
     if( p_input )
