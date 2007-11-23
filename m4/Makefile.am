@@ -13,9 +13,7 @@ EXTRA_DIST = \
 	iconv.m4 \
 	intdiv0.m4 \
 	inttypes-pri.m4 \
-	inttypes.m4 \
 	inttypes_h.m4 \
-	isc-posix.m4 \
 	lcmessage.m4 \
 	lib-ld.m4 \
 	lib-link.m4 \
