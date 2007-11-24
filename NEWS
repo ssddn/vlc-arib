@@ -9,8 +9,9 @@ Various bugfixes:
  * Linux: Fixed S/PDIF passthrough with ALSA
  * Automatic recovery on unexpected stream discontinuity (clock gap) occurances in input
  * Use field order (top/bottom) for correct bob/linear deinterlacing
+ * Automatic reconnect for feeding streams to Shoutcast or Icecast servers
 
-Windows and Mac OS Binaries 
+Windows and Mac OS Binaries
  * FLAC Multiple integer overflows Security Update (CVE-2007-4619)
 
 Active X plugin:
@@ -27,6 +28,7 @@ Mac OS X Interface & Port:
 Other changes:
  * You now need to append --m3u-extvlcopt to your command line to enable
    EXTVLCOPT options parsing in m3u playlists.
+
 
 Changes between 0.8.6b and 0.8.6c:
 ----------------------------------
