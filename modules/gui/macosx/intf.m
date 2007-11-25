@@ -672,6 +672,21 @@ static VLCMain *_o_sharedMainInstance = nil;
     [o_controls setupVarMenuItem: o_mi_add_intf target: (vlc_object_t *)p_intf
         var: "intf-add" selector: @selector(toggleVar:)];
 
+    /* check whether the user runs a valid version of OSX; alert is auto-released */
+    if( MACOS_VERSION < 10.4f )
+    {
+        NSAlert *ourAlert;
+        int i_returnValue;
+        ourAlert = [NSAlert alertWithMessageText: _NS("Your version of Mac OS X is not supported")
+                        defaultButton: _NS("Quit")
+                      alternateButton: NULL
+                          otherButton: NULL
+            informativeTextWithFormat: _NS("VLC media player requires Mac OS X 10.4 or higher.")];
+        [ourAlert setAlertStyle: NSCriticalAlertStyle];
+        i_returnValue = [ourAlert runModal];
+        [NSApp terminate: self];
+    }
+
     vlc_thread_set_priority( p_intf, VLC_THREAD_PRIORITY_LOW );
 }
 
@@ -1175,7 +1190,21 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
             vlc_object_release( p_playlist );
             p_intf->p_sys->b_current_title_update = FALSE;
         }
-
+/*
+        if( p_intf->p_sys->p_input )
+        {
+            vout_thread_t * p_vout = vlc_object_find( p_intf, VLC_OBJECT_VOUT, FIND_ANYWHERE );
+            if(! p_vout )
+            {
+                msg_Dbg( p_intf, "no vout needed for current input, closing" );
+                [[self embeddedwindow] orderOut: [self embeddedwindow]];
+            }
+            else
+            {
+                msg_Dbg( p_intf, "vout found and present" );
+            }
+        }
+*/
         if( p_intf->p_sys->p_input && [o_timeslider isEnabled] )
         {
             /* Update the slider */

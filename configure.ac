@@ -188,18 +188,6 @@ case "${target_os}" in
         ;;
     esac
     ;;
-  darwin1.[0123])
-    dnl Mac OS X < 10.3
-    SYS=darwin
-    CFLAGS_save="${CFLAGS_save} -no-cpp-precomp -D_INTL_REDIRECT_MACROS"; CFLAGS="${CFLAGS_save}"
-    CXXFLAGS_save="${CXXFLAGS_save} -no-cpp-precomp -D_INTL_REDIRECT_MACROS"; CXXFLAGS="${CXXFLAGS_save}"
-    OBJCFLAGS_save="${OBJCFLAGS_save} -no-cpp-precomp -D_INTL_REDIRECT_MACROS"; OBJCFLAGS="${OBJCFLAGS_save}"
-    VLC_ADD_LDFLAGS([vlc ffmpeg ffmpegaltivec],[-all_load])
-    VLC_ADD_LDFLAGS([mkv mp4], [-framework IOKit -framework CoreFoundation])
-    VLC_ADD_CFLAGS([libvlc],[-x objective-c])
-    VLC_ADD_CFLAGS([vlc],[-x objective-c])
-    VLC_ADD_LDFLAGS([vlc],[-Wl,-m -Wl,-multiply_defined -Wl,suppress])
-    ;;
   darwin*)
     SYS=darwin
     CFLAGS_save="${CFLAGS_save} -D_INTL_REDIRECT_MACROS"; CFLAGS="${CFLAGS_save}"
@@ -294,15 +282,12 @@ dnl
 dnl  Check for Mac OS X SDK settings
 dnl
 AC_ARG_WITH(macosx-sdk,
-   [  --with-macosx-sdk       compile for Mac OS X 10.3 SDK],[], with_macosx_sdk=no)
-if test "${with_macosx_sdk}" != "no" -a "${target_cpu}" = "powerpc"; then
-  CFLAGS_save="${CFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; CFLAGS="${CFLAGS_save}"
-  CXXFLAGS_save="${CXXFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; CXXFLAGS="${CXXFLAGS_save}"
-  OBJCFLAGS_save="${OBJCFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.3 -isysroot /Developer/SDKs/MacOSX10.3.9.sdk"; OBJCFLAGS="${OBJCFLAGS_save}"
-  LDFLAGS_save="${LDFLAGS_save} -isysroot /Developer/SDKs/MacOSX10.3.9.sdk -Wl,-syslibroot,/Developer/SDKs/MacOSX10.3.9.sdk"; LDFLAGS="${LDFLAGS_save}"
-  export MACOSX_DEPLOYMENT_TARGET=10.3
-  MACOSX_DEPLOYMENT_TARGET="10.3"
-elif test "${with_macosx_sdk}" != "no" -a "${target_cpu}" != "powerpc"; then
+   [  --with-macosx-sdk       compile with the Mac OS X 10.4u SDK],[], with_macosx_sdk=no)
+if test "${with_macosx_sdk}" != "no"; then
+  CC="${CC} -isysroot /Developer/SDKs/MacOSX10.4u.sdk" 
+  CXX="${CXX} -isysroot /Developer/SDKs/MacOSX10.4u.sdk" 
+  OBJC="${OBJC} -isysroot /Developer/SDKs/MacOSX10.4u.sdk" 
+  LD="${LD} -syslibroot /Developer/SDKs/MacOSX10.4u.sdk"
   CFLAGS_save="${CFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; CFLAGS="${CFLAGS_save}"
   CXXFLAGS_save="${CXXFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; CXXFLAGS="${CXXFLAGS_save}"
   OBJCFLAGS_save="${OBJCFLAGS_save} -DMACOSX_DEPLOYMENT_TARGET=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"; OBJCFLAGS="${OBJCFLAGS_save}"
