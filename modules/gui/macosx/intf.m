@@ -1190,21 +1190,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
             vlc_object_release( p_playlist );
             p_intf->p_sys->b_current_title_update = FALSE;
         }
-/*
-        if( p_intf->p_sys->p_input )
-        {
-            vout_thread_t * p_vout = vlc_object_find( p_intf, VLC_OBJECT_VOUT, FIND_ANYWHERE );
-            if(! p_vout )
-            {
-                msg_Dbg( p_intf, "no vout needed for current input, closing" );
-                [[self embeddedwindow] orderOut: [self embeddedwindow]];
-            }
-            else
-            {
-                msg_Dbg( p_intf, "vout found and present" );
-            }
-        }
-*/
+
         if( p_intf->p_sys->p_input && [o_timeslider isEnabled] )
         {
             /* Update the slider */
