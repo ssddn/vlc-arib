@@ -743,7 +743,8 @@ flac-$(FLAC_VERSION).tar.gz:
 flac: flac-$(FLAC_VERSION).tar.gz
 	$(EXTRACT_GZ)
 ifdef HAVE_DARWIN_OS
-	patch -p 0 < Patches/flac-mactel.patch
+	(patch -p 0 < Patches/flac-mactel.patch && cd $@ && autoconf)
+	(patch -p 0 < Patches/flac-cross.patch && cd $@ && autoconf)
 endif
 ifneq ($(HOST),$(BUILD))
 	(patch -p 0 < Patches/flac-cross.patch && cd $@ && autoconf)
@@ -755,7 +756,7 @@ ifdef HAVE_WIN32
 else
 ifdef HAVE_DARWIN_OS
 ifdef HAVE_DARWIN_OS_ON_INTEL
-	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-asm-optimizations --disable-oggtest && sed -e 's%-Wl,-syslibroot,%-syslibroot %' -i.orig src/libFLAC/Makefile && cd src && make -C libFLAC && make -C libFLAC install  && cd .. && make -C include install)
+	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-oggtest && sed -e 's%-Wl,-syslibroot,%-syslibroot %' -i.orig src/libFLAC/Makefile && cd src && make -C libFLAC && make -C libFLAC install  && cd .. && make -C include install)
 else
 	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-oggtest && cd src && make -C libFLAC && make -C libFLAC install  && cd .. && make -C include install)
 endif
@@ -1201,9 +1202,12 @@ CLEAN_PKG += libdca
 
 ifdef SVN
 x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 604 x264
+	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 701 x264
 ifdef HAVE_WIN32
-	(cd x264; patch -p 0 < ../Patches/x264-svn-win32.patch )
+	(cd $@; patch -p 0 < ../Patches/x264-svn-win32.patch )
+endif
+ifdef HAVE_DARWIN_OS
+	(cd $@; patch -p 0 < ../Patches/x264-svn-darwin.patch )
 endif
 else
 x264-$(X264_VERSION).tar.gz:

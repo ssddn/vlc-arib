@@ -1,0 +1,13 @@
+Index: configure
+===================================================================
+--- configure	(revision 701)
++++ configure	(working copy)
+@@ -396,7 +396,7 @@
+     CFLAGS="$CFLAGS -fPIC"
+     ASFLAGS="$ASFLAGS -D__PIC__"
+     # resolve textrels in the x86 asm
+-    LDFLAGS="$LDFLAGS -Wl,-Bsymbolic"
++    LDFLAGS="$LDFLAGS -Wl"
+ fi
+ 
+ if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
