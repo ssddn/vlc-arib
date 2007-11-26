@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-13 21:38+0100\n"
+"POT-Creation-Date: 2007-11-26 14:02+0100\n"
 "PO-Revision-Date: 2005-12-12 14:01+0900\n"
 "Last-Translator: Tadashi Jokagi <elf2000@users.sourceforge.net>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -17,6 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
+
+#: include/vlc/vlc.h:578
+#, fuzzy
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"法律によって許可される範囲でこのプログラムには何の保証もありません。\n"
+"あなたは、GNU GPLの条項に基づいて再配布するかも知れません。\n"
+"COPYINGファイルに詳細が書かれていますので、参照してください。\n"
+"Written by the VideoLAN team at Ecole Centrale, Paris.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -75,7 +88,7 @@ msgstr "ホットキー設定"
 
 #: include/vlc_config_cat.h:54 src/input/es_out.c:1596 src/libvlc.h:1181
 #: modules/gui/beos/InterfaceWindow.cpp:280 modules/gui/macosx/extended.m:81
-#: modules/gui/macosx/intf.m:562 modules/gui/macosx/output.m:170
+#: modules/gui/macosx/intf.m:561 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:96 modules/gui/macosx/wizard.m:421
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:335
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:862
@@ -101,7 +114,7 @@ msgid "Audio filters are used to postprocess the audio stream."
 msgstr ""
 
 #: include/vlc_config_cat.h:64 src/audio_output/input.c:78
-#: modules/gui/macosx/intf.m:572 modules/gui/macosx/intf.m:573
+#: modules/gui/macosx/intf.m:571 modules/gui/macosx/intf.m:572
 msgid "Visualizations"
 msgstr "ビジュアル化"
 
@@ -129,7 +142,7 @@ msgid "Miscellaneous audio settings and modules."
 msgstr "その他のオーディオとモジュールの設定"
 
 #: include/vlc_config_cat.h:75 src/input/es_out.c:1624 src/libvlc.h:1216
-#: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:575
+#: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:574
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:86
 #: modules/gui/macosx/wizard.m:422
 #: modules/gui/wxwidgets/dialogs/infopanels.cpp:289
@@ -332,10 +345,10 @@ msgid "VLC's implementation of Video On Demand"
 msgstr ""
 
 #: include/vlc_config_cat.h:182 src/libvlc.h:1557
-#: modules/demux/playlist/playlist.c:53 modules/demux/playlist/playlist.c:54
+#: modules/demux/playlist/playlist.c:58 modules/demux/playlist/playlist.c:59
 #: modules/gui/beos/InterfaceWindow.cpp:230
-#: modules/gui/beos/InterfaceWindow.cpp:323 modules/gui/macosx/intf.m:507
-#: modules/gui/macosx/intf.m:605 modules/gui/pda/pda_interface.c:1264
+#: modules/gui/beos/InterfaceWindow.cpp:323 modules/gui/macosx/intf.m:506
+#: modules/gui/macosx/intf.m:604 modules/gui/pda/pda_interface.c:1264
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:202
 #: modules/gui/wxwidgets/interface.cpp:679
 #: modules/gui/wxwidgets/interface.cpp:690
@@ -470,32 +483,32 @@ msgstr ""
 "がインストールされているディレクトリに移動し、\"vlc -I win32\"を実行してくだ"
 "さい。\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:180
 #: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
 msgstr "メタ情報"
 
 #: include/vlc_meta.h:29 src/input/var.c:136 modules/demux/mpc.c:55
-#: modules/gui/beos/MediaControlView.cpp:1233 modules/gui/macosx/intf.m:557
-#: modules/gui/macosx/intf.m:558 modules/gui/macosx/open.m:168
+#: modules/gui/beos/MediaControlView.cpp:1233 modules/gui/macosx/intf.m:556
+#: modules/gui/macosx/intf.m:557 modules/gui/macosx/open.m:168
 #: modules/gui/macosx/playlistinfo.m:57 modules/gui/macosx/wizard.m:391
 #: modules/gui/wxwidgets/dialogs/open.cpp:757
 #: modules/gui/wxwidgets/dialogs/open.cpp:1660 modules/mux/asf.c:48
 msgid "Title"
 msgstr "タイトル"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:132 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:132
+#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "作成者"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247
+#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
 msgstr "アーティスト"
 
@@ -641,19 +654,6 @@ msgstr "コーデック名デバイス名"
 msgid "Codec Description"
 msgstr "コーデック説明"
 
-#: include/vlc/vlc.h:578
-#, fuzzy
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"法律によって許可される範囲でこのプログラムには何の保証もありません。\n"
-"あなたは、GNU GPLの条項に基づいて再配布するかも知れません。\n"
-"COPYINGファイルに詳細が書かれていますので、参照してください。\n"
-"Written by the VideoLAN team at Ecole Centrale, Paris.\n"
-
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:362 src/libvlc.h:409 src/video_output/video_output.c:379
 #: modules/codec/ffmpeg/postprocess.c:94
@@ -675,7 +675,7 @@ msgstr "スペクトラム"
 
 #: src/audio_output/input.c:123 modules/audio_filter/equalizer.c:71
 #: modules/gui/macosx/equalizer.m:140 modules/gui/macosx/equalizer.m:155
-#: modules/gui/macosx/intf.m:602 modules/gui/wxwidgets/extrapanel.cpp:177
+#: modules/gui/macosx/intf.m:601 modules/gui/wxwidgets/extrapanel.cpp:177
 msgid "Equalizer"
 msgstr "イコライザー"
 
@@ -685,8 +685,8 @@ msgid "Audio filters"
 msgstr "オーディオフィルター"
 
 #: src/audio_output/output.c:102 src/audio_output/output.c:129
-#: modules/access/vcdx/info.c:118 modules/gui/macosx/intf.m:568
-#: modules/gui/macosx/intf.m:569
+#: modules/access/vcdx/info.c:118 modules/gui/macosx/intf.m:567
+#: modules/gui/macosx/intf.m:568
 msgid "Audio Channels"
 msgstr "オーディオチャンネル"
 
@@ -794,7 +794,7 @@ msgstr "トラック %i"
 
 #: src/input/es_out.c:466 src/input/es_out.c:468 src/input/es_out.c:568
 #: src/input/es_out.c:575 src/input/var.c:125 src/libvlc.h:435
-#: modules/gui/macosx/intf.m:555 modules/gui/macosx/intf.m:556
+#: modules/gui/macosx/intf.m:554 modules/gui/macosx/intf.m:555
 msgid "Program"
 msgstr "プログラム"
 
@@ -833,7 +833,7 @@ msgstr "%d Hz"
 msgid "Bits per sample"
 msgstr "ビット/サンプル"
 
-#: src/input/es_out.c:1616 modules/access/pvr.c:89
+#: src/input/es_out.c:1616 modules/access/pvr.c:93
 #: modules/demux/playlist/b4s.c:349 modules/demux/playlist/shoutcast.c:472
 msgid "Bitrate"
 msgstr "ビットレート"
@@ -885,7 +885,7 @@ msgid "Programs"
 msgstr "プログラム"
 
 #: src/input/var.c:142 modules/gui/beos/MediaControlView.cpp:1234
-#: modules/gui/macosx/intf.m:559 modules/gui/macosx/intf.m:560
+#: modules/gui/macosx/intf.m:558 modules/gui/macosx/intf.m:559
 #: modules/gui/macosx/open.m:169 modules/gui/wxwidgets/dialogs/open.cpp:762
 msgid "Chapter"
 msgstr "チャプター"
@@ -895,18 +895,18 @@ msgstr "チャプター"
 msgid "Navigation"
 msgstr "ナビゲーション"
 
-#: src/input/var.c:163 modules/gui/macosx/intf.m:583
-#: modules/gui/macosx/intf.m:584
+#: src/input/var.c:163 modules/gui/macosx/intf.m:582
+#: modules/gui/macosx/intf.m:583
 msgid "Video Track"
 msgstr "ビデオトラック"
 
-#: src/input/var.c:169 modules/gui/macosx/intf.m:566
-#: modules/gui/macosx/intf.m:567
+#: src/input/var.c:169 modules/gui/macosx/intf.m:565
+#: modules/gui/macosx/intf.m:566
 msgid "Audio Track"
 msgstr "オーディオトラック"
 
-#: src/input/var.c:175 modules/gui/macosx/intf.m:591
-#: modules/gui/macosx/intf.m:592
+#: src/input/var.c:175 modules/gui/macosx/intf.m:590
+#: modules/gui/macosx/intf.m:591
 msgid "Subtitles Track"
 msgstr "字幕トラック"
 
@@ -952,8 +952,8 @@ msgstr "パスワード"
 msgid "Switch interface"
 msgstr "インターフェースを切り替え"
 
-#: src/interface/interface.c:375 modules/gui/macosx/intf.m:518
-#: modules/gui/macosx/intf.m:519
+#: src/interface/interface.c:375 modules/gui/macosx/intf.m:517
+#: modules/gui/macosx/intf.m:518
 msgid "Add Interface"
 msgstr "インタフェースを追加"
 
@@ -1137,6 +1137,10 @@ msgstr ""
 
 #: src/libvlc.h:41
 msgid "Occitan"
+msgstr ""
+
+#: src/libvlc.h:41 src/misc/iso-639_def.h:148
+msgid "Polish"
 msgstr ""
 
 #: src/libvlc.h:42
@@ -1907,7 +1911,7 @@ msgstr ""
 #: src/video_output/vout_intf.c:352 modules/access/dshow/dshow.cpp:73
 #: modules/access/dshow/dshow.cpp:75 modules/access/dshow/dshow.cpp:78
 #: modules/audio_output/alsa.c:101 modules/gui/macosx/prefs_widgets.m:1292
-#: modules/gui/macosx/vout.m:197
+#: modules/gui/macosx/vout.m:198
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:275
 #: modules/gui/wxwidgets/dialogs/preferences_widgets.cpp:325
 #: modules/video_filter/marq.c:52 modules/video_filter/rss.c:63
@@ -2947,10 +2951,10 @@ msgstr ""
 
 #: src/libvlc.h:949 src/video_output/vout_intf.c:412
 #: modules/gui/beos/VideoOutput.cpp:1057 modules/gui/macosx/applescript.m:121
-#: modules/gui/macosx/controls.m:455 modules/gui/macosx/controls.m:881
-#: modules/gui/macosx/controls.m:911 modules/gui/macosx/embeddedwindow.m:44
-#: modules/gui/macosx/intf.m:504 modules/gui/macosx/intf.m:580
-#: modules/gui/macosx/intf.m:635
+#: modules/gui/macosx/controls.m:455 modules/gui/macosx/controls.m:882
+#: modules/gui/macosx/controls.m:912 modules/gui/macosx/embeddedwindow.m:49
+#: modules/gui/macosx/intf.m:503 modules/gui/macosx/intf.m:579
+#: modules/gui/macosx/intf.m:634
 msgid "Fullscreen"
 msgstr "全画面化"
 
@@ -2984,7 +2988,7 @@ msgid "Select the hotkey to use to play."
 msgstr "再生に使うホットキーを選択"
 
 #: src/libvlc.h:957 modules/control/hotkeys.c:684
-#: modules/gui/macosx/controls.m:814 modules/gui/macosx/intf.m:545
+#: modules/gui/macosx/controls.m:815 modules/gui/macosx/intf.m:544
 #: modules/gui/wxwidgets/interface.cpp:695
 msgid "Faster"
 msgstr "早送り"
@@ -2994,7 +2998,7 @@ msgid "Select the hotkey to use for fast forward playback."
 msgstr "早送りに使うホットキーを選択"
 
 #: src/libvlc.h:959 modules/control/hotkeys.c:692
-#: modules/gui/macosx/controls.m:815 modules/gui/macosx/intf.m:546
+#: modules/gui/macosx/controls.m:816 modules/gui/macosx/intf.m:545
 #: modules/gui/wxwidgets/interface.cpp:694
 msgid "Slower"
 msgstr "スロー"
@@ -3004,9 +3008,9 @@ msgid "Select the hotkey to use for slow motion playback."
 msgstr "スローモーションに使うホットキーを選択"
 
 #: src/libvlc.h:961 modules/control/hotkeys.c:651
-#: modules/gui/macosx/controls.m:835 modules/gui/macosx/intf.m:503
-#: modules/gui/macosx/intf.m:548 modules/gui/macosx/intf.m:623
-#: modules/gui/macosx/intf.m:631 modules/gui/macosx/wizard.m:313
+#: modules/gui/macosx/controls.m:836 modules/gui/macosx/intf.m:502
+#: modules/gui/macosx/intf.m:547 modules/gui/macosx/intf.m:622
+#: modules/gui/macosx/intf.m:630 modules/gui/macosx/wizard.m:313
 #: modules/gui/macosx/wizard.m:364 modules/gui/macosx/wizard.m:1631
 #: modules/gui/wxwidgets/interface.cpp:693
 #: modules/gui/wxwidgets/interface.cpp:1515
@@ -3019,9 +3023,9 @@ msgid "Select the hotkey to use to skip to the next item in the playlist."
 msgstr ""
 
 #: src/libvlc.h:963 modules/control/hotkeys.c:663
-#: modules/gui/macosx/controls.m:834 modules/gui/macosx/intf.m:498
-#: modules/gui/macosx/intf.m:547 modules/gui/macosx/intf.m:624
-#: modules/gui/macosx/intf.m:630 modules/gui/wxwidgets/interface.cpp:692
+#: modules/gui/macosx/controls.m:835 modules/gui/macosx/intf.m:497
+#: modules/gui/macosx/intf.m:546 modules/gui/macosx/intf.m:623
+#: modules/gui/macosx/intf.m:629 modules/gui/wxwidgets/interface.cpp:692
 #: modules/gui/wxwidgets/interface.cpp:1514
 #: modules/gui/wxwidgets/menus.cpp:260
 msgid "Previous"
@@ -3031,9 +3035,9 @@ msgstr "前"
 msgid "Select the hotkey to use to skip to the previous item in the playlist."
 msgstr ""
 
-#: src/libvlc.h:965 modules/gui/macosx/controls.m:826
-#: modules/gui/macosx/intf.m:501 modules/gui/macosx/intf.m:544
-#: modules/gui/macosx/intf.m:622 modules/gui/macosx/intf.m:629
+#: src/libvlc.h:965 modules/gui/macosx/controls.m:827
+#: modules/gui/macosx/intf.m:500 modules/gui/macosx/intf.m:543
+#: modules/gui/macosx/intf.m:621 modules/gui/macosx/intf.m:628
 #: modules/gui/pda/pda_interface.c:274 modules/gui/pda/pda_interface.c:275
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:87
 #: modules/gui/wxwidgets/interface.cpp:676
@@ -3049,8 +3053,8 @@ msgid "Select the hotkey to stop playback."
 msgstr "最低を停止するホットキーを選択する"
 
 #: src/libvlc.h:967 modules/gui/macosx/bookmarks.m:101
-#: modules/gui/macosx/bookmarks.m:110 modules/gui/macosx/embeddedwindow.m:46
-#: modules/gui/macosx/intf.m:506 modules/video_filter/marq.c:122
+#: modules/gui/macosx/bookmarks.m:110 modules/gui/macosx/embeddedwindow.m:51
+#: modules/gui/macosx/intf.m:505 modules/video_filter/marq.c:122
 #: modules/video_filter/rss.c:174
 msgid "Position"
 msgstr "位置"
@@ -3168,7 +3172,7 @@ msgid "Long jump length, in seconds."
 msgstr ""
 
 #: src/libvlc.h:1005 modules/control/hotkeys.c:258
-#: modules/gui/beos/InterfaceWindow.cpp:274
+#: modules/gui/beos/InterfaceWindow.cpp:274 modules/gui/macosx/intf.m:681
 msgid "Quit"
 msgstr "終了"
 
@@ -3283,9 +3287,9 @@ msgstr "ボリュームを下げる"
 msgid "Select the key to decrease audio volume."
 msgstr ""
 
-#: src/libvlc.h:1031 modules/gui/macosx/controls.m:871
-#: modules/gui/macosx/intf.m:565 modules/gui/macosx/intf.m:625
-#: modules/gui/macosx/intf.m:634
+#: src/libvlc.h:1031 modules/gui/macosx/controls.m:872
+#: modules/gui/macosx/intf.m:564 modules/gui/macosx/intf.m:624
+#: modules/gui/macosx/intf.m:633
 msgid "Mute"
 msgstr "ミュートする"
 
@@ -3681,8 +3685,8 @@ msgstr ""
 "  vlc:quit                       VLC を終了\n"
 
 #: src/libvlc.h:1239 src/video_output/vout_intf.c:424
-#: modules/gui/macosx/controls.m:439 modules/gui/macosx/controls.m:880
-#: modules/gui/macosx/intf.m:582 modules/gui/macosx/intf.m:636
+#: modules/gui/macosx/controls.m:439 modules/gui/macosx/controls.m:881
+#: modules/gui/macosx/intf.m:581 modules/gui/macosx/intf.m:635
 #: modules/video_output/snapshot.c:76
 msgid "Snapshot"
 msgstr "スナップショット"
@@ -4204,10 +4208,6 @@ msgstr "パンジャブ語"
 msgid "Pali"
 msgstr "パーリ語"
 
-#: src/misc/iso-639_def.h:148
-msgid "Polish"
-msgstr ""
-
 #: src/misc/iso-639_def.h:149
 msgid "Portuguese"
 msgstr "ポルトガル語"
@@ -4402,7 +4402,7 @@ msgstr ""
 msgid "Zulu"
 msgstr ""
 
-#: src/misc/iso_lang.c:70 modules/gui/wxwidgets/dialogs/preferences.cpp:978
+#: src/misc/iso_lang.c:70 modules/gui/wxwidgets/dialogs/preferences.cpp:976
 msgid "Unknown"
 msgstr "不明"
 
@@ -4429,8 +4429,8 @@ msgstr ""
 msgid "Undefined"
 msgstr "未定義"
 
-#: src/video_output/video_output.c:377 modules/gui/macosx/intf.m:593
-#: modules/gui/macosx/intf.m:594 modules/video_filter/deinterlace.c:122
+#: src/video_output/video_output.c:377 modules/gui/macosx/intf.m:592
+#: modules/gui/macosx/intf.m:593 modules/video_filter/deinterlace.c:122
 msgid "Deinterlace"
 msgstr "ノンインタレース化"
 
@@ -4475,22 +4475,22 @@ msgstr "1:1 オリジナル"
 msgid "2:1 Double"
 msgstr "2:1 二倍"
 
-#: src/video_output/vout_intf.c:260 modules/gui/macosx/intf.m:587
-#: modules/gui/macosx/intf.m:588 modules/video_filter/crop.c:62
+#: src/video_output/vout_intf.c:260 modules/gui/macosx/intf.m:586
+#: modules/gui/macosx/intf.m:587 modules/video_filter/crop.c:62
 msgid "Crop"
 msgstr "縁取り"
 
-#: src/video_output/vout_intf.c:347 modules/gui/macosx/intf.m:585
-#: modules/gui/macosx/intf.m:586
+#: src/video_output/vout_intf.c:347 modules/gui/macosx/intf.m:584
+#: modules/gui/macosx/intf.m:585
 msgid "Aspect-ratio"
 msgstr "アスペクト比"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dvb/access.c:72 modules/access/dv.c:68
+#: modules/access/dv.c:68 modules/access/dvb/access.c:72
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
-#: modules/access/mms/mms.c:46 modules/access/pvr.c:52
+#: modules/access/mms/mms.c:46 modules/access/pvr.c:56
 #: modules/access/screen/screen.c:37 modules/access/smb.c:59
 #: modules/access/tcp.c:37 modules/access/udp.c:42 modules/access/v4l/v4l.c:73
 #: modules/access/vcd/vcd.c:40
@@ -5033,6 +5033,22 @@ msgstr "一覧の再描画"
 msgid "Configure"
 msgstr "設定"
 
+#: modules/access/dv.c:70
+#, fuzzy
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr ""
+"udpストリームで使用される既定のキャッシング値が変更可能です。単位はミリ秒で指"
+"定します。"
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr ""
+
+#: modules/access/dv.c:75
+#, fuzzy
+msgid "dv"
+msgstr "追加"
+
 #: modules/access/dvb/access.c:74
 #, fuzzy
 msgid ""
@@ -5280,22 +5296,6 @@ msgstr "DVB 入力と v4l2 サポート"
 msgid "HTTP server"
 msgstr "HTTP ユーザー名"
 
-#: modules/access/dv.c:70
-#, fuzzy
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr ""
-"udpストリームで使用される既定のキャッシング値が変更可能です。単位はミリ秒で指"
-"定します。"
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr ""
-
-#: modules/access/dv.c:75
-#, fuzzy
-msgid "dv"
-msgstr "追加"
-
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
 msgstr "DVD アングル"
@@ -5386,7 +5386,7 @@ msgid ""
 "Caching value for fake streams. This value should be set in milliseconds."
 msgstr "ファイル・ストリームの既定のキャッシング値を変更できます。単位はミリ秒"
 
-#: modules/access/fake.c:44 modules/access/pvr.c:78
+#: modules/access/fake.c:44 modules/access/pvr.c:82
 #: modules/access/v4l/v4l.c:136
 msgid "Framerate"
 msgstr "フレームレート"
@@ -5458,70 +5458,6 @@ msgstr "FTP 入力"
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:471
 msgid "File"
 msgstr "ファイル"
-
-#: modules/access_filter/dump.c:39
-#, fuzzy
-msgid "Force use of dump module"
-msgstr "オーディオ出力モジュールアクセス"
-
-#: modules/access_filter/dump.c:40
-msgid "Activate the dump module even for media with fast seeking."
-msgstr ""
-
-#: modules/access_filter/dump.c:43
-msgid "Maximum size of temporary file (Mb)"
-msgstr ""
-
-#: modules/access_filter/dump.c:44
-msgid ""
-"The dump module will abort dumping of the media if more than this much "
-"megabyte were performed."
-msgstr ""
-
-#: modules/access_filter/record.c:43
-#, fuzzy
-msgid "Record directory"
-msgstr "ソースディレクトリ"
-
-#: modules/access_filter/record.c:45
-#, fuzzy
-msgid "Directory where the record will be stored."
-msgstr "VLCが選択するパケッタライザーの順序を選択します。"
-
-#: modules/access_filter/timeshift.c:44
-#, fuzzy
-msgid "Timeshift granularity"
-msgstr "垂直方向位置"
-
-#: modules/access_filter/timeshift.c:46
-#, fuzzy
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr "VLCが選択するパケッタライザーの順序を選択します。"
-
-#: modules/access_filter/timeshift.c:48
-#, fuzzy
-msgid "Timeshift directory"
-msgstr "ディレクトリを選択する"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr ""
-
-#: modules/access_filter/timeshift.c:51
-msgid "Force use of the timeshift module"
-msgstr ""
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "タイムシフト"
 
 #: modules/access/ftp.c:44
 #, fuzzy
@@ -5667,169 +5603,7 @@ msgstr ""
 msgid "Microsoft Media Server (MMS) input"
 msgstr "マイクロソフトメディアサーバー (MMS) 入力"
 
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "ダミーストリーム出力"
-
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "ダミー"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "ファイルに追加する"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr ""
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "ファイルストリーム出力"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "ユーザー名"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr ""
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr ""
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "Mime"
-
-#: modules/access_output/http.c:69
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr ""
-
-#: modules/access_output/http.c:73
-#, fuzzy
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
-
-#: modules/access_output/http.c:76
-#, fuzzy
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
-
-#: modules/access_output/http.c:80
-#, fuzzy
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr ""
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr ""
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "HTTP ストリーム出力"
-
-#: modules/access_output/shout.c:58
-#, fuzzy
-msgid "Stream name"
-msgstr "ストリーム名"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr ""
-
-#: modules/access_output/shout.c:62
-#, fuzzy
-msgid "Stream description"
-msgstr "コーデック説明"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr ""
-
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "ストリーム MP3"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-
-#: modules/access_output/shout.c:73
-#, fuzzy
-msgid "IceCAST output"
-msgstr "オーディオ出力モジュールアクセス"
-
-#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
-#: modules/demux/live555.cpp:62
-msgid "Caching value (ms)"
-msgstr "キャッシング値 (ミリ秒)"
-
-#: modules/access_output/udp.c:77
-#, fuzzy
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr ""
-"udpストリームで使用される既定のキャッシング値が変更可能です。単位はミリ秒で指"
-"定します。"
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1873
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-msgid "Time-To-Live (TTL)"
-msgstr "生存時間 (TTL):"
-
-#: modules/access_output/udp.c:81
-#, fuzzy
-msgid "Time-To-Live of the outgoing stream."
-msgstr "VLCが選択するパケッタライザーの順序を選択します。"
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "グループパケット"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr ""
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "UDP ストリーム出力"
-
-#: modules/access/pvr.c:54
+#: modules/access/pvr.c:58
 #, fuzzy
 msgid ""
 "Default caching value for PVR streams. This value should be set in "
@@ -5838,163 +5612,168 @@ msgstr ""
 "udpストリームで使用される既定のキャッシング値が変更可能です。単位はミリ秒で指"
 "定します。"
 
-#: modules/access/pvr.c:57
+#: modules/access/pvr.c:61
 msgid "Device"
 msgstr "デバイス"
 
-#: modules/access/pvr.c:58
+#: modules/access/pvr.c:62
 #, fuzzy
 msgid "PVR video device"
 msgstr "DVDデバイス"
 
-#: modules/access/pvr.c:60
+#: modules/access/pvr.c:64
 #, fuzzy
 msgid "Radio device"
 msgstr "DVDデバイス"
 
-#: modules/access/pvr.c:61
+#: modules/access/pvr.c:65
 #, fuzzy
 msgid "PVR radio device"
 msgstr "DVDデバイス"
 
-#: modules/access/pvr.c:63 modules/access/v4l/v4l.c:96
+#: modules/access/pvr.c:67 modules/access/v4l/v4l.c:96
 #, fuzzy
 msgid "Norm"
 msgstr "なし"
 
-#: modules/access/pvr.c:64 modules/access/v4l/v4l.c:98
+#: modules/access/pvr.c:68 modules/access/v4l/v4l.c:98
 msgid "Norm of the stream (Automatic, SECAM, PAL, or NTSC)."
 msgstr ""
 
-#: modules/access/pvr.c:67 modules/access/v4l/v4l.c:102
+#: modules/access/pvr.c:71 modules/access/v4l/v4l.c:102
 #: modules/video_filter/mosaic.c:96
 msgid "Width"
 msgstr "幅"
 
-#: modules/access/pvr.c:68
+#: modules/access/pvr.c:72
 msgid "Width of the stream to capture (-1 for autodetection)."
 msgstr ""
 
-#: modules/access/pvr.c:71 modules/access/v4l/v4l.c:105
+#: modules/access/pvr.c:75 modules/access/v4l/v4l.c:105
 #: modules/video_filter/mosaic.c:94
 #, fuzzy
 msgid "Height"
 msgstr "右"
 
-#: modules/access/pvr.c:72
+#: modules/access/pvr.c:76
 msgid "Height of the stream to capture (-1 for autodetection)."
 msgstr ""
 
-#: modules/access/pvr.c:75 modules/access/v4l/v4l.c:89
+#: modules/access/pvr.c:79 modules/access/v4l/v4l.c:89
 msgid "Frequency"
 msgstr "周波数"
 
-#: modules/access/pvr.c:76 modules/access/v4l/v4l.c:91
+#: modules/access/pvr.c:80 modules/access/v4l/v4l.c:91
 msgid "Frequency to capture (in kHz), if applicable."
 msgstr ""
 
-#: modules/access/pvr.c:79 modules/access/v4l/v4l.c:137
+#: modules/access/pvr.c:83 modules/access/v4l/v4l.c:137
 msgid "Framerate to capture, if applicable (-1 for autodetect)."
 msgstr ""
 
-#: modules/access/pvr.c:82
+#: modules/access/pvr.c:86
 msgid "Key interval"
 msgstr "キー間隔:"
 
-#: modules/access/pvr.c:83
+#: modules/access/pvr.c:87
 msgid "Interval between keyframes (-1 for autodetect)."
 msgstr ""
 
-#: modules/access/pvr.c:85
+#: modules/access/pvr.c:89
 msgid "B Frames"
 msgstr "B フレーム"
 
-#: modules/access/pvr.c:86
+#: modules/access/pvr.c:90
 msgid ""
 "If this option is set, B-Frames will be used. Use this option to set the "
 "number of B-Frames."
 msgstr ""
 
-#: modules/access/pvr.c:90
+#: modules/access/pvr.c:94
 msgid "Bitrate to use (-1 for default)."
-msgstr ""
-
-#: modules/access/pvr.c:92
-#, fuzzy
-msgid "Bitrate peak"
-msgstr "ビットレート"
-
-#: modules/access/pvr.c:93
-msgid "Peak bitrate in VBR mode."
 msgstr ""
 
 #: modules/access/pvr.c:96
 #, fuzzy
+msgid "Bitrate peak"
+msgstr "ビットレート"
+
+#: modules/access/pvr.c:97
+msgid "Peak bitrate in VBR mode."
+msgstr ""
+
+#: modules/access/pvr.c:100
+#, fuzzy
 msgid "Bitrate mode)"
 msgstr "湾曲モード"
 
-#: modules/access/pvr.c:97
+#: modules/access/pvr.c:101
 msgid "Bitrate mode to use (VBR or CBR)."
 msgstr ""
 
-#: modules/access/pvr.c:99
+#: modules/access/pvr.c:103
 #, fuzzy
 msgid "Audio bitmask"
 msgstr "オーディオビットレート"
 
-#: modules/access/pvr.c:100
+#: modules/access/pvr.c:104
 msgid "Bitmask that will get used by the audio part of the card."
 msgstr ""
 
-#: modules/access/pvr.c:103 modules/access/vcdx/info.c:97
-#: modules/gui/macosx/intf.m:505 modules/gui/wxwidgets/interface.cpp:1380
+#: modules/access/pvr.c:107 modules/access/vcdx/info.c:97
+#: modules/gui/macosx/intf.m:504 modules/gui/wxwidgets/interface.cpp:1380
 msgid "Volume"
 msgstr "音量"
 
-#: modules/access/pvr.c:104
+#: modules/access/pvr.c:108
 msgid "Audio volume (0-65535)."
 msgstr ""
 
-#: modules/access/pvr.c:106 modules/access/v4l/v4l.c:92
+#: modules/access/pvr.c:110 modules/access/v4l/v4l.c:92
 msgid "Channel"
 msgstr "チャンネル"
 
-#: modules/access/pvr.c:107
+#: modules/access/pvr.c:111
 msgid ""
 "Channel of the card to use (Usually, 0 = tuner, 1 = composite, 2 = svideo)"
 msgstr ""
 
-#: modules/access/pvr.c:113 modules/access/v4l/v4l.c:143
+#: modules/access/pvr.c:117 modules/access/v4l/v4l.c:143
 msgid "Automatic"
 msgstr "自動"
 
-#: modules/access/pvr.c:113 modules/access/v4l/v4l.c:143
+#: modules/access/pvr.c:117 modules/access/v4l/v4l.c:143
 msgid "SECAM"
 msgstr "SECAM"
 
-#: modules/access/pvr.c:113 modules/access/v4l/v4l.c:143
+#: modules/access/pvr.c:117 modules/access/v4l/v4l.c:143
 msgid "PAL"
 msgstr "PAL"
 
-#: modules/access/pvr.c:113 modules/access/v4l/v4l.c:143
+#: modules/access/pvr.c:117 modules/access/v4l/v4l.c:143
 msgid "NTSC"
 msgstr "NTSC"
 
-#: modules/access/pvr.c:116
+#: modules/access/pvr.c:120
 msgid "vbr"
 msgstr ""
 
-#: modules/access/pvr.c:116
+#: modules/access/pvr.c:120
 msgid "cbr"
 msgstr ""
 
-#: modules/access/pvr.c:121
+#: modules/access/pvr.c:125
 msgid "PVR"
 msgstr "PVR"
 
-#: modules/access/pvr.c:122
+#: modules/access/pvr.c:126
 msgid "IVTV MPEG Encoding cards input"
 msgstr ""
+
+#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
+#: modules/demux/live555.cpp:62
+msgid "Caching value (ms)"
+msgstr "キャッシング値 (ミリ秒)"
 
 #: modules/access/rtsp/access.c:42
 #, fuzzy
@@ -6036,7 +5815,7 @@ msgstr ""
 msgid "Screen Input"
 msgstr "画面入力"
 
-#: modules/access/screen/screen.c:63 modules/gui/macosx/vout.m:209
+#: modules/access/screen/screen.c:63 modules/gui/macosx/vout.m:210
 msgid "Screen"
 msgstr "スクリーン"
 
@@ -6472,6 +6251,227 @@ msgstr "再生一覧の \"author\" フィールドで使用するフォーマッ
 #, fuzzy
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "再生一覧の \"author\" フィールドで使用するフォーマット"
+
+#: modules/access_filter/dump.c:39
+#, fuzzy
+msgid "Force use of dump module"
+msgstr "オーディオ出力モジュールアクセス"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr ""
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr ""
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
+
+#: modules/access_filter/record.c:43
+#, fuzzy
+msgid "Record directory"
+msgstr "ソースディレクトリ"
+
+#: modules/access_filter/record.c:45
+#, fuzzy
+msgid "Directory where the record will be stored."
+msgstr "VLCが選択するパケッタライザーの順序を選択します。"
+
+#: modules/access_filter/timeshift.c:44
+#, fuzzy
+msgid "Timeshift granularity"
+msgstr "垂直方向位置"
+
+#: modules/access_filter/timeshift.c:46
+#, fuzzy
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr "VLCが選択するパケッタライザーの順序を選択します。"
+
+#: modules/access_filter/timeshift.c:48
+#, fuzzy
+msgid "Timeshift directory"
+msgstr "ディレクトリを選択する"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr ""
+
+#: modules/access_filter/timeshift.c:51
+msgid "Force use of the timeshift module"
+msgstr ""
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "タイムシフト"
+
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "ダミーストリーム出力"
+
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "ダミー"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "ファイルに追加する"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr ""
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "ファイルストリーム出力"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "ユーザー名"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr ""
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr ""
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "Mime"
+
+#: modules/access_output/http.c:69
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr ""
+
+#: modules/access_output/http.c:73
+#, fuzzy
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
+
+#: modules/access_output/http.c:76
+#, fuzzy
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
+
+#: modules/access_output/http.c:80
+#, fuzzy
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr "HTTP インターフェースの x509 PEM 証明書ファイル (SSL 有効)"
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr ""
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr ""
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "HTTP ストリーム出力"
+
+#: modules/access_output/shout.c:58
+#, fuzzy
+msgid "Stream name"
+msgstr "ストリーム名"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr ""
+
+#: modules/access_output/shout.c:62
+#, fuzzy
+msgid "Stream description"
+msgstr "コーデック説明"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr ""
+
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "ストリーム MP3"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+
+#: modules/access_output/shout.c:73
+#, fuzzy
+msgid "IceCAST output"
+msgstr "オーディオ出力モジュールアクセス"
+
+#: modules/access_output/udp.c:77
+#, fuzzy
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr ""
+"udpストリームで使用される既定のキャッシング値が変更可能です。単位はミリ秒で指"
+"定します。"
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1873
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+msgid "Time-To-Live (TTL)"
+msgstr "生存時間 (TTL):"
+
+#: modules/access_output/udp.c:81
+#, fuzzy
+msgid "Time-To-Live of the outgoing stream."
+msgstr "VLCが選択するパケッタライザーの順序を選択します。"
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "グループパケット"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr ""
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "UDP ストリーム出力"
 
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
@@ -6936,8 +6936,8 @@ msgstr "ALSA デバイス名"
 #: modules/audio_output/auhal.c:966 modules/audio_output/directx.c:401
 #: modules/audio_output/oss.c:132 modules/audio_output/portaudio.c:394
 #: modules/audio_output/sdl.c:177 modules/audio_output/sdl.c:195
-#: modules/audio_output/waveout.c:371 modules/gui/macosx/intf.m:570
-#: modules/gui/macosx/intf.m:571
+#: modules/audio_output/waveout.c:371 modules/gui/macosx/intf.m:569
+#: modules/gui/macosx/intf.m:570
 msgid "Audio Device"
 msgstr "オーディオデバイス"
 
@@ -6959,7 +6959,7 @@ msgstr "フロント 2, リア 2"
 msgid "A/52 over S/PDIF"
 msgstr "A/52 over S/PDIF"
 
-#: modules/audio_output/alsa.c:924
+#: modules/audio_output/alsa.c:908
 #, fuzzy
 msgid "Unknown soundcard"
 msgstr "不明のビデオ"
@@ -7794,8 +7794,8 @@ msgid ""
 "0.0). The H264 specification recommends 7."
 msgstr ""
 
-#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:595
-#: modules/gui/macosx/intf.m:596
+#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:594
+#: modules/gui/macosx/intf.m:595
 msgid "Post processing"
 msgstr "後処理"
 
@@ -7807,17 +7807,17 @@ msgstr "1 (低い)"
 msgid "6 (Highest)"
 msgstr "6 (高い)"
 
-#: modules/codec/flac.c:173
+#: modules/codec/flac.c:177
 #, fuzzy
 msgid "Flac audio decoder"
 msgstr "疑似AC3オーディオ・デコーダ"
 
-#: modules/codec/flac.c:178
+#: modules/codec/flac.c:182
 #, fuzzy
 msgid "Flac audio encoder"
 msgstr "疑似AC3オーディオ・デコーダ"
 
-#: modules/codec/flac.c:184
+#: modules/codec/flac.c:188
 #, fuzzy
 msgid "Flac audio packetizer"
 msgstr "字幕・デコーダ・モジュール"
@@ -8746,26 +8746,6 @@ msgstr "自動"
 #, fuzzy
 msgid "H.264/MPEG4 AVC encoder (using x264 library)"
 msgstr "h264 ビデオエンコードに x264 ライブラリを使用する"
-
-#: modules/control/corba/corba.c:687
-#, fuzzy
-msgid "Corba control"
-msgstr "コントロール"
-
-#: modules/control/corba/corba.c:689
-msgid "Reactivity"
-msgstr ""
-
-#: modules/control/corba/corba.c:691
-msgid ""
-"The corba interface will handle events every 50ms/Reactivity. 5000 appears "
-"to be a sensible value."
-msgstr ""
-
-#: modules/control/corba/corba.c:694
-#, fuzzy
-msgid "corba control module"
-msgstr "字幕・デコーダ・モジュール"
 
 #: modules/control/gestures.c:77
 msgid "Motion threshold (10-100)"
@@ -9988,40 +9968,51 @@ msgstr ""
 msgid "Show NC17 rated video streams when using shoutcast video playlists."
 msgstr ""
 
-#: modules/demux/playlist/playlist.c:60
+#: modules/demux/playlist/playlist.c:45
+msgid "Enable parsing of EXTVLCOPT: options"
+msgstr ""
+
+#: modules/demux/playlist/playlist.c:46
+msgid ""
+"Enable parsing of EXTVLCOPT: options in m3u playlists. This option is "
+"default disabled to prevent untrusted sources using VLC options without the "
+"user's knowledge."
+msgstr ""
+
+#: modules/demux/playlist/playlist.c:65
 #, fuzzy
 msgid "Native playlist import"
 msgstr "再生一覧を開く"
 
-#: modules/demux/playlist/playlist.c:67
+#: modules/demux/playlist/playlist.c:72
 msgid "M3U playlist import"
 msgstr "M3U 再生一覧からインポート"
 
-#: modules/demux/playlist/playlist.c:72
+#: modules/demux/playlist/playlist.c:80
 msgid "PLS playlist import"
 msgstr "PLS 再生一覧からインポート"
 
-#: modules/demux/playlist/playlist.c:77
+#: modules/demux/playlist/playlist.c:85
 #, fuzzy
 msgid "B4S playlist import"
 msgstr "PLS 再生一覧からインポート"
 
-#: modules/demux/playlist/playlist.c:83
+#: modules/demux/playlist/playlist.c:91
 #, fuzzy
 msgid "DVB playlist import"
 msgstr "PLS 再生一覧からインポート"
 
-#: modules/demux/playlist/playlist.c:88
+#: modules/demux/playlist/playlist.c:96
 #, fuzzy
 msgid "Podcast parser"
 msgstr "Podcast カテゴリ"
 
-#: modules/demux/playlist/playlist.c:93
+#: modules/demux/playlist/playlist.c:101
 #, fuzzy
 msgid "XSPF playlist import"
 msgstr "PLS 再生一覧からインポート"
 
-#: modules/demux/playlist/playlist.c:98
+#: modules/demux/playlist/playlist.c:106
 msgid "New winamp 5.2 shoutcast import"
 msgstr ""
 
@@ -10705,8 +10696,8 @@ msgid "Preferences"
 msgstr "設定"
 
 #: modules/gui/beos/InterfaceWindow.cpp:235
-#: modules/gui/beos/InterfaceWindow.cpp:326 modules/gui/macosx/intf.m:510
-#: modules/gui/macosx/intf.m:607 modules/gui/wxwidgets/dialogs/messages.cpp:47
+#: modules/gui/beos/InterfaceWindow.cpp:326 modules/gui/macosx/intf.m:509
+#: modules/gui/macosx/intf.m:606 modules/gui/wxwidgets/dialogs/messages.cpp:47
 msgid "Messages"
 msgstr "メッセージ"
 
@@ -10753,7 +10744,7 @@ msgstr "チャプターに行く"
 msgid "Speed"
 msgstr "速度"
 
-#: modules/gui/beos/InterfaceWindow.cpp:321 modules/gui/macosx/intf.m:598
+#: modules/gui/beos/InterfaceWindow.cpp:321 modules/gui/macosx/intf.m:597
 msgid "Window"
 msgstr "ウィンドウ"
 
@@ -10798,13 +10789,13 @@ msgid "Close"
 msgstr "閉じる"
 
 #: modules/gui/beos/PlayListWindow.cpp:101 modules/gui/macosx/bookmarks.m:95
-#: modules/gui/macosx/intf.m:535
+#: modules/gui/macosx/intf.m:534
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:165
 #: modules/gui/wxwidgets/dialogs/vlm/vlm_streampanel.cpp:100
 msgid "Edit"
 msgstr "編集"
 
-#: modules/gui/beos/PlayListWindow.cpp:103 modules/gui/macosx/intf.m:540
+#: modules/gui/beos/PlayListWindow.cpp:103 modules/gui/macosx/intf.m:539
 #: modules/gui/macosx/playlist.m:487
 msgid "Select All"
 msgstr "すべてを選択"
@@ -10900,21 +10891,21 @@ msgstr "常に最前面"
 msgid "Take Screen Shot"
 msgstr "スクリーンショットを取る"
 
-#: modules/gui/macosx/about.m:73 modules/gui/macosx/intf.m:514
+#: modules/gui/macosx/about.m:80 modules/gui/macosx/intf.m:513
 msgid "About VLC media player"
 msgstr "VLC メディア・プレイヤーについて"
 
-#: modules/gui/macosx/about.m:81
+#: modules/gui/macosx/about.m:85
 #, c-format
 msgid "Compiled by %s, based on SVN revision %s"
 msgstr ""
 
-#: modules/gui/macosx/about.m:85
+#: modules/gui/macosx/about.m:87
 #, fuzzy, c-format
 msgid "Compiled by %s"
 msgstr "コメディ"
 
-#: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:604
+#: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:603
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:139
 msgid "Bookmarks"
 msgstr "ブックマーク"
@@ -10924,7 +10915,7 @@ msgstr "ブックマーク"
 msgid "Add"
 msgstr "追加"
 
-#: modules/gui/macosx/bookmarks.m:94 modules/gui/macosx/intf.m:539
+#: modules/gui/macosx/bookmarks.m:94 modules/gui/macosx/intf.m:538
 #: modules/gui/wxwidgets/dialogs/messages.cpp:77
 msgid "Clear"
 msgstr "クリア"
@@ -10986,7 +10977,7 @@ msgstr "%@s は見つかりません"
 msgid "The stream must be playing or paused for bookmarks to work."
 msgstr ""
 
-#: modules/gui/macosx/controls.m:57 modules/gui/macosx/controls.m:862
+#: modules/gui/macosx/controls.m:57 modules/gui/macosx/controls.m:863
 #, fuzzy
 msgid "Jump To Time"
 msgstr "指定時間へジャンプ: "
@@ -11010,13 +11001,13 @@ msgid "Random Off"
 msgstr "ランダムオフ"
 
 #: modules/gui/macosx/controls.m:244 modules/gui/macosx/controls.m:308
-#: modules/gui/macosx/controls.m:846 modules/gui/macosx/intf.m:550
+#: modules/gui/macosx/controls.m:847 modules/gui/macosx/intf.m:549
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:54
 msgid "Repeat One"
 msgstr "1 回繰り返す"
 
 #: modules/gui/macosx/controls.m:260 modules/gui/macosx/controls.m:342
-#: modules/gui/macosx/controls.m:853 modules/gui/macosx/intf.m:551
+#: modules/gui/macosx/controls.m:854 modules/gui/macosx/intf.m:550
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:53
 msgid "Repeat All"
 msgstr "すべて繰り返す"
@@ -11026,61 +11017,61 @@ msgstr "すべて繰り返す"
 msgid "Repeat Off"
 msgstr "繰り返しオフ"
 
-#: modules/gui/macosx/controls.m:425 modules/gui/macosx/controls.m:876
-#: modules/gui/macosx/intf.m:576
+#: modules/gui/macosx/controls.m:425 modules/gui/macosx/controls.m:877
+#: modules/gui/macosx/intf.m:575
 msgid "Half Size"
 msgstr "1/2 サイズ"
 
-#: modules/gui/macosx/controls.m:427 modules/gui/macosx/controls.m:877
-#: modules/gui/macosx/intf.m:577
+#: modules/gui/macosx/controls.m:427 modules/gui/macosx/controls.m:878
+#: modules/gui/macosx/intf.m:576
 msgid "Normal Size"
 msgstr "通常サイズ"
 
-#: modules/gui/macosx/controls.m:429 modules/gui/macosx/controls.m:878
-#: modules/gui/macosx/intf.m:578
+#: modules/gui/macosx/controls.m:429 modules/gui/macosx/controls.m:879
+#: modules/gui/macosx/intf.m:577
 msgid "Double Size"
 msgstr "2倍サイズ"
 
-#: modules/gui/macosx/controls.m:431 modules/gui/macosx/controls.m:882
-#: modules/gui/macosx/controls.m:893 modules/gui/macosx/intf.m:581
+#: modules/gui/macosx/controls.m:431 modules/gui/macosx/controls.m:883
+#: modules/gui/macosx/controls.m:894 modules/gui/macosx/intf.m:580
 msgid "Float on Top"
 msgstr "常に前面"
 
-#: modules/gui/macosx/controls.m:433 modules/gui/macosx/controls.m:879
-#: modules/gui/macosx/intf.m:579
+#: modules/gui/macosx/controls.m:433 modules/gui/macosx/controls.m:880
+#: modules/gui/macosx/intf.m:578
 msgid "Fit to Screen"
 msgstr "画面にあわせる"
 
-#: modules/gui/macosx/controls.m:839 modules/gui/macosx/intf.m:549
+#: modules/gui/macosx/controls.m:840 modules/gui/macosx/intf.m:548
 msgid "Random"
 msgstr "ランダム"
 
-#: modules/gui/macosx/controls.m:860 modules/gui/macosx/intf.m:552
+#: modules/gui/macosx/controls.m:861 modules/gui/macosx/intf.m:551
 #, fuzzy
 msgid "Step Forward"
 msgstr "転送"
 
-#: modules/gui/macosx/controls.m:861 modules/gui/macosx/intf.m:553
+#: modules/gui/macosx/controls.m:862 modules/gui/macosx/intf.m:552
 #, fuzzy
 msgid "Step Backward"
 msgstr "逆転再生"
 
-#: modules/gui/macosx/embeddedwindow.m:42 modules/gui/macosx/intf.m:499
+#: modules/gui/macosx/embeddedwindow.m:47 modules/gui/macosx/intf.m:498
 #: modules/gui/pda/pda_interface.c:238 modules/gui/pda/pda_interface.c:239
 msgid "Rewind"
 msgstr "巻き戻す"
 
-#: modules/gui/macosx/embeddedwindow.m:43 modules/gui/macosx/intf.m:502
+#: modules/gui/macosx/embeddedwindow.m:48 modules/gui/macosx/intf.m:501
 #, fuzzy
 msgid "Fast Forward"
 msgstr "転送"
 
-#: modules/gui/macosx/embeddedwindow.m:45
-#: modules/gui/macosx/embeddedwindow.m:74 modules/gui/macosx/intf.m:500
-#: modules/gui/macosx/intf.m:543 modules/gui/macosx/intf.m:621
-#: modules/gui/macosx/intf.m:628 modules/gui/macosx/intf.m:1446
-#: modules/gui/macosx/intf.m:1447 modules/gui/macosx/intf.m:1448
-#: modules/gui/macosx/intf.m:1449 modules/gui/macosx/playlist.m:484
+#: modules/gui/macosx/embeddedwindow.m:50
+#: modules/gui/macosx/embeddedwindow.m:94 modules/gui/macosx/intf.m:499
+#: modules/gui/macosx/intf.m:542 modules/gui/macosx/intf.m:620
+#: modules/gui/macosx/intf.m:627 modules/gui/macosx/intf.m:1471
+#: modules/gui/macosx/intf.m:1472 modules/gui/macosx/intf.m:1473
+#: modules/gui/macosx/intf.m:1474 modules/gui/macosx/playlist.m:484
 #: modules/gui/pda/pda_interface.c:262 modules/gui/pda/pda_interface.c:263
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:274
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:283
@@ -11091,9 +11082,9 @@ msgstr "転送"
 msgid "Play"
 msgstr "再生"
 
-#: modules/gui/macosx/embeddedwindow.m:68 modules/gui/macosx/intf.m:1436
-#: modules/gui/macosx/intf.m:1437 modules/gui/macosx/intf.m:1438
-#: modules/gui/macosx/intf.m:1439 modules/gui/pda/pda_interface.c:250
+#: modules/gui/macosx/embeddedwindow.m:88 modules/gui/macosx/intf.m:1461
+#: modules/gui/macosx/intf.m:1462 modules/gui/macosx/intf.m:1463
+#: modules/gui/macosx/intf.m:1464 modules/gui/pda/pda_interface.c:250
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:678
 #: modules/gui/wxwidgets/interface.cpp:689
 #: modules/gui/wxwidgets/interface.cpp:1210
@@ -11256,12 +11247,12 @@ msgid ""
 "can be set in the Preferences, Video / Filters section."
 msgstr ""
 
-#: modules/gui/macosx/fspanel.m:382
+#: modules/gui/macosx/fspanel.m:383
 #, fuzzy
 msgid "(no item is being played)"
 msgstr "デフォルトで再生一覧に追加"
 
-#: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:639
+#: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:638
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:81
 msgid "Error"
 msgstr "エラー"
@@ -11276,211 +11267,219 @@ msgstr "はい"
 msgid "No"
 msgstr "なし"
 
-#: modules/gui/macosx/intf.m:494
+#: modules/gui/macosx/intf.m:493
 #, fuzzy
 msgid "VLC - Controller"
 msgstr "コントロール"
 
-#: modules/gui/macosx/intf.m:495 modules/gui/macosx/intf.m:1035
-#: modules/gui/macosx/intf.m:1344 modules/gui/pda/pda_interface.c:212
+#: modules/gui/macosx/intf.m:494 modules/gui/macosx/intf.m:1060
+#: modules/gui/macosx/intf.m:1369 modules/gui/pda/pda_interface.c:212
 #: modules/gui/pda/pda_interface.c:1355
 msgid "VLC media player"
 msgstr "VLC メディアプレイヤー"
 
-#: modules/gui/macosx/intf.m:511
+#: modules/gui/macosx/intf.m:510
 msgid "Open CrashLog"
 msgstr "クラッシュログを開く"
 
-#: modules/gui/macosx/intf.m:516
+#: modules/gui/macosx/intf.m:515
 #, fuzzy
 msgid "Check for Update..."
 msgstr "バージョン情報の印刷"
 
-#: modules/gui/macosx/intf.m:517
+#: modules/gui/macosx/intf.m:516
 msgid "Preferences..."
 msgstr "設定..."
 
-#: modules/gui/macosx/intf.m:520
+#: modules/gui/macosx/intf.m:519
 msgid "Services"
 msgstr "サービス"
 
-#: modules/gui/macosx/intf.m:521
+#: modules/gui/macosx/intf.m:520
 msgid "Hide VLC"
 msgstr "VLCを隠す"
 
-#: modules/gui/macosx/intf.m:522
+#: modules/gui/macosx/intf.m:521
 msgid "Hide Others"
 msgstr "インタフェースを隠す"
 
-#: modules/gui/macosx/intf.m:523
+#: modules/gui/macosx/intf.m:522
 msgid "Show All"
 msgstr "すべてを表示"
 
-#: modules/gui/macosx/intf.m:524 modules/gui/wxwidgets/interface.cpp:1508
+#: modules/gui/macosx/intf.m:523 modules/gui/wxwidgets/interface.cpp:1508
 msgid "Quit VLC"
 msgstr "VLCを終了"
 
-#: modules/gui/macosx/intf.m:526
+#: modules/gui/macosx/intf.m:525
 msgid "1:File"
 msgstr "1:ファイル"
 
-#: modules/gui/macosx/intf.m:527
+#: modules/gui/macosx/intf.m:526
 msgid "Open File..."
 msgstr "ファイルを開く..."
 
-#: modules/gui/macosx/intf.m:528
+#: modules/gui/macosx/intf.m:527
 #, fuzzy
 msgid "Quick Open File..."
 msgstr "ファイルを開く..."
 
-#: modules/gui/macosx/intf.m:529
+#: modules/gui/macosx/intf.m:528
 msgid "Open Disc..."
 msgstr "ディスクを開く..."
 
-#: modules/gui/macosx/intf.m:530
+#: modules/gui/macosx/intf.m:529
 msgid "Open Network..."
 msgstr "ネットワークを開く"
 
-#: modules/gui/macosx/intf.m:531
+#: modules/gui/macosx/intf.m:530
 msgid "Open Recent"
 msgstr "最近使った項目を開く"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:1989
+#: modules/gui/macosx/intf.m:531 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "メニューをクリアする"
 
-#: modules/gui/macosx/intf.m:533
+#: modules/gui/macosx/intf.m:532
 #, fuzzy
 msgid "Streaming/Exporting Wizard..."
 msgstr "ストリームの情報..."
 
-#: modules/gui/macosx/intf.m:536
+#: modules/gui/macosx/intf.m:535
 msgid "Cut"
 msgstr "カット"
 
-#: modules/gui/macosx/intf.m:537
+#: modules/gui/macosx/intf.m:536
 msgid "Copy"
 msgstr "コピー"
 
-#: modules/gui/macosx/intf.m:538
+#: modules/gui/macosx/intf.m:537
 msgid "Paste"
 msgstr "ペースト"
 
-#: modules/gui/macosx/intf.m:542
+#: modules/gui/macosx/intf.m:541
 #, fuzzy
 msgid "Playback"
 msgstr "再生一時停止"
 
-#: modules/gui/macosx/intf.m:563 modules/gui/macosx/intf.m:632
+#: modules/gui/macosx/intf.m:562 modules/gui/macosx/intf.m:631
 msgid "Volume Up"
 msgstr "ボリュームを上げる"
 
-#: modules/gui/macosx/intf.m:564 modules/gui/macosx/intf.m:633
+#: modules/gui/macosx/intf.m:563 modules/gui/macosx/intf.m:632
 msgid "Volume Down"
 msgstr "ボリュームを下げる"
 
-#: modules/gui/macosx/intf.m:589 modules/gui/macosx/intf.m:590
-#: modules/gui/macosx/vout.m:191
+#: modules/gui/macosx/intf.m:588 modules/gui/macosx/intf.m:589
+#: modules/gui/macosx/vout.m:192
 msgid "Video Device"
 msgstr "ビデオデバイス"
 
-#: modules/gui/macosx/intf.m:599
+#: modules/gui/macosx/intf.m:598
 msgid "Minimize Window"
 msgstr "ウィンドウを最小化"
 
-#: modules/gui/macosx/intf.m:600
+#: modules/gui/macosx/intf.m:599
 msgid "Close Window"
 msgstr "ウィンドウを閉じる"
 
-#: modules/gui/macosx/intf.m:601
+#: modules/gui/macosx/intf.m:600
 msgid "Controller"
 msgstr "コントローラー"
 
-#: modules/gui/macosx/intf.m:603
+#: modules/gui/macosx/intf.m:602
 #, fuzzy
 msgid "Extended Controls"
 msgstr "リモート・コントロール"
 
-#: modules/gui/macosx/intf.m:606 modules/gui/macosx/intf.m:648
-#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:488
+#: modules/gui/macosx/intf.m:605 modules/gui/macosx/intf.m:647
+#: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlistinfo.m:55
+#: modules/gui/macosx/playlistinfo.m:371
 #, fuzzy
 msgid "Information"
 msgstr "バージョン情報の印刷"
 
-#: modules/gui/macosx/intf.m:609
+#: modules/gui/macosx/intf.m:608
 msgid "Bring All to Front"
 msgstr "すべてを前に"
 
-#: modules/gui/macosx/intf.m:611
+#: modules/gui/macosx/intf.m:610
 msgid "Help"
 msgstr "ヘルプ"
 
-#: modules/gui/macosx/intf.m:612
+#: modules/gui/macosx/intf.m:611
 msgid "ReadMe..."
 msgstr "読んでください..."
 
-#: modules/gui/macosx/intf.m:613
+#: modules/gui/macosx/intf.m:612
 msgid "Online Documentation"
 msgstr "オンラインドキュメント"
 
-#: modules/gui/macosx/intf.m:614
+#: modules/gui/macosx/intf.m:613
 msgid "Report a Bug"
 msgstr "バグ報告"
 
-#: modules/gui/macosx/intf.m:615
+#: modules/gui/macosx/intf.m:614
 msgid "VideoLAN Website"
 msgstr "VideoLAN ウェブサイト"
 
-#: modules/gui/macosx/intf.m:616
+#: modules/gui/macosx/intf.m:615
 msgid "License"
 msgstr "ライセンス"
 
-#: modules/gui/macosx/intf.m:617
+#: modules/gui/macosx/intf.m:616
 #, fuzzy
 msgid "Make a donation"
 msgstr "マケドニア語"
 
-#: modules/gui/macosx/intf.m:618
+#: modules/gui/macosx/intf.m:617
 #, fuzzy
 msgid "Online Forum"
 msgstr "オンラインドキュメント"
 
-#: modules/gui/macosx/intf.m:640
+#: modules/gui/macosx/intf.m:639
 #, fuzzy
 msgid ""
 "An error has occurred which probably prevented the proper execution of the "
 "program:"
 msgstr "要求された処理の実行でエラーが発生しました :"
 
-#: modules/gui/macosx/intf.m:642
+#: modules/gui/macosx/intf.m:641
 #, fuzzy
 msgid "If you believe that it is a bug, please follow the instructions at:"
 msgstr "もし、バグであると思われるなら、以下の手順にしたがってください :"
 
-#: modules/gui/macosx/intf.m:644
+#: modules/gui/macosx/intf.m:643
 msgid "Open Messages Window"
 msgstr "メッセージウィンドウを表示"
 
-#: modules/gui/macosx/intf.m:645
+#: modules/gui/macosx/intf.m:644
 msgid "Dismiss"
 msgstr "やり直し"
 
-#: modules/gui/macosx/intf.m:646
+#: modules/gui/macosx/intf.m:645
 msgid "Do not display further errors"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1198
+#: modules/gui/macosx/intf.m:680
+msgid "Your version of Mac OS X is not supported"
+msgstr ""
+
+#: modules/gui/macosx/intf.m:684
+msgid "VLC media player requires Mac OS X 10.4 or higher."
+msgstr ""
+
+#: modules/gui/macosx/intf.m:1223
 #, fuzzy, c-format
 msgid "Volume: %d%%"
 msgstr "音量 %d%%"
 
-#: modules/gui/macosx/intf.m:1856
+#: modules/gui/macosx/intf.m:1882
 #, fuzzy
 msgid "No CrashLog found"
 msgstr "%@s は見つかりません"
 
-#: modules/gui/macosx/intf.m:1856
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
@@ -11779,83 +11778,6 @@ msgstr "SDP URL"
 msgid "Save File"
 msgstr "ファイルの保存"
 
-#: modules/gui/macosx/playlistinfo.m:56
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
-msgid "URI"
-msgstr "URI"
-
-#: modules/gui/macosx/playlistinfo.m:63
-#, fuzzy
-msgid "Advanced Information"
-msgstr "高度なオプション"
-
-#: modules/gui/macosx/playlistinfo.m:81
-msgid "Read at media"
-msgstr ""
-
-#: modules/gui/macosx/playlistinfo.m:82
-#, fuzzy
-msgid "Input bitrate"
-msgstr "ストリーム入力"
-
-#: modules/gui/macosx/playlistinfo.m:83
-#, fuzzy
-msgid "Demuxed"
-msgstr "demuxモジュール"
-
-#: modules/gui/macosx/playlistinfo.m:84
-#, fuzzy
-msgid "Stream bitrate"
-msgstr "エンコードの最大ビットレート"
-
-#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
-#, fuzzy
-msgid "Decoded blocks"
-msgstr "デコーダ"
-
-#: modules/gui/macosx/playlistinfo.m:88
-#, fuzzy
-msgid "Displayed frames"
-msgstr "フレームを飛ばす"
-
-#: modules/gui/macosx/playlistinfo.m:89
-#, fuzzy
-msgid "Lost frames"
-msgstr "キーフレームを使用"
-
-#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
-#: modules/video_filter/deinterlace.c:137
-msgid "Streaming"
-msgstr "すとリー民具"
-
-#: modules/gui/macosx/playlistinfo.m:92
-#, fuzzy
-msgid "Sent packets"
-msgstr "グループパケット"
-
-#: modules/gui/macosx/playlistinfo.m:93
-#, fuzzy
-msgid "Sent bytes"
-msgstr "グループパケット"
-
-#: modules/gui/macosx/playlistinfo.m:94
-#, fuzzy
-msgid "Send rate"
-msgstr "サンプルレート"
-
-#: modules/gui/macosx/playlistinfo.m:98
-#, fuzzy
-msgid "Played buffers"
-msgstr "早送り再生"
-
-#: modules/gui/macosx/playlistinfo.m:99
-#, fuzzy
-msgid "Lost buffers"
-msgstr "キーフレームを使用"
-
 #: modules/gui/macosx/playlist.m:483
 msgid "Save Playlist..."
 msgstr "再生一覧の保存..."
@@ -11935,6 +11857,83 @@ msgstr "再生一覧を保存"
 #: modules/gui/macosx/playlist.m:1510
 msgid "Empty Folder"
 msgstr ""
+
+#: modules/gui/macosx/playlistinfo.m:56
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
+msgid "URI"
+msgstr "URI"
+
+#: modules/gui/macosx/playlistinfo.m:63
+#, fuzzy
+msgid "Advanced Information"
+msgstr "高度なオプション"
+
+#: modules/gui/macosx/playlistinfo.m:81
+msgid "Read at media"
+msgstr ""
+
+#: modules/gui/macosx/playlistinfo.m:82
+#, fuzzy
+msgid "Input bitrate"
+msgstr "ストリーム入力"
+
+#: modules/gui/macosx/playlistinfo.m:83
+#, fuzzy
+msgid "Demuxed"
+msgstr "demuxモジュール"
+
+#: modules/gui/macosx/playlistinfo.m:84
+#, fuzzy
+msgid "Stream bitrate"
+msgstr "エンコードの最大ビットレート"
+
+#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
+#, fuzzy
+msgid "Decoded blocks"
+msgstr "デコーダ"
+
+#: modules/gui/macosx/playlistinfo.m:88
+#, fuzzy
+msgid "Displayed frames"
+msgstr "フレームを飛ばす"
+
+#: modules/gui/macosx/playlistinfo.m:89
+#, fuzzy
+msgid "Lost frames"
+msgstr "キーフレームを使用"
+
+#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
+#: modules/video_filter/deinterlace.c:137
+msgid "Streaming"
+msgstr "すとリー民具"
+
+#: modules/gui/macosx/playlistinfo.m:92
+#, fuzzy
+msgid "Sent packets"
+msgstr "グループパケット"
+
+#: modules/gui/macosx/playlistinfo.m:93
+#, fuzzy
+msgid "Sent bytes"
+msgstr "グループパケット"
+
+#: modules/gui/macosx/playlistinfo.m:94
+#, fuzzy
+msgid "Send rate"
+msgstr "サンプルレート"
+
+#: modules/gui/macosx/playlistinfo.m:98
+#, fuzzy
+msgid "Played buffers"
+msgstr "早送り再生"
+
+#: modules/gui/macosx/playlistinfo.m:99
+#, fuzzy
+msgid "Lost buffers"
+msgstr "キーフレームを使用"
 
 #: modules/gui/macosx/prefs.m:123
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13241,6 +13240,11 @@ msgstr "WinCE インターフェースモジュール"
 msgid "WinCE dialogs provider"
 msgstr "WinCE ダイアログ提供"
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr ""
+
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "ブックマーク編集"
@@ -13332,11 +13336,6 @@ msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:452
 msgid "Input has changed "
-msgstr ""
-
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
 msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
@@ -13737,7 +13736,7 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: modules/gui/wxwidgets/dialogs/preferences.cpp:1032
+#: modules/gui/wxwidgets/dialogs/preferences.cpp:1025
 msgid ""
 "Some options are available but hidden. Check \"Advanced options\" to see "
 "them."
@@ -14956,10 +14955,6 @@ msgstr "出力フォーマット"
 msgid "Output data for RRDTool in this file."
 msgstr ""
 
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
-
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr "libc memcpy"
@@ -14975,6 +14970,10 @@ msgstr "MMX memcpy"
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
 msgstr "MMX 拡張memcpy"
+
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
+msgstr "AltiVec memcpy"
 
 #: modules/misc/msn.c:64
 #, fuzzy
@@ -18087,6 +18086,14 @@ msgstr "xods出力でテキスト出力のために使用されるフォント"
 #, fuzzy
 msgid "XOSD interface"
 msgstr "XOSD インターフェース"
+
+#, fuzzy
+#~ msgid "Corba control"
+#~ msgstr "コントロール"
+
+#, fuzzy
+#~ msgid "corba control module"
+#~ msgstr "字幕・デコーダ・モジュール"
 
 #, fuzzy
 #~ msgid "&Advanced Open..."
