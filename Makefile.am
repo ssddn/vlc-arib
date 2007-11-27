@@ -73,9 +73,6 @@ EXTRA_DIST += \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/classes.nib \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/info.nib \
 	extras/MacOSX/Resources/English.lproj/Extended.nib/keyedobjects.nib \
-	extras/MacOSX/Resources/English.lproj/Update.nib/classes.nib \
-	extras/MacOSX/Resources/English.lproj/Update.nib/info.nib \
-	extras/MacOSX/Resources/English.lproj/Update.nib/keyedobjects.nib \
 	extras/MacOSX/Resources/English.lproj/Interaction.nib/classes.nib \
 	extras/MacOSX/Resources/English.lproj/Interaction.nib/info.nib \
 	extras/MacOSX/Resources/English.lproj/Interaction.nib/keyedobjects.nib \
@@ -417,8 +414,6 @@ VLC-release.app: vlc
 	    extended.m \
 	    bookmarks.h \
 	    bookmarks.m \
-	    update.h \
-	    update.m \
 	    interaction.h \
 	    interaction.m \
 	    embeddedwindow.h \
@@ -555,8 +550,6 @@ VLC.app: vlc
 	    extended.m \
 	    bookmarks.h \
 	    bookmarks.m \
-	    update.h \
-	    update.m \
 	    interaction.h \
 	    interaction.m \
 	    embeddedwindow.h \
