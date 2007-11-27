@@ -513,7 +513,7 @@ static VLCMain *_o_sharedMainInstance = nil;
     /* main menu */
     [o_mi_about setTitle: [_NS("About VLC media player") \
         stringByAppendingString: @"..."]];
-    [o_mi_checkForUpdate setTitle: _NS("Check for Update...")];
+ /*   [o_mi_checkForUpdate setTitle: _NS("Check for Update...")]; */
     [o_mi_prefs setTitle: _NS("Preferences...")];
     [o_mi_add_intf setTitle: _NS("Add Interface")];
     [o_mu_add_intf setTitle: _NS("Add Interface")];
