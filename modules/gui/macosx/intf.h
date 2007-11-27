@@ -156,7 +156,7 @@ struct intf_sys_t
 
     IBOutlet id o_mi_about;
     IBOutlet id o_mi_prefs;
-    IBOutlet id o_mi_checkForUpdate;
+    /*IBOutlet id o_mi_checkForUpdate;*/
     IBOutlet id o_mi_add_intf;
     IBOutlet id o_mu_add_intf;
     IBOutlet id o_mi_services;
@@ -339,7 +339,7 @@ struct intf_sys_t
 
 - (IBAction)viewAbout:(id)sender;
 - (IBAction)viewPreferences:(id)sender;
-- (IBAction)checkForUpdate:(id)sender;
+/* - (IBAction)checkForUpdate:(id)sender; */
 - (IBAction)closeError:(id)sender;
 - (IBAction)openReadMe:(id)sender;
 - (IBAction)openDocumentation:(id)sender;

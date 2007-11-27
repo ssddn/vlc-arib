@@ -45,7 +45,7 @@
 #import "bookmarks.h"
 #import "interaction.h"
 #import "embeddedwindow.h"
-#import "update.h"
+/* #import "update.h" */
 #import "AppleRemote.h"
 
 /*****************************************************************************
