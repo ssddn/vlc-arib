@@ -303,15 +303,26 @@ char *VlcPlugin::getAbsoluteURL(const char *url)
         {
             // validate protocol header
             const char *start = url;
-            while( start != end ) {
-                char c = tolower(*start);
-                if( (c < 'a') || (c > 'z') )
-                    // not valid protocol header, assume relative URL
-                    goto relativeurl;
+            char c = *start;
+            if( isalpha(c) )
+            {
                 ++start;
+                while( start != end )
+                {
+                    c  = *start;
+                    if( ! (isalnum(c)
+                       || ('-' == c)
+                       || ('+' == c)
+                       || ('.' == c)
+                       || ('/' == c)) ) /* VLC uses / to allow user to specify a demuxer */
+                        // not valid protocol header, assume relative URL
+                        goto relativeurl;
+                    ++start;
+                }
+                /* we have a protocol header, therefore URL is absolute */
+                return strdup(url);
             }
-            /* we have a protocol header, therefore URL is absolute */
-            return strdup(url);
+            // not a valid protocol header, assume relative URL
         }
 
 relativeurl:
