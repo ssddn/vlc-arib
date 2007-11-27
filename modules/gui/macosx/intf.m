@@ -346,7 +346,8 @@ static VLCMain *_o_sharedMainInstance = nil;
     o_bookmarks = [[VLCBookmarks alloc] init];
     o_embedded_list = [[VLCEmbeddedList alloc] init];
     o_interaction_list = [[VLCInteractionList alloc] init];
-    o_update = [[VLCUpdate alloc] init];
+    /* disabled until further action 
+    o_update = [[VLCUpdate alloc] init]; */
 
     i_lastShownVolume = -1;
 
@@ -1787,6 +1788,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     [o_prefs showPrefs];
 }
 
+/* removed until further action
 - (IBAction)checkForUpdate:(id)sender
 {
     if (!nib_update_loaded)
@@ -1797,7 +1799,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
         [o_update showUpdateWindow];
     }
 }
-
+*/
 - (IBAction)closeError:(id)sender
 {
     vlc_value_t val;

@@ -99,7 +99,7 @@ struct intf_sys_t
     id o_bookmarks;             /* VLCBookmarks   */
     id o_embedded_list;         /* VLCEmbeddedList*/
     id o_interaction_list;      /* VLCInteractionList*/
-    id o_update;                /* VLCUpdate      */
+    /*id o_update;                * VLCUpdate      * disabled until further action */
     BOOL nib_main_loaded;       /* reference to the main-nib */
     BOOL nib_open_loaded;       /* reference to the open-nib */
     BOOL nib_about_loaded;      /* reference to the about-nib */

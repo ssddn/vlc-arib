@@ -606,8 +606,9 @@ void Interface::CreateOurMenuBar()
     /* Create the "Help" menu */
     wxMenu *help_menu = new wxMenu;
     help_menu->Append( About_Event, wxU(_("About...")) );
-    help_menu->AppendSeparator();
-    help_menu->Append( UpdateVLC_Event, wxU(_("Check for Updates...")) );
+    /* updating disabled until further action
+     * help_menu->AppendSeparator();
+     * help_menu->Append( UpdateVLC_Event, wxU(_("Check for Updates...")) ); */
 
     /* Append the freshly created menus to the menu bar... */
     wxMenuBar *menubar = new wxMenuBar();
