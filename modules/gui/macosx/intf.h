@@ -106,6 +106,7 @@ struct intf_sys_t
     BOOL nib_wizard_loaded;     /* reference to the wizard-nib */
     BOOL nib_extended_loaded;   /* reference to the extended-nib */
     BOOL nib_bookmarks_loaded;  /* reference to the bookmarks-nib */
+    BOOL nib_prefs_loaded;      /* reference to the prefs-nib */
     BOOL nib_update_loaded;     /* reference to the update-nib */
 
     IBOutlet id o_window;       /* main window    */

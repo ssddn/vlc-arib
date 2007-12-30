@@ -339,7 +339,7 @@ static VLCMain *_o_sharedMainInstance = nil;
     }
 
     o_about = [[VLAboutBox alloc] init];
-    o_prefs = nil;
+    o_prefs = [[VLCPrefs alloc] init];
     o_open = [[VLCOpen alloc] init];
     o_wizard = [[VLCWizard alloc] init];
     o_extended = nil;
@@ -1552,8 +1552,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 {
     playlist_t * p_playlist;
     vout_thread_t * p_vout;
-    
-    msg_Dbg( p_intf, "applicationWillTerminate" );
 
 #define p_input p_intf->p_sys->p_input
     if( p_input )
@@ -1597,6 +1595,9 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
      * will be called later on -- FK (10/6/05) */
     if( nib_about_loaded && o_about )
         [o_about release];
+    
+    if( nib_prefs_loaded && o_prefs )
+        [o_prefs release];
     
     if( nib_open_loaded && o_open )
         [o_open release];
@@ -1772,19 +1773,16 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (IBAction)viewAbout:(id)sender
 {
     if (!nib_about_loaded)
-    {
         nib_about_loaded = [NSBundle loadNibNamed:@"About" owner:self];
-        [o_about showPanel];
-    } else {
-        [o_about showPanel];
-    }
+        
+    [o_about showPanel];
 }
 
 - (IBAction)viewPreferences:(id)sender
 {
-/* GRUIIIIIIIK */
-    if( o_prefs == nil )
-        o_prefs = [[VLCPrefs alloc] init];
+    if (!nib_prefs_loaded)
+        nib_prefs_loaded = [NSBundle loadNibNamed:@"Preferences" owner:self];
+
     [o_prefs showPrefs];
 }
 
