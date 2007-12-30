@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 20:25+0100\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
 "PO-Revision-Date: 2006-11-29 19:46+0100\n"
 "Last-Translator: Christophe Mutricy <xtophe@videolan.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -266,9 +266,9 @@ msgid ""
 msgstr ""
 "Le mécanisme de flux de sortie permet à VLC d'agir comme serveur de "
 "diffusion ou de sauvegarder des flux entrants.\n"
-"Les flux sont multiplexés et envoyés dans un « module de sortie », permettant "
-"soit de sauvegarder le flux dans un fichier, soit de le diffuser (par UDP, "
-"HTTP, RTP/RTSP…).\n"
+"Les flux sont multiplexés et envoyés dans un « module de sortie », "
+"permettant soit de sauvegarder le flux dans un fichier, soit de le diffuser "
+"(par UDP, HTTP, RTP/RTSP…).\n"
 "Les modules du flux de sortie permettent de réaliser du traitement sur le "
 "flux (transcodage, duplication…)."
 
@@ -400,7 +400,7 @@ msgstr ""
 "à la liste de lecture."
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -7116,8 +7116,8 @@ msgid ""
 "One of \"u8\", \"s8\", \"u16\", \"s16\", \"u16_le\", \"s16_le\", \"u16_be\", "
 "\"s16_be\", \"fixed32\", \"float32\" or \"spdif\""
 msgstr ""
-"Un parmi « u8 », « s8 », « u16 », « s16 », « u16_le », « s16_le », « u16_be», « "
-"s16_be », « fixed32 », « float32 » ou « spdif »"
+"Un parmi « u8 », « s8 », « u16 », « s16 », « u16_le », « s16_le », « "
+"u16_be», « s16_be », « fixed32 », « float32 » ou « spdif »"
 
 #: modules/audio_output/file.c:85
 msgid "Number of output channels"
@@ -9179,8 +9179,8 @@ msgid ""
 "annoying when you want to stop VLC and no video window is open."
 msgstr ""
 "Par défaut, l’interface rc lancera une interface de commande DOS. En "
-"activant le mode « quiet », ce ne sera pas fait, mais cela peut être ennuyeux "
-"si vous voulez arrêter VLC alors qu’aucune vidéo n’est affichée."
+"activant le mode « quiet », ce ne sera pas fait, mais cela peut être "
+"ennuyeux si vous voulez arrêter VLC alors qu’aucune vidéo n’est affichée."
 
 #: modules/control/rc.c:183
 msgid "RC"
@@ -9289,7 +9289,8 @@ msgstr "| chapter_p . . . . . . . . chapitre précédant"
 #: modules/control/rc.c:923
 #, fuzzy
 msgid "| seek X . seek in seconds, for instance `seek 12'"
-msgstr "| seek X . . . . . . . . . . .se déplacer, en secondes, ex. « seek 12 »"
+msgstr ""
+"| seek X . . . . . . . . . . .se déplacer, en secondes, ex. « seek 12 »"
 
 #: modules/control/rc.c:924
 #, fuzzy
@@ -10809,8 +10810,8 @@ msgstr "Ouvrir aussi les fichiers des sous-répertoires ?"
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -10823,7 +10824,7 @@ msgid "Open"
 msgstr "Ouvrir"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "Préférences"
@@ -10979,7 +10980,7 @@ msgid "Apply"
 msgstr "Appliquer"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -11397,10 +11398,6 @@ msgstr "Lecteur multimédia VLC"
 msgid "Open CrashLog"
 msgstr "Ouvrir le « CrashLog »"
 
-#: modules/gui/macosx/intf.m:516
-msgid "Check for Update..."
-msgstr "Chercher des mises à jour..."
-
 #: modules/gui/macosx/intf.m:517
 msgid "Preferences..."
 msgstr "Préférences…"
@@ -11449,7 +11446,7 @@ msgstr "Ouvrir un flux réseau…"
 msgid "Open Recent"
 msgstr "Ouvrir un flux récent"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "Tout effacer"
 
@@ -11583,11 +11580,11 @@ msgstr ""
 msgid "Volume: %d%%"
 msgstr "Volume : %d%%"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr "Aucun CrashLog trouvé"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr "Impossible de trouver un plantage précdent."
 
@@ -12024,21 +12021,21 @@ msgstr "Buffers joués"
 msgid "Lost buffers"
 msgstr "Tampons perdus"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "Tout rétablir"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "Rétablir"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "Continuer"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -12046,7 +12043,7 @@ msgstr ""
 "Attention, ceci va réinitialiser le fichier de configuration de VLC.\n"
 "Désirez-vous vraiment continuer ?"
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr ""
 "Certaines options sont cachées. Cochez « Options avancées » pour les voir."
@@ -15089,8 +15086,8 @@ msgid ""
 "Specify the log format. Available choices are \"text\" (default), \"html\", "
 "and \"syslog\" (special mode to send to syslog instead of file."
 msgstr ""
-"Sélectionner le format d’enregistrement, « text » (défaut),« html » ou « syslog "
-"» (pour envoyer dans le syslog au lieu d'un fichier)."
+"Sélectionner le format d’enregistrement, « text » (défaut),« html » ou « "
+"syslog » (pour envoyer dans le syslog au lieu d'un fichier)."
 
 #: modules/misc/logger.c:124
 msgid ""
@@ -15361,8 +15358,8 @@ msgid ""
 "downloads and allow the user to start previewing the file while it is "
 "downloading."
 msgstr ""
-"Lorsque cette option est activée, des fichiers « Fast start » sont créés. Ces "
-"fichiers sont optimisés pour le téléchargement, ils permettent à "
+"Lorsque cette option est activée, des fichiers « Fast start » sont créés. "
+"Ces fichiers sont optimisés pour le téléchargement, ils permettent à "
 "l’utilisateur de commencer à lire le fichier pendant son téléchargement."
 
 #: modules/mux/mp4.c:57
@@ -16744,8 +16741,8 @@ msgid ""
 "Distort mode, one of \"wave\", \"ripple\", \"gradient\", \"edge\", \"hough\" "
 "and \"psychedelic\"."
 msgstr ""
-"Mode de distorsion, « wave », « ripple », « gradient », « edge », « ough » ou « "
-"psychedelic »."
+"Mode de distorsion, « wave », « ripple », « gradient », « edge », « ough » "
+"ou « psychedelic »."
 
 #: modules/video_filter/distort.c:67
 msgid "Gradient image type"
@@ -18263,6 +18260,9 @@ msgstr "Couleur utilisée pour afficher le texte dans la sortie xosd."
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "Interface XOSD"
+
+#~ msgid "Check for Update..."
+#~ msgstr "Chercher des mises à jour..."
 
 #~ msgid "Check for Updates"
 #~ msgstr "Chercher des mises à jour"
@@ -20083,8 +20083,8 @@ msgstr "Interface XOSD"
 #, fuzzy
 #~ msgid "Distort mode, one of \"gradient\", \"edge\" and \"hough\"."
 #~ msgstr ""
-#~ "Mode de distorsion, « wave », « ripple », « gradient », « edge », « ough » ou « "
-#~ "psychedelic »."
+#~ "Mode de distorsion, « wave », « ripple », « gradient », « edge », « ough "
+#~ "» ou « psychedelic »."
 
 #, fuzzy
 #~ msgid "Gradient video filter"
@@ -21757,8 +21757,8 @@ msgstr "Interface XOSD"
 #~ "the other ones."
 #~ msgstr ""
 #~ "Ceci vous permet de sélectionner une liste de décodeurs prioritaires. Par "
-#~ "exemple, si vous mettez « dummy,a52 », VLC essaiera les décodeurs dummy et "
-#~ "a52 avant d’essayer les autres."
+#~ "exemple, si vous mettez « dummy,a52 », VLC essaiera les décodeurs dummy "
+#~ "et a52 avant d’essayer les autres."
 
 #~ msgid "This is a legacy entry to let you configure access filter modules."
 #~ msgstr ""
@@ -21987,8 +21987,8 @@ msgstr "Interface XOSD"
 #~ "'fullscreen'."
 #~ msgstr ""
 #~ "Indiquez un numéro correspondant à un écran dans le menu de sélection "
-#~ "Vidéo et cet écran sera utilisé a priori comme écran pour le « plein écran "
-#~ "»."
+#~ "Vidéo et cet écran sera utilisé a priori comme écran pour le « plein "
+#~ "écran »."
 
 #~ msgid ""
 #~ "Instead of keeping the aspect ratio of the movie when resizing the video, "

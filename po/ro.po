@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-12 23:16+0000\n"
-"PO-Revision-Date: 2007-12-09 19:47+0200\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
+"PO-Revision-Date: 2007-12-27 23:01+0200\n"
 "Last-Translator: Cristian Secară <cristi AT secarica DOT ro>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -404,7 +404,7 @@ msgstr ""
 "elemente la lista de redare."
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "Avansat"
 
@@ -1251,7 +1251,7 @@ msgstr ""
 
 #: src/libvlc.h:89
 msgid "Be quiet"
-msgstr "Fi tăcut"
+msgstr "Fii tăcut"
 
 #: src/libvlc.h:91
 msgid "Turn off all warning and information messages."
@@ -7251,7 +7251,7 @@ msgstr "Decodare coordonată X"
 
 #: modules/codec/dvbsub.c:46
 msgid "X coordinate of the rendered subtitle"
-msgstr ""
+msgstr "Coordonata X a sbtitlului randat"
 
 #: modules/codec/dvbsub.c:48
 msgid "Decoding Y coordinate"
@@ -7259,7 +7259,7 @@ msgstr "Decodare coordonată Y"
 
 #: modules/codec/dvbsub.c:49
 msgid "Y coordinate of the rendered subtitle"
-msgstr ""
+msgstr "Coordonata Y a sbtitlului randat"
 
 #: modules/codec/dvbsub.c:51
 msgid "Subpicture position"
@@ -7281,7 +7281,7 @@ msgstr "Codare coordonată X"
 
 #: modules/codec/dvbsub.c:58
 msgid "X coordinate of the encoded subtitle"
-msgstr ""
+msgstr "Coordonata X a sbtitlului codat"
 
 #: modules/codec/dvbsub.c:59
 msgid "Encoding Y coordinate"
@@ -7289,7 +7289,7 @@ msgstr "Codare coordonată Y"
 
 #: modules/codec/dvbsub.c:60
 msgid "Y coordinate of the encoded subtitle"
-msgstr ""
+msgstr "Coordonata Y a sbtitlului codat"
 
 #: modules/codec/dvbsub.c:80
 msgid "DVB subtitles decoder"
@@ -9370,7 +9370,7 @@ msgstr "Înălțimea zonei care declanșează apariția interfeței."
 
 #: modules/control/telnet.c:72
 msgid "Host"
-msgstr ""
+msgstr "Gazdă"
 
 #: modules/control/telnet.c:73
 msgid ""
@@ -9378,6 +9378,9 @@ msgid ""
 "network interfaces (0.0.0.0). If you want this interface to be available "
 "only on the local machine, enter \"127.0.0.1\"."
 msgstr ""
+"Aceasta este gazda pe care interfața o va asculta. Implicit sunt ascultate "
+"toate interfețele de rețea (0.0.0.0). Dacă vreți ca această interfață să fie "
+"disponibilă numai pe mașina locală, introduceți „127.0.0.1”."
 
 #: modules/control/telnet.c:77 modules/gui/macosx/open.m:178
 #: modules/gui/macosx/open.m:180 modules/gui/macosx/output.m:147
@@ -9385,19 +9388,23 @@ msgstr ""
 #: modules/gui/wxwidgets/dialogs/open.cpp:854
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:531 modules/stream_out/rtp.c:81
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: modules/control/telnet.c:78
 msgid ""
 "This is the TCP port on which this interface will listen. It defaults to "
 "4212."
 msgstr ""
+"Acesta este portul TCP implicit pe care va asculta această interfață. "
+"Implicit este 4212."
 
 #: modules/control/telnet.c:82
 msgid ""
 "A single administration password is used to protect this interface. The "
 "default value is \"admin\"."
 msgstr ""
+"Este folosită o singură parolă pentru a proteja această interfață. Valoarea "
+"implicită este „admin”."
 
 #: modules/control/telnet.c:96
 msgid "VLM remote control interface"
@@ -10502,8 +10509,8 @@ msgstr ""
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "Renunță"
 
@@ -10516,7 +10523,7 @@ msgid "Open"
 msgstr "Deschide"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "Preferințe"
@@ -10673,7 +10680,7 @@ msgid "Apply"
 msgstr "Aplică"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "Salvează"
 
@@ -10707,25 +10714,25 @@ msgstr "Raport de aspect corect"
 
 #: modules/gui/beos/VideoOutput.cpp:1097
 msgid "Stay On Top"
-msgstr ""
+msgstr "Rămâi deasupra"
 
 #: modules/gui/beos/VideoOutput.cpp:1103
 msgid "Take Screen Shot"
-msgstr ""
+msgstr "Ia o captură de ecran"
 
 #: modules/gui/macosx/about.m:80 modules/gui/macosx/intf.m:514
 msgid "About VLC media player"
-msgstr ""
+msgstr "Despre VLC media player"
 
 #: modules/gui/macosx/about.m:85
 #, c-format
 msgid "Compiled by %s, based on SVN revision %s"
-msgstr ""
+msgstr "Compilat de %s, bazat pe revizuirea SVN %s"
 
 #: modules/gui/macosx/about.m:87
 #, c-format
 msgid "Compiled by %s"
-msgstr ""
+msgstr "Compilat de %s"
 
 #: modules/gui/macosx/bookmarks.m:92 modules/gui/macosx/intf.m:604
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:139
@@ -11126,7 +11133,7 @@ msgstr "Deschide rețea..."
 msgid "Open Recent"
 msgstr "Deschide recente"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "Golește meniul"
 
@@ -11256,11 +11263,11 @@ msgstr ""
 msgid "Volume: %d%%"
 msgstr "Volum: %d%%"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
@@ -11695,21 +11702,21 @@ msgstr "Buffere redate"
 msgid "Lost buffers"
 msgstr "Buffere pierdute"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "Resetează tot"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "Resetează preferințele"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "Continuă"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -11717,7 +11724,7 @@ msgstr ""
 "Atenție, aceasta va reseta preferințele VLC media player.\n"
 "Sigur vreți să continuați ?"
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr "Unele opțiuni sunt ascunse. Bifați „Avansat” pentru a le afișa."
 
@@ -16294,25 +16301,26 @@ msgid ""
 "<alpha>]][;<image>[,<delay>[,<alpha>]]][;...]. If you only have one file, "
 "simply enter its filename."
 msgstr ""
-"Cale completă a fișierului de imagine folosit. Formatul poate fi <imagine>[, "
-"decalaj în ms>[,<alfa>]][;<imagine>[,<decalaj>[,<alfa>]]][;...]. Dacă aveți "
-"un singur fișier, introduceți simplu numele lui de fișier."
+"Cale completă a fișierelor de imagine de folosit. Formatul poate fi <imagine>"
+"[, decalaj în ms>[,<alfa>]][;<imagine>[,<decalaj>[,<alfa>]]][;...]. Dacă "
+"aveți un singur fișier, introduceți simplu numele lui de fișier."
 
 #: modules/video_filter/logo.c:72
 msgid "Logo animation # of loops"
-msgstr ""
+msgstr "Animație logo de # ori"
 
 #: modules/video_filter/logo.c:73
 msgid "Number of loops for the logo animation.1 = continuous, 0 = disabled"
 msgstr ""
+"Numărul de bucle pentru animația logoului. 1 = continuu, 0 = dezactivat"
 
 #: modules/video_filter/logo.c:75
 msgid "Logo individual image time in ms"
-msgstr ""
+msgstr "Timp individual al fiecărei imagini de logo în ms"
 
 #: modules/video_filter/logo.c:76
 msgid "Individual image display time of 0 - 60000 ms."
-msgstr ""
+msgstr "Timp individual de afișare a fiecărei imagini, de la 0 la 60000 ms."
 
 #: modules/video_filter/logo.c:78 modules/video_filter/osdmenu.c:51
 msgid "X coordinate"
@@ -16320,7 +16328,7 @@ msgstr "Coordonata X"
 
 #: modules/video_filter/logo.c:79
 msgid "X coordinate of the logo. You can move the logo by left-clicking it."
-msgstr ""
+msgstr "Coordonata X a logoului. Puteți muta logoul prin clic stânga pe el."
 
 #: modules/video_filter/logo.c:81 modules/video_filter/osdmenu.c:54
 msgid "Y coordinate"
@@ -16328,19 +16336,19 @@ msgstr "Coordonata Y"
 
 #: modules/video_filter/logo.c:82
 msgid "Y coordinate of the logo. You can move the logo by left-clicking it."
-msgstr ""
+msgstr "Coordonata Y a logoului. Puteți muta logoul prin clic stânga pe el."
 
 #: modules/video_filter/logo.c:84
 msgid "Transparency of the logo"
-msgstr "Transparența logoului"
+msgstr "Transparență logo"
 
 #: modules/video_filter/logo.c:85
 msgid ""
 "Logo transparency value (from 0 for full transparency to 255 for full "
 "opacity)."
 msgstr ""
-"Valoare de transparență logo (de la 0 pentru transparență totală la 255 "
-"pentru opacitate totală)."
+"Valoarea de transparență a logoului (de la 0 pentru transparență totală la "
+"255 pentru opacitate totală)."
 
 #: modules/video_filter/logo.c:87
 msgid "Logo position"
@@ -16373,7 +16381,7 @@ msgstr "Filtru video interactiv de lupă/zoom"
 
 #: modules/video_filter/marq.c:77
 msgid "Marquee text to display."
-msgstr "Tedt de marcaj de afișat."
+msgstr "Text de marcaj de afișat."
 
 #: modules/video_filter/marq.c:78 modules/video_filter/rss.c:134
 #: modules/video_filter/time.c:73
@@ -16490,7 +16498,7 @@ msgstr "Coordonată X colțul sus stânga"
 
 #: modules/video_filter/mosaic.c:100
 msgid "X Coordinate of the top-left corner of the mosaic."
-msgstr ""
+msgstr "Coordonata X a colțului din stânga-sus a mozaicului."
 
 #: modules/video_filter/mosaic.c:101
 msgid "Top left corner Y coordinate"
@@ -16498,7 +16506,7 @@ msgstr "Coordonată Y colțul sus stânga"
 
 #: modules/video_filter/mosaic.c:102
 msgid "Y Coordinate of the top-left corner of the mosaic."
-msgstr ""
+msgstr "Coordonata Y a colțului din stânga-sus a mozaicului."
 
 #: modules/video_filter/mosaic.c:103
 msgid "Border width"
@@ -16506,7 +16514,7 @@ msgstr "Lățime margine"
 
 #: modules/video_filter/mosaic.c:104
 msgid "Width in pixels of the border between miniatures."
-msgstr ""
+msgstr "Lățimea în pixeli a bordurii între miniaturi."
 
 #: modules/video_filter/mosaic.c:105
 msgid "Border height"
@@ -16514,7 +16522,7 @@ msgstr "Înălțime margine"
 
 #: modules/video_filter/mosaic.c:106
 msgid "Height in pixels of the border between miniatures."
-msgstr ""
+msgstr "Înălțimea în pixeli a bordurii între miniaturi."
 
 #: modules/video_filter/mosaic.c:108
 msgid "Mosaic alignment"
@@ -16571,18 +16579,20 @@ msgstr ""
 #: modules/video_filter/mosaic.c:128
 msgid "Keep the original aspect ratio when resizing mosaic elements."
 msgstr ""
+"Păstrează raportul de aspect original la redimensionarea elementelor de "
+"mozaic."
 
 #: modules/video_filter/mosaic.c:130
 msgid "Keep original size"
-msgstr ""
+msgstr "Păstrează dimensiunea originală"
 
 #: modules/video_filter/mosaic.c:131
 msgid "Keep the original size of mosaic elements."
-msgstr ""
+msgstr "Păstrează dimensiunea originală a elementelor mozaicului."
 
 #: modules/video_filter/mosaic.c:133
 msgid "Elements order"
-msgstr ""
+msgstr "Ordine elemente"
 
 #: modules/video_filter/mosaic.c:134
 msgid ""
@@ -16590,6 +16600,9 @@ msgid ""
 "comma-separated list of picture ID(s).These IDs are assigned in the \"mosaic-"
 "bridge\" module."
 msgstr ""
+"Puteți forța ordinea elementelor pe mozaic. Trebuie să dați o listă separată "
+"prin virgule a ID-ului(urilor). Aceste ID-uri sunt asociate în modulul "
+"„mozaic-bridge”."
 
 #: modules/video_filter/mosaic.c:139
 msgid ""
@@ -16597,6 +16610,9 @@ msgid ""
 "value (in milliseconds). For high values you will need to raise caching at "
 "input."
 msgstr ""
+"Imaginile provenind de la mozaic vor fi decalate potrivit acestei valori (în "
+"milisecunde). Pentru valori ridicate va trebui să creșteți stocarea în cache "
+"la intrare."
 
 #: modules/video_filter/mosaic.c:143
 msgid "Bluescreen"
@@ -16782,19 +16798,19 @@ msgstr "Meniu afișat pe ecran"
 
 #: modules/video_filter/rss.c:121
 msgid "Feed URLs"
-msgstr ""
+msgstr "URL-uri de feed-uri"
 
 #: modules/video_filter/rss.c:122
 msgid "RSS/Atom feed '|' (pipe) seperated URLs."
-msgstr ""
+msgstr "URL-uri de feed-uri RSS/Atom separate de '|' (pipe)."
 
 #: modules/video_filter/rss.c:123
 msgid "Speed of feeds"
-msgstr ""
+msgstr "Viteză feed-uri"
 
 #: modules/video_filter/rss.c:124
 msgid "Speed of the RSS/Atom feeds (bigger is slower)."
-msgstr ""
+msgstr "Viteza feed-urilor RSS/Atom (mai mare înseamnă mai lent)."
 
 #: modules/video_filter/rss.c:125
 msgid "Max length"
@@ -16802,7 +16818,7 @@ msgstr "Lungime maximă"
 
 #: modules/video_filter/rss.c:126
 msgid "Maximum number of characters displayed on the screen."
-msgstr ""
+msgstr "Numărul maxim de caractere afișate pe ecran."
 
 #: modules/video_filter/rss.c:128
 msgid "Refresh time"
@@ -16813,14 +16829,16 @@ msgid ""
 "Number of seconds between each forced refresh of the feeds. 0 means that the "
 "feeds are never updated."
 msgstr ""
+"Numărul de secunde între fiecare reîmprospătare forțată a feed-urilor. 0 "
+"înseamnă că feed-urile nu sunt actualizate niciodată."
 
 #: modules/video_filter/rss.c:131
 msgid "Feed images"
-msgstr ""
+msgstr "Imagini de feed"
 
 #: modules/video_filter/rss.c:132
 msgid "Display feed images if available."
-msgstr ""
+msgstr "Afișează imagini de feed dacă sunt disponibile."
 
 #: modules/video_filter/rss.c:139 modules/video_filter/time.c:78
 msgid ""
@@ -16846,7 +16864,7 @@ msgstr ""
 
 #: modules/video_filter/rss.c:197
 msgid "RSS and Atom feed display"
-msgstr "Afișaj feed RSS și Atom"
+msgstr "Afișare feed RSS și Atom"
 
 #: modules/video_filter/rv32.c:52
 msgid "RV32 conversion filter"

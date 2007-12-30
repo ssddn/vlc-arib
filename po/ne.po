@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 20:25+0100\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
 "PO-Revision-Date: 2006-11-27 10:28+0545\n"
 "Last-Translator: Shiva Prasad Pokharel <pokharelshiva@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -388,7 +388,7 @@ msgid ""
 msgstr "सेवा अनुसन्धान मोड्युलमा वस्तु बजाउने सूचीमा स्वचालित रूपमा थप्ने सुविधा हुन्छ ।"
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "उन्नत"
 
@@ -10586,8 +10586,8 @@ msgstr "सबै सहायक फोल्डरबाट फाइल ख�
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "रद्द गर्नुहोस्"
 
@@ -10600,7 +10600,7 @@ msgid "Open"
 msgstr "खोल्नुहोस्"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "प्राथमिकता"
@@ -10756,7 +10756,7 @@ msgid "Apply"
 msgstr "लागू गर्नुहोस्"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "बचत गर्नुहोस्"
 
@@ -11167,10 +11167,6 @@ msgstr "VLC मिडिया प्लेयर"
 msgid "Open CrashLog"
 msgstr "क्र्शाश लग खोल्नुहोस्"
 
-#: modules/gui/macosx/intf.m:516
-msgid "Check for Update..."
-msgstr "अद्यावधिकका लागि जाँच गर्नुहोस्..."
-
 #: modules/gui/macosx/intf.m:517
 msgid "Preferences..."
 msgstr "प्राथमिकता..."
@@ -11219,7 +11215,7 @@ msgstr "सञ्जाल खोल्नुहोस्..."
 msgid "Open Recent"
 msgstr "हालैको खोल्नुहोस्"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "मेनु खाली गर्नुहोस्"
 
@@ -11350,11 +11346,11 @@ msgstr ""
 msgid "Volume: %d%%"
 msgstr "भोल्युम: %d%%"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr "क्र्याश लग फेला परेन"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr "अघिल्लो बिग्रेको कुनै पनि चिन्ह फेला पार्न सकेन"
 
@@ -11784,21 +11780,21 @@ msgstr "बजाइएको बफर"
 msgid "Lost buffers"
 msgstr "हराएको बफर"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "सबै पुन: सेट गर्नुहोस्"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "प्राथमिकता पुन: सेट गर्नुहोस्"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "जारी राख्नुहोस्"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -11806,7 +11802,7 @@ msgstr ""
 "यसले VLC मिडिया प्लेयर प्राथमिकता पुन: सेट गर्न सक्दछ होशियार रहनुहोस् ।\n"
 "के तपाईँले जारी राख्न यकिन हुनुहुन्छ ?"
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr ""
 "केहि विकल्प लुकाइएको छ । तिनिहरूलाई प्रर्दशन गर्नका लागि \"उन्नत\" लाई चेक गर्नुहोस् ।"
@@ -17859,6 +17855,9 @@ msgstr "XOSD निर्गतमा पाठ प्रर्दशन गर�
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "XOSD इन्टरफेस"
+
+#~ msgid "Check for Update..."
+#~ msgstr "अद्यावधिकका लागि जाँच गर्नुहोस्..."
 
 #~ msgid "Check for Updates"
 #~ msgstr "अद्यावधिका लागि जाँच गर्नुहोस्"

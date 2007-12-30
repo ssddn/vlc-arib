@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 20:25+0100\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
 "PO-Revision-Date: 2007-06-06 15:24+0100\n"
 "Last-Translator: bourai <bouraifouzia@hotmail.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -360,7 +360,7 @@ msgid ""
 msgstr ""
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "متقدم"
 
@@ -10022,8 +10022,8 @@ msgstr "ملفات مفتوحة من جميع الملفات الفرعية كذ
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "الغاء"
 
@@ -10036,7 +10036,7 @@ msgid "Open"
 msgstr "فتح"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "التفضيلات"
@@ -10192,7 +10192,7 @@ msgid "Apply"
 msgstr "تطبيق"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "حفظ"
 
@@ -10604,10 +10604,6 @@ msgstr "مشغل الوسائط  VLC"
 msgid "Open CrashLog"
 msgstr "فتح السجل محطم"
 
-#: modules/gui/macosx/intf.m:516
-msgid "Check for Update..."
-msgstr "يضع إشارة للتحديث..."
-
 #: modules/gui/macosx/intf.m:517
 msgid "Preferences..."
 msgstr "تفضيلات..."
@@ -10656,7 +10652,7 @@ msgstr "فتح الشبكة..."
 msgid "Open Recent"
 msgstr "فتح الملفات المفتوجة مؤخرا"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "مسح القائمة"
 
@@ -10788,11 +10784,11 @@ msgstr ""
 msgid "Volume: %d%%"
 msgstr "حجم الصوت: %d%%"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr "لم يتم الحصول على سجل توقف"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr " يمكن العثور على اي اثر لحادث سابق."
 
@@ -11220,21 +11216,21 @@ msgstr "لعب الصوان"
 msgid "Lost buffers"
 msgstr "فقد الصوان"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "اعادة الافتراضيات"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "اعادة التفضيلات"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "استئناف"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -11242,7 +11238,7 @@ msgstr ""
 "حذار هذا اعادة لاعب في فلك وسائط التشغيل. \n"
 " هل انت متأكد من انك تريد الاستمرار؟ "
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr "بعض الخيارات خفية. إختر  \"المتطوره \" لعرضها. "
 
@@ -17324,6 +17320,9 @@ msgstr "لانتاج.  XOSD الون يستخدم لعرض النص في"
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "واجهة XOSD "
+
+#~ msgid "Check for Update..."
+#~ msgstr "يضع إشارة للتحديث..."
 
 #~ msgid "Check for Updates"
 #~ msgstr "فحص للتحديث"

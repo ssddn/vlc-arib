@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc 0.8.2-svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 20:25+0100\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
 "PO-Revision-Date: 2005-04-28 19:16+0100\n"
 "Last-Translator: Lorena Gomes i Xènia Albà\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
@@ -397,7 +397,7 @@ msgstr ""
 "automàticament elements a la llista de reproducció"
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "Avançat"
 
@@ -10743,8 +10743,8 @@ msgstr "Voleu obrir els fitxers de totes les subcarpetes?"
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -10757,7 +10757,7 @@ msgid "Open"
 msgstr "Obre"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "Preferències"
@@ -10913,7 +10913,7 @@ msgid "Apply"
 msgstr "Aplica"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "Desa"
 
@@ -11348,11 +11348,6 @@ msgstr "Reproductor multimèdia VLC"
 msgid "Open CrashLog"
 msgstr "Obre el CrashLog"
 
-#: modules/gui/macosx/intf.m:516
-#, fuzzy
-msgid "Check for Update..."
-msgstr "Transformació"
-
 #: modules/gui/macosx/intf.m:517
 msgid "Preferences..."
 msgstr "Preferències..."
@@ -11401,7 +11396,7 @@ msgstr "Obre la xarxa..."
 msgid "Open Recent"
 msgstr "Obre recents"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "Neteja el menú"
 
@@ -11541,11 +11536,11 @@ msgstr ""
 msgid "Volume: %d%%"
 msgstr "Baixa el volum "
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr "No s'ha trobat el CrashLog"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
@@ -12006,21 +12001,21 @@ msgstr "Reprodueix més ràpid"
 msgid "Lost buffers"
 msgstr "Fotogrames B"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "Reinicia-ho tot"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "Reinicia les preferències"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "Continua"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 #, fuzzy
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
@@ -12030,7 +12025,7 @@ msgstr ""
 "multimèdia VLC. \n"
 " Esteu segur que voleu continuar?"
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 #, fuzzy
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr ""
@@ -18481,6 +18476,10 @@ msgstr "Font utilitzada per visualitzar el text a la sortida xosd"
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "Interfície XOSD"
+
+#, fuzzy
+#~ msgid "Check for Update..."
+#~ msgstr "Transformació"
 
 #, fuzzy
 #~ msgid "Check for Updates"

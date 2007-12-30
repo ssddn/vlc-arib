@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VLC\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 20:25+0100\n"
-"PO-Revision-Date: 2007-06-25 04:46+0100\n"
+"POT-Creation-Date: 2007-12-30 16:29+0100\n"
+"PO-Revision-Date: 2007-12-20 22:10+0100\n"
 "Last-Translator: Michał Trzebiatowski <hippie_1968@hotmail.com>\n"
 "Language-Team: Michał Trzebiatowski <hippie_1968@hotmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -385,7 +385,7 @@ msgstr ""
 "Moduły wykrywania usług automatycznie dodają pozycje do listy odtwarzania."
 
 #: include/vlc_config_cat.h:193 src/libvlc.h:1409
-#: modules/gui/macosx/prefs.m:124
+#: modules/gui/macosx/prefs.m:121
 msgid "Advanced"
 msgstr "Zawansowane"
 
@@ -514,7 +514,7 @@ msgstr "Autor"
 #: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
 #: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
-msgstr "Artysta"
+msgstr "Wykonawca"
 
 #: include/vlc_meta.h:32
 msgid "Genre"
@@ -569,7 +569,7 @@ msgstr "Wydawca"
 
 #: include/vlc_meta.h:45
 msgid "CDDB Artist"
-msgstr "CDDB Artysta"
+msgstr "CDDB Wykonawca"
 
 #: include/vlc_meta.h:46
 msgid "CDDB Category"
@@ -1696,6 +1696,8 @@ msgid ""
 "This adds post-processing filters to enhance the picture quality, for "
 "instance deinterlacing, or to clone or distort the video window."
 msgstr ""
+"To dodaje filtry poobrabiające żeby podnieść jakość obrazu, na przykład "
+"nieprzeplatających, albo klonujących albo przekręcających okno obrazu."
 
 #: src/libvlc.h:307
 msgid "Video snapshot directory (or filename)"
@@ -2279,11 +2281,11 @@ msgstr "Pozwala na ustalenie \"author\" (autora) metadanych dla wejścia."
 
 #: src/libvlc.h:627
 msgid "Artist metadata"
-msgstr "Metadane: artysta"
+msgstr "Metadane: wykonawca"
 
 #: src/libvlc.h:629
 msgid "Allows you to specify an \"artist\" metadata for an input."
-msgstr "Pozwala na ustalenie \"artist\" (artysty) metadanych dla wejścia."
+msgstr "Pozwala na ustalenie \"artist\" (wykonawcy) metadanych dla wejścia."
 
 #: src/libvlc.h:631
 msgid "Genre metadata"
@@ -2826,7 +2828,7 @@ msgstr "Powtórz wszystko"
 
 #: src/libvlc.h:931
 msgid "VLC will keep playing the playlist indefinitely."
-msgstr ""
+msgstr "VLC będzie odgrywał listę odtwarzania nie określono."
 
 #: src/libvlc.h:933
 msgid "Repeat current item"
@@ -3608,13 +3610,13 @@ msgstr "główny program"
 
 #: src/libvlc.h:2021
 msgid "print help for VLC (can be combined with --advanced)"
-msgstr "pokarz pomoc do VLC (może być łączone z --advanced)"
+msgstr "pokaż pomoc do VLC (może być łączone z --advanced)"
 
 #: src/libvlc.h:2023
 msgid ""
 "print help for VLC and all its modules (can be combined with --advanced)"
 msgstr ""
-"pokarz pomoc do VLC i jego wszystkich modułów (może być łączone z --advanced)"
+"pokaż pomoc do VLC i jego wszystkich modułów (może być łączone z --advanced)"
 
 #: src/libvlc.h:2025
 msgid "print help for the advanced options"
@@ -3630,7 +3632,7 @@ msgstr "wydrukuj listę dostępnych modułów"
 
 #: src/libvlc.h:2031
 msgid "print help on a specific module (can be combined with --advanced)"
-msgstr "pokarz pomoc na konkretnym module (można łączyć z --advanced)"
+msgstr "pokaż pomoc na konkretnym modułu (można łączyć z --advanced)"
 
 #: src/libvlc.h:2033
 msgid "save the current command line options in the config"
@@ -4671,7 +4673,7 @@ msgstr ""
 
 #: modules/access/dshow/dshow.cpp:84 modules/access/v4l/v4l.c:77
 msgid "Video device name"
-msgstr "Nazwa urządzenia wideo"
+msgstr "Nazwa urządzenia obrazu"
 
 #: modules/access/dshow/dshow.cpp:86
 msgid ""
@@ -4683,18 +4685,16 @@ msgstr ""
 
 #: modules/access/dshow/dshow.cpp:90 modules/access/v4l/v4l.c:81
 msgid "Audio device name"
-msgstr "Nazwa urządzenia audio"
+msgstr "Nazwa urządzenia dźwięku"
 
 #: modules/access/dshow/dshow.cpp:92
-#, fuzzy
 msgid ""
 "Name of the audio device that will be used by the DirectShow plugin. If you "
 "don't specify anything, the default device will be used. You can specify a "
 "standard size (cif, d1, ...) or <width>x<height>"
 msgstr ""
 "Nazwa urządzenia dźwięku które ma być używane przez wtyczkę DirectShow. "
-"Jeśli nic nie podałeś to będzie używane urządzenie domyślne. Możesz podać "
-"standardowy rozmiar (cif, d1, ...) lub <szerokość>x<wysokość>"
+"Jeśli nic nie podałeś to będzie używane urządzenie domyślne."
 
 #: modules/access/dshow/dshow.cpp:95
 msgid "Video size"
@@ -4717,6 +4717,8 @@ msgid ""
 "Force the DirectShow video input to use a specific chroma format (eg. I420 "
 "(default), RV24, etc.)"
 msgstr ""
+"Wymuś wyjściu obrazu DirectShow, żeby używał specjalnego formatu chromy (np. "
+"I420 (domyślny), RV24, itp.)"
 
 #: modules/access/dshow/dshow.cpp:104
 msgid "Video input frame rate"
@@ -4727,6 +4729,8 @@ msgid ""
 "Force the DirectShow video input to use a specific frame rate(eg. 0 means "
 "default, 25, 29.97, 50, 59.94, etc.)"
 msgstr ""
+"Wymuś wyjściu obrazu DirectShow, żeby używał specjalnej ilości klatek (np. 0 "
+"to domyślny, 25, 29.97, 50, 59.94, itp.)"
 
 #: modules/access/dshow/dshow.cpp:108
 msgid "Device properties"
@@ -4735,7 +4739,7 @@ msgstr "Właściwości urządzenia"
 #: modules/access/dshow/dshow.cpp:110
 msgid ""
 "Show the properties dialog of the selected device before starting the stream."
-msgstr ""
+msgstr "Wyświetl własności wybranego urządzenia przed rozpoczęciem strumienia."
 
 #: modules/access/dshow/dshow.cpp:112
 msgid "Tuner properties"
@@ -4743,15 +4747,15 @@ msgstr "Właściwości tunera"
 
 #: modules/access/dshow/dshow.cpp:114
 msgid "Show the tuner properties [channel selection] page."
-msgstr ""
+msgstr "Wyświetl stronę własności tunera [wybór kanałów]."
 
 #: modules/access/dshow/dshow.cpp:115
 msgid "Tuner TV Channel"
-msgstr "Kanał tunera TV"
+msgstr "Kanał TV tunera"
 
 #: modules/access/dshow/dshow.cpp:117
 msgid "Set the TV channel the tuner will set to (0 means default)."
-msgstr ""
+msgstr "Ustaw kanał TV tunera (0 to domyślny)."
 
 #: modules/access/dshow/dshow.cpp:119
 msgid "Tuner country code"
@@ -4762,6 +4766,8 @@ msgid ""
 "Set the tuner country code that establishes the current channel-to-frequency "
 "mapping (0 means default)."
 msgstr ""
+"Ustaw kod kraju tunera który zgadza się z frekwencjami kanałów (0 to "
+"domyślny)."
 
 #: modules/access/dshow/dshow.cpp:123
 msgid "Tuner input type"
@@ -4769,7 +4775,7 @@ msgstr "Rodzaj wejścia tunera"
 
 #: modules/access/dshow/dshow.cpp:125
 msgid "Select the tuner input type (Cable/Antenna)."
-msgstr ""
+msgstr "Ustaw typ wejścia tunera (Kabel/Antena)."
 
 #: modules/access/dshow/dshow.cpp:126
 msgid "Video input pin"
@@ -4782,6 +4788,10 @@ msgid ""
 "\"Device config\" area, and use those numbers here. -1 means that settings "
 "will not be changed."
 msgstr ""
+"Wybierz źródło wejścia obrazu, tak jak composite, s-video, lub tuner. Skoro "
+"te ustawienia są powiązane z hardware, powinieneś znaleźć dobre ustawienia w "
+"miejscu \"Device config\", i używać tych liczb tutaj. -1 oznacza że "
+"ustawienia nie będą zmieniane."
 
 #: modules/access/dshow/dshow.cpp:132
 msgid "Audio input pin"
@@ -4789,7 +4799,7 @@ msgstr "Źródło wejścia dźwięku"
 
 #: modules/access/dshow/dshow.cpp:134
 msgid "Select the audio input source. See the \"video input\" option."
-msgstr ""
+msgstr "Wybierz źródło wejścia dźwięku. Zobacz opcje \"video input\"."
 
 #: modules/access/dshow/dshow.cpp:135
 msgid "Video output pin"
@@ -5974,7 +5984,7 @@ msgstr ""
 
 #: modules/access_filter/timeshift.c:48
 msgid "Timeshift directory"
-msgstr ""
+msgstr "Folder Timeshift"
 
 #: modules/access_filter/timeshift.c:49
 msgid "Directory used to store the timeshift temporary files."
@@ -6115,11 +6125,8 @@ msgid "Time-To-Live (TTL)"
 msgstr "Time-To-Live (TTL)"
 
 #: modules/access_output/udp.c:81
-#, fuzzy
 msgid "Time-To-Live of the outgoing stream."
-msgstr ""
-"Ta opcja umożliwia ustawienie domyślnej ścieżki, którą interfejs będzie "
-"otwierał w poszukiwaniu pliku."
+msgstr "Time-To-Live wychodzącego strumienia."
 
 #: modules/access_output/udp.c:84
 msgid "Group packets"
@@ -6194,7 +6201,7 @@ msgstr ""
 
 #: modules/audio_filter/channel_mixer/headphone.c:72
 msgid "Headphone virtual spatialization effect"
-msgstr ""
+msgstr "Wirtualny przestrzenny efekt słuchawek"
 
 #: modules/audio_filter/channel_mixer/headphone.c:73
 msgid "Headphone effect"
@@ -7052,9 +7059,8 @@ msgid "Set ffmpeg debug mask"
 msgstr ""
 
 #: modules/codec/ffmpeg/ffmpeg.h:131
-#, fuzzy
 msgid "Visualize motion vectors"
-msgstr "Polaryzacja"
+msgstr "Wizualizuj wektory ruchu"
 
 #: modules/codec/ffmpeg/ffmpeg.h:133
 msgid ""
@@ -7530,9 +7536,8 @@ msgid "Philips OGT (SVCD subtitle) packetizer"
 msgstr "Pakietowiec Philips OGT (napisów SVCD)"
 
 #: modules/codec/tarkin.c:75
-#, fuzzy
 msgid "Tarkin decoder module"
-msgstr "moduł dekodera obrazu MPEG I/II"
+msgstr "moduł dekodera Tarkin"
 
 #: modules/codec/telx.c:50
 #, fuzzy
@@ -8905,9 +8910,8 @@ msgid "AU demuxer"
 msgstr "Demuxer AU"
 
 #: modules/demux/avi/avi.c:43
-#, fuzzy
 msgid "Force interleaved method"
-msgstr "Tryb antyprzeplotowy"
+msgstr "Wymuś metodę przeplotową"
 
 #: modules/demux/avi/avi.c:44
 msgid "Force interleaved method."
@@ -9137,12 +9141,11 @@ msgstr "Menażer obrazu"
 
 #: modules/demux/mkv.cpp:3177
 msgid "----- Title"
-msgstr "----- Tytuł"
+msgstr "----- tytuł"
 
 #: modules/demux/mkv.cpp:4943
-#, fuzzy
 msgid "Segment filename"
-msgstr "nazwa pliku dziennika"
+msgstr "nazwa pliku części"
 
 #: modules/demux/mkv.cpp:4947
 #, fuzzy
@@ -9455,7 +9458,7 @@ msgstr ""
 
 #: modules/demux/rawdv.c:45
 msgid "DV (Digital Video) demuxer"
-msgstr ""
+msgstr "Demuxer DV (Digital Video)"
 
 #: modules/demux/real.c:40
 msgid "Real demuxer"
@@ -9975,8 +9978,8 @@ msgstr "Otworzyć też pliki z wszystkich podfolderów?"
 #: modules/gui/beos/InterfaceWindow.cpp:159 modules/gui/macosx/bookmarks.m:107
 #: modules/gui/macosx/controls.m:58 modules/gui/macosx/interaction.m:121
 #: modules/gui/macosx/interaction.m:179 modules/gui/macosx/open.m:158
-#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:122
-#: modules/gui/macosx/prefs.m:142 modules/gui/macosx/wizard.m:363
+#: modules/gui/macosx/playlistinfo.m:60 modules/gui/macosx/prefs.m:119
+#: modules/gui/macosx/prefs.m:139 modules/gui/macosx/wizard.m:363
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -9989,7 +9992,7 @@ msgid "Open"
 msgstr "Otwórz"
 
 #: modules/gui/beos/InterfaceWindow.cpp:225
-#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:120
+#: modules/gui/beos/InterfaceWindow.cpp:328 modules/gui/macosx/prefs.m:117
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:184
 msgid "Preferences"
 msgstr "Preferencje"
@@ -10021,7 +10024,7 @@ msgstr "Otwórz napisy"
 #: modules/gui/pda/pda_interface.c:300 modules/gui/pda/pda_interface.c:301
 #: modules/gui/pda/pda_interface.c:1362
 msgid "About"
-msgstr "Informacje o..."
+msgstr "Informacje o"
 
 #: modules/gui/beos/InterfaceWindow.cpp:285
 msgid "Prev Title"
@@ -10145,7 +10148,7 @@ msgid "Apply"
 msgstr "Zastosuj"
 
 #: modules/gui/beos/PreferencesWindow.cpp:254 modules/gui/macosx/output.m:526
-#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:121
+#: modules/gui/macosx/playlist.m:778 modules/gui/macosx/prefs.m:118
 msgid "Save"
 msgstr "Zapisz"
 
@@ -10155,7 +10158,7 @@ msgstr "Domyślnie"
 
 #: modules/gui/beos/VideoOutput.cpp:1044
 msgid "Show Interface"
-msgstr "Pokarz interfejs"
+msgstr "Pokaż interfejs"
 
 #: modules/gui/beos/VideoOutput.cpp:1048
 msgid "50%"
@@ -10227,7 +10230,7 @@ msgstr "Czas"
 
 #: modules/gui/macosx/bookmarks.m:136 modules/gui/macosx/playlist.m:774
 msgid "Untitled"
-msgstr "Bez Tytułu"
+msgstr "Bez tytułu"
 
 #: modules/gui/macosx/bookmarks.m:233
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:443
@@ -10384,11 +10387,13 @@ msgstr "2-przebiegowy"
 
 #: modules/gui/macosx/equalizer.m:142
 msgid "Apply theequalizer filter twice. The effect will be sharper."
-msgstr ""
+msgstr "Zastosuj filtr korektora dwukrotnie. Rezultat będzie ostrzejszy."
 
 #: modules/gui/macosx/equalizer.m:146
 msgid "Enable the equalizer. Bands can be set manually or using a preset."
 msgstr ""
+"Włącz korektor. Pasma mogą być ustawiane zręcznie albo przy pomocy pewnych "
+"ustawień."
 
 #: modules/gui/macosx/equalizer.m:148
 msgid "Preamp"
@@ -10396,7 +10401,7 @@ msgstr "Przedwzmacniacz"
 
 #: modules/gui/macosx/extended.m:79 modules/gui/wxwidgets/extrapanel.cpp:1210
 msgid "Extended controls"
-msgstr ""
+msgstr "Rozszerzone ustawienia"
 
 #: modules/gui/macosx/extended.m:83 modules/gui/wxwidgets/extrapanel.cpp:300
 msgid "Video filters"
@@ -10422,7 +10427,7 @@ msgstr "Rozmazywanie"
 
 #: modules/gui/macosx/extended.m:87 modules/gui/wxwidgets/extrapanel.cpp:151
 msgid "Adds motion blurring to the image"
-msgstr ""
+msgstr "Dodaje rozmazywanie ruchów do obrazu"
 
 #: modules/gui/macosx/extended.m:88 modules/gui/wxwidgets/extrapanel.cpp:149
 #: modules/video_filter/distort.c:82
@@ -10439,7 +10444,7 @@ msgstr "Klonowanie obrazu"
 
 #: modules/gui/macosx/extended.m:91
 msgid "Creates several copies of the Video output window"
-msgstr ""
+msgstr "Tworzy kilka kopii okna wyjścia obrazu"
 
 #: modules/gui/macosx/extended.m:93
 msgid "Image cropping"
@@ -10447,7 +10452,7 @@ msgstr "Obcinanie obrazu"
 
 #: modules/gui/macosx/extended.m:94
 msgid "Crops a defined part of the image"
-msgstr ""
+msgstr "Ucina określoną część obrazu"
 
 #: modules/gui/macosx/extended.m:95 modules/gui/wxwidgets/extrapanel.cpp:150
 msgid "Image inversion"
@@ -10455,7 +10460,7 @@ msgstr "Inwersja obrazu"
 
 #: modules/gui/macosx/extended.m:96 modules/gui/wxwidgets/extrapanel.cpp:150
 msgid "Inverts the colors of the image"
-msgstr ""
+msgstr "Odwraca kolory obrazu"
 
 #: modules/gui/macosx/extended.m:97 modules/gui/wxwidgets/extrapanel.cpp:152
 #: modules/video_filter/transform.c:67
@@ -10464,7 +10469,7 @@ msgstr "Przekształcenie"
 
 #: modules/gui/macosx/extended.m:98 modules/gui/wxwidgets/extrapanel.cpp:152
 msgid "Rotates or flips the image"
-msgstr ""
+msgstr "Obraca lub przekręca obraz"
 
 #: modules/gui/macosx/extended.m:99 modules/gui/wxwidgets/extrapanel.cpp:401
 msgid "Volume normalization"
@@ -10472,15 +10477,15 @@ msgstr "Normalizacja głosu"
 
 #: modules/gui/macosx/extended.m:100
 msgid "Prevents the audio output from going over a predefined value."
-msgstr ""
+msgstr "Zapobiega wyjściu dźwięku przekraczania ustalonej wartości."
 
 #: modules/gui/macosx/extended.m:102 modules/gui/wxwidgets/extrapanel.cpp:396
 msgid "Headphone virtualization"
-msgstr ""
+msgstr "Wirtualizacja słuchawek"
 
 #: modules/gui/macosx/extended.m:103 modules/gui/wxwidgets/extrapanel.cpp:397
 msgid "Imitates the effect of surround sound when using headphones."
-msgstr ""
+msgstr "Naśladuje efekt dźwięku surround podczas używania słuchawek."
 
 #: modules/gui/macosx/extended.m:105 modules/gui/wxwidgets/extrapanel.cpp:406
 msgid "Maximum level"
@@ -10501,7 +10506,7 @@ msgstr "Nasycenie"
 
 #: modules/gui/macosx/extended.m:113 modules/gui/macosx/macosx.m:59
 msgid "Opaqueness"
-msgstr ""
+msgstr "Nieprzezroczystość"
 
 #: modules/gui/macosx/extended.m:602 modules/gui/wxwidgets/extrapanel.cpp:1007
 msgid "More Information"
@@ -10518,7 +10523,7 @@ msgstr ""
 
 #: modules/gui/macosx/fspanel.m:383
 msgid "(no item is being played)"
-msgstr ""
+msgstr "(nie ma odgrywanej pozycji)"
 
 #: modules/gui/macosx/interaction.m:125 modules/gui/macosx/intf.m:639
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:81
@@ -10546,10 +10551,6 @@ msgstr "VLC media player"
 #: modules/gui/macosx/intf.m:511
 msgid "Open CrashLog"
 msgstr ""
-
-#: modules/gui/macosx/intf.m:516
-msgid "Check for Update..."
-msgstr "Sprawdź dostęp aktualizacji..."
 
 #: modules/gui/macosx/intf.m:517
 msgid "Preferences..."
@@ -10599,13 +10600,13 @@ msgstr "Otwórz sieć..."
 msgid "Open Recent"
 msgstr "Otwórz ostatnie"
 
-#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2017
+#: modules/gui/macosx/intf.m:532 modules/gui/macosx/intf.m:2015
 msgid "Clear Menu"
 msgstr "Wyczyść Menu"
 
 #: modules/gui/macosx/intf.m:533
 msgid "Streaming/Exporting Wizard..."
-msgstr ""
+msgstr "Kreator Strumieniowania/Eksportowania..."
 
 #: modules/gui/macosx/intf.m:536
 msgid "Cut"
@@ -10650,7 +10651,7 @@ msgstr "Kontroller"
 
 #: modules/gui/macosx/intf.m:603
 msgid "Extended Controls"
-msgstr ""
+msgstr "Rozszerzone ustawienia"
 
 #: modules/gui/macosx/intf.m:606 modules/gui/macosx/intf.m:648
 #: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlistinfo.m:55
@@ -10718,22 +10719,22 @@ msgstr "Nie wyświetlaj dalszych błędów"
 
 #: modules/gui/macosx/intf.m:681
 msgid "Your version of Mac OS X is not supported"
-msgstr ""
+msgstr "Twoja wersja Mac OS X nie jest poparta"
 
 #: modules/gui/macosx/intf.m:685
 msgid "VLC media player requires Mac OS X 10.4 or higher."
-msgstr ""
+msgstr "VLC media player wymaga Mac OS X 10.4 lub wyższej wersji."
 
 #: modules/gui/macosx/intf.m:1224
 #, c-format
 msgid "Volume: %d%%"
 msgstr "Głośność: %d%%"
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "No CrashLog found"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1884
+#: modules/gui/macosx/intf.m:1882
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
@@ -10774,9 +10775,8 @@ msgid ""
 msgstr ""
 
 #: modules/gui/macosx/macosx.m:69
-#, fuzzy
 msgid "Crop borders in fullscreen"
-msgstr "Rozpoczynaj odtwarzanie video na pełnym ekranie"
+msgstr "Ściąć brzegi w pełnym ekranie"
 
 #: modules/gui/macosx/macosx.m:70
 msgid ""
@@ -10886,7 +10886,7 @@ msgstr "HTTP/FTP/MMS/RTSP"
 #: modules/gui/macosx/open.m:186 modules/gui/wxwidgets/dialogs/open.cpp:820
 #: modules/services_discovery/sap.c:112
 msgid "Allow timeshifting"
-msgstr ""
+msgstr "Pozwól na Timeshift"
 
 #: modules/gui/macosx/open.m:240
 msgid "Load subtitles file:"
@@ -11041,7 +11041,7 @@ msgstr "Sortuj węzły według nazwy"
 
 #: modules/gui/macosx/playlist.m:491
 msgid "Sort Node by Author"
-msgstr "Sortuj węzły według artystów"
+msgstr "Sortuj węzły według wykonawców"
 
 #: modules/gui/macosx/playlist.m:494 modules/gui/macosx/playlist.m:540
 #: modules/gui/macosx/playlist.m:1541
@@ -11102,19 +11102,19 @@ msgstr "Informacje zaawansowane"
 
 #: modules/gui/macosx/playlistinfo.m:81
 msgid "Read at media"
-msgstr ""
+msgstr "Wczytano z nośnika"
 
 #: modules/gui/macosx/playlistinfo.m:82
 msgid "Input bitrate"
-msgstr ""
+msgstr "Przepływność wejściowa"
 
 #: modules/gui/macosx/playlistinfo.m:83
 msgid "Demuxed"
-msgstr ""
+msgstr "Przerobiono"
 
 #: modules/gui/macosx/playlistinfo.m:84
 msgid "Stream bitrate"
-msgstr ""
+msgstr "Przepływność strumienia"
 
 #: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
 msgid "Decoded blocks"
@@ -11155,21 +11155,21 @@ msgstr "Odtworzone bufory"
 msgid "Lost buffers"
 msgstr "Zgubione bufory"
 
-#: modules/gui/macosx/prefs.m:123
+#: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
 msgid "Reset All"
 msgstr "Resetuj Wszystko"
 
-#: modules/gui/macosx/prefs.m:142
+#: modules/gui/macosx/prefs.m:139
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:296
 msgid "Reset Preferences"
 msgstr "Resetuj Preferencje"
 
-#: modules/gui/macosx/prefs.m:143
+#: modules/gui/macosx/prefs.m:140
 msgid "Continue"
 msgstr "Kontynuuj"
 
-#: modules/gui/macosx/prefs.m:145
+#: modules/gui/macosx/prefs.m:142
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -11177,7 +11177,7 @@ msgstr ""
 "Uwaga! To zresetuje preferencje VLC media player.\n"
 "Jesteś pewny aby kontynuować?"
 
-#: modules/gui/macosx/prefs.m:715
+#: modules/gui/macosx/prefs.m:712
 msgid "Some options are hidden. Check \"Advanced\" to display them."
 msgstr ""
 "Niektóre opcje są ukryte. Zaznacz pole \"Zaawansowane\" aby je wyświetlić."
@@ -11339,7 +11339,7 @@ msgstr ""
 #: modules/gui/macosx/wizard.m:274 modules/gui/macosx/wizard.m:284
 #: modules/gui/wxwidgets/streamdata.cpp:123
 msgid "Enter the address of the computer to stream to."
-msgstr ""
+msgstr "Podaj adres komputera otrzymującego strumień."
 
 #: modules/gui/macosx/wizard.m:275 modules/gui/macosx/wizard.m:413
 msgid "Use this to stream to a single computer."
@@ -11396,6 +11396,9 @@ msgid ""
 "transcoding capabilities. The Open and 'Saving/Streaming' dialogs will give "
 "access to more features."
 msgstr ""
+"Kreator ten daje tylko mały wybór możliwości strumieniowania i "
+"transkodowania w VLC. Otwórz dialog 'Strumieniowanie/Zapisywanie' aby "
+"uzyskać pełny wybór możliwości."
 
 #: modules/gui/macosx/wizard.m:377 modules/gui/macosx/wizard.m:533
 #: modules/gui/macosx/wizard.m:1685
@@ -11435,7 +11438,7 @@ msgstr "Wybierz..."
 #: modules/gui/macosx/wizard.m:394 modules/gui/macosx/wizard.m:474
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:625
 msgid "Partial Extract"
-msgstr "Częściowa Ekstrakcja"
+msgstr "Częściowa ekstrakcja"
 
 #: modules/gui/macosx/wizard.m:396
 msgid ""
@@ -12025,7 +12028,7 @@ msgstr "Tolerancja przepływności:"
 
 #: modules/gui/pda/pda_interface.c:951
 msgid "Keyframe Interval:"
-msgstr "Kluczowy Interwal:"
+msgstr "Kluczowy interwal:"
 
 #: modules/gui/pda/pda_interface.c:960
 msgid "Audio Codec:"
@@ -12137,15 +12140,15 @@ msgstr "Przepływność dźwięku :"
 
 #: modules/gui/pda/pda_interface.c:1157
 msgid "SAP Announce:"
-msgstr "Ogłoszenie SAP"
+msgstr "Ogłoszenie SAP:"
 
 #: modules/gui/pda/pda_interface.c:1180
 msgid "SLP Announce:"
-msgstr "Ogłoszenie SLP"
+msgstr "Ogłoszenie SLP:"
 
 #: modules/gui/pda/pda_interface.c:1189
 msgid "Announce Channel:"
-msgstr "Ogłoszenie Kanału"
+msgstr "Ogłoszenie kanału:"
 
 #: modules/gui/pda/pda_interface.c:1249
 msgid "Update"
@@ -12275,7 +12278,6 @@ msgid ""
 msgstr ""
 
 #: modules/gui/skins2/src/skin_main.cpp:440
-#, fuzzy
 msgid "Enable skinned playlist"
 msgstr "Użyj listę odtwarzania ze skóry"
 
@@ -12482,7 +12484,7 @@ msgstr "Wejście zostało zmienione"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
-msgstr "Info Strumienia i Medii"
+msgstr "Informacje o strumieniu i nośnikach"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:83
 msgid "Advanced information"
@@ -12524,7 +12526,7 @@ msgstr "Zapisz j&ako"
 
 #: modules/gui/wxwidgets/dialogs/messages.cpp:199
 msgid "Save Messages As..."
-msgstr "Zapisz Komunikaty jako..."
+msgstr "Zapisz komunikaty jako..."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:256
 msgid "Advanced options..."
@@ -12572,6 +12574,10 @@ msgid ""
 "Alternatively, the field will be filled automatically when you use the "
 "controls above."
 msgstr ""
+"Możesz używać tego pola bezpośrednio wpisywając pełny MRL którego chcesz "
+"otworzyć.\n"
+"Inaczej, pole to będzie wypełnione automatycznie przy użyciu powyższych "
+"ustawień."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:635
 msgid "Use a subtitles file"
@@ -12627,6 +12633,8 @@ msgid ""
 "Name of CD-ROM device to read Video CD from. If this field is left empty, we "
 "will scan for a CD-ROM with a VCD in it."
 msgstr ""
+"Nazwa urządzenia CD-ROM do odczytu Video CD. Jeżeli to pole pozostanie "
+"puste, to zacznie się wyszukiwanie napędu CD-ROM z płytą VCD."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:963
 #: modules/gui/wxwidgets/dialogs/open.cpp:986
@@ -12638,6 +12646,8 @@ msgid ""
 "Name of CD-ROM device to read audio CD from. If this field is left empty, we "
 "will scan for a CD-ROM with an audio CD in it."
 msgstr ""
+"Nazwa urządzenia CD-ROM do odczytu Audio CD. Jeżeli to pole pozostanie "
+"puste, to zacznie się wyszukiwanie napędu CD-ROM z płytą Audio CD."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1294
 msgid "Open subtitles file"
@@ -12653,10 +12663,15 @@ msgid ""
 "thing as a subtitle name (e.g. 'en'). If a value -1 is used, no subtitle "
 "will be shown."
 msgstr ""
+"Płyty DVD mogą mieć aż 32 napisów numerowanych 0..31. Uważaj, że nie jest to "
+"samo co nazwa napisów (n.p. 'en'). Jeśli używana jest wartość -1, to nie "
+"będzie wyświetlanych napisów."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1676
 msgid "Audio track number. DVD's can have up to 8 audio tracks numbered 0..7."
 msgstr ""
+"Numer ścieżki dźwiękowej. Płyty DVD mogą mieć aż 8 ścieżek dźwiękowych "
+"numerowanych 0..7."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1697
 msgid "Playback control (PBC) usually starts with number 1."
@@ -12675,11 +12690,15 @@ msgid ""
 "SVCD's can have up to 4 subtitles numbered 0..3. If a value -1 is used, no "
 "subtitle will be shown."
 msgstr ""
+"Płyty SVCD mogą mieć aż 4 napisy numerowanych 0..3. Jeśli używana jest "
+"wartość -1, to nie będzie wyświetlanych napisów."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1716
 msgid ""
 "Audio track number. VCD's can have up to 2 audio tracks numbered 0 or 1. "
 msgstr ""
+"Numer ścieżki dźwiękowej. Płyty VCD mogą mieć aż 2 napisy numerowanych 0 lub "
+"1."
 
 #: modules/gui/wxwidgets/dialogs/open.cpp:1728
 msgid ""
@@ -12700,11 +12719,11 @@ msgstr "Losowo"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:236
 msgid "&Simple Add File..."
-msgstr "&Dodaj prosto plik..."
+msgstr "&Dodaj bezpośrednio plik..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:237
 msgid "Add &Directory..."
-msgstr "Dodaj &Folder..."
+msgstr "Dodaj &folder..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:238
 msgid "&Add URL..."
@@ -12712,7 +12731,7 @@ msgstr "&Dodaj adres URL..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:240
 msgid "Services Discovery"
-msgstr "Odkrycie usług"
+msgstr "Wykrywanie usług"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:243
 msgid "&Open Playlist..."
@@ -12724,11 +12743,11 @@ msgstr "&Zapisz listę odtwarzania..."
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:250
 msgid "Sort by &Title"
-msgstr "Sortuj według &Tytułu"
+msgstr "Sortuj według &tytułu"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:251
 msgid "&Reverse Sort by Title"
-msgstr "&Odwróć sortowanie według Tytułu"
+msgstr "&Odwróć sortowanie według tytułu"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:253
 msgid "&Shuffle"
@@ -12740,11 +12759,11 @@ msgstr "U&suń"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:264
 msgid "&Manage"
-msgstr "&Zarządź"
+msgstr "&Zarządzanie"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:265
 msgid "S&ort"
-msgstr "S&ortuj"
+msgstr "S&ortowanie"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:266
 msgid "&Selection"
@@ -12752,7 +12771,7 @@ msgstr "&Wybór"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:267
 msgid "&View items"
-msgstr "&Pokarz obiekty"
+msgstr "&Pokaż obiekty"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:275
 msgid "Play this Branch"
@@ -12775,7 +12794,7 @@ msgstr "Opis pliku"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:280
 msgid "Add Node"
-msgstr "Dodaj Węzeł"
+msgstr "Dodaj węzeł"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:358
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:794
@@ -12815,15 +12834,15 @@ msgstr "Nie mogę zapisać"
 #: modules/gui/wxwidgets/wxwidgets.cpp:114 modules/misc/freetype.c:105
 #: modules/misc/win32text.c:77
 msgid "Normal"
-msgstr "Normalne"
+msgstr "Standardowo"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1424
 msgid "Sorted by Artist"
-msgstr "Sortowane według Artysty"
+msgstr "Sortowane według wykonawcy"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1426
 msgid "Sorted by Album"
-msgstr "Sortowane według Albumu"
+msgstr "Sortowane według albumu"
 
 #: modules/gui/wxwidgets/dialogs/playlist.cpp:1637
 msgid "Please enter node name"
@@ -12875,6 +12894,8 @@ msgid ""
 "Select the desired modules. For more advanced control, the resulting \"chain"
 "\" can be modified."
 msgstr ""
+"Wybierz żądany moduł. Dla bardziej zaawansowanego ustawienia, stworzony "
+"\"łańcuch\" może być zmieniony."
 
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:167
 msgid "Stream output MRL"
@@ -13035,6 +13056,7 @@ msgstr "Strumień VLM"
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:86
 msgid "This wizard helps you to stream, transcode or save a stream."
 msgstr ""
+"Kreator ten pomoże ci strumieniować, transkodować lub zapisać strumień."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:89
 msgid "Use this to stream on a network."
@@ -13049,6 +13071,9 @@ msgid ""
 "This wizard only contains a small subset of VLC's streaming and transcoding "
 "capabilities. Use the Open and Stream Output dialogs to access all of them."
 msgstr ""
+"Kreator ten zawiera tylko mało ostawień strumieniowania i transkodowania w "
+"VLC. Użyj dialogu Otwórz i Wyjście Strumienia aby uzyskać wszystkie "
+"ustawienia."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:97
 msgid "Use this to stream on a network"
@@ -13062,6 +13087,12 @@ msgid ""
 "Please note that VLC is not very suited for file-to-file transcoding. Its "
 "transcoding features are more appropriate for saving network streams."
 msgstr ""
+"Zapisuje strumień do pliku. Strumień musi być w formacie który VLC umie "
+"odczytać. Jeśli chcesz, to strumień ten może być konwertowanny w inny "
+"format.\n"
+"\n"
+"Proszę zauważyć że VLC nie został skonstruowany do konwersji plików. Opcje "
+"transkodowania nadają się bardziej do zapisywaania strumieni sieci."
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:112
 msgid "You must choose a stream"
@@ -13079,6 +13110,11 @@ msgid ""
 "Note: You must be able to control the incoming stream (for example, a file "
 "or a disc, but not a RTP/UDP network stream).\n"
 msgstr ""
+"Użyj to żeby wczytać tylko cześć strumienia. Wpisz czas startu i końca (w "
+"sekundach).\n"
+"\n"
+"Uwaga: Musisz mieć kontrolę nad wejściem strumienia (na przykład, plik lub "
+"napęd, ale nie strumień sieci RTP/UDP).\n"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:126
 msgid ""
@@ -13104,7 +13140,7 @@ msgstr ""
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:140
 msgid "Determines how the input stream will be sent."
-msgstr ""
+msgstr "Ustala w jaki sposób będzie wysyłane wejście strumienia"
 
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:143
 msgid "This does not appear to be a valid multicast address"
@@ -13167,10 +13203,12 @@ msgid ""
 "Controls the blending of equalizer bands. The higher this value is, the more "
 "correlated their movement will be."
 msgstr ""
+"Ustawia mieszanie pasm korektora. Czym wyższa ta wartość, to tym bardziej "
+"ruchy ich będą odpowiadać sobie wzajemnie."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:148
 msgid "Creates several clones of the image"
-msgstr ""
+msgstr "Tworzy kilka klonów obrazu"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:153 modules/video_filter/magnify.c:60
 msgid "Magnify"
@@ -13190,17 +13228,19 @@ msgstr "Proporcje ekranu"
 
 #: modules/gui/wxwidgets/extrapanel.cpp:402
 msgid "Prevents the audio output level from going over a predefined value."
-msgstr ""
+msgstr "Zapobiega poziomu wyjściu dźwięku przekraczania ustalonej wartości."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:466
 msgid ""
 "Enable the equalizer. You can either manually adjust the bands or use a "
 "preset (Audio Menu->Equalizer)."
 msgstr ""
+"Włącz korektor. Możesz ustawić pasma zręcznie albo przy pomocy pewnych "
+"ustawień. (Menu Dźwięk->Korektor graficzny)."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:473
 msgid "Apply the equalizer twice. The resulting effect will be sharper."
-msgstr ""
+msgstr "Zastosuj korektor dwukrotnie. Efekt rezultatu będzie ostrzejszy."
 
 #: modules/gui/wxwidgets/extrapanel.cpp:485
 msgid "Smooth :"
@@ -13223,6 +13263,12 @@ msgid ""
 "control the order in which they are applied, enter a filters string in the "
 "Video Filter Module inside the preferences."
 msgstr ""
+"Filtrowanie efektów ukazywanych na obrazie. Aby wykonać te efekty, musisz "
+"ponownie uruchomić strumień.\n"
+"\n"
+"Żeby ustawić te filtry, idź od Preferencje / Obraz / Filtry. W przydatku "
+"ustawienia kolejności ukazywania się, wpisz string w modułach filtru obrazu "
+"w preferencjach."
 
 #: modules/gui/wxwidgets/input_manager.cpp:247
 msgid "Stopped"
@@ -13290,7 +13336,7 @@ msgstr "&Komunikaty...\tCtrl-M"
 
 #: modules/gui/wxwidgets/interface.cpp:596
 msgid "Stream and Media &Info...\tCtrl-I"
-msgstr "&Info Strumienia i Medii...\tCtrl-I"
+msgstr "&Informacje o strumieniu i nośnikach...\tCtrl-I"
 
 #: modules/gui/wxwidgets/interface.cpp:598
 msgid "VLM Control...\tCtrl-V"
@@ -13366,7 +13412,7 @@ msgid ""
 " (wxWidgets interface)\n"
 "\n"
 msgstr ""
-" (wxWidgets interfejs)\n"
+" (interfejs wxWidgets)\n"
 "\n"
 
 #: modules/gui/wxwidgets/interface.cpp:953
@@ -13386,11 +13432,11 @@ msgstr "Informacje o %s"
 
 #: modules/gui/wxwidgets/interface.cpp:1520
 msgid "Show/Hide Interface"
-msgstr "Pokarz/Ukryj interfejs"
+msgstr "Pokaż/Ukryj interfejs"
 
 #: modules/gui/wxwidgets/menus.cpp:126
 msgid "Quick &Open File..."
-msgstr "Szybkie &otwieranie pliku..."
+msgstr "&Otwórz bezpośrednio plik..."
 
 #: modules/gui/wxwidgets/menus.cpp:127
 msgid "Open &File..."
@@ -13414,7 +13460,7 @@ msgstr "Otwórz &urządzenie przechwytywania..."
 
 #: modules/gui/wxwidgets/menus.cpp:138
 msgid "Media &Info..."
-msgstr "&Informacja media..."
+msgstr "&Informacje mediów..."
 
 #: modules/gui/wxwidgets/menus.cpp:139
 msgid "&Messages..."
@@ -13466,15 +13512,15 @@ msgstr ""
 
 #: modules/gui/wxwidgets/streamdata.cpp:122
 msgid "RTP Unicast"
-msgstr ""
+msgstr "RTP Unicast"
 
 #: modules/gui/wxwidgets/streamdata.cpp:122
 msgid "Stream to a single computer."
-msgstr ""
+msgstr "Strumieniuj do jednego komputera."
 
 #: modules/gui/wxwidgets/streamdata.cpp:125
 msgid "RTP Multicast"
-msgstr ""
+msgstr "RTP Multicast"
 
 #: modules/gui/wxwidgets/streamdata.cpp:126
 msgid ""
@@ -13482,6 +13528,9 @@ msgid ""
 "is the most efficient method to stream to several computers, but it does not "
 "work over the Internet."
 msgstr ""
+"Strumieniuj do dynamicznej grupy komputerów w multicast-aktywnej sieci. To "
+"jest najskuteczniejsza metoda strumieniować do kilku komputerów, lecz nie "
+"działa to po przez Internet."
 
 #: modules/gui/wxwidgets/streamdata.cpp:129
 msgid ""
@@ -13489,12 +13538,17 @@ msgid ""
 "224.0.0.0 an 239.255.255.255. For private use, enter an address beginning "
 "with 239.255."
 msgstr ""
+"Podaj adres multicast otrzymujący strumień. Musi to być adres IP pomiędzy "
+"224.0.0.0 i 239.255.255.255. Przy użyciu w celach prywatnych, podaj adres "
+"rozpoczynający się na 239.255."
 
 #: modules/gui/wxwidgets/streamdata.cpp:134
 msgid ""
 "Stream to several computers. This method is less efficient, as the server "
 "needs to send the stream several times."
 msgstr ""
+"Strumieniuj do kilku komputerów. Ta metoda jest mniej skuteczna, bo serwer "
+"musi wysyłać strumień kilka razy."
 
 #: modules/gui/wxwidgets/streamdata.cpp:137
 msgid ""
@@ -13503,6 +13557,10 @@ msgid ""
 "generally the best thing to do. Other computers can then access the stream "
 "at http://yourip:8080 by default."
 msgstr ""
+"Podaj lokalne adresy których chcesz słuchać. Niczego nie wpisuj, jeśli "
+"chcesz słuchać wszystkich adresów albo nie wiesz o co chodzi. To jest zwykle "
+"najlepsze. Inne komputery mają wtedy domyślnie dostęp do strumiennia pod "
+"adresem http://twójIP:8080"
 
 #: modules/gui/wxwidgets/wxwidgets.cpp:89
 msgid "Bookmarks dialog"
@@ -13925,9 +13983,8 @@ msgid "GnuTLS TLS encryption layer"
 msgstr ""
 
 #: modules/misc/growl.c:59
-#, fuzzy
 msgid "Growl server"
-msgstr "Brak serwera"
+msgstr "Serwer Growl"
 
 #: modules/misc/growl.c:60
 msgid ""
@@ -13936,18 +13993,16 @@ msgid ""
 msgstr ""
 
 #: modules/misc/growl.c:63
-#, fuzzy
 msgid "Growl password"
-msgstr "Hasło FTP"
+msgstr "Hasło Growl"
 
 #: modules/misc/growl.c:65
 msgid "Growl password on the server."
 msgstr ""
 
 #: modules/misc/growl.c:66
-#, fuzzy
 msgid "Growl UDP port"
-msgstr "Port UDP"
+msgstr "Port UDP Growl"
 
 #: modules/misc/growl.c:68
 msgid "Growl UDP port on the server."
@@ -13963,7 +14018,7 @@ msgstr "(bez tytułu)"
 
 #: modules/misc/growl.c:173 modules/misc/msn.c:203 modules/misc/notify.c:188
 msgid "(no artist)"
-msgstr "(bez artysty)"
+msgstr "(bez wykonawcy)"
 
 #: modules/misc/growl.c:174 modules/misc/msn.c:204 modules/misc/notify.c:189
 msgid "(no album)"
@@ -14000,7 +14055,7 @@ msgstr "Zapisywanie do pliku dziennika"
 
 #: modules/misc/logger.c:130
 msgid "File logging"
-msgstr "Logowanie Pliku"
+msgstr "Logowanie pliku"
 
 #: modules/misc/logger.c:136
 msgid "Log filename"
@@ -14130,7 +14185,6 @@ msgid ""
 msgstr ""
 
 #: modules/misc/rtsp.c:61
-#, fuzzy
 msgid "RTSP VoD"
 msgstr "RTSP VoD"
 
@@ -14144,9 +14198,8 @@ msgid "X Screensaver disabler"
 msgstr "moduł przeplotu"
 
 #: modules/misc/svg.c:66
-#, fuzzy
 msgid "SVG template file"
-msgstr "Wybierz plik"
+msgstr "Plik szablonu SVG"
 
 #: modules/misc/svg.c:67
 msgid ""
@@ -14158,7 +14211,6 @@ msgid "Playlist stress tests"
 msgstr "Test stresowy listy odtwarzania"
 
 #: modules/misc/testsuite/test1.c:33
-#, fuzzy
 msgid "C module that does nothing"
 msgstr "Moduł C który nic nie robi"
 
@@ -14731,7 +14783,6 @@ msgid "Enable/disable audio rendering."
 msgstr "Włącz/wyłącz renderowanie dźwięku."
 
 #: modules/stream_out/display.c:40
-#, fuzzy
 msgid "Enable/disable video rendering."
 msgstr "Włącz/wyłącz renderowanie obrazu."
 
@@ -15324,9 +15375,8 @@ msgid ""
 msgstr ""
 
 #: modules/stream_out/transcode.c:159
-#, fuzzy
 msgid "Number of threads"
-msgstr "Liczba wierszy"
+msgstr "Liczba wątków"
 
 #: modules/stream_out/transcode.c:161
 msgid "Number of threads used for the transcoding."
@@ -15358,9 +15408,8 @@ msgid ""
 msgstr ""
 
 #: modules/stream_out/transcode.c:188
-#, fuzzy
 msgid "Transcode stream output"
-msgstr "Wstrzymuje strumień"
+msgstr "Transkoduj wyjście strumienia"
 
 #: modules/stream_out/transcode.c:264
 msgid "Overlays/Subtitles"
@@ -15444,9 +15493,8 @@ msgid "Set the image gamma, between 0.01 and 10. Defaults to 1."
 msgstr ""
 
 #: modules/video_filter/adjust.c:77
-#, fuzzy
 msgid "Image properties filter"
-msgstr "moduł filtru obrazu"
+msgstr "Filtr właściwości obrazu"
 
 #: modules/video_filter/adjust.c:78
 msgid "Image adjust"
@@ -15477,7 +15525,7 @@ msgstr ""
 
 #: modules/video_filter/clone.c:64
 msgid "Clone video filter"
-msgstr "Filtr obrazu klonu"
+msgstr "Filtr klonowania obrazu"
 
 #: modules/video_filter/clone.c:66
 msgid "Clone"
@@ -15498,9 +15546,8 @@ msgid "Automatic cropping"
 msgstr "Automatyczne obcinanie"
 
 #: modules/video_filter/crop.c:58
-#, fuzzy
 msgid "Automatic black border cropping."
-msgstr "Automatyczne obcinanie"
+msgstr "Automatyczne obcinanie pustej krawędzi."
 
 #: modules/video_filter/crop.c:61
 msgid "Crop video filter"
@@ -15575,9 +15622,8 @@ msgid "Hough"
 msgstr ""
 
 #: modules/video_filter/distort.c:81
-#, fuzzy
 msgid "Distort video filter"
-msgstr "moduł odwracania obrazu"
+msgstr "Filtr zniekształcenia obrazu"
 
 #: modules/video_filter/invert.c:52
 msgid "Invert video filter"
@@ -15666,7 +15712,7 @@ msgstr "Pod filtr loga"
 
 #: modules/video_filter/magnify.c:59
 msgid "Magnify/Zoom interactive video filter"
-msgstr ""
+msgstr "Interaktywny filtr powiększania/przybliżania obrazu"
 
 #: modules/video_filter/marq.c:77
 msgid "Marquee text to display."
@@ -15951,23 +15997,20 @@ msgid "Motion blur"
 msgstr ""
 
 #: modules/video_filter/motionblur.c:59
-#, fuzzy
 msgid "Motion blur filter"
-msgstr "moduł ściany obrazu (image wall)"
+msgstr "Filtr rozmazywania ruchów"
 
 #: modules/video_filter/motiondetect.c:55
-#, fuzzy
 msgid "Description file"
-msgstr "Opis"
+msgstr "Plik opisu"
 
 #: modules/video_filter/motiondetect.c:56
 msgid "A file containing a simple playlist"
 msgstr ""
 
 #: modules/video_filter/motiondetect.c:57
-#, fuzzy
 msgid "History parameter"
-msgstr "moduł filtru obrazu"
+msgstr "Parametr historii"
 
 #: modules/video_filter/motiondetect.c:59
 #, fuzzy
@@ -15977,23 +16020,20 @@ msgstr ""
 "otwierał w poszukiwaniu pliku."
 
 #: modules/video_filter/motiondetect.c:62
-#, fuzzy
 msgid "Motion detect video filter"
-msgstr "moduł ściany obrazu (image wall)"
+msgstr "Filtr rozpoznawania ruchów obrazu"
 
 #: modules/video_filter/motiondetect.c:63
-#, fuzzy
 msgid "Motion detect"
-msgstr "moduł ściany obrazu (image wall)"
+msgstr "Rozpoznawanie ruchów"
 
 #: modules/video_filter/osdmenu.c:42
 msgid "Configuration file"
 msgstr "Plik konfiguracyjny"
 
 #: modules/video_filter/osdmenu.c:45
-#, fuzzy
 msgid "Configuration file for the OSD Menu"
-msgstr "Plik konfiguracyjny do menu OSD"
+msgstr "Plik konfiguracyjny dla menu OSD"
 
 #: modules/video_filter/osdmenu.c:46
 msgid "Path to OSD menu images"
@@ -16189,14 +16229,13 @@ msgid "Y offset, down from the top"
 msgstr ""
 
 #: modules/video_filter/time.c:93
-#, fuzzy
 msgid ""
 "You can enforce the text position on the video (0=center, 1=left, 2=right, "
 "4=top, 8=bottom, you can also use combinations of these values, e.g. 6 = top-"
 "right)."
 msgstr ""
-"Wymuś pozycje loga w obrazie (0=środek, 1=lewa, 2=prawa, 4=góra, 8=dół, "
-"możesz użyć też kombinacje z tych parametrów, np 6 = góra-prawa)."
+"Możesz wymusić pozycje tekstu na obrazie (0=środek, 1=lewa, 2=prawa, 4=góra, "
+"8=dół, możesz użyć też kombinacje z tych parametrów, n.p. 6 = góra-prawa)."
 
 #: modules/video_filter/time.c:107
 #, fuzzy
@@ -16801,9 +16840,8 @@ msgid "This is a coefficient that modifies the height of the bands."
 msgstr ""
 
 #: modules/visualization/visual/visual.c:65
-#, fuzzy
 msgid "Enable peaks"
-msgstr "włączony obraz"
+msgstr "Włącz grzebienie fal"
 
 #: modules/visualization/visual/visual.c:67
 msgid "Draw \"peaks\" in the spectrum analyzer."
@@ -16935,6 +16973,9 @@ msgstr "Kolor używany do wyświetlenia tektu wyjścia XOSD."
 #: modules/visualization/xosd.c:84
 msgid "XOSD interface"
 msgstr "Interfejs XOSD"
+
+#~ msgid "Check for Update..."
+#~ msgstr "Sprawdź dostęp aktualizacji..."
 
 #~ msgid "Check for Updates"
 #~ msgstr "Sprawdź aktualizacje"
