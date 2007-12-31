@@ -191,10 +191,14 @@ static int PlaylistChanged( vlc_object_t *p_this, const char *psz_variable,
                      vlc_value_t old_val, vlc_value_t new_val, void *param )
 {
     intf_thread_t * p_intf = VLCIntf;
-    p_intf->p_sys->b_playlist_update = VLC_TRUE;
-    p_intf->p_sys->b_intf_update = VLC_TRUE;
-    p_intf->p_sys->b_playmode_update = VLC_TRUE;
-    return VLC_SUCCESS;
+    if( p_intf && !p_intf->b_die )
+    {
+        p_intf->p_sys->b_playlist_update = VLC_TRUE;
+        p_intf->p_sys->b_intf_update = VLC_TRUE;
+        p_intf->p_sys->b_playmode_update = VLC_TRUE;
+        return VLC_SUCCESS;
+    }
+    return VLC_EGENERIC;
 }
 
 /*****************************************************************************
