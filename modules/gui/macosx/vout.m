@@ -71,8 +71,14 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 - (id)init
 {
     [super init];
-    o_embedded_array = [NSMutableArray array];
+    o_embedded_array = [[NSMutableArray alloc] init];
     return self;
+}
+
+- (void)dealloc
+{
+    [o_embedded_array release];
+    [super dealloc];
 }
 
 - (id)getEmbeddedVout
@@ -938,11 +944,13 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 {
     playlist_t * p_playlist = vlc_object_find( VLCIntf, VLC_OBJECT_PLAYLIST,
                                                FIND_ANYWHERE );
+    if( p_playlist )
+    {
+        if(!playlist_IsPlaying( p_playlist ))
+            [o_window performSelectorOnMainThread: @selector(orderOut:) withObject: self waitUntilDone: YES];
 
-    if(!playlist_IsPlaying( p_playlist ))
-        [o_window performSelectorOnMainThread: @selector(orderOut:) withObject: self waitUntilDone: YES];
- 
-    vlc_object_release( p_playlist );
+        vlc_object_release( p_playlist );
+    }
 
     [super closeVout];
 }

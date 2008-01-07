@@ -3615,7 +3615,7 @@ if test "${enable_opengl}" != "no" &&
   else
     dnl OS X special case (no GL/gl.h but OpenGL/gl.h)
     VLC_ADD_PLUGINS([opengl])
-    VLC_ADD_LDFLAGS([opengl],[-framework OpenGL])
+    VLC_ADD_LDFLAGS([opengl],[-framework OpenGL -framework Carbon])
   fi
 fi
 

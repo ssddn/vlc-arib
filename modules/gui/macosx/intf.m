@@ -677,6 +677,7 @@ static VLCMain *_o_sharedMainInstance = nil;
     [o_controls setupVarMenuItem: o_mi_add_intf target: (vlc_object_t *)p_intf
         var: "intf-add" selector: @selector(toggleVar:)];
 
+#if 0
     /* check whether the user runs a valid version of OSX; alert is auto-released */
     if( MACOS_VERSION < 10.4f )
     {
@@ -691,6 +692,7 @@ static VLCMain *_o_sharedMainInstance = nil;
         i_returnValue = [ourAlert runModal];
         [NSApp terminate: self];
     }
+#endif
 
     vlc_thread_set_priority( p_intf, VLC_THREAD_PRIORITY_LOW );
 }
