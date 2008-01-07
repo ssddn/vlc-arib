@@ -50,7 +50,7 @@
     /* let the window sit on top of everything else and start out completely transparent */
     [win setLevel:NSFloatingWindowLevel];
     [win setAlphaValue:0.0];
-    i_device = 0;
+    o_screen = nil;
     [win center];
 
     return win;
@@ -109,13 +109,11 @@
     NSRect theScreensFrame;
     NSRect theWindowsFrame;
 
-    if( i_device < 0 || i_device >= (signed int)[[NSScreen screens] count] )
-        /* invalid preferences or none specified, using main screen */
-        theScreensFrame = [[NSScreen mainScreen] frame];
+    if( o_screen )
+        theScreensFrame = [o_screen frame];
     else
-        /* user-defined screen */
-        theScreensFrame = [[[NSScreen screens] objectAtIndex: i_device] frame];
-    
+        theScreensFrame = [[NSScreen mainScreen] frame];
+
     theWindowsFrame = [self frame];
     
     theCoordinate.x = (theScreensFrame.size.width - theWindowsFrame.size.width) / 2 + theScreensFrame.origin.x;
@@ -343,12 +341,12 @@
     return b_displayed;
 }
 
-- (void)setVoutWasUpdated: (int)i_newdevice;
+- (void)setVoutWasUpdated: (NSScreen *)o_new_screen;
 {
     b_voutWasUpdated = YES;
-    if( i_newdevice != i_device )
+    if( ![o_new_screen isScreen: o_screen] )
     {
-        i_device = i_newdevice;
+        o_screen = o_new_screen;
         [self center];
     }
 }

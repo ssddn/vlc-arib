@@ -166,6 +166,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     int i_device;
     NSAutoreleasePool *o_pool = [[NSAutoreleasePool alloc] init];
     NSArray *o_screens = [NSScreen screens];
+    NSArray *o_fullscreen_screen = nil;
 
     p_vout  = vout;
     o_view  = view;
@@ -185,6 +186,10 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     {
         i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
     }
+
+    o_fullscreen_screen = [NSScreen screenWithDisplayID:i_device];
+    if( !o_fullscreen_screen )
+        o_fullscreen_screen = [[self window] screen];
 
     /* Setup the menuitem for the multiple displays. */
     if( var_Type( p_real_vout, "video-device" ) == 0 )
@@ -217,10 +222,10 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
                       (int)s_rect.size.width, (int)s_rect.size.height );
 
             text.psz_string = psz_temp;
-            val2.i_int = i;
+            val2.i_int = [o_screen displayID];
             var_Change( p_real_vout, "video-device",
                         VLC_VAR_ADDCHOICE, &val2, &text );
-            if( i == i_device )
+            if( [o_screen isScreen:o_fullscreen_screen] )
             {
                 var_Set( p_real_vout, "video-device", val2 );
             }
@@ -1007,20 +1012,11 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     b_embedded = var_GetBool( p_vout, "macosx-embedded" );
 
     /* Find out on which screen to open the window */
-    if( i_device <= 0 || i_device > (int)[o_screens count] )
-    {
-         /* No preference specified. Use the main screen */
-        o_screen = [NSScreen mainScreen];
-        i_device = [o_screens indexOfObject: o_screen];
-        if( o_screen == [o_screens objectAtIndex: 0] )
-            b_menubar_screen = VLC_TRUE;
-    }
-    else
-    {
-        i_device--;
-        o_screen = [o_screens objectAtIndex: i_device];
-        b_menubar_screen = ( i_device == 0 );
-    }
+    o_screen = [NSScreen screenWithDisplayID: (CGDirectDisplayID)i_device];
+    if( !o_screen )
+        o_screen = [[self window] screen];
+    if( [o_screen isMainScreen] )
+        b_menubar_screen = VLC_TRUE;
 
     if( p_vout->b_fullscreen )
     {
@@ -1034,7 +1030,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
             [[[[VLCMain sharedInstance] getControls] getFSPanel] setActive: nil];
 
         /* tell the fspanel to move itself to front next time it's triggered */
-        [[[[VLCMain sharedInstance] getControls] getFSPanel] setVoutWasUpdated: i_device];
+        [[[[VLCMain sharedInstance] getControls] getFSPanel] setVoutWasUpdated: o_screen];
 
         /* Creates a window with size: screen_rect on o_screen */
         [self initWithContentRect: screen_rect
@@ -1060,7 +1056,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
                 CGDisplayCount dspyCnt;
                 CGPoint gPoint;
 
-                if( i == (unsigned int)i_device ) continue;
+                if( [[o_screens objectAtIndex:i] isScreen: o_screen] ) continue;
 
                 screen_rect = [[o_screens objectAtIndex: i] frame];
 
@@ -1158,7 +1154,6 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
 {
     /* XXX waitUntilDone = NO to avoid a possible deadlock when hitting
        Command-Q */
-    [self setContentView: NULL];
     [self performSelectorOnMainThread: @selector(closeReal:)
         withObject: NULL waitUntilDone: NO];
 }
@@ -1169,10 +1164,17 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     {
         CGDisplayFadeReservationToken token;
         CGAcquireDisplayFadeReservation(kCGMaxDisplayReservationInterval, &token);
-        CGDisplayFade( token, 2, kCGDisplayBlendSolidColor, kCGDisplayBlendNormal, 0, 0, 0, false );
+        CGDisplayFade( token, 0.3 , kCGDisplayBlendNormal, kCGDisplayBlendSolidColor, 0, 0, 0, YES );
+        
+        [self disableScreenUpdatesUntilFlush];
+        [self orderOut: self];
+        
+        CGDisplayFade( token, 0.6 , kCGDisplayBlendSolidColor, kCGDisplayBlendNormal, 0, 0, 0, YES );
         CGReleaseDisplayFadeReservation( token);
         CGDisplayRestoreColorSyncSettings();
     }
+    [NSScreen unblackoutScreens];
+    
     SetSystemUIMode( kUIModeNormal, 0);
     [super close];
 
