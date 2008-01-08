@@ -1075,20 +1075,7 @@ live555-$(LIVEDOTCOM_VERSION).tar.gz:
 
 live: live555-$(LIVEDOTCOM_VERSION).tar.gz
 	$(EXTRACT_GZ)
-	patch -p 0 < Patches/live.patch
-ifdef HAVE_WIN32 
-	patch -p0 < Patches/livedotcom-win32.patch
-endif
-ifdef HAVE_DARWIN_OS
-	patch -p0 < Patches/live-osx.patch
-endif
-	(cd live/liveMedia/include; \
-		mv liveMedia_version.hh liveMedia_version.hh.bak; \
-	sed -e 's/.*LIVEMEDIA_LIBRARY_VERSION_INT.*/#define LIVEMEDIA_LIBRARY_VERSION_INT         9999999999/' liveMedia_version.hh.bak > liveMedia_version.hh )
-	patch -Np0 < Patches/live-config.patch
-ifdef HAVE_UCLIBC
 	patch -p0 < Patches/live-noapps.patch
-endif
 
 .live: live
 ifdef HAVE_WIN32 
@@ -1099,7 +1086,13 @@ ifdef HAVE_DARWIN_OS
 	(cd $<; ./genMakefiles macosx && make)
 else
 	(cd $<; sed -e 's/=/= EXTRA_CPPFLAGS/' -e 's%EXTRA_CPPFLAGS%-I/include%' -i.orig groupsock/Makefile.head)
+ifdef HAVE_UCLIBC
+ifdef HAVE_BIGENDIAN
+	(cd $<; ./genMakefiles armeb-uclibc && make $(HOSTCC))
+endif
+else
 	(cd $<; ./genMakefiles linux && make $(HOSTCC))
+endif
 endif
 endif
 	touch $@
