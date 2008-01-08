@@ -176,15 +176,14 @@
     vout_thread_t *p_vout = vlc_object_find( VLCIntf, VLC_OBJECT_VOUT, FIND_ANYWHERE );
     BOOL blackout_other_displays = var_GetBool( p_vout, "macosx-black" );
     
-    screen = [[NSScreen screens] objectAtIndex: var_GetInteger( p_vout, "video-device" )];
-    
-    [self lockFullscreenAnimation];
-
-    if(! screen )
+    screen = [NSScreen screenWithDisplayID: (CGDirectDisplayID)var_GetInteger( p_vout, "video-device" )]; 
+ 	if( !screen ) 
     {
         msg_Dbg( p_vout, "chosen screen isn't present, using current screen for fullscreen mode" );
         screen = [self screen];
     }
+
+    [self lockFullscreenAnimation];
 
     vlc_object_release( p_vout );
     
@@ -249,7 +248,7 @@
     [o_fullscreen_window setAcceptsMouseMovedEvents: TRUE];
     
     /* tell the fspanel to move itself to front next time it's triggered */
-    [[[[VLCMain sharedInstance] getControls] getFSPanel] setVoutWasUpdated: (int)[[o_fullscreen_window screen] displayID]];
+    [[[[VLCMain sharedInstance] getControls] getFSPanel] setVoutWasUpdated: [o_fullscreen_window screen]];
     
     [super orderOut: self];
     
