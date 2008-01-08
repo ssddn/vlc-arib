@@ -166,7 +166,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     int i_device;
     NSAutoreleasePool *o_pool = [[NSAutoreleasePool alloc] init];
     NSArray *o_screens = [NSScreen screens];
-    NSArray *o_fullscreen_screen = nil;
+    NSScreen *o_fullscreen_screen = nil;
 
     p_vout  = vout;
     o_view  = view;
@@ -187,7 +187,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
         i_device = var_GetInteger( p_real_vout->p_vlc, "video-device" );
     }
 
-    o_fullscreen_screen = [NSScreen screenWithDisplayID:i_device];
+    o_fullscreen_screen = [NSScreen screenWithDisplayID: (CGDirectDisplayID)i_device];
     if( !o_fullscreen_screen )
         o_fullscreen_screen = [[self window] screen];
 
@@ -222,7 +222,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
                       (int)s_rect.size.width, (int)s_rect.size.height );
 
             text.psz_string = psz_temp;
-            val2.i_int = [o_screen displayID];
+            val2.i_int = (int)[o_screen displayID];
             var_Change( p_real_vout, "video-device",
                         VLC_VAR_ADDCHOICE, &val2, &text );
             if( [o_screen isScreen:o_fullscreen_screen] )
@@ -1014,7 +1014,7 @@ int DeviceCallback( vlc_object_t *p_this, const char *psz_variable,
     /* Find out on which screen to open the window */
     o_screen = [NSScreen screenWithDisplayID: (CGDirectDisplayID)i_device];
     if( !o_screen )
-        o_screen = [[self window] screen];
+        o_screen = [self screen];
     if( [o_screen isMainScreen] )
         b_menubar_screen = VLC_TRUE;
 
