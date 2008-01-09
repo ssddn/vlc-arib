@@ -724,6 +724,7 @@ static void ConvertAVC1( sout_mux_t *p_mux, mp4_stream_t *tk, block_t *p_block )
 
             tk->avc.i_profile = tk->avc.sps[1];
             tk->avc.i_profile = tk->avc.sps[2];
+            tk->avc.i_profile_compat = tk->avc.sps[2];
             tk->avc.i_level   = tk->avc.sps[3];
         }
         else if( (last[4]&0x1f) == 8 && tk->avc.i_pps <= 0 )   /* PPS */
