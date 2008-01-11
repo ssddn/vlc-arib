@@ -622,9 +622,8 @@ static int GetTracks( access_t *p_access, vlc_bool_t b_separate,
             /* If we have CDDB info, change the name */
             if( p_sys->p_disc )
             {
-                char *psz_result;
                 cddb_track_t *t = cddb_disc_get_track( p_sys->p_disc, i );
-                if( t!= NULL )
+                if( t != NULL )
                 {
                     if( cddb_track_get_title( t )  != NULL )
                     {
@@ -636,12 +635,12 @@ static int GetTracks( access_t *p_access, vlc_bool_t b_separate,
                             free( p_item->input.psz_name );
                         p_item->input.psz_name = strdup( cddb_track_get_title( t ) );
                     }
-                    psz_result = cddb_track_get_artist( t );
-                    if( psz_result )
+                    if( cddb_track_get_artist( t ) != NULL )
                     {
                         vlc_input_item_AddInfo( &p_item->input,
-                                            _(VLC_META_INFO_CAT), "%s",
-                                            _(VLC_META_ARTIST), psz_result );
+                                            _(VLC_META_INFO_CAT), 
+                                            _(VLC_META_ARTIST), "%s",
+                                            cddb_track_get_artist( t ) );
                     }
                 }
             }
