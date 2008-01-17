@@ -1,7 +1,7 @@
 /*****************************************************************************
  * h264.c: h264/avc video packetizer
  *****************************************************************************
- * Copyright (C) 2001, 2002, 2006 the VideoLAN team
+ * Copyright (C) 2001-2008 the VideoLAN team
  * $Id$
  *
  * Authors: Laurent Aimar <fenrir@via.ecp.fr>
@@ -245,7 +245,7 @@ static int Open( vlc_object_t *p_this )
         /* FIXME: FFMPEG isn't happy at all if you leave this */
         if( p_dec->fmt_out.i_extra ) free( p_dec->fmt_out.p_extra );
         p_dec->fmt_out.i_extra = 0; p_dec->fmt_out.p_extra = NULL;
-        
+
         /* Set the new extradata */
         p_dec->fmt_out.i_extra = p_sys->p_pps->i_buffer + p_sys->p_sps->i_buffer;
         p_dec->fmt_out.p_extra = (uint8_t*)malloc( p_dec->fmt_out.i_extra );
@@ -261,7 +261,7 @@ static int Open( vlc_object_t *p_this )
         /* This type of stream contains data with 3 of 4 byte startcodes 
          * The fmt_in.p_extra MAY contain SPS/PPS with 4 byte startcodes
          * The fmt_out.p_extra should be the same */
-         
+
         /* Set callback */
         p_dec->pf_packetize = Packetize;
 
@@ -310,7 +310,25 @@ static block_t *Packetize( decoder_t *p_dec, block_t **pp_block )
     decoder_sys_t *p_sys = p_dec->p_sys;
     block_t       *p_pic;
 
-    if( !pp_block || !*pp_block ) return NULL;
+    if( !pp_block || !*pp_block )
+        return NULL;
+
+    if( (*pp_block)->i_flags&(BLOCK_FLAG_DISCONTINUITY|BLOCK_FLAG_CORRUPTED) )
+    {
+        if( (*pp_block)->i_flags&BLOCK_FLAG_CORRUPTED )
+        {
+            p_sys->i_state = STATE_NOSYNC;
+            block_BytestreamFlush( &p_sys->bytestream );
+
+            if( p_sys->p_frame )
+                block_ChainRelease( p_sys->p_frame );
+            p_sys->p_frame = NULL;
+            p_sys->slice.i_frame_type = 0;
+            p_sys->b_slice = VLC_FALSE;
+        }
+        block_Release( *pp_block );
+        return NULL;
+    }
 
     block_BytestreamPush( &p_sys->bytestream, *pp_block );
 
@@ -399,7 +417,13 @@ static block_t *PacketizeAVC1( decoder_t *p_dec, block_t **pp_block )
     block_t       *p_ret = NULL;
     uint8_t       *p;
 
-    if( !pp_block || !*pp_block ) return NULL;
+    if( !pp_block || !*pp_block )
+        return NULL;
+    if( (*pp_block)->i_flags&(BLOCK_FLAG_DISCONTINUITY|BLOCK_FLAG_CORRUPTED) )
+    {
+        block_Release( *pp_block );
+        return NULL;
+    }
 
     p_block = *pp_block;
     *pp_block = NULL;
@@ -514,7 +538,7 @@ static block_t *ParseNALBlock( decoder_t *p_dec, block_t *p_frag )
         if( !p_sys->b_header && p_sys->slice.i_frame_type != BLOCK_FLAG_TYPE_I) \
             break;                                            \
                                                               \
-        if( p_sys->slice.i_frame_type == BLOCK_FLAG_TYPE_I && p_sys->p_sps && p_sys->p_pps && !p_sys->b_header ) \
+        if( p_sys->slice.i_frame_type == BLOCK_FLAG_TYPE_I && p_sys->p_sps && p_sys->p_pps ) \
         { \
             block_t *p_sps = block_Duplicate( p_sys->p_sps ); \
             block_t *p_pps = block_Duplicate( p_sys->p_pps ); \
