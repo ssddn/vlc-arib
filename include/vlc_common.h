@@ -599,6 +599,19 @@ static int64_t GCD( int64_t a, int64_t b )
     }                                                                         \
     while( 0 )
 
+#define TAB_INIT( count, tab )                  \
+  do {                                          \
+    (count) = 0;                                \
+    (tab) = NULL;                               \
+  } while(0)
+
+#define TAB_CLEAN( count, tab )                 \
+  do {                                          \
+    if( tab ) free( tab );                      \
+    (count)= 0;                                 \
+    (tab)= NULL;                                \
+  } while(0)
+
 
 #define TAB_APPEND( count, tab, p )             \
     if( (count) > 0 )                           \
