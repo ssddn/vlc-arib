@@ -1,7 +1,5 @@
 $Id$
 
-CVE IDs pending: 2008-0295, 2008-0296, 2007-6681, 2007-6682, 2007-6683
-
 Changes between 0.8.6d and 0.8.6e (not yet released):
 -----------------------------------------------------
 
@@ -9,12 +7,11 @@ Various bugfixes:
  * Resume playback for viewing content over FTP
 
 Security updates:
- * VideoLAN-SA-0801
-     - Subtitle demuxers
-     - HTTP Interface
- * VideoLAN-SA-0802
-     - Mozilla and ActiveX plugins
-     - M3U Playlist Demuxer
+ * Subtitle demuxers overflow (CVE-2007-6681)
+ * HTTP listener format string injection (CVE-2007-6682)
+ --- FIXME: THE FOLLOWING ISSUES HAVE NOT BEEN FIXED YET ---
+ * Mozilla and ActiveX plugins (VideoLAN-0802, CVE-2007-6683)
+ * Real RTSP overflows (CVE-2008-0295, CVE-2008-0296)
 
 Audio filter:
  * Fixed DTS to S/PDIF converter
