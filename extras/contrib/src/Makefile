@@ -1,7 +1,7 @@
 #***************************************************************************
 # src/Makefile : Dearchive and compile all files necessary
 # ***************************************************************************
-# Copyright (C) 2003 - 2007 the VideoLAN team
+# Copyright (C) 2003 - 2008 the VideoLAN team
 # $Id$
 #
 # Authors: Christophe Massiot <massiot@via.ecp.fr>
@@ -1823,6 +1823,7 @@ SDL_image-$(SDL_IMAGE_VERSION).tar.gz:
 SDL_image: SDL_image-$(SDL_IMAGE_VERSION).tar.gz 
 	$(EXTRACT_GZ)
 	patch -p 0 < Patches/SDL_image.patch
+	patch -p0 < Patches/SDL_image-CVE-2006-4484.patch
 
 .SDL_image: SDL_image .SDL .png .jpeg .tiff
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --enable-tif --disable-sdltest CFLAGS="$(CFLAGS)" && make && make install)
