@@ -745,9 +745,6 @@ flac: flac-$(FLAC_VERSION).tar.gz
 ifdef HAVE_DARWIN_OS
 	(patch -p 0 < Patches/flac-mactel.patch)
 endif
-ifneq ($(HOST),$(BUILD))
-	(patch -p 0 < Patches/flac-cross.patch && cd $@ && autoconf)
-endif
 
 .FLAC: flac 
 ifdef HAVE_WIN32
@@ -1399,7 +1396,7 @@ ifdef HAVE_WIN32
 endif
 
 .xml: xml
-	(cd xml; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --with-minimal --with-catalog --with-reader --with-tree --with-push --with-xptr --with-valid --with-writer --with-output --with-xpath --with-xinclude --with-sax1 --without-zlib --without-iconv --without-http --without-ftp && make && make install)
+	(cd xml; CFLAGS="-DLIBXML_STATIC" $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --with-minimal --with-catalog --with-reader --with-tree --with-push --with-xptr --with-valid --with-writer --with-output --with-xpath --with-xinclude --with-sax1 --without-zlib --without-iconv --without-http --without-ftp && make && make install)
 ifndef HAVE_DARWIN_OS
 	$(INSTALL_NAME)
 endif
