@@ -393,6 +393,7 @@ static int  Open ( vlc_object_t *p_this )
         if( sub->readSource() == NULL ) continue;
 
         tk = (live_track_t*)malloc( sizeof( live_track_t ) );
+	if( !tk ) goto error;
         tk->p_demux = p_demux;
         tk->waiting = 0;
         tk->i_pts   = 0;
