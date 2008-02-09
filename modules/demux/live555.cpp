@@ -795,8 +795,7 @@ describe:
     authenticator.setUsernameAndPassword( (const char*)psz_user,
                                           (const char*)psz_pwd );
 
-    psz_options = p_sys->rtsp->sendOptionsCmd( psz_url/*, psz_user, psz_pwd,
-                                               &authenticator*/ );
+    psz_options = p_sys->rtsp->sendOptionsCmd( psz_url );
     if( psz_options ) delete [] psz_options;
 
     p_sdp = p_sys->rtsp->describeURL( psz_url,
@@ -805,14 +804,15 @@ describe:
     if( p_sdp == NULL )
     {
         /* failure occurred */
-        int i_code = 0;
+        uint i_code = 0;
         const char *psz_error = p_sys->env->getResultMsg();
 
         if( var_GetBool( p_demux, "rtsp-http" ) )
             sscanf( psz_error, "%*s %*s HTTP GET %*s HTTP/%*u.%*u %3u %*s",
                     &i_code );
-        else sscanf( psz_error, "%*sRTSP/%*u.%*u %3u %*s", &i_code );
-        msg_Dbg( p_demux, "DESCRIBE failed with %d: %s", i_code, psz_error );
+        else
+            sscanf( psz_error, "%*s %*s %*s %*s RTSP/%*u.%*u %3u %*s", &i_code );
+        msg_Dbg( p_demux, "DESCRIBE failed with %d: [%s]", i_code, psz_error );
 
         if( i_code == 401 )
         {
