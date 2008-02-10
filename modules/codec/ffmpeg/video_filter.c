@@ -131,6 +131,7 @@ static int OpenFilterEx( vlc_object_t *p_this, vlc_bool_t b_enable_croppadd )
 
     if( CheckInit( p_filter ) != VLC_SUCCESS )
     {	
+        if( p_sys->p_rsc ) img_resample_close( p_sys->p_rsc );
         avpicture_free( &p_sys->tmp_pic );
         free( p_sys );
         return VLC_EGENERIC;
@@ -174,7 +175,6 @@ void E_(CloseFilter)( vlc_object_t *p_this )
     filter_sys_t *p_sys = p_filter->p_sys;
 
     if( p_sys->p_rsc ) img_resample_close( p_sys->p_rsc );
-
     avpicture_free( &p_sys->tmp_pic );
 
     free( p_sys );
