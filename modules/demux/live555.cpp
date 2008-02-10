@@ -804,7 +804,7 @@ describe:
     if( p_sdp == NULL )
     {
         /* failure occurred */
-        uint i_code = 0;
+        uint32_t i_code = 0;
         const char *psz_error = p_sys->env->getResultMsg();
 
         if( var_GetBool( p_demux, "rtsp-http" ) )
