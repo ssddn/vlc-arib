@@ -103,7 +103,7 @@ struct vout_sys_t
     /* X11 generic properties */
     vlc_bool_t          b_altfullscreen;          /* which fullscreen method */
 #ifdef HAVE_SYS_SHM_H
-    vlc_bool_t          b_shm;               /* shared memory extension flag */
+    int                 i_shm_opcode;      /* shared memory extension opcode */
 #endif
 
 #ifdef MODULE_NAME_IS_xvideo
