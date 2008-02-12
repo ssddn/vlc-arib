@@ -317,12 +317,14 @@ static int  Open ( vlc_object_t *p_this )
 
             if( p_demux->b_die || p_demux->b_error )
             {
+                free( p_sdp );
                 goto error;
             }
 
             if( i_read < 0 )
             {
                 msg_Err( p_demux, "failed to read SDP" );
+                free( p_sdp );
                 goto error;
             }
 
@@ -387,13 +389,20 @@ static int  Open ( vlc_object_t *p_this )
         live_track_t *tk;
 
         if( p_demux->b_die || p_demux->b_error )
+        {
+            delete iter;
             goto error;
+        }
 
         /* Check if we will receive data from this subsession for this track */
         if( sub->readSource() == NULL ) continue;
 
         tk = (live_track_t*)malloc( sizeof( live_track_t ) );
-	if( !tk ) goto error;
+	if( !tk ) 
+        {
+            delete iter;
+            goto error;
+        }
         tk->p_demux = p_demux;
         tk->waiting = 0;
         tk->i_pts   = 0;
@@ -407,7 +416,10 @@ static int  Open ( vlc_object_t *p_this )
         tk->p_buffer    = (uint8_t *)malloc( 65536 );
 
         if( !tk->p_buffer )
+        {
+            delete iter;
             goto error;
+        }
 
         /* Value taken from mplayer */
         if( !strcmp( sub->mediumName(), "audio" ) )
@@ -720,6 +732,7 @@ static int Connect( demux_t *p_demux )
 {
     demux_sys_t *p_sys = p_demux->p_sys;
     Authenticator authenticator;
+    vlc_bool_t b_firsttime = VLC_TRUE; // HACK FOR LIVE555
 
     char *psz_user    = NULL;
     char *psz_pwd     = NULL;
@@ -795,11 +808,11 @@ describe:
     authenticator.setUsernameAndPassword( (const char*)psz_user,
                                           (const char*)psz_pwd );
 
-    psz_options = p_sys->rtsp->sendOptionsCmd( psz_url );
+    psz_options = p_sys->rtsp->sendOptionsCmd( psz_url, psz_user, psz_pwd,
+                                               &authenticator );
     if( psz_options ) delete [] psz_options;
 
-    p_sdp = p_sys->rtsp->describeURL( psz_url,
-                    &authenticator,
+    p_sdp = p_sys->rtsp->describeURL( psz_url, &authenticator,
                     var_CreateGetBool( p_demux, "rtsp-kasenna" ) );
     if( p_sdp == NULL )
     {
@@ -808,11 +821,22 @@ describe:
         const char *psz_error = p_sys->env->getResultMsg();
 
         if( var_GetBool( p_demux, "rtsp-http" ) )
+        {
             sscanf( psz_error, "%*s %*s HTTP GET %*s HTTP/%*u.%*u %3u %*s",
                     &i_code );
+        }
         else
-            sscanf( psz_error, "%*s %*s %*s %*s RTSP/%*u.%*u %3u %*s", &i_code );
+        {
+            const char *psz_tmp = strstr( psz_error, "RTSP" );
+            sscanf( psz_tmp, "RTSP/%*s%3u", &i_code );
+        }
         msg_Dbg( p_demux, "DESCRIBE failed with %d: [%s]", i_code, psz_error );
+
+        if( b_firsttime )
+        { /* HACK FOR LIVE555 */
+            i_code = 0;
+            b_firsttime = VLC_FALSE;
+        }
 
         if( i_code == 401 )
         {
@@ -1462,7 +1486,9 @@ static void StreamRead( void *p_private, unsigned int i_size,
                 {
                     tk->fmt.i_extra = atomLength-8;
                     tk->fmt.p_extra = malloc( tk->fmt.i_extra );
-                    memcpy(tk->fmt.p_extra, pos+8, atomLength-8);
+                    if( !tk->fmt.p_extra )
+                        tk->fmt.i_extra = 0;
+                    else memcpy(tk->fmt.p_extra, pos+8, atomLength-8);
                     break;
                 }
                 pos += atomLength;
@@ -1472,7 +1498,9 @@ static void StreamRead( void *p_private, unsigned int i_size,
         {
             tk->fmt.i_extra        = qtState.sdAtomSize - 16;
             tk->fmt.p_extra        = malloc( tk->fmt.i_extra );
-            memcpy( tk->fmt.p_extra, &sdAtom[12], tk->fmt.i_extra );
+            if( !tk->fmt.p_extra )
+                tk->fmt.i_extra = 0;
+            else memcpy( tk->fmt.p_extra, &sdAtom[12], tk->fmt.i_extra );
         }
         tk->p_es = es_out_Add( p_demux->out, &tk->fmt );
     }
