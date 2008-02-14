@@ -5,7 +5,7 @@ Changes between 0.8.6d and 0.8.6e (not yet released):
 
 Various bugfixes:
  * Resume playback for viewing content over FTP
- * Fix XShm detection with remote X11
+ * Fixed XShm detection with remote X11
 
 Security updates:
  * Subtitle demuxers overflow (CVE-2007-6681)
@@ -24,13 +24,16 @@ Audio output:
  * Fixed 5.1 audio on ALSA
 
 Access:
- * Fix some RTSP hanging and user/password passing through RTSP URLs
+ * Fixed some RTSP hanging and user/password passing through RTSP URLs
 
 Stream output:
  * Fixed waiting for SPS/PPS problem in H.264 packetizer
 
 Encoders:
  * Improved compatibility for creating H.264 video playable on iPhones
+ * Fixed detection of optimal amount of threads for multi-threaded H.264
+   encoding on multi-cpu systems
+   - Note that this is used when transcode threads is set to 0 (default)
 
 Mac OS X Interface & Port:
  * Restored compatibility with Mac OS X 10.3.9
