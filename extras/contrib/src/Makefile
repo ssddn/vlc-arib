@@ -1191,7 +1191,7 @@ CLEAN_PKG += libdca
 
 ifdef SVN
 x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 701 x264
+	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 736 x264
 ifdef HAVE_WIN32
 	(cd $@; patch -p 0 < ../Patches/x264-svn-win32.patch )
 endif
