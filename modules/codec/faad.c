@@ -418,9 +418,9 @@ static void DoReordering( decoder_t *p_dec,
     int i, j, k;
 
     /* Find the channels mapping */
-    for( k = 0, j = 0; k < i_nb_channels; k++ )
+    for( i = 0, j = 0; i < MAX_CHANNEL_POSITIONS; i++ )
     {
-        for( i = 0; i < MAX_CHANNEL_POSITIONS; i++ )
+        for( k = 0; k < i_nb_channels; k++ )
         {
             if( pi_channels_ordered[i] == pi_chan_positions[k] )
             {
