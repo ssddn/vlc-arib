@@ -27,17 +27,17 @@ Stream output:
  * Fixed waiting for SPS/PPS problem in H.264 packetizer
 
 Encoders:
- * Improved compatibility for creating H.264 video playable on iPhones
+ * Improved compatibility for creating H.264 video files playable on iPhones
  * Improved detection of optimal amount of threads for multi-threaded H.264
    encoding on multi-cpu systems
    - Note that this is used when transcode threads is set to 0 (default)
-   - Not supported on Windows (multiple threads requires manual configuration)
+   - Not supported on Windows (multiple threads require manual configuration)
 
 Mac OS X Interface & Port:
  * Restored compatibility with Mac OS X 10.3.9
- * Corrected fullscreen behavior on multi-screen setups
+ * Improved fullscreen behavior on multi-screen setups
     - Note that the video device setting is reset on first launch
- * Improved behavior of the Preferences window
+ * Corrected behavior of the Preferences panel
  * VLC no longer crashes on quit while playing
 
 Localization:
