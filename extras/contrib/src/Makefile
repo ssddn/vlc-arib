@@ -37,10 +37,6 @@ include ./packages.mak
 export PATH := $(PREFIX)/bin:$(EXTRA_PATH):$(PATH)
 export PKG_CONFIG_PATH
 export PKG_CONFIG_LIBDIR = $(PREFIX)/lib/pkgconfig
-export DYLD_LIBRARY_PATH = $(PREFIX)/lib
-# following is required for configure scripts that check dyld libraries
-# by building and running a test app 
-export DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):$(PREFIX)/vlc-lib
 export MACOSX_DEPLOYMENT_TARGET = $(SDK_TARGET)
 export LIBRARY_PATH := $(PREFIX)/lib:$(LIBRARY_PATH)
 export CFLAGS = -I$(PREFIX)/include $(EXTRA_CFLAGS) $(EXTRA_CPPFLAGS)
