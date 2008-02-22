@@ -34,6 +34,7 @@
 #include "network.h"
 
 #include <iostream>
+#include <limits.h>
 
 #if defined( WIN32 )
 #   include <winsock2.h>
