@@ -816,6 +816,10 @@ static void ALSAFill( aout_instance_t * p_aout )
             /* Here the device should be either in the RUNNING state.
              * p_status is valid. */
             snd_pcm_sframes_t delay = snd_pcm_status_get_delay( p_status );
+            if( delay == 0 )/* sometimes snd_pcm_status_get_delay() returns 0 */
+                if( snd_pcm_delay( p_sys->p_snd_pcm, &delay ) < 0 )
+                    delay = 0;
+
             int i_bytes = snd_pcm_frames_to_bytes( p_sys->p_snd_pcm, delay );
             next_date = mdate() + ( (mtime_t)i_bytes * 1000000
                     / p_aout->output.output.i_bytes_per_frame
