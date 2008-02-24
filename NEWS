@@ -28,10 +28,9 @@ Stream output:
 
 Encoders:
  * Improved compatibility for creating H.264 video files playable on iPhones
- * Improved detection of optimal amount of threads for multi-threaded H.264
-   encoding on multi-cpu systems
-   - Note that this is used when transcode threads is set to 0 (default)
-   - Not supported on Windows (multiple threads require manual configuration)
+ * Improved detection of optimal amount of threads for multi-threaded H.264 encoding on multi-cpu systems
+    - Note that this is used when transcode threads is set to 0 (default)
+    - Not supported on Windows (multiple threads require manual configuration)
 
 Mac OS X Interface & Port:
  * Restored compatibility with Mac OS X 10.3.9
@@ -189,12 +188,12 @@ Interfaces:
 Windows port:
  * Support for Unicode filenames (Windows NT and above)
    Windows 9x/ME users: 
-     - Please note that these versions of Windows are not officially supported
-     - Unicode support for Windows 9x/ME applications is available through the
-       Microsoft Layer for Unicode available from the following location:
-       http://www.microsoft.com.nsatc.net/globaldev/handson/dev/mslu_announce.mspx
-       Download the MSLU package (unicows) and extract the content into the folder
-       C:\Windows\System
+    - Please note that these versions of Windows are not officially supported
+    - Unicode support for Windows 9x/ME applications is available through the
+      Microsoft Layer for Unicode available from the following location:
+      http://www.microsoft.com.nsatc.net/globaldev/handson/dev/mslu_announce.mspx
+      Download the MSLU package (unicows) and extract the content into the folder
+      C:\Windows\System
  * Fixed IPv6 support on the client side
  * Fixed disable screensaver (Direct3D and DirectX video output)
 
@@ -221,8 +220,8 @@ Input:
  * Initial support for RTSP-over-HTTP (to allow NAT traversal)
  * Linux DV (Digital Video - Firewire) input
  * Improvements to the Audio CD input
-     - Separate playlist entries for the tracks 
-     - Support for CDDB 
+    - Separate playlist entries for the tracks 
+    - Support for CDDB 
  * Support for more DVB (satellite) encryption modules
  * Improved subtitles encoding support
  * Improved support for playing MP4 files from the Web
