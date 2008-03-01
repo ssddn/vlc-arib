@@ -763,9 +763,9 @@ static int MP4_ReadBox_stts( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_stts->i_entry_count );
 
     p_box->data.p_stts->i_sample_count =
-        calloc( sizeof( uint32_t ), p_box->data.p_stts->i_entry_count );
+        calloc( p_box->data.p_stts->i_entry_count, sizeof(uint32_t) );
     p_box->data.p_stts->i_sample_delta =
-        calloc( sizeof( uint32_t ), p_box->data.p_stts->i_entry_count );
+        calloc( p_box->data.p_stts->i_entry_count, sizeof(uint32_t) );
 
     for( i = 0; (i < p_box->data.p_stts->i_entry_count )&&( i_read >=8 ); i++ )
     {
@@ -797,9 +797,9 @@ static int MP4_ReadBox_ctts( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_ctts->i_entry_count );
 
     p_box->data.p_ctts->i_sample_count =
-        calloc( sizeof( uint32_t ), p_box->data.p_ctts->i_entry_count );
+        calloc( p_box->data.p_ctts->i_entry_count, sizeof(uint32_t) );
     p_box->data.p_ctts->i_sample_offset =
-        calloc( sizeof( uint32_t ), p_box->data.p_ctts->i_entry_count );
+        calloc( p_box->data.p_ctts->i_entry_count, sizeof(uint32_t) );
 
     for( i = 0; (i < p_box->data.p_ctts->i_entry_count )&&( i_read >=8 ); i++ )
     {
@@ -1429,7 +1429,7 @@ static int MP4_ReadBox_stsz( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_stsz->i_sample_count );
 
     p_box->data.p_stsz->i_entry_size =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsz->i_sample_count );
+        calloc( p_box->data.p_stsz->i_sample_count, sizeof(uint32_t) );
 
     if( !p_box->data.p_stsz->i_sample_size )
     {
@@ -1464,11 +1464,11 @@ static int MP4_ReadBox_stsc( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_stsc->i_entry_count );
 
     p_box->data.p_stsc->i_first_chunk =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsc->i_entry_count );
+        calloc( p_box->data.p_stsc->i_entry_count, sizeof(uint32_t) );
     p_box->data.p_stsc->i_samples_per_chunk =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsc->i_entry_count );
+        calloc( p_box->data.p_stsc->i_entry_count, sizeof(uint32_t) );
     p_box->data.p_stsc->i_sample_description_index =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsc->i_entry_count );
+        calloc( p_box->data.p_stsc->i_entry_count, sizeof(uint32_t) );
 
     for( i = 0; (i < p_box->data.p_stsc->i_entry_count )&&( i_read >= 12 );i++ )
     {
@@ -1503,7 +1503,7 @@ static int MP4_ReadBox_stco_co64( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_co64->i_entry_count );
 
     p_box->data.p_co64->i_chunk_offset =
-        calloc( sizeof( uint64_t ), p_box->data.p_co64->i_entry_count );
+        calloc( p_box->data.p_co64->i_entry_count, sizeof(uint64_t) );
 
     for( i = 0; i < p_box->data.p_co64->i_entry_count; i++ )
     {
@@ -1549,7 +1549,7 @@ static int MP4_ReadBox_stss( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_stss->i_entry_count );
 
     p_box->data.p_stss->i_sample_number =
-        calloc( sizeof( uint32_t ), p_box->data.p_stss->i_entry_count );
+        calloc( p_box->data.p_stss->i_entry_count, sizeof(uint32_t) );
 
     for( i = 0; (i < p_box->data.p_stss->i_entry_count )&&( i_read >= 4 ); i++ )
     {
@@ -1584,10 +1584,10 @@ static int MP4_ReadBox_stsh( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_stsh->i_entry_count );
 
     p_box->data.p_stsh->i_shadowed_sample_number =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsh->i_entry_count );
+        calloc( p_box->data.p_stsh->i_entry_count, sizeof(uint32_t) );
 
     p_box->data.p_stsh->i_sync_sample_number =
-        calloc( sizeof( uint32_t ), p_box->data.p_stsh->i_entry_count );
+        calloc( p_box->data.p_stsh->i_entry_count, sizeof(uint32_t) );
 
 
     for( i = 0; (i < p_box->data.p_stss->i_entry_count )&&( i_read >= 8 ); i++ )
@@ -1620,7 +1620,7 @@ static int MP4_ReadBox_stdp( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GETVERSIONFLAGS( p_box->data.p_stdp );
 
     p_box->data.p_stdp->i_priority =
-        calloc( sizeof( uint16_t ), i_read / 2 );
+        calloc( i_read / 2, sizeof(uint16_t) );
 
     for( i = 0; i < i_read / 2 ; i++ )
     {
@@ -1653,13 +1653,17 @@ static int MP4_ReadBox_padb( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_padb->i_sample_count );
 
     p_box->data.p_padb->i_reserved1 =
-        calloc( sizeof( uint16_t ), ( p_box->data.p_padb->i_sample_count + 1 ) / 2 );
+        calloc( ( p_box->data.p_padb->i_sample_count + 1 ) / 2,
+                sizeof(uint16_t) );
     p_box->data.p_padb->i_pad2 =
-        calloc( sizeof( uint16_t ), ( p_box->data.p_padb->i_sample_count + 1 ) / 2 );
+        calloc( ( p_box->data.p_padb->i_sample_count + 1 ) / 2,
+                sizeof(uint16_t) );
     p_box->data.p_padb->i_reserved2 =
-        calloc( sizeof( uint16_t ), ( p_box->data.p_padb->i_sample_count + 1 ) / 2 );
+        calloc( ( p_box->data.p_padb->i_sample_count + 1 ) / 2,
+                sizeof(uint16_t) );
     p_box->data.p_padb->i_pad1 =
-        calloc( sizeof( uint16_t ), ( p_box->data.p_padb->i_sample_count + 1 ) / 2 );
+        calloc( ( p_box->data.p_padb->i_sample_count + 1 ) / 2,
+                sizeof(uint16_t) );
 
 
     for( i = 0; i < i_read / 2 ; i++ )
@@ -1700,13 +1704,13 @@ static int MP4_ReadBox_elst( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( p_box->data.p_elst->i_entry_count );
 
     p_box->data.p_elst->i_segment_duration =
-        calloc( sizeof( uint64_t ), p_box->data.p_elst->i_entry_count );
+        calloc( p_box->data.p_elst->i_entry_count, sizeof(uint64_t) );
     p_box->data.p_elst->i_media_time =
-        calloc( sizeof( int64_t ),  p_box->data.p_elst->i_entry_count );
+        calloc( p_box->data.p_elst->i_entry_count, sizeof(uint64_t) );
     p_box->data.p_elst->i_media_rate_integer =
-        calloc( sizeof( uint16_t ), p_box->data.p_elst->i_entry_count );
+        calloc( p_box->data.p_elst->i_entry_count, sizeof(uint16_t) );
     p_box->data.p_elst->i_media_rate_fraction=
-        calloc( sizeof( uint16_t ), p_box->data.p_elst->i_entry_count );
+        calloc( p_box->data.p_elst->i_entry_count, sizeof(uint16_t) );
 
 
     for( i = 0; i < p_box->data.p_elst->i_entry_count; i++ )
