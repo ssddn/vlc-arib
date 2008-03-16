@@ -352,6 +352,7 @@ static int MP4_ReadBoxSkip( stream_t *p_stream, MP4_Box_t *p_box )
 
 static int MP4_ReadBox_ftyp( stream_t *p_stream, MP4_Box_t *p_box )
 {
+    unsigned code = 0;
     MP4_READBOX_ENTER( MP4_Box_data_ftyp_t );
 
     MP4_GETFOURCC( p_box->data.p_ftyp->i_major_brand );
@@ -360,8 +361,12 @@ static int MP4_ReadBox_ftyp( stream_t *p_stream, MP4_Box_t *p_box )
     if( ( p_box->data.p_ftyp->i_compatible_brands_count = i_read / 4 ) )
     {
         unsigned int i;
-        p_box->data.p_ftyp->i_compatible_brands =
-            calloc( p_box->data.p_ftyp->i_compatible_brands_count, sizeof(uint32_t));
+        uint32_t *tab = p_box->data.p_ftyp->i_compatible_brands =
+            calloc( p_box->data.p_ftyp->i_compatible_brands_count,
+                    sizeof(uint32_t));
+
+        if( tab == NULL )
+            goto error;
 
         for( i =0; i < p_box->data.p_ftyp->i_compatible_brands_count; i++ )
         {
@@ -372,8 +377,10 @@ static int MP4_ReadBox_ftyp( stream_t *p_stream, MP4_Box_t *p_box )
     {
         p_box->data.p_ftyp->i_compatible_brands = NULL;
     }
+    code = 1;
 
-    MP4_READBOX_EXIT( 1 );
+error:
+    MP4_READBOX_EXIT( code );
 }
 
 static void MP4_FreeBox_ftyp( MP4_Box_t *p_box )
