@@ -685,8 +685,8 @@ static void TextPreviousLine( text_t *txt )
 /*****************************************************************************
  * Specific Subtitle function
  *****************************************************************************/
-#define MAX_LINE 8192
-#define MAX_LINE_STR "8192" /* used in *scanf() regexps */
+#define MAX_LINE 8192 /* must store the null terminator */
+#define MAX_LINE_STR "8191" /* used in *scanf() regexps */
 static int ParseMicroDvd( demux_t *p_demux, subtitle_t *p_subtitle )
 {
     demux_sys_t *p_sys = p_demux->p_sys;
