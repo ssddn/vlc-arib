@@ -2,7 +2,7 @@
  * m3u.c : M3U playlist format import
  *****************************************************************************
  * Copyright (C) 2004 the VideoLAN team
- * $Id$
+ * $Id: ac17d2bfd574048ba5465a43e64cf7afb3746c71 $
  *
  * Authors: Clément Stenac <zorglub@videolan.org>
  *          Sigmund Augdal Helberg <dnumgis@videolan.org>
@@ -207,6 +207,8 @@ static int Demux( demux_t *p_demux )
                 }
                 else
                 {
+                    intf_UserFatal( p_demux, _("Options disabled") ,
+                     _("m3u EXTVLCOPT parsing is disabled for security reasons.\nIf you need it and trust the m3u playlist you are trying to open, please enable it from:\nPreferences > Input/Codecs > Demuxers > Playlist > Enable parsinf of EXTVLCOPT: options.\nDon't forget to disable it before opening an untrusted playlist") );
                     msg_Err( p_demux, "m3u EXTVLCOPT parsing is disabled for security reasons. If you need it and trust the m3u playlist you are trying to open, please append --m3u-extvlcopt to your command line." );
                 }
             }
