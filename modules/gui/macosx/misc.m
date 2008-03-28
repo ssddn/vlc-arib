@@ -79,10 +79,9 @@ static NSMutableArray *blackoutWindows = NULL;
     unsigned int i;
 
     /* Free our previous blackout window (follow blackoutWindow alloc strategy) */
-    [blackoutWindows makeObjectsPerformSelector:@selector(close)];
+    [blackoutWindows makeObjectsPerformSelector:@selector(orderOut:)];
     [blackoutWindows removeAllObjects];
 
- 
     for(i = 0; i < [[NSScreen screens] count]; i++)
     {
         NSScreen *screen = [[NSScreen screens] objectAtIndex: i];
@@ -103,15 +102,15 @@ static NSMutableArray *blackoutWindows = NULL;
                 backing: NSBackingStoreBuffered defer: NO screen: screen];
         [blackoutWindow setBackgroundColor:[NSColor blackColor]];
         [blackoutWindow setLevel: NSFloatingWindowLevel]; /* Disappear when Expose is triggered */
-
+ 
         [blackoutWindow displayIfNeeded];
         [blackoutWindow orderFront: self];
 
         [blackoutWindows addObject: blackoutWindow];
         [blackoutWindow release];
-
-        if( [screen isMainScreen] )
-            SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+        
+        if( [screen isMainScreen ] )
+           SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
     }
 }
 
@@ -122,10 +121,10 @@ static NSMutableArray *blackoutWindows = NULL;
     for(i = 0; i < [blackoutWindows count]; i++)
     {
         VLCWindow *blackoutWindow = [blackoutWindows objectAtIndex: i];
-        [blackoutWindow close];
+        [blackoutWindow orderOut: self];
     }
-
-    SetSystemUIMode( kUIModeNormal, 0);
+    
+   SetSystemUIMode( kUIModeNormal, 0);
 }
 
 @end

@@ -70,7 +70,6 @@
         * in middle of an animation, providing that the enter/leave functions
         * are called from the same thread */
     o_animation_lock = [[NSRecursiveLock alloc] init];
-    b_animation_lock_alreadylocked = NO;
 }
 
 - (void)setTime:(NSString *)o_arg_time position:(float)f_position
@@ -232,11 +231,7 @@
         [self hasBecomeFullscreen];
         return;
     }
-    
-    if (blackout_other_displays)
-        [screen blackoutOtherScreens]; /* We should do something like [screen blackoutOtherScreens]; */
-    
-    b_animation_lock_alreadylocked = NO;
+
     [self unlockFullscreenAnimation];
 }
 
@@ -274,8 +269,7 @@
     {
         /* We always try to do so */
         [NSScreen unblackoutScreens];
-        
-        b_animation_lock_alreadylocked = NO;
+
         [self unlockFullscreenAnimation];
         return;
     }
@@ -287,7 +281,7 @@
     CGDisplayFade( token, 0.3, kCGDisplayBlendNormal, kCGDisplayBlendSolidColor, 0, 0, 0, YES );
     
     [[[[VLCMain sharedInstance] getControls] getFSPanel] setNonActive: nil];
-    SetSystemUIMode( kUIModeNormal, kUIOptionAutoShowMenuBar);
+    SetSystemUIMode( kUIModeNormal, 0);
     
     /* We always try to do so */
     [NSScreen unblackoutScreens];
@@ -320,7 +314,6 @@
     
     [o_fullscreen_window release];
     o_fullscreen_window = nil;
-    b_animation_lock_alreadylocked = NO;
     [self unlockFullscreenAnimation];
 }
 
