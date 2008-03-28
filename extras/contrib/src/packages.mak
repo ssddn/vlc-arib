@@ -23,8 +23,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 # ***************************************************************************
 
-GNU=http://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu
-SF=http://heanet.dl.sourceforge.net/sourceforge
+GNU=ftp://ftp.esat.net/pub/gnu
+SF=http://internap.dl.sourceforge.net/sourceforge
 VIDEOLAN=http://download.videolan.org/pub/videolan
 PERL_VERSION=5.8.8
 PERL_URL=http://ftp.funet.fi/pub/CPAN/src/perl-$(PERL_VERSION).tar.gz
