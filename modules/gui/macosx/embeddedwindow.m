@@ -2,7 +2,7 @@
 * embeddedwindow.m: MacOS X interface module
 *****************************************************************************
 * Copyright (C) 2002-2005 the VideoLAN team
-* $Id$
+* $Id: 3bb1ea9a38b042486f837029f401ecd63700e444 $
 *
 * Authors: Benjamin Pracht <bigben at videolan dot org>
 *
@@ -174,8 +174,8 @@
     NSRect screen_rect;
     NSRect rect;
     vout_thread_t *p_vout = vlc_object_find( VLCIntf, VLC_OBJECT_VOUT, FIND_ANYWHERE );
-    BOOL blackout_other_displays = var_GetBool( p_vout, "macosx-black" );
-    
+    BOOL blackout_other_displays = config_GetInt( VLCIntf, "macosx-black" );
+
     screen = [NSScreen screenWithDisplayID: (CGDirectDisplayID)var_GetInteger( p_vout, "video-device" )]; 
  	if( !screen ) 
     {
@@ -216,8 +216,8 @@
             SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
         
         if (blackout_other_displays)
-            [screen blackoutOtherScreens]; /* We should do something like [screen blackoutOtherScreens]; */
-        
+            [screen blackoutOtherScreens];
+
         [o_view retain];
         [[self contentView] replaceSubview:o_view with:o_temp_view];
         [o_temp_view setFrame:[o_view frame]];
