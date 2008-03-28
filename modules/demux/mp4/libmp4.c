@@ -2,7 +2,7 @@
  * libmp4.c : LibMP4 library for mp4 module for vlc
  *****************************************************************************
  * Copyright (C) 2001-2004 the VideoLAN team
- * $Id$
+ * $Id: 8b1acd885fba59aa0289b594b8dc7ebc95e2cf4c $
  *
  * Author: Laurent Aimar <fenrir@via.ecp.fr>
  *
@@ -37,6 +37,8 @@
  *  *look* at the code.
  *
  *****************************************************************************/
+#define FREENULL( p ) do { free( p ); p = NULL; } while(0)
+
 #define MP4_BOX_HEADERSIZE( p_box ) \
   ( 8 + ( p_box->i_shortsize == 1 ? 8 : 0 ) \
       + ( p_box->i_type == FOURCC_uuid ? 16 : 0 ) )
