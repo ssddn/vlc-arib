@@ -30,6 +30,7 @@
 #include <vlc/vlc.h>
 #include <vlc/input.h>
 #include <vlc/intf.h>
+#include "vlc_interaction.h"
 #include "charset.h"
 
 #include <errno.h>                                                 /* ENOMEM */
