@@ -251,7 +251,7 @@ vlc-config.in: vlc-config.in.in
 	touch $@
 
 CLEANFILES = $(BUILT_SOURCES_clean) stamp-builtin
-DISTCLEANFILES = $(BUILT_SOURCES_distclean) vlc-config.in compile
+DISTCLEANFILES = $(BUILT_SOURCES_distclean) vlc-config.in compile ChangeLog
 
 ###############################################################################
 # Building vlc
