@@ -170,3 +170,9 @@ elif svn help >/dev/null 2>&1; then
 else
         echo "You do not have a subversion client installed." >&2
 fi
+
+if git help >/dev/null 2>&1; then
+    echo "GIT = `which git`" >> config.mak
+else
+    echo "You do not have a Git client in your PATH." >&2
+fi

@@ -23,8 +23,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 # ***************************************************************************
 
-GNU=http://ftp.heanet.ie/mirrors/ftp.gnu.org/gnu
-SF=http://heanet.dl.sourceforge.net/sourceforge
+GNU=ftp://ftp.esat.net/pub/gnu
+SF=http://internap.dl.sourceforge.net/sourceforge
 VIDEOLAN=http://download.videolan.org/pub/videolan
 PERL_VERSION=5.8.8
 PERL_URL=http://ftp.funet.fi/pub/CPAN/src/perl-$(PERL_VERSION).tar.gz
@@ -176,8 +176,8 @@ UPNP_URL=$(SF)/upnp/libupnp-$(UPNP_VERSION).tar.gz
 EXPAT_VERSION=1.95.8
 EXPAT_URL=$(SF)/expat/expat-$(EXPAT_VERSION).tar.gz
 NASM_CVSROOT=:pserver:anonymous@cvs.sourceforge.net:/cvsroot/nasm
-NASM_VERSION=0.98.40-20060130
-NASM_URL=$(VIDEOLAN)/testing/contrib/nasm-0.98.40-20060130.tar.bz2
+NASM_VERSION=2.02
+NASM_URL=$(SF)/nasm/nasm-$(NASM_VERSION).tar.bz2
 PTHREADS_VERSION=2-7-0
 PTHREADS_URL=ftp://sources.redhat.com/pub/pthreads-win32/pthreads-w32-$(PTHREADS_VERSION)-release.tar.gz
 UNICOWS_VERSION=1.1.1

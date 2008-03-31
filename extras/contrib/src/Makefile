@@ -1185,32 +1185,53 @@ CLEAN_PKG += libdca
 # libx264
 # ***************************************************************************
 
-ifdef SVN
-x264: 
-	$(SVN) co svn://svn.videolan.org/x264/trunk/ -r 736 x264
-ifdef HAVE_WIN32
-	(cd $@; patch -p 0 < ../Patches/x264-svn-win32.patch )
-endif
-ifdef HAVE_DARWIN_OS
-	(cd $@; patch -p 0 < ../Patches/x264-svn-darwin.patch )
-endif
-else
 x264-$(X264_VERSION).tar.gz:
 	$(WGET) $(X264_URL)
+
+ifdef GIT
+x264:
+	$(GIT) clone git://git.videolan.org/x264.git
+	patch -p0 < Patches/x264-svn-info-threads.patch
+ifdef HAVE_WIN32
+	(cd x264; patch -p0 < ../Patches/x264-svn-win32.patch )
+endif
+ifdef HAVE_DARWIN_OS
+	(cd $@; patch -p0 < ../Patches/x264-svn-darwin.patch )
+endif
+
+else
 
 x264: x264-$(X264_VERSION).tar.gz
 	$(EXTRACT_GZ)
 ifdef HAVE_WIN32
-	(cd x264;patch -p 0 <../Patches/x264-20050624-win32.patch)
+  ifndef HAVE_CYGWIN
+	(cd x264;patch -p0 <../Patches/x264-20050624-win32.patch)
+  endif
 else
-	patch -p 0 < Patches/x264.patch
+	patch -p0 < Patches/x264.patch
 	rm x264/x264.c
 endif
 endif
 
+ifdef HAVE_WIN32
+.x264: x264 .pthreads
+  ifdef HAVE_CYGWIN
+	(cd $<; $(HOSTCC) RANLIB="ranlib" AR="ar" STRIP="strip" ./configure $(X264CONF) --prefix="$(PREFIX)" --extra-cflags="-I$(PREFIX)/include" --extra-ldflags="-L$(PREFIX)/lib" && make && make install)
+  else
+	(cd $<; $(HOSTCC) ./configure $(X264CONF) --prefix="$(PREFIX)" && make && make install)
+  endif
+else
 .x264: x264
-	(cd $<; ./configure $(X264CONF) --prefix="$(PREFIX)" --enable-pic && make && make install)
+	(cd $<; $(HOSTCC) ./configure $(X264CONF) --prefix="$(PREFIX)" && make && make install)
+endif
 	touch $@
+
+ifdef SVN
+x264-source: x264
+	tar cfvz x264-$(DATE).tar.gz x264
+
+SOURCE += x264-source
+endif
 
 CLEAN_FILE += .x264
 CLEAN_PKG += x264
