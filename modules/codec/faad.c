@@ -47,7 +47,7 @@ vlc_module_end();
  * Local prototypes
  ****************************************************************************/
 static aout_buffer_t *DecodeBlock( decoder_t *, block_t ** );
-static void DoReordering( uint32_t *, uint32_t *, int, int, uint32_t * );
+static void DoReordering( uint32_t, uint32_t *, uint32_t *, int, int, uint32_t * );
 
 #define MAX_CHANNEL_POSITIONS 9
 
@@ -422,7 +422,8 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, block_t **pp_block )
         p_out->end_date = aout_DateIncrement( &p_sys->date,
             (frame.samples / frame.channels) * p_sys->i_input_rate / INPUT_RATE_DEFAULT );
 
-        DoReordering( (uint32_t *)p_out->p_buffer, samples,
+        DoReordering( p_dec->p_libvlc->i_cpu,
+                      (uint32_t *)p_out->p_buffer, samples,
                       frame.samples / frame.channels, frame.channels,
                       p_sys->pi_channel_positions );
 
@@ -457,8 +458,9 @@ static void Close( vlc_object_t *p_this )
  * DoReordering: do some channel re-ordering (the ac3 channel order is
  *   different from the aac one).
  *****************************************************************************/
-static void DoReordering( uint32_t *p_out, uint32_t *p_in, int i_samples,
-                          int i_nb_channels, uint32_t *pi_chan_positions )
+static void DoReordering( uint32_t i_cpu, uint32_t *p_out, uint32_t *p_in,
+                          int i_samples, int i_nb_channels,
+                          uint32_t *pi_chan_positions )
 {
     int pi_chan_table[MAX_CHANNEL_POSITIONS];
     int i, j, k;
@@ -477,7 +479,7 @@ static void DoReordering( uint32_t *p_out, uint32_t *p_in, int i_samples,
     }
 
     /* Do the actual reordering */
-    if( p_dec->p_libvlc->i_cpu & CPU_CAPABILITY_FPU )
+    if( i_cpu & CPU_CAPABILITY_FPU )
         for( i = 0; i < i_samples; i++ )
             for( j = 0; j < i_nb_channels; j++ )
                 p_out[i * i_nb_channels + pi_chan_table[j]] =
