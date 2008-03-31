@@ -69,7 +69,6 @@ static inline int __vlc_mutex_lock( const char * psz_file, int i_line,
 {
     int i_result;
     /* In case of error : */
-    int i_thread = -1;
     const char * psz_error = "";
 
 #if defined( PTH_INIT_IN_PTH_H )
@@ -110,10 +109,7 @@ static inline int __vlc_mutex_lock( const char * psz_file, int i_line,
 #elif defined( PTHREAD_COND_T_IN_PTHREAD_H )
     i_result = pthread_mutex_lock( &p_mutex->mutex );
     if ( i_result )
-    {
-        i_thread = (int)pthread_self();
         psz_error = strerror(i_result);
-    }
 
 #elif defined( HAVE_CTHREADS_H )
     mutex_lock( p_mutex->mutex );
@@ -124,8 +120,8 @@ static inline int __vlc_mutex_lock( const char * psz_file, int i_line,
     if( i_result )
     {
         msg_Err( p_mutex->p_this,
-                 "thread %u: mutex_lock failed at %s:%d (%d:%s)",
-                 i_thread, psz_file, i_line, i_result, psz_error );
+                 "mutex_lock failed at %s:%d (%d:%s)",
+                 psz_file, i_line, i_result, psz_error );
     }
     return i_result;
 }
@@ -141,7 +137,6 @@ static inline int __vlc_mutex_unlock( const char * psz_file, int i_line,
 {
     int i_result;
     /* In case of error : */
-    int i_thread = -1;
     const char * psz_error = "";
 
 #if defined( PTH_INIT_IN_PTH_H )
@@ -183,10 +178,7 @@ static inline int __vlc_mutex_unlock( const char * psz_file, int i_line,
 #elif defined( PTHREAD_COND_T_IN_PTHREAD_H )
     i_result = pthread_mutex_unlock( &p_mutex->mutex );
     if ( i_result )
-    {
-        i_thread = (int)pthread_self();
         psz_error = strerror(i_result);
-    }
 
 #elif defined( HAVE_CTHREADS_H )
     mutex_unlock( p_mutex );
@@ -197,8 +189,8 @@ static inline int __vlc_mutex_unlock( const char * psz_file, int i_line,
     if( i_result )
     {
         msg_Err( p_mutex->p_this,
-                 "thread %u: mutex_unlock failed at %s:%d (%d:%s)",
-                 i_thread, psz_file, i_line, i_result, psz_error );
+                 "mutex_unlock failed at %s:%d (%d:%s)",
+                 psz_file, i_line, i_result, psz_error );
     }
 
     return i_result;
@@ -227,7 +219,6 @@ static inline int __vlc_cond_signal( const char * psz_file, int i_line,
 {
     int i_result;
     /* In case of error : */
-    int i_thread = -1;
     const char * psz_error = "";
 
 #if defined( PTH_INIT_IN_PTH_H )
@@ -321,10 +312,7 @@ static inline int __vlc_cond_signal( const char * psz_file, int i_line,
 #elif defined( PTHREAD_COND_T_IN_PTHREAD_H )
     i_result = pthread_cond_signal( &p_condvar->cond );
     if ( i_result )
-    {
-        i_thread = (int)pthread_self();
         psz_error = strerror(i_result);
-    }
 
 #elif defined( HAVE_CTHREADS_H )
     /* condition_signal() */
@@ -339,8 +327,8 @@ static inline int __vlc_cond_signal( const char * psz_file, int i_line,
     if( i_result )
     {
         msg_Err( p_condvar->p_this,
-                 "thread %u: cond_signal failed at %s:%d (%d:%s)",
-                 i_thread, psz_file, i_line, i_result, psz_error );
+                 "cond_signal failed at %s:%d (%d:%s)",
+                 psz_file, i_line, i_result, psz_error );
     }
 
     return i_result;
@@ -357,7 +345,6 @@ static inline int __vlc_cond_wait( const char * psz_file, int i_line,
 {
     int i_result;
     /* In case of error : */
-    int i_thread = -1;
     const char * psz_error = "";
 
 #if defined( PTH_INIT_IN_PTH_H )
@@ -511,10 +498,7 @@ static inline int __vlc_cond_wait( const char * psz_file, int i_line,
 #   endif
 
     if ( i_result )
-    {
-        i_thread = (int)pthread_self();
         psz_error = strerror(i_result);
-    }
 
 #elif defined( HAVE_CTHREADS_H )
     condition_wait( (condition_t)p_condvar, (mutex_t)p_mutex );
@@ -525,8 +509,8 @@ static inline int __vlc_cond_wait( const char * psz_file, int i_line,
     if( i_result )
     {
         msg_Err( p_condvar->p_this,
-                 "thread %u: cond_wait failed at %s:%d (%d:%s)",
-                 i_thread, psz_file, i_line, i_result, psz_error );
+                 "cond_wait failed at %s:%d (%d:%s)",
+                 psz_file, i_line, i_result, psz_error );
     }
 
     return i_result;
