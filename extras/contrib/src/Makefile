@@ -797,12 +797,12 @@ DISTCLEAN_PKG += speex-$(SPEEX_VERSION).tar.gz
 #	(cd $@; patch -p 0 < ../Patches/faad2.patch)
 #	(cd $@; sh ./bootstrap)
 
-faad2-$(FAAD2_VERSION).tar.bz2:
+faad2-$(FAAD2_VERSION).tar.gz:
 	$(WGET) $(FAAD2_URL)
 
-faad: faad2-$(FAAD2_VERSION).tar.bz2
-	$(EXTRACT_BZ2)
-	(cd $@; patch -p 0  < ../Patches/faad2.patch && ./bootstrap)
+faad2: faad2-$(FAAD2_VERSION).tar.gz
+	$(EXTRACT_GZ)
+	(cd $@; ./bootstrap)
 
 .faad: faad
 	(cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="-O3" && sed -i.orig "s/shrext_cmds/shrext/g" libtool && make -C libfaad && make -C libfaad install)
@@ -811,7 +811,7 @@ faad: faad2-$(FAAD2_VERSION).tar.bz2
 
 CLEAN_FILE += .faad
 CLEAN_PKG += faad
-DISTCLEAN_PKG += faad2-$(FAAD2_VERSION).tar.bz2
+DISTCLEAN_PKG += faad2-$(FAAD2_VERSION).tar.gz
 
 # ***************************************************************************
 # faac
