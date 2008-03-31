@@ -47,6 +47,10 @@ endif
 # Tell aclocal to use -I m4. Wonder if it really works.
 ACLOCAL_AMFLAGS = -I m4
 
+ChangeLog: Makefile.am
+	rm -f -- "$@"
+	ln -sf doc/ChangeLog-2008 "$@"
+
 ###############################################################################
 # MacOS X project
 ###############################################################################
