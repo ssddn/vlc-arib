@@ -1064,7 +1064,7 @@ static int NetFillBuffer( access_t *p_access )
         timeout.tv_sec = 0;
         timeout.tv_usec = 500000;
 
-        if( i_try * timeout > p_sys->i_timeout )
+        if( i_try * 500 > p_sys->i_timeout )
         {
             msg_Err(p_access, "no data received");
             return -1;
