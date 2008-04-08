@@ -539,8 +539,15 @@ int E_(OpenEncoder)( vlc_object_t *p_this )
             p_enc->fmt_in.audio.i_channels = 2;
 
         p_enc->fmt_in.i_codec  = AOUT_FMT_S16_NE;
-        p_context->sample_rate = p_enc->fmt_in.audio.i_rate;
-        p_context->channels    = p_enc->fmt_in.audio.i_channels;
+        p_context->sample_rate = p_enc->fmt_out.audio.i_rate;
+        p_context->channels    = p_enc->fmt_out.audio.i_channels;
+
+        if ( p_enc->fmt_out.i_codec == VLC_FOURCC('m','p','4','a') )
+        {
+            /* XXX: FAAC does resample only when setting the INPUT samplerate
+             * to the desired value (-R option of the faac frontend) */
+            p_enc->fmt_in.audio.i_rate = p_context->sample_rate;
+        }
     }
 
     /* Misc parameters */
