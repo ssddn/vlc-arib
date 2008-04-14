@@ -1424,6 +1424,7 @@ static void transcode_audio_close( sout_stream_t *p_stream,
             module_Unneed( id->pp_filter[i], id->pp_filter[i]->p_module );
         vlc_object_destroy( id->pp_filter[i] );
     }
+    id->i_filter = 0;
 }
 
 static int transcode_audio_process( sout_stream_t *p_stream,
@@ -1995,6 +1996,8 @@ static void transcode_video_close( sout_stream_t *p_stream,
 
         vlc_object_destroy( id->pp_filter[i] );
     }
+    id->i_filter = 0;
+
     for( i = 0; i < id->i_vfilter; i++ )
     {
         vlc_object_detach( id->pp_vfilter[i] );
@@ -2012,6 +2015,7 @@ static void transcode_video_close( sout_stream_t *p_stream,
 
         vlc_object_destroy( id->pp_vfilter[i] );
     }
+    id->i_vfilter = 0;
 }
 
 static int transcode_video_process( sout_stream_t *p_stream,
