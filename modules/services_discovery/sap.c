@@ -2,7 +2,7 @@
  * sap.c :  SAP interface module
  *****************************************************************************
  * Copyright (C) 2004-2005 the VideoLAN team
- * $Id$
+ * $Id: 797099ef1b4316d247401fb5e40a2edebe0e9f48 $
  *
  * Authors: Clément Stenac <zorglub@videolan.org>
  *
@@ -1045,6 +1045,7 @@ static int ParseConnection( vlc_object_t *p_obj, sdp_t *p_sdp )
             if( !strcmp( psz_parse, "RTP/AVP" ) )
             {
                 psz_proto = "rtp";
+                psz_parse = psz_eof + 1;
                 p_sdp->i_media_type = atoi( psz_parse );
             }
             else
