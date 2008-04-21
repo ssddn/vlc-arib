@@ -3,7 +3,7 @@
  *               using the ffmpeg library
  *****************************************************************************
  * Copyright (C) 1999-2001 the VideoLAN team
- * $Id$
+ * $Id: a6d66457c73a31abbe49d51c6f0ef10b6a57234b $
  *
  * Authors: Gildas Bazin <gbazin@videolan.org>
  *
@@ -30,7 +30,9 @@
 #include "vlc_filter.h"
 
 /* ffmpeg header */
-#ifdef HAVE_FFMPEG_AVCODEC_H
+#ifdef HAVE_LIBAVCODEC_AVCODEC_H
+#   include <libavcodec/avcodec.h>
+#elif defined(HAVE_FFMPEG_AVCODEC_H)
 #   include <ffmpeg/avcodec.h>
 #else
 #   include <avcodec.h>

@@ -2680,10 +2680,10 @@ dnl Look for a ffmpeg-config (we are on debian )
   AC_PATH_PROG(FFMPEG_CONFIG, ffmpeg-config, no, ${FFMPEG_PATH})
   if test "${FFMPEG_CONFIG}" != "no"
   then
-    AC_CHECK_HEADERS(ffmpeg/avcodec.h, [], [AC_MSG_ERROR([Missing header file ffmpeg/avcodec.h.])] )
-    AC_CHECK_HEADERS(ffmpeg/avformat.h)
-    AC_CHECK_HEADERS(ffmpeg/avutil.h)
-    AC_CHECK_HEADERS(postproc/postprocess.h, [], [AC_MSG_ERROR([Missing header file postproc/postprocess.h.])] )
+    AC_CHECK_HEADERS(ffmpeg/avcodec.h libavcodec/avcodec.h)
+    AC_CHECK_HEADERS(ffmpeg/avformat.h libavformat/avformat.h)
+    AC_CHECK_HEADERS(ffmpeg/avutil.h libavutil/avutil.h)
+    AC_CHECK_HEADERS(postproc/postprocess.h libpostproc/postprocess.h.)
     VLC_ADD_PLUGINS([ffmpeg])
     if test "${enable_sout}" != "no"; then
         VLC_ADD_PLUGINS([stream_out_switcher])
@@ -2696,10 +2696,13 @@ dnl Look for a ffmpeg-config (we are on debian )
 dnl Trying with pkg-config
    PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat],
     [
-     AC_CHECK_HEADERS(ffmpeg/avcodec.h, [], [AC_MSG_ERROR([Missing header file ffmpeg/avcodec.h.])] )
-     AC_CHECK_HEADERS(ffmpeg/avformat.h)
-     AC_CHECK_HEADERS(ffmpeg/avutil.h)
-     AC_CHECK_HEADERS(postproc/postprocess.h, [], [AC_MSG_ERROR([Missing header file postproc/postprocess.h.])] )
+     VLC_SAVE_FLAGS
+     CPPFLAGS="${CPPFLAGS} ${FFMPEG_CFLAGS}"
+     CFLAGS="${CFLAGS} ${FFMPEG_CFLAGS}"
+     AC_CHECK_HEADERS(ffmpeg/avcodec.h libavcodec/avcodec.h)
+     AC_CHECK_HEADERS(ffmpeg/avformat.h libavformat/avformat.h)
+     AC_CHECK_HEADERS(ffmpeg/avutil.h libavutil/avutil.h)
+     AC_CHECK_HEADERS(postproc/postprocess.h libpostproc/postprocess.h)
      if test "${SYS}" = "darwin"; then
         VLC_ADD_BUILTINS([ffmpeg])
      else
@@ -2718,6 +2721,7 @@ dnl Trying with pkg-config
      PKG_CHECK_MODULES(POSTPROC, libpostproc,[
        VLC_ADD_LDFLAGS([ffmpeg],[${POSTPROC_LIBS}]) 
        ],[ true ])
+     VLC_RESTORE_FLAGS
     ],[
      
     dnl
@@ -2725,10 +2729,10 @@ dnl Trying with pkg-config
     dnl
       CPPFLAGS="${CPPFLAGS_save} ${CPPFLAGS_ffmpeg}"
       LDFLAGS="${LDFLAGS_save} ${LDFLAGS_ffmpeg}"
-      AC_CHECK_HEADERS(ffmpeg/avcodec.h, [], [AC_MSG_ERROR([Missing header file ffmpeg/avcodec.h.])] )
-      AC_CHECK_HEADERS(ffmpeg/avformat.h)
-      AC_CHECK_HEADERS(ffmpeg/avutil.h)
-      AC_CHECK_HEADERS(postproc/postprocess.h, [], [AC_MSG_ERROR([Missing header file postproc/postprocess.h.])] )
+      AC_CHECK_HEADERS(ffmpeg/avcodec.h libavcodec/avcodec.h)
+      AC_CHECK_HEADERS(ffmpeg/avformat.h libavformat/avformat.h)
+      AC_CHECK_HEADERS(ffmpeg/avutil.h libavutil/avutil.h)
+      AC_CHECK_HEADERS(postproc/postprocess.h libpostproc/postprocess.h)
 
       AC_CHECK_LIB(avutil, av_crc_init, [
         VLC_ADD_LDFLAGS([ffmpeg],[-lavutil])
