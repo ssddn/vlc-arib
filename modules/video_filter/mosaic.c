@@ -2,7 +2,7 @@
  * mosaic.c : Mosaic video plugin for vlc
  *****************************************************************************
  * Copyright (C) 2004-2005 the VideoLAN team
- * $Id$
+ * $Id: 257797ae49700529a0f45e44f8c68ed04800f396 $
  *
  * Authors: Antoine Cellerier <dionoea@via.ecp.fr>
  *          Christophe Massiot <massiot@via.ecp.fr>
@@ -225,7 +225,7 @@ static int CreateFilter( vlc_object_t *p_this )
     filter_t *p_filter = (filter_t *)p_this;
     filter_sys_t *p_sys;
     libvlc_t *p_libvlc = p_filter->p_libvlc;
-    char *psz_order;
+    char *psz_order, *_psz_order;
     int i_index;
     vlc_value_t val;
 
@@ -294,7 +294,7 @@ static int CreateFilter( vlc_object_t *p_this )
 
     p_sys->i_order_length = 0;
     p_sys->ppsz_order = NULL;
-    psz_order = var_CreateGetString( p_filter, "mosaic-order" );
+    psz_order = _psz_order = var_CreateGetString( p_filter, "mosaic-order" );
 
     if( psz_order[0] != 0 )
     {
@@ -312,6 +312,8 @@ static int CreateFilter( vlc_object_t *p_this )
         } while( NULL !=  psz_end );
         p_sys->i_order_length = i_index;
     }
+
+    free( _psz_order );
 
     /* Bluescreen specific stuff */
     GET_VAR( bsu, 0x00, 0xff );
