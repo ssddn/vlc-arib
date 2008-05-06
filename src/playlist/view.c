@@ -2,7 +2,7 @@
  * view.c : Playlist views functions
  *****************************************************************************
  * Copyright (C) 1999-2004 the VideoLAN team
- * $Id$
+ * $Id: e6eb7c756d8f027f9ae5dc601ed90b7b47800014 $
  *
  * Authors: Clément Stenac <zorglub@videolan.org>
  *
@@ -175,6 +175,7 @@ int playlist_ViewUpdate( playlist_t *p_playlist, int i_view)
     if( i_view == VIEW_ALL )
     {
         p_view->p_root->i_children = p_playlist->i_size;
+        free( p_view->p_root->pp_children );
         p_view->p_root->pp_children = p_playlist->pp_items;
     }
 

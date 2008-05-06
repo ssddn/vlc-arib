@@ -196,6 +196,13 @@ int playlist_ItemDelete( playlist_item_t *p_item )
         free( p_parent );
     }
 
+    for( ; p_item->i_children > 0 ; )
+    {
+        playlist_item_t *p_child = p_item->pp_children[0];
+        REMOVE_ELEM( p_item->pp_children, p_item->i_children, 0 );
+        playlist_ItemDelete( p_child );
+    }
+
     vlc_input_item_Clean( &p_item->input );
     free( p_item );
 
