@@ -2,7 +2,7 @@
  * mosaic_bridge.c:
  *****************************************************************************
  * Copyright (C) 2004-2005 the VideoLAN team
- * $Id$
+ * $Id: e56e23a6e114456a1b6df57edea8c2d1ce08017a $
  *
  * Authors: Antoine Cellerier <dionoea@videolan.org>
  *          Christophe Massiot <massiot@via.ecp.fr>
@@ -234,6 +234,8 @@ static sout_stream_id_t * Add( sout_stream_t *p_stream, es_format_t *p_fmt )
 
     /* Create decoder object */
     p_sys->p_decoder = vlc_object_create( p_stream, VLC_OBJECT_DECODER );
+    if( !p_sys->p_decoder )
+        return NULL;
     vlc_object_attach( p_sys->p_decoder, p_stream );
     p_sys->p_decoder->p_module = NULL;
     p_sys->p_decoder->fmt_in = *p_fmt;
@@ -247,6 +249,13 @@ static sout_stream_id_t * Add( sout_stream_t *p_stream, es_format_t *p_fmt )
     p_sys->p_decoder->pf_picture_link    = video_link_picture_decoder;
     p_sys->p_decoder->pf_picture_unlink  = video_unlink_picture_decoder;
     p_sys->p_decoder->p_owner = malloc( sizeof(decoder_owner_sys_t) );
+    if( !p_sys->p_decoder->p_owner )
+    {
+        vlc_object_detach( p_sys->p_decoder );
+        vlc_object_destroy( p_sys->p_decoder );
+        free( p_sys->p_decoder );
+        return NULL;
+    }
     for( i = 0; i < PICTURE_RING_SIZE; i++ )
         p_sys->p_decoder->p_owner->pp_pics[i] = 0;
     p_sys->p_decoder->p_owner->video = p_fmt->video;
@@ -336,6 +345,7 @@ static int Del( sout_stream_t *p_stream, sout_stream_id_t *id )
 
         if( p_sys->p_decoder->p_module )
             module_Unneed( p_sys->p_decoder, p_sys->p_decoder->p_module );
+        void *p_owner = p_sys->p_decoder->p_owner;
         vlc_object_detach( p_sys->p_decoder );
         vlc_object_destroy( p_sys->p_decoder );
 
@@ -349,6 +359,8 @@ static int Del( sout_stream_t *p_stream, sout_stream_id_t *id )
                 free( pp_ring[i] );
             }
         }
+
+        free( p_owner );
     }
 
     vlc_mutex_lock( p_sys->p_lock );
