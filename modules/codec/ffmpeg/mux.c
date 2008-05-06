@@ -31,7 +31,7 @@
 #include <vlc/sout.h>
 
 /* ffmpeg header */
-#ifdef HAVE_LIBAVCODEC_AVFORMAT_H
+#ifdef HAVE_LIBAVFORMAT_AVFORMAT_H
 #   include <libavformat/avformat.h>
 #elif defined(HAVE_FFMPEG_AVFORMAT_H)
 #   include <ffmpeg/avformat.h>
