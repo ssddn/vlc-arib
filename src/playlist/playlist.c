@@ -261,18 +261,26 @@ int playlist_Destroy( playlist_t * p_playlist )
 
     playlist_Clear( p_playlist );
 
+    if( p_playlist->status.p_item &&
+        p_playlist->status.p_item->i_flags & PLAYLIST_REMOVE_FLAG )
+    {
+        playlist_ItemDelete( p_playlist->status.p_item );
+        p_playlist->status.p_item = NULL;
+    }
+
     for( i = p_playlist->i_views - 1; i >= 0 ; i-- )
     {
         playlist_view_t *p_view = p_playlist->pp_views[i];
-        if( p_view->psz_name )
-            free( p_view->psz_name );
+        free( p_view->psz_name );
         playlist_ItemDelete( p_view->p_root );
         REMOVE_ELEM( p_playlist->pp_views, p_playlist->i_views, i );
         free( p_view );
     }
 
-    if( p_playlist->p_stats )
-        free( p_playlist->p_stats );
+    free( p_playlist->p_stats );
+
+    free( p_playlist->pp_all_items );
+    free( p_playlist->pp_views );
 
     vlc_mutex_destroy( &p_playlist->gc_lock );
     vlc_object_destroy( p_playlist->p_preparse );
