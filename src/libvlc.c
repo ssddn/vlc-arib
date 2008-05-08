@@ -1054,6 +1054,7 @@ int VLC_Destroy( int i_object )
 int VLC_VariableSet( int i_object, char const *psz_var, vlc_value_t value )
 {
     vlc_t *p_vlc = vlc_current_object( i_object );
+    module_config_t *p_item;
     int i_ret;
 
     if( !p_vlc )
@@ -1064,38 +1065,15 @@ int VLC_VariableSet( int i_object, char const *psz_var, vlc_value_t value )
     /* FIXME: Temporary hack for Mozilla, if variable starts with conf:: then
      * we handle it as a configuration variable. Don't tell Gildas :) -- sam */
     if( !strncmp( psz_var, "conf::", 6 ) )
-    {
-        module_config_t *p_item;
-        char const *psz_newvar = psz_var + 6;
+        psz_var += 6;
 
-        p_item = config_FindConfig( VLC_OBJECT(p_vlc), psz_newvar );
+    p_item = config_FindConfig( VLC_OBJECT(p_vlc), psz_newvar );
+    if( !p_item )
+        return VLC_ENOVAR;
 
-        if( p_item )
-        {
-            switch( p_item->i_type )
-            {
-                case CONFIG_ITEM_BOOL:
-                    config_PutInt( p_vlc, psz_newvar, value.b_bool );
-                    break;
-                case CONFIG_ITEM_INTEGER:
-                    config_PutInt( p_vlc, psz_newvar, value.i_int );
-                    break;
-                case CONFIG_ITEM_FLOAT:
-                    config_PutFloat( p_vlc, psz_newvar, value.f_float );
-                    break;
-                default:
-                    config_PutPsz( p_vlc, psz_newvar, value.psz_string );
-                    break;
-            }
-            if( i_object ) vlc_object_release( p_vlc );
-            return VLC_SUCCESS;
-        }
-    }
-
-    i_ret = var_Set( p_vlc, psz_var, value );
-
-    if( i_object ) vlc_object_release( p_vlc );
-    return i_ret;
+    /* None of the variables are safe in this LibVLC version (we don't have
+     * the infrastructure in the 0.8.* branch. */
+    return VLC_EGENERIC;
 }
 
 /*****************************************************************************
