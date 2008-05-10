@@ -1,7 +1,7 @@
 # ***************************************************************************
 # src/packages.mak : Archive locations
 # ***************************************************************************
-# Copyright (C) 2003 - 2007 the VideoLAN team
+# Copyright (C) 2003 - 2008 the VideoLAN team
 # $Id$
 #
 # Authors: Christophe Massiot <massiot@via.ecp.fr>
@@ -161,8 +161,9 @@ WXWIDGETS_VERSION=2.6.4
 WXWIDGETS_URL=$(SF)/wxwindows/wxWidgets-$(WXWIDGETS_VERSION).tar.gz
 ZLIB_VERSION=1.2.3
 ZLIB_URL=$(SF)/libpng/zlib-$(ZLIB_VERSION).tar.gz
-XML_VERSION=2.6.31
-XML_URL=ftp://xmlsoft.org/libxml2/libxml2-$(XML_VERSION).tar.gz
+XML_VERSION=2.6.32
+XML_URL=$(VIDEOLAN)/testing/contrib/libxml2-$(XML_VERSION).tar.gz
+#XML_URL=ftp://xmlsoft.org/libxml2/libxml2-$(XML_VERSION).tar.gz
 DIRAC_VERSION=0.5.4
 DIRAC_URL=$(SF)/dirac/dirac-$(DIRAC_VERSION).tar.gz
 DX_HEADERS_URL=$(VIDEOLAN)/testing/contrib/win32-dx7headers.tgz
