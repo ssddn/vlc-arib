@@ -2,7 +2,7 @@
  * vout.c: Windows DirectX video output display method
  *****************************************************************************
  * Copyright (C) 2001-2004 the VideoLAN team
- * $Id$
+ * $Id: c7fe3e9667dbb25d2b5e84557dad373d0bb754ab $
  *
  * Authors: Gildas Bazin <gbazin@videolan.org>
  *
@@ -713,6 +713,10 @@ static int Manage( vout_thread_t *p_vout )
         /* Update the object variable and trigger callback */
         val.b_bool = p_vout->b_fullscreen;
         var_Set( p_vout, "fullscreen", val );
+
+        /* Disable video-on-top while in fullscreen mode */
+        if( var_GetBool( p_vout, "video-on-top" ) )
+            ControlParentWindow( p_vout, VOUT_SET_STAY_ON_TOP, !val.b_bool );
 
         p_vout->i_changes &= ~VOUT_FULLSCREEN_CHANGE;
         p_vout->p_sys->i_changes &= ~VOUT_FULLSCREEN_CHANGE;

@@ -907,6 +907,9 @@ static int ManageVideo( vout_thread_t *p_vout )
          *    instead of doing it via the fullscreen callback. That's got to
          *    be the correct one.
          */
+        if( var_GetBool( p_vout, "video-on-top" ) )
+            WindowOnTop( p_vout, !val.b_bool );
+
 #ifdef MODULE_NAME_IS_xvmc
         xvmc_context_reader_unlock( &p_vout->p_sys->xvmc_lock );
 #endif
