@@ -1067,7 +1067,7 @@ int VLC_VariableSet( int i_object, char const *psz_var, vlc_value_t value )
     if( !strncmp( psz_var, "conf::", 6 ) )
         psz_var += 6;
 
-    p_item = config_FindConfig( VLC_OBJECT(p_vlc), psz_newvar );
+    p_item = config_FindConfig( VLC_OBJECT(p_vlc), psz_var );
     if( !p_item )
         return VLC_ENOVAR;
 
