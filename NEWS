@@ -6,11 +6,13 @@ Security updates:
  * Removed loading plugins from the current directory (no assigned CVE)
 
 Various bugfixes:
- * Fixed various memory leaks, should improve server stability
- * Disable always on top setting in fullscreen mode
+ * Fixed various memory leaks, improving stability when running as a server
+ * The 'Always on Top' setting is automatically disabled in fullscreen mode
+   (Win32 only)
  * Fix compilation with recent versions of FFmpeg
  * Correctly parses SAP announcements from MPEG-TS
  * Fix AAC resampling
+
 
 Changes between 0.8.6e and 0.8.6f:
 ----------------------------------
