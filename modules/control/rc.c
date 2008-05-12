@@ -141,12 +141,8 @@ void __msg_rc( intf_thread_t *p_intf, const char *psz_fmt, ... )
 
     if( p_intf->p_sys->i_socket == -1 )
     {
-        if (!config_GetInt( p_intf, "rc-fake-tty" ))
-        {
-            utf8_vfprintf( stdout, psz_fmt, args );
-            printf( "\r\n" );
-        }
-
+        utf8_vfprintf( stdout, psz_fmt, args );
+        printf( "\r\n" );
     }
     else
     {
@@ -2300,12 +2296,6 @@ vlc_bool_t ReadCommand( intf_thread_t *p_intf, char *p_buffer, int *pi_size )
         return VLC_FALSE;
     }
 #endif
-
-   if (p_intf->p_sys->i_socket == -1 && config_GetInt( p_intf, "rc-fake-tty" ))
-   {
-        msleep( INTF_IDLE_SLEEP );
-        return VLC_FALSE;
-   }
 
     while( !p_intf->b_die && *pi_size < MAX_LINE_LENGTH &&
            (i_read = net_ReadNonBlock( p_intf, p_intf->p_sys->i_socket == -1 ?
