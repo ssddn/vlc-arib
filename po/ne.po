@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 22:19+0000\n"
+"POT-Creation-Date: 2008-05-12 20:07+0300\n"
 "PO-Revision-Date: 2006-11-27 10:28+0545\n"
 "Last-Translator: Shiva Prasad Pokharel <pokharelshiva@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -33,7 +33,7 @@ msgid "Select \"Advanced Options\" to see all options."
 msgstr "सबै विकल्प हेर्नका लागि \"उन्नत विकल्प\" चयन गर्नुहोस् ।"
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:333
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -658,7 +658,7 @@ msgstr ""
 
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:362 src/libvlc.h:409 src/video_output/video_output.c:379
-#: modules/codec/ffmpeg/postprocess.c:94
+#: modules/codec/ffmpeg/postprocess.c:96
 msgid "Disable"
 msgstr "अक्षम पार्नुहोस्"
 
@@ -799,7 +799,7 @@ msgstr "ट्रयाक %i"
 msgid "Program"
 msgstr "कार्यक्रम"
 
-#: src/input/es_out.c:1583 modules/codec/faad.c:329
+#: src/input/es_out.c:1583 modules/codec/faad.c:374
 #, c-format
 msgid "Stream %d"
 msgstr "प्रवाह %d"
@@ -815,17 +815,17 @@ msgstr "कोडेक"
 msgid "Type"
 msgstr "प्रकार"
 
-#: src/input/es_out.c:1599 modules/codec/faad.c:333
+#: src/input/es_out.c:1599 modules/codec/faad.c:379
 #: modules/gui/macosx/output.m:176
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:857
 msgid "Channels"
 msgstr "च्यानल"
 
-#: src/input/es_out.c:1604 modules/codec/faad.c:335
+#: src/input/es_out.c:1604 modules/codec/faad.c:381
 msgid "Sample rate"
 msgstr "नमूना दर"
 
-#: src/input/es_out.c:1605 modules/codec/faad.c:335
+#: src/input/es_out.c:1605 modules/codec/faad.c:381
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
@@ -866,7 +866,7 @@ msgstr "उपशीर्षक"
 msgid "Stream"
 msgstr "प्रवाह"
 
-#: src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1962 src/playlist/item.c:333
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:133
 msgid "Duration"
@@ -976,8 +976,8 @@ msgstr "डिबग लगइन"
 msgid "Mouse Gestures"
 msgstr "माउस सङ्केत"
 
-#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1684
-#: src/misc/modules.c:1988
+#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1686
+#: src/misc/modules.c:1990
 msgid "C"
 msgstr "ne"
 
@@ -985,47 +985,47 @@ msgstr "ne"
 msgid "Help options"
 msgstr "मद्दत विकल्प"
 
-#: src/libvlc.c:2221 src/misc/configuration.c:1269
+#: src/libvlc.c:2199 src/misc/configuration.c:1269
 msgid "string"
 msgstr "स्ट्रिङ"
 
-#: src/libvlc.c:2238 src/misc/configuration.c:1233
+#: src/libvlc.c:2216 src/misc/configuration.c:1233
 msgid "integer"
 msgstr "इन्टिजर"
 
-#: src/libvlc.c:2256 src/misc/configuration.c:1258
+#: src/libvlc.c:2234 src/misc/configuration.c:1258
 msgid "float"
 msgstr "फ्लोट"
 
-#: src/libvlc.c:2262
+#: src/libvlc.c:2240
 msgid " (default enabled)"
 msgstr " (पूर्वनिर्धारित सक्षम पारिएको छ)"
 
-#: src/libvlc.c:2263
+#: src/libvlc.c:2241
 msgid " (default disabled)"
 msgstr " (पूर्वनिर्धारित अक्षम पारिएको छ)"
 
-#: src/libvlc.c:2445
+#: src/libvlc.c:2423
 #, c-format
 msgid "VLC version %s\n"
 msgstr "VLC संस्करण %s\n"
 
-#: src/libvlc.c:2446
+#: src/libvlc.c:2424
 #, c-format
 msgid "Compiled by %s@%s.%s\n"
 msgstr "%s@%s.%s द्वारा कम्पाइल गरिएको\n"
 
-#: src/libvlc.c:2448
+#: src/libvlc.c:2426
 #, c-format
 msgid "Compiler: %s\n"
 msgstr "कम्पाइल गर्ने व्यक्ति: %s\n"
 
-#: src/libvlc.c:2451
+#: src/libvlc.c:2429
 #, c-format
 msgid "Based upon svn changeset [%s]\n"
 msgstr "svn परिवर्तनसेट [%s] मा आधारित\n"
 
-#: src/libvlc.c:2483
+#: src/libvlc.c:2461
 msgid ""
 "\n"
 "Dumped content to vlc-help.txt file.\n"
@@ -1033,7 +1033,7 @@ msgstr ""
 "\n"
 "vlc-help.txt फाइलमा राखीएको सामग्री\n"
 
-#: src/libvlc.c:2504
+#: src/libvlc.c:2482
 msgid ""
 "\n"
 "Press the RETURN key to continue...\n"
@@ -4408,7 +4408,7 @@ msgstr "म्यानुअली थपिएको"
 msgid "All items, unsorted"
 msgstr "सबै वस्तुहरू, क्रमबद्ध नगरिएको"
 
-#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:280
+#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:281
 msgid "Undefined"
 msgstr "अपरिभाषित"
 
@@ -4872,7 +4872,7 @@ msgid "Standard filesystem directory input"
 msgstr "मानक फाइलप्रणाली डाइरेक्टरी आगत"
 
 #: modules/access/dshow/dshow.cpp:73 modules/access/dshow/dshow.cpp:75
-#: modules/codec/ffmpeg/ffmpeg.c:75 modules/demux/mpc.c:55
+#: modules/codec/ffmpeg/ffmpeg.c:77 modules/demux/mpc.c:55
 #: modules/video_output/opengl.c:123 modules/video_output/opengl.c:174
 msgid "None"
 msgstr "कुनै होइन"
@@ -5659,7 +5659,18 @@ msgstr "अधिकतम बिटदर"
 msgid "Select the stream with the maximum bitrate under that limit."
 msgstr "सो सिमामा अधिकतम बिटदरसँघ प्रवाह चयन गर्नुहोस्"
 
-#: modules/access/mms/mms.c:62
+#: modules/access/mms/mms.c:60
+#, fuzzy
+msgid "TCP/UDP timeout (ms)"
+msgstr "समय समाप्त (मिलि सेकेन्ड)"
+
+#: modules/access/mms/mms.c:61
+msgid ""
+"Amount of time (in ms) to wait before aborting network reception of data. "
+"Note that there will be 10 retries before completely giving up."
+msgstr ""
+
+#: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr "माइक्रोसफ्ट मिडिया सर्भर (MMS) आगत"
 
@@ -7174,7 +7185,7 @@ msgstr "DVB उपशीर्षक सङ्केतक"
 msgid "AAC audio decoder (using libfaad2)"
 msgstr "AAC अडियो असङ्केतक (libfaad2 प्रयोग)"
 
-#: modules/codec/faad.c:331
+#: modules/codec/faad.c:377
 msgid "AAC extension"
 msgstr "AAC विस्तार"
 
@@ -7232,77 +7243,77 @@ msgstr "प्रयोग गर्नलाई मोड्युल डिइ
 msgid "Fake video decoder"
 msgstr "छल भिडियो असङ्केतक"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Non-ref"
 msgstr "सन्दर्भ नगरिएको"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Bidir"
 msgstr "Bidir"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Non-key"
 msgstr "कुञ्जी होइन"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "All"
 msgstr "सबै"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "rd"
 msgstr "rd"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "bits"
 msgstr "बिट"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "simple"
 msgstr "साधारण"
 
-#: modules/codec/ffmpeg/ffmpeg.c:89
+#: modules/codec/ffmpeg/ffmpeg.c:91
 msgid ""
 "AltiVec FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr "AltiVec FFmpeg अडियो/भिडियो असङ्केतक/सङ्केतक ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 
-#: modules/codec/ffmpeg/ffmpeg.c:93
+#: modules/codec/ffmpeg/ffmpeg.c:95
 msgid "FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr "FFmpeg अडियो/भिडियो असङ्केतक/सङ्केतक ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 
-#: modules/codec/ffmpeg/ffmpeg.c:96
+#: modules/codec/ffmpeg/ffmpeg.c:98
 msgid "Decoding"
 msgstr "असङ्केतन"
 
-#: modules/codec/ffmpeg/ffmpeg.c:127
+#: modules/codec/ffmpeg/ffmpeg.c:129
 msgid "FFmpeg chroma conversion"
 msgstr "FFmpeg क्रोमा रूपान्तरण"
 
-#: modules/codec/ffmpeg/ffmpeg.c:131
+#: modules/codec/ffmpeg/ffmpeg.c:133
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:97
 msgid "Encoding"
 msgstr "सङ्केतन"
 
-#: modules/codec/ffmpeg/ffmpeg.c:132
+#: modules/codec/ffmpeg/ffmpeg.c:134
 msgid "FFmpeg audio/video encoder"
 msgstr "FFmpeg अडियो/भिडियो सङ्केतक"
 
-#: modules/codec/ffmpeg/ffmpeg.c:190
+#: modules/codec/ffmpeg/ffmpeg.c:192
 msgid "FFmpeg demuxer"
 msgstr "FFmpeg डुमुक्सर"
 
-#: modules/codec/ffmpeg/ffmpeg.c:196
+#: modules/codec/ffmpeg/ffmpeg.c:198
 msgid "FFmpeg muxer"
 msgstr "FFmpeg मुक्सर"
 
-#: modules/codec/ffmpeg/ffmpeg.c:204
+#: modules/codec/ffmpeg/ffmpeg.c:206
 msgid "FFmpeg video filter"
 msgstr "FFmpeg भिडियो फिल्टर"
 
-#: modules/codec/ffmpeg/ffmpeg.c:210
+#: modules/codec/ffmpeg/ffmpeg.c:212
 msgid "FFmpeg crop padd filter"
 msgstr "FFmpeg काँटछाँट padd फिल्टर"
 
-#: modules/codec/ffmpeg/ffmpeg.c:216
+#: modules/codec/ffmpeg/ffmpeg.c:218
 msgid "FFmpeg deinterlace video filter"
 msgstr "FFmpeg डिइन्टरलेस भिडियो फिल्टर"
 
@@ -7762,16 +7773,16 @@ msgstr ""
 "PSNR लाई राम्रोसँग परिवर्तन नगरिएको अवस्थामा उज्यालोपन निषेध लोप गर्दछ "
 "(पूर्वनिर्धारित: ०.०) H264 वर्णन सिफारिश ७"
 
-#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:599
+#: modules/codec/ffmpeg/postprocess.c:90 modules/gui/macosx/intf.m:599
 #: modules/gui/macosx/intf.m:600
 msgid "Post processing"
 msgstr "प्रक्रिया पश्चात"
 
-#: modules/codec/ffmpeg/postprocess.c:96
+#: modules/codec/ffmpeg/postprocess.c:98
 msgid "1 (Lowest)"
 msgstr "१ (न्यून)"
 
-#: modules/codec/ffmpeg/postprocess.c:106
+#: modules/codec/ffmpeg/postprocess.c:108
 msgid "6 (Highest)"
 msgstr "६ (अधिकतम)"
 
@@ -8933,36 +8944,36 @@ msgstr "NT सेवा"
 msgid "Windows Service interface"
 msgstr "विण्डोज सेवा इन्टरफेस"
 
-#: modules/control/rc.c:158
+#: modules/control/rc.c:161
 msgid "Show stream position"
 msgstr "प्रवाह स्थान देखाउनुहोस्"
 
-#: modules/control/rc.c:159
+#: modules/control/rc.c:162
 msgid ""
 "Show the current position in seconds within the stream from time to time."
 msgstr "समय समयमा प्रवाहसँग सेकेन्डमा हालको स्थान देखाउनुहोस्"
 
-#: modules/control/rc.c:162
+#: modules/control/rc.c:165
 msgid "Fake TTY"
 msgstr "छल TTY"
 
-#: modules/control/rc.c:163
+#: modules/control/rc.c:166
 msgid "Force the rc module to use stdin as if it was a TTY."
 msgstr "यदि यो TTY भए rc मोड्युलाई stdin को रूपमा प्रयोग गर्न बल गर्नुहोस्"
 
-#: modules/control/rc.c:165
+#: modules/control/rc.c:168
 msgid "UNIX socket command input"
 msgstr "UNIX सकेट आदेश निर्गत"
 
-#: modules/control/rc.c:166
+#: modules/control/rc.c:169
 msgid "Accept commands over a Unix socket rather than stdin."
 msgstr "stdin को सट्टामा युनिक्स सकेट माथि आदेश स्विकार्नुहोस् ।"
 
-#: modules/control/rc.c:169
+#: modules/control/rc.c:172
 msgid "TCP command input"
 msgstr "TCP आदेश आगत"
 
-#: modules/control/rc.c:170
+#: modules/control/rc.c:173
 msgid ""
 "Accept commands over a socket rather than stdin. You can set the address and "
 "port the interface will bind to."
@@ -8970,11 +8981,11 @@ msgstr ""
 "stdin को सट्टामा सकेट माथि आदेश स्विकार गर्नुहोस् । इन्टरफेस बाध्ने पोर्ट र ठेगानामा "
 "तपाईँले सेट गर्न सक्नुहुन्छ ।"
 
-#: modules/control/rc.c:174 modules/misc/dummy/dummy.c:49
+#: modules/control/rc.c:177 modules/misc/dummy/dummy.c:49
 msgid "Do not open a DOS command box interface"
 msgstr "DOS आदेश बाकस इन्टरफेस नखोल्नुहोस्"
 
-#: modules/control/rc.c:176
+#: modules/control/rc.c:179
 msgid ""
 "By default the rc interface plugin will start a DOS command box. Enabling "
 "the quiet mode will not bring this command box but can also be pretty "
@@ -8984,385 +8995,385 @@ msgstr ""
 "पार्दा आदेश बाकस ल्याउदछ तर तपाईँले VLC रोक्न खोज्दा नमान्ने हुन सक्दछ र कुनै पनि भिडियो "
 "सञ्झ्याल खुला हुदैन ।"
 
-#: modules/control/rc.c:183
+#: modules/control/rc.c:186
 msgid "RC"
 msgstr "RC"
 
-#: modules/control/rc.c:186
+#: modules/control/rc.c:189
 msgid "Remote control interface"
 msgstr "दुर नियन्त्रण इन्टरफेस"
 
-#: modules/control/rc.c:342
+#: modules/control/rc.c:345
 msgid "Remote control interface initialized. Type `help' for help."
 msgstr "दुर नियन्त्रण इन्टरफेस सुरुआत गरियो । मद्दतका लागि `help' टाइप गर्नुहोस् ।"
 
-#: modules/control/rc.c:871
+#: modules/control/rc.c:874
 #, c-format
 msgid "Unknown command `%s'. Type `help' for help."
 msgstr "अज्ञात आदेश `%s'. मद्दतका लागि `help' टाइप गर्नुहोस्"
 
-#: modules/control/rc.c:904
+#: modules/control/rc.c:907
 msgid "+----[ Remote control commands ]"
 msgstr "+----[ दुर नियन्त्रण आदेश ]"
 
-#: modules/control/rc.c:906
+#: modules/control/rc.c:909
 #, fuzzy
 msgid "| add XYZ  . . . . . . . . . . add XYZ to playlist"
 msgstr "| XYZ थप्नुहोस् . . . . . . . . . . बजाउने सूचीमा XYZ थप्नुहोस्"
 
-#: modules/control/rc.c:907
+#: modules/control/rc.c:910
 #, fuzzy
 msgid "| enqueue XYZ  . . . . . . . queue XYZ to playlist"
 msgstr "| लाममा XYZ  . . . . . . . बजाउने सूचीमा XYZ लाम लगाउनुहोस्"
 
-#: modules/control/rc.c:908
+#: modules/control/rc.c:911
 #, fuzzy
 msgid "| playlist . . .  show items currently in playlist"
 msgstr "| बजाउने सूची . . .  हाल बजाउने सूचीमा रहेको वस्तुहरू देखाउनुहोस्"
 
-#: modules/control/rc.c:909
+#: modules/control/rc.c:912
 #, fuzzy
 msgid "| play . . . . . . . . . . . . . . . . play stream"
 msgstr "| बजाउनुहोस् . . . . . . . . . . . . . . . . प्रवाह बजाउनुहोस्"
 
-#: modules/control/rc.c:910
+#: modules/control/rc.c:913
 #, fuzzy
 msgid "| stop . . . . . . . . . . . . . . . . stop stream"
 msgstr "| रोक्नुहोस् . . . . . . . . . . . . . . . . प्रवाह रोक्नुहोस्"
 
-#: modules/control/rc.c:911
+#: modules/control/rc.c:914
 #, fuzzy
 msgid "| next . . . . . . . . . . . .  next playlist item"
 msgstr "| पछिल्लो . . . . . . . . . . . .  पछिल्लो बजाउने सूची वस्तु"
 
-#: modules/control/rc.c:912
+#: modules/control/rc.c:915
 #, fuzzy
 msgid "| prev . . . . . . . . . .  previous playlist item"
 msgstr "| अघिल्लो . . . . . . . . . .  अघिल्लो बजाउने सूची वस्तु"
 
-#: modules/control/rc.c:913
+#: modules/control/rc.c:916
 #, fuzzy
 msgid "| goto . . . . . . . . . . . .  goto item at index"
 msgstr "| जानुहोस् . . . . . . . . . . . .  अनुक्रमणिकाको वस्तुमा जानुहोस्"
 
-#: modules/control/rc.c:914
+#: modules/control/rc.c:917
 #, fuzzy
 msgid "| clear . . . . . . . . . . .   clear the playlist"
 msgstr "| खाली गर्नुहोस् . . . . . . . . . . .   बजाउने सूची खाली गर्नुहोस्"
 
-#: modules/control/rc.c:915
+#: modules/control/rc.c:918
 #, fuzzy
 msgid "| status . . . . . . . . . current playlist status"
 msgstr "| वस्तुस्थिति . . . . . . . . . हालको बजाउने सूचीको वस्तुस्थिति"
 
-#: modules/control/rc.c:916
+#: modules/control/rc.c:919
 #, fuzzy
 msgid "| title [X]  . . . . set/get title in current item"
 msgstr "| शीर्षक [X]  . . . . हालको वस्तुमा सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:917
+#: modules/control/rc.c:920
 #, fuzzy
 msgid "| title_n  . . . . . .  next title in current item"
 msgstr "| पछिल्लो_शीर्षक  . . . . . .  हालको वस्तुमा पछिल्लो शीर्षक"
 
-#: modules/control/rc.c:918
+#: modules/control/rc.c:921
 #, fuzzy
 msgid "| title_p  . . . .  previous title in current item"
 msgstr "| अघिल्लो_शीर्षक  . . . .  हालको वस्तुमा अघिल्लो शीर्षक"
 
-#: modules/control/rc.c:919
+#: modules/control/rc.c:922
 #, fuzzy
 msgid "| chapter [X]  . . set/get chapter in current item"
 msgstr "| अध्याय [X]  . . हालको वस्तुमा अध्याय सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:920
+#: modules/control/rc.c:923
 #, fuzzy
 msgid "| chapter_n  . . . .  next chapter in current item"
 msgstr "| पछिल्लो_अध्याय  . . . .  हालको वस्तुमा पछिल्लो अध्याय"
 
-#: modules/control/rc.c:921
+#: modules/control/rc.c:924
 #, fuzzy
 msgid "| chapter_p  . .  previous chapter in current item"
 msgstr "| अघिल्लो_अध्याय  . .  हालको वस्तुमा अघिल्लो अध्याय"
 
-#: modules/control/rc.c:923
+#: modules/control/rc.c:926
 #, fuzzy
 msgid "| seek X . seek in seconds, for instance `seek 12'"
 msgstr "| खोजी X . सेकेन्डमा खोजी गर्नुहोस्, उदाहरणका लागि `seek 12'"
 
-#: modules/control/rc.c:924
+#: modules/control/rc.c:927
 #, fuzzy
 msgid "| pause  . . . . . . . . . . . . . .  toggle pause"
 msgstr "| पज गर्नुहोस्  . . . . . . . . . . . . . .  टगल पज"
 
-#: modules/control/rc.c:925
+#: modules/control/rc.c:928
 #, fuzzy
 msgid "| fastforward  . . . . . .  .  set to maximum rate"
 msgstr "| छिटो अगाडि  . . . . . .  .  अधिकतम दरमा सेट गर्नुहोस्"
 
-#: modules/control/rc.c:926
+#: modules/control/rc.c:929
 #, fuzzy
 msgid "| rewind  . . . . . . . . . .  set to minimum rate"
 msgstr "| पछाडि  . . . . . . . . . .  न्यूनतम दरमा सेट गर्नुहोस्"
 
-#: modules/control/rc.c:927
+#: modules/control/rc.c:930
 #, fuzzy
 msgid "| faster . . . . . . . .  faster playing of stream"
 msgstr "| छिटो . . . . . . . .  प्रवाह बजाउन छिटो गर्नुहोस्"
 
-#: modules/control/rc.c:928
+#: modules/control/rc.c:931
 #, fuzzy
 msgid "| slower . . . . . . . .  slower playing of stream"
 msgstr "| ढिलो . . . . . . . .  प्रवाह बजाउन ढिलो गर्नुहोस्"
 
-#: modules/control/rc.c:929
+#: modules/control/rc.c:932
 #, fuzzy
 msgid "| normal . . . . . . . .  normal playing of stream"
 msgstr "| सामान्य . . . . . . . .  प्रवाहको समान्य बजाउनुहोस्"
 
-#: modules/control/rc.c:930
+#: modules/control/rc.c:933
 #, fuzzy
 msgid "| f [on|off] . . . . . . . . . . toggle fullscreen"
 msgstr "| f [खोल्नुहोस्|बन्द गर्नुहोस्] . . . . . . . . . . टगल पूरापर्दा"
 
-#: modules/control/rc.c:931
+#: modules/control/rc.c:934
 #, fuzzy
 msgid "| info . . .  information about the current stream"
 msgstr "| सूचना . . .  हालको प्रवाहको बारेमा सूचना"
 
-#: modules/control/rc.c:932
+#: modules/control/rc.c:935
 msgid "| get_time . . seconds elapsed since stream's beginning"
 msgstr "| समय लिनुहोस् . . प्रवाह सुरु यता वितेको सेकेन्ड"
 
-#: modules/control/rc.c:933
+#: modules/control/rc.c:936
 #, fuzzy
 msgid "| is_playing . .  1 if a stream plays, 0 otherwise"
 msgstr "| बजिरहेको . .  प्रवाह बजाउने भए १, अन्यथा ०"
 
-#: modules/control/rc.c:934
+#: modules/control/rc.c:937
 #, fuzzy
 msgid "| get_title . . .  the title of the current stream"
 msgstr "| शीर्षक प्राप्त गर्नुहोस् . . .  हालको प्रवाहको शीर्षक"
 
-#: modules/control/rc.c:935
+#: modules/control/rc.c:938
 #, fuzzy
 msgid "| get_length . .  the length of the current stream"
 msgstr "| लम्बाइ प्राप्त गर्नुहोस् . .  हालको प्रवाहको लम्बाइ"
 
-#: modules/control/rc.c:937
+#: modules/control/rc.c:940
 #, fuzzy
 msgid "| volume [X] . . . . . . . .  set/get audio volume"
 msgstr "| भोल्युम [X] . . . . . . . .  अडियो भोल्युम सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:938
+#: modules/control/rc.c:941
 #, fuzzy
 msgid "| volup [X]  . . . . .  raise audio volume X steps"
 msgstr "| भोल्युम बढाउनुहोस् [X]  . . . . .  भोल्युम X पटक बढाउनुहोस्"
 
-#: modules/control/rc.c:939
+#: modules/control/rc.c:942
 #, fuzzy
 msgid "| voldown [X]  . . . .  lower audio volume X steps"
 msgstr "| भोल्युम घटाउनुहोस् [X]  . . . .  अडियो भोल्युम X पटक घटाउनुहोस्"
 
-#: modules/control/rc.c:940
+#: modules/control/rc.c:943
 #, fuzzy
 msgid "| adev [X] . . . . . . . . .  set/get audio device"
 msgstr "| adev [X] . . . . . . . . .  अडियो यन्त्र सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:941
+#: modules/control/rc.c:944
 #, fuzzy
 msgid "| achan [X]. . . . . . . .  set/get audio channels"
 msgstr "| achan [X]. . . . . . . .  अडियो च्यानल सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:942
+#: modules/control/rc.c:945
 #, fuzzy
 msgid "| atrack [X] . . . . . . . . . set/get audio track"
 msgstr "| atrack [X] . . . . . . . . . अडियो ट्रायक सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:943
+#: modules/control/rc.c:946
 #, fuzzy
 msgid "| vtrack [X] . . . . . . . . . set/get video track"
 msgstr "| vtrack [X] . . . . . . . . . भिडियो ट्रायक सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:944
+#: modules/control/rc.c:947
 #, fuzzy
 msgid "| vratio [X]  . . . . . set/get video aspect ratio"
 msgstr "| vratio [X]  . . . . . आकार अनुपात सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:945
+#: modules/control/rc.c:948
 #, fuzzy
 msgid "| vcrop [X]  . . . . . . . . .  set/get video crop"
 msgstr "| vcrop [X]  . . . . . . . . .  भिडियो काँटछाँट सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:946
+#: modules/control/rc.c:949
 #, fuzzy
 msgid "| vzoom [X]  . . . . . . . . .  set/get video zoom"
 msgstr "| vzoom [X]  . . . . . . . . .  भिडियो जुम सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:947
+#: modules/control/rc.c:950
 #, fuzzy
 msgid "| strack [X] . . . . . . . set/get subtitles track"
 msgstr "| strack [X] . . . . . . . उपशीर्षक ट्रयाक सेट गर्नुहोस्/प्राप्त गर्नुहोस्"
 
-#: modules/control/rc.c:948
+#: modules/control/rc.c:951
 #, fuzzy
 msgid "| menu [on|off|up|down|left|right|select] use menu"
 msgstr "| मेनु [खोल्नुहोस्|बन्द गर्नुहोस्|माथि|तल|बायाँ|दायाँ|चयन] मेनु प्रयोग गर्नुहोस्"
 
-#: modules/control/rc.c:953
+#: modules/control/rc.c:956
 #, fuzzy
 msgid "| marq-marquee STRING  . . overlay STRING in video"
 msgstr "| marq-marquee STRING  . . भिडियोमा STRING खप्टिनुहोस्"
 
-#: modules/control/rc.c:954
+#: modules/control/rc.c:957
 #, fuzzy
 msgid "| marq-x X . . . . . . . . . . . .offset from left"
 msgstr "| marq-x X . . . . . . . . . . . .बायाँबाट अफसेट"
 
-#: modules/control/rc.c:955
+#: modules/control/rc.c:958
 #, fuzzy
 msgid "| marq-y Y . . . . . . . . . . . . offset from top"
 msgstr "| marq-y Y . . . . . . . . . . . . माथिबाट अफसेट"
 
-#: modules/control/rc.c:956
+#: modules/control/rc.c:959
 #, fuzzy
 msgid "| marq-position #. . .  .relative position control"
 msgstr "| marq-position #. . .  .सापेक्षिक स्थान नियन्त्रण"
 
-#: modules/control/rc.c:957
+#: modules/control/rc.c:960
 #, fuzzy
 msgid "| marq-color # . . . . . . . . . . font color, RGB"
 msgstr "| marq-color # . . . . . . . . . . फन्ट रङ, RGB"
 
-#: modules/control/rc.c:958
+#: modules/control/rc.c:961
 #, fuzzy
 msgid "| marq-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| marq-opacity # . . . . . . . . . . . . . अपारदर्शिता"
 
-#: modules/control/rc.c:959
+#: modules/control/rc.c:962
 #, fuzzy
 msgid "| marq-timeout T. . . . . . . . . . timeout, in ms"
 msgstr "| marq-timeout T. . . . . . . . . . समय समाप्त, मिलि सेकेन्डमा"
 
-#: modules/control/rc.c:960
+#: modules/control/rc.c:963
 #, fuzzy
 msgid "| marq-size # . . . . . . . . font size, in pixels"
 msgstr "| marq-size # . . . . . . . . फन्ट साइज, पिक्सेलमा"
 
-#: modules/control/rc.c:962
+#: modules/control/rc.c:965
 msgid "| time-format STRING . . . overlay STRING in video"
 msgstr "| time-format STRING . . . भिडियोमा STRING खप्टिनुहोस्"
 
-#: modules/control/rc.c:963
+#: modules/control/rc.c:966
 msgid "| time-x X . . . . . . . . . . . .offset from left"
 msgstr "| time-x X . . . . . . . . . . . .बायाँबाट अफसेट"
 
-#: modules/control/rc.c:964
+#: modules/control/rc.c:967
 msgid "| time-y Y . . . . . . . . . . . . offset from top"
 msgstr "| time-y Y . . . . . . . . . . . . माथिबाट अफसेट"
 
-#: modules/control/rc.c:965
+#: modules/control/rc.c:968
 msgid "| time-position #. . . . . . . . relative position"
 msgstr "| time-position #. . . . . . . . सापेक्षिक स्थान"
 
-#: modules/control/rc.c:966
+#: modules/control/rc.c:969
 msgid "| time-color # . . . . . . . . . . font color, RGB"
 msgstr "| time-color # . . . . . . . . . . फन्ट रङ, RGB"
 
-#: modules/control/rc.c:967
+#: modules/control/rc.c:970
 msgid "| time-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| time-opacity # . . . . . . . . . . . . . अपारदर्शीता"
 
-#: modules/control/rc.c:968
+#: modules/control/rc.c:971
 msgid "| time-size # . . . . . . . . font size, in pixels"
 msgstr "| time-size # . . . . . . . . फन्ट साइज, पिक्सेलमा"
 
-#: modules/control/rc.c:970
+#: modules/control/rc.c:973
 #, fuzzy
 msgid "| logo-file STRING . . .the overlay file path/name"
 msgstr "| logo-file STRING . . .फाइल मार्ग/नाम ओभरले"
 
-#: modules/control/rc.c:971
+#: modules/control/rc.c:974
 #, fuzzy
 msgid "| logo-x X . . . . . . . . . . . .offset from left"
 msgstr "| logo-x X . . . . . . . . . . . .बायाँबाट अफसेट"
 
-#: modules/control/rc.c:972
+#: modules/control/rc.c:975
 #, fuzzy
 msgid "| logo-y Y . . . . . . . . . . . . offset from top"
 msgstr "| logo-y Y . . . . . . . . . . . . माथिबाट अफसेट"
 
-#: modules/control/rc.c:973
+#: modules/control/rc.c:976
 #, fuzzy
 msgid "| logo-position #. . . . . . . . relative position"
 msgstr "| logo-position #. . . . . . . . सापेक्षिक स्थान"
 
-#: modules/control/rc.c:974
+#: modules/control/rc.c:977
 #, fuzzy
 msgid "| logo-transparency #. . . . . . . . .transparency"
 msgstr "| logo-transparency #. . . . . . . . .पारदर्शीता"
 
-#: modules/control/rc.c:976
+#: modules/control/rc.c:979
 #, fuzzy
 msgid "| mosaic-alpha # . . . . . . . . . . . . . . alpha"
 msgstr "| mosaic-alpha # . . . . . . . . . . . . . . अल्फा"
 
-#: modules/control/rc.c:977
+#: modules/control/rc.c:980
 #, fuzzy
 msgid "| mosaic-height #. . . . . . . . . . . . . .height"
 msgstr "| mosaic-height #. . . . . . . . . . . . . .उचाइ"
 
-#: modules/control/rc.c:978
+#: modules/control/rc.c:981
 #, fuzzy
 msgid "| mosaic-width # . . . . . . . . . . . . . . width"
 msgstr "| mosaic-width # . . . . . . . . . . . . . . चौडाइ"
 
-#: modules/control/rc.c:979
+#: modules/control/rc.c:982
 #, fuzzy
 msgid "| mosaic-xoffset # . . . .top left corner position"
 msgstr "| mosaic-xoffset # . . . .माथिको बायाँ कुना स्थान"
 
-#: modules/control/rc.c:980
+#: modules/control/rc.c:983
 #, fuzzy
 msgid "| mosaic-yoffset # . . . .top left corner position"
 msgstr "| mosaic-yoffset # . . . .माथिको दायाँ कुना स्थान"
 
-#: modules/control/rc.c:981
+#: modules/control/rc.c:984
 #, fuzzy
 msgid "| mosaic-align 0..2,4..6,8..10. . .mosaic alignment"
 msgstr "| mosaic-align 0..2,4..6,8..10. . .मोसिक पङ्कतिबद्धता"
 
-#: modules/control/rc.c:982
+#: modules/control/rc.c:985
 #, fuzzy
 msgid "| mosaic-vborder # . . . . . . . . vertical border"
 msgstr "| mosaic-vborder # . . . . . . . . ठाडो किनारा"
 
-#: modules/control/rc.c:983
+#: modules/control/rc.c:986
 #, fuzzy
 msgid "| mosaic-hborder # . . . . . . . horizontal border"
 msgstr "| mosaic-hborder # . . . . . . . तेर्सो किनारा"
 
-#: modules/control/rc.c:984
+#: modules/control/rc.c:987
 #, fuzzy
 msgid "| mosaic-position {0=auto,1=fixed} . . . .position"
 msgstr "| mosaic-position {०=स्वत:,१=स्थिर} . . . .स्थान"
 
-#: modules/control/rc.c:985
+#: modules/control/rc.c:988
 #, fuzzy
 msgid "| mosaic-rows #. . . . . . . . . . .number of rows"
 msgstr "| mosaic-rows #. . . . . . . . . . .पङ्क्तिको नम्बर"
 
-#: modules/control/rc.c:986
+#: modules/control/rc.c:989
 #, fuzzy
 msgid "| mosaic-cols #. . . . . . . . . . .number of cols"
 msgstr "| mosaic-cols #. . . . . . . . . . .स्तम्भको नम्बर"
 
-#: modules/control/rc.c:987
+#: modules/control/rc.c:990
 #, fuzzy
 msgid "| mosaic-keep-aspect-ratio {0,1} . . .aspect ratio"
 msgstr "| mosaic-keep-aspect-ratio {0,1} . . .आकार अनुपात"
 
-#: modules/control/rc.c:989
+#: modules/control/rc.c:992
 msgid ""
 "| check-updates [newer] [equal] [older]\n"
 "|               [undef] [info] [source] [binary] [plugin]"
@@ -9370,45 +9381,45 @@ msgstr ""
 "| जाँच-अद्यावधिक [नविनतम] [बरावर] [पुरानो]\n"
 "|               [undef] [सूचना] [स्रोत] [बाइनरी] [प्लगइन]"
 
-#: modules/control/rc.c:993
+#: modules/control/rc.c:996
 #, fuzzy
 msgid "| help . . . . . . . . . . . . . this help message"
 msgstr "| मद्दत . . . . . . . . . . . . . यो मद्दत सन्देश"
 
-#: modules/control/rc.c:994
+#: modules/control/rc.c:997
 #, fuzzy
 msgid "| longhelp . . . . . . . . . a longer help message"
 msgstr "| लामो मद्दत . . . . . . . . . एउटा लामो मद्दत सन्देश"
 
-#: modules/control/rc.c:995
+#: modules/control/rc.c:998
 #, fuzzy
 msgid "| logout . . . . .  exit (if in socket connection)"
 msgstr "| लग आउट गर्नुहोस् . . . . .  निस्कनुहोस् (यदि सकेट जडान हुनुहुन्छ भने)"
 
-#: modules/control/rc.c:996
+#: modules/control/rc.c:999
 #, fuzzy
 msgid "| quit . . . . . . . . . . . . . . . . .  quit vlc"
 msgstr "| अन्त्य गर्नुहोस् . . . . . . . . . . . . . . . . .  vlc अन्य गर्नुहोस्"
 
-#: modules/control/rc.c:998
+#: modules/control/rc.c:1001
 msgid "+----[ end of help ]"
 msgstr "+----[ मद्दतको अन्त्य ]"
 
-#: modules/control/rc.c:1105
+#: modules/control/rc.c:1108
 msgid "Press menu select or pause to continue."
 msgstr "मेनु चयन थिच्नुहोस् वा जारी राख्न पज गर्नुहोस्"
 
-#: modules/control/rc.c:1348 modules/control/rc.c:1847
-#: modules/control/rc.c:1917 modules/control/rc.c:2086
-#: modules/control/rc.c:2185
+#: modules/control/rc.c:1351 modules/control/rc.c:1850
+#: modules/control/rc.c:1920 modules/control/rc.c:2089
+#: modules/control/rc.c:2188
 msgid "Type 'menu select' or 'pause' to continue."
 msgstr "जारी राख्नका लागि 'menu select' वा 'pause' टाइप गर्नुहोस्"
 
-#: modules/control/rc.c:1507
+#: modules/control/rc.c:1510
 msgid "Type 'pause' to continue."
 msgstr "जारी राख्नका लागि 'pause' टाइप गर्नुहोस्"
 
-#: modules/control/rc.c:2170 modules/control/rc.c:2209
+#: modules/control/rc.c:2173 modules/control/rc.c:2212
 msgid "Please provide one of the following parameters:"
 msgstr "कृपया निम्न मध्ये एउटा परिमिति प्रदान गर्नुहोस्:"
 
@@ -9884,6 +9895,21 @@ msgstr "OGG डुमुक्सर"
 #: modules/demux/playlist/b4s.c:341 modules/demux/playlist/shoutcast.c:496
 msgid "Listeners"
 msgstr "श्रोता"
+
+#: modules/demux/playlist/m3u.c:211
+#, fuzzy
+msgid "Options disabled"
+msgstr "विकल्प"
+
+#: modules/demux/playlist/m3u.c:212
+msgid ""
+"m3u EXTVLCOPT parsing is disabled for security reasons.\n"
+"If you need it and trust the m3u playlist you are trying to open, please "
+"enable it from:\n"
+"Preferences > Input/Codecs > Demuxers > Playlist > Enable parsinf of "
+"EXTVLCOPT: options.\n"
+"Don't forget to disable it before opening an untrusted playlist"
+msgstr ""
 
 #: modules/demux/playlist/playlist.c:36
 msgid "Auto start"
@@ -10982,7 +11008,7 @@ msgid "Fast Forward"
 msgstr "छिटो अगाडि"
 
 #: modules/gui/macosx/embeddedwindow.m:50
-#: modules/gui/macosx/embeddedwindow.m:94 modules/gui/macosx/intf.m:504
+#: modules/gui/macosx/embeddedwindow.m:93 modules/gui/macosx/intf.m:504
 #: modules/gui/macosx/intf.m:547 modules/gui/macosx/intf.m:625
 #: modules/gui/macosx/intf.m:632 modules/gui/macosx/intf.m:1461
 #: modules/gui/macosx/intf.m:1462 modules/gui/macosx/intf.m:1463
@@ -10997,7 +11023,7 @@ msgstr "छिटो अगाडि"
 msgid "Play"
 msgstr "बजाउनुहोस्"
 
-#: modules/gui/macosx/embeddedwindow.m:88 modules/gui/macosx/intf.m:1451
+#: modules/gui/macosx/embeddedwindow.m:87 modules/gui/macosx/intf.m:1451
 #: modules/gui/macosx/intf.m:1452 modules/gui/macosx/intf.m:1453
 #: modules/gui/macosx/intf.m:1454 modules/gui/pda/pda_interface.c:250
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:679
@@ -15329,7 +15355,7 @@ msgstr "प्रतिलिपि प्याकेटाइजर"
 msgid "H.264 video packetizer"
 msgstr "H.264 भिडियो प्याकेटाइजर"
 
-#: modules/packetizer/mpeg4audio.c:118
+#: modules/packetizer/mpeg4audio.c:181
 msgid "MPEG4 audio packetizer"
 msgstr "MPEG4 अडियो प्याकेटाइजर"
 
@@ -15866,71 +15892,71 @@ msgstr "मानक"
 msgid "Standard stream output"
 msgstr "मानक प्रवाह निर्गत"
 
-#: modules/stream_out/switcher.c:81
+#: modules/stream_out/switcher.c:83
 msgid "Files"
 msgstr "फाइल"
 
-#: modules/stream_out/switcher.c:83
+#: modules/stream_out/switcher.c:85
 msgid "Full paths of the files separated by colons."
 msgstr "अल्प विरामद्वारा विभाजित फाइलको पूरा मार्ग"
 
-#: modules/stream_out/switcher.c:84
+#: modules/stream_out/switcher.c:86
 msgid "Sizes"
 msgstr "साइज"
 
-#: modules/stream_out/switcher.c:86
+#: modules/stream_out/switcher.c:88
 msgid "List of sizes separated by colons (720x576:480x576)."
 msgstr "विरामद्वारा विभाजित साइजहरूको सूची (720x576:480x576)"
 
-#: modules/stream_out/switcher.c:87
+#: modules/stream_out/switcher.c:89
 msgid "Aspect ratio"
 msgstr "आकार अनुपात"
 
-#: modules/stream_out/switcher.c:89
+#: modules/stream_out/switcher.c:91
 msgid "Aspect ratio (4:3, 16:9)."
 msgstr "आकार अनुपात (4:3, 16:9)"
 
-#: modules/stream_out/switcher.c:90
+#: modules/stream_out/switcher.c:92
 msgid "Command UDP port"
 msgstr "आदेश UDP पोर्ट"
 
-#: modules/stream_out/switcher.c:92
+#: modules/stream_out/switcher.c:94
 msgid "UDP port to listen to for commands."
 msgstr "आदेशका लागि सुन्न UDP पोर्ट"
 
-#: modules/stream_out/switcher.c:93
+#: modules/stream_out/switcher.c:95
 msgid "Command"
 msgstr "आदेश"
 
-#: modules/stream_out/switcher.c:95
+#: modules/stream_out/switcher.c:97
 msgid "Initial command to execute."
 msgstr "कार्यान्वयन गर्नलाई सुरुआती आदेश"
 
-#: modules/stream_out/switcher.c:96
+#: modules/stream_out/switcher.c:98
 msgid "GOP size"
 msgstr "GOP साइज"
 
-#: modules/stream_out/switcher.c:98
+#: modules/stream_out/switcher.c:100
 msgid "Number of P frames between two I frames."
 msgstr "I फ्रेमहरूको बिचमा P फ्रेमको नम्बर"
 
-#: modules/stream_out/switcher.c:99
+#: modules/stream_out/switcher.c:101
 msgid "Quantizer scale"
 msgstr "क्वान्टिजर मापन"
 
-#: modules/stream_out/switcher.c:101
+#: modules/stream_out/switcher.c:103
 msgid "Fixed quantizer scale to use."
 msgstr "प्रयोग गर्नलाई स्थिर क्वान्टिजर मापन"
 
-#: modules/stream_out/switcher.c:102
+#: modules/stream_out/switcher.c:104
 msgid "Mute audio"
 msgstr "मौन अडियो"
 
-#: modules/stream_out/switcher.c:104
+#: modules/stream_out/switcher.c:106
 msgid "Mute audio when command is not 0."
 msgstr "आदेश ० नभएको बेलामा मौन अडियो"
 
-#: modules/stream_out/switcher.c:107
+#: modules/stream_out/switcher.c:109
 msgid "MPEG2 video switcher stream output"
 msgstr "MPEG2 भिडियो स्विचर प्रवाह निर्गत"
 

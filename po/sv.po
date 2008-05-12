@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 22:19+0000\n"
+"POT-Creation-Date: 2008-05-12 20:07+0300\n"
 "PO-Revision-Date: 2007-06-10 21:23+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -26,7 +26,7 @@ msgid "Select \"Advanced Options\" to see all options."
 msgstr "Välj \"Avancerade alternativ\" för att se alla alternativ."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:333
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -669,7 +669,7 @@ msgstr ""
 
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:362 src/libvlc.h:409 src/video_output/video_output.c:379
-#: modules/codec/ffmpeg/postprocess.c:94
+#: modules/codec/ffmpeg/postprocess.c:96
 msgid "Disable"
 msgstr "Inaktivera"
 
@@ -810,7 +810,7 @@ msgstr "Spår %i"
 msgid "Program"
 msgstr "Program"
 
-#: src/input/es_out.c:1583 modules/codec/faad.c:329
+#: src/input/es_out.c:1583 modules/codec/faad.c:374
 #, c-format
 msgid "Stream %d"
 msgstr "Ström %d"
@@ -826,17 +826,17 @@ msgstr "Kodek"
 msgid "Type"
 msgstr "Typ"
 
-#: src/input/es_out.c:1599 modules/codec/faad.c:333
+#: src/input/es_out.c:1599 modules/codec/faad.c:379
 #: modules/gui/macosx/output.m:176
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:857
 msgid "Channels"
 msgstr "Kanaler"
 
-#: src/input/es_out.c:1604 modules/codec/faad.c:335
+#: src/input/es_out.c:1604 modules/codec/faad.c:381
 msgid "Sample rate"
 msgstr "Samplingsfrekvens"
 
-#: src/input/es_out.c:1605 modules/codec/faad.c:335
+#: src/input/es_out.c:1605 modules/codec/faad.c:381
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
@@ -877,7 +877,7 @@ msgstr "Undertext"
 msgid "Stream"
 msgstr "Ström"
 
-#: src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1962 src/playlist/item.c:333
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:133
 msgid "Duration"
@@ -988,8 +988,8 @@ msgstr "Felsökningslogg"
 msgid "Mouse Gestures"
 msgstr "Musgester"
 
-#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1684
-#: src/misc/modules.c:1988
+#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1686
+#: src/misc/modules.c:1990
 msgid "C"
 msgstr "sv"
 
@@ -997,47 +997,47 @@ msgstr "sv"
 msgid "Help options"
 msgstr "Hjälpinställningar"
 
-#: src/libvlc.c:2221 src/misc/configuration.c:1269
+#: src/libvlc.c:2199 src/misc/configuration.c:1269
 msgid "string"
 msgstr "sträng"
 
-#: src/libvlc.c:2238 src/misc/configuration.c:1233
+#: src/libvlc.c:2216 src/misc/configuration.c:1233
 msgid "integer"
 msgstr "heltal"
 
-#: src/libvlc.c:2256 src/misc/configuration.c:1258
+#: src/libvlc.c:2234 src/misc/configuration.c:1258
 msgid "float"
 msgstr ""
 
-#: src/libvlc.c:2262
+#: src/libvlc.c:2240
 msgid " (default enabled)"
 msgstr "(som standard aktiverad)"
 
-#: src/libvlc.c:2263
+#: src/libvlc.c:2241
 msgid " (default disabled)"
 msgstr "(som standard inaktiverad)"
 
-#: src/libvlc.c:2445
+#: src/libvlc.c:2423
 #, c-format
 msgid "VLC version %s\n"
 msgstr "VLC version %s\n"
 
-#: src/libvlc.c:2446
+#: src/libvlc.c:2424
 #, c-format
 msgid "Compiled by %s@%s.%s\n"
 msgstr "Byggd av %s@%s.%s\n"
 
-#: src/libvlc.c:2448
+#: src/libvlc.c:2426
 #, c-format
 msgid "Compiler: %s\n"
 msgstr "Kompilator: %s\n"
 
-#: src/libvlc.c:2451
+#: src/libvlc.c:2429
 #, c-format
 msgid "Based upon svn changeset [%s]\n"
 msgstr "Baserad på ändringsuppsättning [%s] från svn\n"
 
-#: src/libvlc.c:2483
+#: src/libvlc.c:2461
 msgid ""
 "\n"
 "Dumped content to vlc-help.txt file.\n"
@@ -1045,7 +1045,7 @@ msgstr ""
 "\n"
 "Dumpade innehåll till filen vlc-help.txt.\n"
 
-#: src/libvlc.c:2504
+#: src/libvlc.c:2482
 msgid ""
 "\n"
 "Press the RETURN key to continue...\n"
@@ -4383,7 +4383,7 @@ msgstr "Manuellt tillagd"
 msgid "All items, unsorted"
 msgstr "Alla objekt, osorterade"
 
-#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:280
+#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:281
 msgid "Undefined"
 msgstr "Odefinierad"
 
@@ -4796,7 +4796,7 @@ msgid "Standard filesystem directory input"
 msgstr ""
 
 #: modules/access/dshow/dshow.cpp:73 modules/access/dshow/dshow.cpp:75
-#: modules/codec/ffmpeg/ffmpeg.c:75 modules/demux/mpc.c:55
+#: modules/codec/ffmpeg/ffmpeg.c:77 modules/demux/mpc.c:55
 #: modules/video_output/opengl.c:123 modules/video_output/opengl.c:174
 msgid "None"
 msgstr "Ingen"
@@ -5559,7 +5559,18 @@ msgstr "Maximal bitfrekvens"
 msgid "Select the stream with the maximum bitrate under that limit."
 msgstr ""
 
-#: modules/access/mms/mms.c:62
+#: modules/access/mms/mms.c:60
+#, fuzzy
+msgid "TCP/UDP timeout (ms)"
+msgstr "Tidsgräns (ms)"
+
+#: modules/access/mms/mms.c:61
+msgid ""
+"Amount of time (in ms) to wait before aborting network reception of data. "
+"Note that there will be 10 retries before completely giving up."
+msgstr ""
+
+#: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr ""
 
@@ -7063,7 +7074,7 @@ msgstr "Kodare för DVB-undertexter"
 msgid "AAC audio decoder (using libfaad2)"
 msgstr "Avkodare för AAC-ljud (använder libfaad2)"
 
-#: modules/codec/faad.c:331
+#: modules/codec/faad.c:377
 msgid "AAC extension"
 msgstr ""
 
@@ -7123,80 +7134,80 @@ msgstr "Avflätningsmodul att använda."
 msgid "Fake video decoder"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Non-ref"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Bidir"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "Non-key"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "All"
 msgstr "Alla"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "rd"
 msgstr "rd"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "bits"
 msgstr "bitar"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "simple"
 msgstr "enkel"
 
-#: modules/codec/ffmpeg/ffmpeg.c:89
+#: modules/codec/ffmpeg/ffmpeg.c:91
 msgid ""
 "AltiVec FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:93
+#: modules/codec/ffmpeg/ffmpeg.c:95
 #, fuzzy
 msgid "FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr "Inställningar för avkodare och kodare endast för video."
 
-#: modules/codec/ffmpeg/ffmpeg.c:96
+#: modules/codec/ffmpeg/ffmpeg.c:98
 msgid "Decoding"
 msgstr "Avkodar"
 
-#: modules/codec/ffmpeg/ffmpeg.c:127
+#: modules/codec/ffmpeg/ffmpeg.c:129
 msgid "FFmpeg chroma conversion"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:131
+#: modules/codec/ffmpeg/ffmpeg.c:133
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:97
 msgid "Encoding"
 msgstr "Kodar"
 
-#: modules/codec/ffmpeg/ffmpeg.c:132
+#: modules/codec/ffmpeg/ffmpeg.c:134
 msgid "FFmpeg audio/video encoder"
 msgstr ""
 
-#: modules/codec/ffmpeg/ffmpeg.c:190
+#: modules/codec/ffmpeg/ffmpeg.c:192
 msgid "FFmpeg demuxer"
 msgstr "Demuxer för FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:196
+#: modules/codec/ffmpeg/ffmpeg.c:198
 msgid "FFmpeg muxer"
 msgstr "Muxer för FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:204
+#: modules/codec/ffmpeg/ffmpeg.c:206
 #, fuzzy
 msgid "FFmpeg video filter"
 msgstr "ffmpeg videofilter"
 
-#: modules/codec/ffmpeg/ffmpeg.c:210
+#: modules/codec/ffmpeg/ffmpeg.c:212
 #, fuzzy
 msgid "FFmpeg crop padd filter"
 msgstr "Föregående fil"
 
-#: modules/codec/ffmpeg/ffmpeg.c:216
+#: modules/codec/ffmpeg/ffmpeg.c:218
 #, fuzzy
 msgid "FFmpeg deinterlace video filter"
 msgstr "ffmpeg videofilter"
@@ -7592,16 +7603,16 @@ msgid ""
 "0.0). The H264 specification recommends 7."
 msgstr ""
 
-#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:599
+#: modules/codec/ffmpeg/postprocess.c:90 modules/gui/macosx/intf.m:599
 #: modules/gui/macosx/intf.m:600
 msgid "Post processing"
 msgstr "Efterbehandling"
 
-#: modules/codec/ffmpeg/postprocess.c:96
+#: modules/codec/ffmpeg/postprocess.c:98
 msgid "1 (Lowest)"
 msgstr "1 (Lägst)"
 
-#: modules/codec/ffmpeg/postprocess.c:106
+#: modules/codec/ffmpeg/postprocess.c:108
 msgid "6 (Highest)"
 msgstr "6 (Högst)"
 
@@ -8706,36 +8717,36 @@ msgstr "NT-tjänst"
 msgid "Windows Service interface"
 msgstr "Gränssnitt för Windows-tjänst"
 
-#: modules/control/rc.c:158
+#: modules/control/rc.c:161
 msgid "Show stream position"
 msgstr "Visa strömposition"
 
-#: modules/control/rc.c:159
+#: modules/control/rc.c:162
 msgid ""
 "Show the current position in seconds within the stream from time to time."
 msgstr ""
 
-#: modules/control/rc.c:162
+#: modules/control/rc.c:165
 msgid "Fake TTY"
 msgstr "Fusk-TTY"
 
-#: modules/control/rc.c:163
+#: modules/control/rc.c:166
 msgid "Force the rc module to use stdin as if it was a TTY."
 msgstr "Tvinga rc-modulen att använda standard in som om det vore en TTY."
 
-#: modules/control/rc.c:165
+#: modules/control/rc.c:168
 msgid "UNIX socket command input"
 msgstr "Kommandoinmatning från UNIX-uttag"
 
-#: modules/control/rc.c:166
+#: modules/control/rc.c:169
 msgid "Accept commands over a Unix socket rather than stdin."
 msgstr "Acceptera kommandon över ett Unix-uttag hellre än standard in."
 
-#: modules/control/rc.c:169
+#: modules/control/rc.c:172
 msgid "TCP command input"
 msgstr "Kommandoinmatning via TCP"
 
-#: modules/control/rc.c:170
+#: modules/control/rc.c:173
 msgid ""
 "Accept commands over a socket rather than stdin. You can set the address and "
 "port the interface will bind to."
@@ -8743,394 +8754,394 @@ msgstr ""
 "Acceptera kommandon över ett uttag istället för standard in. Du kan ställa "
 "in adress och port som gränssnittet ska bindas till."
 
-#: modules/control/rc.c:174 modules/misc/dummy/dummy.c:49
+#: modules/control/rc.c:177 modules/misc/dummy/dummy.c:49
 msgid "Do not open a DOS command box interface"
 msgstr "Öppna inte ett DOS-kommandogränssnitt"
 
-#: modules/control/rc.c:176
+#: modules/control/rc.c:179
 msgid ""
 "By default the rc interface plugin will start a DOS command box. Enabling "
 "the quiet mode will not bring this command box but can also be pretty "
 "annoying when you want to stop VLC and no video window is open."
 msgstr ""
 
-#: modules/control/rc.c:183
+#: modules/control/rc.c:186
 msgid "RC"
 msgstr "FK"
 
-#: modules/control/rc.c:186
+#: modules/control/rc.c:189
 msgid "Remote control interface"
 msgstr "Gränssnitt för fjärrkontroll"
 
-#: modules/control/rc.c:342
+#: modules/control/rc.c:345
 msgid "Remote control interface initialized. Type `help' for help."
 msgstr "Gränssnitt för fjärrkontroll initerad. Skriv \"help\" för hjälp."
 
-#: modules/control/rc.c:871
+#: modules/control/rc.c:874
 #, c-format
 msgid "Unknown command `%s'. Type `help' for help."
 msgstr "Okänt kommando \"%s\". Skriv \"help\" för hjälp."
 
-#: modules/control/rc.c:904
+#: modules/control/rc.c:907
 msgid "+----[ Remote control commands ]"
 msgstr "+----[ Kommandon för fjärrkontroll ]"
 
-#: modules/control/rc.c:906
+#: modules/control/rc.c:909
 #, fuzzy
 msgid "| add XYZ  . . . . . . . . . . add XYZ to playlist"
 msgstr "| add XYZ  . . . . . . . . . . . . lägg till XYZ till spellista"
 
-#: modules/control/rc.c:907
+#: modules/control/rc.c:910
 #, fuzzy
 msgid "| enqueue XYZ  . . . . . . . queue XYZ to playlist"
 msgstr "| enqueue XYZ  . . . . . . . . . kölägg XYZ i spellista"
 
-#: modules/control/rc.c:908
+#: modules/control/rc.c:911
 #, fuzzy
 msgid "| playlist . . .  show items currently in playlist"
 msgstr "| playlist . . . . .  visa aktuella objekt i spellistan"
 
-#: modules/control/rc.c:909
+#: modules/control/rc.c:912
 #, fuzzy
 msgid "| play . . . . . . . . . . . . . . . . play stream"
 msgstr "| play . . . . . . . . . . . . . . . . . . spela upp ström"
 
-#: modules/control/rc.c:910
+#: modules/control/rc.c:913
 #, fuzzy
 msgid "| stop . . . . . . . . . . . . . . . . stop stream"
 msgstr "| stop . . . . . . . . . . . . . . . . . . stoppa ström"
 
-#: modules/control/rc.c:911
+#: modules/control/rc.c:914
 #, fuzzy
 msgid "| next . . . . . . . . . . . .  next playlist item"
 msgstr "| next . . . . . . . . . . . . . .  nästa objekt i spellista"
 
-#: modules/control/rc.c:912
+#: modules/control/rc.c:915
 #, fuzzy
 msgid "| prev . . . . . . . . . .  previous playlist item"
 msgstr "| prev . . . . . . . . . . . .  föregående objekt i spellista"
 
-#: modules/control/rc.c:913
+#: modules/control/rc.c:916
 #, fuzzy
 msgid "| goto . . . . . . . . . . . .  goto item at index"
 msgstr "| goto . . . . . . . . . . . . . .  gå till objekt i index"
 
-#: modules/control/rc.c:914
+#: modules/control/rc.c:917
 #, fuzzy
 msgid "| clear . . . . . . . . . . .   clear the playlist"
 msgstr "| clear . . . . . . . . . . . . .   töm spellistan"
 
-#: modules/control/rc.c:915
+#: modules/control/rc.c:918
 #, fuzzy
 msgid "| status . . . . . . . . . current playlist status"
 msgstr "| status . . . . . . . . . . . aktuell status för spellista"
 
-#: modules/control/rc.c:916
+#: modules/control/rc.c:919
 #, fuzzy
 msgid "| title [X]  . . . . set/get title in current item"
 msgstr "| title_p  . . . .  föregående titel i aktuellt objekt"
 
-#: modules/control/rc.c:917
+#: modules/control/rc.c:920
 #, fuzzy
 msgid "| title_n  . . . . . .  next title in current item"
 msgstr "| title_n  . . . . . . . .  nästa titel i aktuellt objekt"
 
-#: modules/control/rc.c:918
+#: modules/control/rc.c:921
 #, fuzzy
 msgid "| title_p  . . . .  previous title in current item"
 msgstr "| title_p  . . . . . .  föregående titel i aktuellt objekt"
 
-#: modules/control/rc.c:919
+#: modules/control/rc.c:922
 #, fuzzy
 msgid "| chapter [X]  . . set/get chapter in current item"
 msgstr "| chapter_n  . . . .  nästa kapitel i aktuellt objekt"
 
-#: modules/control/rc.c:920
+#: modules/control/rc.c:923
 #, fuzzy
 msgid "| chapter_n  . . . .  next chapter in current item"
 msgstr "| chapter_n  . . . . . .  nästa kapitel i aktuellt objekt"
 
-#: modules/control/rc.c:921
+#: modules/control/rc.c:924
 #, fuzzy
 msgid "| chapter_p  . .  previous chapter in current item"
 msgstr "| chapter_p  . . . .  föregående kapitel i aktuellt objekt"
 
-#: modules/control/rc.c:923
+#: modules/control/rc.c:926
 #, fuzzy
 msgid "| seek X . seek in seconds, for instance `seek 12'"
 msgstr "| seek X . . . spola i sekunder, till exempel \"seek 12\""
 
-#: modules/control/rc.c:924
+#: modules/control/rc.c:927
 #, fuzzy
 msgid "| pause  . . . . . . . . . . . . . .  toggle pause"
 msgstr "| pause  . . . . . . . . . . . . . . . .  växla paus"
 
-#: modules/control/rc.c:925
+#: modules/control/rc.c:928
 #, fuzzy
 msgid "| fastforward  . . . . . .  .  set to maximum rate"
 msgstr "| fastforward  . . . . . . . .  .  ställ in till maximal hastighet"
 
-#: modules/control/rc.c:926
+#: modules/control/rc.c:929
 #, fuzzy
 msgid "| rewind  . . . . . . . . . .  set to minimum rate"
 msgstr "| rewind  . . . . . . . . . . . .  ställ in till minimal hastighet"
 
-#: modules/control/rc.c:927
+#: modules/control/rc.c:930
 #, fuzzy
 msgid "| faster . . . . . . . .  faster playing of stream"
 msgstr "| faster . . . . . . . . . .  snabbare uppspelning av ström"
 
-#: modules/control/rc.c:928
+#: modules/control/rc.c:931
 #, fuzzy
 msgid "| slower . . . . . . . .  slower playing of stream"
 msgstr "| slower . . . . . . . . . .  långsammare uppspelning av ström"
 
-#: modules/control/rc.c:929
+#: modules/control/rc.c:932
 #, fuzzy
 msgid "| normal . . . . . . . .  normal playing of stream"
 msgstr "| normal . . . . . . . . . .  normal uppspelning av ström"
 
-#: modules/control/rc.c:930
+#: modules/control/rc.c:933
 #, fuzzy
 msgid "| f [on|off] . . . . . . . . . . toggle fullscreen"
 msgstr "| f [on|off] . . . . . . . . . . . . växla helskärmsläge"
 
-#: modules/control/rc.c:931
+#: modules/control/rc.c:934
 #, fuzzy
 msgid "| info . . .  information about the current stream"
 msgstr "| info . . . . .  information om den aktuella strömmen"
 
-#: modules/control/rc.c:932
+#: modules/control/rc.c:935
 msgid "| get_time . . seconds elapsed since stream's beginning"
 msgstr ""
 
-#: modules/control/rc.c:933
+#: modules/control/rc.c:936
 #, fuzzy
 msgid "| is_playing . .  1 if a stream plays, 0 otherwise"
 msgstr "| is_playing . . . .  1 om en ström spelas upp, annars 0"
 
-#: modules/control/rc.c:934
+#: modules/control/rc.c:937
 #, fuzzy
 msgid "| get_title . . .  the title of the current stream"
 msgstr "| get_title . . . . .  titeln för den aktuella strömmen"
 
-#: modules/control/rc.c:935
+#: modules/control/rc.c:938
 #, fuzzy
 msgid "| get_length . .  the length of the current stream"
 msgstr "| get_length . . . .  längden för den aktuella strömmen"
 
-#: modules/control/rc.c:937
+#: modules/control/rc.c:940
 #, fuzzy
 msgid "| volume [X] . . . . . . . .  set/get audio volume"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:938
+#: modules/control/rc.c:941
 #, fuzzy
 msgid "| volup [X]  . . . . .  raise audio volume X steps"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:939
+#: modules/control/rc.c:942
 #, fuzzy
 msgid "| voldown [X]  . . . .  lower audio volume X steps"
 msgstr "| slower . . . . . . . .  långsammare uppspelning av ström"
 
-#: modules/control/rc.c:940
+#: modules/control/rc.c:943
 #, fuzzy
 msgid "| adev [X] . . . . . . . . .  set/get audio device"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:941
+#: modules/control/rc.c:944
 #, fuzzy
 msgid "| achan [X]. . . . . . . .  set/get audio channels"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:942
+#: modules/control/rc.c:945
 #, fuzzy
 msgid "| atrack [X] . . . . . . . . . set/get audio track"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:943
+#: modules/control/rc.c:946
 #, fuzzy
 msgid "| vtrack [X] . . . . . . . . . set/get video track"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:944
+#: modules/control/rc.c:947
 #, fuzzy
 msgid "| vratio [X]  . . . . . set/get video aspect ratio"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:945
+#: modules/control/rc.c:948
 #, fuzzy
 msgid "| vcrop [X]  . . . . . . . . .  set/get video crop"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:946
+#: modules/control/rc.c:949
 #, fuzzy
 msgid "| vzoom [X]  . . . . . . . . .  set/get video zoom"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:947
+#: modules/control/rc.c:950
 #, fuzzy
 msgid "| strack [X] . . . . . . . set/get subtitles track"
 msgstr "| fastforward  . . . . . .  .  snabbspola framåt"
 
-#: modules/control/rc.c:948
+#: modules/control/rc.c:951
 #, fuzzy
 msgid "| menu [on|off|up|down|left|right|select] use menu"
 msgstr "| menu . . [on|off|up|down|left|right|select] använd meny"
 
-#: modules/control/rc.c:953
+#: modules/control/rc.c:956
 msgid "| marq-marquee STRING  . . overlay STRING in video"
 msgstr ""
 
-#: modules/control/rc.c:954
+#: modules/control/rc.c:957
 #, fuzzy
 msgid "| marq-x X . . . . . . . . . . . .offset from left"
 msgstr "| @name marq-x X . . . . . . . . . . . .position från vänster"
 
-#: modules/control/rc.c:955
+#: modules/control/rc.c:958
 #, fuzzy
 msgid "| marq-y Y . . . . . . . . . . . . offset from top"
 msgstr "| @name marq-y Y . . . . . . . . . . . . position från överkant"
 
-#: modules/control/rc.c:956
+#: modules/control/rc.c:959
 #, fuzzy
 msgid "| marq-position #. . .  .relative position control"
 msgstr "| @name marq-position #. . .  .relativ positionskontroll"
 
-#: modules/control/rc.c:957
+#: modules/control/rc.c:960
 #, fuzzy
 msgid "| marq-color # . . . . . . . . . . font color, RGB"
 msgstr "| @name marq-color # . . . . . . . . . . typsnittsfärg, RGB"
 
-#: modules/control/rc.c:958
+#: modules/control/rc.c:961
 #, fuzzy
 msgid "| marq-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| @name marq-opacity # . . . . . . . . . . . . . opacitet"
 
-#: modules/control/rc.c:959
+#: modules/control/rc.c:962
 #, fuzzy
 msgid "| marq-timeout T. . . . . . . . . . timeout, in ms"
 msgstr "| @name marq-timeout T. . . . . . . . . . tidsgräns, i ms"
 
-#: modules/control/rc.c:960
+#: modules/control/rc.c:963
 #, fuzzy
 msgid "| marq-size # . . . . . . . . font size, in pixels"
 msgstr "| @name marq-size # . . . . . . . . typsnittsstorlek, i bildpunkter"
 
-#: modules/control/rc.c:962
+#: modules/control/rc.c:965
 msgid "| time-format STRING . . . overlay STRING in video"
 msgstr ""
 
-#: modules/control/rc.c:963
+#: modules/control/rc.c:966
 msgid "| time-x X . . . . . . . . . . . .offset from left"
 msgstr "| time-x X . . . . . . . . . . . .position från vänster"
 
-#: modules/control/rc.c:964
+#: modules/control/rc.c:967
 msgid "| time-y Y . . . . . . . . . . . . offset from top"
 msgstr "| time-y Y . . . . . . . . . . . . position från överkant"
 
-#: modules/control/rc.c:965
+#: modules/control/rc.c:968
 #, fuzzy
 msgid "| time-position #. . . . . . . . relative position"
 msgstr "| @name logo-position #. . . . . . . . relativ position"
 
-#: modules/control/rc.c:966
+#: modules/control/rc.c:969
 msgid "| time-color # . . . . . . . . . . font color, RGB"
 msgstr "| time-color # . . . . . . . . . . typsnittsfärg, RGB"
 
-#: modules/control/rc.c:967
+#: modules/control/rc.c:970
 msgid "| time-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| time-opacity # . . . . . . . . . . . . . opacitet"
 
-#: modules/control/rc.c:968
+#: modules/control/rc.c:971
 msgid "| time-size # . . . . . . . . font size, in pixels"
 msgstr "| time-size # . . . . . . . . typsnittsstorlek, i bildpunkter"
 
-#: modules/control/rc.c:970
+#: modules/control/rc.c:973
 msgid "| logo-file STRING . . .the overlay file path/name"
 msgstr ""
 
-#: modules/control/rc.c:971
+#: modules/control/rc.c:974
 #, fuzzy
 msgid "| logo-x X . . . . . . . . . . . .offset from left"
 msgstr "| @name logo-x X . . . . . . . . . . . .position från vänster"
 
-#: modules/control/rc.c:972
+#: modules/control/rc.c:975
 #, fuzzy
 msgid "| logo-y Y . . . . . . . . . . . . offset from top"
 msgstr "| @name logo-y Y . . . . . . . . . . . . position från överkant"
 
-#: modules/control/rc.c:973
+#: modules/control/rc.c:976
 #, fuzzy
 msgid "| logo-position #. . . . . . . . relative position"
 msgstr "| @name logo-position #. . . . . . . . relativ position"
 
-#: modules/control/rc.c:974
+#: modules/control/rc.c:977
 #, fuzzy
 msgid "| logo-transparency #. . . . . . . . .transparency"
 msgstr "| @name logo-transparency #. . . . . . . . .transparens"
 
-#: modules/control/rc.c:976
+#: modules/control/rc.c:979
 #, fuzzy
 msgid "| mosaic-alpha # . . . . . . . . . . . . . . alpha"
 msgstr "| @name mosaic-alpha # . . . . . . . . . . . . . . alfa"
 
-#: modules/control/rc.c:977
+#: modules/control/rc.c:980
 #, fuzzy
 msgid "| mosaic-height #. . . . . . . . . . . . . .height"
 msgstr "| @name mosaic-height #. . . . . . . . . . . . . .höjd"
 
-#: modules/control/rc.c:978
+#: modules/control/rc.c:981
 #, fuzzy
 msgid "| mosaic-width # . . . . . . . . . . . . . . width"
 msgstr "| @name mosaic-width # . . . . . . . . . . . . . . bredd"
 
-#: modules/control/rc.c:979
+#: modules/control/rc.c:982
 #, fuzzy
 msgid "| mosaic-xoffset # . . . .top left corner position"
 msgstr "| mosaic-order id(,id)* . . . . ordning på bilder "
 
-#: modules/control/rc.c:980
+#: modules/control/rc.c:983
 #, fuzzy
 msgid "| mosaic-yoffset # . . . .top left corner position"
 msgstr "| mosaic-order id(,id)* . . . . ordning på bilder "
 
-#: modules/control/rc.c:981
+#: modules/control/rc.c:984
 msgid "| mosaic-align 0..2,4..6,8..10. . .mosaic alignment"
 msgstr ""
 
-#: modules/control/rc.c:982
+#: modules/control/rc.c:985
 #, fuzzy
 msgid "| mosaic-vborder # . . . . . . . . vertical border"
 msgstr "| mosaic-rows #. . . . . . . . . . .antal rader"
 
-#: modules/control/rc.c:983
+#: modules/control/rc.c:986
 #, fuzzy
 msgid "| mosaic-hborder # . . . . . . . horizontal border"
 msgstr "| mosaic-rows #. . . . . . . . . . .antal rader"
 
-#: modules/control/rc.c:984
+#: modules/control/rc.c:987
 #, fuzzy
 msgid "| mosaic-position {0=auto,1=fixed} . . . .position"
 msgstr "| @name mosaic-position {0=auto,1=fast} . . . . position"
 
-#: modules/control/rc.c:985
+#: modules/control/rc.c:988
 #, fuzzy
 msgid "| mosaic-rows #. . . . . . . . . . .number of rows"
 msgstr "| @name mosaic-rows #. . . . . . . . . . .antal rader"
 
-#: modules/control/rc.c:986
+#: modules/control/rc.c:989
 #, fuzzy
 msgid "| mosaic-cols #. . . . . . . . . . .number of cols"
 msgstr "| @name mosaic-cols #. . . . . . . . . . .antal kolumner"
 
-#: modules/control/rc.c:987
+#: modules/control/rc.c:990
 #, fuzzy
 msgid "| mosaic-keep-aspect-ratio {0,1} . . .aspect ratio"
 msgstr "| @name mosaic-keep-aspect-ratio {0,1} . . .bildförhållande"
 
-#: modules/control/rc.c:989
+#: modules/control/rc.c:992
 msgid ""
 "| check-updates [newer] [equal] [older]\n"
 "|               [undef] [info] [source] [binary] [plugin]"
@@ -9138,45 +9149,45 @@ msgstr ""
 "| check-updates [newer] [equal] [older]\n"
 "|               [undef] [info] [source] [binary] [plugin]"
 
-#: modules/control/rc.c:993
+#: modules/control/rc.c:996
 #, fuzzy
 msgid "| help . . . . . . . . . . . . . this help message"
 msgstr "| help . . . . . . . . . . . . . . . det här hjälpmeddelandet"
 
-#: modules/control/rc.c:994
+#: modules/control/rc.c:997
 #, fuzzy
 msgid "| longhelp . . . . . . . . . a longer help message"
 msgstr "| longhelp . . . . . . . . . . . ett längre hjälpmeddelande"
 
-#: modules/control/rc.c:995
+#: modules/control/rc.c:998
 #, fuzzy
 msgid "| logout . . . . .  exit (if in socket connection)"
 msgstr "| logout . . . . . . .  avsluta (om uttagsanslutning används)"
 
-#: modules/control/rc.c:996
+#: modules/control/rc.c:999
 #, fuzzy
 msgid "| quit . . . . . . . . . . . . . . . . .  quit vlc"
 msgstr "| quit . . . . . . . . . . . . . . . . . . .  avsluta vlc"
 
-#: modules/control/rc.c:998
+#: modules/control/rc.c:1001
 msgid "+----[ end of help ]"
 msgstr "+----[ sluta på hjälpen ]"
 
-#: modules/control/rc.c:1105
+#: modules/control/rc.c:1108
 msgid "Press menu select or pause to continue."
 msgstr "Tryck menyval eller paus för att fortsätta."
 
-#: modules/control/rc.c:1348 modules/control/rc.c:1847
-#: modules/control/rc.c:1917 modules/control/rc.c:2086
-#: modules/control/rc.c:2185
+#: modules/control/rc.c:1351 modules/control/rc.c:1850
+#: modules/control/rc.c:1920 modules/control/rc.c:2089
+#: modules/control/rc.c:2188
 msgid "Type 'menu select' or 'pause' to continue."
 msgstr "Ange \"menyval\" eller \"paus\" för att fortsätta."
 
-#: modules/control/rc.c:1507
+#: modules/control/rc.c:1510
 msgid "Type 'pause' to continue."
 msgstr "Ange \"paus\" för att fortsätta."
 
-#: modules/control/rc.c:2170 modules/control/rc.c:2209
+#: modules/control/rc.c:2173 modules/control/rc.c:2212
 msgid "Please provide one of the following parameters:"
 msgstr "Tillhandahåll en av följande parametrar:"
 
@@ -9652,6 +9663,21 @@ msgstr "Demuxer för OGG"
 #: modules/demux/playlist/b4s.c:341 modules/demux/playlist/shoutcast.c:496
 msgid "Listeners"
 msgstr "Lyssnare"
+
+#: modules/demux/playlist/m3u.c:211
+#, fuzzy
+msgid "Options disabled"
+msgstr "Alternativ"
+
+#: modules/demux/playlist/m3u.c:212
+msgid ""
+"m3u EXTVLCOPT parsing is disabled for security reasons.\n"
+"If you need it and trust the m3u playlist you are trying to open, please "
+"enable it from:\n"
+"Preferences > Input/Codecs > Demuxers > Playlist > Enable parsinf of "
+"EXTVLCOPT: options.\n"
+"Don't forget to disable it before opening an untrusted playlist"
+msgstr ""
 
 #: modules/demux/playlist/playlist.c:36
 msgid "Auto start"
@@ -10735,7 +10761,7 @@ msgid "Fast Forward"
 msgstr "Snabbt framåt"
 
 #: modules/gui/macosx/embeddedwindow.m:50
-#: modules/gui/macosx/embeddedwindow.m:94 modules/gui/macosx/intf.m:504
+#: modules/gui/macosx/embeddedwindow.m:93 modules/gui/macosx/intf.m:504
 #: modules/gui/macosx/intf.m:547 modules/gui/macosx/intf.m:625
 #: modules/gui/macosx/intf.m:632 modules/gui/macosx/intf.m:1461
 #: modules/gui/macosx/intf.m:1462 modules/gui/macosx/intf.m:1463
@@ -10750,7 +10776,7 @@ msgstr "Snabbt framåt"
 msgid "Play"
 msgstr "Spela upp"
 
-#: modules/gui/macosx/embeddedwindow.m:88 modules/gui/macosx/intf.m:1451
+#: modules/gui/macosx/embeddedwindow.m:87 modules/gui/macosx/intf.m:1451
 #: modules/gui/macosx/intf.m:1452 modules/gui/macosx/intf.m:1453
 #: modules/gui/macosx/intf.m:1454 modules/gui/pda/pda_interface.c:250
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:679
@@ -14943,7 +14969,7 @@ msgstr "Kopiera paketerare"
 msgid "H.264 video packetizer"
 msgstr "H.264-videopaketerare"
 
-#: modules/packetizer/mpeg4audio.c:118
+#: modules/packetizer/mpeg4audio.c:181
 msgid "MPEG4 audio packetizer"
 msgstr "MPEG4-ljudpaketerare"
 
@@ -15456,71 +15482,71 @@ msgstr "Standard"
 msgid "Standard stream output"
 msgstr ""
 
-#: modules/stream_out/switcher.c:81
+#: modules/stream_out/switcher.c:83
 msgid "Files"
 msgstr "Filer"
 
-#: modules/stream_out/switcher.c:83
+#: modules/stream_out/switcher.c:85
 msgid "Full paths of the files separated by colons."
 msgstr "Fulla sökvägar för filerna separerade med kolon."
 
-#: modules/stream_out/switcher.c:84
+#: modules/stream_out/switcher.c:86
 msgid "Sizes"
 msgstr "Storlekar"
 
-#: modules/stream_out/switcher.c:86
+#: modules/stream_out/switcher.c:88
 msgid "List of sizes separated by colons (720x576:480x576)."
 msgstr "Lista på storlekar, separerade med kolontecken (720x576:480x576)."
 
-#: modules/stream_out/switcher.c:87
+#: modules/stream_out/switcher.c:89
 msgid "Aspect ratio"
 msgstr "Bildförhållande"
 
-#: modules/stream_out/switcher.c:89
+#: modules/stream_out/switcher.c:91
 msgid "Aspect ratio (4:3, 16:9)."
 msgstr "Bildförhållande (4:3, 16:9)."
 
-#: modules/stream_out/switcher.c:90
+#: modules/stream_out/switcher.c:92
 msgid "Command UDP port"
 msgstr "UDP-port för kommando"
 
-#: modules/stream_out/switcher.c:92
+#: modules/stream_out/switcher.c:94
 msgid "UDP port to listen to for commands."
 msgstr "UDP-port att lyssna på efter kommandon."
 
-#: modules/stream_out/switcher.c:93
+#: modules/stream_out/switcher.c:95
 msgid "Command"
 msgstr "Kommando"
 
-#: modules/stream_out/switcher.c:95
+#: modules/stream_out/switcher.c:97
 msgid "Initial command to execute."
 msgstr ""
 
-#: modules/stream_out/switcher.c:96
+#: modules/stream_out/switcher.c:98
 msgid "GOP size"
 msgstr "GOP-storlek"
 
-#: modules/stream_out/switcher.c:98
+#: modules/stream_out/switcher.c:100
 msgid "Number of P frames between two I frames."
 msgstr ""
 
-#: modules/stream_out/switcher.c:99
+#: modules/stream_out/switcher.c:101
 msgid "Quantizer scale"
 msgstr ""
 
-#: modules/stream_out/switcher.c:101
+#: modules/stream_out/switcher.c:103
 msgid "Fixed quantizer scale to use."
 msgstr ""
 
-#: modules/stream_out/switcher.c:102
+#: modules/stream_out/switcher.c:104
 msgid "Mute audio"
 msgstr "Tysta ljudet"
 
-#: modules/stream_out/switcher.c:104
+#: modules/stream_out/switcher.c:106
 msgid "Mute audio when command is not 0."
 msgstr "Tysta ljudet när kommando inte är 0."
 
-#: modules/stream_out/switcher.c:107
+#: modules/stream_out/switcher.c:109
 msgid "MPEG2 video switcher stream output"
 msgstr ""
 

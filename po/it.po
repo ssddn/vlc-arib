@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 22:19+0000\n"
+"POT-Creation-Date: 2008-05-12 20:07+0300\n"
 "PO-Revision-Date: 2007-04-15 08:54+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128@baslug.org>\n"
 "Language-Team: Italian <kde-i18n-it@mail.kde.org>\n"
@@ -29,7 +29,7 @@ msgid "Select \"Advanced Options\" to see all options."
 msgstr "Selezionare \"Opzioni avanzate\" per vedere tutte le opzioni."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:333
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -674,7 +674,7 @@ msgstr ""
 
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:362 src/libvlc.h:409 src/video_output/video_output.c:379
-#: modules/codec/ffmpeg/postprocess.c:94
+#: modules/codec/ffmpeg/postprocess.c:96
 msgid "Disable"
 msgstr "Disabilita"
 
@@ -815,7 +815,7 @@ msgstr "Traccia %i"
 msgid "Program"
 msgstr "Programma"
 
-#: src/input/es_out.c:1583 modules/codec/faad.c:329
+#: src/input/es_out.c:1583 modules/codec/faad.c:374
 #, c-format
 msgid "Stream %d"
 msgstr "Diffusione %d"
@@ -831,17 +831,17 @@ msgstr "Codifica"
 msgid "Type"
 msgstr "Tipo"
 
-#: src/input/es_out.c:1599 modules/codec/faad.c:333
+#: src/input/es_out.c:1599 modules/codec/faad.c:379
 #: modules/gui/macosx/output.m:176
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:857
 msgid "Channels"
 msgstr "Canali"
 
-#: src/input/es_out.c:1604 modules/codec/faad.c:335
+#: src/input/es_out.c:1604 modules/codec/faad.c:381
 msgid "Sample rate"
 msgstr "Campionamento"
 
-#: src/input/es_out.c:1605 modules/codec/faad.c:335
+#: src/input/es_out.c:1605 modules/codec/faad.c:381
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
@@ -882,7 +882,7 @@ msgstr "Sottotitolo"
 msgid "Stream"
 msgstr "Sorgente"
 
-#: src/input/input.c:1962 src/playlist/item.c:369
+#: src/input/input.c:1962 src/playlist/item.c:333
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:133
 msgid "Duration"
@@ -992,8 +992,8 @@ msgstr "Registrazione log di debug"
 msgid "Mouse Gestures"
 msgstr "Movimenti del mouse"
 
-#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1684
-#: src/misc/modules.c:1988
+#: src/libvlc.c:331 src/libvlc.c:479 src/misc/modules.c:1686
+#: src/misc/modules.c:1990
 msgid "C"
 msgstr "C"
 
@@ -1001,47 +1001,47 @@ msgstr "C"
 msgid "Help options"
 msgstr "Impostazioni guida"
 
-#: src/libvlc.c:2221 src/misc/configuration.c:1269
+#: src/libvlc.c:2199 src/misc/configuration.c:1269
 msgid "string"
 msgstr "stringa"
 
-#: src/libvlc.c:2238 src/misc/configuration.c:1233
+#: src/libvlc.c:2216 src/misc/configuration.c:1233
 msgid "integer"
 msgstr "intero"
 
-#: src/libvlc.c:2256 src/misc/configuration.c:1258
+#: src/libvlc.c:2234 src/misc/configuration.c:1258
 msgid "float"
 msgstr "virgola mobile"
 
-#: src/libvlc.c:2262
+#: src/libvlc.c:2240
 msgid " (default enabled)"
 msgstr " (predefinito abilitato)"
 
-#: src/libvlc.c:2263
+#: src/libvlc.c:2241
 msgid " (default disabled)"
 msgstr " (predefinito disabilitato)"
 
-#: src/libvlc.c:2445
+#: src/libvlc.c:2423
 #, c-format
 msgid "VLC version %s\n"
 msgstr "VLC versione %s\n"
 
-#: src/libvlc.c:2446
+#: src/libvlc.c:2424
 #, c-format
 msgid "Compiled by %s@%s.%s\n"
 msgstr "Compilato da %s@%s.%s\n"
 
-#: src/libvlc.c:2448
+#: src/libvlc.c:2426
 #, c-format
 msgid "Compiler: %s\n"
 msgstr "Compilatore: %s\n"
 
-#: src/libvlc.c:2451
+#: src/libvlc.c:2429
 #, c-format
 msgid "Based upon svn changeset [%s]\n"
 msgstr "Basato sulle modifiche in svn [%s]\n"
 
-#: src/libvlc.c:2483
+#: src/libvlc.c:2461
 msgid ""
 "\n"
 "Dumped content to vlc-help.txt file.\n"
@@ -1049,7 +1049,7 @@ msgstr ""
 "\n"
 "contenuto copiato nel file vlc-help.txt.\n"
 
-#: src/libvlc.c:2504
+#: src/libvlc.c:2482
 msgid ""
 "\n"
 "Press the RETURN key to continue...\n"
@@ -4476,7 +4476,7 @@ msgstr "Aggiunto manualmente"
 msgid "All items, unsorted"
 msgstr "Tutti gli elementi, non ordinati"
 
-#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:280
+#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:281
 msgid "Undefined"
 msgstr "Non definito"
 
@@ -4945,7 +4945,7 @@ msgid "Standard filesystem directory input"
 msgstr "Ingresso predefinito di una directory"
 
 #: modules/access/dshow/dshow.cpp:73 modules/access/dshow/dshow.cpp:75
-#: modules/codec/ffmpeg/ffmpeg.c:75 modules/demux/mpc.c:55
+#: modules/codec/ffmpeg/ffmpeg.c:77 modules/demux/mpc.c:55
 #: modules/video_output/opengl.c:123 modules/video_output/opengl.c:174
 msgid "None"
 msgstr "Nessuno"
@@ -5754,7 +5754,18 @@ msgstr "Bitrate massimo"
 msgid "Select the stream with the maximum bitrate under that limit."
 msgstr "Seleziona il flusso con il bitrate massimo al di sotto di quel limite."
 
-#: modules/access/mms/mms.c:62
+#: modules/access/mms/mms.c:60
+#, fuzzy
+msgid "TCP/UDP timeout (ms)"
+msgstr "Scadenza (ms)"
+
+#: modules/access/mms/mms.c:61
+msgid ""
+"Amount of time (in ms) to wait before aborting network reception of data. "
+"Note that there will be 10 retries before completely giving up."
+msgstr ""
+
+#: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Ingresso Microsoft Media Server (MMS)"
 
@@ -7303,7 +7314,7 @@ msgstr "Codifica sottotitoli DVB"
 msgid "AAC audio decoder (using libfaad2)"
 msgstr "Decodifica audio AAC (usa libfaad2)"
 
-#: modules/codec/faad.c:331
+#: modules/codec/faad.c:377
 msgid "AAC extension"
 msgstr "Estensione AAC"
 
@@ -7363,84 +7374,84 @@ msgstr "Modulo di deinterlacciamento da utilizzare."
 msgid "Fake video decoder"
 msgstr "Decodifica video Cinepak"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 #, fuzzy
 msgid "Non-ref"
 msgstr "Nessuno"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 #, fuzzy
 msgid "Bidir"
 msgstr "Bilineare"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 #, fuzzy
 msgid "Non-key"
 msgstr "Nessuno"
 
-#: modules/codec/ffmpeg/ffmpeg.c:75
+#: modules/codec/ffmpeg/ffmpeg.c:77
 msgid "All"
 msgstr "Tutto"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "rd"
 msgstr "rd"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "bits"
 msgstr "bit"
 
-#: modules/codec/ffmpeg/ffmpeg.c:78
+#: modules/codec/ffmpeg/ffmpeg.c:80
 msgid "simple"
 msgstr "semplice"
 
-#: modules/codec/ffmpeg/ffmpeg.c:89
+#: modules/codec/ffmpeg/ffmpeg.c:91
 msgid ""
 "AltiVec FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr ""
 "Decodificatore/codificatore audio/video AltiVec FFmpeg ((MS)MPEG4,SVQ1,H263,"
 "WMV,WMA)"
 
-#: modules/codec/ffmpeg/ffmpeg.c:93
+#: modules/codec/ffmpeg/ffmpeg.c:95
 msgid "FFmpeg audio/video decoder/encoder ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 msgstr ""
 "Decodificatore/codificatore audio/video FFmpeg ((MS)MPEG4,SVQ1,H263,WMV,WMA)"
 
-#: modules/codec/ffmpeg/ffmpeg.c:96
+#: modules/codec/ffmpeg/ffmpeg.c:98
 msgid "Decoding"
 msgstr "Decodifica"
 
-#: modules/codec/ffmpeg/ffmpeg.c:127
+#: modules/codec/ffmpeg/ffmpeg.c:129
 msgid "FFmpeg chroma conversion"
 msgstr "Conversione croma FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:131
+#: modules/codec/ffmpeg/ffmpeg.c:133
 #: modules/gui/wxwidgets/dialogs/subtitles.cpp:97
 msgid "Encoding"
 msgstr "Codifica"
 
-#: modules/codec/ffmpeg/ffmpeg.c:132
+#: modules/codec/ffmpeg/ffmpeg.c:134
 msgid "FFmpeg audio/video encoder"
 msgstr "Codificatore audio/video FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:190
+#: modules/codec/ffmpeg/ffmpeg.c:192
 msgid "FFmpeg demuxer"
 msgstr "Demuxer FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:196
+#: modules/codec/ffmpeg/ffmpeg.c:198
 msgid "FFmpeg muxer"
 msgstr "Muxer FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:204
+#: modules/codec/ffmpeg/ffmpeg.c:206
 msgid "FFmpeg video filter"
 msgstr "Filtro video FFmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:210
+#: modules/codec/ffmpeg/ffmpeg.c:212
 #, fuzzy
 msgid "FFmpeg crop padd filter"
 msgstr "Filtro video ffmpeg"
 
-#: modules/codec/ffmpeg/ffmpeg.c:216
+#: modules/codec/ffmpeg/ffmpeg.c:218
 msgid "FFmpeg deinterlace video filter"
 msgstr "Filtro video di deinterlacciamento FFmpeg"
 
@@ -7888,16 +7899,16 @@ msgid ""
 "0.0). The H264 specification recommends 7."
 msgstr ""
 
-#: modules/codec/ffmpeg/postprocess.c:88 modules/gui/macosx/intf.m:599
+#: modules/codec/ffmpeg/postprocess.c:90 modules/gui/macosx/intf.m:599
 #: modules/gui/macosx/intf.m:600
 msgid "Post processing"
 msgstr "Post-elaborazione"
 
-#: modules/codec/ffmpeg/postprocess.c:96
+#: modules/codec/ffmpeg/postprocess.c:98
 msgid "1 (Lowest)"
 msgstr "1 (minimo)"
 
-#: modules/codec/ffmpeg/postprocess.c:106
+#: modules/codec/ffmpeg/postprocess.c:108
 msgid "6 (Highest)"
 msgstr "6 (massimo)"
 
@@ -9023,37 +9034,37 @@ msgstr "NT Service"
 msgid "Windows Service interface"
 msgstr "Interfaccia di Windows Service"
 
-#: modules/control/rc.c:158
+#: modules/control/rc.c:161
 msgid "Show stream position"
 msgstr "Mostra la posizione del flusso"
 
-#: modules/control/rc.c:159
+#: modules/control/rc.c:162
 msgid ""
 "Show the current position in seconds within the stream from time to time."
 msgstr ""
 "Mostra ogni tanto la posizione attuale (in secondi) nel flusso sorgente."
 
-#: modules/control/rc.c:162
+#: modules/control/rc.c:165
 msgid "Fake TTY"
 msgstr "Pseudo-TTY"
 
-#: modules/control/rc.c:163
+#: modules/control/rc.c:166
 msgid "Force the rc module to use stdin as if it was a TTY."
 msgstr "Forza il modulo rc ad utilizzare stdin, come se fosse una TTY."
 
-#: modules/control/rc.c:165
+#: modules/control/rc.c:168
 msgid "UNIX socket command input"
 msgstr "Ingresso comandi da socket Unix"
 
-#: modules/control/rc.c:166
+#: modules/control/rc.c:169
 msgid "Accept commands over a Unix socket rather than stdin."
 msgstr "Accetta comandi provenienti da un socket Unix anziché da stdin."
 
-#: modules/control/rc.c:169
+#: modules/control/rc.c:172
 msgid "TCP command input"
 msgstr "Ingresso comandi da TCP"
 
-#: modules/control/rc.c:170
+#: modules/control/rc.c:173
 msgid ""
 "Accept commands over a socket rather than stdin. You can set the address and "
 "port the interface will bind to."
@@ -9061,11 +9072,11 @@ msgstr ""
 "Accetta comandi provenienti da un socket TCP anziché da stdin. Si possono "
 "specificare l'indirizzo e la porta su cui il socket ascolta."
 
-#: modules/control/rc.c:174 modules/misc/dummy/dummy.c:49
+#: modules/control/rc.c:177 modules/misc/dummy/dummy.c:49
 msgid "Do not open a DOS command box interface"
 msgstr "Non aprire una finestra di comando DOS"
 
-#: modules/control/rc.c:176
+#: modules/control/rc.c:179
 msgid ""
 "By default the rc interface plugin will start a DOS command box. Enabling "
 "the quiet mode will not bring this command box but can also be pretty "
@@ -9075,386 +9086,386 @@ msgstr ""
 "DOS. Il modo silenzioso elimina questa finestra, ma può risultare fastidioso "
 "quando si vuole chiudere VLC e non ci sono finestre video aperte."
 
-#: modules/control/rc.c:183
+#: modules/control/rc.c:186
 msgid "RC"
 msgstr "RC"
 
-#: modules/control/rc.c:186
+#: modules/control/rc.c:189
 msgid "Remote control interface"
 msgstr "Interfaccia telecomando"
 
-#: modules/control/rc.c:342
+#: modules/control/rc.c:345
 msgid "Remote control interface initialized. Type `help' for help."
 msgstr "Interfaccia telecomando inizializzata, `h' per la guida."
 
-#: modules/control/rc.c:871
+#: modules/control/rc.c:874
 #, c-format
 msgid "Unknown command `%s'. Type `help' for help."
 msgstr "Comando `%s' sconosciuto. Digitare `help' per la guida."
 
-#: modules/control/rc.c:904
+#: modules/control/rc.c:907
 msgid "+----[ Remote control commands ]"
 msgstr "+----[ Comandi di controllo remoto ]"
 
-#: modules/control/rc.c:906
+#: modules/control/rc.c:909
 #, fuzzy
 msgid "| add XYZ  . . . . . . . . . . add XYZ to playlist"
 msgstr "| add XYZ  . . . . . . . . . .  aggiunge XYZ alla playlist"
 
-#: modules/control/rc.c:907
+#: modules/control/rc.c:910
 #, fuzzy
 msgid "| enqueue XYZ  . . . . . . . queue XYZ to playlist"
 msgstr "| enqueue XYZ  . . . . . . . accoda XYZ alla playlist"
 
-#: modules/control/rc.c:908
+#: modules/control/rc.c:911
 #, fuzzy
 msgid "| playlist . . .  show items currently in playlist"
 msgstr "| playlist . . .  mostra gli elementi presenti nella playlist"
 
-#: modules/control/rc.c:909
+#: modules/control/rc.c:912
 #, fuzzy
 msgid "| play . . . . . . . . . . . . . . . . play stream"
 msgstr "| play . . . . . . . . . . . . . . . .  riproduce il flusso"
 
-#: modules/control/rc.c:910
+#: modules/control/rc.c:913
 #, fuzzy
 msgid "| stop . . . . . . . . . . . . . . . . stop stream"
 msgstr "| stop . . . . . . . . . . . . . . . . ferma il flusso"
 
-#: modules/control/rc.c:911
+#: modules/control/rc.c:914
 #, fuzzy
 msgid "| next . . . . . . . . . . . .  next playlist item"
 msgstr "| next . . . . . . . . . . . .  elemento successivo nella playlist"
 
-#: modules/control/rc.c:912
+#: modules/control/rc.c:915
 #, fuzzy
 msgid "| prev . . . . . . . . . .  previous playlist item"
 msgstr "| prev . . . . . . . . . .  elemento precedente nella playlist"
 
-#: modules/control/rc.c:913
+#: modules/control/rc.c:916
 #, fuzzy
 msgid "| goto . . . . . . . . . . . .  goto item at index"
 msgstr "| goto . . . . . . . . . . . .  goto item at index"
 
-#: modules/control/rc.c:914
+#: modules/control/rc.c:917
 #, fuzzy
 msgid "| clear . . . . . . . . . . .   clear the playlist"
 msgstr "| clear . . . . . . . . . . .  svuota la playlist"
 
-#: modules/control/rc.c:915
+#: modules/control/rc.c:918
 #, fuzzy
 msgid "| status . . . . . . . . . current playlist status"
 msgstr "| status . . . . . . . . . stato attuale della playlist"
 
-#: modules/control/rc.c:916
+#: modules/control/rc.c:919
 #, fuzzy
 msgid "| title [X]  . . . . set/get title in current item"
 msgstr "| title [X]  . . . . imposta/mostra titolo nell'elemento corrente"
 
-#: modules/control/rc.c:917
+#: modules/control/rc.c:920
 #, fuzzy
 msgid "| title_n  . . . . . .  next title in current item"
 msgstr "| title_n  . . . . . . . titolo successivo nell'elemento corrente"
 
-#: modules/control/rc.c:918
+#: modules/control/rc.c:921
 #, fuzzy
 msgid "| title_p  . . . .  previous title in current item"
 msgstr "| title_p  . . . . . . . titolo precedente nell'elemento attuale"
 
-#: modules/control/rc.c:919
+#: modules/control/rc.c:922
 #, fuzzy
 msgid "| chapter [X]  . . set/get chapter in current item"
 msgstr "| chapter [X]  . . imposta/mostra capitolo nell'elemento corrente"
 
-#: modules/control/rc.c:920
+#: modules/control/rc.c:923
 #, fuzzy
 msgid "| chapter_n  . . . .  next chapter in current item"
 msgstr "| chapter_n  . . . . . capitolo successivo nell'elemento attuale"
 
-#: modules/control/rc.c:921
+#: modules/control/rc.c:924
 #, fuzzy
 msgid "| chapter_p  . .  previous chapter in current item"
 msgstr "| chapter_p  . . . . . capitolo precedente nell'elemento attuale"
 
-#: modules/control/rc.c:923
+#: modules/control/rc.c:926
 #, fuzzy
 msgid "| seek X . seek in seconds, for instance `seek 12'"
 msgstr "| seek X . . spostamento in secondi, ad esempio `seek 12'"
 
-#: modules/control/rc.c:924
+#: modules/control/rc.c:927
 #, fuzzy
 msgid "| pause  . . . . . . . . . . . . . .  toggle pause"
 msgstr ""
 "| pause  . . . . . . . . . . . . . . . . . . . . . . . . .  commuta la pausa"
 
-#: modules/control/rc.c:925
+#: modules/control/rc.c:928
 #, fuzzy
 msgid "| fastforward  . . . . . .  .  set to maximum rate"
 msgstr "| fastforward  . . . . . .  .  imposta la velocità massima"
 
-#: modules/control/rc.c:926
+#: modules/control/rc.c:929
 #, fuzzy
 msgid "| rewind  . . . . . . . . . .  set to minimum rate"
 msgstr "| rewind  . . . . . . . . . .  imposta la velocità minima"
 
-#: modules/control/rc.c:927
+#: modules/control/rc.c:930
 #, fuzzy
 msgid "| faster . . . . . . . .  faster playing of stream"
 msgstr "| faster . . . . . . . .  riproduzione più veloce del flusso"
 
-#: modules/control/rc.c:928
+#: modules/control/rc.c:931
 #, fuzzy
 msgid "| slower . . . . . . . .  slower playing of stream"
 msgstr "| slower . . . . . . . .  riproduzione più lenta del flusso"
 
-#: modules/control/rc.c:929
+#: modules/control/rc.c:932
 #, fuzzy
 msgid "| normal . . . . . . . .  normal playing of stream"
 msgstr "| normal . . . . . . . .  riproduzione normale del flusso"
 
-#: modules/control/rc.c:930
+#: modules/control/rc.c:933
 #, fuzzy
 msgid "| f [on|off] . . . . . . . . . . toggle fullscreen"
 msgstr "| f [on|off] . . . . . . . . . . commuta la modalità schermo intero"
 
-#: modules/control/rc.c:931
+#: modules/control/rc.c:934
 #, fuzzy
 msgid "| info . . .  information about the current stream"
 msgstr "| info . . .  informazioni sul flusso corrente"
 
-#: modules/control/rc.c:932
+#: modules/control/rc.c:935
 msgid "| get_time . . seconds elapsed since stream's beginning"
 msgstr "| get_time . . secondi trascorsi dall'inizio del flusso"
 
-#: modules/control/rc.c:933
+#: modules/control/rc.c:936
 #, fuzzy
 msgid "| is_playing . .  1 if a stream plays, 0 otherwise"
 msgstr "| is_playing . .  1 se c'è un flusso in riproduzione, 0 altrimenti"
 
-#: modules/control/rc.c:934
+#: modules/control/rc.c:937
 #, fuzzy
 msgid "| get_title . . .  the title of the current stream"
 msgstr "| get_title . . .  il titolo del flusso corrente"
 
-#: modules/control/rc.c:935
+#: modules/control/rc.c:938
 #, fuzzy
 msgid "| get_length . .  the length of the current stream"
 msgstr "| get_length . .  la durata del flusso corrente"
 
-#: modules/control/rc.c:937
+#: modules/control/rc.c:940
 #, fuzzy
 msgid "| volume [X] . . . . . . . .  set/get audio volume"
 msgstr "| volume [X] . . . . . . . . .  imposta/mostra volume audio"
 
-#: modules/control/rc.c:938
+#: modules/control/rc.c:941
 #, fuzzy
 msgid "| volup [X]  . . . . .  raise audio volume X steps"
 msgstr "| volup [X]  . . . . . .  aumenta il volume di X passi"
 
-#: modules/control/rc.c:939
+#: modules/control/rc.c:942
 #, fuzzy
 msgid "| voldown [X]  . . . .  lower audio volume X steps"
 msgstr "| voldown [X]  . . . . . . .  riduce il volume di X passi"
 
-#: modules/control/rc.c:940
+#: modules/control/rc.c:943
 #, fuzzy
 msgid "| adev [X] . . . . . . . . .  set/get audio device"
 msgstr "| adev [X] . . . . . . . . . . .  imposta/ottieni periferica audio"
 
-#: modules/control/rc.c:941
+#: modules/control/rc.c:944
 #, fuzzy
 msgid "| achan [X]. . . . . . . .  set/get audio channels"
 msgstr "| achan [X] . . . . . . . . . . . . . imposta/ottieni canali audio"
 
-#: modules/control/rc.c:942
+#: modules/control/rc.c:945
 #, fuzzy
 msgid "| atrack [X] . . . . . . . . . set/get audio track"
 msgstr "| atrack [X] . . . . . . . . . imposta/ottieni traccia audio"
 
-#: modules/control/rc.c:943
+#: modules/control/rc.c:946
 #, fuzzy
 msgid "| vtrack [X] . . . . . . . . . set/get video track"
 msgstr "| vtrack [X] . . . . . . . . . imposta/ottieni traccia video"
 
-#: modules/control/rc.c:944
+#: modules/control/rc.c:947
 #, fuzzy
 msgid "| vratio [X]  . . . . . set/get video aspect ratio"
 msgstr "| vratio [X]  . . . . . imposta/ottieni le proporzioni video"
 
-#: modules/control/rc.c:945
+#: modules/control/rc.c:948
 #, fuzzy
 msgid "| vcrop [X]  . . . . . . . . .  set/get video crop"
 msgstr "| vcrop [X]  . . . . . . . . .  imposta/ottieni ritaglio video"
 
-#: modules/control/rc.c:946
+#: modules/control/rc.c:949
 #, fuzzy
 msgid "| vzoom [X]  . . . . . . . . .  set/get video zoom"
 msgstr "| vzoom [X]  . . . . . . . . .  imposta/ottieni zoom video"
 
-#: modules/control/rc.c:947
+#: modules/control/rc.c:950
 #, fuzzy
 msgid "| strack [X] . . . . . . . set/get subtitles track"
 msgstr "| strack [X] . . . . . . . imposta/ottieni traccia sottotitoli"
 
-#: modules/control/rc.c:948
+#: modules/control/rc.c:951
 #, fuzzy
 msgid "| menu [on|off|up|down|left|right|select] use menu"
 msgstr "| menu [on|off|up|down|left|right|select] usa il menu"
 
-#: modules/control/rc.c:953
+#: modules/control/rc.c:956
 #, fuzzy
 msgid "| marq-marquee STRING  . . overlay STRING in video"
 msgstr "| marq-marquee STRINGA  . .  sovrappone STRINGA sul video"
 
-#: modules/control/rc.c:954
+#: modules/control/rc.c:957
 #, fuzzy
 msgid "| marq-x X . . . . . . . . . . . .offset from left"
 msgstr "| marq-x X . . . . . . scostamento da sinistra"
 
-#: modules/control/rc.c:955
+#: modules/control/rc.c:958
 #, fuzzy
 msgid "| marq-y Y . . . . . . . . . . . . offset from top"
 msgstr "| marq-y Y . . . . . . scostamento dall'alto"
 
-#: modules/control/rc.c:956
+#: modules/control/rc.c:959
 #, fuzzy
 msgid "| marq-position #. . .  .relative position control"
 msgstr "| marq-position #. . .  .controllo della posizione relativa"
 
-#: modules/control/rc.c:957
+#: modules/control/rc.c:960
 #, fuzzy
 msgid "| marq-color # . . . . . . . . . . font color, RGB"
 msgstr "| marq-color # . . . . . . . . . . colore carattere, RGB"
 
-#: modules/control/rc.c:958
+#: modules/control/rc.c:961
 #, fuzzy
 msgid "| marq-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| marq-opacity # . . . . . . . . . . . . . opacità"
 
-#: modules/control/rc.c:959
+#: modules/control/rc.c:962
 #, fuzzy
 msgid "| marq-timeout T. . . . . . . . . . timeout, in ms"
 msgstr "| marq-timeout T. . . . . . . . . . scadenza, in ms"
 
-#: modules/control/rc.c:960
+#: modules/control/rc.c:963
 #, fuzzy
 msgid "| marq-size # . . . . . . . . font size, in pixels"
 msgstr "| marq-size # . . . . . . . . dimensioni carattere, in pixel"
 
-#: modules/control/rc.c:962
+#: modules/control/rc.c:965
 #, fuzzy
 msgid "| time-format STRING . . . overlay STRING in video"
 msgstr "| marq-marquee STRINGA  . .  sovrappone STRINGA sul video"
 
-#: modules/control/rc.c:963
+#: modules/control/rc.c:966
 msgid "| time-x X . . . . . . . . . . . .offset from left"
 msgstr "| time-x X . . . . . . . . . . . .scostamento da sinistra"
 
-#: modules/control/rc.c:964
+#: modules/control/rc.c:967
 msgid "| time-y Y . . . . . . . . . . . . offset from top"
 msgstr "| marq-y Y . . . . . . scostamento dall'alto"
 
-#: modules/control/rc.c:965
+#: modules/control/rc.c:968
 msgid "| time-position #. . . . . . . . relative position"
 msgstr "| time-position #. . . . . . . . posizione relativa"
 
-#: modules/control/rc.c:966
+#: modules/control/rc.c:969
 msgid "| time-color # . . . . . . . . . . font color, RGB"
 msgstr "| time-color # . . . . . . . . . . colore carattere, RGB"
 
-#: modules/control/rc.c:967
+#: modules/control/rc.c:970
 msgid "| time-opacity # . . . . . . . . . . . . . opacity"
 msgstr "| time-opacity # . . . . . . . . . . . . . opacità"
 
-#: modules/control/rc.c:968
+#: modules/control/rc.c:971
 msgid "| time-size # . . . . . . . . font size, in pixels"
 msgstr "| time-size # . . . . . . . . dimensioni carattere, in pixel"
 
-#: modules/control/rc.c:970
+#: modules/control/rc.c:973
 msgid "| logo-file STRING . . .the overlay file path/name"
 msgstr ""
 
-#: modules/control/rc.c:971
+#: modules/control/rc.c:974
 #, fuzzy
 msgid "| logo-x X . . . . . . . . . . . .offset from left"
 msgstr "| logo-x X . . . . . . . . . . . .scostamento da sinistra"
 
-#: modules/control/rc.c:972
+#: modules/control/rc.c:975
 #, fuzzy
 msgid "| logo-y Y . . . . . . . . . . . . offset from top"
 msgstr "| logo-y Y . . . . . . . . . . . . scostamento dall'alto"
 
-#: modules/control/rc.c:973
+#: modules/control/rc.c:976
 #, fuzzy
 msgid "| logo-position #. . . . . . . . relative position"
 msgstr "| logo-position #. . . . . . . . posizione relativa"
 
-#: modules/control/rc.c:974
+#: modules/control/rc.c:977
 #, fuzzy
 msgid "| logo-transparency #. . . . . . . . .transparency"
 msgstr "| logo-transparency #. . . . . . . . .trasparenza"
 
-#: modules/control/rc.c:976
+#: modules/control/rc.c:979
 #, fuzzy
 msgid "| mosaic-alpha # . . . . . . . . . . . . . . alpha"
 msgstr "| mosaic-alpha # . . . . . . . . . . . . . . alpha"
 
-#: modules/control/rc.c:977
+#: modules/control/rc.c:980
 #, fuzzy
 msgid "| mosaic-height #. . . . . . . . . . . . . .height"
 msgstr "| mosaic-height #. . . . . . . . . . . . . .altezza"
 
-#: modules/control/rc.c:978
+#: modules/control/rc.c:981
 #, fuzzy
 msgid "| mosaic-width # . . . . . . . . . . . . . . width"
 msgstr "| mosaic-width # . . . . . . . . . . . . . . larghezza"
 
-#: modules/control/rc.c:979
+#: modules/control/rc.c:982
 #, fuzzy
 msgid "| mosaic-xoffset # . . . .top left corner position"
 msgstr "| mosaic-xoffset # . . . .posizione angolo in alto a sinistra"
 
-#: modules/control/rc.c:980
+#: modules/control/rc.c:983
 #, fuzzy
 msgid "| mosaic-yoffset # . . . .top left corner position"
 msgstr "| mosaic-yoffset # . . . .posizione angolo in alto a sinistra"
 
-#: modules/control/rc.c:981
+#: modules/control/rc.c:984
 #, fuzzy
 msgid "| mosaic-align 0..2,4..6,8..10. . .mosaic alignment"
 msgstr "| mosaic-align 0..2,4..6,8..10. . .allineamento mosaico"
 
-#: modules/control/rc.c:982
+#: modules/control/rc.c:985
 #, fuzzy
 msgid "| mosaic-vborder # . . . . . . . . vertical border"
 msgstr "| mosaic-vborder # . . . . . . . . bordo verticale"
 
-#: modules/control/rc.c:983
+#: modules/control/rc.c:986
 #, fuzzy
 msgid "| mosaic-hborder # . . . . . . . horizontal border"
 msgstr "| mosaic-hborder # . . . . . . . bordo orizzontale"
 
-#: modules/control/rc.c:984
+#: modules/control/rc.c:987
 #, fuzzy
 msgid "| mosaic-position {0=auto,1=fixed} . . . .position"
 msgstr "| mosaic-position {0=auto,1=fissa} . . . .posizione"
 
-#: modules/control/rc.c:985
+#: modules/control/rc.c:988
 #, fuzzy
 msgid "| mosaic-rows #. . . . . . . . . . .number of rows"
 msgstr "| mosaic-rows #. . . . . . . . . . .numero di righe"
 
-#: modules/control/rc.c:986
+#: modules/control/rc.c:989
 #, fuzzy
 msgid "| mosaic-cols #. . . . . . . . . . .number of cols"
 msgstr "| mosaic-cols #. . . . . . . . . . .numero di colonne"
 
-#: modules/control/rc.c:987
+#: modules/control/rc.c:990
 #, fuzzy
 msgid "| mosaic-keep-aspect-ratio {0,1} . . .aspect ratio"
 msgstr "| mosaic-keep-aspect-ratio {0,1} . . .proporzioni"
 
-#: modules/control/rc.c:989
+#: modules/control/rc.c:992
 msgid ""
 "| check-updates [newer] [equal] [older]\n"
 "|               [undef] [info] [source] [binary] [plugin]"
@@ -9462,48 +9473,48 @@ msgstr ""
 "| check-updates [newer] [equal] [older]\n"
 "|               [undef] [info] [source] [binary] [plugin]"
 
-#: modules/control/rc.c:993
+#: modules/control/rc.c:996
 #, fuzzy
 msgid "| help . . . . . . . . . . . . . this help message"
 msgstr "| help . . . . . . . . . . . . . questo messaggio di aiuto"
 
-#: modules/control/rc.c:994
+#: modules/control/rc.c:997
 #, fuzzy
 msgid "| longhelp . . . . . . . . . a longer help message"
 msgstr "| longhelp . . . . . . . . . un messaggio di aiuto più lungo"
 
-#: modules/control/rc.c:995
+#: modules/control/rc.c:998
 #, fuzzy
 msgid "| logout . . . . .  exit (if in socket connection)"
 msgstr "| logout . . . . . .uscita (se connesso ad un socket)\n"
 
-#: modules/control/rc.c:996
+#: modules/control/rc.c:999
 #, fuzzy
 msgid "| quit . . . . . . . . . . . . . . . . .  quit vlc"
 msgstr "| quit . . . . . . . . . . . . . . . . .  esce da vlc"
 
-#: modules/control/rc.c:998
+#: modules/control/rc.c:1001
 msgid "+----[ end of help ]"
 msgstr "+----[ fine della guida ]"
 
-#: modules/control/rc.c:1105
+#: modules/control/rc.c:1108
 #, fuzzy
 msgid "Press menu select or pause to continue."
 msgstr "Premere il tasto INVIO per continuare..."
 
-#: modules/control/rc.c:1348 modules/control/rc.c:1847
-#: modules/control/rc.c:1917 modules/control/rc.c:2086
-#: modules/control/rc.c:2185
+#: modules/control/rc.c:1351 modules/control/rc.c:1850
+#: modules/control/rc.c:1920 modules/control/rc.c:2089
+#: modules/control/rc.c:2188
 #, fuzzy
 msgid "Type 'menu select' or 'pause' to continue."
 msgstr "Premere il tasto INVIO per continuare..."
 
-#: modules/control/rc.c:1507
+#: modules/control/rc.c:1510
 #, fuzzy
 msgid "Type 'pause' to continue."
 msgstr "Premere il tasto INVIO per continuare..."
 
-#: modules/control/rc.c:2170 modules/control/rc.c:2209
+#: modules/control/rc.c:2173 modules/control/rc.c:2212
 msgid "Please provide one of the following parameters:"
 msgstr "Fornire uno dei seguenti parametri:"
 
@@ -9972,6 +9983,21 @@ msgstr "Demuxer OGG"
 #, fuzzy
 msgid "Listeners"
 msgstr "Lineare"
+
+#: modules/demux/playlist/m3u.c:211
+#, fuzzy
+msgid "Options disabled"
+msgstr "Opzioni"
+
+#: modules/demux/playlist/m3u.c:212
+msgid ""
+"m3u EXTVLCOPT parsing is disabled for security reasons.\n"
+"If you need it and trust the m3u playlist you are trying to open, please "
+"enable it from:\n"
+"Preferences > Input/Codecs > Demuxers > Playlist > Enable parsinf of "
+"EXTVLCOPT: options.\n"
+"Don't forget to disable it before opening an untrusted playlist"
+msgstr ""
 
 #: modules/demux/playlist/playlist.c:36
 msgid "Auto start"
@@ -11061,7 +11087,7 @@ msgid "Fast Forward"
 msgstr "Avanti veloce"
 
 #: modules/gui/macosx/embeddedwindow.m:50
-#: modules/gui/macosx/embeddedwindow.m:94 modules/gui/macosx/intf.m:504
+#: modules/gui/macosx/embeddedwindow.m:93 modules/gui/macosx/intf.m:504
 #: modules/gui/macosx/intf.m:547 modules/gui/macosx/intf.m:625
 #: modules/gui/macosx/intf.m:632 modules/gui/macosx/intf.m:1461
 #: modules/gui/macosx/intf.m:1462 modules/gui/macosx/intf.m:1463
@@ -11076,7 +11102,7 @@ msgstr "Avanti veloce"
 msgid "Play"
 msgstr "Riproduci"
 
-#: modules/gui/macosx/embeddedwindow.m:88 modules/gui/macosx/intf.m:1451
+#: modules/gui/macosx/embeddedwindow.m:87 modules/gui/macosx/intf.m:1451
 #: modules/gui/macosx/intf.m:1452 modules/gui/macosx/intf.m:1453
 #: modules/gui/macosx/intf.m:1454 modules/gui/pda/pda_interface.c:250
 #: modules/gui/pda/pda_interface.c:251 modules/gui/wxwidgets/interface.cpp:679
@@ -15444,7 +15470,7 @@ msgstr "Copy packetizer"
 msgid "H.264 video packetizer"
 msgstr "Incapsulazione video H264"
 
-#: modules/packetizer/mpeg4audio.c:118
+#: modules/packetizer/mpeg4audio.c:181
 msgid "MPEG4 audio packetizer"
 msgstr "Incapsulazione audio MPEG4"
 
@@ -15990,72 +16016,72 @@ msgstr "Standard"
 msgid "Standard stream output"
 msgstr "Trasmissione in uscita standard"
 
-#: modules/stream_out/switcher.c:81
+#: modules/stream_out/switcher.c:83
 msgid "Files"
 msgstr "File"
 
-#: modules/stream_out/switcher.c:83
+#: modules/stream_out/switcher.c:85
 msgid "Full paths of the files separated by colons."
 msgstr "Percorsi completi dei file separati da due punti."
 
-#: modules/stream_out/switcher.c:84
+#: modules/stream_out/switcher.c:86
 msgid "Sizes"
 msgstr "Dimensioni"
 
-#: modules/stream_out/switcher.c:86
+#: modules/stream_out/switcher.c:88
 msgid "List of sizes separated by colons (720x576:480x576)."
 msgstr "Elenco di dimensioni sparate da due punti (720x576:480x576)."
 
-#: modules/stream_out/switcher.c:87
+#: modules/stream_out/switcher.c:89
 msgid "Aspect ratio"
 msgstr "Proporzioni"
 
-#: modules/stream_out/switcher.c:89
+#: modules/stream_out/switcher.c:91
 msgid "Aspect ratio (4:3, 16:9)."
 msgstr "Rapporto dimensioni (4:3, 16:9)."
 
-#: modules/stream_out/switcher.c:90
+#: modules/stream_out/switcher.c:92
 msgid "Command UDP port"
 msgstr "Porta UDP del comando"
 
-#: modules/stream_out/switcher.c:92
+#: modules/stream_out/switcher.c:94
 msgid "UDP port to listen to for commands."
 msgstr "porta UDP per ricevere comandi."
 
-#: modules/stream_out/switcher.c:93
+#: modules/stream_out/switcher.c:95
 msgid "Command"
 msgstr "Comando"
 
-#: modules/stream_out/switcher.c:95
+#: modules/stream_out/switcher.c:97
 msgid "Initial command to execute."
 msgstr "Comando iniziale da eseguire."
 
-#: modules/stream_out/switcher.c:96
+#: modules/stream_out/switcher.c:98
 msgid "GOP size"
 msgstr "Dimensione GOP"
 
-#: modules/stream_out/switcher.c:98
+#: modules/stream_out/switcher.c:100
 #, fuzzy
 msgid "Number of P frames between two I frames."
 msgstr "Pixel bianchi tra le bande."
 
-#: modules/stream_out/switcher.c:99
+#: modules/stream_out/switcher.c:101
 msgid "Quantizer scale"
 msgstr "Scala di quantizzazione"
 
-#: modules/stream_out/switcher.c:101
+#: modules/stream_out/switcher.c:103
 msgid "Fixed quantizer scale to use."
 msgstr "Scala fissa di quantizzazione da utilizzare."
 
-#: modules/stream_out/switcher.c:102
+#: modules/stream_out/switcher.c:104
 msgid "Mute audio"
 msgstr "Silenzia audio"
 
-#: modules/stream_out/switcher.c:104
+#: modules/stream_out/switcher.c:106
 msgid "Mute audio when command is not 0."
 msgstr "Azzera audio quando il comando non è 0."
 
-#: modules/stream_out/switcher.c:107
+#: modules/stream_out/switcher.c:109
 #, fuzzy
 msgid "MPEG2 video switcher stream output"
 msgstr "Trasmissione in uscita con cambiamento di rate MPEG2 video"
