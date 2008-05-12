@@ -141,8 +141,11 @@ void __msg_rc( intf_thread_t *p_intf, const char *psz_fmt, ... )
 
     if( p_intf->p_sys->i_socket == -1 )
     {
-        utf8_vfprintf( stdout, psz_fmt, args );
-        printf( "\r\n" );
+        if( !p_intf->p_sys->pi_socket_listen )
+        {
+            utf8_vfprintf( stdout, psz_fmt, args );
+            printf( "\r\n" );
+        }
     }
     else
     {
@@ -2296,6 +2299,13 @@ vlc_bool_t ReadCommand( intf_thread_t *p_intf, char *p_buffer, int *pi_size )
         return VLC_FALSE;
     }
 #endif
+
+    if( p_intf->p_sys->i_socket == -1 && p_intf->p_sys->pi_socket_listen )
+    {
+        /* Do not try to read stdin if we are listening on a socket */
+        msleep( INTF_IDLE_SLEEP );
+        return VLC_FALSE;
+    }
 
     while( !p_intf->b_die && *pi_size < MAX_LINE_LENGTH &&
            (i_read = net_ReadNonBlock( p_intf, p_intf->p_sys->i_socket == -1 ?
