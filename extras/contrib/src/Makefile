@@ -637,6 +637,9 @@ libvorbis-$(VORBIS_VERSION).tar.gz:
 libvorbis: libvorbis-$(VORBIS_VERSION).tar.gz
 	$(EXTRACT_GZ)
 	patch -p 0 < Patches/libvorbis-1.1.patch
+	patch -d libvorbis -p0 < Patches/libvorbis-r14598-CVE-2008-1420.patch
+	patch -d libvorbis -p0 < Patches/libvorbis-r14602-CVE-2008-1419.patch
+	patch -d libvorbis -p0 < Patches/libvorbis-r14602-CVE-2008-1423.patch
 	(cd $@; autoconf)
 
 .vorbis: libvorbis .ogg
