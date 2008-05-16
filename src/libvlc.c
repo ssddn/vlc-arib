@@ -945,7 +945,7 @@ int VLC_CleanUp( int i_object )
         stats_HandlerDestroy( p_stats );
         vlc_object_detach( (vlc_object_t*) p_stats );
         vlc_object_release( (vlc_object_t *)p_stats );
-        // TODO: Delete it
+        vlc_object_destroy( p_stats );
     }
 
     /*
@@ -2556,12 +2556,14 @@ static void InitDeviceValues( vlc_t *p_vlc )
     DBusError       error;
 
 #ifdef HAVE_HAL_1
-    ctx =  libhal_ctx_new();
+    ctx = libhal_ctx_new();
     if( !ctx ) return;
     dbus_error_init( &error );
     p_connection = dbus_bus_get ( DBUS_BUS_SYSTEM, &error );
     if( dbus_error_is_set( &error ) )
     {
+        libhal_ctx_shutdown( ctx, &error );
+        libhal_ctx_free( ctx );
         dbus_error_free( &error );
         return;
     }
@@ -2622,6 +2624,7 @@ static void InitDeviceValues( vlc_t *p_vlc )
 
 #ifdef HAVE_HAL_1
         libhal_ctx_shutdown( ctx, NULL );
+        libhal_ctx_free( ctx );
 #else
         hal_shutdown( ctx );
 #endif
