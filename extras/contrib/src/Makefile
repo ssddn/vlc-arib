@@ -134,7 +134,7 @@ endif
 ifdef HAVE_DARWIN_OS
  all: .autoconf .automake .libtool .intl .pkgcfg .freetype .fribidi \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
-	.FLAC .speex .shout .faad2 .faac .lame .twolame .ebml .matroska .ffmpeg \
+	.FLAC .speex .shout .faad .faac .lame .twolame .ebml .matroska .ffmpeg \
 	.dvdcss .dvdnav .dvdread .dvbpsi .live .x264 .caca .mod \
 	.png .gpg-error .gcrypt .gnutls .opendaap .cddb .cdio .vcdimager .SDL_image \
 	.glib .libidl .gecko .mpcdec .dirac_encoder .dirac_decoder .aclocal \
@@ -154,14 +154,14 @@ else
 # Native build: we need perl, autoconf, etc first
    all: .perl .autoconf .automake .libtool .iconv .intl .freetype .fribidi \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
-	.FLAC .speex .faad2 .faac .lame .ebml .matroska .ffmpeg .dvdcss \
+	.FLAC .speex .faad .faac .lame .ebml .matroska .ffmpeg .dvdcss \
 	.dvdnav .dvbpsi .aclocal .libdca
   else
 # Cross compiling: we already have the Linux tools, only build the
 # libraries now
    all: .iconv .intl .freetype .fribidi \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
-	.FLAC .speex .faad2 .faac .lame .twolame .ebml .matroska .ffmpeg .dvdcss \
+	.FLAC .speex .faad .faac .lame .twolame .ebml .matroska .ffmpeg .dvdcss \
 	.dvdnav .dvbpsi .aclocal .libdca
   endif
  else
@@ -170,7 +170,7 @@ else
 
    all: .iconv .intl .freetype .fribidi .zlib \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .shout .vorbisenc .theora \
-	.FLAC .speex .faad2 .faac .lame .ebml  .matroska .ffmpeg .dvdcss \
+	.FLAC .speex .faad .faac .lame .ebml  .matroska .ffmpeg .dvdcss \
 	.live .goom2k4 .caca .mod .x264  .xml .twolame \
 	.png .gpg-error .gcrypt .gnutls .mpcdec \
 	.dvdnav .dvbpsi .wxwidgets .dirac .SDL_image \
@@ -180,13 +180,13 @@ else
 
    ifdef HAVE_WINCE
 
-   all: .dvbpsi .zlib .ffmpeg .ogg .tremor .faad2
+   all: .dvbpsi .zlib .ffmpeg .ogg .tremor .faad
 
    else
 # Standard Linux or other UNIX-like systems
    all: .iconv .intl .freetype .fribidi .zlib \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
-	.FLAC .speex .faad2 .faac .lame .ebml .matroska .ffmpeg .dvdcss \
+	.FLAC .speex .faad .faac .lame .ebml .matroska .ffmpeg .dvdcss \
 	.live .goom2k4 .caca .mod .x264  .xml .twolame \
 	.png .gpg-error .gcrypt .gnutls .mpcdec \
 	.dvdnav .dvbpsi .wxwidgets .dirac \
@@ -808,12 +808,12 @@ faad2: faad2-$(FAAD2_VERSION).tar.gz
 	$(EXTRACT_GZ)
 	(cd $@; ./bootstrap)
 
-.faad2: faad2
+.faad: faad2
 	(cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="-O3" && sed -i.orig "s/shrext_cmds/shrext/g" libtool && make -C libfaad && make -C libfaad install)
 	$(INSTALL_NAME)
 	touch $@
 
-CLEAN_FILE += .faad2
+CLEAN_FILE += .faad
 CLEAN_PKG += faad2
 DISTCLEAN_PKG += faad2-$(FAAD2_VERSION).tar.gz
 
