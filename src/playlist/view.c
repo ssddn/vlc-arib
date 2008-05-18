@@ -175,7 +175,6 @@ int playlist_ViewUpdate( playlist_t *p_playlist, int i_view)
     if( i_view == VIEW_ALL )
     {
         p_view->p_root->i_children = p_playlist->i_size;
-        free( p_view->p_root->pp_children );
         p_view->p_root->pp_children = p_playlist->pp_items;
     }
 
