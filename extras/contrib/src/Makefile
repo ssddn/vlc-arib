@@ -119,9 +119,12 @@ ifdef HAVE_BEOS
 FFMPEGCONF+= --cpu=x86 --disable-debug --disable-audio-beos
 endif
 
+ifdef HAVE_DARWIN_OS
+X264CONF += --enable-pic
+endif
+
 ifeq ($(HOST),i686-apple-darwin8)
 FFMPEGCONF += --enable-memalign-hack
-X264CONF += --enable-pic
 ifneq ($(HOST),i686-apple-darwin8)
 FFMPEG_CFLAGS += -DHAVE_LRINTF
 endif
