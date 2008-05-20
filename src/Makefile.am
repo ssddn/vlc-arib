@@ -157,7 +157,7 @@ libvlc_la_CXXFLAGS = `$(VLC_CONFIG) --cxxflags vlc`
 libvlc_la_OBJCFLAGS = `$(VLC_CONFIG) --objcflags vlc`
 libvlc_la_LDFLAGS = \
 	`$(VLC_CONFIG) --libs vlc builtin|sed -e 's/\(modules\/[^ ]*\)\.a /\1_builtin.la /g'` \
-	-version 0:8:0 \
+	-version-info 0:8:0 \
 	-no-undefined
 libvlc_la_DEPENDENCIES = stamp-builtins
 
