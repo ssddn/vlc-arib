@@ -35,6 +35,8 @@
 
 #include "vlc_image.h"
 
+#include <assert.h>
+
 #include "../video_filter/mosaic.h"
 
 /*****************************************************************************
@@ -65,21 +67,19 @@ struct decoder_owner_sys_t
 typedef void (* pf_release_t)( picture_t * );
 static void ReleasePicture( picture_t *p_pic )
 {
-    p_pic->i_refcount--;
+    if ( --p_pic->i_refcount > 0 )
+        return;
 
-    if ( p_pic->i_refcount <= 0 )
+    if ( p_pic->p_sys )
     {
-        if ( p_pic->p_sys != NULL )
-        {
-            pf_release_t pf_release = (pf_release_t)p_pic->p_sys;
-            p_pic->p_sys = NULL;
-            pf_release( p_pic );
-        }
-        else
-        {
-            if( p_pic && p_pic->p_data_orig ) free( p_pic->p_data_orig );
-            if( p_pic ) free( p_pic );
-        }
+        pf_release_t pf_release = (pf_release_t)p_pic->p_sys;
+        p_pic->p_sys = NULL;
+        pf_release( p_pic );
+    }
+    else
+    {
+        free( p_pic->p_data_orig );
+        free( p_pic );
     }
 }
 
@@ -214,9 +214,7 @@ static void Close( vlc_object_t * p_this )
 
     p_stream->p_sout->i_out_pace_nocontrol--;
 
-    if ( p_sys->psz_id )
-        free( p_sys->psz_id );
-
+    free( p_sys->psz_id );
     free( p_sys );
 }
 
@@ -350,15 +348,12 @@ static int Del( sout_stream_t *p_stream, sout_stream_id_t *id )
         vlc_object_destroy( p_sys->p_decoder );
 
         for( i = 0; i < PICTURE_RING_SIZE; i++ )
-        {
-            if ( pp_ring[i] != NULL )
+            if ( pp_ring[i] )
             {
-                if ( pp_ring[i]->p_data_orig != NULL )
-                    free( pp_ring[i]->p_data_orig );
+                free( pp_ring[i]->p_data_orig );
                 free( pp_ring[i]->p_sys );
                 free( pp_ring[i] );
             }
-        }
 
         free( p_owner );
     }
@@ -478,15 +473,25 @@ static int Send( sout_stream_t *p_stream, sout_stream_id_t *id,
             if ( p_new_pic == NULL )
             {
                 msg_Err( p_stream, "image conversion failed" );
+                p_pic->pf_release( p_pic );
                 continue;
             }
         }
         else
         {
             p_new_pic = (picture_t*)malloc( sizeof(picture_t) );
-            vout_AllocatePicture( p_stream, p_new_pic, p_pic->format.i_chroma,
+            if( !p_new_pic )
+                continue;
+            if( vout_AllocatePicture(
+                                  p_stream, p_new_pic, p_pic->format.i_chroma,
                                   p_pic->format.i_width, p_pic->format.i_height,
-                                  p_sys->p_decoder->fmt_out.video.i_aspect );
+                                  p_sys->p_decoder->fmt_out.video.i_aspect )
+                    != VLC_SUCCESS )
+            {
+                p_pic->pf_release( p_pic );
+                free( p_new_pic );
+                continue;
+            }
 
             vout_CopyPicture( p_stream, p_new_pic, p_pic );
         }
@@ -513,11 +518,10 @@ struct picture_sys_t
 
 static void video_release_buffer( picture_t *p_pic )
 {
-    if( p_pic && !p_pic->i_refcount && p_pic->pf_release && p_pic->p_sys )
-    {
+    if( --p_pic->i_refcount > 0 ) return;
+
+    if( p_pic->p_sys )
         video_del_buffer( (decoder_t *)p_pic->p_sys->p_owner, p_pic );
-    }
-    else if( p_pic && p_pic->i_refcount > 0 ) p_pic->i_refcount--;
 }
 
 static picture_t *video_new_buffer( decoder_t *p_dec )
@@ -561,12 +565,11 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
 
         for( i = 0; i < PICTURE_RING_SIZE; i++ )
         {
-            if ( pp_ring[i] != NULL )
+            if ( pp_ring[i] )
             {
                 if ( pp_ring[i]->i_status == DESTROYED_PICTURE )
                 {
-                    if ( pp_ring[i]->p_data_orig != NULL )
-                        free( pp_ring[i]->p_data_orig );
+                    free( pp_ring[i]->p_data_orig );
                     free( pp_ring[i]->p_sys );
                     free( pp_ring[i] );
                 }
@@ -574,8 +577,8 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
                 {
                     pp_ring[i]->p_sys->b_dead = VLC_TRUE;
                 }
-                pp_ring[i] = NULL;
             }
+            pp_ring[i] = NULL;
         }
     }
 
@@ -585,6 +588,7 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
         if( pp_ring[i] != NULL && pp_ring[i]->i_status == DESTROYED_PICTURE )
         {
             pp_ring[i]->i_status = RESERVED_PICTURE;
+            pp_ring[i]->i_refcount = 1;
             return pp_ring[i];
         }
     }
@@ -601,6 +605,7 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
         for( i = 0; i < PICTURE_RING_SIZE; i++ )
         {
             pp_ring[i]->pf_release( pp_ring[i] );
+            pp_ring[i] = NULL;
         }
 
         i = 0;
@@ -608,11 +613,15 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
 
     p_pic = malloc( sizeof(picture_t) );
     p_dec->fmt_out.video.i_chroma = p_dec->fmt_out.i_codec;
-    vout_AllocatePicture( VLC_OBJECT(p_dec), p_pic,
+    if( vout_AllocatePicture( VLC_OBJECT(p_dec), p_pic,
                           p_dec->fmt_out.video.i_chroma,
                           p_dec->fmt_out.video.i_width,
                           p_dec->fmt_out.video.i_height,
-                          p_dec->fmt_out.video.i_aspect );
+                          p_dec->fmt_out.video.i_aspect ) != VLC_SUCCESS )
+    {
+        free( p_pic );
+        return NULL;
+    }
 
     if( !p_pic->i_planes )
     {
@@ -620,6 +629,7 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
         return NULL;
     }
 
+    p_pic->i_refcount = 1;
     p_pic->pf_release = video_release_buffer;
     p_pic->p_sys = malloc( sizeof(picture_sys_t) );
     p_pic->p_sys->p_owner = VLC_OBJECT(p_dec);
@@ -637,8 +647,7 @@ static void video_del_buffer( decoder_t *p_this, picture_t *p_pic )
     p_pic->i_status = DESTROYED_PICTURE;
     if ( p_pic->p_sys->b_dead )
     {
-        if ( p_pic->p_data_orig != NULL )
-            free( p_pic->p_data_orig );
+        free( p_pic->p_data_orig );
         free( p_pic->p_sys );
         free( p_pic );
     }
