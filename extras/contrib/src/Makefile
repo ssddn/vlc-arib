@@ -883,16 +883,12 @@ DISTCLEAN_PKG += lame-$(LAME_VERSION).tar.gz
 # libebml
 # ***************************************************************************
 
-ifdef SVN
-libebml: 
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml -r 1254 libebml
-else
 libebml-$(LIBEBML_VERSION).tar.bz2:
 	$(WGET) $(LIBEBML_URL)
 
 libebml: libebml-$(LIBEBML_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-endif
+
 ifdef HAVE_WIN32
 	(cd $@; patch -p 0 < ../Patches/libebml-svn-win32.patch)
 endif
@@ -914,16 +910,12 @@ DISTCLEAN_PKG += libebml-$(LIBEBML_VERSION).tar.bz2
 # libmatroska
 # ***************************************************************************
 
-ifdef SVN
-libmatroska:
-	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska -r 1254 libmatroska
-else
 libmatroska-$(LIBMATROSKA_VERSION).tar.bz2:
 	$(WGET) $(LIBMATROSKA_URL)
 
 libmatroska: libmatroska-$(LIBMATROSKA_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-endif
+
 ifdef HAVE_WIN32
 	(cd $@; patch -p 0 < ../Patches/libmatroska-win32.patch)
 endif
