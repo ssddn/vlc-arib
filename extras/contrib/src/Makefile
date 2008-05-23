@@ -105,14 +105,12 @@ endif
 #
 ifdef HAVE_WIN32
 HOSTCONF+= --without-pic --disable-shared --enable-msw --with-included-opencdk --with-included-libtasn1 --disable-dependency-tracking
-FFMPEGCONF+= --enable-mingw32 --enable-memalign-hack --cpu=x86 --disable-debug
+FFMPEGCONF+= --target-os=mingw32 --enable-memalign-hack --cpu=i686 --arch=i686 --disable-debug
 endif
 
 ifdef HAVE_WINCE
 HOSTCONF+= --without-pic --disable-shared
 FFMPEGCONF+= --enable-mingwce --cpu=armv4l --disable-debug --disable-encoders --disable-muxers --disable-mpegaudio-hp --disable-decoder=snow --disable-decoder=vc9 --disable-decoder=wmv3 --disable-decoder=vorbis --disable-decoder=dvdsub --disable-decoder=dvbsub --disable-protocols
-else
-FFMPEGCONF+= --enable-mp3lame --enable-faac
 endif
 
 ifdef HAVE_BEOS
@@ -124,10 +122,8 @@ X264CONF += --enable-pic
 endif
 
 ifeq ($(HOST),i686-apple-darwin8)
-FFMPEGCONF += --enable-memalign-hack
-ifneq ($(HOST),i686-apple-darwin8)
+FFMPEGCONF += --enable-memalign-hack --cpu=pentium-m
 FFMPEG_CFLAGS += -DHAVE_LRINTF
-endif
 endif
 
 # ***************************************************************************
@@ -135,7 +131,7 @@ endif
 # ***************************************************************************
 
 ifdef HAVE_DARWIN_OS
- all: .autoconf .automake .libtool .intl .pkgcfg .freetype .fribidi \
+ all: .autoconf .gnumake .automake .libtool .intl .pkgcfg .freetype .fribidi \
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
 	.FLAC .speex .shout .faad .faac .lame .twolame .ebml .matroska .ffmpeg \
 	.dvdcss .dvdnav .dvdread .dvbpsi .live .x264 .caca .mod \
@@ -322,6 +318,24 @@ autoconf: autoconf-$(AUTOCONF_VERSION).tar.bz2
 CLEAN_FILE += .autoconf
 CLEAN_PKG += autoconf
 DISTCLEAN_PKG += autoconf-$(AUTOCONF_VERSION).tar.bz2
+
+# ***************************************************************************
+# gnumake
+# ***************************************************************************
+
+make-$(GNUMAKE_VERSION).tar.bz2:
+	$(WGET) $(GNUMAKE_URL)
+
+gnumake: make-$(GNUMAKE_VERSION).tar.bz2
+	$(EXTRACT_BZ2)
+
+.gnumake: gnumake
+	(cd $<; ./configure --prefix=$(PREFIX) && make && make install)
+	touch $@
+
+CLEAN_FILE += .gnumake
+CLEAN_PKG += gnumake
+DISTCLEAN_PKG += make-$(GNUMAKE_VERSION).tar.bz2
 
 # ***************************************************************************
 # libtool
@@ -931,39 +945,56 @@ DISTCLEAN_PKG += libmatroska-$(LIBMATROSKA_VERSION).tar.bz2
 # ffmpeg
 # ***************************************************************************
 
+ifdef SVN
 ffmpeg:
-	$(SVN) co $(FFMPEG_SVN) -r 7407 ffmpeg
-	(cd $@; patch -p 0 < ../Patches/ffmpeg-swscale-headers.patch)
+	$(SVN) co $(FFMPEG_SVN) ffmpeg -r 12920
 ifeq ($(HOST),i586-pc-beos)
-	(cd $@; patch -p 0 < ../Patches/ffmpeg-svn-beos.patch)
+	(cd $@; patch -p0 < ../Patches/ffmpeg-svn-beos.patch)
 endif
 ifdef HAVE_WINCE
-	patch -p 1 < Patches/ffmpeg-svn-wince.patch
-endif
-ifdef HAVE_WIN32
-	(cd $@; patch -p 0 < ../Patches/ffmpeg-alignment.patch)
+	patch -p1 < Patches/ffmpeg-svn-wince.patch
 endif
 ifdef HAVE_BEOS
 	(cd $@; patch -p0 < ../Patches/ffmpeg-alignment.patch)
 endif
+ifdef HAVE_DARWIN_OS
+	(cd $@; patch -p0 < ../Patches/ffmpeg-macosx-intel-mmx.patch)
+	(cd $@/libswscale; patch -p0 < ../../Patches/ffmpeg-fix-noaltivec.patch)
+endif
+ifdef HAVE_UCLIBC
+	patch -p0 < Patches/ffmpeg-svn-uclibc.patch
+	patch -p0 < Patches/ffmpeg-svn-internal-define.patch
+	patch -p0 < Patches/ffmpeg-svn-libavformat.patch
+endif
 
+else
 ffmpeg-$(FFMPEG_VERSION).tar.gz:
+	echo "ffmpeg snapshot is too old, you MUST use subversion !"
+	exit -1
 	$(WGET) $(FFMPEG_URL)
 
-#ffmpeg: ffmpeg-$(FFMPEG_VERSION).tar.gz
-#	$(EXTRACT_GZ)
-#	patch -p 0 < Patches/ffmpeg.patch
+ffmpeg: ffmpeg-$(FFMPEG_VERSION).tar.gz
+	$(EXTRACT_GZ)
+endif
 
 ifdef HAVE_WINCE
 .ffmpeg: ffmpeg .zlib
 else
 .ffmpeg: ffmpeg .faac .lame
 endif
-	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-pp --disable-vhook --disable-ffserver --disable-network --enable-a52 --disable-ffplay && make install-libs install-headers)
+
+	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS) -DRUNTIME_CPUDETECT" --extra-ldflags="$(LDFLAGS)" --enable-gpl --enable-postproc --disable-vhook --disable-ffserver --disable-ffmpeg --disable-ffplay --disable-devices --disable-protocols && make && make install-libs install-headers)
 	touch $@
 
+ifdef SVN
+ffmpeg-source: ffmpeg
+	tar cfvz ffmpeg-$(DATE).tar.gz ffmpeg
+
+SOURCE += ffmpeg-source
+endif
+
 CLEAN_FILE += .ffmpeg
-CLEAN_PKG += ffmpeg ffmpeg.cvs
+CLEAN_PKG += ffmpeg
 DISTCLEAN_PKG += ffmpeg-$(FFMPEG_VERSION).tar.gz
 
 # ***************************************************************************
