@@ -1613,7 +1613,7 @@ libgcrypt-$(GCRYPT_VERSION).tar.bz2:
 
 libgcrypt: libgcrypt-$(GCRYPT_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-	patch -p 0 < Patches/gcrypt.patch
+	patch -p0 < Patches/gcrypt.patch
 
 .gcrypt: libgcrypt .gpg-error
 ifdef HAVE_WIN32
