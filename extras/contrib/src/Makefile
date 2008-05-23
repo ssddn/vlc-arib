@@ -403,16 +403,18 @@ gettext-$(GETTEXT_VERSION).tar.gz:
 
 gettext: gettext-$(GETTEXT_VERSION).tar.gz
 	$(EXTRACT_GZ)
+ifdef HAVE_WIN32
+	patch -p0 < Patches/gettext-win32.patch
+endif
 ifdef HAVE_DARWIN_OS
-	patch -p 0 < Patches/gettext-macosx.patch
-	(cd $@; ./autogen.sh)
+	patch -p0 < Patches/gettext-macosx.patch
 endif
 
 .intl: gettext .iconv
 ifdef HAVE_WIN32
-	( cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-relocatable --with-iconv-prefix=$(PREFIX))
+	( cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-relocatable --with-iconv-prefix=$(PREFIX) --disable-java --disable-native-java)
 else
-	( cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) )
+	( cd $< && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-java --disable-native-java --without-emacs)
 endif
 ifeq ($(BUILD),i586-pc-beos)
 # The ugliest kludge ever - so libtool correctly links shared libraries
@@ -420,15 +422,20 @@ ifeq ($(BUILD),i586-pc-beos)
 	( cd $< && for f in `find . -name libtool`; do  sed -e 's/ -shared / -nostart /' -e 's/^predep_objects.*/predep_objects=""/' -i  $$f; chmod +x $$f; done )
 endif
 ifneq ($(HOST),$(BUILD))
-# We'll use the installed gettext and only need to cross-compile libintl
-	( cd $< && make -C gettext-runtime/intl && make -C gettext-runtime/intl install )
+  ifndef HAVE_CYGWIN
+    # We'll use the installed gettext and only need to cross-compile libintl, also build autopoint and gettextsize tools need for VLC bootstrap
+	( cd $< && make -C gettext-runtime/intl && patch -p1 < ../Patches/libintl.patch && make -C gettext-runtime/intl install && make -C gettext-tools/misc install )
+  else
+    # We are compiling for MinGW on Cygwin -- build the full current gettext
+	( cd $< && make && patch -p1 < ../Patches/libintl.patch && make install )
+  endif
 else
 # Build and install the whole gettext
-	( cd $< && make && make install )
+	( cd $< && make && patch -p1 < ../Patches/libintl.patch && make install )
 endif
 # Work around another non-sense of autoconf.
 ifdef HAVE_WIN32
-	(cd ../include; sed -i.orig '283 c #if !1' libintl.h)
+	(cd ../include; sed -i.orig '311 c #if 0' libintl.h)
 endif
 	$(INSTALL_NAME)
 	touch $@
@@ -1523,86 +1530,23 @@ DISTCLEAN_PKG += zvbi-$(ZVBI_VERSION).tar.bz2
 # gpg-error 
 # ***************************************************************************
 
-libgpg-error-$(GPGERROR_VERSION).tar.gz:
+libgpg-error-$(GPGERROR_VERSION).tar.bz2:
 	$(WGET) $(GPGERROR_URL)
 
-libgpg-error: libgpg-error-$(GPGERROR_VERSION).tar.gz
-	$(EXTRACT_GZ)
-	patch -p 0 < Patches/libgpg-error.patch
+libgpg-error: libgpg-error-$(GPGERROR_VERSION).tar.bz2
+	$(EXTRACT_BZ2)
 
 .gpg-error: libgpg-error
 ifeq ($(HOST),i686-apple-darwin8)
 	(cd $<; ./autogen.sh)
 endif
-	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-nls --disable-shared && make && make install)
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-nls --disable-shared --disable-languages && make && make install)
 #	$(INSTALL_NAME)
 	touch $@
-# libraw1394
-# ***************************************************************************
-
-#ifdef SVN
-#libraw1394:
-#	$(SVN) co -r 325 $(LIBDC1394_SVN)/libraw1394/trunk/libraw1394  libraw1394
-#        (cd $<; libtoolize --copy --force; \
-#                autopoint -f; \
-#                aclocal -I extras/contrib/share/aclocal; \
-#                autoconf; \
-#                autoheader; \
-#                automake --add-missing --copy -Wall)
-#
-#else
-libraw1394-$(LIBRAW1394_VERSION).tar.gz:
-	$(WGET) $(LIBRAW1394_URL)
-
-libraw1394: libraw1394-$(LIBRAW1394_VERSION).tar.gz
-	$(EXTRACT_GZ)
-#endif
-
-.libraw1394: libraw1394
-	(cd $<; ./configure --prefix=$(PREFIX) && make && make DESTDIR=$(PRFIX) install)
-	touch $@
-	
-CLEAN_file += .libraw1394
-CLEAN_PKG += libraw1394
-DISTCLEAN_PKG += libraw1394-$(LIBRAW1394_VERSION)
-
-# ***************************************************************************
-# libdc1394
-# ***************************************************************************
-
-#ifdef SVN
-#libdc1394:
-#	$(SVN) co -r 325 $(LIBDC1394_SVN)/libdc1394/trunk/libdc1394  libdc1394
-#        (cd $<; libtoolize --copy --force; \
-#                autopoint -f; \
-#                aclocal -I extras/contrib/share/aclocal; \
-#                autoconf; \
-#                autoheader; \
-#                automake --add-missing --copy -Wall)
-#
-#else
-libdc1394-$(LIBDC1394_VERSION).tar.gz:
-	$(WGET) $(LIBDC1394_URL)
-
-libdc1394: libdc1394-$(LIBDC1394_VERSION).tar.gz
-	$(EXTRACT_GZ)
-#endif
-
-.libdc1394: libdc1394
-	(cd $<; ./configure --prefix=$(PREFIX) && \
-	 patch -p1 < ../Patches/libdc1394-noexamples.patch && \
-	 make && make DESTDIR=$(PRFIX) install)
-	touch $@
-	
-CLEAN_file += .libdc1394
-CLEAN_PKG += libdc1394
-DISTCLEAN_PKG += libdc1394-$(LIBDC1394_VERSION)
-
-# ***************************************************************************
 
 CLEAN_FILE += .gpg-error
 CLEAN_PKG += libgpg-error
-DISTCLEAN_PKG += libgpg-error-$(GPGERROR_VERSION).tar.gz
+DISTCLEAN_PKG += libgpg-error-$(GPGERROR_VERSION).tar.bz2
 
 # ***************************************************************************
 # libgcrypt
@@ -1675,6 +1619,68 @@ libopendaap: libopendaap-$(DAAP_VERSION).tar.bz2
 CLEAN_FILE += .opendaap
 CLEAN_PKG += libopendaap
 DISTCLEAN_PKG += libopendaap-$(DAAP_VERSION).tar.bz2
+
+# ***************************************************************************
+# libraw1394
+# ***************************************************************************
+
+#ifdef SVN
+#libraw1394:
+#	$(SVN) co -r 325 $(LIBDC1394_SVN)/libraw1394/trunk/libraw1394  libraw1394
+#        (cd $<; libtoolize --copy --force; \
+#                autopoint -f; \
+#                aclocal -I extras/contrib/share/aclocal; \
+#                autoconf; \
+#                autoheader; \
+#                automake --add-missing --copy -Wall)
+#
+#else
+libraw1394-$(LIBRAW1394_VERSION).tar.gz:
+	$(WGET) $(LIBRAW1394_URL)
+
+libraw1394: libraw1394-$(LIBRAW1394_VERSION).tar.gz
+	$(EXTRACT_GZ)
+#endif
+
+.libraw1394: libraw1394
+	(cd $<; ./configure --prefix=$(PREFIX) && make && make DESTDIR=$(PRFIX) install)
+	touch $@
+	
+CLEAN_file += .libraw1394
+CLEAN_PKG += libraw1394
+DISTCLEAN_PKG += libraw1394-$(LIBRAW1394_VERSION)
+
+# ***************************************************************************
+# libdc1394
+# ***************************************************************************
+
+#ifdef SVN
+#libdc1394:
+#	$(SVN) co -r 325 $(LIBDC1394_SVN)/libdc1394/trunk/libdc1394  libdc1394
+#        (cd $<; libtoolize --copy --force; \
+#                autopoint -f; \
+#                aclocal -I extras/contrib/share/aclocal; \
+#                autoconf; \
+#                autoheader; \
+#                automake --add-missing --copy -Wall)
+#
+#else
+libdc1394-$(LIBDC1394_VERSION).tar.gz:
+	$(WGET) $(LIBDC1394_URL)
+
+libdc1394: libdc1394-$(LIBDC1394_VERSION).tar.gz
+	$(EXTRACT_GZ)
+#endif
+
+.libdc1394: libdc1394
+	(cd $<; ./configure --prefix=$(PREFIX) && \
+	 patch -p1 < ../Patches/libdc1394-noexamples.patch && \
+	 make && make DESTDIR=$(PRFIX) install)
+	touch $@
+	
+CLEAN_file += .libdc1394
+CLEAN_PKG += libdc1394
+DISTCLEAN_PKG += libdc1394-$(LIBDC1394_VERSION)
 
 # ***************************************************************************
 # glib
