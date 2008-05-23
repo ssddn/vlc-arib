@@ -1,6 +1,27 @@
-bin
-include
-lib
-info
-man
+# Ignore install path
+translations
+demos
+examples
+mkspecs
+phrasebooks
+*.xml
+*.tar.bz2
 share
+bin
+lib
+include
+man
+sbin
+etc
+gecko-sdk
+doc
+info
+*.bak
+# Ignore fetched contrib
+src/*
+# But not our files
+!Makefile
+!src/Distributions/*
+!src/Patches
+!src/packages.mak
+!src/Makefile
