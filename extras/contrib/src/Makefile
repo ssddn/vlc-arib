@@ -111,6 +111,8 @@ endif
 ifdef HAVE_WINCE
 HOSTCONF+= --without-pic --disable-shared
 FFMPEGCONF+= --enable-mingwce --cpu=armv4l --disable-debug --disable-encoders --disable-muxers --disable-mpegaudio-hp --disable-decoder=snow --disable-decoder=vc9 --disable-decoder=wmv3 --disable-decoder=vorbis --disable-decoder=dvdsub --disable-decoder=dvbsub --disable-protocols
+else
+FFMPEGCONF+= --enable-libmp3lame --enable-libfaac
 endif
 
 ifdef HAVE_BEOS
@@ -135,9 +137,9 @@ ifdef HAVE_DARWIN_OS
 	.a52 .mpeg2 .id3tag .mad .ogg .vorbis .vorbisenc .theora \
 	.FLAC .speex .shout .faad .faac .lame .twolame .ebml .matroska .ffmpeg \
 	.dvdcss .dvdnav .dvdread .dvbpsi .live .x264 .caca .mod \
-	.png .gpg-error .gcrypt .gnutls .opendaap .cddb .cdio .vcdimager .SDL_image \
-	.glib .libidl .gecko .mpcdec .dirac_encoder .dirac_decoder .aclocal \
-        .libdca .goom2k4 .x264
+	.png .gpg-error .gcrypt .gnutls .opendaap .cddb .cdio .vcdimager \
+	.SDL_image .glib .libidl .gecko .mpcdec .dirac_encoder .dirac_decoder  \
+    .libdca .goom2k4 .x264 .aclocal
 # .expat .clinkcc don't work with SDK yet
 # .glib .libidl .gecko are required to build the mozilla plugin
 # .mozilla will build an entire mozilla. it can be used if we need to create a new .gecko package
