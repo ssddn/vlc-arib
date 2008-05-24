@@ -1599,6 +1599,24 @@ CLEAN_PKG += libgcrypt
 DISTCLEAN_PKG += libgcrypt-$(GCRYPT_VERSION).tar.bz2
 
 # ***************************************************************************
+# opencdk (requires by gnutls 2.x)
+# ***************************************************************************
+
+opencdk-$(OPENCDK_VERSION).tar.bz2:
+	$(WGET) $(OPENCDK_URL)
+
+opencdk: opencdk-$(OPENCDK_VERSION).tar.bz2 
+	$(EXTRACT_BZ2)
+
+.opencdk: opencdk
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" $(HOSTCC) && make && make install)
+	touch $@
+
+CLEAN_FILE += .opencdk
+CLEAN_PKG += opencdk
+DISTCLEAN_PKG += opencdk-$(OPENCDK_VERSION).tar.bz2
+
+# ***************************************************************************
 # gnutls
 # ***************************************************************************
 
@@ -1607,15 +1625,17 @@ gnutls-$(GNUTLS_VERSION).tar.bz2:
 
 gnutls: gnutls-$(GNUTLS_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-	patch -p0 < Patches/gnutls-win32.patch
-	(cd $@; cd lgl; ln -sf alloca_.h alloca.h) 
-
-.gnutls: gnutls .gcrypt .gpg-error
 ifdef HAVE_WIN32
-	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --target=i586-mingw32msvc && cd gl && make && cd ../lgl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
+	patch -p0 < Patches/gnutls-win32.patch
+	(cd $@; cd lgl; ln -sf alloca_.h alloca.h; rm vasprintf.c; touch vasprintf.c; rm vasnprintf.c; touch vasnprintf.c) 
+endif
+
+.gnutls: gnutls .opencdk .gcrypt .gpg-error 
+ifdef HAVE_WIN32
+	(cd $<; autoconf && $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --target=i586-mingw32msvc --disable-cxx -disable-shared --enable-static --disable-nls  && cd lgl && make && cd ../gl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
 else
-	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --disable-cxx && cd gl && make && cd ../lgl && make &&  cd ../lib &&make && make install && cd ../includes && make install)
-endif 
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --disable-cxx --with-libopencdk-prefix=$(PREFIX) --disable-guile && make && make install)
+endif
 	$(INSTALL_NAME)
 	touch $@
 

@@ -133,7 +133,8 @@ GCRYPT_URL=ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-$(GCRYPT_VERSION).tar.
 GNUTLS_VERSION=2.2.5
 GNUTLS_URL=http://www.gnu.org/software/gnutls/releases/gnutls-$(GNUTLS_VERSION).tar.bz2
 OPENCDK_VERSION=0.6.6
-OPENCDK_URL=http://www.gnu.org/software/gnutls/releases/opencdk/opencdk-$(OPENCDK_VERSION).tar.bz2DAAP_VERSION=0.4.0
+OPENCDK_URL=http://www.gnu.org/software/gnutls/releases/opencdk/opencdk-$(OPENCDK_VERSION).tar.bz2
+DAAP_VERSION=0.4.0
 DAAP_URL=http://craz.net/programs/itunes/files/libopendaap-$(DAAP_VERSION).tar.bz2
 GLIB_VERSION=1.2.10
 GLIB_URL=ftp://ftp.gtk.org/pub/gtk/v1.2/glib-1.2.10.tar.gz
