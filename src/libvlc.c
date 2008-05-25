@@ -2562,7 +2562,6 @@ static void InitDeviceValues( vlc_t *p_vlc )
     p_connection = dbus_bus_get ( DBUS_BUS_SYSTEM, &error );
     if( dbus_error_is_set( &error ) )
     {
-        libhal_ctx_shutdown( ctx, &error );
         libhal_ctx_free( ctx );
         dbus_error_free( &error );
         return;
