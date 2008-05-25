@@ -871,7 +871,6 @@ lame-$(LAME_VERSION).tar.gz:
 
 lame: lame-$(LAME_VERSION).tar.gz
 	$(EXTRACT_GZ)
-	rm -rf lame;  mv lame-3.97 lame; touch lame
 
 .lame: lame
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-analyser-hooks --disable-decoder --disable-shared --disable-gtktest --disable-frontend && make && make install)
@@ -1629,7 +1628,7 @@ gnutls: gnutls-$(GNUTLS_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
 ifdef HAVE_WIN32
 	patch -p0 < Patches/gnutls-win32.patch
-	(cd $@; cd lgl; ln -sf alloca_.h alloca.h; rm vasprintf.c; touch vasprintf.c; rm vasnprintf.c; touch vasnprintf.c) 
+	(cd $@; cd lgl; ln -sf alloca_.h alloca.h;) 
 endif
 
 .gnutls: gnutls .opencdk .gcrypt .gpg-error 
