@@ -2553,7 +2553,7 @@ dnl Those options have to be here because the .pc can be bogus for ffmpeg previo
      fi])
 
  AC_ARG_WITH(ffmpeg-dca,
-   [    --with-ffmpeg-dca     specify if ffmpeg has been compiled with dca supp
+   [    --with-ffmpeg-dca     specify if ffmpeg has been compiled with dca support],
    [
      if test "$with_ffmpeg_dca" = "yes"; then
              LDFLAGS="${LDFLAGS_save} ${LDFLAGS_ffmpeg} ${LIBS_ffmpeg}"
