@@ -71,13 +71,6 @@
 #define CdIo_t CdIo
 #endif    
 
-typedef enum {
-  paranoia_none    = 0, /* Note: We make use of 0 as being the same as false */
-  paranoia_overlap = 1, 
-  paranoia_full    = 2
-} paranoia_mode_t;
-
-  
 /*****************************************************************************
  * cdda_data_t: CD audio information
  *****************************************************************************/
