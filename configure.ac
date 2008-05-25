@@ -2557,7 +2557,7 @@ dnl Those options have to be here because the .pc can be bogus for ffmpeg previo
    [
      if test "$with_ffmpeg_dca" = "yes"; then
              LDFLAGS="${LDFLAGS_save} ${LDFLAGS_ffmpeg} ${LIBS_ffmpeg}"
-             AC_CHECK_LIB(dca, dca_free, [ VLC_ADD_LIBS([ffmpeg],[-ldca]) ])
+             AC_CHECK_LIB(dca, dca_free, [ VLC_ADD_LDFLAGS([ffmpeg],[-ldca]) ])
              LDFLAGS="${LDFLAGS_save}"
      fi])
 
