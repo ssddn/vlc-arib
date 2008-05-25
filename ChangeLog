@@ -1,3 +1,304 @@
+commit 46deca4d4c326991a2176d5486be97e8e3850b34
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 25 20:12:46 2008 +0200
+
+    s/LIBS/LDFLAGS/
+
+commit 20ee5775318d171e3b1b9f3fe8af9b4e7f8ddd11
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 25 20:05:32 2008 +0200
+
+    Fixed [087d5836455b31b463c87d316a9e548b94ce8823]
+
+commit 087d5836455b31b463c87d316a9e548b94ce8823
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 25 16:05:17 2008 +0200
+
+    Manually backport [77acf509d89e39c0bc48b5bdbb643b2e11ce2373] from master
+
+commit 78d90067a8b0e9cee99d2d58ddb6ec6125b87c8c
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 25 15:28:04 2008 +0200
+
+    Fix compilation with wx 2.8
+
+commit a6144dde169f94f8ed6ba97719c0284d6ee96ac9
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 25 15:21:49 2008 +0200
+
+    Use FreeBSD's be16toh() when available
+
+commit 2444a87b34fe205b9ab01715047ebb9cef467e40
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 25 14:48:23 2008 +0200
+
+    Use libcdio namespace, and only if available
+    
+    Manually picked from [f2fe0dac250da17373980dc531c31a2a0374380f]
+    [ae8638cbd8630e9370cbbb411e5d6141465fc42e]
+    and [4bacba8c7b69f54b3e4e0f575d11ce9b56971f39]
+
+commit 5004e1655283f52d77252e0e8ecf469f3ad8f94e
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 25 13:04:16 2008 +0200
+
+    Sorry for the noise
+
+commit f2fc22cfc2cf198097c6e7761ff79ad240e120fa
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 25 13:02:17 2008 +0200
+
+    Cleanup
+
+commit 94276407ef4134827829ca2685805ee4a50a6a13
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 25 12:54:35 2008 +0200
+
+    Prepare for release
+
+commit d40bd1258134a406e1c7f83729d0085f0e58eec4
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 03:12:11 2008 +0200
+
+    This is still 0.8.6g
+
+commit 3ac6d2d29dd81aac19556a3f8d07dc296650ef7c
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 03:08:54 2008 +0200
+
+    It's FOURCC update time!
+
+commit 70f394f66dc86d0582931123dfd7d1f4f1cdc5fa
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:59:37 2008 +0200
+
+    forgot this patch earlier today
+
+commit 8528ef178b9c8d1d3ef9cbd309c78387b38956c2
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:41:02 2008 +0200
+
+    put some updates
+
+commit 44d7927a42f9981c5fbf71ef459944ae06165bdd
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:30:03 2008 +0200
+
+    Don't disable ffmpeg's support of libmp3lame and libfaac as pointed by funman.
+
+commit e53a65e3a84900b6050f29f52cc659648b33012f
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:16:03 2008 +0200
+
+    Fix GnuTLS compilation by backporting our fixes from trunk including the addition of a native opencdk
+
+commit 6f3c3eb29b324ce9f5698a92eab5f0bf99eacd5b
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:04:44 2008 +0200
+
+    *coughcough*
+
+commit aa8b34253dcc544efbb0c4ca6df20b0ea765ef99
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 02:02:49 2008 +0200
+
+    Updated for current release
+
+commit ed207a9441a4abb01f47db192b1b782dd9f1a54b
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 01:57:26 2008 +0200
+
+    Fetch libcaca from ganesh instead of zoy
+
+commit f3a2e3f53c842ae34a5f946f39d7fa84b3cb6b25
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 01:54:15 2008 +0200
+
+    Use release versions of libmatroska and libebml.
+    
+    There is no difference to svn's HEAD. Additionally, svn access is currently blocked.
+
+commit 30b23594e6e7a14ea7b2fd9a11d8d9e0ab53a836
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 01:37:36 2008 +0200
+
+    Update ffmpeg to revision 12920 (the latest tested revision in trunk)
+    
+    For Mac OS X 10.4, we need to compile our own GNU Make now.
+    
+    Needs heavy testing on Win32 and PowerPC-based Macs
+
+commit 07371bd2888301ef4c022eb54e0ba5f3bcf667b1
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 01:03:03 2008 +0200
+
+    We need to update gettext and libgpg-error to current releases in order to use a current libgcrypt.
+    
+    Needs testing on Win32 with Cygwin
+
+commit d98a1f050b3bd261bc638647b753e1ac2852170a
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sat May 24 00:48:12 2008 +0200
+
+    Patching fix
+
+commit 315e066edae469f5a6ce6e95a58c4824c179af2f
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Fri May 23 12:51:27 2008 +0200
+
+    Announce the gnutls and libgrypt updates
+
+commit fce3c277703f572b052327d6db92af927a6002de
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Fri May 23 12:47:50 2008 +0200
+
+    Even more to ignore
+
+commit a92398dc0352369831f379559ec1f6f0dfbf3ed8
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Fri May 23 12:44:57 2008 +0200
+
+    Ignore more stuff
+
+commit 06369c11a63e23fdfd4f12f14c6d68d8067c1294
+Author: Jean-Baptiste Kempf <jb@altair.videolan.org>
+Date:   Thu May 22 08:50:00 2008 +0200
+
+    GnuTLS and libgcrypt bump from 2.2.2 to 2.2.5 and 1.4.0 to 1.4.1
+
+commit 5a4484f2a911b638a54855613714999f070ac93b
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Tue May 20 22:14:35 2008 +0200
+
+    Update the version string for the Mac builds too
+
+commit db828010616aaaf01257e604358674452b8df695
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Tue May 20 21:31:47 2008 +0300
+
+    /me needs lenses or something
+
+commit bf6d890ab189beeed7876aedfb521213f4332837
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Tue May 20 21:16:15 2008 +0300
+
+    Bump version
+
+commit d150fc573a38761d90e163f8f5bd2f0c463864b5
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 20 15:13:00 2008 +0200
+
+    Fix the reference counting of pictures stored in the mosaic_bridge ring
+    
+    Code cleanup without semantics changes
+    Resets the reference count when returning a previously allocated picture
+    Check error path
+
+commit eb1e0679d39bc693025a45bd4a408c764d72d397
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 20 15:11:17 2008 +0200
+
+    Use pictures reference counting
+
+commit bb5087cfa054a2a8546df27e92d5edc423d78bd5
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon May 19 11:45:20 2008 +0200
+
+    Ignore downloaded & built files in contribs
+
+commit aa32821d97fdc61e4ae9eea7b60ab34a9f8ce9c9
+Author: Rafaël Carré <rcarre@m2x.nl>
+Date:   Mon May 19 10:11:46 2008 +0200
+
+    Fix contribs building for FFmpeg
+    
+    --
+    Rafaël Carré <rcarre@m2x.nl>
+    
+    commit dc9057ec9b4bb41a74bb07197c64cee8c1976fe0
+    Author: Rafaël Carré <funman@videolan.org>
+    Date:   Mon May 19 10:08:04 2008 +0200
+    
+        Do not install swscale headers if it was not enabled
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 6c47b3d1a4d622cc4e3f1febdfd23b0c5ed684eb
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Mon May 19 00:33:18 2008 +0200
+
+    Using PIC for x264 on PPC-based Macs sounds like a good idea oO
+
+commit cf6667d2e2bc5a9ca5e8dca14ee2807bee589442
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 18 22:59:14 2008 +0200
+
+    This is version 0.8.6g *grml*
+
+commit dab68fbbafda9a353ba791b190417e91eca9a8d6
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Sun May 18 16:56:50 2008 +0200
+
+    Fix double free introduced in [b9da1de8597bd18de0f23e59f323bbe609e2f263]
+
+commit 8d3c999022efd37327dd9c765e93fee10bfde3ce
+Author: Felix Paul Kühne <fpk@fpk.local>
+Date:   Sat May 17 18:43:55 2008 +0200
+
+    Fixed INSTALL_NAME for libfaad2 which was broken in [65d362fec6713989433df3e5701d645ae41f262e]
+
+commit b8708ee9402811d1e7c2b6fd77c9bffc5aa9823a
+Author: Pavlov Konstantin <thresh@videolan.org>
+Date:   Sat May 17 03:31:17 2008 +0400
+
+    Update news on fixed CVEs.
+
+commit bab5e4093c26f33f1b05cb283840eec081631a2e
+Author: Pavlov Konstantin <thresh@videolan.org>
+Date:   Sat May 17 03:15:22 2008 +0400
+
+    Contrib: fix libvorbis CVEs: 2008-1419, 2008-1420, 2008-1423.
+    
+    Cherry-picked (with manual merge fix) from a6c8ae352629fb178d6af03c67f64501d7027df2.
+
+commit a22f0e8687288490087baa47f7a2f971df5c1cf0
+Author: Pavlov Konstantin <thresh@videolan.org>
+Date:   Sat May 17 02:23:51 2008 +0400
+
+    Contrib: fix CVE-2008-2109 for libid3tag.
+
+commit 3033a3df273abe36600523dcb1be98e686b666b5
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 16 09:38:34 2008 +0200
+
+    Fix a-few-per-libvlc-instance memory leaks
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 7d43a66c2fce4e3804fb116528dc0d9cd0d0625b
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Wed May 14 13:57:03 2008 +0200
+
+    Backport [22dbee0081c2f38a775d059175f4a9b21841d38c] and announce it
+
+commit 54c1b7554f5f3d22ec7dc52bb822506ebec90b32
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Tue May 13 22:44:27 2008 +0100
+
+    Add CVE Id
+
+commit 9e235808a54b60b6b44565a77df121004059a550
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Tue May 13 10:16:03 2008 +0200
+
+    Updated the version strings
+
+commit 8f830677324b6af72233d919fe939e4b509eabb3
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Mon May 12 20:18:11 2008 +0300
+
+    Sync for 0.8.6g
+
 commit ec8cc524d05218d4cc22adc9c6dc965c640c52f1
 Author: Felix Paul Kühne <fkuehne@videolan.org>
 Date:   Mon May 12 18:53:12 2008 +0200
