@@ -486,8 +486,8 @@ static inline int __vlc_cond_wait( const char * psz_file, int i_line,
     {
         /* People keep pissing me off with this. --Meuuh */
         msg_Dbg( p_condvar->p_this,
-                  "thread %u: secret message triggered "
-                  "at %s:%d (%s)", (int)pthread_self(),
+                  "thread: secret message triggered "
+                  "at %s:%d (%s)",
                   psz_file, i_line, strerror(i_result) );
 
         i_result = pthread_cond_wait( &p_condvar->cond, &p_mutex->mutex );
