@@ -1254,7 +1254,7 @@ endif
 endif
 
 ifdef HAVE_WIN32
-.x264: x264 .pthreads
+.x264: x264
   ifdef HAVE_CYGWIN
 	(cd $<; $(HOSTCC) RANLIB="ranlib" AR="ar" STRIP="strip" ./configure $(X264CONF) --prefix="$(PREFIX)" --extra-cflags="-I$(PREFIX)/include" --extra-ldflags="-L$(PREFIX)/lib" && make && make install)
   else
