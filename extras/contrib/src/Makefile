@@ -768,6 +768,7 @@ flac-$(FLAC_VERSION).tar.gz:
 
 flac: flac-$(FLAC_VERSION).tar.gz
 	$(EXTRACT_GZ)
+	(cd $@; patch -p 0 < ../Patches/flac-mingw32.patch)
 ifdef HAVE_DARWIN_OS
 	(patch -p 0 < Patches/flac-mactel.patch)
 endif
