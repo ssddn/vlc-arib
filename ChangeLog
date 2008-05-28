@@ -1,3 +1,110 @@
+commit 84ac18e635d7e762a9774d3e64b5c7ea0d074e16
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Wed May 28 19:51:42 2008 +0200
+
+    We need to stick to FFmpeg r7407 for now. This mostly reverts [30b23594e6e7a14ea7b2fd9a11d8d9e0ab53a836]. Thus, we don't need a recent GNU Make either.
+
+commit fc995169434ab68627c3c9f2b6046451aa0b810c
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Wed May 28 19:18:31 2008 +0200
+
+    Remove check for img_resample() when ffmpeg is built with libswscale. This will need to be fixed for 0.9.0 or a later bugfix release.
+
+commit 9eb5cf86ff8c73892b62995d2f35aec5ad845bdc
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Wed May 28 09:22:58 2008 -0700
+
+    Too many issues on newer FFmpeg (ffmpeg demuxer doesn't work ) on Windaube.
+
+commit df0f6c17c879ffc2816bec0bac6db0af8b7abfef
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 02:42:22 2008 +0200
+
+    Fix dvdnav building for win32 (backported from master)
+
+commit 05b6eccaf61a8d937a4ac292d6e283739af9eee2
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 02:23:11 2008 +0200
+
+    Don't use inexistent targets - don't do blind backports
+
+commit 6a79773842ce050f64dc50150123712079fc7e16
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 02:19:07 2008 +0200
+
+    Fix goom building for win32 with gcc4
+
+commit fe5096c2a8299ae72294d7b23480c7e886cbf1c1
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 02:01:43 2008 +0200
+
+    Fix flac building on win32
+
+commit 4844146fac6107e00cee8549bceb38d65d2ef98e
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 01:53:34 2008 +0200
+
+    Fix libshout building for win32
+
+commit 3694e87798ad46d1e644f6941e3bdc6a5cb49e1a
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Tue May 27 01:39:36 2008 +0200
+
+    contribs: use the correct include path
+
+commit d778cd3a0f27202d31bab1bed6209138d012366a
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Mon May 26 22:47:42 2008 +0200
+
+    Manually backport [fbbdb7571d7e81a6d690febef1acac768205fabf] Thanks, funman!
+
+commit 2432194d9894e6a9e8d378dd7fe8b648dfae3871
+Author: Pavlov Konstantin <thresh@videolan.org>
+Date:   Mon May 26 21:23:52 2008 +0400
+
+    NEWS: add info on speex insufficient boundary checks.
+
+commit 730ab67208fe1ea349c8aace888134c17b83b60e
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon May 26 14:03:26 2008 +0200
+
+    Remove pthread_t casting, fix building on FreeBSD
+
+commit 0383d40e5bf86f33d1f6a41b86a358ba8766c77a
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon May 26 11:59:15 2008 +0200
+
+    Errors out at configure if libavcodec doesnt include img_resample()
+    
+    Refs #1594
+
+commit 30b63bf1d4eaba385699c7677efc43bc18b18aa6
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon May 26 10:25:47 2008 +0200
+
+    Do not malloc(0) - to make valgrind not report 0 byte leaks
+    (cherry picked from commit 69b32f594f9440af60885ff4006af756b05a208b)
+
+commit 73e50b29ce8fdba4381acad28f0064a2959cbde8
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun May 25 13:46:40 2008 -0700
+
+    Fix contribs compilation
+
+commit 43132559e1deaf044f1517776121d66b644bf1fb
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon Jan 21 16:30:36 2008 +0000
+
+    fix #1387 (update to new libcaca api)
+    
+    Cherry-picked from [82ca50d33fc3342f74fb4c26fe09f60ae079c7ea]
+
+commit c18d84a485f07cf5828e7d54b568b3106e453735
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Sun May 25 20:47:37 2008 +0200
+
+    Reflect the last fix
+
 commit fde40cced2587b9049da1c8d79657813b78eca0a
 Author: Rafaël Carré <funman@videolan.org>
 Date:   Sun May 25 20:41:40 2008 +0200
