@@ -2770,17 +2770,6 @@ dnl Trying with pkg-config
  fi 
 fi
 
-dnl Check if we have (required) img_resample() in libavcodec
-if test "${enable_ffmpeg}" != "no"
-then
-     VLC_SAVE_FLAGS
-     CFLAGS="${CFLAGS} ${CFLAGS_ffmpeg}"
-     LDFLAGS="${LDFLAGS} ${LDFLAGS_ffmpeg}"
-     AC_CHECK_LIB(avcodec, img_resample, ,
-       [AC_MSG_ERROR([Your FFmpeg library doesn't have the needed img_resample() function. You should rebuild it with software scaler disabled])], -lavutil)
-     VLC_RESTORE_FLAGS
-fi
-
 dnl
 dnl  ffmpegaltivec plugin
 dnl
