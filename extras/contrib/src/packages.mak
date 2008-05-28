@@ -32,8 +32,6 @@ PERL_URL=http://ftp.funet.fi/pub/CPAN/src/perl-$(PERL_VERSION).tar.gz
 # we have to use a newer though, because bootstrap won't work otherwise
 AUTOCONF_VERSION=2.59
 AUTOCONF_URL=$(GNU)/autoconf/autoconf-$(AUTOCONF_VERSION).tar.bz2
-GNUMAKE_VERSION=3.81
-GNUMAKE_URL=$(GNU)/make/make-$(GNUMAKE_VERSION).tar.bz2
 LIBTOOL_VERSION=1.5.6
 LIBTOOL_URL=$(GNU)/libtool/libtool-$(LIBTOOL_VERSION).tar.gz
 AUTOMAKE_VERSION=1.9.6
