@@ -975,7 +975,7 @@ int __config_LoadConfigFile( vlc_object_t *p_this, const char *psz_module_name )
  *****************************************************************************/
 int config_CreateDir( vlc_object_t *p_this, const char *psz_dirname )
 {
-    if( !psz_dirname && !*psz_dirname ) return -1;
+    if( !psz_dirname || !*psz_dirname ) return -1;
 
     if( utf8_mkdir( psz_dirname ) && ( errno != EEXIST ) )
     {
