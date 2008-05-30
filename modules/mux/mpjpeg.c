@@ -96,6 +96,7 @@ static int Open( vlc_object_t *p_this )
     if( !psz_separator_block )
     {
         free( p_sys );
+        free( psz_separator );
         return VLC_ENOMEM;
     }
 
@@ -105,6 +106,7 @@ static int Open( vlc_object_t *p_this )
     memcpy( p_sys->p_separator->p_buffer, psz_separator_block , i_size );
 
     free( psz_separator_block );
+    free( psz_separator );
 
     p_mux->pf_control   = Control;
     p_mux->pf_addstream = AddStream;
@@ -200,6 +202,12 @@ static int Mux( sout_mux_t *p_mux )
         char *psz_separator_block = (char *)malloc( strlen( psz_separator ) +
                                               2 + strlen( CONTENT_TYPE ) );
 
+        if( !psz_seperator_block )
+        {
+            free( psz_separator );
+            return VLC_EGENERIC;
+        }
+
         sprintf( psz_separator_block, "%s\r\n%s\r\n", psz_separator,
                                       CONTENT_TYPE );
 
@@ -209,7 +217,9 @@ static int Mux( sout_mux_t *p_mux )
         p_header->i_flags |= BLOCK_FLAG_HEADER;
         sout_AccessOutWrite( p_mux->p_access, p_header );
         p_sys->b_send_headers = VLC_FALSE;
-        if( psz_separator_block ) free( psz_separator_block );
+
+        free( psz_separator );
+        free( psz_separator_block );
     }
 
     if( !p_mux->i_nb_inputs ) return VLC_SUCCESS;
