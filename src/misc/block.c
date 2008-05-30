@@ -99,7 +99,11 @@ block_t *block_Realloc( block_t *p_block, int i_prebody, int i_body )
 
     i_buffer_size = i_prebody + i_body;
 
-    if( i_body < 0 || i_buffer_size <= 0 ) return NULL;
+    if( i_body < 0 || i_buffer_size <= 0 )
+    {
+        block_Release( p_block );
+        return NULL;
+    }
 
     if( p_block->p_buffer - i_prebody > p_block->p_sys->p_allocated_buffer &&
         p_block->p_buffer - i_prebody < p_block->p_sys->p_allocated_buffer +
