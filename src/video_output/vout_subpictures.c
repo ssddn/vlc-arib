@@ -141,6 +141,7 @@ int spu_Init( spu_t *p_spu )
         if( p_spu->i_filter >= 10 )
         {
             msg_Dbg( p_spu, "can't add anymore filters" );
+            break;
         }
 
         psz_filter = psz_parser;
