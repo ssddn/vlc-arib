@@ -194,9 +194,8 @@ static void DestroyFilter( vlc_object_t *p_this )
     filter_t *p_filter = (filter_t *)p_this;
     filter_sys_t *p_sys = p_filter->p_sys;
 
-    if( p_sys->p_style ) free( p_sys->p_style );
-    if( p_sys->psz_marquee ) free( p_sys->psz_marquee );
-    free( p_sys );
+    free( p_sys->p_style );
+    free( p_sys->psz_marquee );
 
     /* Delete the marquee variables */
     var_DelCallback( p_filter->p_libvlc, "marq-x", MarqueeCallback, p_sys );
@@ -216,6 +215,8 @@ static void DestroyFilter( vlc_object_t *p_this )
     var_Destroy( p_filter->p_libvlc , "marq-color");
     var_Destroy( p_filter->p_libvlc , "marq-opacity");
     var_Destroy( p_filter->p_libvlc , "marq-size");
+
+    free( p_sys );
 }
 
 /****************************************************************************
