@@ -92,12 +92,19 @@ static int Open( vlc_object_t *p_this )
     psz_separator = var_GetString( p_mux, SOUT_CFG_PREFIX "separator" );
     i_size = strlen( psz_separator ) + 2 + 2 + 2 + strlen( CONTENT_TYPE );
     psz_separator_block = (char*)malloc( i_size );
+
+    if( !psz_separator_block )
+    {
+        free( p_sys );
+        return VLC_ENOMEM;
+    }
+
     sprintf( psz_separator_block, "\r\n%s\r\n%s\r\n", psz_separator,
                                   CONTENT_TYPE );
     p_sys->p_separator = block_New( p_mux, i_size );
     memcpy( p_sys->p_separator->p_buffer, psz_separator_block , i_size );
 
-    if( psz_separator_block ) free( psz_separator_block );
+    free( psz_separator_block );
 
     p_mux->pf_control   = Control;
     p_mux->pf_addstream = AddStream;
