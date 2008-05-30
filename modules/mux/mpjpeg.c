@@ -202,7 +202,7 @@ static int Mux( sout_mux_t *p_mux )
         char *psz_separator_block = (char *)malloc( strlen( psz_separator ) +
                                               2 + strlen( CONTENT_TYPE ) );
 
-        if( !psz_seperator_block )
+        if( !psz_separator_block )
         {
             free( psz_separator );
             return VLC_EGENERIC;
