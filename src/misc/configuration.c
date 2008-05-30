@@ -1157,6 +1157,7 @@ static int SaveConfigFile( vlc_object_t *p_this, const char *psz_module_name,
         msg_Warn( p_this, "could not open config file %s for writing",
                           psz_filename );
         free( psz_filename );
+        free( p_bigbuffer );
         vlc_list_release( p_list );
         vlc_mutex_unlock( &p_this->p_vlc->config_lock );
         return -1;
