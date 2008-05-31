@@ -2,7 +2,7 @@
  * osdmenu.c: osd filter module
  *****************************************************************************
  * Copyright (C) 2004-2005 M2X
- * $Id$
+ * $Id: d837e0a881fa43e0a2719c8b20823755239b19a6 $
  *
  * Authors: Jean-Paul Saman <jpsaman #_at_# m2x dot nl>
  *
@@ -249,8 +249,8 @@ error:
         osd_MenuDelete( p_this, p_filter->p_sys->p_menu );
         p_filter->p_sys->p_menu = NULL;
     }
-    if( p_filter->p_sys->psz_file ) free( p_filter->p_sys->psz_file );
-    if( p_filter->p_sys ) free( p_filter->p_sys );
+    free( p_filter->p_sys->psz_file );
+    free( p_filter->p_sys );
     return VLC_EGENERIC;    
 }
 
@@ -269,15 +269,17 @@ static void DestroyFilter( vlc_object_t *p_this )
     var_Destroy( p_this, OSD_CFG "timeout" );
     var_Destroy( p_this, OSD_CFG "update" );
 
-    var_DelCallback( p_sys->p_menu, "osd-menu-update", OSDMenuUpdateEvent, p_filter );
-    var_DelCallback( p_sys->p_menu, "osd-menu-visible", OSDMenuVisibleEvent, p_filter );
+    if( p_sys )
+    {
+        var_DelCallback( p_sys->p_menu, "osd-menu-update", OSDMenuUpdateEvent, p_filter );
+        var_DelCallback( p_sys->p_menu, "osd-menu-visible", OSDMenuVisibleEvent, p_filter );
 
-    osd_MenuDelete( p_filter, p_sys->p_menu );
+        osd_MenuDelete( p_filter, p_sys->p_menu );
 
-    vlc_mutex_destroy( &p_filter->p_sys->lock );
-    if( p_sys->psz_file) free( p_sys->psz_file );
-    if( p_sys ) free( p_sys );
-
+        vlc_mutex_destroy( &p_filter->p_sys->lock );
+        free( p_sys->psz_file );
+        free( p_sys );
+    }
     msg_Dbg( p_filter, "osdmenu filter destroyed" );
 }
 
