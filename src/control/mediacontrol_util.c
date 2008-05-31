@@ -247,9 +247,9 @@ mediacontrol_PlaylistSeq__free( mediacontrol_PlaylistSeq* ps )
         int i;
         for( i = 0 ; i < ps->size ; i++ )
             free( ps->data[i] );
+        free( ps->data );
+        free( ps );
     }
-    free( ps->data );
-    free( ps );
 }
 
 mediacontrol_Exception*
