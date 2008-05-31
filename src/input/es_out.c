@@ -143,6 +143,13 @@ es_out_t *input_EsOutNew( input_thread_t *p_input )
     vlc_value_t  val;
     int i;
 
+    if( !out ) return NULL;
+    if( !p_sys )
+    {
+        free( out );
+        return NULL;
+    }
+
     out->pf_add     = EsOutAdd;
     out->pf_send    = EsOutSend;
     out->pf_del     = EsOutDel;
@@ -485,6 +492,7 @@ static es_out_pgrm_t *EsOutProgramAdd( es_out_t *out, int i_group )
     vlc_value_t       val;
 
     es_out_pgrm_t *p_pgrm = malloc( sizeof( es_out_pgrm_t ) );
+    if( !p_pgrm ) return NULL;
 
     /* Init */
     p_pgrm->i_id = i_group;
@@ -570,6 +578,8 @@ static void EsOutProgramMeta( es_out_t *out, int i_group, vlc_meta_t *p_meta )
     char              *psz_now_playing = NULL;
     char              *psz_provider = NULL;
     int i;
+
+    if( !psz_cat ) return;
 
     msg_Dbg( p_input, "EsOutProgramMeta: number=%d", i_group );
     sprintf( psz_cat, "%s %d", _("Program"), i_group );
@@ -657,9 +667,12 @@ static es_out_id_t *EsOutAdd( es_out_t *out, es_format_t *fmt )
     es_out_pgrm_t     *p_pgrm = NULL;
     int i;
 
+    if( !es ) return NULL;
+
     if( fmt->i_group < 0 )
     {
         msg_Err( p_input, "invalid group number" );
+        free( es );
         return NULL;
     }
 
