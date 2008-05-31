@@ -148,6 +148,7 @@ static int Open( vlc_object_t *p_this )
     if( *psz == '\0' )
     {
         free( psz );
+        psz = NULL;
         if( p_access->p_vlc->psz_homedir )
             psz = strdup( p_access->p_vlc->psz_homedir );
     }
