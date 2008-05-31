@@ -161,10 +161,7 @@ static int CreateFilter ( vlc_object_t *p_this )
 
     p_filter->p_sys = (filter_sys_t *) malloc( sizeof( filter_sys_t ) );
     if( !p_filter->p_sys )
-    {
-        msg_Err( p_filter, "out of memory" );
         return VLC_ENOMEM;
-    }
 
     /* Populating struct */
     p_filter->p_sys->p_menu = NULL;
