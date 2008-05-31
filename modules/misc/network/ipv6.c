@@ -350,7 +350,6 @@ mldv1:
             if( psz_mif != NULL )
             {
                 int intf = if_nametoindex( psz_mif );
-                free( psz_mif  );
 
                 if( intf != 0 )
                 {
@@ -359,8 +358,9 @@ mldv1:
                     {
                         msg_Err( p_this, "%s as multicast interface: %s",
                                  psz_mif, strerror(errno) );
+                        free( psz_mif  );
                         close( i_handle );
-                        return 0;
+                        i_handle = -1;
                     }
                 }
                 else
@@ -368,8 +368,11 @@ mldv1:
                     msg_Err( p_this, "%s: bad IPv6 interface specification",
                              psz_mif );
                     close( i_handle );
-                    return 0;
+                    i_handle = -1;
                 }
+                free( psz_mif );
+                if( i_handle == -1 )
+                    return 0;
             }
         }
     }
