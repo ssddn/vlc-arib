@@ -2,7 +2,7 @@
  * transcode.c: transcoding stream output module
  *****************************************************************************
  * Copyright (C) 2003-2004 the VideoLAN team
- * $Id$
+ * $Id: f9dc400b8ad7bfcfce8fb34629b588353d176a3b $
  *
  * Authors: Laurent Aimar <fenrir@via.ecp.fr>
  *          Gildas Bazin <gbazin@videolan.org>
@@ -2790,7 +2790,7 @@ static void transcode_osd_close( sout_stream_t *p_stream, sout_stream_id_t *id)
     sout_stream_sys_t *p_sys = p_stream->p_sys;
 
     /* Close encoder */
-    if( p_sys->b_es_osd && id )
+    if( id )
     {
         if( id->p_encoder->p_module )
             module_Unneed( id->p_encoder, id->p_encoder->p_module );
@@ -2804,7 +2804,7 @@ static void transcode_osd_close( sout_stream_t *p_stream, sout_stream_id_t *id)
         }
     }
     p_sys->b_es_osd = VLC_FALSE;
-    if( id ) free( id );
+    free( id );
 }
 
 static int transcode_osd_process( sout_stream_t *p_stream,
