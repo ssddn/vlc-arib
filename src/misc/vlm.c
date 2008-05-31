@@ -1368,17 +1368,12 @@ static int64_t vlm_Date( void )
 
 vlm_schedule_t *vlm_ScheduleNew( vlm_t *vlm, const char *psz_name )
 {
-    vlm_schedule_t *p_sched = malloc( sizeof( vlm_schedule_t ) );
-
-    if( !p_sched )
-    {
-        return NULL;
-    }
-
     if( !psz_name )
-    {
         return NULL;
-    }
+
+    vlm_schedule_t *p_sched = malloc( sizeof( vlm_schedule_t ) );
+    if( !p_sched )
+        return NULL;
 
     p_sched->psz_name = strdup( psz_name );
     p_sched->b_enabled = VLC_FALSE;
