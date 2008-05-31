@@ -89,6 +89,7 @@ mediacontrol_Instance* mediacontrol_new_from_object( int vlc_object_id,
     if( ! retval->p_playlist || ! retval->p_intf )
     {
         RAISE( mediacontrol_InternalException, "no interface available" );
+        free( retval );
         return NULL;
     }
     return retval;
