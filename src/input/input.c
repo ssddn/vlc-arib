@@ -2039,7 +2039,7 @@ static int InputSourceInit( input_thread_t *p_input,
              * (and do nothing with a list) */
             char *psz_var_demux = var_GetString( p_input, "demux" );
 
-            if( *psz_var_demux != '\0' &&
+            if( psz_var_demux && *psz_var_demux &&
                 !strchr(psz_var_demux, ',' ) &&
                 !strchr(psz_var_demux, ':' ) )
             {
@@ -2047,10 +2047,7 @@ static int InputSourceInit( input_thread_t *p_input,
 
                 msg_Dbg( p_input, "enforced demux ` %s'", psz_demux );
             }
-            else if( psz_var_demux )
-            {
-                free( psz_var_demux );
-            }
+            free( psz_var_demux );
         }
 
         /* Try access_demux if no demux given */
