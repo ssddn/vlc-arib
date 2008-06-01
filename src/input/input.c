@@ -738,6 +738,9 @@ static int Init( input_thread_t * p_input, vlc_bool_t b_quick )
 
     /* Create es out */
     p_input->p_es_out = input_EsOutNew( p_input );
+    if( !p_input->p_es_out )
+        goto error;
+
     es_out_Control( p_input->p_es_out, ES_OUT_SET_ACTIVE, VLC_FALSE );
     es_out_Control( p_input->p_es_out, ES_OUT_SET_MODE, ES_OUT_MODE_NONE );
 
