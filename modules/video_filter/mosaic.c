@@ -381,7 +381,7 @@ static void DestroyFilter( vlc_object_t *p_this )
     var_Destroy( p_libvlc, "mosaic-bsvt" );
     var_Destroy( p_libvlc, "mosaic-bs" );
 
-    if( p_sys->p_pic ) p_sys->p_pic->pf_release( p_sys->p_pic );
+    if( p_sys->p_pic && p_sys->p_pic->pf_release ) p_sys->p_pic->pf_release( p_sys->p_pic );
     vlc_mutex_unlock( &p_sys->lock );
     vlc_mutex_destroy( &p_sys->lock );
     free( p_sys );
@@ -394,7 +394,8 @@ static void MosaicReleasePicture( picture_t *p_picture )
 {
     picture_t *p_original_pic = (picture_t *)p_picture->p_sys;
 
-    p_original_pic->pf_release( p_original_pic );
+    if( p_original_pic->pf_release )
+        p_original_pic->pf_release( p_original_pic );
 }
 
 /*****************************************************************************
@@ -496,14 +497,16 @@ static subpicture_t *Filter( filter_t *p_filter, mtime_t date )
             if ( p_es->p_picture->p_next != NULL )
             {
                 picture_t *p_next = p_es->p_picture->p_next;
-                p_es->p_picture->pf_release( p_es->p_picture );
+                if( p_es->p_picture->pf_release )
+                    p_es->p_picture->pf_release( p_es->p_picture );
                 p_es->p_picture = p_next;
             }
             else if ( p_es->p_picture->date + p_sys->i_delay + BLANK_DELAY <
                         date )
             {
                 /* Display blank */
-                p_es->p_picture->pf_release( p_es->p_picture );
+                if( p_es->p_picture->pf_release )
+                    p_es->p_picture->pf_release( p_es->p_picture );
                 p_es->p_picture = NULL;
                 p_es->pp_last = &p_es->p_picture;
                 break;

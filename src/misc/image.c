@@ -130,7 +130,7 @@ static picture_t *ImageRead( image_handler_t *p_image, block_t *p_block,
     while( (p_tmp = p_image->p_dec->pf_decode_video( p_image->p_dec, &p_block ))
              != NULL )
     {
-        if ( p_pic != NULL )
+        if ( p_pic && p_pic->pf_release )
             p_pic->pf_release( p_pic );
         p_pic = p_tmp;
     }
@@ -179,7 +179,8 @@ static picture_t *ImageRead( image_handler_t *p_image, block_t *p_block,
 
             if( !p_image->p_filter )
             {
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 return NULL;
             }
         }

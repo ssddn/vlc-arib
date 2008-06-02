@@ -2040,7 +2040,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
             {
                 msg_Dbg( p_stream, "late picture skipped ("I64Fd")",
                          current_date + 50000 - p_pic->date );
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 continue;
             }
         }
@@ -2071,7 +2072,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
                 msg_Dbg( p_stream, "dropping frame (%i)",
                          (int)(i_video_drift - i_master_drift) );
 #endif
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 continue;
             }
             else if( i_video_drift > i_master_drift + 50000 )
@@ -2088,7 +2090,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
         {
             if( transcode_video_encoder_open( p_stream, id ) != VLC_SUCCESS )
             {
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 transcode_video_close( p_stream, id );
                 id->b_transcode = VLC_FALSE;
                 return VLC_EGENERIC;
@@ -2185,7 +2188,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
                     vlc_object_detach( id->pp_filter[id->i_filter] );
                     vlc_object_destroy( id->pp_filter[id->i_filter] );
 
-                    p_pic->pf_release( p_pic );
+                    if( p_pic->pf_release )
+                        p_pic->pf_release( p_pic );
                     transcode_video_close( p_stream, id );
                     id->b_transcode = VLC_FALSE;
                     return VLC_EGENERIC;
@@ -2264,7 +2268,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
                 if( p_tmp )
                 {
                     vout_CopyPicture( p_stream, p_tmp, p_pic );
-                    p_pic->pf_release( p_pic );
+                    if( p_pic->pf_release )
+                        p_pic->pf_release( p_pic );
                     p_pic = p_tmp;
                 }
             }
@@ -2342,7 +2347,8 @@ static int transcode_video_process( sout_stream_t *p_stream,
 
         if( p_sys->i_threads == 0 )
         {
-            p_pic->pf_release( p_pic );
+            if( p_pic->pf_release )
+                p_pic->pf_release( p_pic );
         }
         else
         {
@@ -2395,7 +2401,8 @@ static int EncoderThread( sout_stream_sys_t *p_sys )
 
         vlc_mutex_unlock( &p_sys->lock_out );
 
-        p_pic->pf_release( p_pic );
+        if( p_pic->pf_release )
+            p_pic->pf_release( p_pic );
     }
 
     while( p_sys->i_last_pic != p_sys->i_first_pic )
@@ -2403,7 +2410,8 @@ static int EncoderThread( sout_stream_sys_t *p_sys )
         p_pic = p_sys->pp_pics[p_sys->i_first_pic++];
         p_sys->i_first_pic %= PICTURE_RING_SIZE;
 
-        p_pic->pf_release( p_pic );
+        if( p_pic->pf_release )
+            p_pic->pf_release( p_pic );
     }
 
     block_ChainRelease( p_sys->p_buffers );
@@ -2479,7 +2487,8 @@ static picture_t *video_new_buffer( vlc_object_t *p_this, picture_t **pp_ring,
 
         for( i = 0; i < PICTURE_RING_SIZE; i++ )
         {
-            pp_ring[i]->pf_release( pp_ring[i] );
+            if( pp_ring[i]->pf_release )
+                pp_ring[i]->pf_release( pp_ring[i] );
         }
 
         i = 0;

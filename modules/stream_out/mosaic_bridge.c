@@ -367,7 +367,8 @@ static int Del( sout_stream_t *p_stream, sout_stream_id_t *id )
     while ( p_es->p_picture )
     {
         picture_t *p_next = p_es->p_picture->p_next;
-        p_es->p_picture->pf_release( p_es->p_picture );
+        if( p_es->p_picture->pf_release )
+            p_es->p_picture->pf_release( p_es->p_picture );
         p_es->p_picture = p_next;
     }
 
@@ -473,7 +474,8 @@ static int Send( sout_stream_t *p_stream, sout_stream_id_t *id,
             if ( p_new_pic == NULL )
             {
                 msg_Err( p_stream, "image conversion failed" );
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 continue;
             }
         }
@@ -488,7 +490,8 @@ static int Send( sout_stream_t *p_stream, sout_stream_id_t *id,
                                   p_sys->p_decoder->fmt_out.video.i_aspect )
                     != VLC_SUCCESS )
             {
-                p_pic->pf_release( p_pic );
+                if( p_pic->pf_release )
+                    p_pic->pf_release( p_pic );
                 free( p_new_pic );
                 continue;
             }
@@ -503,7 +506,8 @@ static int Send( sout_stream_t *p_stream, sout_stream_id_t *id,
         p_new_pic->pf_release = ReleasePicture;
         p_new_pic->date = p_pic->date;
 
-        p_pic->pf_release( p_pic );
+        if( p_pic->pf_release )
+            p_pic->pf_release( p_pic );
         PushPicture( p_stream, p_new_pic );
     }
 
@@ -604,7 +608,8 @@ static picture_t *video_new_buffer( decoder_t *p_dec )
 
         for( i = 0; i < PICTURE_RING_SIZE; i++ )
         {
-            pp_ring[i]->pf_release( pp_ring[i] );
+            if( pp_ring[i]->pf_release )
+                pp_ring[i]->pf_release( pp_ring[i] );
             pp_ring[i] = NULL;
         }
 

@@ -424,7 +424,8 @@ static picture_t *Process( filter_t *p_filter, picture_t *p_pic )
     if( !p_pic_dst )
     {
         msg_Warn( p_filter, "can't get output picture" );
-        p_pic->pf_release( p_pic );
+        if( p_pic->pf_release )
+            p_pic->pf_release( p_pic );
         return NULL;
     }
 
@@ -600,7 +601,8 @@ static picture_t *Process( filter_t *p_filter, picture_t *p_pic )
     p_pic_dst->b_progressive = p_pic->b_progressive;
     p_pic_dst->b_top_field_first = p_pic->b_top_field_first;
 
-    p_pic->pf_release( p_pic );
+    if( p_pic->pf_release )
+        p_pic->pf_release( p_pic );
     return p_pic_dst;
 }
 
@@ -690,6 +692,7 @@ static picture_t *Deinterlace( filter_t *p_filter, picture_t *p_pic )
     p_pic_dst->b_progressive = VLC_TRUE;
     p_pic_dst->b_top_field_first = p_pic->b_top_field_first;
 
-    p_pic->pf_release( p_pic );
+    if( p_pic->pf_release )
+        p_pic->pf_release( p_pic );
     return p_pic_dst;
 }
