@@ -1,3 +1,291 @@
+commit 790cb7eec991f55f4488020cc6e8cfe6e3caad83
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Mon Jun 2 20:53:25 2008 +0200
+
+    Cover the CID fixes
+
+commit 5e77948f78d0ebed7d5dd410dbe18215520268b1
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Mon Jun 2 17:09:05 2008 +0200
+
+    More to ignore
+
+commit b4874f9c109d4ac868e0cceb1e863ade85e10025
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon Jun 2 14:09:29 2008 +0200
+
+    Workaround broken picture_t refcounting and destruction
+    
+    Prefer huge memory leaks over segmentation faults
+    
+    Signed-off-by: Felix Paul Kühne <fkuehne@videolan.org>
+
+commit a07eb0379a792d949a11d0d3ce57292f7163ea97
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Mon Jun 2 16:33:29 2008 +0200
+
+    opengl video output needs to be linked with libm
+
+commit 08170e70a51192b7dcbfda70b50dce04afc48d04
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Mar 5 08:27:05 2008 +0100
+
+    Patch by Koehler, Vitally <vkoehler AT telekom de>: This modification solves the problem of audio packet losses by the playback of MPEG2 transport stream.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+    (cherry picked from commit f02ad4c6d8dac88cd5411ca99072f8f862462cb9)
+
+commit a2d82490555eb3271a77b4958bc8528091951901
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sun Jun 1 12:11:42 2008 +0300
+
+    RC OSD: Fix NULL check after deref (CID 109)
+
+commit 3ddc22f2dbc7c143d1b925ab71cf0f47f98c0805
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sun Jun 1 12:07:45 2008 +0300
+
+    Fix NULL dereference (unlikely) (CID 112)
+
+commit cee010baaa1e252f7aba56e49a5ef7293aab834c
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sun Jun 1 12:00:00 2008 +0300
+
+    Fix memory error handling (CID 123)
+
+commit 1e77ff8b378902a12dda2a7134e79a9609f67ccb
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sun Jun 1 11:53:21 2008 +0300
+
+    Fix ES out failure handling (CID 124)
+
+commit 706d5db05050b0ff78291c87183f953a95953709
+Author: Rémi Denis-Courmont <rem@videolan.org>
+Date:   Sat Sep 9 10:24:52 2006 +0000
+
+    Aarg! git commit --amend -a != git commit --amend
+
+commit d98ebefd3f64a92d3bab39c6b1b8970759c7facd
+Author: Rémi Denis-Courmont <rem@videolan.org>
+Date:   Sat Sep 9 10:24:52 2006 +0000
+
+    More fixes
+    
+    (cherry picked from commit 020a810e8d5ebd18f38017834025e764d5618fa6)
+
+commit f974093894381c73e59c1b22e14ac5b05c2f0387
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:21:50 2008 +0300
+
+    Fix NULL deref (CID 14)
+
+commit bd6877f9e3e0738013521bc98fe6bd12697a59ce
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:19:32 2008 +0300
+
+    Fix memory leak (CID 92)
+
+commit a0f44bd5efd25b11e2c31ee01b537a109bb87883
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:18:07 2008 +0300
+
+    Fix memory leak (CID 93)
+    
+    Code removed from master.
+
+commit f8f418b8e81ebc58c0df7778528e822bf869abf9
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:12:39 2008 +0300
+
+    Fix memory leak (CID 91)
+
+commit 56cd4c09c7c5118fa9b29c4b8f2352bcaeee6fb0
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:09:10 2008 +0300
+
+    Fix memory leak (CID 95)
+
+commit c50a5d1319c7f9d025e3a7b243247735c2333451
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 23:03:00 2008 +0300
+
+    libvlc-control: call vlm_MessageDelete (CID 97-100)
+
+commit acbb80d119d5dabc9188b586498890336d5ebcab
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 22:56:34 2008 +0300
+
+    Fix use-after-free (CID 129)
+    
+    bugfix-only - the network code has been completely rewritten since
+
+commit b5befe56d3843c8a21d1d07005f52f82f0895314
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Sat May 31 22:52:43 2008 +0300
+
+    Fix use-after-free (CID 130)
+    
+    Does not affect master
+
+commit 8d5543f5abeed2aabdad1bc5db333f90ce6f1a3f
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 17:49:23 2008 +0200
+
+    Remove useless message.
+
+commit 682e04fb26fec70adbf326f7798864d88b4684bc
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 17:21:10 2008 +0200
+
+    Fix CID 103 resource leak and added checks for memory return values.
+
+commit 60c3f1afcc50689bb5d76eb8f13762827e90e3f0
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 16:09:20 2008 +0200
+
+    Fix CID 132 use pointer after being freed without setting it to NULL.
+
+commit d05acf36e36145b03d053be7a5133c8dc020b915
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 15:57:32 2008 +0200
+
+    Fix CID 138 release psz_unicode instead of psz_line. This resulted in use afer free error.
+
+commit aa0ac4814513915c37149cfbdefbee908e2883bb
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 15:35:48 2008 +0200
+
+    Remove unnecessary check for p_sys->b_es_osd in transcode_osd_close()
+
+commit 5804ccb78bcdc3d8e2a90e3657e1570f6cbbf005
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 15:12:48 2008 +0200
+
+    Fix CID 107: Pointer p_sys dereferenced before NULL check.
+
+commit 838c50f0b5d2cec23fdc1a54c91797a506474e71
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat May 31 15:02:49 2008 +0200
+
+    Fix CID: 101 Resource leak in osd_ConfigLoader (backport from b5aea37246dccbbc96ada824df72ac54ae38ed5e)
+
+commit dbc21b75cb3b9a7617e36d69f35c4f528b0fc95e
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Fri May 30 19:27:33 2008 +0300
+
+    When checking for filters overflow, actually handle the error (CID 48)
+    
+    (cherry picked from commit 375c32ffcacd8781b7c5329d4d7714d8c879625b)
+    
+    Conflicts:
+    
+    	src/video_output/vout_subpictures.c
+
+commit 5e93dc81c15504c3fe50c8e89272a33e6ed5a69c
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Fri May 30 19:19:40 2008 +0300
+
+    Fix memory leak on error path (CID 62)
+    
+    Already fixed long ago on master.
+
+commit 8cebbe66b6ab346bd3e655807f98dce045db8476
+Author: Rémi Denis-Courmont <rdenis@simphalempin.com>
+Date:   Fri May 30 19:10:53 2008 +0300
+
+    Fix block leak in block_Realloc corner case (CID 78)
+    
+    block_Realloc() is a lot more intelligent in 0.9.0 nowadays, but I would
+    rather not commit large changes to -bugfix...
+
+commit fca556b4e7131845e4539075d3fb0df55b2b2988
+Author: Rémi Denis-Courmont <rem@videolan.org>
+Date:   Fri May 30 18:56:42 2008 +0300
+
+    Fix NULL pointer deferences (CID 120 & 121)
+    (cherry picked from commit fb04f24982242a835b3ae7382f6dd4fcf6ace5f9)
+
+commit ed4e89f0f6db7f24e52064dc7f1dd361997b1ddf
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 17:49:25 2008 +0200
+
+    Typo
+
+commit 4d44bc5cc60a4ed8f376a8295d5a9890683e7f0e
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 17:36:54 2008 +0200
+
+    Fix NULL dereferencing in playlist sorting - CID 141
+
+commit 39bfc60d4417b531e148b6ca39ec68a4d643b2f7
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 16:10:16 2008 +0200
+
+    Ignore libtool M4 macros
+
+commit 4c8aaba1ed9288a8c9f1d81dd08d486f5cc9139e
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:55:55 2008 +0200
+
+    Backport [3a8dc9aa12268701539287f7a93726935fb87d77]
+
+commit 20c8be6a7fc75e9b9e0e20008b01431e4032f85e
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:44:13 2008 +0200
+
+    Remove dead code - CID 9
+    (cherry picked from commit c8075f3500bfdd1e4159f5091c767bcd916f0e26)
+
+commit d0b4e06a155eb63c3328114a94cfb7b9a58fb780
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:41:20 2008 +0200
+
+    Fix character/integer confusion - CID 11
+
+commit 39ed0e0d03d589e91a81821ea8514da76763308d
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:20:21 2008 +0200
+
+    Fix double free if there are several message queues - CID 135
+
+commit ab9eb7bfde118b289ad96e6724d14fa6db3c69c3
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:12:49 2008 +0200
+
+    Fix use after free : CID 134
+
+commit 8371eceb5a3f352ff92005090271bb121c509c28
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:10:53 2008 +0200
+
+    backport [deb87a07e5eca0662506ab6500de48c187e2a3e9]
+
+commit 33045c984e7c701f49ad56f0e6b2e06e877281cc
+Author: Rafaël Carré <funman@videolan.org>
+Date:   Fri May 30 15:02:02 2008 +0200
+
+    Fix double free - CID 131
+    (cherry picked from commit af5aece7d5356daadacec2e260df961be78d3b6c)
+
+commit b0aa28e611eaf20b2e7731e3782978840e4060e8
+Author: Antoine Cellerier <dionoea@videolan.org>
+Date:   Fri May 30 14:36:14 2008 +0200
+
+    Fix CID 116 (same as 117 in fact) and a few memleaks (still 0.8.6
+    specific ... and untested :P)
+
+commit e9651457c0eb76d85c059c2b35afcaecd368a126
+Author: Antoine Cellerier <dionoea@videolan.org>
+Date:   Fri May 30 14:29:51 2008 +0200
+
+    Fix weird NULL checking code. Closes coverity CID 117 (0.8.6 only).
+
+commit 27405c63a619ded8bb1a501ed89f44415102a2d0
+Author: Felix Paul Kühne <fkuehne@videolan.org>
+Date:   Wed May 28 22:45:38 2008 +0200
+
+    Deleting the first entries wasn't intended
+
 commit 289dfd56e21dd8d3b72368078bab833d8dd326ac
 Author: Felix Paul Kühne <fkuehne@videolan.org>
 Date:   Wed May 28 22:43:32 2008 +0200
