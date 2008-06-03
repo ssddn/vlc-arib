@@ -2780,15 +2780,15 @@ static int transcode_osd_new( sout_stream_t *p_stream, sout_stream_id_t *id )
 
  error:
     msg_Err( p_stream, "starting osd encoding thread failed" );
-    if( id->p_encoder->p_module )
-            module_Unneed( id->p_encoder, id->p_encoder->p_module );
     if( id->p_encoder )
     {
+        if( id->p_encoder->p_module )
+            module_Unneed( id->p_encoder, id->p_encoder->p_module );
         vlc_object_detach( id->p_encoder );
         vlc_object_destroy( id->p_encoder );
     }
-    if( fmt.psz_language ) free( fmt.psz_language );
-    if( id ) free( id );
+    free( fmt.psz_language );
+    free( id );
     p_sys->id_osd = NULL;
     p_sys->b_es_osd = VLC_FALSE;
     return VLC_EGENERIC;
