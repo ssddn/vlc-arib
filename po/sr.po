@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-02 21:55+0100\n"
+"POT-Creation-Date: 2008-06-03 17:16+0200\n"
 "PO-Revision-Date: 2008-05-14 16:16+0100\n"
 "Last-Translator: Gorana Milicevic <gorana.milicevic@gmail.com>\n"
 "Language-Team: \n"
@@ -16,6 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: include/vlc/vlc.h:578
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"Овај програм НЕ ГАРАНТУЈЕ ништа у опсегу који дозвољава закон.\n"
+"Можете да га умножавате под условима GNU (Јаавне опште лиценце).\n"
+"Погледајте фајл COPYING за више информација.\n"
+"Програм је написао VideoLAN тим, погледајте фајл AUTHORS \n"
+"за списак аутора.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -477,9 +490,9 @@ msgstr ""
 "линије, идите у директоријум где сте инсталирали VLC и покрените \"vlc -I wx"
 "\"\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:180
 #: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
@@ -494,15 +507,15 @@ msgstr "Мета подаци"
 msgid "Title"
 msgstr "Наслов"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:132 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:132
+#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Аутор"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247
+#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
 msgstr "Уметник"
 
@@ -646,19 +659,6 @@ msgstr "Име кодека"
 #: include/vlc_meta.h:69
 msgid "Codec Description"
 msgstr "Опис кодека"
-
-#: include/vlc/vlc.h:578
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"Овај програм НЕ ГАРАНТУЈЕ ништа у опсегу који дозвољава закон.\n"
-"Можете да га умножавате под условима GNU (Јаавне опште лиценце).\n"
-"Погледајте фајл COPYING за више информација.\n"
-"Програм је написао VideoLAN тим, погледајте фајл AUTHORS \n"
-"за списак аутора.\n"
 
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
 #: src/input/es_out.c:369 src/libvlc.h:409 src/video_output/video_output.c:379
@@ -4533,7 +4533,7 @@ msgid "Aspect-ratio"
 msgstr "Однос-пропорција"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dvb/access.c:72 modules/access/dv.c:68
+#: modules/access/dv.c:68 modules/access/dvb/access.c:72
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
@@ -5141,6 +5141,19 @@ msgstr "Освежи листу"
 msgid "Configure"
 msgstr "Подеси"
 
+#: modules/access/dv.c:70
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr ""
+"Кеширање вредности за DV токове. Ова вредност треба да буде у милисекундама."
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr "Дигитални Видео (Firewire/ieee1394)  улаз"
+
+#: modules/access/dv.c:75
+msgid "dv"
+msgstr "dv"
+
 #: modules/access/dvb/access.c:74
 msgid ""
 "Caching value for DVB streams. This value should be set in milliseconds."
@@ -5388,19 +5401,6 @@ msgstr "DVB улаз са v4l2 подршком"
 msgid "HTTP server"
 msgstr "HTTP сервер"
 
-#: modules/access/dv.c:70
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr ""
-"Кеширање вредности за DV токове. Ова вредност треба да буде у милисекундама."
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr "Дигитални Видео (Firewire/ieee1394)  улаз"
-
-#: modules/access/dv.c:75
-msgid "dv"
-msgstr "dv"
-
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
 msgstr "DVD угао"
@@ -5566,72 +5566,6 @@ msgstr "Улазни фајл"
 msgid "File"
 msgstr "Фајл"
 
-#: modules/access_filter/dump.c:39
-msgid "Force use of dump module"
-msgstr "Приморај коришћење модула за одбацивање"
-
-#: modules/access_filter/dump.c:40
-msgid "Activate the dump module even for media with fast seeking."
-msgstr "Активирај модул за одбацивање чак и за медије са брзим тражењем."
-
-#: modules/access_filter/dump.c:43
-msgid "Maximum size of temporary file (Mb)"
-msgstr "Максимална величина привременог фајла (Мb)"
-
-#: modules/access_filter/dump.c:44
-msgid ""
-"The dump module will abort dumping of the media if more than this much "
-"megabyte were performed."
-msgstr ""
-"Модул за одбацивање ће прекинути одбацивање медија ако се користи више од "
-"дозвољене величине мегабајта.."
-
-#: modules/access_filter/record.c:43
-msgid "Record directory"
-msgstr "Директоријум за снимања"
-
-#: modules/access_filter/record.c:45
-msgid "Directory where the record will be stored."
-msgstr "Директоријум где ће се чувати снимци."
-
-#: modules/access_filter/timeshift.c:44
-msgid "Timeshift granularity"
-msgstr "Грануларност снимања за каснији преглед"
-
-#: modules/access_filter/timeshift.c:46
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr ""
-"Ово је величина привремених фајлова који ће се користити за чување снимака "
-"токова који су  за каснији преглед."
-
-#: modules/access_filter/timeshift.c:48
-msgid "Timeshift directory"
-msgstr "Директоријум снимања за каснији преглед"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr ""
-"Директоријум који ће се користити за чување привремених фајлова снимака за "
-"каснији преглед."
-
-#: modules/access_filter/timeshift.c:51
-msgid "Force use of the timeshift module"
-msgstr "Приморај употребу модула снимања за каснији преглед"
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-"Приморај употребу модула за касније снимање иако приступ изјављује да може "
-"да контролише брзину или паузу."
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "Снимање за каснији преглед"
-
 #: modules/access/ftp.c:44
 msgid ""
 "Caching value for FTP streams. This value should be set in milliseconds."
@@ -5778,176 +5712,6 @@ msgstr ""
 #: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Microsoft Media Server (MMS) улаз"
-
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "Псеудо излазни ток"
-
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "Псеудо"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "Додај у фајл"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr "Додај у фајл ако постоји уместо замењивања фајла."
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "Излаз тока фајла"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "Корисничко Име"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr "Корисничко име које ће бити захтевано за приступ току."
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr "Лозинка која ће бити захтевана за приступ току."
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "Mime тип"
-
-#: modules/access_output/http.c:69
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr "MIME који је враћен од сервера (ауто-детектуј ако није одређено."
-
-#: modules/access_output/http.c:73
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr "Путања до x509 PEM фајла сертификата који ће се користити за HTTPS."
-
-#: modules/access_output/http.c:76
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr ""
-"Путања до x509 PEM фајла приватног кључа који се користи за HTTPS. Оставите "
-"празно место ако немате ниједан."
-
-#: modules/access_output/http.c:80
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr ""
-"Путања до x509 PEM поверљивог корена CA сертификата (власти сертификата) "
-"фајла који ће се употребити за HTTPS. Оставите празно место ако немате "
-"ниједан."
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-"Путања до x509 PEM фајла Листа Поништених Сертификата који ће бити коришћен "
-"за SSL. Оставите празно ако немате ниједан."
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr "Рекламирање помоћу Bonjour-а"
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr "Рекламирајте ток са Bonjour протоколом."
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "HTTP ток излаза"
-
-#: modules/access_output/shout.c:58
-msgid "Stream name"
-msgstr "Име тока"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr "Назив за именовање овог тока/канала на icecast серверу."
-
-#: modules/access_output/shout.c:62
-msgid "Stream description"
-msgstr "Опис тока"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr "Опис садржаја тока или информација о Вашем каналу."
-
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "MP3 ток"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-"Обично треба да нахраните шоуткаст модул са Ogg токовима. Могуће је такође "
-"да пустите MP3 ток уместо њих, тако да можете да проследите MP3 токове на "
-"icecast сервер."
-
-#: modules/access_output/shout.c:73
-msgid "IceCAST output"
-msgstr "IceCAST излаз"
-
-#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
-#: modules/demux/live555.cpp:65
-msgid "Caching value (ms)"
-msgstr "Кеширана вредност (ms)"
-
-#: modules/access_output/udp.c:77
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr ""
-"Подразумевана кеширана  вредност за излазне UDP токове. Ова вредност треба "
-"да буде у милисекундама."
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1873
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-#, fuzzy
-msgid "Time-To-Live (TTL)"
-msgstr "Time-To-Live (TTL) Време-за-живот"
-
-#: modules/access_output/udp.c:81
-msgid "Time-To-Live of the outgoing stream."
-msgstr "Time-To-Live излазног тока"
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "Групиши пакете"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-"Пакети могу да се шаљу један по један временски или по групама. Можете да "
-"изаберете број пакета који ће се повремено слати. Ово помаже смањењу "
-"учитавања код преоптерећених система."
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr "Сирово писање "
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-"Пакети ће бити послати директно, без покушаја попуњавања MTU-а (без покушаја "
-"прављења највећих могућих пакета у циљу побољшања пуштања тока)."
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "UDP ток излаза"
 
 #: modules/access/pvr.c:58
 msgid ""
@@ -6111,6 +5875,11 @@ msgstr "PVR"
 #: modules/access/pvr.c:126
 msgid "IVTV MPEG Encoding cards input"
 msgstr "IVTV MPEG шифровање улаза картица"
+
+#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
+#: modules/demux/live555.cpp:65
+msgid "Caching value (ms)"
+msgstr "Кеширана вредност (ms)"
 
 #: modules/access/rtsp/access.c:42
 msgid ""
@@ -6568,6 +6337,237 @@ msgstr "Формат за употребу у пољу \"аутор\" листе
 #: modules/access/vcdx/vcd.c:143
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "Формат за употребу у пољу\"наслов\" листе за пуштање."
+
+#: modules/access_filter/dump.c:39
+msgid "Force use of dump module"
+msgstr "Приморај коришћење модула за одбацивање"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr "Активирај модул за одбацивање чак и за медије са брзим тражењем."
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr "Максимална величина привременог фајла (Мb)"
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
+"Модул за одбацивање ће прекинути одбацивање медија ако се користи више од "
+"дозвољене величине мегабајта.."
+
+#: modules/access_filter/record.c:43
+msgid "Record directory"
+msgstr "Директоријум за снимања"
+
+#: modules/access_filter/record.c:45
+msgid "Directory where the record will be stored."
+msgstr "Директоријум где ће се чувати снимци."
+
+#: modules/access_filter/timeshift.c:44
+msgid "Timeshift granularity"
+msgstr "Грануларност снимања за каснији преглед"
+
+#: modules/access_filter/timeshift.c:46
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr ""
+"Ово је величина привремених фајлова који ће се користити за чување снимака "
+"токова који су  за каснији преглед."
+
+#: modules/access_filter/timeshift.c:48
+msgid "Timeshift directory"
+msgstr "Директоријум снимања за каснији преглед"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr ""
+"Директоријум који ће се користити за чување привремених фајлова снимака за "
+"каснији преглед."
+
+#: modules/access_filter/timeshift.c:51
+msgid "Force use of the timeshift module"
+msgstr "Приморај употребу модула снимања за каснији преглед"
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+"Приморај употребу модула за касније снимање иако приступ изјављује да може "
+"да контролише брзину или паузу."
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "Снимање за каснији преглед"
+
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "Псеудо излазни ток"
+
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "Псеудо"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "Додај у фајл"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr "Додај у фајл ако постоји уместо замењивања фајла."
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "Излаз тока фајла"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "Корисничко Име"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr "Корисничко име које ће бити захтевано за приступ току."
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr "Лозинка која ће бити захтевана за приступ току."
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "Mime тип"
+
+#: modules/access_output/http.c:69
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr "MIME који је враћен од сервера (ауто-детектуј ако није одређено."
+
+#: modules/access_output/http.c:73
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr "Путања до x509 PEM фајла сертификата који ће се користити за HTTPS."
+
+#: modules/access_output/http.c:76
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr ""
+"Путања до x509 PEM фајла приватног кључа који се користи за HTTPS. Оставите "
+"празно место ако немате ниједан."
+
+#: modules/access_output/http.c:80
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr ""
+"Путања до x509 PEM поверљивог корена CA сертификата (власти сертификата) "
+"фајла који ће се употребити за HTTPS. Оставите празно место ако немате "
+"ниједан."
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+"Путања до x509 PEM фајла Листа Поништених Сертификата који ће бити коришћен "
+"за SSL. Оставите празно ако немате ниједан."
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr "Рекламирање помоћу Bonjour-а"
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr "Рекламирајте ток са Bonjour протоколом."
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "HTTP ток излаза"
+
+#: modules/access_output/shout.c:58
+msgid "Stream name"
+msgstr "Име тока"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr "Назив за именовање овог тока/канала на icecast серверу."
+
+#: modules/access_output/shout.c:62
+msgid "Stream description"
+msgstr "Опис тока"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr "Опис садржаја тока или информација о Вашем каналу."
+
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "MP3 ток"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+"Обично треба да нахраните шоуткаст модул са Ogg токовима. Могуће је такође "
+"да пустите MP3 ток уместо њих, тако да можете да проследите MP3 токове на "
+"icecast сервер."
+
+#: modules/access_output/shout.c:73
+msgid "IceCAST output"
+msgstr "IceCAST излаз"
+
+#: modules/access_output/udp.c:77
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr ""
+"Подразумевана кеширана  вредност за излазне UDP токове. Ова вредност треба "
+"да буде у милисекундама."
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1873
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+#, fuzzy
+msgid "Time-To-Live (TTL)"
+msgstr "Time-To-Live (TTL) Време-за-живот"
+
+#: modules/access_output/udp.c:81
+msgid "Time-To-Live of the outgoing stream."
+msgstr "Time-To-Live излазног тока"
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "Групиши пакете"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+"Пакети могу да се шаљу један по један временски или по групама. Можете да "
+"изаберете број пакета који ће се повремено слати. Ово помаже смањењу "
+"учитавања код преоптерећених система."
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr "Сирово писање "
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+"Пакети ће бити послати директно, без покушаја попуњавања MTU-а (без покушаја "
+"прављења највећих могућих пакета у циљу побољшања пуштања тока)."
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "UDP ток излаза"
 
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
@@ -11469,8 +11469,8 @@ msgid "Extended Controls"
 msgstr "Проширене Контроле"
 
 #: modules/gui/macosx/intf.m:610 modules/gui/macosx/intf.m:652
-#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:488
+#: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlistinfo.m:55
+#: modules/gui/macosx/playlistinfo.m:371
 msgid "Information"
 msgstr "Информација"
 
@@ -11845,72 +11845,6 @@ msgstr "SDP URL"
 msgid "Save File"
 msgstr "Сачувај Фајл"
 
-#: modules/gui/macosx/playlistinfo.m:56
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
-msgid "URI"
-msgstr "URI"
-
-#: modules/gui/macosx/playlistinfo.m:63
-msgid "Advanced Information"
-msgstr "Напредна Информација"
-
-#: modules/gui/macosx/playlistinfo.m:81
-#, fuzzy
-msgid "Read at media"
-msgstr "Читај на медијуму"
-
-#: modules/gui/macosx/playlistinfo.m:82
-msgid "Input bitrate"
-msgstr "Улазна брзина битова у секунди"
-
-#: modules/gui/macosx/playlistinfo.m:83
-msgid "Demuxed"
-msgstr "Демултиплексирано"
-
-#: modules/gui/macosx/playlistinfo.m:84
-msgid "Stream bitrate"
-msgstr "Брзина битова тока"
-
-#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
-msgid "Decoded blocks"
-msgstr "Декодирани блокови"
-
-#: modules/gui/macosx/playlistinfo.m:88
-msgid "Displayed frames"
-msgstr "Приказани фрејмови"
-
-#: modules/gui/macosx/playlistinfo.m:89
-msgid "Lost frames"
-msgstr "Изгубљени фрејмови"
-
-#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
-#: modules/video_filter/deinterlace.c:137
-msgid "Streaming"
-msgstr "Пуштање тока"
-
-#: modules/gui/macosx/playlistinfo.m:92
-msgid "Sent packets"
-msgstr "Послати пакети"
-
-#: modules/gui/macosx/playlistinfo.m:93
-msgid "Sent bytes"
-msgstr "Послати бајтови"
-
-#: modules/gui/macosx/playlistinfo.m:94
-msgid "Send rate"
-msgstr "Брзина слања"
-
-#: modules/gui/macosx/playlistinfo.m:98
-msgid "Played buffers"
-msgstr "Репродуковани бафери"
-
-#: modules/gui/macosx/playlistinfo.m:99
-msgid "Lost buffers"
-msgstr "Изгубљени бафери"
-
 #: modules/gui/macosx/playlist.m:483
 msgid "Save Playlist..."
 msgstr "Сачувај Листу за пуштање..."
@@ -11984,6 +11918,72 @@ msgstr "Сачувај Листу за пуштање"
 #: modules/gui/macosx/playlist.m:1510
 msgid "Empty Folder"
 msgstr "Празна Фасцикла"
+
+#: modules/gui/macosx/playlistinfo.m:56
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
+msgid "URI"
+msgstr "URI"
+
+#: modules/gui/macosx/playlistinfo.m:63
+msgid "Advanced Information"
+msgstr "Напредна Информација"
+
+#: modules/gui/macosx/playlistinfo.m:81
+#, fuzzy
+msgid "Read at media"
+msgstr "Читај на медијуму"
+
+#: modules/gui/macosx/playlistinfo.m:82
+msgid "Input bitrate"
+msgstr "Улазна брзина битова у секунди"
+
+#: modules/gui/macosx/playlistinfo.m:83
+msgid "Demuxed"
+msgstr "Демултиплексирано"
+
+#: modules/gui/macosx/playlistinfo.m:84
+msgid "Stream bitrate"
+msgstr "Брзина битова тока"
+
+#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
+msgid "Decoded blocks"
+msgstr "Декодирани блокови"
+
+#: modules/gui/macosx/playlistinfo.m:88
+msgid "Displayed frames"
+msgstr "Приказани фрејмови"
+
+#: modules/gui/macosx/playlistinfo.m:89
+msgid "Lost frames"
+msgstr "Изгубљени фрејмови"
+
+#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
+#: modules/video_filter/deinterlace.c:137
+msgid "Streaming"
+msgstr "Пуштање тока"
+
+#: modules/gui/macosx/playlistinfo.m:92
+msgid "Sent packets"
+msgstr "Послати пакети"
+
+#: modules/gui/macosx/playlistinfo.m:93
+msgid "Sent bytes"
+msgstr "Послати бајтови"
+
+#: modules/gui/macosx/playlistinfo.m:94
+msgid "Send rate"
+msgstr "Брзина слања"
+
+#: modules/gui/macosx/playlistinfo.m:98
+msgid "Played buffers"
+msgstr "Репродуковани бафери"
+
+#: modules/gui/macosx/playlistinfo.m:99
+msgid "Lost buffers"
+msgstr "Изгубљени бафери"
 
 #: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13324,6 +13324,11 @@ msgstr "WinCE модул интерфејса"
 msgid "WinCE dialogs provider"
 msgstr "WinCE обезбеђивач дијалога"
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr "Сви Фајлови (*.*)|*|Звучни Фајлови (*.mp3, *.ogg, etc.)|"
+
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "Уреди обележивач"
@@ -13418,11 +13423,6 @@ msgstr ""
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:452
 msgid "Input has changed "
 msgstr "Улаз се променио"
-
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr "Сви Фајлови (*.*)|*|Звучни Фајлови (*.mp3, *.ogg, etc.)|"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
@@ -15088,10 +15088,6 @@ msgstr "RRD излазни фајл"
 msgid "Output data for RRDTool in this file."
 msgstr "Излазни подаци за RRDTool у овом фајлу."
 
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
-
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr "libc memcpy"
@@ -15107,6 +15103,10 @@ msgstr "MMX memcpy"
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
 msgstr "MMX EXT memcpy"
+
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
+msgstr "AltiVec memcpy"
 
 #: modules/misc/msn.c:64
 msgid "MSN Title format string"

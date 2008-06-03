@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-02 21:55+0100\n"
+"POT-Creation-Date: 2008-06-03 17:16+0200\n"
 "PO-Revision-Date: 2008-06-02 01:42+0200\n"
 "Last-Translator: Cristian Secară <cristi AT secarica DOT ro>\n"
 "Language-Team: \n"
@@ -18,6 +18,19 @@ msgstr ""
 "X-Poedit-Language: Romanian\n"
 "X-Poedit-Country: Romania\n"
 "X-Poedit-Bookmarks: 1498,1520,3422,3298,-1,-1,-1,-1,-1,-1\n"
+
+#: include/vlc/vlc.h:578
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"Acest program nu vine CU NICIO GARANȚIE, în limitele permise de lege.\n"
+"Puteți să îl redistribuiți în acord cu termenii Licenței Publice Generale "
+"GNU;\n"
+"vedeți fișierul COPYING pentru detalii.\n"
+"Scris de echipa VideoLAN; vedeți fișierul AUTHORS.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -498,9 +511,9 @@ msgstr ""
 "linie de comandă, duceți-vă la directorul unde ați instalat VLC și executați "
 "„vlc -I wx”\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:180
 #: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
@@ -515,15 +528,15 @@ msgstr "Meta-informație"
 msgid "Title"
 msgstr "Titlu"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:132 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:132
+#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Autor"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247
+#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
 msgstr "Artist"
 
@@ -665,19 +678,6 @@ msgstr "Nume codec"
 #: include/vlc_meta.h:69
 msgid "Codec Description"
 msgstr "Descriere codec"
-
-#: include/vlc/vlc.h:578
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"Acest program nu vine CU NICIO GARANȚIE, în limitele permise de lege.\n"
-"Puteți să îl redistribuiți în acord cu termenii Licenței Publice Generale "
-"GNU;\n"
-"vedeți fișierul COPYING pentru detalii.\n"
-"Scris de echipa VideoLAN; vedeți fișierul AUTHORS.\n"
 
 # hm ? mai este undeva în afară de (1) video -> video track -> și (2) video -> deinterlace -> ?
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
@@ -4602,7 +4602,7 @@ msgid "Aspect-ratio"
 msgstr "Raport de aspect"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dvb/access.c:72 modules/access/dv.c:68
+#: modules/access/dv.c:68 modules/access/dvb/access.c:72
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
@@ -5220,6 +5220,20 @@ msgstr "Reîmprospătează lista"
 msgid "Configure"
 msgstr "Configurează"
 
+#: modules/access/dv.c:70
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr ""
+"Valoarea de stocare în cache pentru stream-uri DV. Această valoare ar trebui "
+"stabilită în milisecunde."
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr "Intrare video digitală (FireWire/IEEE1394)"
+
+#: modules/access/dv.c:75
+msgid "dv"
+msgstr "dv"
+
 #: modules/access/dvb/access.c:74
 msgid ""
 "Caching value for DVB streams. This value should be set in milliseconds."
@@ -5477,20 +5491,6 @@ msgstr "Intrare DVB cu suport v4l2"
 msgid "HTTP server"
 msgstr "Server HTTP"
 
-#: modules/access/dv.c:70
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr ""
-"Valoarea de stocare în cache pentru stream-uri DV. Această valoare ar trebui "
-"stabilită în milisecunde."
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr "Intrare video digitală (FireWire/IEEE1394)"
-
-#: modules/access/dv.c:75
-msgid "dv"
-msgstr "dv"
-
 # hm ? sau unghiul de filmare ?
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
@@ -5654,68 +5654,6 @@ msgstr "Intrare fișier"
 msgid "File"
 msgstr "Fișier"
 
-#: modules/access_filter/dump.c:39
-msgid "Force use of dump module"
-msgstr "Forțează folosirea modulului de dump"
-
-#: modules/access_filter/dump.c:40
-msgid "Activate the dump module even for media with fast seeking."
-msgstr "Activează modulul de dump chiar și pentru media cu căutare rapidă."
-
-#: modules/access_filter/dump.c:43
-msgid "Maximum size of temporary file (Mb)"
-msgstr "Dimensiunea maximă a fișierului temporar (Mb)"
-
-#: modules/access_filter/dump.c:44
-msgid ""
-"The dump module will abort dumping of the media if more than this much "
-"megabyte were performed."
-msgstr ""
-
-#: modules/access_filter/record.c:43
-msgid "Record directory"
-msgstr "Director pentru înregistrare"
-
-#: modules/access_filter/record.c:45
-msgid "Directory where the record will be stored."
-msgstr "Directorul unde va fi stocată înregistrarea."
-
-#: modules/access_filter/timeshift.c:44
-msgid "Timeshift granularity"
-msgstr "Granularitate decalaj temporal"
-
-#: modules/access_filter/timeshift.c:46
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr ""
-"Aceasta este dimensiunea fișierului temporar care va fi folosit pentru a "
-"stoca stream-urile decalate temporal."
-
-#: modules/access_filter/timeshift.c:48
-msgid "Timeshift directory"
-msgstr "Director pentru decalaj temporal"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr "Director folosit pentru a stoca fișiere temporare de decalaj temporal."
-
-#: modules/access_filter/timeshift.c:51
-msgid "Force use of the timeshift module"
-msgstr "Forțează folosirea modulului de decalaj temporal"
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-"Forțează folosirea modulului de decalaj temporal chiar dacă accesul declară "
-"că poate controla pasul sau pauza."
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "Decalaj temporal"
-
 #: modules/access/ftp.c:44
 msgid ""
 "Caching value for FTP streams. This value should be set in milliseconds."
@@ -5865,180 +5803,6 @@ msgstr ""
 #: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Intrare server media Microsoft (MMS)"
-
-# hm ?
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "Ieșire de stream falsă"
-
-# hm ?
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "Fals"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "Adaugă la fișier"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr ""
-"Adaugă la fișier în cazul în care acesta există, în loc de a-l înlocui."
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "Stream de ieșire în fișier"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "Nume utilizator"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr "Numele utilizator care va fi cerut pentru a accesa stream-ul."
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr "Parola care va fi cerută pentru a accesa stream-ul."
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "MIME"
-
-#: modules/access_output/http.c:69
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr ""
-"Tipul MIME returnat de server (detectat automat dacă nu este specificat)."
-
-#: modules/access_output/http.c:73
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr "Calea către certificatul x509 PEM care va fi folosit pentru HTTPS."
-
-#: modules/access_output/http.c:76
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr ""
-"Calea către fișierul cu cheia privată x509 PEM care va fi folosit pentru "
-"HTTPS. Lasați gol dacă nu aveți niciunul."
-
-# hm ?
-#: modules/access_output/http.c:80
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr ""
-"Calea către fișierul cu certificatul rădăcină x509 PEM al CA (autoritatea "
-"certificatoare) de încredere care va fi folosit pentru HTTPS. Lasați gol "
-"dacă nu aveți niciunul."
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-"Calea către fișierul cu lista de revocări de certificate x509 PEM care va fi "
-"folosit pentru SSL. Lăsați gol dacă nu aveți niciunul."
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr ""
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr ""
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "Stream de ieșire HTTP"
-
-#: modules/access_output/shout.c:58
-msgid "Stream name"
-msgstr "Nume stream"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr ""
-
-#: modules/access_output/shout.c:62
-msgid "Stream description"
-msgstr "Descriere stream"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr ""
-
-# hm ?
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "Stream MP3"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-
-#: modules/access_output/shout.c:73
-msgid "IceCAST output"
-msgstr "Ieșire IceCAST"
-
-#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
-#: modules/demux/live555.cpp:65
-msgid "Caching value (ms)"
-msgstr "Valoare de stocare în cache (ms)"
-
-# hm ? outbound ?
-#: modules/access_output/udp.c:77
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr ""
-"Valoarea de stocare în cache pentru stream-uri UDP outbound. Această valoare "
-"ar trebui stabilită în milisecunde."
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1873
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-msgid "Time-To-Live (TTL)"
-msgstr "Timp-până-la-Live (TTL)"
-
-#: modules/access_output/udp.c:81
-msgid "Time-To-Live of the outgoing stream."
-msgstr "Timp-până-la-Live al stream-ului de ieșire."
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "Pachete de grup"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-"Pachetele pot fi trimise unul câte unul la momentul potrivit sau în grup. "
-"Puteți alege numărul pachetelor care vor fi trimise o dată. Ajută la "
-"reducerea încărcării programate pe sistemele foarte încărcate."
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr "Scriere brută"
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-"Pachetele vor fi trimise direct, fără să se încerce umplerea MTU-ului (adică "
-"fără să se încerce să se facă cele mai mari pachete posibile cu scopul de a "
-"îmbunătăți difuzarea sub formă de stream)."
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "Stream de ieșire UDP"
 
 #: modules/access/pvr.c:58
 msgid ""
@@ -6202,6 +5966,11 @@ msgstr "PVR"
 #: modules/access/pvr.c:126
 msgid "IVTV MPEG Encoding cards input"
 msgstr ""
+
+#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
+#: modules/demux/live555.cpp:65
+msgid "Caching value (ms)"
+msgstr "Valoare de stocare în cache (ms)"
 
 #: modules/access/rtsp/access.c:42
 msgid ""
@@ -6653,6 +6422,237 @@ msgstr ""
 #: modules/access/vcdx/vcd.c:143
 msgid "Format to use in the playlist's \"title\" field."
 msgstr ""
+
+#: modules/access_filter/dump.c:39
+msgid "Force use of dump module"
+msgstr "Forțează folosirea modulului de dump"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr "Activează modulul de dump chiar și pentru media cu căutare rapidă."
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr "Dimensiunea maximă a fișierului temporar (Mb)"
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
+
+#: modules/access_filter/record.c:43
+msgid "Record directory"
+msgstr "Director pentru înregistrare"
+
+#: modules/access_filter/record.c:45
+msgid "Directory where the record will be stored."
+msgstr "Directorul unde va fi stocată înregistrarea."
+
+#: modules/access_filter/timeshift.c:44
+msgid "Timeshift granularity"
+msgstr "Granularitate decalaj temporal"
+
+#: modules/access_filter/timeshift.c:46
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr ""
+"Aceasta este dimensiunea fișierului temporar care va fi folosit pentru a "
+"stoca stream-urile decalate temporal."
+
+#: modules/access_filter/timeshift.c:48
+msgid "Timeshift directory"
+msgstr "Director pentru decalaj temporal"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr "Director folosit pentru a stoca fișiere temporare de decalaj temporal."
+
+#: modules/access_filter/timeshift.c:51
+msgid "Force use of the timeshift module"
+msgstr "Forțează folosirea modulului de decalaj temporal"
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+"Forțează folosirea modulului de decalaj temporal chiar dacă accesul declară "
+"că poate controla pasul sau pauza."
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "Decalaj temporal"
+
+# hm ?
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "Ieșire de stream falsă"
+
+# hm ?
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "Fals"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "Adaugă la fișier"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr ""
+"Adaugă la fișier în cazul în care acesta există, în loc de a-l înlocui."
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "Stream de ieșire în fișier"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "Nume utilizator"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr "Numele utilizator care va fi cerut pentru a accesa stream-ul."
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr "Parola care va fi cerută pentru a accesa stream-ul."
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "MIME"
+
+#: modules/access_output/http.c:69
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr ""
+"Tipul MIME returnat de server (detectat automat dacă nu este specificat)."
+
+#: modules/access_output/http.c:73
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr "Calea către certificatul x509 PEM care va fi folosit pentru HTTPS."
+
+#: modules/access_output/http.c:76
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr ""
+"Calea către fișierul cu cheia privată x509 PEM care va fi folosit pentru "
+"HTTPS. Lasați gol dacă nu aveți niciunul."
+
+# hm ?
+#: modules/access_output/http.c:80
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr ""
+"Calea către fișierul cu certificatul rădăcină x509 PEM al CA (autoritatea "
+"certificatoare) de încredere care va fi folosit pentru HTTPS. Lasați gol "
+"dacă nu aveți niciunul."
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+"Calea către fișierul cu lista de revocări de certificate x509 PEM care va fi "
+"folosit pentru SSL. Lăsați gol dacă nu aveți niciunul."
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr ""
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr ""
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "Stream de ieșire HTTP"
+
+#: modules/access_output/shout.c:58
+msgid "Stream name"
+msgstr "Nume stream"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr ""
+
+#: modules/access_output/shout.c:62
+msgid "Stream description"
+msgstr "Descriere stream"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr ""
+
+# hm ?
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "Stream MP3"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+
+#: modules/access_output/shout.c:73
+msgid "IceCAST output"
+msgstr "Ieșire IceCAST"
+
+# hm ? outbound ?
+#: modules/access_output/udp.c:77
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr ""
+"Valoarea de stocare în cache pentru stream-uri UDP outbound. Această valoare "
+"ar trebui stabilită în milisecunde."
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1873
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+msgid "Time-To-Live (TTL)"
+msgstr "Timp-până-la-Live (TTL)"
+
+#: modules/access_output/udp.c:81
+msgid "Time-To-Live of the outgoing stream."
+msgstr "Timp-până-la-Live al stream-ului de ieșire."
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "Pachete de grup"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+"Pachetele pot fi trimise unul câte unul la momentul potrivit sau în grup. "
+"Puteți alege numărul pachetelor care vor fi trimise o dată. Ajută la "
+"reducerea încărcării programate pe sistemele foarte încărcate."
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr "Scriere brută"
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+"Pachetele vor fi trimise direct, fără să se încerce umplerea MTU-ului (adică "
+"fără să se încerce să se facă cele mai mari pachete posibile cu scopul de a "
+"îmbunătăți difuzarea sub formă de stream)."
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "Stream de ieșire UDP"
 
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
@@ -11364,8 +11364,8 @@ msgid "Extended Controls"
 msgstr "Controale extinse"
 
 #: modules/gui/macosx/intf.m:610 modules/gui/macosx/intf.m:652
-#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:488
+#: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlistinfo.m:55
+#: modules/gui/macosx/playlistinfo.m:371
 msgid "Information"
 msgstr "Informație"
 
@@ -11733,71 +11733,6 @@ msgstr "URL SDP"
 msgid "Save File"
 msgstr "Salvează fișier"
 
-#: modules/gui/macosx/playlistinfo.m:56
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
-msgid "URI"
-msgstr "URI"
-
-#: modules/gui/macosx/playlistinfo.m:63
-msgid "Advanced Information"
-msgstr "Informații avansate"
-
-#: modules/gui/macosx/playlistinfo.m:81
-msgid "Read at media"
-msgstr "Citire la media"
-
-#: modules/gui/macosx/playlistinfo.m:82
-msgid "Input bitrate"
-msgstr "Rată de biți de intrare"
-
-#: modules/gui/macosx/playlistinfo.m:83
-msgid "Demuxed"
-msgstr "Demultiplexat"
-
-#: modules/gui/macosx/playlistinfo.m:84
-msgid "Stream bitrate"
-msgstr "Rată de biți stream"
-
-#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
-msgid "Decoded blocks"
-msgstr "Blocuri decodate"
-
-#: modules/gui/macosx/playlistinfo.m:88
-msgid "Displayed frames"
-msgstr "Cadre afișate"
-
-#: modules/gui/macosx/playlistinfo.m:89
-msgid "Lost frames"
-msgstr "Cadre pierdute"
-
-#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
-#: modules/video_filter/deinterlace.c:137
-msgid "Streaming"
-msgstr "Difuzare sub formă de stream"
-
-#: modules/gui/macosx/playlistinfo.m:92
-msgid "Sent packets"
-msgstr "Pachete trimise"
-
-#: modules/gui/macosx/playlistinfo.m:93
-msgid "Sent bytes"
-msgstr "Octeți trimiși"
-
-#: modules/gui/macosx/playlistinfo.m:94
-msgid "Send rate"
-msgstr "Rată de trimitere"
-
-#: modules/gui/macosx/playlistinfo.m:98
-msgid "Played buffers"
-msgstr "Buffere redate"
-
-#: modules/gui/macosx/playlistinfo.m:99
-msgid "Lost buffers"
-msgstr "Buffere pierdute"
-
 #: modules/gui/macosx/playlist.m:483
 msgid "Save Playlist..."
 msgstr "Salvează lista de redare..."
@@ -11872,6 +11807,71 @@ msgstr "Salvează lista de redare"
 #: modules/gui/macosx/playlist.m:1510
 msgid "Empty Folder"
 msgstr "Folder gol"
+
+#: modules/gui/macosx/playlistinfo.m:56
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
+msgid "URI"
+msgstr "URI"
+
+#: modules/gui/macosx/playlistinfo.m:63
+msgid "Advanced Information"
+msgstr "Informații avansate"
+
+#: modules/gui/macosx/playlistinfo.m:81
+msgid "Read at media"
+msgstr "Citire la media"
+
+#: modules/gui/macosx/playlistinfo.m:82
+msgid "Input bitrate"
+msgstr "Rată de biți de intrare"
+
+#: modules/gui/macosx/playlistinfo.m:83
+msgid "Demuxed"
+msgstr "Demultiplexat"
+
+#: modules/gui/macosx/playlistinfo.m:84
+msgid "Stream bitrate"
+msgstr "Rată de biți stream"
+
+#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
+msgid "Decoded blocks"
+msgstr "Blocuri decodate"
+
+#: modules/gui/macosx/playlistinfo.m:88
+msgid "Displayed frames"
+msgstr "Cadre afișate"
+
+#: modules/gui/macosx/playlistinfo.m:89
+msgid "Lost frames"
+msgstr "Cadre pierdute"
+
+#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
+#: modules/video_filter/deinterlace.c:137
+msgid "Streaming"
+msgstr "Difuzare sub formă de stream"
+
+#: modules/gui/macosx/playlistinfo.m:92
+msgid "Sent packets"
+msgstr "Pachete trimise"
+
+#: modules/gui/macosx/playlistinfo.m:93
+msgid "Sent bytes"
+msgstr "Octeți trimiși"
+
+#: modules/gui/macosx/playlistinfo.m:94
+msgid "Send rate"
+msgstr "Rată de trimitere"
+
+#: modules/gui/macosx/playlistinfo.m:98
+msgid "Played buffers"
+msgstr "Buffere redate"
+
+#: modules/gui/macosx/playlistinfo.m:99
+msgid "Lost buffers"
+msgstr "Buffere pierdute"
 
 #: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13124,6 +13124,11 @@ msgstr "Modul interfață WinCE"
 msgid "WinCE dialogs provider"
 msgstr "Furnizor dialoguri WinCE"
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr "Toate fișierele (*.*)|*|Fișiere audio (*.mp3, *.ogg, etc.)|"
+
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "Editează semnele de carte"
@@ -13220,11 +13225,6 @@ msgstr ""
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:452
 msgid "Input has changed "
 msgstr "Intrarea s-a schimbat"
-
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr "Toate fișierele (*.*)|*|Fișiere audio (*.mp3, *.ogg, etc.)|"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
@@ -14857,10 +14857,6 @@ msgstr "Fișier de ieșire RRD"
 msgid "Output data for RRDTool in this file."
 msgstr "Date de ieșire pentru RRDTool în acest fișier."
 
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr "AltiVec memcpy"
-
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr "libc memcpy"
@@ -14876,6 +14872,10 @@ msgstr "MMX memcpy"
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
 msgstr "MMX EXT memcpy"
+
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
+msgstr "AltiVec memcpy"
 
 #: modules/misc/msn.c:64
 msgid "MSN Title format string"

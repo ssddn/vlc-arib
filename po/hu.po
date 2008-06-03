@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VLAN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 20:07+0300\n"
+"POT-Creation-Date: 2008-06-03 17:16+0200\n"
 "PO-Revision-Date: 2006-11-11 06:08+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -18,6 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: include/vlc/vlc.h:578
+msgid ""
+"This program comes with NO WARRANTY, to the extent permitted by law.\n"
+"You may redistribute it under the terms of the GNU General Public License;\n"
+"see the file named COPYING for details.\n"
+"Written by the VideoLAN team; see the AUTHORS file.\n"
+msgstr ""
+"A programra NINCS GARANCIA, a hatályos jogszabályok által engedélyezett "
+"mértékig.\n"
+"Továbbterjesztheti a GNU General Public License feltételei alapján;\n"
+"további információ a COPYING fájlban olvasható.\n"
+"Írta a VideoLAN csapat; olvassa el az AUTHORS fájlt.\n"
 
 #: include/vlc_config_cat.h:32
 msgid "VLC preferences"
@@ -30,7 +43,7 @@ msgstr ""
 "megjelenítéséhez."
 
 #: include/vlc_config_cat.h:36 include/vlc_config_cat.h:127
-#: src/input/input.c:1902 src/input/input.c:1962 src/playlist/item.c:333
+#: src/input/input.c:1905 src/input/input.c:1965 src/playlist/item.c:333
 #: src/playlist/playlist.c:163 modules/gui/macosx/playlistinfo.m:62
 #: modules/gui/wince/playlist.cpp:674
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:82
@@ -70,7 +83,7 @@ msgstr "A VLC kezelőfelületeinek beállításai"
 msgid "Hotkeys settings"
 msgstr "Forróbillentyűk beállításai"
 
-#: include/vlc_config_cat.h:54 src/input/es_out.c:1596 src/libvlc.h:1181
+#: include/vlc_config_cat.h:54 src/input/es_out.c:1609 src/libvlc.h:1181
 #: modules/gui/beos/InterfaceWindow.cpp:280 modules/gui/macosx/extended.m:81
 #: modules/gui/macosx/intf.m:566 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:96 modules/gui/macosx/wizard.m:421
@@ -124,7 +137,7 @@ msgstr "Egyéb"
 msgid "Miscellaneous audio settings and modules."
 msgstr "Egyéb hangbeállítások és modulok."
 
-#: include/vlc_config_cat.h:75 src/input/es_out.c:1624 src/libvlc.h:1216
+#: include/vlc_config_cat.h:75 src/input/es_out.c:1637 src/libvlc.h:1216
 #: modules/gui/macosx/extended.m:80 modules/gui/macosx/intf.m:579
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:86
 #: modules/gui/macosx/wizard.m:422
@@ -488,9 +501,9 @@ msgstr ""
 "nyisson egy parancssori ablakot, lépjen be a VLC telepítési könyvtárába és "
 "adja ki a \"vlc -I wx\" parancsot.\n"
 
-#: include/vlc_meta.h:28 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247 modules/misc/growl.c:166
+#: include/vlc_meta.h:28 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310 modules/misc/growl.c:166
 #: modules/misc/growl.c:169 modules/misc/notify.c:180
 #: modules/misc/notify.c:183 modules/visualization/goom.c:417
 msgid "Meta-information"
@@ -505,15 +518,15 @@ msgstr "Meta-információk"
 msgid "Title"
 msgstr "Cím"
 
-#: include/vlc_meta.h:30 modules/gui/macosx/playlistinfo.m:58
-#: modules/gui/macosx/playlist.m:132 modules/gui/macosx/wizard.m:393
+#: include/vlc_meta.h:30 modules/gui/macosx/playlist.m:132
+#: modules/gui/macosx/playlistinfo.m:58 modules/gui/macosx/wizard.m:393
 #: modules/gui/wince/playlist.cpp:674 modules/mux/asf.c:50
 msgid "Author"
 msgstr "Szerző"
 
-#: include/vlc_meta.h:31 modules/gui/macosx/playlistinfo.m:205
-#: modules/gui/macosx/playlistinfo.m:310 modules/gui/macosx/playlist.m:320
-#: modules/gui/macosx/playlist.m:1247
+#: include/vlc_meta.h:31 modules/gui/macosx/playlist.m:320
+#: modules/gui/macosx/playlist.m:1247 modules/gui/macosx/playlistinfo.m:205
+#: modules/gui/macosx/playlistinfo.m:310
 msgid "Artist"
 msgstr "Előadó"
 
@@ -555,7 +568,7 @@ msgstr "Beállítás"
 msgid "URL"
 msgstr "URL"
 
-#: include/vlc_meta.h:41 src/input/es_out.c:1588 src/libvlc.h:97
+#: include/vlc_meta.h:41 src/input/es_out.c:1601 src/libvlc.h:97
 #: modules/gui/beos/InterfaceWindow.cpp:276
 msgid "Language"
 msgstr "Nyelv"
@@ -656,21 +669,8 @@ msgstr "Kodeknév"
 msgid "Codec Description"
 msgstr "Kodek leírása"
 
-#: include/vlc/vlc.h:578
-msgid ""
-"This program comes with NO WARRANTY, to the extent permitted by law.\n"
-"You may redistribute it under the terms of the GNU General Public License;\n"
-"see the file named COPYING for details.\n"
-"Written by the VideoLAN team; see the AUTHORS file.\n"
-msgstr ""
-"A programra NINCS GARANCIA, a hatályos jogszabályok által engedélyezett "
-"mértékig.\n"
-"Továbbterjesztheti a GNU General Public License feltételei alapján;\n"
-"további információ a COPYING fájlban olvasható.\n"
-"Írta a VideoLAN csapat; olvassa el az AUTHORS fájlt.\n"
-
 #: src/audio_output/input.c:80 src/audio_output/input.c:126
-#: src/input/es_out.c:362 src/libvlc.h:409 src/video_output/video_output.c:379
+#: src/input/es_out.c:369 src/libvlc.h:409 src/video_output/video_output.c:379
 #: modules/codec/ffmpeg/postprocess.c:96
 msgid "Disable"
 msgstr "Tiltás"
@@ -799,87 +799,87 @@ msgstr "%s: a \"-W %s\" kapcsoló nem enged meg argumentumot\n"
 msgid "Bookmark %i"
 msgstr "%i. könyvjelző"
 
-#: src/input/es_out.c:384 src/input/es_out.c:386 src/input/es_out.c:392
-#: src/input/es_out.c:393 modules/access/cdda.c:593
+#: src/input/es_out.c:391 src/input/es_out.c:393 src/input/es_out.c:399
+#: src/input/es_out.c:400 modules/access/cdda.c:593
 #: modules/access/cdda/info.c:978 modules/access/cdda/info.c:1011
 #, c-format
 msgid "Track %i"
 msgstr "%i. szám"
 
-#: src/input/es_out.c:466 src/input/es_out.c:468 src/input/es_out.c:568
-#: src/input/es_out.c:575 src/input/var.c:125 src/libvlc.h:435
+#: src/input/es_out.c:473 src/input/es_out.c:475 src/input/es_out.c:576
+#: src/input/es_out.c:585 src/input/var.c:125 src/libvlc.h:435
 #: modules/gui/macosx/intf.m:559 modules/gui/macosx/intf.m:560
 msgid "Program"
 msgstr "Progam"
 
-#: src/input/es_out.c:1583 modules/codec/faad.c:374
+#: src/input/es_out.c:1596 modules/codec/faad.c:374
 #, c-format
 msgid "Stream %d"
 msgstr "%d. adatfolyam"
 
-#: src/input/es_out.c:1585 modules/gui/macosx/wizard.m:426
+#: src/input/es_out.c:1598 modules/gui/macosx/wizard.m:426
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:832
 #: modules/gui/wxwidgets/dialogs/wizard.cpp:872
 msgid "Codec"
 msgstr "Kodek"
 
-#: src/input/es_out.c:1596 src/input/es_out.c:1624 src/input/es_out.c:1651
+#: src/input/es_out.c:1609 src/input/es_out.c:1637 src/input/es_out.c:1664
 #: modules/gui/macosx/output.m:153
 msgid "Type"
 msgstr "Típus"
 
-#: src/input/es_out.c:1599 modules/codec/faad.c:379
+#: src/input/es_out.c:1612 modules/codec/faad.c:379
 #: modules/gui/macosx/output.m:176
 #: modules/gui/wxwidgets/dialogs/streamout.cpp:857
 msgid "Channels"
 msgstr "Csatornák"
 
-#: src/input/es_out.c:1604 modules/codec/faad.c:381
+#: src/input/es_out.c:1617 modules/codec/faad.c:381
 msgid "Sample rate"
 msgstr "Mintavételi frekvencia"
 
-#: src/input/es_out.c:1605 modules/codec/faad.c:381
+#: src/input/es_out.c:1618 modules/codec/faad.c:381
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
 
-#: src/input/es_out.c:1611
+#: src/input/es_out.c:1624
 msgid "Bits per sample"
 msgstr "Bitek mintánként"
 
-#: src/input/es_out.c:1616 modules/access/pvr.c:93
+#: src/input/es_out.c:1629 modules/access/pvr.c:93
 #: modules/demux/playlist/b4s.c:349 modules/demux/playlist/shoutcast.c:472
 msgid "Bitrate"
 msgstr "Bitsebesség"
 
-#: src/input/es_out.c:1617
+#: src/input/es_out.c:1630
 #, fuzzy, c-format
 msgid "%d kb/s"
 msgstr "%d kb/mp"
 
-#: src/input/es_out.c:1628
+#: src/input/es_out.c:1641
 msgid "Resolution"
 msgstr "Felbontás"
 
-#: src/input/es_out.c:1634
+#: src/input/es_out.c:1647
 msgid "Display resolution"
 msgstr "Képernyő felbontása"
 
-#: src/input/es_out.c:1644 modules/access/screen/screen.c:41
+#: src/input/es_out.c:1657 modules/access/screen/screen.c:41
 msgid "Frame rate"
 msgstr "Frissítési sebesség"
 
-#: src/input/es_out.c:1651
+#: src/input/es_out.c:1664
 msgid "Subtitle"
 msgstr "Felirat"
 
-#: src/input/input.c:1916 src/input/input.c:1920
+#: src/input/input.c:1919 src/input/input.c:1923
 #: modules/gui/macosx/output.m:143 modules/gui/macosx/output.m:251
 #: modules/gui/macosx/output.m:391
 msgid "Stream"
 msgstr "Adatfolyam"
 
-#: src/input/input.c:1962 src/playlist/item.c:333
+#: src/input/input.c:1965 src/playlist/item.c:333
 #: modules/access/cdda/info.c:326 modules/access/cdda/info.c:394
 #: modules/gui/macosx/playlist.m:133
 msgid "Duration"
@@ -998,15 +998,15 @@ msgstr "hu"
 msgid "Help options"
 msgstr "Súgó beállításai"
 
-#: src/libvlc.c:2199 src/misc/configuration.c:1269
+#: src/libvlc.c:2199 src/misc/configuration.c:1270
 msgid "string"
 msgstr "karakterlánc"
 
-#: src/libvlc.c:2216 src/misc/configuration.c:1233
+#: src/libvlc.c:2216 src/misc/configuration.c:1234
 msgid "integer"
 msgstr "egész"
 
-#: src/libvlc.c:2234 src/misc/configuration.c:1258
+#: src/libvlc.c:2234 src/misc/configuration.c:1259
 msgid "float"
 msgstr "lebegőpontos szám"
 
@@ -1165,6 +1165,10 @@ msgstr "Szlovák"
 #: src/libvlc.h:43 src/misc/iso-639_def.h:162
 msgid "Slovenian"
 msgstr "szlovén"
+
+#: src/libvlc.h:43 src/misc/iso-639_def.h:158
+msgid "Serbian"
+msgstr "szerb"
 
 #: src/libvlc.h:43 src/misc/iso-639_def.h:174
 msgid "Swedish"
@@ -3926,11 +3930,11 @@ msgstr "aktuális bővítmény gyorsítótárának visszaállítása"
 msgid "print version information"
 msgstr "verzió információjának kiírása"
 
-#: src/misc/configuration.c:1233
+#: src/misc/configuration.c:1234
 msgid "boolean"
 msgstr "logikai"
 
-#: src/misc/configuration.c:1244
+#: src/misc/configuration.c:1245
 msgid "key"
 msgstr "kulcs"
 
@@ -4334,10 +4338,6 @@ msgstr "szango"
 msgid "Sanskrit"
 msgstr "szankszrit"
 
-#: src/misc/iso-639_def.h:158
-msgid "Serbian"
-msgstr "szerb"
-
 #: src/misc/iso-639_def.h:159
 msgid "Croatian"
 msgstr "horvát"
@@ -4511,7 +4511,7 @@ msgstr "Kézzel hozzáadott"
 msgid "All items, unsorted"
 msgstr "Minden bejegyzés, rendezetlenül"
 
-#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:281
+#: src/playlist/sort.c:344 src/playlist/view.c:79 src/playlist/view.c:280
 msgid "Undefined"
 msgstr "Nincs megadva"
 
@@ -4571,7 +4571,7 @@ msgid "Aspect-ratio"
 msgstr "Képarány"
 
 #: modules/access/cdda.c:52 modules/access/dshow/dshow.cpp:80
-#: modules/access/dvb/access.c:72 modules/access/dv.c:68
+#: modules/access/dv.c:68 modules/access/dvb/access.c:72
 #: modules/access/dvdnav.c:63 modules/access/dvdread.c:61
 #: modules/access/fake.c:40 modules/access/file.c:79 modules/access/ftp.c:42
 #: modules/access/gnomevfs.c:44 modules/access/http.c:53
@@ -5180,6 +5180,20 @@ msgstr "Lista frissítése"
 msgid "Configure"
 msgstr "Beállítás"
 
+#: modules/access/dv.c:70
+msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
+msgstr ""
+"A DV adatfolyamok gyorsítótárazási értéke. Az értéket ezredmásodpercben kell "
+"megadni."
+
+#: modules/access/dv.c:74
+msgid "Digital Video (Firewire/ieee1394)  input"
+msgstr "Digitális video (Firewire/ieee1394) bemenet"
+
+#: modules/access/dv.c:75
+msgid "dv"
+msgstr "dv"
+
 #: modules/access/dvb/access.c:74
 msgid ""
 "Caching value for DVB streams. This value should be set in milliseconds."
@@ -5430,20 +5444,6 @@ msgstr "DVB bemenet v4l2 támogatással"
 msgid "HTTP server"
 msgstr "HTTP kiszolgáló"
 
-#: modules/access/dv.c:70
-msgid "Caching value for DV streams. Thisvalue should be set in milliseconds."
-msgstr ""
-"A DV adatfolyamok gyorsítótárazási értéke. Az értéket ezredmásodpercben kell "
-"megadni."
-
-#: modules/access/dv.c:74
-msgid "Digital Video (Firewire/ieee1394)  input"
-msgstr "Digitális video (Firewire/ieee1394) bemenet"
-
-#: modules/access/dv.c:75
-msgid "dv"
-msgstr "dv"
-
 #: modules/access/dvdnav.c:59 modules/access/dvdread.c:57
 msgid "DVD angle"
 msgstr "DVD szög"
@@ -5608,65 +5608,6 @@ msgstr "Fájl bemenet"
 msgid "File"
 msgstr "Fájl"
 
-#: modules/access_filter/dump.c:39
-#, fuzzy
-msgid "Force use of dump module"
-msgstr "Az időeltolás modul használatának kényszerítése"
-
-#: modules/access_filter/dump.c:40
-msgid "Activate the dump module even for media with fast seeking."
-msgstr ""
-
-#: modules/access_filter/dump.c:43
-msgid "Maximum size of temporary file (Mb)"
-msgstr ""
-
-#: modules/access_filter/dump.c:44
-msgid ""
-"The dump module will abort dumping of the media if more than this much "
-"megabyte were performed."
-msgstr ""
-
-#: modules/access_filter/record.c:43
-msgid "Record directory"
-msgstr "Felvétel könyvtár"
-
-#: modules/access_filter/record.c:45
-msgid "Directory where the record will be stored."
-msgstr "Az a könyvtár, amelyben a felvétel tárolásra kerül."
-
-#: modules/access_filter/timeshift.c:44
-msgid "Timeshift granularity"
-msgstr "Időeltolás finomsága"
-
-#: modules/access_filter/timeshift.c:46
-msgid ""
-"This is the size of the temporary files tha will be used to store the "
-"timeshifted streams."
-msgstr "Az időeltolt adatfolyamok tárolására használt átmeneti fájlok mérete."
-
-#: modules/access_filter/timeshift.c:48
-msgid "Timeshift directory"
-msgstr "Időeltolt könyvtár"
-
-#: modules/access_filter/timeshift.c:49
-msgid "Directory used to store the timeshift temporary files."
-msgstr "Az időeltolt átmeneti fájlok tárolására szolgáló könyvtár."
-
-#: modules/access_filter/timeshift.c:51
-msgid "Force use of the timeshift module"
-msgstr "Az időeltolás modul használatának kényszerítése"
-
-#: modules/access_filter/timeshift.c:52
-msgid ""
-"Force use of the timeshift module even if the access declares that it can "
-"control pace or pause."
-msgstr ""
-
-#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
-msgid "Timeshift"
-msgstr "Időeltolás"
-
 #: modules/access/ftp.c:44
 msgid ""
 "Caching value for FTP streams. This value should be set in milliseconds."
@@ -5819,180 +5760,6 @@ msgstr ""
 #: modules/access/mms/mms.c:65
 msgid "Microsoft Media Server (MMS) input"
 msgstr "Microsoft Media Server (MMS) bemenet"
-
-#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
-msgid "Dummy stream output"
-msgstr "Üres adatfolyam kimenet"
-
-#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
-msgid "Dummy"
-msgstr "Üres"
-
-#: modules/access_output/file.c:61
-msgid "Append to file"
-msgstr "Hozzáfűzés fájlhoz"
-
-#: modules/access_output/file.c:62
-msgid "Append to file if it exists instead of replacing it."
-msgstr "Ha létezik a fájl, akkor hozzáfűzi felülírás helyett."
-
-#: modules/access_output/file.c:66
-msgid "File stream output"
-msgstr "Fájl adatfolyam kimenet"
-
-#: modules/access_output/http.c:60
-msgid "Username"
-msgstr "Felhasználónév"
-
-#: modules/access_output/http.c:61
-msgid "User name that will be requested to access the stream."
-msgstr "Az adatfolyam eléréséhez bekérendő felhasználónév."
-
-#: modules/access_output/http.c:64
-msgid "Password that will be requested to access the stream."
-msgstr "Az adatfolyam eléréséhez bekérendő jelszó."
-
-#: modules/access_output/http.c:68
-msgid "Mime"
-msgstr "Fájltípus"
-
-#: modules/access_output/http.c:69
-#, fuzzy
-msgid "MIME returned by the server (autodetected if not specified."
-msgstr ""
-"A kiszolgáló által visszaadott MIME (automatikus felismerés, ha nincs "
-"megadva)."
-
-#: modules/access_output/http.c:73
-msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
-msgstr "A HTTPS-hez használandó x509 PEM tanúsítványfájl elérési útja."
-
-#: modules/access_output/http.c:76
-msgid ""
-"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
-"empty if you don't have one."
-msgstr ""
-"A HTTPS-hez használandó x509 PEM privát kulcs fájl elérési útja. Hagyja "
-"üresen, ha nincs."
-
-#: modules/access_output/http.c:80
-msgid ""
-"Path to the x509 PEM trusted root CA certificates (certificate authority) "
-"file that will be used for HTTPS. Leave empty if you don't have one."
-msgstr ""
-"Az x509 PEM formátumú, hitelesítésszolgáltató által megbízhatónak "
-"nyilvánított gyökér tanúsítványfájl útvonala, amelyet a HTTPS-hez használni "
-"fog. Hagyja üresen, ha nem rendelkezik ilyen tanúsítvánnyal."
-
-#: modules/access_output/http.c:85
-msgid ""
-"Path to the x509 PEM Certificates Revocation List file that will be used for "
-"SSL. Leave empty if you don't have one."
-msgstr ""
-"Az x509 PEM formátumú tanúsítványvisszavonási lista útvonala, amelyet az SSL-"
-"hez használni fog. Hagyja üresen, ha nincs."
-
-#: modules/access_output/http.c:88
-msgid "Advertise with Bonjour"
-msgstr "Hirdetés a Bonjour segítségével"
-
-#: modules/access_output/http.c:89
-msgid "Advertise the stream with the Bonjour protocol."
-msgstr "Az adatfolyam hirdetése a Bonjour protokoll segítségével."
-
-#: modules/access_output/http.c:93
-msgid "HTTP stream output"
-msgstr "HTTP kimeneti adatfolyam"
-
-#: modules/access_output/shout.c:58
-msgid "Stream name"
-msgstr "Adatfolyam neve"
-
-#: modules/access_output/shout.c:59
-msgid "Name to give to this stream/channel on the icecast server."
-msgstr "Az adatfolyam/csatorna leendő neve az icecast kiszolgálón."
-
-#: modules/access_output/shout.c:62
-msgid "Stream description"
-msgstr "Adatfolyam leírása"
-
-#: modules/access_output/shout.c:63
-msgid "Description of the stream content or information about your channel."
-msgstr ""
-"Az adatfolyam tartalmának leírása vagy bővebb információ a csatornáról."
-
-#: modules/access_output/shout.c:66
-msgid "Stream MP3"
-msgstr "MP3 küldése"
-
-#: modules/access_output/shout.c:67
-msgid ""
-"You normally have to feed the shoutcast module with Ogg streams. It is also "
-"possible to stream MP3 instead, so you can forward MP3 streams to the "
-"icecast server."
-msgstr ""
-"Alapértelmezés szerint a shoutcast modult Ogg adatfolyamokkal kell ellátnia. "
-"Azonban lehetőség van MP3 formátumú műsorszórásra, így MP3 adatfolyamokat is "
-"küldhet az icecast kiszolgálóra."
-
-#: modules/access_output/shout.c:73
-msgid "IceCAST output"
-msgstr "IceCAST kimenet"
-
-#: modules/access_output/udp.c:75 modules/access/rtsp/access.c:40
-#: modules/demux/live555.cpp:65
-msgid "Caching value (ms)"
-msgstr "Gyorsítótárazás időtartama (ms)"
-
-#: modules/access_output/udp.c:77
-msgid ""
-"Default caching value for outbound UDP streams. This value should be set in "
-"milliseconds."
-msgstr ""
-"A kimenő UDP adatfolyamok alapértelmezett gyorsítótárazási időtartama. Ezt "
-"az értéket ezredmásodpercben kell megadni."
-
-#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
-#: modules/gui/macosx/wizard.m:1873
-#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
-msgid "Time-To-Live (TTL)"
-msgstr "Élettartam (TTL)"
-
-#: modules/access_output/udp.c:81
-msgid "Time-To-Live of the outgoing stream."
-msgstr "A kimenő adatfolyam élettartama (TTL)."
-
-#: modules/access_output/udp.c:84
-msgid "Group packets"
-msgstr "Csomagok csoportosítása"
-
-#: modules/access_output/udp.c:85
-msgid ""
-"Packets can be sent one by one at the right time or by groups. You can "
-"choose the number of packets that will be sent at a time. It helps reducing "
-"the scheduling load on heavily-loaded systems."
-msgstr ""
-"A csomagok küldhetők egyesével a megfelelő időpontban, vagy csoportonként. "
-"Megadhatja az egy időpontban küldendő csomagok számát, ennek segítségével "
-"csökkenthető a terhelés a nagy mértékben terhelt rendszereken."
-
-#: modules/access_output/udp.c:90
-msgid "Raw write"
-msgstr "Nyers írás"
-
-#: modules/access_output/udp.c:91
-msgid ""
-"Packets will be sent directly, without trying to fill the MTU (ie, without "
-"trying to make the biggest possible packets in order to improve streaming)."
-msgstr ""
-"A csomagok közvetlenül, az MTU érték kitöltésére tett kísérlet nélkül "
-"kerülnek ki a hálózatra (tehát a program nem próbálja meg a lehető "
-"legnagyobb csomagokat küldeni az adás minőségének javítása érdekében)."
-
-#: modules/access_output/udp.c:97
-msgid "UDP stream output"
-msgstr "UDP kimeneti adatfolyam"
 
 #: modules/access/pvr.c:58
 msgid ""
@@ -6158,6 +5925,11 @@ msgstr "PVR"
 #: modules/access/pvr.c:126
 msgid "IVTV MPEG Encoding cards input"
 msgstr "IVTV MPEG kódolókártyák bemenete"
+
+#: modules/access/rtsp/access.c:40 modules/access_output/udp.c:75
+#: modules/demux/live555.cpp:65
+msgid "Caching value (ms)"
+msgstr "Gyorsítótárazás időtartama (ms)"
 
 #: modules/access/rtsp/access.c:42
 msgid ""
@@ -6619,6 +6391,234 @@ msgstr "A lejátszólista \"szerző\" mezőjében használandó formátum."
 #: modules/access/vcdx/vcd.c:143
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "A lejátszólista \"cím\" mezőjében használandó formátum."
+
+#: modules/access_filter/dump.c:39
+#, fuzzy
+msgid "Force use of dump module"
+msgstr "Az időeltolás modul használatának kényszerítése"
+
+#: modules/access_filter/dump.c:40
+msgid "Activate the dump module even for media with fast seeking."
+msgstr ""
+
+#: modules/access_filter/dump.c:43
+msgid "Maximum size of temporary file (Mb)"
+msgstr ""
+
+#: modules/access_filter/dump.c:44
+msgid ""
+"The dump module will abort dumping of the media if more than this much "
+"megabyte were performed."
+msgstr ""
+
+#: modules/access_filter/record.c:43
+msgid "Record directory"
+msgstr "Felvétel könyvtár"
+
+#: modules/access_filter/record.c:45
+msgid "Directory where the record will be stored."
+msgstr "Az a könyvtár, amelyben a felvétel tárolásra kerül."
+
+#: modules/access_filter/timeshift.c:44
+msgid "Timeshift granularity"
+msgstr "Időeltolás finomsága"
+
+#: modules/access_filter/timeshift.c:46
+msgid ""
+"This is the size of the temporary files tha will be used to store the "
+"timeshifted streams."
+msgstr "Az időeltolt adatfolyamok tárolására használt átmeneti fájlok mérete."
+
+#: modules/access_filter/timeshift.c:48
+msgid "Timeshift directory"
+msgstr "Időeltolt könyvtár"
+
+#: modules/access_filter/timeshift.c:49
+msgid "Directory used to store the timeshift temporary files."
+msgstr "Az időeltolt átmeneti fájlok tárolására szolgáló könyvtár."
+
+#: modules/access_filter/timeshift.c:51
+msgid "Force use of the timeshift module"
+msgstr "Az időeltolás modul használatának kényszerítése"
+
+#: modules/access_filter/timeshift.c:52
+msgid ""
+"Force use of the timeshift module even if the access declares that it can "
+"control pace or pause."
+msgstr ""
+
+#: modules/access_filter/timeshift.c:56 modules/access_filter/timeshift.c:57
+msgid "Timeshift"
+msgstr "Időeltolás"
+
+#: modules/access_output/dummy.c:40 modules/stream_out/dummy.c:47
+msgid "Dummy stream output"
+msgstr "Üres adatfolyam kimenet"
+
+#: modules/access_output/dummy.c:41 modules/misc/dummy/dummy.c:58
+msgid "Dummy"
+msgstr "Üres"
+
+#: modules/access_output/file.c:61
+msgid "Append to file"
+msgstr "Hozzáfűzés fájlhoz"
+
+#: modules/access_output/file.c:62
+msgid "Append to file if it exists instead of replacing it."
+msgstr "Ha létezik a fájl, akkor hozzáfűzi felülírás helyett."
+
+#: modules/access_output/file.c:66
+msgid "File stream output"
+msgstr "Fájl adatfolyam kimenet"
+
+#: modules/access_output/http.c:60
+msgid "Username"
+msgstr "Felhasználónév"
+
+#: modules/access_output/http.c:61
+msgid "User name that will be requested to access the stream."
+msgstr "Az adatfolyam eléréséhez bekérendő felhasználónév."
+
+#: modules/access_output/http.c:64
+msgid "Password that will be requested to access the stream."
+msgstr "Az adatfolyam eléréséhez bekérendő jelszó."
+
+#: modules/access_output/http.c:68
+msgid "Mime"
+msgstr "Fájltípus"
+
+#: modules/access_output/http.c:69
+#, fuzzy
+msgid "MIME returned by the server (autodetected if not specified."
+msgstr ""
+"A kiszolgáló által visszaadott MIME (automatikus felismerés, ha nincs "
+"megadva)."
+
+#: modules/access_output/http.c:73
+msgid "Path to the x509 PEM certificate file that will be used for HTTPS."
+msgstr "A HTTPS-hez használandó x509 PEM tanúsítványfájl elérési útja."
+
+#: modules/access_output/http.c:76
+msgid ""
+"Path to the x509 PEM private key file that will be used for HTTPS. Leave "
+"empty if you don't have one."
+msgstr ""
+"A HTTPS-hez használandó x509 PEM privát kulcs fájl elérési útja. Hagyja "
+"üresen, ha nincs."
+
+#: modules/access_output/http.c:80
+msgid ""
+"Path to the x509 PEM trusted root CA certificates (certificate authority) "
+"file that will be used for HTTPS. Leave empty if you don't have one."
+msgstr ""
+"Az x509 PEM formátumú, hitelesítésszolgáltató által megbízhatónak "
+"nyilvánított gyökér tanúsítványfájl útvonala, amelyet a HTTPS-hez használni "
+"fog. Hagyja üresen, ha nem rendelkezik ilyen tanúsítvánnyal."
+
+#: modules/access_output/http.c:85
+msgid ""
+"Path to the x509 PEM Certificates Revocation List file that will be used for "
+"SSL. Leave empty if you don't have one."
+msgstr ""
+"Az x509 PEM formátumú tanúsítványvisszavonási lista útvonala, amelyet az SSL-"
+"hez használni fog. Hagyja üresen, ha nincs."
+
+#: modules/access_output/http.c:88
+msgid "Advertise with Bonjour"
+msgstr "Hirdetés a Bonjour segítségével"
+
+#: modules/access_output/http.c:89
+msgid "Advertise the stream with the Bonjour protocol."
+msgstr "Az adatfolyam hirdetése a Bonjour protokoll segítségével."
+
+#: modules/access_output/http.c:93
+msgid "HTTP stream output"
+msgstr "HTTP kimeneti adatfolyam"
+
+#: modules/access_output/shout.c:58
+msgid "Stream name"
+msgstr "Adatfolyam neve"
+
+#: modules/access_output/shout.c:59
+msgid "Name to give to this stream/channel on the icecast server."
+msgstr "Az adatfolyam/csatorna leendő neve az icecast kiszolgálón."
+
+#: modules/access_output/shout.c:62
+msgid "Stream description"
+msgstr "Adatfolyam leírása"
+
+#: modules/access_output/shout.c:63
+msgid "Description of the stream content or information about your channel."
+msgstr ""
+"Az adatfolyam tartalmának leírása vagy bővebb információ a csatornáról."
+
+#: modules/access_output/shout.c:66
+msgid "Stream MP3"
+msgstr "MP3 küldése"
+
+#: modules/access_output/shout.c:67
+msgid ""
+"You normally have to feed the shoutcast module with Ogg streams. It is also "
+"possible to stream MP3 instead, so you can forward MP3 streams to the "
+"icecast server."
+msgstr ""
+"Alapértelmezés szerint a shoutcast modult Ogg adatfolyamokkal kell ellátnia. "
+"Azonban lehetőség van MP3 formátumú műsorszórásra, így MP3 adatfolyamokat is "
+"küldhet az icecast kiszolgálóra."
+
+#: modules/access_output/shout.c:73
+msgid "IceCAST output"
+msgstr "IceCAST kimenet"
+
+#: modules/access_output/udp.c:77
+msgid ""
+"Default caching value for outbound UDP streams. This value should be set in "
+"milliseconds."
+msgstr ""
+"A kimenő UDP adatfolyamok alapértelmezett gyorsítótárazási időtartama. Ezt "
+"az értéket ezredmásodpercben kell megadni."
+
+#: modules/access_output/udp.c:80 modules/gui/macosx/wizard.m:442
+#: modules/gui/macosx/wizard.m:1873
+#: modules/gui/wxwidgets/dialogs/streamout.cpp:610
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:1338 modules/stream_out/rtp.c:91
+msgid "Time-To-Live (TTL)"
+msgstr "Élettartam (TTL)"
+
+#: modules/access_output/udp.c:81
+msgid "Time-To-Live of the outgoing stream."
+msgstr "A kimenő adatfolyam élettartama (TTL)."
+
+#: modules/access_output/udp.c:84
+msgid "Group packets"
+msgstr "Csomagok csoportosítása"
+
+#: modules/access_output/udp.c:85
+msgid ""
+"Packets can be sent one by one at the right time or by groups. You can "
+"choose the number of packets that will be sent at a time. It helps reducing "
+"the scheduling load on heavily-loaded systems."
+msgstr ""
+"A csomagok küldhetők egyesével a megfelelő időpontban, vagy csoportonként. "
+"Megadhatja az egy időpontban küldendő csomagok számát, ennek segítségével "
+"csökkenthető a terhelés a nagy mértékben terhelt rendszereken."
+
+#: modules/access_output/udp.c:90
+msgid "Raw write"
+msgstr "Nyers írás"
+
+#: modules/access_output/udp.c:91
+msgid ""
+"Packets will be sent directly, without trying to fill the MTU (ie, without "
+"trying to make the biggest possible packets in order to improve streaming)."
+msgstr ""
+"A csomagok közvetlenül, az MTU érték kitöltésére tett kísérlet nélkül "
+"kerülnek ki a hálózatra (tehát a program nem próbálja meg a lehető "
+"legnagyobb csomagokat küldeni az adás minőségének javítása érdekében)."
+
+#: modules/access_output/udp.c:97
+msgid "UDP stream output"
+msgstr "UDP kimeneti adatfolyam"
 
 #: modules/audio_filter/channel_mixer/dolby.c:47
 msgid "Simple decoder for Dolby Surround encoded streams"
@@ -8088,7 +8088,7 @@ msgstr ""
 msgid "Text subtitles decoder"
 msgstr "Feliratszöveg dekódoló"
 
-#: modules/codec/subsdec.c:366
+#: modules/codec/subsdec.c:370
 msgid ""
 "failed to convert subtitle encoding.\n"
 "Try manually setting a character-encoding before you open the file."
@@ -9582,7 +9582,7 @@ msgstr "Írja be a 'menu select' vagy 'pause' kifejezést a folytatáshoz."
 msgid "Type 'pause' to continue."
 msgstr "Írja be a 'pause' kifejezést a folytatáshoz."
 
-#: modules/control/rc.c:2173 modules/control/rc.c:2212
+#: modules/control/rc.c:2173 modules/control/rc.c:2215
 msgid "Please provide one of the following parameters:"
 msgstr "Adja meg a következő paraméterek egyikét:"
 
@@ -10404,59 +10404,59 @@ msgstr ""
 msgid "MPEG Transport Stream demuxer"
 msgstr "MPEG továbbító adatfolyam demuxer"
 
-#: modules/demux/ts.c:3312
+#: modules/demux/ts.c:3313
 #, fuzzy
 msgid "Teletext subtitles"
 msgstr "Feliratszöveg dekódoló"
 
-#: modules/demux/ts.c:3322
+#: modules/demux/ts.c:3323
 #, fuzzy
 msgid "Teletext hearing impaired subtitles"
 msgstr "hallássérült"
 
-#: modules/demux/ts.c:3417
+#: modules/demux/ts.c:3418
 msgid "subtitles"
 msgstr "feliratok"
 
-#: modules/demux/ts.c:3421
+#: modules/demux/ts.c:3422
 #, fuzzy
 msgid "4:3 subtitles"
 msgstr "feliratok"
 
-#: modules/demux/ts.c:3425
+#: modules/demux/ts.c:3426
 #, fuzzy
 msgid "16:9 subtitles"
 msgstr "feliratok"
 
-#: modules/demux/ts.c:3429
+#: modules/demux/ts.c:3430
 #, fuzzy
 msgid "2.21:1 subtitles"
 msgstr "feliratok"
 
-#: modules/demux/ts.c:3433 modules/demux/ts.c:3585 modules/demux/ts.c:3626
+#: modules/demux/ts.c:3434 modules/demux/ts.c:3586 modules/demux/ts.c:3627
 msgid "hearing impaired"
 msgstr "hallássérült"
 
-#: modules/demux/ts.c:3437
+#: modules/demux/ts.c:3438
 #, fuzzy
 msgid "4:3 hearing impaired"
 msgstr "hallássérült"
 
-#: modules/demux/ts.c:3441
+#: modules/demux/ts.c:3442
 #, fuzzy
 msgid "16:9 hearing impaired"
 msgstr "hallássérült"
 
-#: modules/demux/ts.c:3445
+#: modules/demux/ts.c:3446
 #, fuzzy
 msgid "2.21:1 hearing impaired"
 msgstr "hallássérült"
 
-#: modules/demux/ts.c:3581 modules/demux/ts.c:3622
+#: modules/demux/ts.c:3582 modules/demux/ts.c:3623
 msgid "clean effects"
 msgstr "tiszta hatások"
 
-#: modules/demux/ts.c:3589 modules/demux/ts.c:3630
+#: modules/demux/ts.c:3590 modules/demux/ts.c:3631
 msgid "visual impaired commentary"
 msgstr "látássérült megjegyzések"
 
@@ -11483,8 +11483,8 @@ msgid "Extended Controls"
 msgstr "További vezérlők"
 
 #: modules/gui/macosx/intf.m:610 modules/gui/macosx/intf.m:652
-#: modules/gui/macosx/playlistinfo.m:55 modules/gui/macosx/playlistinfo.m:371
-#: modules/gui/macosx/playlist.m:488
+#: modules/gui/macosx/playlist.m:488 modules/gui/macosx/playlistinfo.m:55
+#: modules/gui/macosx/playlistinfo.m:371
 msgid "Information"
 msgstr "Információk"
 
@@ -11848,71 +11848,6 @@ msgstr "SDP URL"
 msgid "Save File"
 msgstr "Fájl mentése"
 
-#: modules/gui/macosx/playlistinfo.m:56
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
-msgid "URI"
-msgstr "URI"
-
-#: modules/gui/macosx/playlistinfo.m:63
-msgid "Advanced Information"
-msgstr "Speciális információk"
-
-#: modules/gui/macosx/playlistinfo.m:81
-msgid "Read at media"
-msgstr "Olvasás ezen hordozón"
-
-#: modules/gui/macosx/playlistinfo.m:82
-msgid "Input bitrate"
-msgstr "Bemeneti bitsebesség"
-
-#: modules/gui/macosx/playlistinfo.m:83
-msgid "Demuxed"
-msgstr "Demuxed"
-
-#: modules/gui/macosx/playlistinfo.m:84
-msgid "Stream bitrate"
-msgstr "Adatfolyam bitsebessége"
-
-#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
-msgid "Decoded blocks"
-msgstr "Dekódolt blokkok"
-
-#: modules/gui/macosx/playlistinfo.m:88
-msgid "Displayed frames"
-msgstr "Megjelenített képkockák"
-
-#: modules/gui/macosx/playlistinfo.m:89
-msgid "Lost frames"
-msgstr "Elveszett képkockák"
-
-#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
-#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
-#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
-#: modules/video_filter/deinterlace.c:137
-msgid "Streaming"
-msgstr "Adatfolyam"
-
-#: modules/gui/macosx/playlistinfo.m:92
-msgid "Sent packets"
-msgstr "Elküldött csomagok"
-
-#: modules/gui/macosx/playlistinfo.m:93
-msgid "Sent bytes"
-msgstr "Elküldött bájtok"
-
-#: modules/gui/macosx/playlistinfo.m:94
-msgid "Send rate"
-msgstr "Küldés sebessége"
-
-#: modules/gui/macosx/playlistinfo.m:98
-msgid "Played buffers"
-msgstr "Lejátszott pufferek"
-
-#: modules/gui/macosx/playlistinfo.m:99
-msgid "Lost buffers"
-msgstr "Elveszett pufferek"
-
 #: modules/gui/macosx/playlist.m:483
 msgid "Save Playlist..."
 msgstr "Lejátszólista mentése"
@@ -11986,6 +11921,71 @@ msgstr "Lejátszólista mentése"
 #: modules/gui/macosx/playlist.m:1510
 msgid "Empty Folder"
 msgstr "Üres mappa"
+
+#: modules/gui/macosx/playlistinfo.m:56
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:63
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:591
+msgid "URI"
+msgstr "URI"
+
+#: modules/gui/macosx/playlistinfo.m:63
+msgid "Advanced Information"
+msgstr "Speciális információk"
+
+#: modules/gui/macosx/playlistinfo.m:81
+msgid "Read at media"
+msgstr "Olvasás ezen hordozón"
+
+#: modules/gui/macosx/playlistinfo.m:82
+msgid "Input bitrate"
+msgstr "Bemeneti bitsebesség"
+
+#: modules/gui/macosx/playlistinfo.m:83
+msgid "Demuxed"
+msgstr "Demuxed"
+
+#: modules/gui/macosx/playlistinfo.m:84
+msgid "Stream bitrate"
+msgstr "Adatfolyam bitsebessége"
+
+#: modules/gui/macosx/playlistinfo.m:87 modules/gui/macosx/playlistinfo.m:97
+msgid "Decoded blocks"
+msgstr "Dekódolt blokkok"
+
+#: modules/gui/macosx/playlistinfo.m:88
+msgid "Displayed frames"
+msgstr "Megjelenített képkockák"
+
+#: modules/gui/macosx/playlistinfo.m:89
+msgid "Lost frames"
+msgstr "Elveszett képkockák"
+
+#: modules/gui/macosx/playlistinfo.m:91 modules/gui/macosx/wizard.m:404
+#: modules/gui/wxwidgets/dialogs/infopanels.cpp:313
+#: modules/gui/wxwidgets/dialogs/wizard.cpp:139
+#: modules/video_filter/deinterlace.c:137
+msgid "Streaming"
+msgstr "Adatfolyam"
+
+#: modules/gui/macosx/playlistinfo.m:92
+msgid "Sent packets"
+msgstr "Elküldött csomagok"
+
+#: modules/gui/macosx/playlistinfo.m:93
+msgid "Sent bytes"
+msgstr "Elküldött bájtok"
+
+#: modules/gui/macosx/playlistinfo.m:94
+msgid "Send rate"
+msgstr "Küldés sebessége"
+
+#: modules/gui/macosx/playlistinfo.m:98
+msgid "Played buffers"
+msgstr "Lejátszott pufferek"
+
+#: modules/gui/macosx/playlistinfo.m:99
+msgid "Lost buffers"
+msgstr "Elveszett pufferek"
 
 #: modules/gui/macosx/prefs.m:120
 #: modules/gui/wxwidgets/dialogs/preferences.cpp:213
@@ -13326,6 +13326,11 @@ msgstr "WinCE kezelőfelület modul"
 msgid "WinCE dialogs provider"
 msgstr "WinCE párbeszédszolgáltató"
 
+#: modules/gui/wxwidgets/dialogs.cpp:433
+#: modules/gui/wxwidgets/dialogs/open.cpp:1264
+msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
+msgstr "Minden fájl (*.*)|*|Hangfájlok (*.mp3, *.ogg, stb.)|"
+
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:75
 msgid "Edit bookmark"
 msgstr "Könyvjelző szerkesztése"
@@ -13418,11 +13423,6 @@ msgstr ""
 #: modules/gui/wxwidgets/dialogs/bookmarks.cpp:452
 msgid "Input has changed "
 msgstr "A bemenet megváltozott "
-
-#: modules/gui/wxwidgets/dialogs.cpp:433
-#: modules/gui/wxwidgets/dialogs/open.cpp:1264
-msgid "All Files (*.*)|*|Sound Files (*.mp3, *.ogg, etc.)|"
-msgstr "Minden fájl (*.*)|*|Hangfájlok (*.mp3, *.ogg, stb.)|"
 
 #: modules/gui/wxwidgets/dialogs/fileinfo.cpp:54
 msgid "Stream and Media Info"
@@ -15089,10 +15089,6 @@ msgstr "Kimeneti fájl"
 msgid "Output data for RRDTool in this file."
 msgstr ""
 
-#: modules/misc/memcpy/memcpyaltivec.c:56
-msgid "AltiVec memcpy"
-msgstr ""
-
 #: modules/misc/memcpy/memcpy.c:83
 msgid "libc memcpy"
 msgstr ""
@@ -15107,6 +15103,10 @@ msgstr ""
 
 #: modules/misc/memcpy/memcpy.c:99
 msgid "MMX EXT memcpy"
+msgstr ""
+
+#: modules/misc/memcpy/memcpyaltivec.c:56
+msgid "AltiVec memcpy"
 msgstr ""
 
 #: modules/misc/msn.c:64
