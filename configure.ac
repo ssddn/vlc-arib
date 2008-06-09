@@ -2705,7 +2705,6 @@ dnl Look for a ffmpeg-config (we are on debian )
 dnl Trying with pkg-config
    PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat],
     [
-     VLC_SAVE_FLAGS
      CPPFLAGS="${CPPFLAGS} ${FFMPEG_CFLAGS}"
      CFLAGS="${CFLAGS} ${FFMPEG_CFLAGS}"
      AC_CHECK_HEADERS(ffmpeg/avcodec.h libavcodec/avcodec.h)
@@ -2773,13 +2772,15 @@ fi
 dnl Check if we have (required) img_resample() in libavcodec
 if test "${enable_ffmpeg}" != "no"
 then
-     VLC_SAVE_FLAGS
      CFLAGS="${CFLAGS} ${CFLAGS_ffmpeg}"
      LDFLAGS="${LDFLAGS} ${LDFLAGS_ffmpeg}"
      AC_CHECK_LIB(avcodec, img_resample, ,
        [AC_MSG_ERROR([Your FFmpeg library doesn't have the needed img_resample() function. You should rebuild it with software scaler disabled])], -lavutil)
      VLC_RESTORE_FLAGS
 fi
+
+dnl Clean out environment
+LIBS="${LIBS_save}"
 
 dnl
 dnl  ffmpegaltivec plugin
