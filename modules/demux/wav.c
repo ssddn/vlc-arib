@@ -104,7 +104,8 @@ static int Open( vlc_object_t * p_this )
     demux_sys_t *p_sys;
 
     uint8_t     *p_peek;
-    unsigned int i_size, i_extended;
+    uint32_t     i_size;
+    unsigned int i_extended;
     char        *psz_name;
 
     WAVEFORMATEXTENSIBLE *p_wf_ext = NULL;
@@ -137,7 +138,8 @@ static int Open( vlc_object_t * p_this )
         msg_Err( p_demux, "cannot find 'fmt ' chunk" );
         goto error;
     }
-    if( i_size < sizeof( WAVEFORMATEX ) - 2 )   /* XXX -2 isn't a typo */
+    i_size += 2;
+    if( i_size < sizeof( WAVEFORMATEX ) )
     {
         msg_Err( p_demux, "invalid 'fmt ' chunk" );
         goto error;
@@ -145,14 +147,15 @@ static int Open( vlc_object_t * p_this )
     stream_Read( p_demux->s, NULL, 8 );   /* Cannot fail */
 
     /* load waveformatex */
-    p_wf_ext = malloc( __EVEN( i_size ) + 2 );
+    p_wf_ext = malloc( i_size );
     if( p_wf_ext == NULL )
          goto error;
 
     p_wf = (WAVEFORMATEX *)p_wf_ext;
     p_wf->cbSize = 0;
-    if( stream_Read( p_demux->s,
-                     p_wf, __EVEN( i_size ) ) < (int)__EVEN( i_size ) )
+    i_size -= 2;
+    if( stream_Read( p_demux->s, p_wf, i_size ) != (int)i_size
+     || ( ( i_size & 1 ) && stream_Read( p_demux->s, NULL, 1 ) != 1 ) )
     {
         msg_Err( p_demux, "cannot load 'fmt ' chunk" );
         goto error;
