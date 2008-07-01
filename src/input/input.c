@@ -2,7 +2,7 @@
  * input.c: input thread
  *****************************************************************************
  * Copyright (C) 1998-2004 the VideoLAN team
- * $Id$
+ * $Id: 28ad31e9fb3eb16af216b3b8f3738c29d51166d8 $
  *
  * Authors: Christophe Massiot <massiot@via.ecp.fr>
  *          Laurent Aimar <fenrir@via.ecp.fr>
@@ -2034,7 +2034,7 @@ static int InputSourceInit( input_thread_t *p_input,
         {
             psz_demux = psz_forced_demux;
         }
-        else if( !psz_demux || *psz_demux == '\0' )
+        else if( *psz_demux == '\0' )
         {
             /* special hack for forcing a demuxer with --demux=module
              * (and do nothing with a list) */
