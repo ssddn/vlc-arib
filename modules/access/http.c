@@ -452,7 +452,13 @@ connect:
         if( i_ret == DIALOG_OK_YES )
         {
             msg_Dbg( p_access, "retrying with user=%s, pwd=%s",
-                        psz_login, psz_password );
+                     psz_login,
+#if 1
+                     "yeah right, like we're going to print a password."
+#else
+                     psz_password
+#endif
+                        );
             if( psz_login ) p_sys->url.psz_username = strdup( psz_login );
             if( psz_password ) p_sys->url.psz_password = strdup( psz_password );
             free( psz_login );
