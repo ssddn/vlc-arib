@@ -79,8 +79,6 @@ static void ReleasePicture( picture_t *p_pic )
 {
     assert( p_pic );
 
-    if( --p_pic->i_refcount > 0 )
-        return;
 
     if( p_pic->p_sys )
     {
@@ -90,8 +88,11 @@ static void ReleasePicture( picture_t *p_pic )
     }
     else
     {
-        free( p_pic->p_data_orig );
-        free( p_pic );
+        if( --p_pic->i_refcount == 0 )
+        {
+            free( p_pic->p_data_orig );
+            free( p_pic );
+        }
     }
 }
 
