@@ -1058,6 +1058,10 @@ void MainInterface::dropEvent(QDropEvent *event)
 
 void MainInterface::dropEventPlay( QDropEvent *event, bool b_play )
 {
+     event->setDropAction( Qt::CopyAction );
+     if( !event->possibleActions() & Qt::CopyAction )
+         return;
+
      const QMimeData *mimeData = event->mimeData();
 
      /* D&D of a subtitles file, add it on the fly */
@@ -1070,7 +1074,7 @@ void MainInterface::dropEventPlay( QDropEvent *event, bool b_play )
                                          mimeData->urls()[0].toLocalFile() ) ),
                                     true ) )
             {
-                event->acceptProposedAction();
+                event->accept();
                 return;
             }
         }
@@ -1087,7 +1091,7 @@ void MainInterface::dropEventPlay( QDropEvent *event, bool b_play )
             first = false;
         }
      }
-     event->acceptProposedAction();
+     event->accept();
 }
 void MainInterface::dragEnterEvent(QDragEnterEvent *event)
 {
