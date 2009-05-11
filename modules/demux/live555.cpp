@@ -133,8 +133,10 @@ vlc_module_begin ()
                     KASENNA_LONGTEXT, true )
         add_string( "rtsp-user", NULL, NULL, USER_TEXT,
                     USER_LONGTEXT, true )
+            change_safe()
         add_string( "rtsp-pwd", NULL, NULL, PASS_TEXT,
                     PASS_LONGTEXT, true )
+            change_safe()
 vlc_module_end ()
 
 
