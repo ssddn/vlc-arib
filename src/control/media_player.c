@@ -28,6 +28,7 @@
 #include <vlc_input.h>
 #include <vlc_vout.h>
 #include "libvlc.h"
+#include <assert.h>
 
 static void
 input_state_changed( const vlc_event_t * event, void * p_userdata );
