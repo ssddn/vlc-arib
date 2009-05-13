@@ -288,6 +288,8 @@ static int CreateVout( vlc_object_t *p_this )
     p_sys->p_vout->fmt_in = p_vout->fmt_in;
     p_sys->p_vout->b_scale = p_vout->b_scale;
     p_sys->p_vout->i_alignment = p_vout->i_alignment;
+    var_Create( p_sys->p_vout, "video-deco",
+                VLC_VAR_BOOL | VLC_VAR_DOINHERIT );
 
     psz = config_GetPsz( p_vout, "opengl-provider" );
 
