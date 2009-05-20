@@ -1461,6 +1461,17 @@ static void * ManageThread( void *user_data )
         p_intf->p_sys->b_intf_update = true;
         p_intf->p_sys->b_input_update = false;
         [self setupMenus]; /* Make sure input menu is up to date */
+
+        /* update our info-panel to reflect the new item, if we don't show
+         * the playlist or the selection is empty */
+        if( [self isPlaylistCollapsed] == YES )
+        {
+            playlist_t * p_playlist = pl_Yield( p_intf );
+            PL_LOCK;
+            [[self getInfo] updatePanelWithItem: p_playlist->status.p_item->p_input];
+            PL_UNLOCK;
+            pl_Release( p_intf );
+        }
     }
     if( p_intf->p_sys->b_intf_update )
     {
@@ -1472,7 +1483,9 @@ static void * ManageThread( void *user_data )
 
         playlist_t * p_playlist = pl_Yield( p_intf );
     /* TODO: fix i_size use */
+        PL_LOCK;
         b_plmul = p_playlist->items.i_size > 1;
+        PL_UNLOCK;
 
         p_input = playlist_CurrentInput( p_playlist );
         bool b_buffering = NO;
@@ -1487,11 +1500,6 @@ static void * ManageThread( void *user_data )
             {
                 b_buffering = YES;
             }
-
-            /* update our info-panel to reflect the new item, if we don't show
-             * the playlist or the selection is empty */
-            if( [self isPlaylistCollapsed] == YES )
-                [[self getInfo] updatePanelWithItem: p_playlist->status.p_item->p_input];
 
             /* seekable streams */
             b_seekable = var_GetBool( p_input, "seekable" );
@@ -1583,6 +1591,7 @@ static void * ManageThread( void *user_data )
             [[o_controls getVoutView] updateTitle];
  
             [o_playlist updateRowSelection];
+
             p_intf->p_sys->b_current_title_update = FALSE;
             p_intf->p_sys->b_intf_update = true;
         }
