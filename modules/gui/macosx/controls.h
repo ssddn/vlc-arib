@@ -1,13 +1,13 @@
 /*****************************************************************************
  * controls.h: MacOS X interface module
  *****************************************************************************
- * Copyright (C) 2002-2007 the VideoLAN team
+ * Copyright (C) 2002-2009 the VideoLAN team
  * $Id$
  *
  * Authors: Jon Lech Johansen <jon-vl@nanocrew.net>
  *          Christophe Massiot <massiot@via.ecp.fr>
  *          Derk-Jan Hartman <thedj@users.sourceforge.net>
- *          Felix Kühne <fkuehne at videolan org>
+ *          Felix Paul Kühne <fkuehne at videolan org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,6 +53,7 @@
     IBOutlet id o_specificTime_mi;
 
     VLCFSPanel *o_fs_panel;
+    BOOL b_lockAspectRatio;
 }
 - (void)controlTintChanged;
 
@@ -78,6 +79,8 @@
 - (IBAction)backward:(id)sender;
 
 - (id)getVoutView;
+- (BOOL)aspectRatioIsLocked;
+- (IBAction)lockVideosAspectRatio:(id)sender;
 
 - (IBAction)volumeUp:(id)sender;
 - (IBAction)volumeDown:(id)sender;

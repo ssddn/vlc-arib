@@ -1,7 +1,7 @@
 /*****************************************************************************
  * embeddedwindow.m: MacOS X interface module
  *****************************************************************************
- * Copyright (C) 2005-2008 the VideoLAN team
+ * Copyright (C) 2005-2009 the VideoLAN team
  * $Id$
  *
  * Authors: Benjamin Pracht <bigben at videolan dot org>
@@ -182,11 +182,14 @@
     if( videoRatio.height == 0. || videoRatio.width == 0. )
         return proposedFrameSize;
 
-    NSRect viewRect = [o_view convertRect:[o_view bounds] toView: nil];
-    NSRect contentRect = [self contentRectForFrameRect:[self frame]];
-    float marginy = viewRect.origin.y + [self frame].size.height - contentRect.size.height;
-    float marginx = contentRect.size.width - viewRect.size.width;
-    proposedFrameSize.height = (proposedFrameSize.width - marginx) * videoRatio.height / videoRatio.width + marginy;
+    if( [[[VLCMain sharedInstance] getControls] aspectRatioIsLocked] )
+    {
+        NSRect viewRect = [o_view convertRect:[o_view bounds] toView: nil];
+        NSRect contentRect = [self contentRectForFrameRect:[self frame]];
+        float marginy = viewRect.origin.y + [self frame].size.height - contentRect.size.height;
+        float marginx = contentRect.size.width - viewRect.size.width;
+        proposedFrameSize.height = (proposedFrameSize.width - marginx) * videoRatio.height / videoRatio.width + marginy;
+    }
 
     return proposedFrameSize;
 }

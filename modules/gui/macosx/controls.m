@@ -8,7 +8,7 @@
  *          Christophe Massiot <massiot@via.ecp.fr>
  *          Derk-Jan Hartman <hartman at videolan dot org>
  *          Benjamin Pracht <bigben at videolan doit org>
- *          Felix Kühne <fkuehne at videolan dot org>
+ *          Felix Paul Kühne <fkuehne at videolan dot org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,6 +49,7 @@
 {
     [super init];
     o_fs_panel = [[VLCFSPanel alloc] init];
+    b_lockAspectRatio = YES;
     return self;
 }
 
@@ -158,6 +159,21 @@
         }
     }
     return o_vout_view;
+}
+
+- (BOOL)aspectRatioIsLocked
+{
+    return b_lockAspectRatio;
+}
+
+- (IBAction)lockVideosAspectRatio:(id)sender
+{
+    if( [sender state] == NSOffState )
+        [sender setState: NSOnState];
+    else
+        [sender setState: NSOffState];
+
+    b_lockAspectRatio = !b_lockAspectRatio;
 }
 
 - (IBAction)stop:(id)sender
@@ -692,6 +708,18 @@
 
     /* make (un)sensitive */
     [o_parent setEnabled: ( val_list.p_list->i_count > 1 )];
+
+    /* Special case for the Aspect Ratio menu */
+    if( [[o_parent title] isEqualToString: _NS("Aspect-ratio")] == YES )
+    {
+        NSMenuItem *o_lmi_tmp2;
+        o_lmi_tmp2 = [o_menu addItemWithTitle: _NS("Lock Aspect Ratio") action: @selector(lockVideosAspectRatio:) keyEquivalent: @""];
+        [o_lmi_tmp2 setTarget: self];
+        [o_lmi_tmp2 setEnabled: YES];
+        [o_lmi_tmp2 setState: b_lockAspectRatio];
+        [o_parent setEnabled: YES];
+        [o_menu addItem: [NSMenuItem separatorItem]];
+    }
 
     for( i = 0; i < val_list.p_list->i_count; i++ )
     {
