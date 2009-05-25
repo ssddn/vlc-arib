@@ -134,6 +134,7 @@ static NSMutableArray *blackoutWindows = nil;
 
 - (void)dealloc
 {
+    [blackoutWindows removeAllObjects];
     [blackoutWindows release];
     [super dealloc];
 }
