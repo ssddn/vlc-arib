@@ -104,6 +104,7 @@ int playlist_RecursiveNodeSort( playlist_t *p_playlist, playlist_item_t *p_node,
 
 static int sort_mode = 0;
 static int sort_type = 0;
+static vlc_mutex_t sort_lock = VLC_STATIC_MUTEX;
 
 static int playlist_ItemArraySort( playlist_t *p_playlist, int i_items,
                                    playlist_item_t **pp_items, int i_mode,
@@ -111,8 +112,6 @@ static int playlist_ItemArraySort( playlist_t *p_playlist, int i_items,
 {
     int i_position;
     playlist_item_t *p_temp;
-    sort_mode = i_mode;
-    sort_type = i_type;
 
     (void)p_playlist; // a bit surprising we don't need p_playlist!
 
@@ -133,7 +132,12 @@ static int playlist_ItemArraySort( playlist_t *p_playlist, int i_items,
 
         return VLC_SUCCESS;
     }
+
+    vlc_mutex_lock( &sort_lock );
+    sort_mode = i_mode;
+    sort_type = i_type;
     qsort(pp_items,i_items,sizeof(pp_items[0]),playlist_cmp);
+    vlc_mutex_unlock( &sort_lock );
     return VLC_SUCCESS;
 }
 
