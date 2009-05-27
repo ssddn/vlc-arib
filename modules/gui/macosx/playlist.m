@@ -525,6 +525,9 @@
         /* update the state of our Reveal-in-Finder menu items */
         NSMutableString *o_mrl;
         char *psz_uri = input_item_GetURI( p_item->p_input );
+
+        [o_mi_revealInFinder setEnabled: NO];
+        [o_mm_mi_revealInFinder setEnabled: NO];
         if( psz_uri )
         {
             o_mrl = [NSMutableString stringWithUTF8String: psz_uri];
@@ -538,11 +541,8 @@
             {
                 [o_mi_revealInFinder setEnabled: YES];
                 [o_mm_mi_revealInFinder setEnabled: YES];
-                return;
             }
         }
-        [o_mi_revealInFinder setEnabled: NO];
-        [o_mm_mi_revealInFinder setEnabled: NO];
 
         if( [[VLCMain sharedInstance] isPlaylistCollapsed] == NO )
         {
