@@ -1759,7 +1759,7 @@ then
               [LUA_LIBS="-llua"],
               [ have_lua=no
                 AC_MSG_WARN([lua >= 5.1 not found!])
-              ])
+              ],[-lm])
           )
         )
       ])
