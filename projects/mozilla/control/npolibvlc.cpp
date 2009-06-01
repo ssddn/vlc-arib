@@ -966,7 +966,7 @@ void LibvlcPlaylistNPObject::parseOptions(const NPString &nps,
                             if( ! moreOptions )
                             {
                                 /* failed to allocate more memory */
-			        free(s);
+                                free(s);
                                 /* return what we got so far */
                                 *i_options = nOptions;
                                 *ppsz_options = options;
@@ -1043,6 +1043,7 @@ void LibvlcPlaylistNPObject::parseOptions(NPObject *obj, int *i_options,
                     }
 
                     options[nOptions++] = stringValue(value);
+                    NPN_ReleaseVariantValue(&value);
                 }
                 *i_options = nOptions;
                 *ppsz_options = options;
