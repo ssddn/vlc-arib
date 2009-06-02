@@ -207,6 +207,7 @@
     int i_return = 0;
     playlist_t *p_playlist = pl_Hold( VLCIntf );
 
+    PL_LOCK;
     if( item == nil )
     {
         /* root object */
@@ -221,6 +222,7 @@
         if( p_item )
             i_return = p_item->i_children;
     }
+    PL_UNLOCK;
     pl_Release( VLCIntf );
 
     return (i_return >= 0);
@@ -583,6 +585,7 @@
         [o_array insertObject: [NSValue valueWithPointer: p_temp_item] atIndex: 0];
         p_temp_item = p_temp_item->p_parent;
     }
+    PL_UNLOCK;
 
     for( j = 0; j < [o_array count] - 1; j++ )
     {
@@ -593,10 +596,8 @@
         {
             [o_outline_view expandItem: o_item];
         }
-
     }
 
-    PL_UNLOCK;
     pl_Release( VLCIntf );
 }
 
@@ -790,12 +791,12 @@
 
     p_item = [[o_outline_view itemAtRow:[o_outline_view selectedRow]] pointerValue];
 
+    PL_LOCK;
     if( p_item )
     {
         if( p_item->i_children == -1 )
         {
             p_node = p_item->p_parent;
-
         }
         else
         {
@@ -809,8 +810,9 @@
                 p_item = NULL;
             }
         }
-        playlist_Control( p_playlist, PLAYLIST_VIEWPLAY, pl_Unlocked, p_node, p_item );
+        playlist_Control( p_playlist, PLAYLIST_VIEWPLAY, pl_Locked, p_node, p_item );
     }
+    PL_UNLOCK;
     pl_Release( p_intf );
 }
 
