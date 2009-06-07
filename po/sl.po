@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: vlc 1.0\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
 "POT-Creation-Date: 2009-06-07 00:06+0100\n"
-"PO-Revision-Date: 2009-06-05 14:34+0100\n"
+"PO-Revision-Date: 2009-06-07 09:08+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -277,9 +277,9 @@ msgid ""
 "You can also set default parameters for each muxer."
 msgstr ""
 "Zavijalci zavijajo osnovne zapise (zvok, slika, ...) v enotno embalažo. "
-"Nastavitev omogoča, da vedno uporabite določen zavijalec. Spreminjanje "
-"nastavitve ni priporočljivo.\n"
-"Lahko določite privzete parametre za vsak zavijalec posebej."
+"Nastavitev omogoča, da je vedno uporabljen posebej določen zavijalec. "
+"Spreminjanje nastavitve ni priporočljivo.\n"
+"Mogoče je določiti privzete parametre za vsak zavijalec posebej."
 
 #: include/vlc_config_cat.h:144
 msgid "Access output"
@@ -311,7 +311,7 @@ msgstr ""
 "Paketniki se uporabljajo pri \"obdelavi\" osnovnih zapisov pretoka pred "
 "zavijanjem. Nastavitev določa uporabo določenega paketnika. Spreminjanje "
 "nastavitve ni priporočljivo.\n"
-"Določite lahko tudi privzete parametre za izbrani paketnik."
+"Mogoče je določiti tudi privzete parametre za izbrani paketnik."
 
 #: include/vlc_config_cat.h:159
 msgid "Sout stream"
@@ -402,8 +402,8 @@ msgstr "Značilnosti CPE"
 msgid ""
 "You can choose to disable some CPU accelerations here. Use with extreme care!"
 msgstr ""
-"Onemogočite lahko nekatere možnosti pospeševanja CPE. Možnost uporabljajte "
-"skrajno previdno!"
+"Onemogočiti je mogoče nekatere možnosti pospeševanja CPE. Možnost "
+"uporabljajte skrajno previdno!"
 
 #: include/vlc_config_cat.h:193
 msgid "Advanced settings"
@@ -661,7 +661,7 @@ msgid ""
 "Magnify a part of the video. You can select which part of the image should "
 "be magnified."
 msgstr ""
-"Povečevanje dela slike. Izberete lahko kateri del slike naj bo povečan."
+"Povečevanje dela slike. Izbrati je mogoče kateri del slike naj bo povečan."
 
 #: include/vlc_intf_strings.h:100 modules/gui/qt4/ui/video_effects.h:912
 msgid "Waves"
@@ -1382,8 +1382,8 @@ msgid ""
 "related options."
 msgstr ""
 "Možnosti dovoljujejo spreminjanje vmesnikov, ki jih podpira predvajalnik "
-"VLC. Izberete lahko glavni vmesnik, dodatne vmesnike ali pa določite "
-"različne nastavitve posamezne enote."
+"VLC. Izbrati je mogoče glavni vmesnik, dodatne vmesnike ali pa različne "
+"nastavitve posamezne enote."
 
 #: src/libvlc-module.c:157
 msgid "Interface module"
@@ -1408,13 +1408,14 @@ msgid ""
 "list of interface modules. (common values are \"rc\" (remote control), \"http"
 "\", \"gestures\" ...)"
 msgstr ""
-"Izberete lahko \"dodatne vmesnike\" za predvajalnik VLC. Zagnani bodo v "
-"ozadju ob glavnem vmesniku. Z vejico ločite privzete vrednosti vmesnikov "
-"(splošne vrednosti so \"rc\" (oddaljen nadzor), \"http\", \"gibi\" ...)."
+"Izbrati je mogoče \"dodatne vmesnike\" za predvajalnik VLC. Zagnani bodo v "
+"ozadju ob glavnem vmesniku. Privzete vrednosti vmesnikom morajo biti ločene "
+"z vejico (splošne vrednosti so \"rc\" (oddaljen nadzor), \"http\", \"gibi"
+"\" ...)."
 
 #: src/libvlc-module.c:172
 msgid "You can select control interfaces for VLC."
-msgstr "Izberete lahko nadzorne vmesnike predvajalnika VLC."
+msgstr "Izbrati je mogoče nadzorne vmesnike predvajalnika VLC."
 
 #: src/libvlc-module.c:174
 msgid "Verbosity (0,1,2)"
@@ -1449,7 +1450,7 @@ msgstr ""
 
 #: src/libvlc-module.c:189
 msgid "Be quiet"
-msgstr "Ne sporočaj"
+msgstr "Brez sporočanja"
 
 #: src/libvlc-module.c:191
 msgid "Turn off all warning and information messages."
@@ -1461,14 +1462,14 @@ msgstr "Privzeti zapis"
 
 #: src/libvlc-module.c:195
 msgid "This stream will always be opened at VLC startup."
-msgstr "Ta zapis bo vedno odprt ob zagonu predvajalnika."
+msgstr "Izbrani zapis bo vedno odprt ob zagonu predvajalnika."
 
 #: src/libvlc-module.c:198
 msgid ""
 "You can manually select a language for the interface. The system language is "
 "auto-detected if \"auto\" is specified here."
 msgstr ""
-"Izberete lahko jezik vmesnika. Nastavitev sistemskega jezika je izbrana "
+"Izbrati je mogoče jezik vmesnika. Nastavitev sistemskega jezika je izbrana "
 "samodejno, če je vklopljena nastavitev \"auto\"."
 
 #: src/libvlc-module.c:202
@@ -1528,8 +1529,8 @@ msgid ""
 msgstr ""
 "Možnosti dovoljujejo spreminjanje obnašanja zvočnega podsistema in omogočajo "
 "dodajanje filtrov zvoka za kasnejše procesiranje ali slikovnih učinkov "
-"(spektralna analiza, ...). Filtre omogočite tu, nastavite pa jih med "
-"nastavitvami \"Filtri zvoka\"."
+"(spektralna analiza, ...). Filtre se omogoči na tem mestu, podrobnejše "
+"nastavite pa so med nastavitvami \"Filtri zvoka\"."
 
 #: src/libvlc-module.c:236
 msgid "Audio output module"
@@ -1553,8 +1554,8 @@ msgid ""
 "You can completely disable the audio output. The audio decoding stage will "
 "not take place, thus saving some processing power."
 msgstr ""
-"Lahko popolnoma onemogočite odvod zvoka. Zvočno dekodiranje bo zavrto, kar "
-"zmanjša zahtevo po procesorski moči."
+"Mogoče je popolnoma onemogočiti odvod zvoka. Zvočno dekodiranje bo zavrto, "
+"kar zmanjša zahtevo po procesorski moči."
 
 #: src/libvlc-module.c:248
 msgid "Force mono audio"
@@ -1572,7 +1573,7 @@ msgstr "Privzeta glasnost"
 msgid ""
 "You can set the default audio output volume here, in a range from 0 to 1024."
 msgstr ""
-"Določite vrednost glasnosti predvajanja zvoka. Razpon je določen med 0 in "
+"Določitev vrednosti glasnosti predvajanja zvoka. Razpon je določen med 0 in "
 "1024."
 
 #: src/libvlc-module.c:257
@@ -1596,7 +1597,8 @@ msgid ""
 "The step size of the volume is adjustable using this option, in a range from "
 "0 to 1024."
 msgstr ""
-"Korak glasnosti predvajanja zvoka lahko določite z vrednostjo med 0 in 1024."
+"Korak glasnosti predvajanja zvoka je mogoče določiti z vrednostjo med 0 in "
+"1024."
 
 #: src/libvlc-module.c:267
 msgid "Audio output frequency (Hz)"
@@ -1607,8 +1609,8 @@ msgid ""
 "You can force the audio output frequency here. Common values are -1 "
 "(default), 48000, 44100, 32000, 22050, 16000, 11025, 8000."
 msgstr ""
-"Frekvenca predvajanja zvoka (Hz) lahko določite z vrednostmi -1 (privzeto), "
-"48000, 44100, 32000, 22050, 16000, 11025, 8000."
+"Frekvenco predvajanja zvoka (Hz) je mogoče določiti z vrednostmi -1 "
+"(privzeto), 48000, 44100, 32000, 22050, 16000, 11025, 8000."
 
 #: src/libvlc-module.c:273
 msgid "High quality audio resampling"
@@ -1621,7 +1623,7 @@ msgid ""
 "resampling algorithm will be used instead."
 msgstr ""
 "Nastavitev algoritma visoke kakovosti vzorčenja zvoka. Vzorčenje zahteva "
-"veliko moči procesiranja, zato možnost lahko onemogočite. Privzeto bo "
+"veliko moči procesiranja, zato je možnost mogoče onemogočiti. Privzeto bo "
 "uporabljen enostavnejši algoritem."
 
 #: src/libvlc-module.c:280
@@ -1765,10 +1767,10 @@ msgid ""
 "\"video filters\" modules section. You can also set many miscellaneous video "
 "options."
 msgstr ""
-"Možnosti dovoljujejo spreminjanje obnašanja odvoda slikovnega zapisa. Lahko "
-"omogočite filtriranje slike (razpletanje, prilagajanje slike, ...). Filtre "
-"omogočite in nastavite med enotami \"slikovni filtri\". Omogočite lahko tudi "
-"druge možnosti slike."
+"Možnosti dovoljujejo spreminjanje obnašanja odvoda slikovnega zapisa. Mogoče "
+"je omogočiti filtriranje slike (razpletanje, prilagajanje slike, ...). "
+"Filtre omogočite in nastavite med enotami \"slikovni filtri\". Omogočite "
+"lahko tudi druge možnosti slike."
 
 #: src/libvlc-module.c:360
 msgid "Video output module"
@@ -1792,8 +1794,8 @@ msgid ""
 "You can completely disable the video output. The video decoding stage will "
 "not take place, thus saving some processing power."
 msgstr ""
-"Odvod slike lahko popolnoma onemogočite. Dekodiranje slike bo izpuščeno, s "
-"čimer bo sproščen del procesorske moči."
+"Odvod slike je mogoče popolnoma onemogočiti. Dekodiranje slike bo izpuščeno, "
+"s čimer bo sproščen del procesorske moči."
 
 #: src/libvlc-module.c:370 modules/codec/fake.c:59
 #: modules/stream_out/mosaic_bridge.c:140 modules/stream_out/transcode.c:77
@@ -2225,8 +2227,8 @@ msgid ""
 "if your video has a non-standard format requiring all 1088 lines."
 msgstr ""
 "Možnost omogoča pravilno obdelavo HDTV-1080 slikovnega zapisa, tudi če je "
-"kodirnik pokvarjen in nepravilno določi višino na 1088 vrstic. Možnost "
-"onemogočite le, če ima slika neobičajni zapis, ki zahteva vseh 1088 vrstic."
+"kodirnik pokvarjen in nepravilno določi višino na 1088 vrstic. Možnost naj "
+"se onemogoči le, če ima slika neobičajni zapis, ki zahteva vseh 1088 vrstic."
 
 #: src/libvlc-module.c:549
 msgid "Monitor pixel aspect ratio"
@@ -2560,7 +2562,7 @@ msgid ""
 "You can give a comma-separated list of inputs that will be concatenated "
 "together after the normal one."
 msgstr ""
-"Določite lahko seznam dovodov ločeno z vejicami, ki bo združen po "
+"Določiti je mogoče seznam dovodov ločeno z vejicami, ki bo združen po "
 "predvajanju."
 
 #: src/libvlc-module.c:709
@@ -2637,10 +2639,10 @@ msgid ""
 "filters here and configure them in the \"subpictures filters\" modules "
 "section. You can also set many miscellaneous subpictures options."
 msgstr ""
-"Nastavitve omogočajo spreminjanje obnašanja sistema nalepk. Lahko omogočite "
-"filtre nalepk (logotipi, ...). Omogočite filtre tu, nastavite pa jih med "
-"nastavitvami \"filtri nalepk\". Nastavite lahko tudi mnoge druge pripadajoče "
-"možnosti."
+"Nastavitve omogočajo spreminjanje obnašanja sistema nalepk. Mogoče je "
+"določiti filtre nalepk (logotipi, ...). Omogočite filtre tu, nastavite pa "
+"jih med nastavitvami \"filtri nalepk\". Nastavite lahko tudi mnoge druge "
+"pripadajoče možnosti."
 
 #: src/libvlc-module.c:747 modules/gui/qt4/ui/sprefs_subtitles.h:221
 msgid "Force subtitle position"
@@ -2982,8 +2984,9 @@ msgid ""
 "to learn how to build such chains.Warning: this chain will be enabled for "
 "all streams."
 msgstr ""
-"Določite lahko privzeto verigo odvoda pretoka. V dokumentaciji je zabeleženo "
-"kako sestavite te verige. Opozorilo: veriga bo omogočena za vse pretoke."
+"Določiti je mogoče privzeto verigo odvoda pretoka. V dokumentaciji je "
+"zabeleženo kako sestaviti te verige. Opozorilo: veriga bo omogočena za vse "
+"pretoke."
 
 #: src/libvlc-module.c:920
 msgid "Enable streaming of all ES"
@@ -3219,7 +3222,7 @@ msgid ""
 "You can select which memory copy module you want to use. By default VLC will "
 "select the fastest one supported by your hardware."
 msgstr ""
-"Izberete lahko katero enoto kopiranja spomina želite uporabiti. Privzeto "
+"Izbrati je mogoče, katero enoto kopiranja spomina želite uporabiti. Privzeto "
 "predvajalnik VLC izbere tisto, ki najhitreje deluje na obstoječi strojni "
 "opremi."
 
@@ -4833,8 +4836,8 @@ msgid ""
 "Some DVB cards do not like to be probed for their capabilities, you can "
 "disable this feature if you experience some trouble."
 msgstr ""
-"Nekatere DVB kartice ne sprejemajo preiskovanja zmožnosti. Možnost lahko "
-"onemogočite, če imate težave."
+"Nekatere DVB kartice ne sprejemajo preiskovanja zmožnosti. Možnost je mogoče "
+"onemogočiti, če so pri predvajanju težave."
 
 #: modules/access/bda/bda.c:76 modules/access/dvb/access.c:104
 msgid "Budget mode"
@@ -6434,7 +6437,7 @@ msgid ""
 "You can choose to select all of them."
 msgstr ""
 "MMS pretok lahko vsebuje več osnovnih zapisov z različnimi bitnimi "
-"hitrostmi. Lahko izberete vse."
+"hitrostmi. Izbrati je mogoče vse."
 
 #: modules/access/mms/mms.c:59
 msgid "Maximum bitrate"
@@ -7921,7 +7924,7 @@ msgid ""
 "This option silences all other channels except the selected channel. Choose "
 "one from (0=left, 1=right, 2=rear left, 3=rear right, 4=center, 5=left front)"
 msgstr ""
-"Možnost utiša vse razen izbranega kanala. Izberete lahko (0=levo, 1=desno "
+"Možnost utiša vse razen izbranega kanala. Izbrati je mogoče (0=levo, 1=desno "
 "2=zadaj levo, 3=zadaj desno, 4=sredina, 5=levo spredaj)"
 
 #: modules/audio_filter/channel_mixer/mono.c:96
@@ -9623,7 +9626,7 @@ msgid ""
 msgstr ""
 "Enota omogoča ustvarjanje slikovnih pretokov preko raw slikovnega zapisa (v "
 "spomin) preko izrisovanja s knjižnico libvlc. Za uporabo knjižnice določite "
-"vrednost --codec v invmem, določite all --invmem-* možnost v prdvajalniku "
+"vrednost --codec v invmem, določite all --invmem-* možnost v predvajalniku "
 "vlc_argv in uporabite libvlc_media_new(libvlc, \"fake://\", &ex);. Možnost "
 "je podobna možnosti vmem odvoda slike."
 
@@ -13741,9 +13744,8 @@ msgid "Fit to Screen"
 msgstr "Prilagodi zaslonu"
 
 #: modules/gui/macosx/controls.m:815
-#, fuzzy
 msgid "Lock Aspect Ratio"
-msgstr "Vsiljeno razmerje velikosti"
+msgstr "Ohrani razmerje velikosti"
 
 #: modules/gui/macosx/controls.m:827 modules/gui/macosx/intf.m:617
 #: modules/gui/macosx/intf.m:683 modules/gui/qt4/menus.cpp:552
@@ -13930,7 +13932,7 @@ msgid ""
 "To choose the order in which the filter are applied, a filter option string "
 "can be set in the Preferences, Video / Filters section."
 msgstr ""
-"V oknu lahko izberete slikovne učinke.\n"
+"V oknu je mogoče izbrati slikovne učinke.\n"
 "Filtre lahko nastavite posamič med nastavitvami Slika/Filtri.\n"
 "Izbor sosledja izvajanja filtrov lahko prav tako določite med nastavitvami."
 
@@ -22276,7 +22278,7 @@ msgid ""
 msgstr ""
 "Učinek znan tudi kot \"zeleni zaslon\" ali \"barvni ključ\", ki pobledi "
 "\"modre dele\" sprednjih slik mozaika v ozadju (kot prikazovanje vremenske "
-"napovedi na TV). Izberete lahko \"ključ\" barve za osvetlitev (modra je "
+"napovedi na TV). Izbrati je mogoče  \"ključ\" barve za osvetlitev (modra je "
 "privzeta)."
 
 #: modules/video_filter/bluescreen.c:44
@@ -22843,7 +22845,7 @@ msgid ""
 "8=bottom, you can also use combinations of these values, eg 6 = top-right)."
 msgstr ""
 "Določitev lege logotipa na sliki. (0=sredina, 1=levo, 2=desno, 4=zgoraj, "
-"8=spodaj) S seštevanjem lahko določite tudi kombinirane možnosti (primer 6 = "
+"8=spodaj) S seštevanjem je mogoče določiti kombinirane možnosti (primer 6 = "
 "zgoraj desno)."
 
 #: modules/video_filter/logo.c:105
@@ -24530,7 +24532,7 @@ msgstr ""
 
 #: modules/video_output/x11/xvmc.c:131
 msgid "You can choose the default deinterlace mode"
-msgstr "Izberete lahko privzeti način razpletanja"
+msgstr "Izbrati je mogoče privzeti način razpletanja"
 
 #: modules/video_output/x11/xvmc.c:134
 msgid "You can choose the crop style to apply."
@@ -24567,7 +24569,6 @@ msgid "VLC"
 msgstr "VLC"
 
 #: modules/video_output/xcb/window.c:235
-#, fuzzy
 msgid "VLC"
 msgstr "VLC"
 
