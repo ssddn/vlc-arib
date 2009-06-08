@@ -385,6 +385,7 @@ void DiscOpenPanel::updateMRL()
         if( ui.titleSpin->value() > 0 ) {
             QString("@%1").arg( ui.titleSpin->value() );
         }
+        emit methodChanged( "vcd-caching" );
     }
 
     mrl += "\"";
