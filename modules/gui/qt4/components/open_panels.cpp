@@ -425,6 +425,7 @@ void DiscOpenPanel::updateMRL()
     /* CDDA */
     } else {
         mrl = "cdda://" + ui.deviceCombo->currentText();
+        emit methodChanged( "cdda-caching" );
     }
 
     fileList << mrl; mrl = "";
