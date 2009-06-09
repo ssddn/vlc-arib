@@ -71,6 +71,8 @@ static inline libvlc_state_t vlc_to_libvlc_state( int vlc_state )
     return vlc_to_libvlc_state_array[vlc_state];
 }
 
+static void libvlc_media_player_destroy( libvlc_media_player_t *p_mi );
+
 /*
  * Release the associated input thread.
  *
@@ -410,7 +412,7 @@ libvlc_media_player_t * libvlc_media_player_new_from_input_thread(
  *
  * Warning: No lock held here, but hey, this is internal. Caller must lock.
  **************************************************************************/
-void libvlc_media_player_destroy( libvlc_media_player_t *p_mi )
+static void libvlc_media_player_destroy( libvlc_media_player_t *p_mi )
 {
     input_thread_t *p_input_thread;
     libvlc_exception_t p_e;

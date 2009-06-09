@@ -34,6 +34,7 @@
 #include <vlc_vout.h>
 
 #include "media_player_internal.h"
+#include "libvlc_internal.h"
 
 /*
  * Remember to release the returned vout_thread_t.

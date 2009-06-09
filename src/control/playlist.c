@@ -22,9 +22,10 @@
  *****************************************************************************/
 
 #include "libvlc_internal.h"
+#include "media_player_internal.h"
 #include "libvlc.h"
 
-#include <vlc/libvlc.h>
+#include <vlc/vlc.h>
 #include <vlc_playlist.h>
 
 #include <assert.h>

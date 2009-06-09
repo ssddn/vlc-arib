@@ -86,7 +86,7 @@ get_next_path( libvlc_media_list_player_t * p_mlp )
                             p_mlp->p_mlist,
                             p_mlp->current_playing_item_path );
 
-    int deepness = libvlc_media_list_path_deepness( p_mlp->current_playing_item_path );
+    int deepness = libvlc_media_list_path_depth( p_mlp->current_playing_item_path );
     if( deepness < 1 || !p_parent_of_playing_item )
         return NULL;
 

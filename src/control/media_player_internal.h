@@ -48,11 +48,16 @@ struct libvlc_media_player_t
         uint32_t xid;
         uint32_t agl;
     } drawable;
+    bool b_own_its_input_thread;
 };
 
 /* Media player - audio, video */
 input_thread_t *libvlc_get_input_thread(libvlc_media_player_t *, libvlc_exception_t * );
 
+libvlc_media_player_t * libvlc_media_player_new_from_input_thread(
+                                                                  struct libvlc_instance_t *p_libvlc_instance,
+                                                                  input_thread_t *p_input,
+                                                                  libvlc_exception_t *p_e );
 
 libvlc_track_description_t * libvlc_get_track_description(
         libvlc_media_player_t *p_mi,
