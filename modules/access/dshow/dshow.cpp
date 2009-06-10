@@ -2008,7 +2008,7 @@ static int ConfigDevicesCallback( vlc_object_t *p_this, char const *psz_name,
 {
     module_config_t *p_item;
     bool b_audio = false;
-    const char *psz_device = NULL;
+    char *psz_device = NULL;
 
     if( !EMPTY_STR( newval.psz_string ) )
         psz_device = strdup( newval.psz_string );
@@ -2052,12 +2052,14 @@ static int ConfigDevicesCallback( vlc_object_t *p_this, char const *psz_name,
         CoUninitialize();
 
         msg_Err( p_this, "didn't find device: %s", devicename.c_str() );
+        free( psz_device );
         return VLC_EGENERIC;
     }
 
     /* Uninitialize OLE/COM */
     CoUninitialize();
 
+    free( psz_device );
     return VLC_SUCCESS;
 }
 
