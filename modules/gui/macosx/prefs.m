@@ -184,6 +184,7 @@ static VLCPrefs *_o_sharedMainInstance = nil;
 - (void)outlineViewSelectionDidChange:(NSNotification *)o_notification
 {
     [[o_tree itemAtRow:[o_tree selectedRow]] showView: o_prefs_view];
+    [o_tree expandItem:[o_tree itemAtRow:[o_tree selectedRow]]];
 }
 
 @end
