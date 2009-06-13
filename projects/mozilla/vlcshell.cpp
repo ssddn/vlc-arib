@@ -52,7 +52,7 @@
 /*****************************************************************************
  * Unix-only declarations
 ******************************************************************************/
-#ifdef XP_UNIX
+#if defined(XP_UNIX)
 
 static void Redraw( Widget w, XtPointer closure, XEvent *event );
 static void ControlHandler( Widget w, XtPointer closure, XEvent *event );
@@ -201,20 +201,11 @@ int16 NPP_HandleEvent( NPP instance, void * event )
             const NPWindow& npwindow = p_plugin->getWindow();
             if( npwindow.window )
             {
-                int hasVout = FALSE;
+                bool hasVout = false;
 
                 if( p_plugin->playlist_isplaying(&ex) )
                 {
                     hasVout = p_plugin->player_has_vout(NULL);
-                    if( hasVout )
-                    {
-                        libvlc_rectangle_t area;
-                        area.left = 0;
-                        area.top = 0;
-                        area.right = npwindow.width;
-                        area.bottom = npwindow.height;
-                        libvlc_video_redraw_rectangle(p_plugin->getMD(&ex), &area, NULL);
-                    }
                 }
                 libvlc_exception_clear(&ex);
 
@@ -344,7 +335,7 @@ NPError NPP_Destroy( NPP instance, NPSavedData** save )
 
 NPError NPP_SetWindow( NPP instance, NPWindow* window )
 {
-#if defined(XP_UNIX) && !defined(__APPLE__)
+#if defined(XP_UNIX)
     Window control;
     unsigned int i_control_height = 0, i_control_width = 0;
 #endif
@@ -362,7 +353,7 @@ NPError NPP_SetWindow( NPP instance, NPWindow* window )
         return NPERR_NO_ERROR;
     }
 
-#if defined(XP_UNIX) && !defined(__APPLE__)
+#if defined(XP_UNIX)
     control = p_plugin->getControlWindow();
 #endif
 
@@ -484,7 +475,7 @@ NPError NPP_SetWindow( NPP instance, NPWindow* window )
     }
 #endif /* XP_WIN */
 
-#ifdef XP_UNIX
+#if defined(XP_UNIX)
     /* default to hidden toolbar, shown at the end of this method if asked *
      * developers note : getToolbarSize need to wait the end of this method
      */
@@ -771,7 +762,7 @@ static LRESULT CALLBACK Manage( HWND p_hwnd, UINT i_msg, WPARAM wpar, LPARAM lpa
 /******************************************************************************
  * UNIX-only methods
  *****************************************************************************/
-#ifdef XP_UNIX
+#if defined(XP_UNIX)
 static void Redraw( Widget w, XtPointer closure, XEvent *event )
 {
     VlcPlugin* p_plugin = reinterpret_cast<VlcPlugin*>(closure);
