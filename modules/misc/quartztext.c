@@ -21,6 +21,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
+#ifdef __x86_64__
+
+#warning "No text renderer build! Quartztext isn't 64bit compatible!"
+#warning "RE-WRITE ME!"
+
+#else
+
 //////////////////////////////////////////////////////////////////////////////
 // Preamble
 //////////////////////////////////////////////////////////////////////////////
@@ -887,3 +894,5 @@ static int RenderYUVA( filter_t *p_filter, subpicture_region_t *p_region, UniCha
 
     return VLC_SUCCESS;
 }
+
+#endif
