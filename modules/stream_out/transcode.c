@@ -2158,7 +2158,7 @@ static picture_t *video_new_buffer( vlc_object_t *p_this, picture_t **pp_ring,
         {
             /* Encoder still has stuff to encode, wait to clear-up the list */
             while( p_sys->i_first_pic == i_first_pic )
-                msleep( 100000 );
+                msleep( 5000 );
         }
 
         /* Find an empty space in the picture ring buffer */
