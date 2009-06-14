@@ -243,7 +243,7 @@ protected:
 private slots:
     void showFSC();
     void planHideFSC();
-    void hideFSC();
+    void hideFSC() { hide(); }
     void slowHideFSC();
     void centerFSC( int );
 
