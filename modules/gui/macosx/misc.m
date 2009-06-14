@@ -102,6 +102,11 @@ static NSMapTable *VLCAdditions_userInfo = nil;
 - (void)dealloc
 {
     NSMapRemove(VLCAdditions_userInfo, self);
+    NSResetMapTable(VLCAdditions_userInfo);
+    /* NSCreateMapTable mallocs memory from the default zone ('malloc')
+     * thus releasing it with free() is save. */
+    free(VLCAdditions_userInfo);
+    VLCAdditions_userInfo = nil;
     [super dealloc];
 }
 
