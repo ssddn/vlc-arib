@@ -1,4 +1,4 @@
-﻿StrCpy $Name_Section01 "VLC predvajalnik (obvezno)"
+StrCpy $Name_Section01 "VLC predvajalnik (obvezno)"
 StrCpy $Name_Section02a "Bližnjica menija"
 StrCpy $Name_Section02b "Bližjica namizja"
 StrCpy $Name_Section03 "Vstavek Mozilla "
