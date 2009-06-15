@@ -147,6 +147,8 @@ int intf_RunThread( intf_thread_t *p_intf )
         vlc_thread_join( p_intf );
 
         vlc_object_detach( p_intf );
+        if( p_intf->p_module )
+            module_unneed( p_intf, p_intf->p_module );
         vlc_object_release( p_intf );
         return VLC_SUCCESS;
     }
