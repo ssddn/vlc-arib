@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the VLC package.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009.
 # Joel Arvidsson <dogai@privat.utfors.se>, 2002.
+# Niklas 'Nille' Åkerström <nille.kungen@gmail.com> 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-06-15 20:47+0100\n"
-"PO-Revision-Date: 2009-06-15 21:29+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"POT-Creation-Date: 2009-06-17 22:49+0100\n"
+"PO-Revision-Date: 2009-06-17 12:23+0100\n"
+"Last-Translator: Niklas 'Nille' Åkerström <nille.kungen@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -518,7 +519,7 @@ msgstr "&Meddelanden"
 
 #: include/vlc_intf_strings.h:45
 msgid "Jump to Specific &Time"
-msgstr "Hoppa till specifik &tid"
+msgstr "Stega fram till specifik &tid"
 
 #: include/vlc_intf_strings.h:46 modules/gui/qt4/menus.cpp:598
 msgid "&Bookmarks"
@@ -881,7 +882,7 @@ msgstr "heltal"
 
 #: src/config/file.c:617 src/libvlc.c:1678
 msgid "float"
-msgstr ""
+msgstr "flyttal"
 
 #: src/config/file.c:640 src/libvlc.c:1628
 msgid "string"
@@ -1006,7 +1007,7 @@ msgstr "Ja"
 #: src/input/es_out.c:1939
 #, fuzzy, c-format
 msgid "Closed captions %u"
-msgstr "Avkodare för Vorbis-ljud"
+msgstr "Stängda upptagningar %u"
 
 #: src/input/es_out.c:2646
 #, c-format
@@ -1103,21 +1104,21 @@ msgstr "Skärmupplösning"
 msgid "Frame rate"
 msgstr "Bildfrekvens"
 
-#: src/input/input.c:2479
+#: src/input/input.c:2484
 msgid "Your input can't be opened"
 msgstr "Din inmatning kunde inte öppnas"
 
-#: src/input/input.c:2480
+#: src/input/input.c:2485
 #, c-format
 msgid "VLC is unable to open the MRL '%s'. Check the log for details."
 msgstr ""
 "VLC kunde inte öppna MRL:en \"%s\". Kontrollera loggen för mer detaljer."
 
-#: src/input/input.c:2611
+#: src/input/input.c:2616
 msgid "VLC can't recognize the input's format"
 msgstr "VLC känner inte igen formatet på inmatningen"
 
-#: src/input/input.c:2612
+#: src/input/input.c:2617
 #, fuzzy, c-format
 msgid ""
 "The format of '%s' cannot be detected. Have a look at the log for details."
@@ -2545,9 +2546,8 @@ msgid "The stream will run this duration (in seconds)."
 msgstr "Strömmen kommer att starta på denna position (i sekunder)."
 
 #: src/libvlc-module.c:702
-#, fuzzy
 msgid "Fast seek"
-msgstr "Snabbare"
+msgstr "Snabbspolning"
 
 #: src/libvlc-module.c:704
 msgid "Favor speed over precision while seeking"
@@ -3203,9 +3203,8 @@ msgid ""
 msgstr ""
 
 #: src/libvlc-module.c:1040
-#, fuzzy
 msgid "Stream filter module"
-msgstr "Videofiltermodul"
+msgstr "Strömningsfiltermodul"
 
 #: src/libvlc-module.c:1042
 #, fuzzy
@@ -3617,11 +3616,11 @@ msgstr ""
 
 #: src/libvlc-module.c:1232 modules/gui/qt4/menus.cpp:751
 msgid "Faster (fine)"
-msgstr "Snabbare (fin)"
+msgstr "Snabbare (finjustering)"
 
 #: src/libvlc-module.c:1234 modules/gui/qt4/menus.cpp:759
 msgid "Slower (fine)"
-msgstr "Långsammare (fin)"
+msgstr "Långsammare (finjustering)"
 
 #: src/libvlc-module.c:1236 modules/control/hotkeys.c:695
 #: modules/gui/macosx/about.m:185 modules/gui/macosx/controls.m:1034
@@ -4566,7 +4565,7 @@ msgstr "%ld B"
 #: src/misc/update.c:1590
 #, fuzzy
 msgid "Saving file failed"
-msgstr "Spara fil"
+msgstr "Misslyckades att spara fil"
 
 #: src/misc/update.c:1591
 #, c-format
@@ -4670,7 +4669,7 @@ msgstr "Odefinierad"
 #: src/video_output/video_output.c:1751 modules/gui/macosx/intf.m:691
 #: modules/gui/macosx/intf.m:692 modules/video_filter/postproc.c:189
 msgid "Post processing"
-msgstr "Efterbehandling"
+msgstr "Efterbearbetning"
 
 #: src/video_output/video_output.c:2011 modules/gui/macosx/intf.m:689
 #: modules/gui/macosx/intf.m:690 modules/gui/qt4/dialogs/convert.cpp:85
@@ -4696,9 +4695,8 @@ msgid "Autoscale video"
 msgstr "Aktivera video"
 
 #: src/video_output/vout_intf.c:409
-#, fuzzy
 msgid "Scale factor"
-msgstr "Skalningsfaktor (0.1-2.0)"
+msgstr "Skalningsfaktor"
 
 #: modules/access/alsa.c:72 modules/access/oss.c:67
 msgid "Capture the audio stream in stereo."
@@ -4747,7 +4745,7 @@ msgstr "Alsa"
 #: modules/access/alsa.c:88
 #, fuzzy
 msgid "Alsa audio capture input"
-msgstr "JACK-ljudinmatning"
+msgstr "Alsa ljudupptagnings-ingång"
 
 #: modules/access/bd/bd.c:54
 #, fuzzy
@@ -5080,35 +5078,35 @@ msgstr "4"
 
 #: modules/access/bda/bda.c:172
 msgid "Satellite Azimuth"
-msgstr ""
+msgstr "Satellit Azimuth"
 
 #: modules/access/bda/bda.c:173
 msgid "Satellite Azimuth in tenths of degree"
-msgstr ""
+msgstr "Satellit Azimuth i tiondels grader"
 
 #: modules/access/bda/bda.c:174
 msgid "Satellite Elevation"
-msgstr ""
+msgstr "Satellit Elevation"
 
 #: modules/access/bda/bda.c:175
 msgid "Satellite Elevation in tenths of degree"
-msgstr ""
+msgstr "Satellit Elevation i tiondels grader"
 
 #: modules/access/bda/bda.c:176
 msgid "Satellite Longitude"
-msgstr ""
+msgstr "Satellit Longitud"
 
 #: modules/access/bda/bda.c:178
 msgid "Satellite Longitude in 10ths of degree, -ve=West"
-msgstr ""
+msgstr "Satellit Longitud i tiondels grader, -ve=Väst"
 
 #: modules/access/bda/bda.c:179
 msgid "Satellite Polarisation"
-msgstr ""
+msgstr "Satellit Polarisation"
 
 #: modules/access/bda/bda.c:180
 msgid "Satellite Polarisation [H/V/L/R]"
-msgstr ""
+msgstr "Satellite Polarisation [H/V]"
 
 #: modules/access/bda/bda.c:183
 msgid "Horizontal"
@@ -5120,11 +5118,11 @@ msgstr "Vertikal"
 
 #: modules/access/bda/bda.c:184
 msgid "Circular Left"
-msgstr ""
+msgstr "Cirkulär vänster"
 
 #: modules/access/bda/bda.c:184
 msgid "Circular Right"
-msgstr ""
+msgstr "Cirkulär Höger"
 
 #: modules/access/bda/bda.c:185
 #, fuzzy
@@ -5134,6 +5132,7 @@ msgstr "Skalningsläge"
 #: modules/access/bda/bda.c:186
 msgid "Satellite Range Code as defined by manufacturer e.g. DISEqC switch code"
 msgstr ""
+"Satellit-frekvenskoder som angetts av tillverkaren e.g. DISEqC switch kod"
 
 #: modules/access/bda/bda.c:188
 msgid "Network Name"
@@ -5651,7 +5650,7 @@ msgstr "Välj mottagarens inmatningstyp (kabel/antenn)."
 #: modules/access/dshow/dshow.cpp:144
 #, fuzzy
 msgid "Video input pin"
-msgstr "Videoinställningar"
+msgstr "Videoinmatningsreglage"
 
 #: modules/access/dshow/dshow.cpp:146
 msgid ""
@@ -5668,7 +5667,7 @@ msgstr ""
 #: modules/access/dshow/dshow.cpp:150
 #, fuzzy
 msgid "Audio input pin"
-msgstr "_Nästa objekt"
+msgstr "Ljudinmatningsreglage"
 
 #: modules/access/dshow/dshow.cpp:152
 msgid "Select the audio input source. See the \"video input\" option."
@@ -5677,7 +5676,7 @@ msgstr "Välj källa för ljudinmatning. Se alternativet \"videoinmatning\"."
 #: modules/access/dshow/dshow.cpp:153
 #, fuzzy
 msgid "Video output pin"
-msgstr "Videoinställningar"
+msgstr "Video ut-utgång"
 
 #: modules/access/dshow/dshow.cpp:155
 msgid "Select the video output type. See the \"video input\" option."
@@ -5686,7 +5685,7 @@ msgstr "Välj typ för videoutmatning. Se alternativet \"videoinmatning\"."
 #: modules/access/dshow/dshow.cpp:156
 #, fuzzy
 msgid "Audio output pin"
-msgstr "Paus"
+msgstr "Ljud ut-utgång"
 
 #: modules/access/dshow/dshow.cpp:158
 msgid "Select the audio output type. See the \"video input\" option."
@@ -6064,11 +6063,11 @@ msgstr ""
 
 #: modules/access/fake.c:63 modules/codec/fake.c:89
 msgid "Fake"
-msgstr ""
+msgstr "Falsk"
 
 #: modules/access/fake.c:64
 msgid "Fake input"
-msgstr ""
+msgstr "Falsk inmatning"
 
 #: modules/access/file.c:79 modules/access/mtp.c:67
 msgid "Caching value for files. This value should be set in milliseconds."
@@ -6140,8 +6139,9 @@ msgid "FTP input"
 msgstr "FTP-inmatning"
 
 #: modules/access/ftp.c:91
+#, fuzzy
 msgid "FTP upload output"
-msgstr ""
+msgstr "FTP uppladdnings-utmatning"
 
 #: modules/access/ftp.c:138 modules/access/ftp.c:148 modules/access/ftp.c:213
 #: modules/access/ftp.c:222 modules/access/ftp.c:229
@@ -6212,11 +6212,11 @@ msgstr ""
 
 #: modules/access/http.c:80
 msgid "HTTP user agent"
-msgstr ""
+msgstr "HTTP user agent"
 
 #: modules/access/http.c:81
 msgid "User agent that will be used for the connection."
-msgstr ""
+msgstr "User agent som kommer att användas för anslutning."
 
 #: modules/access/http.c:84
 msgid "Auto re-connect"
@@ -6244,7 +6244,7 @@ msgstr ""
 #: modules/access/http.c:95
 #, fuzzy
 msgid "Forward Cookies"
-msgstr "Framåt"
+msgstr "Vidarebefodra kakor"
 
 #: modules/access/http.c:96
 msgid "Forward Cookies across http redirections "
@@ -6276,7 +6276,7 @@ msgstr ""
 #: modules/access/jack.c:66
 #, fuzzy
 msgid "Pace"
-msgstr "Dans"
+msgstr "Tempo"
 
 #: modules/access/jack.c:68
 #, fuzzy
@@ -7390,8 +7390,9 @@ msgid "Vol max #"
 msgstr "Vol max #"
 
 #: modules/access/vcdx/info.c:99
+#, fuzzy
 msgid "Volume Set"
-msgstr ""
+msgstr "Volumserie"
 
 #: modules/access/vcdx/info.c:102
 msgid "System Id"
@@ -8143,37 +8144,32 @@ msgid "Length in milliseconds to search for best overlap position"
 msgstr ""
 
 #: modules/audio_filter/spatializer/spatializer.cpp:48
-#, fuzzy
 msgid "Room size"
-msgstr "Slumpa"
+msgstr "Rumsstorlek"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:49
 msgid "Defines the virtual surface of the roomemulated by the filter."
 msgstr ""
 
 #: modules/audio_filter/spatializer/spatializer.cpp:52
-#, fuzzy
 msgid "Room width"
-msgstr "Videobredd"
+msgstr "Rumsbredd"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:53
-#, fuzzy
 msgid "Width of the virtual room"
-msgstr "Bredd på skärmbild."
+msgstr "Bredd på det virtuella rummet"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:55
-#, fuzzy
 msgid "Wet"
-msgstr "Ställ in"
+msgstr "Fuktighet"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:58
 msgid "Dry"
-msgstr ""
+msgstr "Torrhet"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:61
-#, fuzzy
 msgid "Damp"
-msgstr "Dumpning"
+msgstr "Dämpning"
 
 #: modules/audio_filter/spatializer/spatializer.cpp:65
 #, fuzzy
@@ -8239,9 +8235,8 @@ msgstr "Inget ljudenhetsnamn angavs. Du kan vill ange \"default\"."
 
 #: modules/audio_output/alsa.c:434 modules/audio_output/alsa.c:473
 #: modules/audio_output/alsa.c:485 modules/audio_output/auhal.c:246
-#, fuzzy
 msgid "Audio output failed"
-msgstr "Paus"
+msgstr "Ljud-utmatning misslyckades"
 
 #: modules/audio_output/alsa.c:435 modules/audio_output/alsa.c:486
 #, c-format
@@ -8631,8 +8626,9 @@ msgid ""
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:94
+#, fuzzy
 msgid "Allow speed tricks"
-msgstr ""
+msgstr "Tillåt hastighets-knep"
 
 #: modules/codec/avcodec/avcodec.h:96
 msgid ""
@@ -8705,16 +8701,18 @@ msgid ""
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:135
+#, fuzzy
 msgid "Ratio of key frames"
-msgstr ""
+msgstr "Förhållande till huvudbildrutor"
 
 #: modules/codec/avcodec/avcodec.h:136
 msgid "Number of frames that will be coded for one key frame."
 msgstr "Antal bildrutor som kommer att kodas för en nyckelbildruta."
 
 #: modules/codec/avcodec/avcodec.h:139
+#, fuzzy
 msgid "Ratio of B frames"
-msgstr ""
+msgstr "Förhållande till B bildrutor"
 
 #: modules/codec/avcodec/avcodec.h:140
 msgid "Number of B frames that will be coded between two reference frames."
@@ -8855,8 +8853,9 @@ msgid "Enable trellis quantization (rate distortion for block coefficients)."
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:207
+#, fuzzy
 msgid "Fixed quantizer scale"
-msgstr ""
+msgstr "Fast quantizer-skalning"
 
 #: modules/codec/avcodec/avcodec.h:208
 msgid ""
@@ -8874,24 +8873,27 @@ msgid ""
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:215
+#, fuzzy
 msgid "Luminance masking"
-msgstr ""
+msgstr "Luminans/ljusstyrka masking"
 
 #: modules/codec/avcodec/avcodec.h:216
 msgid "Raise the quantizer for very bright macroblocks (default: 0.0)."
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:219
+#, fuzzy
 msgid "Darkness masking"
-msgstr ""
+msgstr "Mörker masking"
 
 #: modules/codec/avcodec/avcodec.h:220
 msgid "Raise the quantizer for very dark macroblocks (default: 0.0)."
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:223
+#, fuzzy
 msgid "Motion masking"
-msgstr ""
+msgstr "Täck över rörelsefält"
 
 #: modules/codec/avcodec/avcodec.h:224
 msgid ""
@@ -8900,8 +8902,9 @@ msgid ""
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:227
+#, fuzzy
 msgid "Border masking"
-msgstr ""
+msgstr "Täck över kanter"
 
 #: modules/codec/avcodec/avcodec.h:228
 msgid ""
@@ -9304,7 +9307,7 @@ msgstr "Avkodare för AAC-ljud (använder libfaad2)"
 
 #: modules/codec/faad.c:379
 msgid "AAC extension"
-msgstr ""
+msgstr "AAC tillägg"
 
 #: modules/codec/fake.c:53 modules/gui/fbosd.c:109
 msgid "Image file"
@@ -9379,7 +9382,7 @@ msgstr ""
 
 #: modules/codec/fake.c:90
 msgid "Fake video decoder"
-msgstr ""
+msgstr "Falsk video-avkodare"
 
 #: modules/codec/flac.c:186
 msgid "Flac audio decoder"
@@ -9406,8 +9409,9 @@ msgid "FluidSynth MIDI synthetizer"
 msgstr ""
 
 #: modules/codec/fluidsynth.c:43
+#, fuzzy
 msgid "FluidSynth"
-msgstr ""
+msgstr "FluidSynth"
 
 #: modules/codec/invmem.c:54 modules/video_output/vmem.c:51
 msgid "Video memory buffer width."
@@ -10600,10 +10604,12 @@ msgid ""
 msgstr ""
 
 #: modules/codec/x264.c:219
+#, fuzzy
 msgid "Partitions to consider"
-msgstr ""
+msgstr "Partitioner att överväga"
 
 #: modules/codec/x264.c:220
+#, fuzzy
 msgid ""
 "Partitions to consider in analyse mode: \n"
 " - none  : \n"
@@ -10613,6 +10619,13 @@ msgid ""
 " - all   : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
 "(p4x4 requires p8x8. i8x8 requires 8x8dct)."
 msgstr ""
+"Partitioner att överväga i analyserings läge: \n"
+" - ingen  : \n"
+" - fast  : i4x4\n"
+" - normal  : i4x4,p8x8,(i8x8)\n"
+" - långsam  : i4x4,p8x8,(i8x8),b8x8\n"
+" - alla  : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
+"(p4x4 kräver p8x8. i8x8 kräver 8x8dct)."
 
 #: modules/codec/x264.c:228
 msgid "Direct MV prediction mode"
@@ -10890,8 +10903,9 @@ msgid "Print stats for each frame."
 msgstr "Skriv ut statistik för varje bildruta."
 
 #: modules/codec/x264.c:378
+#, fuzzy
 msgid "SPS and PPS id numbers"
-msgstr ""
+msgstr "SPS och PPS id-nummer"
 
 #: modules/codec/x264.c:379
 msgid ""
@@ -10917,8 +10931,9 @@ msgid "hex"
 msgstr "hex"
 
 #: modules/codec/x264.c:390 modules/codec/x264.c:397
+#, fuzzy
 msgid "umh"
-msgstr ""
+msgstr "umh"
 
 #: modules/codec/x264.c:390 modules/codec/x264.c:397
 msgid "esa"
@@ -11133,7 +11148,7 @@ msgstr "Beskär: %s"
 
 #: modules/control/hotkeys.c:585
 msgid "Zooming reset"
-msgstr ""
+msgstr "Återställ zoom"
 
 #: modules/control/hotkeys.c:593
 msgid "Scaled to screen"
@@ -12032,14 +12047,13 @@ msgid "AVI Index"
 msgstr "AVI-index"
 
 #: modules/demux/avi/avi.c:688
-#, fuzzy
 msgid ""
 "This AVI file is broken. Seeking will not work correctly.\n"
 "Do you want to try to fix it?\n"
 "\n"
 "This might take a long time."
 msgstr ""
-"Denna AVI-fil är trasig. Spolning i filen kommer inte att\n"
+"Denna AVI-filen är trasig. Spolning i filen kommer inte att\n"
 "fungera korrekt. Vill du försöka att reparera den?\n"
 "\n"
 "Detta kan ta lång tid."
@@ -12091,7 +12105,7 @@ msgstr "Demuxer för GME (Game_Music_Emu)"
 #: modules/demux/kate_categories.c:40
 #, fuzzy
 msgid "Closed captions"
-msgstr "Avkodare för Vorbis-ljud"
+msgstr "Stängd upptagning"
 
 #: modules/demux/kate_categories.c:42
 #, fuzzy
@@ -12125,7 +12139,7 @@ msgstr "Sanskrit"
 #: modules/demux/kate_categories.c:49 modules/demux/kate_categories.c:56
 #, fuzzy
 msgid "Lyrics"
-msgstr "Licens"
+msgstr "Sångtexter"
 
 #: modules/demux/kate_categories.c:50
 msgid "Linguistic markup"
@@ -12140,8 +12154,9 @@ msgid "Subtitles (images)"
 msgstr "Undertexter (bilder)"
 
 #: modules/demux/kate_categories.c:60
+#, fuzzy
 msgid "Slides (text)"
-msgstr ""
+msgstr "Diabilder (text)"
 
 #: modules/demux/kate_categories.c:61
 msgid "Slides (images)"
@@ -12513,7 +12528,7 @@ msgstr "Import av XSPF-spellista"
 
 #: modules/demux/playlist/playlist.c:112
 msgid "New winamp 5.2 shoutcast import"
-msgstr ""
+msgstr "Nya winamp 5.2 shoutcast-import"
 
 #: modules/demux/playlist/playlist.c:120
 msgid "ASX playlist import"
@@ -12863,20 +12878,24 @@ msgid "TY Stream audio/video demux"
 msgstr ""
 
 #: modules/demux/ty.c:771
+#, fuzzy
 msgid "Closed captions 1"
-msgstr ""
+msgstr "Stängd rubrik 1"
 
 #: modules/demux/ty.c:772
+#, fuzzy
 msgid "Closed captions 2"
-msgstr ""
+msgstr "Stängd rubrik 2"
 
 #: modules/demux/ty.c:773
+#, fuzzy
 msgid "Closed captions 3"
-msgstr ""
+msgstr "Stängd rubrik 3"
 
 #: modules/demux/ty.c:774
+#, fuzzy
 msgid "Closed captions 4"
-msgstr ""
+msgstr "Stängd rubrik 4"
 
 #: modules/demux/vc1.c:44
 #, fuzzy
@@ -13129,7 +13148,7 @@ msgstr "Framebuffer-enhet"
 
 #: modules/gui/fbosd.c:103 modules/video_output/fb.c:81
 msgid "Framebuffer device to use for rendering (usually /dev/fb0)."
-msgstr ""
+msgstr "Framebuffer enhet att använda vid rendering (vanligtvis /dev/fb0)."
 
 #: modules/gui/fbosd.c:105 modules/video_output/fb.c:92
 msgid "Video aspect ratio"
@@ -14465,7 +14484,7 @@ msgstr "Kodekdetaljer"
 #: modules/gui/macosx/playlistinfo.m:98
 #: modules/gui/qt4/components/info_panels.cpp:522
 msgid "Read at media"
-msgstr ""
+msgstr "Läsningar från media"
 
 #: modules/gui/macosx/playlistinfo.m:99
 #: modules/gui/qt4/components/info_panels.cpp:524
@@ -14530,8 +14549,9 @@ msgid "Lost buffers"
 msgstr "Förlorade buffertar"
 
 #: modules/gui/macosx/playlistinfo.m:428
+#, fuzzy
 msgid "Error while saving meta"
-msgstr ""
+msgstr "Fel vid sparande av metadata"
 
 #: modules/gui/macosx/playlistinfo.m:429
 #, fuzzy
@@ -15517,8 +15537,9 @@ msgid "Minimal Mac OS X OpenGL video output (opens a borderless window)"
 msgstr "Minimal Mac OS X OpenGL-videoutmatning (öppnar ett ramlöst fönster)"
 
 #: modules/gui/ncurses.c:118
+#, fuzzy
 msgid "Filebrowser starting point"
-msgstr ""
+msgstr "Filbläddrarens start katalog"
 
 #: modules/gui/ncurses.c:120
 msgid ""
@@ -15605,19 +15626,19 @@ msgstr "     h,H         Visa/dölj hjälprutan"
 
 #: modules/gui/ncurses.c:1615
 msgid "     i           Show/Hide info box"
-msgstr ""
+msgstr "     i           Visa/dölj informations-ruta"
 
 #: modules/gui/ncurses.c:1616
 msgid "     m           Show/Hide metadata box"
-msgstr ""
+msgstr "     m           Visa/dölj metadata-ruta"
 
 #: modules/gui/ncurses.c:1617
 msgid "     L           Show/Hide messages box"
-msgstr ""
+msgstr "     L           Visa/Dölj meddelande-ruta"
 
 #: modules/gui/ncurses.c:1618
 msgid "     P           Show/Hide playlist box"
-msgstr ""
+msgstr "     P           Visa/Dölj spellist-ruta"
 
 #: modules/gui/ncurses.c:1619
 msgid "     B           Show/Hide filebrowser"
@@ -15625,7 +15646,7 @@ msgstr "     B           Visa/dölj filbläddrare"
 
 #: modules/gui/ncurses.c:1620
 msgid "     x           Show/Hide objects box"
-msgstr ""
+msgstr "     x           Visa/Dölj objekt-ruta"
 
 #: modules/gui/ncurses.c:1621
 msgid "     S           Show/Hide statistics box"
@@ -15637,7 +15658,7 @@ msgstr "     c           Växla färger på/av"
 
 #: modules/gui/ncurses.c:1623
 msgid "     Esc         Close Add/Search entry"
-msgstr ""
+msgstr "     Esc         Stäng lägg till/sök inmatningsrad"
 
 #: modules/gui/ncurses.c:1628
 msgid "[Global]"
@@ -15699,11 +15720,11 @@ msgstr "     r           Växla slumpmässig uppspelning"
 
 #: modules/gui/ncurses.c:1650
 msgid "     l           Toggle Loop Playlist"
-msgstr ""
+msgstr "     l           Växla av/på för spellist-slinga"
 
 #: modules/gui/ncurses.c:1651
 msgid "     R           Toggle Repeat item"
-msgstr ""
+msgstr "     R           Växla av/på för upprepning"
 
 #: modules/gui/ncurses.c:1652
 msgid "     o           Order Playlist by title"
@@ -15711,11 +15732,11 @@ msgstr "     o           Sortera spellista efter titel"
 
 #: modules/gui/ncurses.c:1653
 msgid "     O           Reverse order Playlist by title"
-msgstr ""
+msgstr "     O           Omvänd ordning i spellistan enligt titel"
 
 #: modules/gui/ncurses.c:1654
 msgid "     g           Go to the current playing item"
-msgstr ""
+msgstr "     g           Gå till aktuellt uppspelningsobjekt"
 
 #: modules/gui/ncurses.c:1655
 msgid "     /           Look for an item"
@@ -15743,11 +15764,11 @@ msgstr "[Filbläddrare]"
 
 #: modules/gui/ncurses.c:1667
 msgid "     <enter>     Add the selected file to the playlist"
-msgstr ""
+msgstr "     <enter>     Lägg till vald fil i spellistan"
 
 #: modules/gui/ncurses.c:1668
 msgid "     <space>     Add the selected directory to the playlist"
-msgstr ""
+msgstr "     <space>     Lägg till vald katalog i spellistan"
 
 #: modules/gui/ncurses.c:1669
 msgid "     .           Show/Hide hidden files"
@@ -15759,11 +15780,11 @@ msgstr "Rutor]"
 
 #: modules/gui/ncurses.c:1677
 msgid "     <up>,<down>     Navigate through the box line by line"
-msgstr ""
+msgstr "     <up>,<down>     Navigera i rutan rad för rad"
 
 #: modules/gui/ncurses.c:1678
 msgid "     <pgup>,<pgdown> Navigate through the box page by page"
-msgstr ""
+msgstr "     <pgup>,<pgdown> Navigera i rutan med hela sidor"
 
 #: modules/gui/ncurses.c:1683
 msgid "[Player]"
@@ -16275,9 +16296,8 @@ msgid "QNX RTOS video and audio output"
 msgstr ""
 
 #: modules/gui/qt4/components/controller.cpp:323
-#, fuzzy
 msgid "Shift+L"
-msgstr "Skift"
+msgstr "Skift+L"
 
 #: modules/gui/qt4/components/controller.cpp:471
 msgid "Previous Chapter/Title"
@@ -16309,28 +16329,27 @@ msgstr ""
 "Om spellistan är tom, öppna ett media"
 
 #: modules/gui/qt4/components/controller.hpp:103
-#, fuzzy
 msgid "De-Fullscreen"
-msgstr "Helskärm"
+msgstr "Gå ur helskärmsläge"
 
+# Verkar dumt med flera namn på samma sak.
+# Ändrar namn för att minska rörigheten.
 #: modules/gui/qt4/components/controller.hpp:103
 msgid "Extended panel"
-msgstr "Utökad panel"
+msgstr "Justering och effekter"
 
 #: modules/gui/qt4/components/controller.hpp:104
-#, fuzzy
 msgid "A->B Loop"
-msgstr "Slinga"
+msgstr "A->B Slinga"
 
 #: modules/gui/qt4/components/controller.hpp:104
-#, fuzzy
 msgid "Frame By Frame"
 msgstr "Bild för bild"
 
 #: modules/gui/qt4/components/controller.hpp:104
 #, fuzzy
 msgid "Trickplay Reverse"
-msgstr "Omvänd sortering"
+msgstr "Trickplay kontroller"
 
 #: modules/gui/qt4/components/controller.hpp:105
 #: modules/gui/qt4/components/controller.hpp:114
@@ -16369,7 +16388,7 @@ msgstr "Växla video till helskärmsläge"
 
 #: modules/gui/qt4/components/controller.hpp:111
 msgid "Show extended settings"
-msgstr "Visa utökade inställningar"
+msgstr "Visa justeringar och effekter"
 
 #: modules/gui/qt4/components/controller.hpp:111
 msgid "Show playlist"
@@ -16380,11 +16399,8 @@ msgid "Take a snapshot"
 msgstr "Ta en skärmbild"
 
 #: modules/gui/qt4/components/controller.hpp:113
-#, fuzzy
 msgid "Loop from point A to point B continuously."
-msgstr ""
-"Slinga från punkt A till punkt B oavbrutet.\n"
-"Klicka för att ange punkt A"
+msgstr "Oavbruten slinga från punkt A till punkt B."
 
 #: modules/gui/qt4/components/controller.hpp:113
 msgid "Frame by frame"
@@ -16453,9 +16469,8 @@ msgid "Subtitles/Video"
 msgstr "Undertexter/Video"
 
 #: modules/gui/qt4/components/extended_panels.cpp:1314
-#, fuzzy
 msgid "Advance of subtitles over video:"
-msgstr "Ytterligare omkodningsalternativ"
+msgstr "Avancera undertext framför video:"
 
 #: modules/gui/qt4/components/extended_panels.cpp:1323
 msgid ""
@@ -16494,14 +16509,12 @@ msgid "Statistics about the currently playing media or stream."
 msgstr "Statistik om för närvarande uppspelat media eller ström."
 
 #: modules/gui/qt4/components/info_panels.cpp:529
-#, fuzzy
 msgid "Corrupted"
-msgstr "Filen är skadad"
+msgstr "Skadade"
 
 #: modules/gui/qt4/components/info_panels.cpp:531
-#, fuzzy
 msgid "Discontinuities"
-msgstr "Distortionsfilter"
+msgstr "Diskontinuitet"
 
 #: modules/gui/qt4/components/info_panels.cpp:544
 msgid "Sent bitrate"
@@ -16592,7 +16605,7 @@ msgstr "Inmatning har ändrats "
 #: modules/gui/qt4/components/open_panels.cpp:904
 #, fuzzy
 msgid "Use VLC pace"
-msgstr "Använd SAP-cache"
+msgstr "Använd VLC tempo"
 
 #: modules/gui/qt4/components/open_panels.cpp:908
 msgid "Auto connnection"
@@ -17267,14 +17280,12 @@ msgid "Toolbars Editor"
 msgstr "Verktygsradsredigerare"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:53
-#, fuzzy
 msgid "Toolbar Elements"
-msgstr "Dummyelement"
+msgstr "Byggstenar för verktygsrader"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:58
-#, fuzzy
 msgid "Next widget style:"
-msgstr "Nästa titel"
+msgstr "Nästa avancerade kontroller stil:"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:59
 msgid "Flat Button"
@@ -17294,27 +17305,24 @@ msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:75
-#, fuzzy
 msgid "Toolbar position:"
-msgstr "Logotypens position"
+msgstr "Vertygfältets position:"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:79
 msgid "Under the Video"
-msgstr "Under videon"
+msgstr "Under bildrutan"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:80
 msgid "Above the Video"
-msgstr "Över videon"
+msgstr "Över bildrutan"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:102
-#, fuzzy
 msgid "Advanced Widget toolbar:"
-msgstr "Avancerade videofilterkontroller"
+msgstr "Avancerade kontroller:"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:113
-#, fuzzy
 msgid "Time Toolbar"
-msgstr "Tidskontroll"
+msgstr "Tidsflödesrad"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:125
 msgid "Fullscreen Controller"
@@ -17338,25 +17346,23 @@ msgstr "Profilnamn"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:214
 msgid "Please enter the new profile name."
-msgstr "Ange det nya profilnamnet."
+msgstr "Ange namn på den nya profilen."
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:294
-#, fuzzy
 msgid "Spacer"
-msgstr "Space"
+msgstr "Mellanrum"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:299
 msgid "Expanding Spacer"
-msgstr ""
+msgstr "Utökat mellanrum"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:328
-#, fuzzy
 msgid "Splitter"
-msgstr "Spatializer"
+msgstr "Avgränsare"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:335
 msgid "Time Slider"
-msgstr ""
+msgstr "Tidsflöde"
 
 #: modules/gui/qt4/dialogs/toolbar.cpp:348
 #, fuzzy
@@ -17562,7 +17568,7 @@ msgstr "Öppna fångs&tenhet..."
 
 #: modules/gui/qt4/menus.cpp:321
 msgid "Open &Location from clipboard"
-msgstr "Öppna &plats från urklipp"
+msgstr "Öppna &plats från urklippshanteraren"
 
 #: modules/gui/qt4/menus.cpp:326
 msgid "&Recent Media"
@@ -17630,7 +17636,7 @@ msgstr "Väljare för visualiseringar"
 
 #: modules/gui/qt4/menus.cpp:465
 msgid "Customi&ze Interface..."
-msgstr "An&passa gränssnittet..."
+msgstr "An&passa gränssnitt"
 
 #: modules/gui/qt4/menus.cpp:497
 msgid "Audio &Track"
@@ -17694,7 +17700,7 @@ msgstr "Av&fläta"
 
 #: modules/gui/qt4/menus.cpp:571
 msgid "&Post processing"
-msgstr "&Efterbehandling"
+msgstr "&Efterbearbetning"
 
 #: modules/gui/qt4/menus.cpp:599
 msgid "Manage &bookmarks"
@@ -17742,11 +17748,11 @@ msgstr "Långs&ammare"
 
 #: modules/gui/qt4/menus.cpp:770
 msgid "&Jump Forward"
-msgstr "Hoppa &framåt"
+msgstr "Stega &framåt"
 
 #: modules/gui/qt4/menus.cpp:775
 msgid "Jump Bac&kward"
-msgstr "Hoppa &bakåt"
+msgstr "Stega &bakåt"
 
 #: modules/gui/qt4/menus.cpp:790
 msgid "&Stop"
@@ -17809,7 +17815,7 @@ msgstr ""
 "inställningsdialogen öppnas."
 
 #: modules/gui/qt4/qt4.cpp:79 modules/gui/qt4/ui/sprefs_interface.h:339
-#: modules/gui/skins2/src/skin_main.cpp:496
+#: modules/gui/skins2/src/skin_main.cpp:499
 msgid "Systray icon"
 msgstr "Systemfältikon"
 
@@ -18405,7 +18411,7 @@ msgid "Show a controller in fullscreen"
 msgstr "Visa en kontroller i helskärm"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:335
-#: modules/gui/skins2/src/skin_main.cpp:528
+#: modules/gui/skins2/src/skin_main.cpp:531
 msgid "Skins"
 msgstr "Skal"
 
@@ -18481,7 +18487,7 @@ msgstr "vlc-snap"
 #: modules/gui/qt4/ui/streampanel.h:172
 #, fuzzy
 msgid "Stuff"
-msgstr "Blanda"
+msgstr "Stoppar"
 
 #: modules/gui/qt4/ui/streampanel.h:174
 msgid "Edit settings"
@@ -18534,6 +18540,7 @@ msgstr "Uppdatera"
 #: modules/gui/qt4/ui/v4l2.h:60
 msgid "No v4l2 instance found. Press the refresh button to try again."
 msgstr ""
+"Ingen v4l2 instans hittades. Tryck på uppdatera för att försöka på nytt."
 
 #: modules/gui/qt4/ui/video_effects.h:872
 msgid "Transform"
@@ -18789,38 +18796,39 @@ msgstr "Spara spellista"
 msgid "XSPF playlist|*.xspf|M3U file|*.m3u|HTML playlist|*.html"
 msgstr "XSPF-spellista|*.xspf|M3U-fil|*.m3u|HTML-spellista|*.html"
 
-#: modules/gui/skins2/src/skin_main.cpp:491
+#: modules/gui/skins2/src/skin_main.cpp:494
 msgid "Skin to use"
 msgstr "Skal att använda"
 
-#: modules/gui/skins2/src/skin_main.cpp:492
+#: modules/gui/skins2/src/skin_main.cpp:495
 msgid "Path to the skin to use."
 msgstr "Sökväg till skalet som ska användas."
 
-#: modules/gui/skins2/src/skin_main.cpp:493
+#: modules/gui/skins2/src/skin_main.cpp:496
+#, fuzzy
 msgid "Config of last used skin"
-msgstr ""
+msgstr "Konfigurering av senast använda skal"
 
-#: modules/gui/skins2/src/skin_main.cpp:494
+#: modules/gui/skins2/src/skin_main.cpp:497
 msgid ""
 "Windows configuration of the last skin used. This option is updated "
 "automatically, do not touch it."
 msgstr ""
 
-#: modules/gui/skins2/src/skin_main.cpp:497
+#: modules/gui/skins2/src/skin_main.cpp:500
 msgid "Show a systray icon for VLC"
 msgstr "Visa en systemfältikon för VLC"
 
-#: modules/gui/skins2/src/skin_main.cpp:498
-#: modules/gui/skins2/src/skin_main.cpp:499
+#: modules/gui/skins2/src/skin_main.cpp:501
+#: modules/gui/skins2/src/skin_main.cpp:502
 msgid "Show VLC on the taskbar"
 msgstr "Visa VLC på verktygsraden"
 
-#: modules/gui/skins2/src/skin_main.cpp:500
+#: modules/gui/skins2/src/skin_main.cpp:503
 msgid "Enable transparency effects"
 msgstr "Aktivera transparenseffekter"
 
-#: modules/gui/skins2/src/skin_main.cpp:501
+#: modules/gui/skins2/src/skin_main.cpp:504
 msgid ""
 "You can disable all transparency effects if you want. This is mainly useful "
 "when moving windows does not behave correctly."
@@ -18828,16 +18836,16 @@ msgstr ""
 "Du kan inaktivera alla transparenta effekter om du vill. Detta är oftast "
 "användbart när fönsterflyttningar inte uppträder på ett korrekt sätt."
 
-#: modules/gui/skins2/src/skin_main.cpp:504
-#: modules/gui/skins2/src/skin_main.cpp:505
+#: modules/gui/skins2/src/skin_main.cpp:507
+#: modules/gui/skins2/src/skin_main.cpp:508
 msgid "Use a skinned playlist"
 msgstr "Använd ett skal för spellistan"
 
-#: modules/gui/skins2/src/skin_main.cpp:529
+#: modules/gui/skins2/src/skin_main.cpp:532
 msgid "Skinnable Interface"
 msgstr "Skalbart gränssnitt"
 
-#: modules/gui/skins2/src/skin_main.cpp:543
+#: modules/gui/skins2/src/skin_main.cpp:546
 msgid "Skins loader demux"
 msgstr ""
 
@@ -19460,8 +19468,9 @@ msgstr ""
 "kommer att hålla kvar."
 
 #: modules/misc/gnutls.c:90
+#, fuzzy
 msgid "GnuTLS transport layer security"
-msgstr ""
+msgstr "GnuTLS transport lagers säkerhet"
 
 #: modules/misc/gnutls.c:100
 msgid "GnuTLS server"
@@ -19718,7 +19727,7 @@ msgstr "Exportera XSPF-spellista"
 #: modules/misc/playlist/export.c:68
 #, fuzzy
 msgid "HTML playlist export"
-msgstr "Exporterare för M3U-spellista"
+msgstr "Exporterare för HTML-spellista"
 
 #: modules/misc/probe/hal.c:58 modules/services_discovery/hal.c:84
 msgid "HAL devices detection"
@@ -19988,7 +19997,7 @@ msgstr "Ljud-PID"
 #: modules/mux/mpeg/ts.c:101
 #, fuzzy
 msgid "Assign a fixed PID to the audio stream."
-msgstr "Ljudfilter används för att efterbearbeta ljudströmmen"
+msgstr "Tilldela ett fast PID för ljudströmmen."
 
 #: modules/mux/mpeg/ts.c:102
 msgid "SPU PID"
@@ -20512,8 +20521,9 @@ msgid "Introduces a delay in the display of the stream."
 msgstr "Lägger in en fördröjning i visningen av strömmen."
 
 #: modules/stream_out/display.c:55
+#, fuzzy
 msgid "Display stream output"
-msgstr ""
+msgstr "Visa strömnings-utmatning"
 
 #: modules/stream_out/duplicate.c:44
 msgid "Duplicate stream output"
@@ -20568,28 +20578,34 @@ msgid "This is the muxer that will be used for video."
 msgstr "Det här är muxern som kommer att användas för videon."
 
 #: modules/stream_out/es.c:62
+#, fuzzy
 msgid "Output URL"
-msgstr ""
+msgstr "Utmatnings länk"
 
 #: modules/stream_out/es.c:64
+#, fuzzy
 msgid "This is the default output URI."
-msgstr ""
+msgstr "Detta är standard länk för utmatning."
 
 #: modules/stream_out/es.c:65
+#, fuzzy
 msgid "Audio output URL"
-msgstr ""
+msgstr "Ljud-utmatnings länk"
 
 #: modules/stream_out/es.c:67
+#, fuzzy
 msgid "This is the output URI that will be used for audio."
-msgstr ""
+msgstr "Detta är länken som kommer att användas för ljud-utmatning."
 
 #: modules/stream_out/es.c:68
+#, fuzzy
 msgid "Video output URL"
-msgstr ""
+msgstr "Video-utmatnings länk"
 
 #: modules/stream_out/es.c:70
+#, fuzzy
 msgid "This is the output URI that will be used for video."
-msgstr ""
+msgstr "Detta är länken som kommer att användas för video-utmatning."
 
 #: modules/stream_out/es.c:79
 msgid "Elementary stream output"
@@ -20702,7 +20718,7 @@ msgstr ""
 #: modules/stream_out/record.c:57
 #, fuzzy
 msgid "Record stream output"
-msgstr "Paus"
+msgstr "Spela in ström-utmatning"
 
 #: modules/stream_out/rtp.c:73
 msgid "This is the output URL that will be used."
@@ -20783,7 +20799,7 @@ msgstr ""
 #: modules/stream_out/rtp.c:104 modules/stream_out/standard.c:85
 #, fuzzy
 msgid "Session phone number"
-msgstr "Sessionsnamn"
+msgstr "Sessionens telefonnummer"
 
 #: modules/stream_out/rtp.c:106 modules/stream_out/standard.c:87
 msgid ""
@@ -21176,7 +21192,7 @@ msgstr ""
 #: modules/stream_out/transrate/transrate.c:66
 #, fuzzy
 msgid "Shaping delay"
-msgstr "Skalningsläge"
+msgstr "Utformningsfördjöjning"
 
 #: modules/stream_out/transrate/transrate.c:68
 #, fuzzy
@@ -21199,7 +21215,7 @@ msgstr ""
 #: modules/stream_out/transrate/transrate.c:82
 #, fuzzy
 msgid "Transrate"
-msgstr "Transparent"
+msgstr "Omvandlingshastighet"
 
 #: modules/video_chroma/grey_yuv.c:55 modules/video_chroma/i420_ymga.c:54
 #: modules/video_chroma/i420_yuy2.c:89 modules/video_chroma/i422_i420.c:57
@@ -21339,7 +21355,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:141
 #, fuzzy
 msgid "Extracted Image Width"
-msgstr "Bildbredd"
+msgstr "Uträknad bildbredd"
 
 #: modules/video_filter/atmo/atmo.cpp:142
 msgid "The width of the mini image for further processing (64 is default)"
@@ -21348,7 +21364,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:145
 #, fuzzy
 msgid "Extracted Image Height"
-msgstr "Bildhöjd"
+msgstr "Uträknad bildhöjd"
 
 #: modules/video_filter/atmo/atmo.cpp:146
 msgid "The height of the mini image for further processing (48 is default)"
@@ -21357,7 +21373,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:149
 #, fuzzy
 msgid "Color when paused"
-msgstr "Hämta nu"
+msgstr "Färg vid paus"
 
 #: modules/video_filter/atmo/atmo.cpp:150
 msgid ""
@@ -21368,7 +21384,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:153
 #, fuzzy
 msgid "Pause-Red"
-msgstr "Pausad"
+msgstr "Paus-röd"
 
 #: modules/video_filter/atmo/atmo.cpp:154
 msgid "Red component of the pause color"
@@ -21377,7 +21393,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:155
 #, fuzzy
 msgid "Pause-Green"
-msgstr "Grön"
+msgstr "Paus-grön"
 
 #: modules/video_filter/atmo/atmo.cpp:156
 msgid "Green component of the pause color"
@@ -21386,7 +21402,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:157
 #, fuzzy
 msgid "Pause-Blue"
-msgstr "Gör paus"
+msgstr "Paus-blå"
 
 #: modules/video_filter/atmo/atmo.cpp:158
 msgid "Blue component of the pause color"
@@ -21404,7 +21420,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:163
 #, fuzzy
 msgid "End-Red"
-msgstr "Röd"
+msgstr "Slut-röd"
 
 #: modules/video_filter/atmo/atmo.cpp:164
 msgid "Red component of the shutdown color"
@@ -21413,7 +21429,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:165
 #, fuzzy
 msgid "End-Green"
-msgstr "Grön"
+msgstr "Slut-grön"
 
 #: modules/video_filter/atmo/atmo.cpp:166
 msgid "Green component of the shutdown color"
@@ -21422,7 +21438,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:167
 #, fuzzy
 msgid "End-Blue"
-msgstr "Blå"
+msgstr "Slut-blå"
 
 #: modules/video_filter/atmo/atmo.cpp:168
 msgid "Blue component of the shutdown color"
@@ -21450,7 +21466,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:177
 #, fuzzy
 msgid "White Red"
-msgstr "Vit"
+msgstr "Vit Röd"
 
 #: modules/video_filter/atmo/atmo.cpp:178
 msgid "Red value of a pure white on your LED stripes."
@@ -21459,7 +21475,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:180
 #, fuzzy
 msgid "White Green"
-msgstr "Vitnivå för grön"
+msgstr "Vit Grön"
 
 #: modules/video_filter/atmo/atmo.cpp:181
 msgid "Green value of a pure white on your LED stripes."
@@ -21468,7 +21484,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:183
 #, fuzzy
 msgid "White Blue"
-msgstr "Vit"
+msgstr "Vit Blå"
 
 #: modules/video_filter/atmo/atmo.cpp:184
 msgid "Blue value of a pure white on your LED stripes."
@@ -21511,7 +21527,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:202
 #, fuzzy
 msgid "Hue windowing"
-msgstr "fönster1"
+msgstr "Färgtonsfönster"
 
 #: modules/video_filter/atmo/atmo.cpp:203
 #: modules/video_filter/atmo/atmo.cpp:205
@@ -21521,7 +21537,7 @@ msgstr "Används för statistik."
 #: modules/video_filter/atmo/atmo.cpp:204
 #, fuzzy
 msgid "Sat windowing"
-msgstr "fönster1"
+msgstr "Färgmättnadsfönster"
 
 #: modules/video_filter/atmo/atmo.cpp:207
 msgid "Filter length (ms)"
@@ -21571,7 +21587,7 @@ msgstr "Procent"
 #: modules/video_filter/atmo/atmo.cpp:231
 #, fuzzy
 msgid "Frame delay"
-msgstr "Bildfrekvens"
+msgstr "Bildrutefördröjning"
 
 #: modules/video_filter/atmo/atmo.cpp:232
 msgid ""
@@ -21582,27 +21598,27 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:237
 #, fuzzy
 msgid "Channel summary"
-msgstr "Kanalnummer"
+msgstr "Kanalantal"
 
 #: modules/video_filter/atmo/atmo.cpp:238
 #, fuzzy
 msgid "Channel left"
-msgstr "Kanalnamn"
+msgstr "Vänster kanal"
 
 #: modules/video_filter/atmo/atmo.cpp:239
 #, fuzzy
 msgid "Channel right"
-msgstr "Kanal"
+msgstr "Höger kanal"
 
 #: modules/video_filter/atmo/atmo.cpp:240
 #, fuzzy
 msgid "Channel top"
-msgstr "Kanal"
+msgstr "Övre kanal"
 
 #: modules/video_filter/atmo/atmo.cpp:241
 #, fuzzy
 msgid "Channel bottom"
-msgstr "Kanalnamn"
+msgstr "Undre kanal"
 
 #: modules/video_filter/atmo/atmo.cpp:243
 msgid ""
@@ -21706,7 +21722,7 @@ msgstr ""
 #: modules/video_filter/atmo/atmo.cpp:356
 #, fuzzy
 msgid "Settings for the built-in Live Video Processor only"
-msgstr "Inställningar för huvudgränssnittet"
+msgstr "Inställningar för inbyggd Direkt Video Processor"
 
 #: modules/video_filter/atmo/atmo.cpp:393
 msgid "Change channel assignment (fixes wrong wiring)"
@@ -21785,7 +21801,7 @@ msgstr ""
 #: modules/video_filter/blendbench.c:75
 #, fuzzy
 msgid "Blendbench"
-msgstr "Blanda"
+msgstr "Blandningsriktlinje"
 
 #: modules/video_filter/blendbench.c:80
 msgid "Benchmarking"
@@ -21832,7 +21848,7 @@ msgstr ""
 #: modules/video_filter/bluescreen.c:52
 #, fuzzy
 msgid "Bluescreen U tolerance"
-msgstr "Tolerans för bithastighet"
+msgstr "Tolerans U blåskärm"
 
 #: modules/video_filter/bluescreen.c:54
 msgid ""
@@ -21843,7 +21859,7 @@ msgstr ""
 #: modules/video_filter/bluescreen.c:57
 #, fuzzy
 msgid "Bluescreen V tolerance"
-msgstr "Tolerans för bithastighet"
+msgstr "Tolerans för V blåskärm"
 
 #: modules/video_filter/bluescreen.c:59
 msgid ""
@@ -21854,7 +21870,7 @@ msgstr ""
 #: modules/video_filter/bluescreen.c:79
 #, fuzzy
 msgid "Bluescreen video filter"
-msgstr "ffmpeg videofilter"
+msgstr "Blåskärm-videofilter"
 
 #: modules/video_filter/bluescreen.c:80
 msgid "Bluescreen"
@@ -21877,7 +21893,7 @@ msgstr ""
 #: modules/video_filter/canvas.c:56
 #, fuzzy
 msgid "Padd video"
-msgstr "Inbäddad video"
+msgstr "Lägg till dötid före och efter video"
 
 #: modules/video_filter/canvas.c:58
 msgid ""
@@ -22619,17 +22635,17 @@ msgid "Motion blur filter"
 msgstr ""
 
 #: modules/video_filter/motiondetect.c:49
+#, fuzzy
 msgid "Motion detect video filter"
-msgstr ""
+msgstr "Rörelse detektions video-filter"
 
 #: modules/video_filter/motiondetect.c:50
 msgid "Motion Detect"
 msgstr "Rörelsedetektering"
 
 #: modules/video_filter/noise.c:53
-#, fuzzy
 msgid "Noise video filter"
-msgstr "Klona videofilter"
+msgstr "Brus-videofilter"
 
 #: modules/video_filter/opencv_example.cpp:68
 msgid "OpenCV face detection example filter"
@@ -22686,7 +22702,7 @@ msgstr "Visa allting inklusive felsökningsmeddelanden"
 #: modules/video_filter/opencv_wrapper.c:80
 #, fuzzy
 msgid "OpenCV video filter wrapper"
-msgstr "ffmpeg videofilter"
+msgstr "OpenCV videofilter"
 
 #: modules/video_filter/opencv_wrapper.c:81
 msgid "OpenCV"
@@ -22873,24 +22889,27 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/panoramix.c:129
+#, fuzzy
 msgid "Attenuation, begin (in %)"
-msgstr ""
+msgstr "Förtunning, börjar (i %)"
 
 #: modules/video_filter/panoramix.c:130
 msgid "Select in percent the Lagrange coeff of the beginning blended zone"
 msgstr ""
 
 #: modules/video_filter/panoramix.c:133
+#, fuzzy
 msgid "Attenuation, middle (in %)"
-msgstr ""
+msgstr "Förtunning, mittpunkt (i %)"
 
 #: modules/video_filter/panoramix.c:134
 msgid "Select in percent the Lagrange coeff of the middle of blended zone"
 msgstr ""
 
 #: modules/video_filter/panoramix.c:137
+#, fuzzy
 msgid "Attenuation, end (in %)"
-msgstr ""
+msgstr "Förtunning, slutar (i %)"
 
 #: modules/video_filter/panoramix.c:138
 msgid "Select in percent the Lagrange coeff of the end of blended zone"
@@ -23051,8 +23070,9 @@ msgstr ""
 "Högre nivåer kräver mycket mer processorkraft men producerar finare bilder."
 
 #: modules/video_filter/postproc.c:65
+#, fuzzy
 msgid "FFmpeg post processing filter chains"
-msgstr ""
+msgstr "FFmpeg efterbearbetningsfilters kedja"
 
 #: modules/video_filter/postproc.c:74
 #, fuzzy
@@ -23060,9 +23080,8 @@ msgid "Video post processing filter"
 msgstr "Videoskalningsfilter"
 
 #: modules/video_filter/postproc.c:75
-#, fuzzy
 msgid "Postproc"
-msgstr "Efterbehandling"
+msgstr "Efterbearbetning"
 
 #: modules/video_filter/postproc.c:229
 msgid "Lowest"
@@ -23170,18 +23189,19 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/remoteosd.c:119
+#, fuzzy
 msgid "Remote-OSD over VNC"
-msgstr ""
+msgstr "Fjärr-OSD över VNC-anslutning"
 
 #: modules/video_filter/remoteosd.c:121
 #, fuzzy
 msgid "Remote-OSD"
-msgstr "Ta bort"
+msgstr "Fjärr-OSD"
 
 #: modules/video_filter/ripple.c:53
 #, fuzzy
 msgid "Ripple video filter"
-msgstr "ffmpeg videofilter"
+msgstr "Ripple-videofilter"
 
 #: modules/video_filter/rotate.c:58
 msgid "Angle in degrees"
@@ -23194,7 +23214,7 @@ msgstr "Vinkel i grader (0 till 359)"
 #: modules/video_filter/rotate.c:67
 #, fuzzy
 msgid "Rotate video filter"
-msgstr "ffmpeg videofilter"
+msgstr "Rotera-videofilter"
 
 #: modules/video_filter/rss.c:129
 msgid "Feed URLs"
@@ -23436,7 +23456,7 @@ msgstr ""
 #: modules/video_filter/swscale.c:69
 #, fuzzy
 msgid "Swscale"
-msgstr "Skala"
+msgstr "Mjukvaruskalning"
 
 #: modules/video_filter/transform.c:65
 msgid "Transform type"
@@ -23559,8 +23579,9 @@ msgid ""
 msgstr ""
 
 #: modules/video_output/fb.c:96
+#, fuzzy
 msgid "Framebuffer resolution to use."
-msgstr ""
+msgstr "Framebuffert upplösning att använda."
 
 #: modules/video_output/fb.c:98
 msgid ""
@@ -23569,8 +23590,9 @@ msgid ""
 msgstr ""
 
 #: modules/video_output/fb.c:101
+#, fuzzy
 msgid "Framebuffer uses hw acceleration."
-msgstr ""
+msgstr "Framebufferten använder hårdvaruacceleration."
 
 #: modules/video_output/fb.c:103
 msgid ""
@@ -23605,9 +23627,8 @@ msgid "Matrox Graphic Array video output"
 msgstr ""
 
 #: modules/video_output/msw/direct3d.c:118
-#, fuzzy
 msgid "DirectX 3D video output"
-msgstr "Videoutmatning i gråskala"
+msgstr "DirectX 3D video-utmatning"
 
 #: modules/video_output/msw/directx.c:134
 msgid ""
@@ -23738,8 +23759,9 @@ msgid ""
 msgstr ""
 
 #: modules/video_output/qte/qte.cpp:120
+#, fuzzy
 msgid "QT Embedded video output"
-msgstr ""
+msgstr "QT inbäddad video-utmatning"
 
 #: modules/video_output/sdl.c:115
 msgid "SDL chroma format"
@@ -23891,8 +23913,9 @@ msgid "OpenGL(GLX) provider"
 msgstr ""
 
 #: modules/video_output/x11/x11.c:81
+#, fuzzy
 msgid "X11 video output"
-msgstr ""
+msgstr "X11 video-utmatning"
 
 #: modules/video_output/x11/xvideo.c:49
 msgid ""
@@ -23989,7 +24012,6 @@ msgid "VLC"
 msgstr "VLC"
 
 #: modules/video_output/xcb/window.c:235
-#, fuzzy
 msgid "VLC"
 msgstr "VLC"
 
@@ -24000,7 +24022,7 @@ msgstr "enhet, fifo eller filnamn"
 #: modules/video_output/yuv.c:52
 #, fuzzy
 msgid "device, fifo or filename to write yuv frames too."
-msgstr "enhet, fifo eller filnamn"
+msgstr "enhet, fifo eller filnamn att skriva yuv bildrutor till."
 
 #: modules/video_output/yuv.c:58
 msgid "YUV4MPEG2 header (default disabled)"
