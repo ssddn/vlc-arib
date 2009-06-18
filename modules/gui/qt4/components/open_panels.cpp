@@ -170,6 +170,7 @@ void FileOpenPanel::browseFile()
             new QListWidgetItem( toNativeSeparators( file ), ui.fileListWidg );
         item->setFlags( Qt::ItemIsEditable | Qt::ItemIsEnabled );
         ui.fileListWidg->addItem( item );
+        savedirpathFromFile( file );
     }
     updateMRL();
 }
