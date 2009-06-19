@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-06-17 22:49+0100\n"
+"POT-Creation-Date: 2009-06-19 23:50+0100\n"
 "PO-Revision-Date: 2009-06-17 12:23+0100\n"
 "Last-Translator: Niklas 'Nille' Åkerström <nille.kungen@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -980,7 +980,7 @@ msgstr ""
 #: src/input/es_out.c:911 src/input/es_out.c:916 src/libvlc-module.c:348
 #: modules/access/cdda/info.c:391 modules/access/vcdx/access.c:477
 #: modules/access/vcdx/info.c:290 modules/access/vcdx/info.c:291
-#: modules/gui/qt4/components/open_panels.cpp:381
+#: modules/gui/qt4/components/open_panels.cpp:383
 msgid "Track"
 msgstr "Spår"
 
@@ -1066,7 +1066,7 @@ msgstr "Bitar per sampling"
 
 #: src/input/es_out.c:2718 modules/access/pvr.c:97
 #: modules/access_output/shout.c:91 modules/demux/playlist/shoutcast.c:410
-#: modules/gui/qt4/components/open_panels.cpp:955
+#: modules/gui/qt4/components/open_panels.cpp:957
 #: modules/gui/qt4/ui/profiles.h:471 modules/gui/qt4/ui/profiles.h:490
 msgid "Bitrate"
 msgstr "Bitfrekvens"
@@ -1104,21 +1104,21 @@ msgstr "Skärmupplösning"
 msgid "Frame rate"
 msgstr "Bildfrekvens"
 
-#: src/input/input.c:2484
+#: src/input/input.c:2486
 msgid "Your input can't be opened"
 msgstr "Din inmatning kunde inte öppnas"
 
-#: src/input/input.c:2485
+#: src/input/input.c:2487
 #, c-format
 msgid "VLC is unable to open the MRL '%s'. Check the log for details."
 msgstr ""
 "VLC kunde inte öppna MRL:en \"%s\". Kontrollera loggen för mer detaljer."
 
-#: src/input/input.c:2616
+#: src/input/input.c:2621
 msgid "VLC can't recognize the input's format"
 msgstr "VLC känner inte igen formatet på inmatningen"
 
-#: src/input/input.c:2617
+#: src/input/input.c:2622
 #, fuzzy, c-format
 msgid ""
 "The format of '%s' cannot be detected. Have a look at the log for details."
@@ -1130,7 +1130,7 @@ msgstr ""
 #: modules/gui/beos/MediaControlView.cpp:1236 modules/gui/macosx/intf.m:652
 #: modules/gui/macosx/intf.m:653 modules/gui/macosx/open.m:178
 #: modules/gui/macosx/playlistinfo.m:76 modules/gui/macosx/wizard.m:348
-#: modules/gui/qt4/components/open_panels.cpp:355
+#: modules/gui/qt4/components/open_panels.cpp:357
 #: modules/gui/qt4/ui/open_disk.h:302 modules/mux/asf.c:52
 msgid "Title"
 msgstr "Titel"
@@ -1389,7 +1389,7 @@ msgstr "2:1 Dubbel"
 
 #: src/libvlc-module.c:94 src/libvlc-module.c:307 modules/access/bda/bda.c:69
 #: modules/codec/subtitles/subsdec.c:97
-#: modules/gui/qt4/components/open_panels.cpp:1031
+#: modules/gui/qt4/components/open_panels.cpp:1033
 msgid "Auto"
 msgstr "Auto"
 
@@ -4586,7 +4586,7 @@ msgid "Downloading ..."
 msgstr "Hämtar ..."
 
 #: src/misc/update.c:1611 modules/access/dvb/scan.c:321
-#: modules/demux/avi/avi.c:691 modules/demux/avi/avi.c:2412
+#: modules/demux/avi/avi.c:694 modules/demux/avi/avi.c:2415
 #: modules/gui/beos/InterfaceWindow.cpp:161 modules/gui/macosx/bookmarks.m:102
 #: modules/gui/macosx/controls.m:84 modules/gui/macosx/coredialogs.m:66
 #: modules/gui/macosx/coredialogs.m:68 modules/gui/macosx/coredialogs.m:184
@@ -4594,7 +4594,7 @@ msgstr "Hämtar ..."
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:238 modules/gui/macosx/simple_prefs.m:297
 #: modules/gui/macosx/simple_prefs.m:636 modules/gui/macosx/wizard.m:320
-#: modules/gui/qt4/components/open_panels.cpp:1314
+#: modules/gui/qt4/components/open_panels.cpp:1316
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
 msgid "Cancel"
@@ -4767,7 +4767,7 @@ msgstr ""
 "Mellanlagringsvärde för DVB-strömmar. Detta värde ska vara i millisekunder."
 
 #: modules/access/bda/bda.c:51 modules/access/dvb/access.c:89
-#: modules/gui/qt4/components/open_panels.cpp:982
+#: modules/gui/qt4/components/open_panels.cpp:984
 msgid "Adapter card to tune"
 msgstr "Mottagarkort att ta emot på"
 
@@ -4783,8 +4783,8 @@ msgid "Device number to use on adapter"
 msgstr "Enhetsnummer att använda på adapter"
 
 #: modules/access/bda/bda.c:58 modules/access/dvb/access.c:95
-#: modules/gui/qt4/components/open_panels.cpp:739
-#: modules/gui/qt4/components/open_panels.cpp:1004
+#: modules/gui/qt4/components/open_panels.cpp:741
+#: modules/gui/qt4/components/open_panels.cpp:1006
 msgid "Transponder/multiplex frequency"
 msgstr "Frekvens för transponder/multiplex"
 
@@ -5002,17 +5002,17 @@ msgid "Terrestrial bandwidth [0=auto,6,7,8 in MHz]"
 msgstr ""
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1032
+#: modules/gui/qt4/components/open_panels.cpp:1034
 msgid "6 MHz"
 msgstr "6 MHz"
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1033
+#: modules/gui/qt4/components/open_panels.cpp:1035
 msgid "7 MHz"
 msgstr "7 MHz"
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1034
+#: modules/gui/qt4/components/open_panels.cpp:1036
 msgid "8 MHz"
 msgstr "8 MHz"
 
@@ -5541,8 +5541,8 @@ msgstr ""
 "millisekunder."
 
 #: modules/access/dshow/dshow.cpp:103 modules/access/v4l.c:75
-#: modules/gui/qt4/components/open_panels.cpp:792
-#: modules/gui/qt4/components/open_panels.cpp:827
+#: modules/gui/qt4/components/open_panels.cpp:794
+#: modules/gui/qt4/components/open_panels.cpp:829
 msgid "Video device name"
 msgstr "Videoenhetsnamn"
 
@@ -5555,8 +5555,8 @@ msgstr ""
 "inte anger någonting så kommer standardenheten att användas."
 
 #: modules/access/dshow/dshow.cpp:108
-#: modules/gui/qt4/components/open_panels.cpp:798
-#: modules/gui/qt4/components/open_panels.cpp:833
+#: modules/gui/qt4/components/open_panels.cpp:800
+#: modules/gui/qt4/components/open_panels.cpp:835
 msgid "Audio device name"
 msgstr "Ljudenhetsnamn"
 
@@ -5569,7 +5569,7 @@ msgstr ""
 "inte anger någon så kommer standardenheten att användas. "
 
 #: modules/access/dshow/dshow.cpp:113
-#: modules/gui/qt4/components/open_panels.cpp:702
+#: modules/gui/qt4/components/open_panels.cpp:704
 msgid "Video size"
 msgstr "Videostorlek"
 
@@ -6414,8 +6414,8 @@ msgid "PVR radio device"
 msgstr "PVR-radioenhet"
 
 #: modules/access/pvr.c:71 modules/access/v4l.c:90
-#: modules/gui/qt4/components/open_panels.cpp:840
-#: modules/gui/qt4/components/open_panels.cpp:939
+#: modules/gui/qt4/components/open_panels.cpp:842
+#: modules/gui/qt4/components/open_panels.cpp:941
 msgid "Norm"
 msgstr "Norm"
 
@@ -6446,8 +6446,8 @@ msgid "Height of the stream to capture (-1 for autodetection)."
 msgstr "Höjd på strömmen som ska fångas (-1 för automatisk identifiering)."
 
 #: modules/access/pvr.c:83 modules/access/v4l.c:83 modules/access/v4l2.c:194
-#: modules/gui/qt4/components/open_panels.cpp:847
-#: modules/gui/qt4/components/open_panels.cpp:946
+#: modules/gui/qt4/components/open_panels.cpp:849
+#: modules/gui/qt4/components/open_panels.cpp:948
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -6716,7 +6716,7 @@ msgstr ""
 "millisekunder."
 
 #: modules/access/screen/screen.c:46
-#: modules/gui/qt4/components/open_panels.cpp:1070
+#: modules/gui/qt4/components/open_panels.cpp:1072
 msgid "Desired frame rate for the capture."
 msgstr "Önskad bildfrekvens för fångst."
 
@@ -6972,7 +6972,7 @@ msgstr "Video4Linux"
 msgid "Video4Linux input"
 msgstr "Video4Linux-inmatning"
 
-#: modules/access/v4l2.c:68 modules/gui/qt4/components/open_panels.cpp:805
+#: modules/access/v4l2.c:68 modules/gui/qt4/components/open_panels.cpp:807
 #: modules/stream_out/standard.c:100
 msgid "Standard"
 msgstr "Standard"
@@ -7351,7 +7351,7 @@ msgstr "[vcd:][enhet][@[titel][,[kapitel]]]"
 #: modules/access/vcdx/access.c:286 modules/access/vcdx/access.c:369
 #: modules/access/vcdx/access.c:696 modules/access/vcdx/info.c:294
 #: modules/access/vcdx/info.c:295
-#: modules/gui/qt4/components/open_panels.cpp:368
+#: modules/gui/qt4/components/open_panels.cpp:370
 msgid "Entry"
 msgstr "Post"
 
@@ -12042,11 +12042,11 @@ msgstr "Rätta aldrig till"
 msgid "AVI demuxer"
 msgstr "Demuxer för AVI"
 
-#: modules/demux/avi/avi.c:687
+#: modules/demux/avi/avi.c:690
 msgid "AVI Index"
 msgstr "AVI-index"
 
-#: modules/demux/avi/avi.c:688
+#: modules/demux/avi/avi.c:691
 msgid ""
 "This AVI file is broken. Seeking will not work correctly.\n"
 "Do you want to try to fix it?\n"
@@ -12058,15 +12058,15 @@ msgstr ""
 "\n"
 "Detta kan ta lång tid."
 
-#: modules/demux/avi/avi.c:691
+#: modules/demux/avi/avi.c:694
 msgid "Repair"
 msgstr "Reparera"
 
-#: modules/demux/avi/avi.c:691
+#: modules/demux/avi/avi.c:694
 msgid "Don't repair"
 msgstr "Reparera inte"
 
-#: modules/demux/avi/avi.c:2411
+#: modules/demux/avi/avi.c:2414
 msgid "Fixing AVI Index..."
 msgstr "Rättar till AVI-index..."
 
@@ -13017,7 +13017,7 @@ msgstr "Fönster"
 #: modules/gui/macosx/wizard.m:1681 modules/gui/macosx/wizard.m:1689
 #: modules/gui/macosx/wizard.m:1870 modules/gui/macosx/wizard.m:1881
 #: modules/gui/macosx/wizard.m:1894
-#: modules/gui/qt4/components/open_panels.cpp:1313
+#: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1366
 #: modules/gui/qt4/main_interface.cpp:553
 msgid "OK"
@@ -14098,7 +14098,7 @@ msgid "Treat as a pipe rather than as a file"
 msgstr "Betrakta som ett rör hellre än som en fil"
 
 #: modules/gui/macosx/open.m:177
-#: modules/gui/qt4/components/open_panels.cpp:926
+#: modules/gui/qt4/components/open_panels.cpp:928
 msgid "Device name"
 msgstr "Enhetsnamn"
 
@@ -14519,7 +14519,7 @@ msgstr "Förlorade bildrutor"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
 #: modules/gui/qt4/components/info_panels.cpp:520
-#: modules/gui/qt4/dialogs_provider.cpp:616
+#: modules/gui/qt4/dialogs_provider.cpp:617
 #: modules/video_filter/deinterlace.c:143
 msgid "Streaming"
 msgstr "Strömmar"
@@ -16561,65 +16561,65 @@ msgstr "Filnamn:"
 msgid "Filter:"
 msgstr "Filter:"
 
-#: modules/gui/qt4/components/open_panels.cpp:193
+#: modules/gui/qt4/components/open_panels.cpp:194
 msgid "Open subtitles file"
 msgstr "Öppna undertextfil"
 
-#: modules/gui/qt4/components/open_panels.cpp:305
+#: modules/gui/qt4/components/open_panels.cpp:307
 msgid "Eject the disc"
 msgstr "Mata ut skivan"
 
-#: modules/gui/qt4/components/open_panels.cpp:723
-#: modules/gui/qt4/components/open_panels.cpp:983
+#: modules/gui/qt4/components/open_panels.cpp:725
+#: modules/gui/qt4/components/open_panels.cpp:985
 msgid "DVB Type:"
 msgstr "DVB-typ:"
 
-#: modules/gui/qt4/components/open_panels.cpp:749
-#: modules/gui/qt4/components/open_panels.cpp:1014
+#: modules/gui/qt4/components/open_panels.cpp:751
+#: modules/gui/qt4/components/open_panels.cpp:1016
 #, fuzzy
 msgid "Transponder symbol rate"
 msgstr "Paus"
 
-#: modules/gui/qt4/components/open_panels.cpp:758
-#: modules/gui/qt4/components/open_panels.cpp:1023
+#: modules/gui/qt4/components/open_panels.cpp:760
+#: modules/gui/qt4/components/open_panels.cpp:1025
 msgid "Bandwidth"
 msgstr "Bandbredd"
 
-#: modules/gui/qt4/components/open_panels.cpp:873
+#: modules/gui/qt4/components/open_panels.cpp:875
 msgid "Channels:"
 msgstr "Kanaler:"
 
-#: modules/gui/qt4/components/open_panels.cpp:884
+#: modules/gui/qt4/components/open_panels.cpp:886
 msgid "Selected ports:"
 msgstr "Valda portar:"
 
-#: modules/gui/qt4/components/open_panels.cpp:887
+#: modules/gui/qt4/components/open_panels.cpp:889
 msgid ".*"
 msgstr ".*"
 
-#: modules/gui/qt4/components/open_panels.cpp:894
+#: modules/gui/qt4/components/open_panels.cpp:896
 #, fuzzy
 msgid "Input caching:"
 msgstr "Inmatning har ändrats "
 
-#: modules/gui/qt4/components/open_panels.cpp:904
+#: modules/gui/qt4/components/open_panels.cpp:906
 #, fuzzy
 msgid "Use VLC pace"
 msgstr "Använd VLC tempo"
 
-#: modules/gui/qt4/components/open_panels.cpp:908
+#: modules/gui/qt4/components/open_panels.cpp:910
 msgid "Auto connnection"
 msgstr "Anslut automatiskt"
 
-#: modules/gui/qt4/components/open_panels.cpp:932
+#: modules/gui/qt4/components/open_panels.cpp:934
 msgid "Radio device name"
 msgstr "Enhetsnamn för radio"
 
-#: modules/gui/qt4/components/open_panels.cpp:1064
+#: modules/gui/qt4/components/open_panels.cpp:1066
 msgid "Your display will be opened and played in order to stream or save it."
 msgstr ""
 
-#: modules/gui/qt4/components/open_panels.cpp:1287
+#: modules/gui/qt4/components/open_panels.cpp:1289
 msgid "Advanced Options"
 msgstr "Avancerade alternativ"
 
@@ -16631,11 +16631,11 @@ msgstr "Dubbelklicka för att få mediainformation"
 msgid "URI"
 msgstr "URI"
 
-#: modules/gui/qt4/components/playlist/standardpanel.cpp:128
+#: modules/gui/qt4/components/playlist/standardpanel.cpp:129
 msgid "Click to toggle between loop one, loop all"
 msgstr ""
 
-#: modules/gui/qt4/components/playlist/standardpanel.cpp:152
+#: modules/gui/qt4/components/playlist/standardpanel.cpp:153
 msgid "Show the current item"
 msgstr "Visa aktuellt objekt"
 
@@ -17444,31 +17444,31 @@ msgstr "Konfigurera schema"
 msgid "VOD: "
 msgstr "VOD: "
 
-#: modules/gui/qt4/dialogs_provider.cpp:468
+#: modules/gui/qt4/dialogs_provider.cpp:469
 msgid "Open Directory"
 msgstr "Öppna katalog"
 
-#: modules/gui/qt4/dialogs_provider.cpp:507
+#: modules/gui/qt4/dialogs_provider.cpp:508
 msgid "Open playlist..."
 msgstr "Öppna spellista..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:518
+#: modules/gui/qt4/dialogs_provider.cpp:519
 msgid "Save playlist as..."
 msgstr "Spara spellista som..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:520
+#: modules/gui/qt4/dialogs_provider.cpp:521
 msgid "XSPF playlist (*.xspf);; "
 msgstr "XSPF-spellista (*.xspf);; "
 
-#: modules/gui/qt4/dialogs_provider.cpp:521
+#: modules/gui/qt4/dialogs_provider.cpp:522
 msgid "M3U playlist (*.m3u);; "
 msgstr "M3U-spellista (*.m3u);; "
 
-#: modules/gui/qt4/dialogs_provider.cpp:522
+#: modules/gui/qt4/dialogs_provider.cpp:523
 msgid "HTML playlist (*.html)"
 msgstr "HTML-spellista (*.html)"
 
-#: modules/gui/qt4/dialogs_provider.cpp:667
+#: modules/gui/qt4/dialogs_provider.cpp:668
 msgid "Open subtitles..."
 msgstr "Öppna undertexter..."
 
@@ -17858,14 +17858,10 @@ msgid "Show the name of the song or video in the controler window title."
 msgstr "Visa namnet på låten eller videon i kontrollfönstrets titellist."
 
 #: modules/gui/qt4/qt4.cpp:98
-msgid "Path to use in openfile dialog"
-msgstr "Sökväg att använda i fildialogen"
-
-#: modules/gui/qt4/qt4.cpp:100
 msgid "Show notification popup on track change"
 msgstr "Visa en notifieringsruta vid spårbyte"
 
-#: modules/gui/qt4/qt4.cpp:102
+#: modules/gui/qt4/qt4.cpp:100
 msgid ""
 "Show a notification popup with the artist and track name when the current "
 "playlist item changes, when VLC is minimized or hidden."
@@ -17873,34 +17869,34 @@ msgstr ""
 "Visa en notifieringsruta med artisten och spårnamnet när det aktuella "
 "spellistobjektet ändras, när VLC är minimerad eller dold."
 
-#: modules/gui/qt4/qt4.cpp:105
+#: modules/gui/qt4/qt4.cpp:103
 msgid "Advanced options"
 msgstr "Avancerade alternativ"
 
-#: modules/gui/qt4/qt4.cpp:106
+#: modules/gui/qt4/qt4.cpp:104
 msgid "Show all the advanced options in the dialogs."
 msgstr "Visa alla avancerade alternativ i dialogrutorna."
 
-#: modules/gui/qt4/qt4.cpp:109
+#: modules/gui/qt4/qt4.cpp:107
 msgid "Windows opacity between 0.1 and 1."
 msgstr "Fönsteropacitet mellan 0.1 och 1."
 
-#: modules/gui/qt4/qt4.cpp:110
+#: modules/gui/qt4/qt4.cpp:108
 msgid ""
 "Sets the windows opacity between 0.1 and 1 for main interface, playlist and "
 "extended panel. This option only works with Windows and X11 with composite "
 "extensions."
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:115
+#: modules/gui/qt4/qt4.cpp:113
 msgid "Show unimportant error and warnings dialogs"
 msgstr "Visa oviktiga dialogrutor för fel och varningar"
 
-#: modules/gui/qt4/qt4.cpp:117
+#: modules/gui/qt4/qt4.cpp:115
 msgid "Activate the updates availability notification"
 msgstr "Aktivera notifiering om tillgängliga uppdateringar"
 
-#: modules/gui/qt4/qt4.cpp:118
+#: modules/gui/qt4/qt4.cpp:116
 msgid ""
 "Activate the automatic notification of new versions of the software. It runs "
 "once every two weeks."
@@ -17908,45 +17904,45 @@ msgstr ""
 "Aktivera automatiska notifieringar om nya versioner av programvaran. Den "
 "körs varannan vecka."
 
-#: modules/gui/qt4/qt4.cpp:121
+#: modules/gui/qt4/qt4.cpp:119
 msgid "Number of days between two update checks"
 msgstr "Antal dagar mellan uppdateringskontroller"
 
-#: modules/gui/qt4/qt4.cpp:123
+#: modules/gui/qt4/qt4.cpp:121
 msgid "Allow the volume to be set to 400%"
 msgstr "Tillåt att volymen kan ställas in till 400%"
 
-#: modules/gui/qt4/qt4.cpp:124
+#: modules/gui/qt4/qt4.cpp:122
 msgid ""
 "Allow the volume to have range from 0% to 400%, instead of 0% to 200%. This "
 "option can distort the audio, since it uses software amplification."
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:129
+#: modules/gui/qt4/qt4.cpp:127
 msgid "Automatically save the volume on exit"
 msgstr "Spara automatiskt volyminställningen vid avslut"
 
-#: modules/gui/qt4/qt4.cpp:131
+#: modules/gui/qt4/qt4.cpp:129
 msgid "Ask for network policy at start"
 msgstr "Fråga efter nätverkspolicy vid uppstart"
 
-#: modules/gui/qt4/qt4.cpp:133
+#: modules/gui/qt4/qt4.cpp:131
 msgid "Save the recently played items in the menu"
 msgstr "Spara tidigare spelade objekt i menyn"
 
-#: modules/gui/qt4/qt4.cpp:135
+#: modules/gui/qt4/qt4.cpp:133
 msgid "List of words separated by | to filter"
 msgstr "Lista med ord separerade med | att filtrera"
 
-#: modules/gui/qt4/qt4.cpp:136
+#: modules/gui/qt4/qt4.cpp:134
 msgid "Regular expression used to filter the recent items played in the player"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:139
+#: modules/gui/qt4/qt4.cpp:137
 msgid "Define the colors of the volume slider "
 msgstr "Definiera färgerna för volymdraglisten"
 
-#: modules/gui/qt4/qt4.cpp:140
+#: modules/gui/qt4/qt4.cpp:138
 msgid ""
 "Define the colors of the volume slider\n"
 "By specifying the 12 numbers separated by a ';'\n"
@@ -17954,11 +17950,11 @@ msgid ""
 "An alternative can be '30;30;50;40;40;100;50;50;160;150;150;255' "
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:145
+#: modules/gui/qt4/qt4.cpp:143
 msgid "Selection of the starting mode and look "
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:146
+#: modules/gui/qt4/qt4.cpp:144
 msgid ""
 "Start VLC with:\n"
 " - normal mode\n"
@@ -17966,27 +17962,27 @@ msgid ""
 " - minimal mode with limited controls"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:152
+#: modules/gui/qt4/qt4.cpp:150
 msgid "Classic look"
 msgstr "Klassiskt utseende"
 
-#: modules/gui/qt4/qt4.cpp:153
+#: modules/gui/qt4/qt4.cpp:151
 msgid "Complete look with information area"
 msgstr "Komplett utseende med informationsyta"
 
-#: modules/gui/qt4/qt4.cpp:154
+#: modules/gui/qt4/qt4.cpp:152
 msgid "Minimal look with no menus"
 msgstr "Minimalt utseende utan menyer"
 
-#: modules/gui/qt4/qt4.cpp:156
+#: modules/gui/qt4/qt4.cpp:154
 msgid "Show a controller in fullscreen mode"
 msgstr "Visa en kontroller i helskärmsläge"
 
-#: modules/gui/qt4/qt4.cpp:157
+#: modules/gui/qt4/qt4.cpp:155
 msgid "Embed the file browser in open dialog"
 msgstr "Bädda in filbläddraren i öppningsdialogen"
 
-#: modules/gui/qt4/qt4.cpp:169
+#: modules/gui/qt4/qt4.cpp:167
 msgid "Qt interface"
 msgstr "Qt-gränssnitt"
 
@@ -24216,6 +24212,9 @@ msgstr "Visualiseringsfilter"
 #: modules/visualization/visual/visual.c:123
 msgid "Spectrum analyser"
 msgstr "Spektrumanalysator"
+
+#~ msgid "Path to use in openfile dialog"
+#~ msgstr "Sökväg att använda i fildialogen"
 
 #~ msgid "VIDEO_TS directory"
 #~ msgstr "VIDEO_TS-katalog"
