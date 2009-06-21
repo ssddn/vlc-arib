@@ -31,8 +31,8 @@ StrCpy $Desc_Section08 \
     "ªterge preferinþele ºi cache-ul VLC media player rãmase de la instalãri precedente"
 
 StrCpy $Message_AlreadyInstalled  \
-"VLC media player a fost deja instalat. $\nVreþi sã eliminaþi \
-versiunea precedentã înainte de a instala $(^Name) ?"
+"VLC media player este deja instalat. $\nVreþi sã dezinstalaþi \
+versiunea existentã înainte de a instala $(^Name) ?"
 
 StrCpy $Name_Section91 "Dezinstalare"
 StrCpy $Name_Section92 "ªtergere preferinþe ºi cache"
