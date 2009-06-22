@@ -41,6 +41,11 @@
 #   include <sys/types.h>
 #endif
 
+#if defined(__APPLE__) && defined(__x86_64__)
+#   define HAVE_DL_DLOPEN 1
+#   define HAVE_DLFCN_H 1
+#endif
+
 #if !defined(HAVE_DYNAMIC_PLUGINS)
     /* no support for plugins */
 #elif defined(HAVE_DL_DYLD) && !defined(__x86_64__)
