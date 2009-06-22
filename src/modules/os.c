@@ -43,7 +43,7 @@
 
 #if !defined(HAVE_DYNAMIC_PLUGINS)
     /* no support for plugins */
-#elif defined(HAVE_DL_DYLD)
+#elif defined(HAVE_DL_DYLD) && !defined(__x86_64__)
 #   if defined(HAVE_MACH_O_DYLD_H)
 #       include <mach-o/dyld.h>
 #   endif
@@ -98,7 +98,7 @@ int module_Call( vlc_object_t *obj, module_t *p_module )
 
     if( pf_symbol == NULL )
     {
-#if defined(HAVE_DL_DYLD) || defined(HAVE_DL_BEOS)
+#if (defined(HAVE_DL_DYLD) && !defined(__x86_64__)) || defined(HAVE_DL_BEOS)
         msg_Warn( obj, "cannot find symbol \"%s\" in file `%s'",
                   psz_name, p_module->psz_filename );
 #elif defined(HAVE_DL_WINDOWS)
@@ -145,7 +145,7 @@ int module_Load( vlc_object_t *p_this, const char *psz_file,
 {
     module_handle_t handle;
 
-#if defined(HAVE_DL_DYLD)
+#if defined(HAVE_DL_DYLD) && !defined(__x86_64__) 
     NSObjectFileImage image;
     NSObjectFileImageReturnCode ret;
 
@@ -253,7 +253,7 @@ int module_Load( vlc_object_t *p_this, const char *psz_file,
  */
 void module_Unload( module_handle_t handle )
 {
-#if defined(HAVE_DL_DYLD)
+#if defined(HAVE_DL_DYLD) && !defined(__x86_64__)
     NSUnLinkModule( handle, FALSE );
 
 #elif defined(HAVE_DL_BEOS)
@@ -289,7 +289,7 @@ void module_Unload( module_handle_t handle )
  */
 static void *module_Lookup( module_handle_t handle, const char *psz_function )
 {
-#if defined(HAVE_DL_DYLD)
+#if defined(HAVE_DL_DYLD) && !defined(__x86_64__)
     char psz_call[strlen( psz_function ) + 2];
     psz_call[0] = '_';
     memcpy( psz_call + 1, psz_function, sizeof( psz_call ) - 1 );
