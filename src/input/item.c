@@ -363,7 +363,7 @@ void input_item_SetURI( input_item_t *p_i, const char *psz_uri )
     {
         const char *psz_filename;
 
-        if( !strstr( p_i->psz_uri, "://" ) )
+        if( strstr( p_i->psz_uri, "://" ) )
             psz_filename = strrchr( p_i->psz_uri, '/' );
         else
             psz_filename = strrchr( p_i->psz_uri, DIR_SEP_CHAR );
