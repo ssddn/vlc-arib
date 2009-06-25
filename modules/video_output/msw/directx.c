@@ -514,6 +514,7 @@ static void CloseVideo( vlc_object_t *p_this )
     vlc_mutex_destroy( &p_vout->p_sys->lock );
 
     /* Make sure the wallpaper is restored */
+    var_DelCallback( p_vout, "directx-wallpaper", WallpaperCallback, NULL );
     SwitchWallpaperMode( p_vout, false );
 
     /* restore screensaver system settings */
