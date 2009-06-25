@@ -280,6 +280,13 @@ static void End( vout_thread_t *p_vout )
 {
     vout_sys_t *p_sys = p_vout->p_sys;
 
+    var_DelCallback( p_vout, CFG_PREFIX "rows",
+                     PuzzleCallback, p_vout->p_sys );
+    var_DelCallback( p_vout, CFG_PREFIX "cols",
+                     PuzzleCallback, p_vout->p_sys );
+    var_DelCallback( p_vout, CFG_PREFIX "black-slot",
+                     PuzzleCallback, p_vout->p_sys );
+
     vout_filter_DelChild( p_vout, p_sys->p_vout, MouseEvent );
     vout_CloseAndRelease( p_sys->p_vout );
 
