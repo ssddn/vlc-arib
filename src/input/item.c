@@ -362,21 +362,20 @@ void input_item_SetURI( input_item_t *p_i, const char *psz_uri )
     if( !p_i->psz_name && p_i->i_type == ITEM_TYPE_FILE )
     {
         const char *psz_filename;
+        bool b_path = !strstr( p_i->psz_uri, "://" );
 
-        if( strstr( p_i->psz_uri, "://" ) )
-            psz_filename = strrchr( p_i->psz_uri, '/' );
-        else
-            psz_filename = strrchr( p_i->psz_uri, DIR_SEP_CHAR );
+        psz_filename = strrchr( p_i->psz_uri, b_path ? DIR_SEP_CHAR : '/' );
 
-        if( psz_filename && ( *psz_filename == DIR_SEP_CHAR || *psz_filename == '/' ) )
+        if( psz_filename && ( *psz_filename == (b_path ? DIR_SEP_CHAR : '/') ) )
             psz_filename++;
         if( psz_filename && *psz_filename )
             p_i->psz_name = strdup( psz_filename );
 
         /* Make the name more readable */
-        if( p_i->psz_name )
+        if( !b_path && p_i->psz_name )
             decode_URI( p_i->psz_name );
     }
+    else if( p_i->i_type == ITEM_TYPE_FILE ) fprintf(stderr, "A FILE, but ALREADY HAS A NAME" );
 
     /* The name is NULL: fill it with everything except login and password */
     if( !p_i->psz_name )
