@@ -375,7 +375,6 @@ void input_item_SetURI( input_item_t *p_i, const char *psz_uri )
         if( !b_path && p_i->psz_name )
             decode_URI( p_i->psz_name );
     }
-    else if( p_i->i_type == ITEM_TYPE_FILE ) fprintf(stderr, "A FILE, but ALREADY HAS A NAME" );
 
     /* The name is NULL: fill it with everything except login and password */
     if( !p_i->psz_name )
