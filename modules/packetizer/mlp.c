@@ -120,7 +120,7 @@ static int Open( vlc_object_t *p_this )
     decoder_t *p_dec = (decoder_t*)p_this;
     decoder_sys_t *p_sys;
 
-    if( p_dec->fmt_in.i_codec != VLC_FOURCC('m','l','p',' ') ||
+    if( p_dec->fmt_in.i_codec != VLC_FOURCC('m','l','p',' ') &&
         p_dec->fmt_in.i_codec != VLC_FOURCC('t','r','h','d') )
         return VLC_EGENERIC;
 
