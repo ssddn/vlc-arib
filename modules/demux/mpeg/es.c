@@ -140,7 +140,6 @@ static const codec_t p_codec[] = {
     { VLC_FOURCC( 'a', '5', '2', ' ' ), true,  "a52 audio",  A52Probe,  A52Init },
     { VLC_FOURCC( 'e', 'a', 'c', '3' ), true,  "eac3 audio", EA52Probe, A52Init },
     { VLC_FOURCC( 'd', 't', 's', ' ' ), false, "dts audio",  DtsProbe,  DtsInit },
-    { VLC_FOURCC( 'm', 'l', 'p', ' ' ), false, "mlp audio",  MlpProbe,  MlpInit },
     { VLC_FOURCC( 't', 'r', 'h', 'd' ), false, "mlp audio",  MlpProbe,  MlpInit },
 
     { 0, false, NULL, NULL, NULL }
