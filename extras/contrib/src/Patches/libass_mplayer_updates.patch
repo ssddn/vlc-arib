@@ -1,6 +1,6 @@
 diff -ruN libass-0.9.6-orig/libass/ass.c libass-0.9.6/libass/ass.c
 --- libass-0.9.6-orig/libass/ass.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass.c	2009-06-28 02:48:51.000000000 +0200
 @@ -56,7 +56,7 @@
  
  void ass_free_track(ass_track_t* track) {
@@ -337,7 +337,7 @@ diff -ruN libass-0.9.6-orig/libass/ass.c libass-0.9.6/libass/ass.c
  	i += movement;
 diff -ruN libass-0.9.6-orig/libass/ass.h libass-0.9.6/libass/ass.h
 --- libass-0.9.6-orig/libass/ass.h	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass.h	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass.h	2009-06-28 02:48:51.000000000 +0200
 @@ -195,7 +195,7 @@
   * \param bufsize size of buffer
   * \param codepage recode buffer contents from given codepage
@@ -349,7 +349,7 @@ diff -ruN libass-0.9.6-orig/libass/ass.h libass-0.9.6/libass/ass.h
   * \brief read styles from file into already initialized track
 diff -ruN libass-0.9.6-orig/libass/ass_bitmap.c libass-0.9.6/libass/ass_bitmap.c
 --- libass-0.9.6-orig/libass/ass_bitmap.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_bitmap.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_bitmap.c	2009-06-28 02:48:51.000000000 +0200
 @@ -237,7 +237,7 @@
  	unsigned char* g = bm_g->buffer + (t - bm_g->top) * bm_g->w + (l - bm_g->left);
  	unsigned char* o = bm_o->buffer + (t - bm_o->top) * bm_o->w + (l - bm_o->left);
@@ -370,7 +370,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_bitmap.c libass-0.9.6/libass/ass_bitmap.c
  			if (*bm_o)
 diff -ruN libass-0.9.6-orig/libass/ass_cache.c libass-0.9.6/libass/ass_cache.c
 --- libass-0.9.6-orig/libass/ass_cache.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_cache.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_cache.c	2009-06-28 02:48:51.000000000 +0200
 @@ -117,7 +117,7 @@
  	if (map->count > 0 || map->hit_count + map->miss_count > 0)
  		mp_msg(MSGT_ASS, MSGL_V, "cache statistics: \n  total accesses: %d\n  hits: %d\n  misses: %d\n  object count: %d\n",
@@ -400,7 +400,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_cache.c libass-0.9.6/libass/ass_cache.c
  	return hashmap_find(glyph_cache, key);
 diff -ruN libass-0.9.6-orig/libass/ass_cache.h libass-0.9.6/libass/ass_cache.h
 --- libass-0.9.6-orig/libass/ass_cache.h	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_cache.h	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_cache.h	2009-06-28 02:48:51.000000000 +0200
 @@ -49,7 +49,7 @@
  	int shift_x, shift_y; // shift vector that was added to glyph before applying rotation
  	                      // = 0, if frx = fry = frx = 0
@@ -421,7 +421,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_cache.h libass-0.9.6/libass/ass_cache.h
  typedef unsigned (*hashmap_hash_t)(void* key, size_t key_size);
 diff -ruN libass-0.9.6-orig/libass/ass_font.c libass-0.9.6/libass/ass_font.c
 --- libass-0.9.6-orig/libass/ass_font.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_font.c	2009-06-16 20:10:45.000000000 +0200
++++ libass-0.9.6/libass/ass_font.c	2009-06-28 02:48:51.000000000 +0200
 @@ -121,12 +121,14 @@
  	FT_Face face;
  	int error;
@@ -499,7 +499,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_font.c libass-0.9.6/libass/ass_font.c
  
 diff -ruN libass-0.9.6-orig/libass/ass_fontconfig.c libass-0.9.6/libass/ass_fontconfig.c
 --- libass-0.9.6-orig/libass/ass_fontconfig.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_fontconfig.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_fontconfig.c	2009-06-28 02:48:51.000000000 +0200
 @@ -72,7 +72,7 @@
   * \param index out: font index inside a file
   * \param code: the character that should be present in the font, can be 0
@@ -641,7 +641,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_fontconfig.c libass-0.9.6/libass/ass_font
  	return priv;
 diff -ruN libass-0.9.6-orig/libass/ass_library.c libass-0.9.6/libass/ass_library.c
 --- libass-0.9.6-orig/libass/ass_library.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_library.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_library.c	2009-06-28 02:48:51.000000000 +0200
 @@ -62,13 +62,13 @@
  	char** p;
  	char** q;
@@ -679,7 +679,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_library.c libass-0.9.6/libass/ass_library
  
 diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
 --- libass-0.9.6-orig/libass/ass_render.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_render.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_render.c	2009-06-28 02:51:52.000000000 +0200
 @@ -119,7 +119,7 @@
  	double blur; // gaussian blur
  	double shadow;
@@ -797,6 +797,15 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  			b_x1 - brk, b_y1 - b_y0, bm->w,
  			dst_x + brk, dst_y + b_y0, color2);
  		*tail = img;
+@@ -420,7 +420,7 @@
+ 	char m;
+ 	composite_hash_key_t hk;
+ 	composite_hash_val_t *hv;
+-	composite_hash_key_t *nhk;
++	composite_hash_val_t chv;
+ 	int ax = (*last_tail)->dst_x;
+ 	int ay = (*last_tail)->dst_y;
+ 	int aw = (*last_tail)->w;
 @@ -455,6 +455,7 @@
  	cur_top = top-by;
  
@@ -805,7 +814,23 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	memcpy(&hk.a, last_hash, sizeof(*last_hash));
  	memcpy(&hk.b, hash, sizeof(*hash));
  	hk.aw = aw;
-@@ -540,7 +541,7 @@
+@@ -491,12 +492,9 @@
+ 		}
+ 
+ 	// Insert bitmaps into the cache
+-	nhk = calloc(1, sizeof(*nhk));
+-	memcpy(nhk, &hk, sizeof(*nhk));
+-	hv = calloc(1, sizeof(*hv));
+-	hv->a = (*last_tail)->bitmap;
+-	hv->b = (*tail)->bitmap;
+-	cache_add_composite(nhk, hv);
++	chv.a = (*last_tail)->bitmap;
++	chv.b = (*tail)->bitmap;
++	cache_add_composite( &hk, &chv);
+ }
+ 
+ /**
+@@ -540,7 +538,7 @@
  		pen_x = dst_x + info->pos.x;
  		pen_y = dst_y + info->pos.y;
  		bm = info->bm_o;
@@ -814,7 +839,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		if ((info->effect_type == EF_KARAOKE_KO) && (info->effect_timing <= info->bbox.xMax)) {
  			// do nothing
  		} else {
-@@ -621,7 +622,7 @@
+@@ -621,7 +619,7 @@
  static void compute_string_bbox( text_info_t* info, FT_BBox *abbox ) {
  	FT_BBox bbox;
  	int i;
@@ -823,7 +848,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	if (text_info.length > 0) {
  		bbox.xMin = 32000;
  		bbox.xMax = -32000;
-@@ -692,7 +693,7 @@
+@@ -692,7 +690,7 @@
  
  	render_context.font = ass_font_new(priv->library, priv->ftlibrary, priv->fontconfig_priv, &desc);
  	free(desc.family);
@@ -832,7 +857,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	if (render_context.font)
  		change_font_size(render_context.font_size);
  }
-@@ -778,7 +779,7 @@
+@@ -778,7 +776,7 @@
   * \brief Calculate alpha value by piecewise linear function
   * Used for \fad, \fade implementation.
   */
@@ -841,7 +866,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		long long t1, long long t2, long long t3, long long t4,
  		unsigned a1, unsigned a2, unsigned a3)
  {
-@@ -811,7 +812,7 @@
+@@ -811,7 +809,7 @@
  static char* parse_tag(char* p, double pwr) {
  #define skip_to(x) while ((*p != (x)) && (*p != '}') && (*p != 0)) { ++p;}
  #define skip(x) if (*p == (x)) ++p; else { return p; }
@@ -850,7 +875,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	skip_to('\\');
  	skip('\\');
  	if ((*p == '}') || (*p == 0))
-@@ -919,7 +920,7 @@
+@@ -919,7 +917,7 @@
  			mystrtoll(&p, &t1);
  			skip(',');
  			mystrtoll(&p, &t2);
@@ -859,7 +884,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  				x1, y1, x2, y2, (int64_t)t1, (int64_t)t2);
  		} else {
  			t1 = 0;
-@@ -1111,7 +1112,7 @@
+@@ -1111,7 +1109,7 @@
  			k = pow(((double)(t - t1)) / delta_t, v3);
  		}
  		while (*p == '\\')
@@ -868,7 +893,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		skip_to(')'); // in case there is some unknown tag or a comment
  		skip(')');
  	} else if (mystrcmp(&p, "clip")) {
-@@ -1293,7 +1294,7 @@
+@@ -1293,7 +1291,7 @@
  	while (cnt < 4 && (p = strchr(p, ';'))) {
  		v[cnt++] = atoi(++p);
  	}
@@ -877,7 +902,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	if (strncmp(event->Effect, "Banner;", 7) == 0) {
  		int delay;
  		if (cnt < 1) {
-@@ -1406,7 +1407,7 @@
+@@ -1406,7 +1404,7 @@
  	render_context.effect_type = EF_NONE;
  	render_context.effect_timing = 0;
  	render_context.effect_skip_timing = 0;
@@ -886,7 +911,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	apply_transition_effects(event);
  }
  
-@@ -1429,6 +1430,7 @@
+@@ -1429,6 +1427,7 @@
  	int error;
  	glyph_hash_val_t* val;
  	glyph_hash_key_t key;
@@ -894,7 +919,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	key.font = render_context.font;
  	key.size = render_context.font_size;
  	key.ch = symbol;
-@@ -1490,10 +1492,10 @@
+@@ -1490,10 +1489,10 @@
  {
  	bitmap_hash_val_t* val;
  	bitmap_hash_key_t* key = &info->hash_key;
@@ -907,7 +932,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	if (val) {
  		info->bm = val->bm;
  		info->bm_o = val->bm_o;
-@@ -1600,8 +1602,8 @@
+@@ -1600,8 +1599,8 @@
  			break_at = i;
  			mp_msg(MSGT_ASS, MSGL_DBG2, "forced line break at %d\n", break_at);
  		}
@@ -918,7 +943,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  			break_type = 1;
  			break_at = last_space;
  			if (break_at == -1)
-@@ -1617,7 +1619,7 @@
+@@ -1617,7 +1616,7 @@
  			// marking break_at+1 as start of a new line
  			int lead = break_at + 1; // the first symbol of the new line
  			if (text_info.n_lines >= MAX_LINES) {
@@ -927,7 +952,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  				// no more linebreaks
  				for (j = lead; j < text_info.length; ++j)
  					text_info.glyphs[j].linebreak = 0;
-@@ -1630,7 +1632,7 @@
+@@ -1630,7 +1629,7 @@
  			s_offset = s1->bbox.xMin + s1->pos.x;
  			text_info.n_lines ++;
  		}
@@ -936,7 +961,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		if (cur->symbol == ' ')
  			last_space = i;
  
-@@ -1676,11 +1678,11 @@
+@@ -1676,11 +1675,11 @@
  			if (i == text_info.length)
  				break;
  		}
@@ -950,7 +975,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	measure_text();
  
  	pen_shift_x = 0;
-@@ -1704,7 +1706,7 @@
+@@ -1704,7 +1703,7 @@
   * \brief determine karaoke effects
   * Karaoke effects cannot be calculated during parse stage (get_next_char()),
   * so they are done in a separate step.
@@ -959,7 +984,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
   * (the first glyph of the karaoke word)'s effect_type and effect_timing.
   * This function:
   * 1. sets effect_type for all glyphs in the word (_karaoke_ word)
-@@ -1873,12 +1875,13 @@
+@@ -1873,12 +1872,13 @@
  /**
   * \brief Main ass rendering function, glues everything together
   * \param event event to render
@@ -974,7 +999,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	FT_UInt num_glyphs;
  	FT_Vector pen;
  	unsigned code;
-@@ -1914,7 +1917,7 @@
+@@ -1914,7 +1914,7 @@
  		do {
  			code = get_next_char(&p);
  		} while (code && render_context.drawing_mode); // skip everything in drawing mode
@@ -983,7 +1008,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		// face could have been changed in get_next_char
  		if (!render_context.font) {
  			free_render_context();
-@@ -1925,7 +1928,7 @@
+@@ -1925,7 +1925,7 @@
  			break;
  
  		if (text_info.length >= MAX_GLYPHS) {
@@ -992,7 +1017,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  					(int)(event - frame_context.track->events), event->Start, event->Duration, event->Text);
  			break;
  		}
-@@ -1951,14 +1954,14 @@
+@@ -1951,14 +1951,14 @@
  				       &shift );
  
  		get_outline_glyph(code, text_info.glyphs + text_info.length, &shift);
@@ -1010,7 +1035,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		previous = code;
  
  		text_info.glyphs[text_info.length].symbol = code;
-@@ -2005,23 +2008,23 @@
+@@ -2005,23 +2005,23 @@
  		render_context.effect_timing = 0;
  		render_context.effect_skip_timing = 0;
  	}
@@ -1039,7 +1064,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	MarginV = (event->MarginV) ? event->MarginV : render_context.style->MarginV;
  
  	if (render_context.evt_type != EVENT_HSCROLL) {
-@@ -2061,12 +2064,12 @@
+@@ -2061,12 +2061,12 @@
  	} else { // render_context.evt_type == EVENT_HSCROLL
  		measure_text();
  	}
@@ -1055,7 +1080,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	// x coordinate for everything except positioned events
  	if (render_context.evt_type == EVENT_NORMAL ||
  	    render_context.evt_type == EVENT_VSCROLL) {
-@@ -2111,7 +2114,7 @@
+@@ -2111,7 +2111,7 @@
  		device_x = x2scr_pos(render_context.pos_x) - base_x;
  		device_y = y2scr_pos(render_context.pos_y) - base_y;
  	}
@@ -1064,7 +1089,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	// fix clip coordinates (they depend on alignment)
  	if (render_context.evt_type == EVENT_NORMAL ||
  	    render_context.evt_type == EVENT_HSCROLL ||
-@@ -2138,7 +2141,7 @@
+@@ -2138,7 +2138,7 @@
  	// calculate rotation parameters
  	{
  		FT_Vector center;
@@ -1073,7 +1098,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  		if (render_context.have_origin) {
  			center.x = x2scr(render_context.org_x);
  			center.y = y2scr(render_context.org_y);
-@@ -2166,6 +2169,7 @@
+@@ -2166,6 +2166,7 @@
  	for (i = 0; i < text_info.length; ++i)
  		get_bitmap_glyph(text_info.glyphs + i);
  
@@ -1081,7 +1106,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	event_images->top = device_y - d6_to_int(text_info.lines[0].asc);
  	event_images->height = d6_to_int(text_info.height);
  	event_images->detect_collisions = render_context.detect_collisions;
-@@ -2174,7 +2178,7 @@
+@@ -2174,7 +2175,7 @@
  	event_images->imgs = render_text(&text_info, device_x, device_y);
  
  	free_render_context();
@@ -1090,7 +1115,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	return 0;
  }
  
-@@ -2300,7 +2304,7 @@
+@@ -2300,7 +2301,7 @@
  
  	if (track->n_events == 0)
  		return 1; // nothing to do
@@ -1099,7 +1124,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	frame_context.ass_priv = priv;
  	frame_context.width = global_settings->frame_width;
  	frame_context.height = global_settings->frame_height;
-@@ -2316,7 +2320,7 @@
+@@ -2316,7 +2317,7 @@
  	frame_context.time = now;
  
  	ass_lazy_track_init();
@@ -1108,7 +1133,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	frame_context.font_scale = global_settings->font_size_coeff *
  	                           frame_context.orig_height / frame_context.track->PlayResY;
  	if (frame_context.track->ScaledBorderAndShadow)
-@@ -2426,7 +2430,7 @@
+@@ -2426,7 +2427,7 @@
  	fixed[*cnt].b = s->b + shift;
  	(*cnt)++;
  	qsort(fixed, *cnt, sizeof(segment_t), cmp_segment);
@@ -1117,7 +1142,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	return shift;
  }
  
-@@ -2481,7 +2485,7 @@
+@@ -2481,7 +2482,7 @@
  			priv->top = imgs[i].top;
  			priv->height = imgs[i].height;
  		}
@@ -1126,7 +1151,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	}
  }
  
-@@ -2554,7 +2558,7 @@
+@@ -2554,7 +2555,7 @@
  	int i, cnt, rc;
  	event_images_t* last;
  	ass_image_t** tail;
@@ -1135,7 +1160,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	// init frame
  	rc = ass_start_frame(priv, track, now);
  	if (rc != 0)
-@@ -2600,7 +2604,7 @@
+@@ -2600,7 +2601,7 @@
  
  	if (detect_change)
  		*detect_change = ass_detect_change(priv);
@@ -1146,7 +1171,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_render.c libass-0.9.6/libass/ass_render.c
  	priv->prev_images_root = 0;
 diff -ruN libass-0.9.6-orig/libass/ass_types.h libass-0.9.6/libass/ass_types.h
 --- libass-0.9.6-orig/libass/ass_types.h	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_types.h	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_types.h	2009-06-28 02:48:51.000000000 +0200
 @@ -100,7 +100,7 @@
  	char* event_format; // event format line
  
@@ -1167,7 +1192,7 @@ diff -ruN libass-0.9.6-orig/libass/ass_types.h libass-0.9.6/libass/ass_types.h
  
 diff -ruN libass-0.9.6-orig/libass/ass_utils.c libass-0.9.6/libass/ass_utils.c
 --- libass-0.9.6-orig/libass/ass_utils.c	2009-03-13 18:37:09.000000000 +0100
-+++ libass-0.9.6/libass/ass_utils.c	2009-06-16 20:08:04.000000000 +0200
++++ libass-0.9.6/libass/ass_utils.c	2009-06-28 02:48:51.000000000 +0200
 @@ -72,17 +72,17 @@
  	uint32_t color = 0;
  	int result;
