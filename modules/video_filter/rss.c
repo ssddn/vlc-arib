@@ -47,7 +47,7 @@
 #include "vlc_xml.h"
 #include <vlc_charset.h>
 
-#include "vlc_image.h"
+#include <vlc_image.h>
 
 #include <time.h>
 
@@ -719,6 +719,7 @@ static int FetchRSS( filter_t *p_filter)
         if( !p_stream )
         {
             msg_Err( p_filter, "Failed to open %s for reading", psz_feed );
+            xml_Delete( p_xml );
             return 1;
         }
 
@@ -726,6 +727,7 @@ static int FetchRSS( filter_t *p_filter)
         if( !p_xml_reader )
         {
             msg_Err( p_filter, "Failed to open %s for parsing", psz_feed );
+            xml_Delete( p_xml );
             return 1;
         }
 
