@@ -1424,6 +1424,13 @@ static int RtspCallbackES( httpd_callback_sys_t *p_args, httpd_client_t *cl,
                     psz_session = psz_new;
 
                     p_rtsp = RtspClientNew( p_media, psz_new );
+                    if( !p_rtsp )
+                    {
+                        answer->i_status = 454;
+                        answer->i_body = 0;
+                        answer->p_body = NULL;
+                        break;
+                    }
                 }
                 else
                 {
