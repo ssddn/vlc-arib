@@ -163,6 +163,7 @@ static int Create( vlc_object_t *p_this )
     if( !psz_filename )
     {
         msg_Err( p_filter, "Missing 'mask' option value." );
+        free( p_sys );
         return VLC_EGENERIC;
     }
 
