@@ -309,6 +309,7 @@ static int AddStream( sout_mux_t *p_mux, sout_input_t *p_input )
                     p_wf->wFormatTag = WAVE_FORMAT_A52;
                     break;
                 case VLC_FOURCC( 'm', 'p', 'g', 'a' ):
+                case VLC_FOURCC( 'm', 'p', '3', ' ' ):
                     p_wf->wFormatTag = WAVE_FORMAT_MPEGLAYER3;
                     break;
                 case VLC_FOURCC( 'w', 'm', 'a', '1' ):
