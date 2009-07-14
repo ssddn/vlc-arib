@@ -1,14 +1,25 @@
 Changes between 0.9.9a and 0.9.10-git:
 --------------------------------------
 
-Interfaces:
- * Fix default ACL of http interface
+HTTP Interface:
+ * Fixed default ACL
 
 Mac OS X:
  * Fixed crashes on multi-screen setups
  * Corrected volume option in the Preferences
  * Improved Information panel behavior, when playlist is not displayed
  * Fixed QTCapture input support for the latest iSight models
+ * Added a menu-item to unlock the video window's aspect ratio
+ * Updated libpng, libgpg-error, libgcrypt, fribidi
+
+Various fixes to the following modules:
+ * access:
+   - HTTP, SMB
+ * stream out:
+   - RTP, RTSP VoD, Mosaic Bridge
+ * decoder:
+   - TSCC
+
 
 Changes between 0.9.9 and 0.9.9a:
 ---------------------------------
