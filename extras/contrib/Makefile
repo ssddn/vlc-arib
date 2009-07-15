@@ -47,7 +47,7 @@ CONTRIBREV=0.9.10
 contrib-macosx-$(ARCH)-$(CONTRIBREV).tar.bz2:
 	$(WGET) ftp://ftp.videolan.org/pub/videolan/testing/contrib/$@
 
-using-bin: contrib-macosx-$(ARCH)-$(CONTRIBREV)-$(DARWIN_COMPILER).tar.bz2
+using-bin: contrib-macosx-$(ARCH)-$(CONTRIBREV).tar.bz2
 	@if test -d tmp; then \
 		echo "Move away ./tmp, it's in the way" ; \
 		exit 1 ; \
