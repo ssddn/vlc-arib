@@ -1,7 +1,7 @@
 # ***************************************************************************
 # Makefile : Build vlc-contrib files
 # ***************************************************************************
-# Copyright (C) 2003-2006 the VideoLAN team
+# Copyright (C) 2003-2009 the VideoLAN team
 # $Id$
 # 
 # Authors: Christophe Massiot <massiot@via.ecp.fr>
@@ -43,9 +43,8 @@ src: using-src
 
 ifdef HAVE_DARWIN_OS
 
-CONTRIBREV=0.9.9
-DARWIN_COMPILER=GCC
-contrib-macosx-$(ARCH)-$(CONTRIBREV)-$(DARWIN_COMPILER).tar.bz2:
+CONTRIBREV=0.9.10
+contrib-macosx-$(ARCH)-$(CONTRIBREV).tar.bz2:
 	$(WGET) ftp://ftp.videolan.org/pub/videolan/testing/contrib/$@
 
 using-bin: contrib-macosx-$(ARCH)-$(CONTRIBREV)-$(DARWIN_COMPILER).tar.bz2
@@ -85,6 +84,8 @@ package-macosx:
 	./change_prefix.sh tmp $(PREFIX) @@CONTRIB_PREFIX@@
 	(cd tmp; tar cf - .) | bzip2 -c > contrib-macosx.tar.bz2
 	rm -rf tmp
+	rm -f contrib-macosx-$(ARCH)-$(CONTRIBREV).tar.bz2
+	mv contrib-macosx.tar.bz2 contrib-macosx-$(ARCH)-$(CONTRIBREV).tar.bz2
 
 DISTDIR = usr/win32
 
