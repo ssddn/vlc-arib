@@ -276,6 +276,7 @@ static bool parse_dict COMPLEX_INTERFACE
                 /* special case: key */
                 if( !strcmp( p_handler->name, "key" ) )
                 {
+                    free( psz_key );
                     psz_key = strdup( psz_value );
                 }
                 /* call the simple handler */
