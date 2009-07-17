@@ -87,6 +87,13 @@ void CloseVideoGL ( vlc_object_t * );
 #define EQ_KEEP_LONGTEXT N_("By default, VLC keeps the last equalizer settings before " \
                             "termination. This feature can be disabled here.")
 
+#define USE_APPLE_REMOTE_TEXT N_("Allow playback control with the Apple Remote")
+#define USE_APPLE_REMOTE_LONGTEXT N_("By default, VLC can be remotely controlled with the Apple Remote.")
+
+#define USE_MEDIAKEYS_TEXT N_("Allow playback control with the media keys")
+#define USE_MEDIAKEYS_LONGTEXT N_("By default, VLC can be controlled using the media keys on modern Apple " \
+                                  "keyboards.")
+
 vlc_module_begin ()
     set_description( N_("Mac OS X interface") )
     set_capability( "interface", 200 )
@@ -101,6 +108,10 @@ vlc_module_begin ()
               false )
     add_bool( "macosx-fspanel", 1, NULL, FSPANEL_TEXT, FSPANEL_LONGTEXT,
               false )
+    add_bool( "macosx-appleremote", 1, NULL, USE_APPLE_REMOTE_TEXT, USE_APPLE_REMOTE_LONGTEXT,
+             false )
+    add_bool( "macosx-mediakeys", 1, NULL, USE_MEDIAKEYS_TEXT, USE_MEDIAKEYS_LONGTEXT,
+             false )
 
     add_submodule ()
         set_description( "Mac OS X OpenGL" )

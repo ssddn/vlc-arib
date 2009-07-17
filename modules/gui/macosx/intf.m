@@ -1479,6 +1479,11 @@ static unsigned int VLCModifiersToCocoa( unsigned int i_key )
     return nil;
 }
 
+- (id)appleRemoteController
+{
+	return o_remote;
+}
+
 #pragma mark -
 #pragma mark Polling
 
@@ -2818,52 +2823,73 @@ end:
 
 @implementation VLCApplication
 
+- (void)awakeFromNib
+{
+	b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(coreChangedMediaKeySupportSetting:) name: @"VLCMediaKeySupportSettingChanged" object: nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    [super dealloc];
+}
+
+- (void)coreChangedMediaKeySupportSetting: (NSNotification *)o_notification
+{
+	b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+}
+
+/*
 - (void)sendEvent: (NSEvent*)event
 {
-    if( [event type] == NSSystemDefined && [event subtype] == 8 )
+    if( b_mediaKeySupport )
 	{
-		int keyCode = (([event data1] & 0xFFFF0000) >> 16);
-		int keyFlags = ([event data1] & 0x0000FFFF);
-		int keyState = (((keyFlags & 0xFF00) >> 8)) == 0xA;
-        int keyRepeat = (keyFlags & 0x1);
-
-        if( keyCode == NX_KEYTYPE_PLAY && keyState == 0 )
-            var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_PLAY_PAUSE );
-
-        if( keyCode == NX_KEYTYPE_FAST && !b_justJumped )
+        if( [event type] == NSSystemDefined && [event subtype] == 8 )
         {
-            if( keyState == 0 && keyRepeat == 0 )
+            int keyCode = (([event data1] & 0xFFFF0000) >> 16);
+            int keyFlags = ([event data1] & 0x0000FFFF);
+            int keyState = (((keyFlags & 0xFF00) >> 8)) == 0xA;
+            int keyRepeat = (keyFlags & 0x1);
+
+            if( keyCode == NX_KEYTYPE_PLAY && keyState == 0 )
+                var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_PLAY_PAUSE );
+
+            if( keyCode == NX_KEYTYPE_FAST && !b_justJumped )
             {
-                    var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_NEXT );
+                if( keyState == 0 && keyRepeat == 0 )
+                {
+                        var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_NEXT );
+                }
+                else if( keyRepeat == 1 )
+                {
+                    var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_JUMP_FORWARD_SHORT );
+                    b_justJumped = YES;
+                    [self performSelector:@selector(resetJump)
+                               withObject: NULL
+                               afterDelay:0.25];
+                }
             }
-            else if( keyRepeat == 1 )
+
+            if( keyCode == NX_KEYTYPE_REWIND && !b_justJumped )
             {
-                var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_JUMP_FORWARD_SHORT );
-                b_justJumped = YES;
-                [self performSelector:@selector(resetJump)
-                           withObject: NULL
-                           afterDelay:0.25];
+                if( keyState == 0 && keyRepeat == 0 )
+                {
+                    var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_PREV );
+                }
+                else if( keyRepeat == 1 )
+                {
+                    var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_JUMP_BACKWARD_SHORT );
+                    b_justJumped = YES;
+                    [self performSelector:@selector(resetJump)
+                               withObject: NULL
+                               afterDelay:0.25];
+                }
             }
         }
-
-        if( keyCode == NX_KEYTYPE_REWIND && !b_justJumped )
-        {
-            if( keyState == 0 && keyRepeat == 0 )
-            {
-                var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_PREV );
-            }
-            else if( keyRepeat == 1 )
-            {
-                var_SetInteger( VLCIntf->p_libvlc, "key-action", ACTIONID_JUMP_BACKWARD_SHORT );
-                b_justJumped = YES;
-                [self performSelector:@selector(resetJump)
-                           withObject: NULL
-                           afterDelay:0.25];
-            }
-        }
-	}
+    }
 	[super sendEvent: event];
-}
+}*/
 
 - (void)resetJump
 {
