@@ -1,8 +1,25 @@
 Changes between 1.0.0 and 1.0.1-pre:
 --------------------------------
 
+Demuxers:
+ * Fix wmv/asf issues that caused audio to drop
+ * Various fixes for ac3, mp3, dts and stability for wav format
+ * Fix crashes in xspf files handler, in Qt4 interface
+
+Muxers:
+ * Fix sound recording of .flv files with mp3 audio
+
+Decoders:
+ * Fix seeking in mpeg2 video files
+
+Qt Interface:
+ * Possibility to change the opacity level of the Fullscreen controller
+ * Fix crashes and VIDEO_TS folders opening
+
 Mac OS X Interface:
  * Added options to disable support for Apple Remote and Media Keys
+
+Translations updates for French, Korean, Brazillian, Norwegian Nynorsk
 
 Changes between 0.9.9a and 1.0.0:
 ---------------------------------
