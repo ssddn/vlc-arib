@@ -437,6 +437,7 @@
     [o_icons addObject: [NSImage imageWithErrorIcon]];
 
     [o_error_table reloadData];
+    [self showPanel];
 }
 
 -(void)addWarning: (NSString *)o_warning withMsg:(NSString *)o_msg
@@ -457,6 +458,7 @@
     [o_icons addObject: [NSImage imageWithWarningIcon]];
  
     [o_error_table reloadData];
+    [self showPanel];
 }
 
 -(IBAction)cleanupTable:(id)sender
