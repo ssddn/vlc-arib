@@ -4666,22 +4666,22 @@ msgstr ""
 #: src/misc/update.c:1458
 #, c-format
 msgid "%.1f GB"
-msgstr ""
+msgstr "%.1f GB"
 
 #: src/misc/update.c:1460
 #, c-format
 msgid "%.1f MB"
-msgstr ""
+msgstr "%.1f MB"
 
 #: src/misc/update.c:1462
 #, c-format
 msgid "%.1f kB"
-msgstr ""
+msgstr "%.1f kB"
 
 #: src/misc/update.c:1464
-#, fuzzy, c-format
+#, c-format
 msgid "%ld B"
-msgstr "%d Hz"
+msgstr "%ld B"
 
 #: src/misc/update.c:1568 src/misc/update.c:1592
 #, c-format
@@ -4689,11 +4689,12 @@ msgid ""
 "%s\n"
 "Downloading... %s/%s %.1f%% done"
 msgstr ""
+"%s\n"
+"Laden... %s/%s %.1f%% fertig"
 
 #: src/misc/update.c:1571
-#, fuzzy
 msgid "Downloading ..."
-msgstr "Plugin herunterladen"
+msgstr "Laden..."
 
 #: src/misc/update.c:1611
 #, c-format
@@ -4701,6 +4702,8 @@ msgid ""
 "%s\n"
 "Done %s (100.0%%)"
 msgstr ""
+"%s\n"
+"Fertig %s (100.0%%)"
 
 #: src/misc/update.c:1632
 msgid "File could not be verified"
@@ -4753,9 +4756,8 @@ msgstr ""
 "Die heruntergeladene Datei \"%s\" war beschädigt. Sie wurde deshalb gelöscht."
 
 #: src/misc/update.c:1707
-#, fuzzy
 msgid "Cancelled"
-msgstr "Abbrechen"
+msgstr "Abgebrochen"
 
 #: src/playlist/tree.c:66 modules/access/bda/bda.c:62
 #: modules/access/bda/bda.c:115 modules/access/bda/bda.c:123
@@ -9681,6 +9683,12 @@ msgid ""
 "This is not an error inside VLC media player.\n"
 "Do not contact the VideoLAN project about this issue.\n"
 msgstr ""
+"Anscheinend fehlt Ihrer FFMPEG (libavcodec) Installation der folgende Encoder:\n"
+"%s.\n"
+"Wenn Sie nicht wissen, wie Sie dies beheben, frage Sie bitte Ihren Distributor\n"
+"um Unterstützung.\n"
+"Dies ist kein Fehler im VLC media player.\n"
+"Bitte kontaktieren Sie nicht das VideoLAN Projekt über dieses Problem.\n"
 
 #: modules/codec/avcodec/encoder.c:684 modules/codec/avcodec/encoder.c:693
 msgid "VLC could not open the encoder."
@@ -14013,13 +14021,14 @@ msgstr ""
 
 #: modules/gui/macosx/intf.m:641
 msgid "I agree to be possibly contacted about this bugreport."
-msgstr ""
+msgstr "Ich stimme zu, möglicherweise zu diesem Bericht kontaktiert zu werden."
 
 #: modules/gui/macosx/intf.m:642
 msgid ""
 "Only your default E-Mail address will be submitted, including no further "
 "information."
 msgstr ""
+"Es wird nur Ihre Standard-E-Mail-Adresse ohne weitere Informationen übertragen."
 
 #: modules/gui/macosx/intf.m:1641
 #, c-format
@@ -14060,22 +14069,20 @@ msgid "Couldn't find any trace of a previous crash."
 msgstr "Konnte keine Spuren eines vorherigen Absturzes finden."
 
 #: modules/gui/macosx/intf.m:2263
-#, fuzzy
 msgid "Remove old preferences?"
-msgstr "Einstellungen zurücksetzen"
+msgstr "Alte Einstellungen entfernen?"
 
 #: modules/gui/macosx/intf.m:2264
 msgid "We just found an older version of VLC's preferences files."
-msgstr ""
+msgstr "Es wurde gerade eine alte Version von VLCs Einstellungsdateien gefunden."
 
 #: modules/gui/macosx/intf.m:2265
 msgid "Move To Trash and Relaunch VLC"
-msgstr ""
+msgstr "In Papierkorb legen und VLC neustarten"
 
 #: modules/gui/macosx/intf.m:2265
-#, fuzzy
 msgid "Ignore"
-msgstr "gar nicht"
+msgstr "Ignorieren"
 
 #: modules/gui/macosx/macosx.m:52
 msgid "Video device"
@@ -14478,9 +14485,8 @@ msgid "Expand Node"
 msgstr "Knoten ausklappen"
 
 #: modules/gui/macosx/playlist.m:447
-#, fuzzy
 msgid "Download Cover Art"
-msgstr "Jetzt herunterladen"
+msgstr "Albumcover herunterladen"
 
 #: modules/gui/macosx/playlist.m:448
 msgid "Fetch Meta Data"
@@ -15044,9 +15050,8 @@ msgid "No"
 msgstr "Nein"
 
 #: modules/gui/macosx/update.m:138
-#, fuzzy
 msgid "Save As:"
-msgstr "D&atei sichern..."
+msgstr "Sichern als:"
 
 #: modules/gui/macosx/update.m:178
 msgid "This version of VLC is the latest available."
