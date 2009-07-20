@@ -215,10 +215,6 @@ static int InteractCallback( vlc_object_t *p_this, const char *psz_variable,
 #pragma mark -
 #pragma mark Private
 
-@interface VLCMain ()
-- (void)_removeOldPreferences;
-@end
-
 /*****************************************************************************
  * VLCMain implementation
  *****************************************************************************/
@@ -789,7 +785,7 @@ static NSString * VLCToolbarMediaControl     = @"VLCToolbarMediaControl";
         [toolbarItem setLabel:@"Media Controls"];
         [toolbarItem setPaletteLabel:@"Media Controls"];
 
-        NSSize size = toolbarMediaControl.frame.size;
+        NSSize size = [toolbarMediaControl frame].size;
         [toolbarItem setView:toolbarMediaControl];
         [toolbarItem setMinSize:size];
         size.width += 1000.;

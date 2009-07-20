@@ -323,6 +323,7 @@ struct intf_sys_t
 }
 
 + (VLCMain *)sharedInstance;
+- (void)_removeOldPreferences;
 
 - (intf_thread_t *)getIntf;
 - (void)setIntf:(intf_thread_t *)p_mainintf;
