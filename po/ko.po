@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc korean lang\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-07-14 00:42+0100\n"
-"PO-Revision-Date: 2009-07-13 08:50+0900\n"
+"POT-Creation-Date: 2009-07-21 22:34+0100\n"
+"PO-Revision-Date: 2009-07-20 13:27+0900\n"
 "Last-Translator: airplanez <airplanez@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "VLC 선택사항"
 msgid "Select \"Advanced Options\" to see all options."
 msgstr "모든 옵션 보려면 \"고급 옵션\"을 선택하세요."
 
-#: include/vlc_config_cat.h:37 modules/gui/macosx/simple_prefs.m:174
+#: include/vlc_config_cat.h:37 modules/gui/macosx/simple_prefs.m:175
 #: modules/gui/qt4/components/simple_preferences.cpp:77
 #: modules/gui/qt4/menus.cpp:967 modules/misc/dummy/dummy.c:67
 msgid "Interface"
@@ -73,14 +73,14 @@ msgid "Settings for VLC's control interfaces"
 msgstr "VLC 제어 인터페이스 설정"
 
 #: include/vlc_config_cat.h:48 include/vlc_config_cat.h:49
-#: modules/gui/macosx/simple_prefs.m:194
+#: modules/gui/macosx/simple_prefs.m:195
 msgid "Hotkeys settings"
 msgstr "단축키 설정"
 
 #: include/vlc_config_cat.h:52 src/input/es_out.c:2657 src/input/es_out.c:2691
 #: src/libvlc-module.c:1508 modules/gui/beos/InterfaceWindow.cpp:283
 #: modules/gui/macosx/intf.m:659 modules/gui/macosx/output.m:170
-#: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:178
+#: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
 #: modules/gui/qt4/components/info_panels.cpp:517
 #: modules/gui/qt4/components/simple_preferences.cpp:79
@@ -135,7 +135,7 @@ msgstr "기타 오디오 설정 및 모듈"
 #: include/vlc_config_cat.h:70 src/input/es_out.c:2660 src/input/es_out.c:2740
 #: src/libvlc-module.c:1561 modules/gui/macosx/intf.m:672
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
-#: modules/gui/macosx/simple_prefs.m:182 modules/gui/macosx/wizard.m:381
+#: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
 #: modules/gui/qt4/components/info_panels.cpp:518
 #: modules/gui/qt4/components/simple_preferences.cpp:80
 #: modules/gui/qt4/ui/profiles.h:469 modules/gui/qt4/ui/sprefs_video.h:291
@@ -399,7 +399,7 @@ msgid "Advanced settings"
 msgstr "고급 설정"
 
 #: include/vlc_config_cat.h:198 modules/gui/macosx/open.m:173
-#: modules/gui/macosx/open.m:447 modules/gui/macosx/simple_prefs.m:253
+#: modules/gui/macosx/open.m:447 modules/gui/macosx/simple_prefs.m:254
 #: modules/gui/pda/pda_interface.c:546 modules/gui/qt4/ui/sprefs_input.h:240
 msgid "Network"
 msgstr "네트워크"
@@ -514,9 +514,9 @@ msgstr "정보(&A)"
 #: modules/gui/macosx/embeddedwindow.m:67
 #: modules/gui/macosx/embeddedwindow.m:157 modules/gui/macosx/intf.m:595
 #: modules/gui/macosx/intf.m:640 modules/gui/macosx/intf.m:727
-#: modules/gui/macosx/intf.m:734 modules/gui/macosx/intf.m:1985
-#: modules/gui/macosx/intf.m:1986 modules/gui/macosx/intf.m:1987
-#: modules/gui/macosx/intf.m:1988 modules/gui/macosx/playlist.m:438
+#: modules/gui/macosx/intf.m:734 modules/gui/macosx/intf.m:1990
+#: modules/gui/macosx/intf.m:1991 modules/gui/macosx/intf.m:1992
+#: modules/gui/macosx/intf.m:1993 modules/gui/macosx/playlist.m:438
 #: modules/gui/pda/pda_interface.c:260 modules/gui/pda/pda_interface.c:261
 #: modules/gui/qt4/components/controller.hpp:101 modules/gui/qt4/menus.cpp:730
 #: modules/gui/qt4/ui/open.h:275
@@ -1007,7 +1007,7 @@ msgstr "코덱"
 
 #: src/input/es_out.c:2681 src/input/meta.c:50 src/libvlc-module.c:201
 #: modules/gui/beos/InterfaceWindow.cpp:279
-#: modules/gui/macosx/simple_prefs.m:263
+#: modules/gui/macosx/simple_prefs.m:264
 #: modules/gui/qt4/ui/sprefs_interface.h:314
 msgid "Language"
 msgstr "언어"
@@ -1372,8 +1372,8 @@ msgid ""
 "This is the main interface used by VLC. The default behavior is to "
 "automatically select the best module available."
 msgstr ""
-"이것은 VLC에서 사용하는 메인 인터페이스입니다. 기본적으로 최적인 모듈을 자동"
-"으로 선택합니다."
+"VLC에서 사용하는 메인 인터페이스 입니다. 기본적으로 최적인 모듈을 자동으로 선"
+"택합니다."
 
 #: src/libvlc-module.c:167 modules/control/ntservice.c:57
 msgid "Extra interface modules"
@@ -1614,7 +1614,7 @@ msgid ""
 "played)."
 msgstr ""
 
-#: src/libvlc-module.c:295 modules/gui/macosx/simple_prefs.m:231
+#: src/libvlc-module.c:295 modules/gui/macosx/simple_prefs.m:232
 #: modules/gui/qt4/ui/sprefs_audio.h:340
 msgid "Use S/PDIF when available"
 msgstr "가능하면 S/PDIF 사용"
@@ -1627,7 +1627,7 @@ msgstr ""
 "하드웨어와 재생 중인 오디오 스트림이 S/PDIF를 지원하면 음성을 출력할 때 S/"
 "PDIF를 기본으로 사용합니다"
 
-#: src/libvlc-module.c:300 modules/gui/macosx/simple_prefs.m:221
+#: src/libvlc-module.c:300 modules/gui/macosx/simple_prefs.m:222
 #: modules/gui/qt4/ui/sprefs_audio.h:342
 msgid "Force detection of Dolby Surround"
 msgstr "돌비 서라운드 강제 검출"
@@ -1775,23 +1775,23 @@ msgstr ""
 
 #: src/libvlc-module.c:384
 msgid "Video X coordinate"
-msgstr "영상 X 위치"
+msgstr "비디오 X 좌표"
 
 #: src/libvlc-module.c:386
 msgid ""
 "You can enforce the position of the top left corner of the video window (X "
 "coordinate)."
-msgstr "비디오 윈도우 상단 왼쪽 모서리의 위치를 강제할수 있습니다 (X 축)."
+msgstr "비디오 윈도우 상단 왼쪽 모서리의 위치를 강제할수 있습니다 (X 좌표)."
 
 #: src/libvlc-module.c:389
 msgid "Video Y coordinate"
-msgstr "영상 Y 위치"
+msgstr "비디오 Y 좌표"
 
 #: src/libvlc-module.c:391
 msgid ""
 "You can enforce the position of the top left corner of the video window (Y "
 "coordinate)."
-msgstr "비디오 윈도우 상단 오른쪽 모서리의 위치를 강제할수 있습니다 (Y 축)."
+msgstr "비디오 윈도우 상단 오른쪽 모서리의 위치를 강제할수 있습니다 (Y 좌표)."
 
 #: src/libvlc-module.c:394
 msgid "Video title"
@@ -1918,7 +1918,7 @@ msgid ""
 msgstr ""
 
 #: src/libvlc-module.c:431 src/video_output/vout_intf.c:421
-#: modules/gui/macosx/simple_prefs.m:284 modules/gui/qt4/ui/sprefs_video.h:283
+#: modules/gui/macosx/simple_prefs.m:287 modules/gui/qt4/ui/sprefs_video.h:283
 msgid "Always on top"
 msgstr "항상 맨 앞"
 
@@ -2152,7 +2152,7 @@ msgid ""
 "order to keep proportions."
 msgstr ""
 
-#: src/libvlc-module.c:559 modules/gui/macosx/simple_prefs.m:286
+#: src/libvlc-module.c:559 modules/gui/macosx/simple_prefs.m:289
 #: modules/gui/qt4/ui/sprefs_video.h:286
 msgid "Skip frames"
 msgstr "프레임 건너뛰기"
@@ -2245,8 +2245,8 @@ msgstr ""
 #: modules/access/dshow/dshow.cpp:93 modules/access/v4l2.c:215
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
-#: modules/gui/macosx/simple_prefs.m:377 modules/gui/macosx/simple_prefs.m:480
-#: modules/gui/macosx/simple_prefs.m:710 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:380 modules/gui/macosx/simple_prefs.m:485
+#: modules/gui/macosx/simple_prefs.m:717 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -2521,7 +2521,7 @@ msgid "You can completely disable the sub-picture processing."
 msgstr ""
 
 #: src/libvlc-module.c:760 src/libvlc-module.c:1675
-#: modules/gui/macosx/simple_prefs.m:275
+#: modules/gui/macosx/simple_prefs.m:278
 #: modules/gui/qt4/ui/sprefs_subtitles.h:208
 #: modules/stream_out/transcode.c:228
 msgid "On Screen Display"
@@ -3083,7 +3083,7 @@ msgstr ""
 
 #: src/libvlc-module.c:1067
 msgid "(Experimental) Don't do caching at the access level."
-msgstr ""
+msgstr "(실험적인) 접근 수준의 캐시하지 않음."
 
 #: src/libvlc-module.c:1069
 msgid ""
@@ -3332,7 +3332,7 @@ msgstr ""
 #: modules/gui/macosx/controls.m:515 modules/gui/macosx/controls.m:1083
 #: modules/gui/macosx/controls.m:1114 modules/gui/macosx/embeddedwindow.m:66
 #: modules/gui/macosx/intf.m:599 modules/gui/macosx/intf.m:677
-#: modules/gui/macosx/intf.m:741 modules/gui/macosx/simple_prefs.m:283
+#: modules/gui/macosx/intf.m:741 modules/gui/macosx/simple_prefs.m:286
 #: modules/gui/qt4/components/controller.hpp:102
 #: modules/gui/qt4/ui/sprefs_video.h:282
 msgid "Fullscreen"
@@ -4347,7 +4347,7 @@ msgstr "파일 저장 실패함"
 #: src/misc/update.c:1591
 #, c-format
 msgid "Failed to open \"%s\" for writing"
-msgstr ""
+msgstr "쓰기위해 \"%s\" 열기 실패"
 
 #: src/misc/update.c:1607 src/misc/update.c:1629
 #, c-format
@@ -4369,8 +4369,8 @@ msgstr "다운로드중..."
 #: modules/gui/macosx/coredialogs.m:68 modules/gui/macosx/coredialogs.m:186
 #: modules/gui/macosx/open.m:169 modules/gui/macosx/open.m:196
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
-#: modules/gui/macosx/simple_prefs.m:238 modules/gui/macosx/simple_prefs.m:297
-#: modules/gui/macosx/simple_prefs.m:636 modules/gui/macosx/wizard.m:320
+#: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:300
+#: modules/gui/macosx/simple_prefs.m:643 modules/gui/macosx/wizard.m:320
 #: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
@@ -4487,7 +4487,7 @@ msgstr "갈무리 오디오 스트림 샘플레이트(Hz, 예: 11025, 22050, 441
 #: modules/access/dshow/dshow.cpp:99 modules/access/dv.c:71
 #: modules/access/dvb/access.c:84 modules/access/dvdnav.c:73
 #: modules/access/dvdread.c:76 modules/access/eyetv.m:61
-#: modules/access/fake.c:44 modules/access/file.c:77 modules/access/ftp.c:57
+#: modules/access/fake.c:44 modules/access/file.c:85 modules/access/ftp.c:57
 #: modules/access/gnomevfs.c:47 modules/access/http.c:75
 #: modules/access/jack.c:62 modules/access/mms/mms.c:49
 #: modules/access/mtp.c:65 modules/access/oss.c:72 modules/access/pvr.c:60
@@ -4551,11 +4551,11 @@ msgstr "트렌스폰더/멀티플렉스 주파수"
 
 #: modules/access/bda/bda.c:60 modules/access/dvb/access.c:96
 msgid "In kHz for DVB-S or Hz for DVB-C/T"
-msgstr ""
+msgstr " DVB-S 에 kHz 또는 DVB-C/T 에 Hz"
 
 #: modules/access/bda/bda.c:62
 msgid "In kHz for DVB-C/S/T"
-msgstr ""
+msgstr "DVB-C/S/T 에 kHz"
 
 #: modules/access/bda/bda.c:65 modules/access/dvb/access.c:98
 msgid "Inversion mode"
@@ -4577,7 +4577,7 @@ msgstr ""
 
 #: modules/access/bda/bda.c:76 modules/access/dvb/access.c:104
 msgid "Budget mode"
-msgstr ""
+msgstr "버짓 모드"
 
 #: modules/access/bda/bda.c:77 modules/access/dvb/access.c:105
 msgid "This allows you to stream an entire transponder with a \"budget\" card."
@@ -4589,11 +4589,11 @@ msgstr "네트워크 ID"
 
 #: modules/access/bda/bda.c:85 modules/access/dvb/access.c:108
 msgid "Satellite number in the Diseqc system"
-msgstr ""
+msgstr "다이젝 시스템 위성 번호"
 
 #: modules/access/bda/bda.c:86 modules/access/dvb/access.c:109
 msgid "[0=no diseqc, 1-4=satellite number]."
-msgstr ""
+msgstr "[0=다이젝 없음, 1-4=위성 번호]."
 
 #: modules/access/bda/bda.c:89 modules/access/dvb/access.c:111
 msgid "LNB voltage"
@@ -4743,7 +4743,7 @@ msgstr "7/8"
 
 #: modules/access/bda/bda.c:140 modules/access/dvb/access.c:144
 msgid "Terrestrial low priority stream code rate (FEC)"
-msgstr ""
+msgstr "지상파 낮은 우선순위 스트림 코드 비율 (FEC)"
 
 #: modules/access/bda/bda.c:141
 msgid "Low Priority FEC Rate [Undefined,1/2,2/3,3/4,5/6,7/8]"
@@ -4755,7 +4755,7 @@ msgstr "지상파 대역폭"
 
 #: modules/access/bda/bda.c:148 modules/access/dvb/access.c:148
 msgid "Terrestrial bandwidth [0=auto,6,7,8 in MHz]"
-msgstr ""
+msgstr "지상파 대역폭 [0=자동,6,7,8 (MHz)]"
 
 #: modules/access/bda/bda.c:151
 #: modules/gui/qt4/components/open_panels.cpp:1034
@@ -4774,7 +4774,7 @@ msgstr "8 MHz"
 
 #: modules/access/bda/bda.c:153 modules/access/dvb/access.c:150
 msgid "Terrestrial guard interval"
-msgstr ""
+msgstr "지상파 보호 구간"
 
 #: modules/access/bda/bda.c:154
 msgid "Guard interval [Undefined,1/4,1/8,1/16,1/32]"
@@ -4798,7 +4798,7 @@ msgstr "1/32"
 
 #: modules/access/bda/bda.c:159 modules/access/dvb/access.c:153
 msgid "Terrestrial transmission mode"
-msgstr ""
+msgstr "지상파 전송 모드"
 
 #: modules/access/bda/bda.c:160
 msgid "Transmission mode [Undefined,2k,8k]"
@@ -4814,7 +4814,7 @@ msgstr "8k"
 
 #: modules/access/bda/bda.c:165 modules/access/dvb/access.c:156
 msgid "Terrestrial hierarchy mode"
-msgstr ""
+msgstr "지상파 계층 모드"
 
 #: modules/access/bda/bda.c:166
 msgid "Hierarchy alpha value [Undefined,1,2,4]"
@@ -4874,11 +4874,11 @@ msgstr "수직"
 
 #: modules/access/bda/bda.c:184
 msgid "Circular Left"
-msgstr ""
+msgstr "왼쪽 순환"
 
 #: modules/access/bda/bda.c:184
 msgid "Circular Right"
-msgstr ""
+msgstr "오른쪽 순환"
 
 #: modules/access/bda/bda.c:185
 msgid "Satellite Range Code"
@@ -4886,7 +4886,7 @@ msgstr "위성 범위 코드"
 
 #: modules/access/bda/bda.c:186
 msgid "Satellite Range Code as defined by manufacturer e.g. DISEqC switch code"
-msgstr ""
+msgstr "제조사 정의 위성 범위 코드. 예) 다이젝 스위치 코드"
 
 #: modules/access/bda/bda.c:188
 msgid "Network Name"
@@ -4960,7 +4960,7 @@ msgstr "CD 읽기 실패"
 #: modules/access/cdda/access.c:286
 #, c-format
 msgid "VLC could not get a new block of size: %i."
-msgstr ""
+msgstr "VLC 가 다음 크기의 블럭을 가져올수 없습니다: %i."
 
 #: modules/access/cdda/cdda.c:46 modules/access/directory.c:73
 #: modules/codec/dirac.c:80 modules/codec/x264.c:403 modules/codec/x264.c:409
@@ -5086,7 +5086,7 @@ msgstr "CD 음성 제어 및 출력을 사용하시겠습니까?"
 
 #: modules/access/cdda/cdda.c:149
 msgid "If set, audio controls and audio jack output are used"
-msgstr ""
+msgstr "설정하면, 오디오 제어 및 오디오 단자 출력 사용됨"
 
 #: modules/access/cdda/cdda.c:154
 msgid "Do CD-Text lookups?"
@@ -5094,7 +5094,7 @@ msgstr "CD-Text 검색 실행?"
 
 #: modules/access/cdda/cdda.c:155
 msgid "If set, get CD-Text information"
-msgstr ""
+msgstr "설정하면, CD-Text 정보 가져옴"
 
 #: modules/access/cdda/cdda.c:164
 msgid "Use Navigation-style playback?"
@@ -5118,7 +5118,7 @@ msgstr "CDDB 검색"
 
 #: modules/access/cdda/cdda.c:186
 msgid "If set, lookup CD-DA track information using the CDDB protocol"
-msgstr ""
+msgstr "설정하면, CDDB 프로토콜을 사용하여 CD-DA 트랙 정보 찾음"
 
 #: modules/access/cdda/cdda.c:191
 msgid "CDDB server"
@@ -5146,7 +5146,7 @@ msgstr "CDDB 검색을 캐시하시겠습니까?"
 
 #: modules/access/cdda/cdda.c:207
 msgid "If set cache CDDB information about this CD"
-msgstr ""
+msgstr "설정하면, CD 의 CDDB 정보 캐시함"
 
 #: modules/access/cdda/cdda.c:211
 msgid "Contact CDDB via the HTTP protocol?"
@@ -5331,7 +5331,7 @@ msgstr ""
 
 #: modules/access/dshow/dshow.cpp:122
 msgid "Video input frame rate"
-msgstr "입력 영상 프레임 레이트"
+msgstr "비디오 입력 프레임 레이트"
 
 #: modules/access/dshow/dshow.cpp:124
 msgid ""
@@ -5400,7 +5400,7 @@ msgstr "음성 입력 핀"
 
 #: modules/access/dshow/dshow.cpp:152
 msgid "Select the audio input source. See the \"video input\" option."
-msgstr ""
+msgstr "오디오 입력 소스 선택. \"비디오 입력\" 옵션을 보세요."
 
 #: modules/access/dshow/dshow.cpp:153
 msgid "Video output pin"
@@ -5408,7 +5408,7 @@ msgstr "영상 출력 핀"
 
 #: modules/access/dshow/dshow.cpp:155
 msgid "Select the video output type. See the \"video input\" option."
-msgstr ""
+msgstr "비디오 출력 형식 선택. \"비디오 입력\" 옵션을 보세요."
 
 #: modules/access/dshow/dshow.cpp:156
 msgid "Audio output pin"
@@ -5416,7 +5416,7 @@ msgstr "음성 출력 핀"
 
 #: modules/access/dshow/dshow.cpp:158
 msgid "Select the audio output type. See the \"video input\" option."
-msgstr ""
+msgstr "오디오 출력 형식 선택. \"비디오 입력\" 옵션을 보세요."
 
 #: modules/access/dshow/dshow.cpp:160
 msgid "AM Tuner mode"
@@ -5427,6 +5427,8 @@ msgid ""
 "AM Tuner mode. Can be one of Default (0), TV (1),AM Radio (2), FM Radio (3) "
 "or DSS (4)."
 msgstr ""
+"AM 튜너 모드. Default (0), TV (1),AM Radio (2), FM Radio (3) 또는 DSS (4) 중"
+"에서 사용."
 
 #: modules/access/dshow/dshow.cpp:165
 msgid "Number of audio channels"
@@ -5513,7 +5515,7 @@ msgstr "프론트엔드 장치의 모듈레이션 타입"
 
 #: modules/access/dvb/access.c:141
 msgid "Terrestrial high priority stream code rate (FEC)"
-msgstr ""
+msgstr "지상파 높은 우선순위 스트림 코드 비율 (FEC)"
 
 #: modules/access/dvb/access.c:159
 msgid "HTTP Host address"
@@ -5521,7 +5523,7 @@ msgstr "HTTP 호스트 주소"
 
 #: modules/access/dvb/access.c:161
 msgid "To enable the internal HTTP server, set its address and port here."
-msgstr ""
+msgstr "내부 HTTP 서버를 사용하려면, 여기에 주소와 포트를 설정하세요."
 
 #: modules/access/dvb/access.c:163
 msgid "HTTP user name"
@@ -5530,7 +5532,7 @@ msgstr "HTTP 사용자 이름"
 #: modules/access/dvb/access.c:165
 msgid ""
 "User name the administrator will use to log into the internal HTTP server."
-msgstr ""
+msgstr "관리자의 사용자명은 내부 HTTP 서버에 로그인 하는데 사용됩니다."
 
 #: modules/access/dvb/access.c:168
 msgid "HTTP password"
@@ -5539,7 +5541,7 @@ msgstr "HTTP 비밀번호"
 #: modules/access/dvb/access.c:170
 msgid ""
 "Password the administrator will use to log into the internal HTTP server."
-msgstr ""
+msgstr "관리자의 비밀번호는 내부 HTTP 서버에 로그인 하는데 사용됩니다."
 
 #: modules/access/dvb/access.c:173
 msgid "HTTP ACL"
@@ -5742,7 +5744,7 @@ msgstr "fake 스트림 캐싱 값. 이 값은 밀리초로 설정되어야 합�
 #: modules/access/fake.c:48 modules/access/pvr.c:86 modules/access/v4l.c:124
 #: modules/access/v4l2.c:92
 msgid "Framerate"
-msgstr "프레임 비율"
+msgstr "프레임레이트"
 
 #: modules/access/fake.c:50
 msgid "Number of frames per second (eg. 24, 25, 29.97, 30)."
@@ -5778,15 +5780,15 @@ msgstr "Fake"
 msgid "Fake input"
 msgstr "Fake 입력"
 
-#: modules/access/file.c:79 modules/access/mtp.c:67
+#: modules/access/file.c:87 modules/access/mtp.c:67
 msgid "Caching value for files. This value should be set in milliseconds."
 msgstr "파일 캐싱 값. 이 값은 밀리초로 설정되어야 합니다."
 
-#: modules/access/file.c:83
+#: modules/access/file.c:91
 msgid "File input"
 msgstr "파일 입력"
 
-#: modules/access/file.c:84 modules/access_output/file.c:70
+#: modules/access/file.c:92 modules/access_output/file.c:70
 #: modules/audio_output/file.c:114 modules/gui/beos/InterfaceWindow.cpp:264
 #: modules/gui/beos/MediaControlView.cpp:1235
 #: modules/gui/beos/PlayListWindow.cpp:88 modules/gui/macosx/open.m:171
@@ -5797,17 +5799,17 @@ msgstr "파일 입력"
 msgid "File"
 msgstr "파일"
 
-#: modules/access/file.c:225 modules/access/file.c:345
+#: modules/access/file.c:273 modules/access/file.c:393
 #: modules/access/mmap.c:229 modules/access/mtp.c:218 modules/access/mtp.c:306
 msgid "File reading failed"
 msgstr "파일 읽기 실패"
 
-#: modules/access/file.c:226 modules/access/mmap.c:230
+#: modules/access/file.c:274 modules/access/mmap.c:230
 #: modules/access/mtp.c:219
 msgid "VLC could not read the file."
 msgstr "VLC 가 파일을 읽을수 없습니다."
 
-#: modules/access/file.c:346 modules/access/mtp.c:307
+#: modules/access/file.c:394 modules/access/mtp.c:307
 #, c-format
 msgid "VLC could not open the file \"%s\"."
 msgstr "VLC 가 파일 \"%s\" 를 열수 없습니다."
@@ -5856,11 +5858,11 @@ msgstr "네트워크 상호작용 실패"
 
 #: modules/access/ftp.c:139
 msgid "VLC could not connect with the given server."
-msgstr ""
+msgstr "VLC 이 주어진 서버에 접속할수 없습니다."
 
 #: modules/access/ftp.c:149
 msgid "VLC's connection to the given server was rejected."
-msgstr ""
+msgstr "주어진 서버에 VLC 의 연결이 거부 되었습니다."
 
 #: modules/access/ftp.c:214
 msgid "Your account was rejected."
@@ -6135,11 +6137,11 @@ msgstr "주파수"
 
 #: modules/access/pvr.c:84 modules/access/v4l.c:85
 msgid "Frequency to capture (in kHz), if applicable."
-msgstr ""
+msgstr "해당한다면, 갈무리 주파수 (kHz)."
 
 #: modules/access/pvr.c:87 modules/access/v4l.c:125
 msgid "Framerate to capture, if applicable (-1 for autodetect)."
-msgstr ""
+msgstr "해당한다면, 갈무리 프레임레이트 (-1 자동감지)"
 
 #: modules/access/pvr.c:90
 msgid "Key interval"
@@ -6384,7 +6386,7 @@ msgstr "화면 갈무리 캐싱 값. 이 값은 밀리초로 설정되어야 합
 #: modules/access/screen/screen.c:46
 #: modules/gui/qt4/components/open_panels.cpp:1072
 msgid "Desired frame rate for the capture."
-msgstr "캡쳐에 사용할 프레임 레이트"
+msgstr "갈무리에 요구되는 프레임 레이트."
 
 #: modules/access/screen/screen.c:49
 msgid "Capture fragment size"
@@ -6439,7 +6441,7 @@ msgstr "스크린 입력"
 
 #: modules/access/screen/screen.c:95 modules/gui/macosx/open.m:213
 #: modules/gui/macosx/open.m:414 modules/gui/macosx/open.m:979
-#: modules/gui/macosx/simple_prefs.m:486 modules/gui/macosx/vout.m:226
+#: modules/gui/macosx/simple_prefs.m:491 modules/gui/macosx/vout.m:226
 msgid "Screen"
 msgstr "스크린"
 
@@ -6638,7 +6640,7 @@ msgstr ""
 
 #: modules/access/v4l2.c:79
 msgid "Input of the card to use (see debug)."
-msgstr ""
+msgstr "사용할 카드 입력 (디버그를 보세요)."
 
 #: modules/access/v4l2.c:80
 msgid "Audio input"
@@ -6646,7 +6648,7 @@ msgstr "오디오 입력"
 
 #: modules/access/v4l2.c:82
 msgid "Audio input of the card to use (see debug)."
-msgstr ""
+msgstr "사용할 카트 오디오 입력 (디버그를 보세요)."
 
 #: modules/access/v4l2.c:83
 msgid "IO Method"
@@ -6666,7 +6668,7 @@ msgstr "높이 강제 (-1 : 자동감지, 0 : 드라이버 기본값)."
 
 #: modules/access/v4l2.c:93
 msgid "Framerate to capture, if applicable (0 for autodetect)."
-msgstr ""
+msgstr "해당한다면, 갈무리 프레임레이트 (0 자동감지)"
 
 #: modules/access/v4l2.c:97
 msgid "Use libv4l2"
@@ -6682,7 +6684,7 @@ msgstr "v4l2 제어 초기화"
 
 #: modules/access/v4l2.c:104
 msgid "Reset controls to defaults provided by the v4l2 driver."
-msgstr ""
+msgstr "v4l2 드라이버가 제공한 기본값으로 제어 초기화."
 
 #: modules/access/v4l2.c:107
 msgid "Brightness of the video input (if supported by the v4l2 driver)."
@@ -6923,19 +6925,19 @@ msgstr "모노"
 
 #: modules/access/v4l2.c:229
 msgid "Primary language (Analog TV tuners only)"
-msgstr ""
+msgstr "주 언어 (아날로그 TV 튜너 전용)"
 
 #: modules/access/v4l2.c:230
 msgid "Secondary language (Analog TV tuners only)"
-msgstr ""
+msgstr "부 언어 (아날로그 TV 튜너 전용)"
 
 #: modules/access/v4l2.c:231
 msgid "Second audio program (Analog TV tuners only)"
-msgstr ""
+msgstr "부 오디오 프로그램 (아나로그 TV 튜너 전용)"
 
 #: modules/access/v4l2.c:232
 msgid "Primary language left, Secondary language right"
-msgstr ""
+msgstr "주 언어 왼쪽, 부 언어 오른쪽"
 
 #: modules/access/v4l2.c:238
 msgid "Video4Linux2"
@@ -7165,7 +7167,7 @@ msgid "User name that will be requested to access the stream."
 msgstr "스트림에 접근하기위해 필요한 사용자명."
 
 #: modules/access_output/http.c:68 modules/control/telnet.c:87
-#: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:228
+#: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:229
 #: modules/gui/qt4/dialogs/external.cpp:145
 #: modules/gui/qt4/ui/sprefs_audio.h:356 modules/misc/audioscrobbler.c:135
 #: modules/misc/notify/growl_udp.c:64
@@ -7502,7 +7504,7 @@ msgstr "이퀄라이저 프리셋"
 
 #: modules/audio_filter/equalizer.c:58
 msgid "Preset to use for the equalizer."
-msgstr ""
+msgstr "이퀄라이저에 사용할 사전설정."
 
 #: modules/audio_filter/equalizer.c:60
 msgid "Bands gain"
@@ -7542,7 +7544,7 @@ msgstr "플랫"
 #: modules/audio_filter/equalizer_presets.h:40
 #: modules/meta_engine/id3genres.h:60
 msgid "Classical"
-msgstr "클래시컬"
+msgstr "클래식"
 
 #: modules/audio_filter/equalizer_presets.h:40
 msgid "Club"
@@ -7641,7 +7643,7 @@ msgid ""
 msgstr ""
 
 #: modules/audio_filter/normvol.c:83 modules/audio_filter/normvol.c:84
-#: modules/gui/macosx/simple_prefs.m:230 modules/gui/qt4/ui/sprefs_audio.h:350
+#: modules/gui/macosx/simple_prefs.m:231 modules/gui/qt4/ui/sprefs_audio.h:350
 msgid "Volume normalizer"
 msgstr "음량 평준화기"
 
@@ -8028,7 +8030,7 @@ msgid "PORTAUDIO audio output"
 msgstr "PORTAUDIO 오디오 출력"
 
 #: modules/audio_output/pulse.c:61 modules/gui/macosx/intf.m:589
-#: modules/gui/macosx/intf.m:590 modules/gui/macosx/intf.m:1965
+#: modules/gui/macosx/intf.m:590 modules/gui/macosx/intf.m:1970
 #: modules/gui/pda/pda_interface.c:210 modules/gui/pda/pda_interface.c:1353
 #: modules/gui/qt4/dialogs/help.cpp:99 modules/gui/qt4/main_interface.cpp:930
 #: modules/gui/qt4/main_interface.cpp:934
@@ -8117,7 +8119,7 @@ msgid "Non-key"
 msgstr "Non-key"
 
 #: modules/codec/avcodec/avcodec.c:71 modules/gui/macosx/prefs.m:207
-#: modules/gui/macosx/simple_prefs.m:296
+#: modules/gui/macosx/simple_prefs.m:299
 #: modules/gui/qt4/dialogs/preferences.cpp:68
 msgid "All"
 msgstr "모두"
@@ -8171,7 +8173,7 @@ msgstr "직접 렌더링"
 
 #: modules/codec/avcodec/avcodec.h:68
 msgid "Error resilience"
-msgstr ""
+msgstr "오류 허용성"
 
 #: modules/codec/avcodec/avcodec.h:70
 msgid ""
@@ -8180,6 +8182,10 @@ msgid ""
 "can produce a lot of errors.\n"
 "Valid values range from 0 to 4 (0 disables all errors resilience)."
 msgstr ""
+"Ffmpeg 은 오류 허용성이 있습니다.\n"
+"그러나, 오류투성이 인코더 (M$ 의 ISO MPEG-4 같은) 는 많은 오류를 만들어냅니"
+"다.\n"
+"0 부터 4 까지 유효한 값 범위 (0 은 모든 오류 허용성 사용안함)."
 
 #: modules/codec/avcodec/avcodec.h:75
 msgid "Workaround bugs"
@@ -8271,7 +8277,7 @@ msgid ""
 "processing power"
 msgstr ""
 
-#: modules/codec/avcodec/avcodec.h:125 modules/gui/macosx/simple_prefs.m:256
+#: modules/codec/avcodec/avcodec.h:125 modules/gui/macosx/simple_prefs.m:257
 #: modules/gui/qt4/ui/sprefs_input.h:250
 msgid "Skip the loop filter for H.264 decoding"
 msgstr "H.264 디코딩 순환 필터 건너뛰기"
@@ -8443,7 +8449,7 @@ msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:215
 msgid "Luminance masking"
-msgstr ""
+msgstr "휘도 마스킹"
 
 #: modules/codec/avcodec/avcodec.h:216
 msgid "Raise the quantizer for very bright macroblocks (default: 0.0)."
@@ -8451,7 +8457,7 @@ msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:219
 msgid "Darkness masking"
-msgstr ""
+msgstr "어두움 마스킹"
 
 #: modules/codec/avcodec/avcodec.h:220
 msgid "Raise the quantizer for very dark macroblocks (default: 0.0)."
@@ -8459,7 +8465,7 @@ msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:223
 msgid "Motion masking"
-msgstr ""
+msgstr "동작 마스킹"
 
 #: modules/codec/avcodec/avcodec.h:224
 msgid ""
@@ -8469,7 +8475,7 @@ msgstr ""
 
 #: modules/codec/avcodec/avcodec.h:227
 msgid "Border masking"
-msgstr ""
+msgstr "테두리 마스킹"
 
 #: modules/codec/avcodec/avcodec.h:228
 msgid ""
@@ -8511,12 +8517,12 @@ msgstr ""
 #: modules/codec/avcodec/encoder.c:228
 #, c-format
 msgid "\"%s\" is no video encoder."
-msgstr ""
+msgstr "\"%s\" 는 비디오 인코더가 아닙니다."
 
 #: modules/codec/avcodec/encoder.c:236
 #, c-format
 msgid "\"%s\" is no audio encoder."
-msgstr ""
+msgstr "\"%s\" 는 오디오 인코더가 아닙니다."
 
 #: modules/codec/avcodec/encoder.c:256
 #, c-format
@@ -8531,7 +8537,7 @@ msgstr ""
 
 #: modules/codec/avcodec/encoder.c:681 modules/codec/avcodec/encoder.c:690
 msgid "VLC could not open the encoder."
-msgstr ""
+msgstr "VLC 가 인코더를 열수 없습니다."
 
 #: modules/codec/cc.c:64
 msgid "CC 608/708"
@@ -8680,7 +8686,7 @@ msgstr "동작 보정 블럭 높이"
 
 #: modules/codec/dirac.c:126
 msgid "Block overlap (%)"
-msgstr ""
+msgstr "블록 오버랩 (%)"
 
 #: modules/codec/dirac.c:127
 msgid "Amount that each motion block should be overlapped by its neighbours"
@@ -8730,11 +8736,11 @@ msgstr ""
 
 #: modules/codec/dirac.c:157
 msgid "Intra picture DWT filter"
-msgstr ""
+msgstr "Intra picture DWT 필터"
 
 #: modules/codec/dirac.c:161
 msgid "Inter picture DWT filter"
-msgstr ""
+msgstr "Inter picture DWT 필터"
 
 #: modules/codec/dirac.c:165
 msgid "Number of DWT iterations"
@@ -8794,7 +8800,7 @@ msgstr "디코딩 X 좌표"
 
 #: modules/codec/dvbsub.c:57
 msgid "X coordinate of the rendered subtitle"
-msgstr ""
+msgstr "렌더링된 자막의 X 좌표"
 
 #: modules/codec/dvbsub.c:59
 msgid "Decoding Y coordinate"
@@ -8802,7 +8808,7 @@ msgstr "디코딩 Y 좌표"
 
 #: modules/codec/dvbsub.c:60
 msgid "Y coordinate of the rendered subtitle"
-msgstr ""
+msgstr "렌더링된 자막의 Y 좌표"
 
 #: modules/codec/dvbsub.c:62
 msgid "Subpicture position"
@@ -8821,7 +8827,7 @@ msgstr "인코딩 X 좌표"
 
 #: modules/codec/dvbsub.c:69
 msgid "X coordinate of the encoded subtitle"
-msgstr ""
+msgstr "인코딩된 자막의 X 좌표"
 
 #: modules/codec/dvbsub.c:70
 msgid "Encoding Y coordinate"
@@ -8829,7 +8835,7 @@ msgstr "인코딩 Y 좌표"
 
 #: modules/codec/dvbsub.c:71
 msgid "Y coordinate of the encoded subtitle"
-msgstr ""
+msgstr "인코딩된 자막의 Y 좌표"
 
 #: modules/codec/dvbsub.c:91
 msgid "DVB subtitles decoder"
@@ -9390,15 +9396,15 @@ msgstr ""
 
 #: modules/codec/speex.c:88
 msgid "Narrow-band (8kHz)"
-msgstr ""
+msgstr "협대역 (8kHz)"
 
 #: modules/codec/speex.c:88
 msgid "Wide-band (16kHz)"
-msgstr ""
+msgstr "광대역 (16kHz)"
 
 #: modules/codec/speex.c:88
 msgid "Ultra-wideband (32kHz)"
-msgstr ""
+msgstr "초광대역 (32kHz)"
 
 #: modules/codec/speex.c:95
 msgid "Speex audio decoder"
@@ -9406,7 +9412,7 @@ msgstr "Speex 오디오 디코더"
 
 #: modules/codec/speex.c:97
 msgid "Speex"
-msgstr ""
+msgstr "Speex"
 
 #: modules/codec/speex.c:101
 msgid "Speex audio packetizer"
@@ -9976,7 +9982,7 @@ msgstr "최대 QP"
 
 #: modules/codec/x264.c:155
 msgid "Maximum quantizer parameter."
-msgstr ""
+msgstr "최대 양자화기 매개변수"
 
 #: modules/codec/x264.c:157
 msgid "Max QP step"
@@ -10054,7 +10060,7 @@ msgstr "I 와 P 사이의 QP 팩터"
 
 #: modules/codec/x264.c:191
 msgid "QP factor between I and P. Range 1.0 to 2.0."
-msgstr ""
+msgstr "I 와 P 사이의 QP 요소. 범위 1.0 에서 2.0."
 
 #: modules/codec/x264.c:194
 msgid "QP factor between P and B"
@@ -10062,7 +10068,7 @@ msgstr "P 와 B 사이의 QP 팩터"
 
 #: modules/codec/x264.c:195
 msgid "QP factor between P and B. Range 1.0 to 2.0."
-msgstr ""
+msgstr "P 와 B 사이의 QP 요소. 범위 1.0 에서 2.0."
 
 #: modules/codec/x264.c:197
 msgid "QP difference between chroma and luma"
@@ -10070,7 +10076,7 @@ msgstr "채도와 휘도 사이의 QP 차이"
 
 #: modules/codec/x264.c:198
 msgid "QP difference between chroma and luma."
-msgstr ""
+msgstr "채도와 루마 사이의 QP 차이."
 
 #: modules/codec/x264.c:200
 msgid "Multipass ratecontrol"
@@ -10090,7 +10096,7 @@ msgstr "QP 커브 압축"
 
 #: modules/codec/x264.c:207
 msgid "QP curve compression. Range 0.0 (CBR) to 1.0 (QCP)."
-msgstr ""
+msgstr "QP 곡선 압축. 범위 0.0 (CBR) 에서 1.0 (QCP)."
 
 #: modules/codec/x264.c:209 modules/codec/x264.c:213
 msgid "Reduce fluctuations in QP"
@@ -10578,11 +10584,11 @@ msgstr "음량 제어"
 msgid "Position Control"
 msgstr "위치 제어"
 
-#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2441
+#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2446
 msgid "Ignore"
 msgstr "무시"
 
-#: modules/control/hotkeys.c:101 modules/gui/macosx/simple_prefs.m:194
+#: modules/control/hotkeys.c:101 modules/gui/macosx/simple_prefs.m:195
 #: modules/gui/qt4/components/simple_preferences.cpp:85
 msgid "Hotkeys"
 msgstr "단축키"
@@ -10862,8 +10868,8 @@ msgid "Opening"
 msgstr "열기"
 
 #: modules/control/rc.c:77 modules/gui/macosx/embeddedwindow.m:151
-#: modules/gui/macosx/intf.m:1975 modules/gui/macosx/intf.m:1976
-#: modules/gui/macosx/intf.m:1977 modules/gui/macosx/intf.m:1978
+#: modules/gui/macosx/intf.m:1980 modules/gui/macosx/intf.m:1981
+#: modules/gui/macosx/intf.m:1982 modules/gui/macosx/intf.m:1983
 #: modules/gui/pda/pda_interface.c:248 modules/gui/pda/pda_interface.c:249
 #: modules/gui/qt4/menus.cpp:736 modules/misc/notify/xosd.c:238
 msgid "Pause"
@@ -11134,7 +11140,7 @@ msgstr "| menu . . [켜기|끄기|위로|아래로|왼쪽|오른쪽|선택] 메�
 
 #: modules/control/rc.c:905
 msgid "| @name marq-marquee  STRING  . . overlay STRING in video"
-msgstr "| @name marq-marquee  STRING  . . 비디오의 문자열 중첩"
+msgstr "| @name marq-marquee  STRING  . . 비디오에 문자열 중첩"
 
 #: modules/control/rc.c:906
 msgid "| @name marq-x X . . . . . . . . . . . .offset from left"
@@ -11656,7 +11662,7 @@ msgid "RTSP/RTP access and demux"
 msgstr "RTSP/RTP 접근 및 demux"
 
 #: modules/demux/live555.cpp:111 modules/demux/live555.cpp:112
-#: modules/gui/macosx/simple_prefs.m:255 modules/gui/qt4/ui/sprefs_input.h:249
+#: modules/gui/macosx/simple_prefs.m:256 modules/gui/qt4/ui/sprefs_input.h:249
 msgid "Use RTP over RTSP (TCP)"
 msgstr "RTP over RTSP (TCP) 사용"
 
@@ -11703,6 +11709,8 @@ msgid ""
 "This is the desired frame rate when playing MJPEG from a file. Use 0 (this "
 "is the default value) for a live stream (from a camera)."
 msgstr ""
+"파일에서 MJPEG 재생시 요구되는 프레임 레이트. (카메라의) 라이브 스트림에 0 "
+"(기본값) 사용."
 
 #: modules/demux/mjpeg.c:54
 msgid "M-JPEG camera demuxer"
@@ -11714,7 +11722,7 @@ msgstr "--- DVD 메뉴"
 
 #: modules/demux/mkv/chapter_command.cpp:152
 msgid "First Played"
-msgstr ""
+msgstr "처음 재생됨"
 
 #: modules/demux/mkv/chapter_command.cpp:154
 msgid "Video Manager"
@@ -11866,7 +11874,7 @@ msgstr ""
 
 #: modules/demux/mpeg/h264.c:44
 msgid "Desired frame rate for the H264 stream."
-msgstr ""
+msgstr "H264 스트림에 요구되는 프레임 레이트."
 
 #: modules/demux/mpeg/h264.c:51
 msgid "H264 video demuxer"
@@ -11875,7 +11883,7 @@ msgstr "H264 비디오 디멀티플렉서"
 #: modules/demux/mpeg/m4v.c:44
 msgid ""
 "This is the desired frame rate when playing MPEG4 video elementary streams."
-msgstr ""
+msgstr "MPEG4 비디오 기본 스트림 재생시 요구되는 프레임 레이트."
 
 #: modules/demux/mpeg/m4v.c:50
 msgid "MPEG-4 video demuxer"
@@ -12053,6 +12061,7 @@ msgid ""
 "This is the desired frame rate when playing raw video streams.  In the form "
 "30000/1001 or 29.97"
 msgstr ""
+"원시 비디오 스트림 재생시 요구되는 프레임 레이트. 형식 30000/1001 또는 29.97"
 
 #: modules/demux/rawvid.c:50
 msgid "This specifies the width in pixels of the raw video stream."
@@ -12323,7 +12332,7 @@ msgstr "특수 자막 4"
 
 #: modules/demux/vc1.c:44
 msgid "Desired frame rate for the VC-1 stream."
-msgstr ""
+msgstr "VC-1 스트림에 요구되는 프레임 레이트."
 
 #: modules/demux/vc1.c:50
 msgid "VC1 video demuxer"
@@ -12367,7 +12376,7 @@ msgstr "열기"
 
 #: modules/gui/beos/InterfaceWindow.cpp:226
 #: modules/gui/beos/InterfaceWindow.cpp:331 modules/gui/macosx/prefs.m:202
-#: modules/gui/macosx/simple_prefs.m:300
+#: modules/gui/macosx/simple_prefs.m:303
 #: modules/gui/qt4/dialogs/preferences.cpp:46
 msgid "Preferences"
 msgstr "선택사항"
@@ -12431,10 +12440,10 @@ msgstr "창"
 #: modules/gui/macosx/bookmarks.m:271 modules/gui/macosx/bookmarks.m:279
 #: modules/gui/macosx/controls.m:85 modules/gui/macosx/coredialogs.m:67
 #: modules/gui/macosx/coredialogs.m:105 modules/gui/macosx/coredialogs.m:163
-#: modules/gui/macosx/extended.m:519 modules/gui/macosx/intf.m:2314
+#: modules/gui/macosx/extended.m:519 modules/gui/macosx/intf.m:2319
 #: modules/gui/macosx/open.m:310 modules/gui/macosx/output.m:138
-#: modules/gui/macosx/playlistinfo.m:430 modules/gui/macosx/simple_prefs.m:239
-#: modules/gui/macosx/update.m:65 modules/gui/macosx/wizard.m:600
+#: modules/gui/macosx/playlistinfo.m:430 modules/gui/macosx/simple_prefs.m:240
+#: modules/gui/macosx/update.m:76 modules/gui/macosx/wizard.m:600
 #: modules/gui/macosx/wizard.m:664 modules/gui/macosx/wizard.m:1063
 #: modules/gui/macosx/wizard.m:1148 modules/gui/macosx/wizard.m:1155
 #: modules/gui/macosx/wizard.m:1681 modules/gui/macosx/wizard.m:1689
@@ -12523,7 +12532,7 @@ msgstr "적용"
 
 #: modules/gui/beos/PreferencesWindow.cpp:257 modules/gui/macosx/output.m:526
 #: modules/gui/macosx/playlist.m:711 modules/gui/macosx/prefs.m:203
-#: modules/gui/macosx/simple_prefs.m:299
+#: modules/gui/macosx/simple_prefs.m:302
 #: modules/gui/qt4/components/sout/profile_selector.cpp:250
 #: modules/gui/qt4/ui/vlm.h:302
 msgid "Save"
@@ -12611,7 +12620,7 @@ msgstr "X 좌표"
 
 #: modules/gui/fbosd.c:122
 msgid "X coordinate of the rendered image"
-msgstr ""
+msgstr "렌더링된 이미지의 X 좌표"
 
 #: modules/gui/fbosd.c:124 modules/video_filter/erase.c:60
 #: modules/video_filter/logo.c:83 modules/video_filter/osdmenu.c:54
@@ -12688,7 +12697,7 @@ msgid ""
 "All rendered images and text will be displayed on the overlay framebuffer."
 msgstr ""
 
-#: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:272
+#: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:275
 #: modules/gui/qt4/ui/sprefs_subtitles.h:219 modules/misc/freetype.c:83
 #: modules/misc/notify/xosd.c:80 modules/misc/quartztext.c:92
 #: modules/misc/win32text.c:57 modules/video_filter/marq.c:161
@@ -12742,7 +12751,7 @@ msgid "Add"
 msgstr "추가"
 
 #: modules/gui/macosx/bookmarks.m:89 modules/gui/macosx/intf.m:636
-#: modules/gui/macosx/simple_prefs.m:240
+#: modules/gui/macosx/simple_prefs.m:241
 #: modules/gui/qt4/components/preferences_widgets.cpp:1154
 #: modules/gui/qt4/dialogs/bookmarks.cpp:48 modules/gui/qt4/ui/vlm.h:301
 #: modules/gui/qt4/util/customwidgets.cpp:136
@@ -12870,13 +12879,13 @@ msgstr "파일 열기..."
 
 #: modules/gui/macosx/controls.m:1062 modules/gui/macosx/intf.m:649
 msgid "Step Forward"
-msgstr ""
+msgstr "한단계 앞으로"
 
 #: modules/gui/macosx/controls.m:1063 modules/gui/macosx/intf.m:650
 msgid "Step Backward"
-msgstr ""
+msgstr "한단계 뒤로"
 
-#: modules/gui/macosx/coredialogs.m:64 modules/gui/macosx/simple_prefs.m:229
+#: modules/gui/macosx/coredialogs.m:64 modules/gui/macosx/simple_prefs.m:230
 #: modules/gui/qt4/dialogs/external.cpp:140
 msgid "User name"
 msgstr "사용자명"
@@ -13055,13 +13064,14 @@ msgstr "(재생 중인 항목이 없음)"
 
 #: modules/gui/macosx/intf.m:377
 msgid "VLC's last release for your OS is the 0.9 series."
-msgstr ""
+msgstr "당신의 OS 용 마지막 릴리즈는 0.9 시리즈 입니다."
 
 #: modules/gui/macosx/intf.m:379
 msgid ""
 "VLC's last release for your OS is VLC 0.8.6i, which is prone to known "
 "security issues."
 msgstr ""
+"당신의 OS 용 마지막 릴리즈는 보안 문제가 있다고 알려진 VLC 0.8.6i 입니다."
 
 #: modules/gui/macosx/intf.m:381
 msgid ""
@@ -13069,6 +13079,9 @@ msgid ""
 "prone to known security issues. We recommend you to update your Mac to a "
 "modern version of Mac OS X."
 msgstr ""
+"당신의 OS 용 마지막 릴리즈는 매우 구식이고 보안 문제가 있다고 알려진 VLC "
+"0.7.2 입니다. 당신의 Mac 을 최신 버전의 Mac OS X 로 업데이트 하기를 추천합니"
+"다."
 
 #: modules/gui/macosx/intf.m:383
 msgid "Your version of Mac OS X is no longer supported"
@@ -13144,7 +13157,7 @@ msgstr "갈무리 장치 열기..."
 msgid "Open Recent"
 msgstr "최근 파일 열기"
 
-#: modules/gui/macosx/intf.m:629 modules/gui/macosx/intf.m:2730
+#: modules/gui/macosx/intf.m:629 modules/gui/macosx/intf.m:2735
 msgid "Clear Menu"
 msgstr "메뉴 지움"
 
@@ -13177,7 +13190,7 @@ msgid "Decrease Volume"
 msgstr "음량 줄이기"
 
 #: modules/gui/macosx/intf.m:686 modules/gui/macosx/intf.m:687
-#: modules/gui/macosx/simple_prefs.m:280 modules/gui/macosx/vout.m:209
+#: modules/gui/macosx/simple_prefs.m:283 modules/gui/macosx/vout.m:209
 msgid "Fullscreen Video Device"
 msgstr "전체화면 비디오 장치"
 
@@ -13297,60 +13310,60 @@ msgid ""
 "information."
 msgstr ""
 
-#: modules/gui/macosx/intf.m:1806
+#: modules/gui/macosx/intf.m:1811
 #, c-format
 msgid "Volume: %d%%"
 msgstr "음량: %d%%"
 
-#: modules/gui/macosx/intf.m:2205
+#: modules/gui/macosx/intf.m:2210
 msgid "Update check failed"
-msgstr ""
+msgstr "업데이트 확인 실패"
 
-#: modules/gui/macosx/intf.m:2205
+#: modules/gui/macosx/intf.m:2210
 msgid "Checking for updates was not enabled in this build."
 msgstr ""
 
-#: modules/gui/macosx/intf.m:2312
+#: modules/gui/macosx/intf.m:2317
 msgid "Crash Report successfully sent"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:2313
+#: modules/gui/macosx/intf.m:2318
 msgid "Thanks for your report!"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:2321
+#: modules/gui/macosx/intf.m:2326
 msgid "Error when sending the Crash Report"
 msgstr ""
 
-#: modules/gui/macosx/intf.m:2412
+#: modules/gui/macosx/intf.m:2417
 msgid "No CrashLog found"
 msgstr "충돌 로그를 찾을 수 없음"
 
-#: modules/gui/macosx/intf.m:2412 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:637
+#: modules/gui/macosx/intf.m:2417 modules/gui/macosx/prefs.m:226
+#: modules/gui/macosx/simple_prefs.m:644
 msgid "Continue"
 msgstr "계속"
 
-#: modules/gui/macosx/intf.m:2412
+#: modules/gui/macosx/intf.m:2417
 msgid "Couldn't find any trace of a previous crash."
 msgstr ""
 
-#: modules/gui/macosx/intf.m:2439
+#: modules/gui/macosx/intf.m:2444
 msgid "Remove old preferences?"
 msgstr "오래된 선택사항을 제거 하시겠습니까?"
 
-#: modules/gui/macosx/intf.m:2440
+#: modules/gui/macosx/intf.m:2445
 msgid "We just found an older version of VLC's preferences files."
 msgstr "이전 버전의 VLC 선택사항 파일을 발견했습니다."
 
-#: modules/gui/macosx/intf.m:2441
+#: modules/gui/macosx/intf.m:2446
 msgid "Move To Trash and Relaunch VLC"
-msgstr ""
+msgstr "휴지통으로 이동 및 VLC 재실행"
 
-#: modules/gui/macosx/intf.m:2575
+#: modules/gui/macosx/intf.m:2580
 #, c-format
 msgid "VLC Debug Log (%s).rtfd"
-msgstr ""
+msgstr "VLC 디버그 로그 (%s).rtfd"
 
 #: modules/gui/macosx/macosx.m:52
 msgid "Video device"
@@ -13433,7 +13446,25 @@ msgid ""
 "feature can be disabled here."
 msgstr ""
 
+#: modules/gui/macosx/macosx.m:90
+msgid "Allow playback control with the Apple Remote"
+msgstr ""
+
 #: modules/gui/macosx/macosx.m:91
+msgid "By default, VLC can be remotely controlled with the Apple Remote."
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:93
+msgid "Allow playback control with the media keys"
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:94
+msgid ""
+"By default, VLC can be controlled using the media keys on modern Apple "
+"keyboards."
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:98
 msgid "Mac OS X interface"
 msgstr "Mac OS X 인터페이스"
 
@@ -13469,7 +13500,7 @@ msgstr "갈무리"
 #: modules/gui/macosx/open.m:176 modules/gui/macosx/open.m:182
 #: modules/gui/macosx/open.m:298 modules/gui/macosx/output.m:145
 #: modules/gui/macosx/prefs_widgets.m:1181
-#: modules/gui/macosx/simple_prefs.m:288
+#: modules/gui/macosx/simple_prefs.m:291
 #: modules/gui/qt4/components/preferences_widgets.cpp:264
 #: modules/gui/qt4/components/simple_preferences.cpp:245
 #: modules/gui/qt4/components/sout/sout_widgets.cpp:98
@@ -13904,7 +13935,7 @@ msgstr "잃어버린 프레임"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
 #: modules/gui/qt4/components/info_panels.cpp:520
-#: modules/gui/qt4/dialogs_provider.cpp:607
+#: modules/gui/qt4/dialogs_provider.cpp:608
 #: modules/video_filter/deinterlace.c:143
 msgid "Streaming"
 msgstr "스트리밍"
@@ -13939,27 +13970,27 @@ msgstr ""
 
 #: modules/gui/macosx/playlistinfo.m:429
 msgid "VLC was unable to save the meta data."
-msgstr ""
+msgstr "VLC 가 메타 데이터를 저장할수 없습니다."
 
 #: modules/gui/macosx/playlistinfo.m:454
 msgid "Information"
 msgstr "정보"
 
-#: modules/gui/macosx/prefs.m:205 modules/gui/macosx/simple_prefs.m:298
+#: modules/gui/macosx/prefs.m:205 modules/gui/macosx/simple_prefs.m:301
 msgid "Reset All"
 msgstr "모두 초기화"
 
-#: modules/gui/macosx/prefs.m:206 modules/gui/macosx/simple_prefs.m:295
+#: modules/gui/macosx/prefs.m:206 modules/gui/macosx/simple_prefs.m:298
 #: modules/gui/qt4/ui/video_effects.h:882
 msgid "Basic"
 msgstr "기본"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:636
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:643
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "선택사항 초기화"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:639
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:646
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -13979,107 +14010,107 @@ msgstr "파일 선택"
 msgid "Select"
 msgstr "선택"
 
-#: modules/gui/macosx/simple_prefs.m:90
+#: modules/gui/macosx/simple_prefs.m:91
 msgid "Not Set"
 msgstr "설정안됨"
 
-#: modules/gui/macosx/simple_prefs.m:174
+#: modules/gui/macosx/simple_prefs.m:175
 #: modules/gui/qt4/components/simple_preferences.cpp:465
 msgid "Interface Settings"
 msgstr "인터페이스 설정"
 
-#: modules/gui/macosx/simple_prefs.m:178
+#: modules/gui/macosx/simple_prefs.m:179
 msgid "General Audio Settings"
 msgstr "일반 오디오 설정"
 
-#: modules/gui/macosx/simple_prefs.m:182
+#: modules/gui/macosx/simple_prefs.m:183
 msgid "General Video Settings"
 msgstr "일반 비디오 설정"
 
-#: modules/gui/macosx/simple_prefs.m:186
+#: modules/gui/macosx/simple_prefs.m:187
 msgid "Subtitles & OSD"
 msgstr "자막 & OSD"
 
-#: modules/gui/macosx/simple_prefs.m:186
+#: modules/gui/macosx/simple_prefs.m:187
 #: modules/gui/qt4/components/simple_preferences.cpp:538
 msgid "Subtitles & On Screen Display Settings"
 msgstr "자막 & OSD 설정"
 
-#: modules/gui/macosx/simple_prefs.m:190
+#: modules/gui/macosx/simple_prefs.m:191
 msgid "Input & Codecs"
 msgstr "입력 & 코덱"
 
-#: modules/gui/macosx/simple_prefs.m:190
+#: modules/gui/macosx/simple_prefs.m:191
 msgid "Input & Codec settings"
 msgstr "입력 & 코덱 설정"
 
-#: modules/gui/macosx/simple_prefs.m:222 modules/gui/qt4/ui/sprefs_audio.h:348
+#: modules/gui/macosx/simple_prefs.m:223 modules/gui/qt4/ui/sprefs_audio.h:348
 msgid "Effects"
 msgstr "효과"
 
-#: modules/gui/macosx/simple_prefs.m:223
+#: modules/gui/macosx/simple_prefs.m:224
 msgid "Enable Audio"
 msgstr "오디오 사용"
 
-#: modules/gui/macosx/simple_prefs.m:224 modules/gui/qt4/ui/sprefs_audio.h:334
+#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:334
 msgid "General Audio"
 msgstr "일반 오디오"
 
-#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:349
+#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:349
 msgid "Headphone surround effect"
 msgstr "헤드폰 서라운드 효과"
 
-#: modules/gui/macosx/simple_prefs.m:226
+#: modules/gui/macosx/simple_prefs.m:227
 msgid "Preferred Audio language"
 msgstr "선호하는 오디어 언어"
 
-#: modules/gui/macosx/simple_prefs.m:227
+#: modules/gui/macosx/simple_prefs.m:228
 msgid "Enable Last.fm submissions"
 msgstr "Last.fm 전송 사용"
 
-#: modules/gui/macosx/simple_prefs.m:232 modules/gui/qt4/ui/sprefs_audio.h:351
+#: modules/gui/macosx/simple_prefs.m:233 modules/gui/qt4/ui/sprefs_audio.h:351
 msgid "Visualization"
 msgstr "시각화"
 
-#: modules/gui/macosx/simple_prefs.m:233
+#: modules/gui/macosx/simple_prefs.m:234
 msgid "Default Volume"
 msgstr "기본 음량"
 
-#: modules/gui/macosx/simple_prefs.m:236
+#: modules/gui/macosx/simple_prefs.m:237
 msgid "Change"
 msgstr "변경"
 
-#: modules/gui/macosx/simple_prefs.m:237
+#: modules/gui/macosx/simple_prefs.m:238
 msgid "Change Hotkey"
 msgstr "단축키 변경"
 
-#: modules/gui/macosx/simple_prefs.m:241
+#: modules/gui/macosx/simple_prefs.m:242
 msgid "Select an action to change the associated hotkey:"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:242
+#: modules/gui/macosx/simple_prefs.m:243
 #: modules/gui/qt4/components/preferences_widgets.cpp:1146
 msgid "Action"
 msgstr "동작"
 
-#: modules/gui/macosx/simple_prefs.m:243
+#: modules/gui/macosx/simple_prefs.m:244
 msgid "Shortcut"
 msgstr "단축키"
 
-#: modules/gui/macosx/simple_prefs.m:246
+#: modules/gui/macosx/simple_prefs.m:247
 msgid "Repair AVI Files"
 msgstr "AVI 파일 복구"
 
-#: modules/gui/macosx/simple_prefs.m:247
+#: modules/gui/macosx/simple_prefs.m:248
 msgid "Default Caching Level"
 msgstr "기본 캐싱 수준"
 
-#: modules/gui/macosx/simple_prefs.m:248 modules/gui/qt4/ui/open.h:251
+#: modules/gui/macosx/simple_prefs.m:249 modules/gui/qt4/ui/open.h:251
 #: modules/gui/qt4/ui/sprefs_input.h:243
 msgid "Caching"
 msgstr "캐시"
 
-#: modules/gui/macosx/simple_prefs.m:249
+#: modules/gui/macosx/simple_prefs.m:250
 msgid ""
 "Use the complete preferences to configure custom caching values for each "
 "access module."
@@ -14087,215 +14118,223 @@ msgstr ""
 "각각의 접근 모듈의 사용자 지정 캐슁을 설정하려면 완전한 선택사항을 사용하세"
 "요."
 
-#: modules/gui/macosx/simple_prefs.m:250
+#: modules/gui/macosx/simple_prefs.m:251
 msgid "HTTP Proxy"
 msgstr "HTTP 프록시"
 
-#: modules/gui/macosx/simple_prefs.m:251
+#: modules/gui/macosx/simple_prefs.m:252
 msgid "Password for HTTP Proxy"
 msgstr "HTTP 프록시 비밀번호"
 
-#: modules/gui/macosx/simple_prefs.m:252 modules/gui/qt4/ui/sprefs_input.h:245
+#: modules/gui/macosx/simple_prefs.m:253 modules/gui/qt4/ui/sprefs_input.h:245
 msgid "Codecs / Muxers"
 msgstr "코덱 / 디멀티플렉서"
 
-#: modules/gui/macosx/simple_prefs.m:254
+#: modules/gui/macosx/simple_prefs.m:255
 msgid "Post-Processing Quality"
 msgstr "후 처리 품질"
 
-#: modules/gui/macosx/simple_prefs.m:257
+#: modules/gui/macosx/simple_prefs.m:258
 msgid "Default Server Port"
 msgstr "기본 서버 포트"
 
-#: modules/gui/macosx/simple_prefs.m:260
+#: modules/gui/macosx/simple_prefs.m:261
 #: modules/gui/qt4/ui/sprefs_interface.h:321
 msgid "Album art download policy"
 msgstr "앨범 아트 다운로드 정책"
 
-#: modules/gui/macosx/simple_prefs.m:261
+#: modules/gui/macosx/simple_prefs.m:262
 msgid "Add controls to the video window"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:262
+#: modules/gui/macosx/simple_prefs.m:263
 msgid "Show Fullscreen Controller"
 msgstr "전체화면 제어기 보기"
 
-#: modules/gui/macosx/simple_prefs.m:264
+#: modules/gui/macosx/simple_prefs.m:265
 #: modules/gui/qt4/ui/sprefs_interface.h:320
 msgid "Privacy / Network Interaction"
 msgstr "프라이버시 / 네트워크 상호작용"
 
+#: modules/gui/macosx/simple_prefs.m:266
+msgid "Control playback with the Apple Remote"
+msgstr ""
+
 #: modules/gui/macosx/simple_prefs.m:267
+msgid "Control playback with media keys"
+msgstr ""
+
+#: modules/gui/macosx/simple_prefs.m:270
 msgid "Default Encoding"
 msgstr "기본 인코딩"
 
-#: modules/gui/macosx/simple_prefs.m:268
+#: modules/gui/macosx/simple_prefs.m:271
 #: modules/gui/qt4/ui/sprefs_subtitles.h:214
 msgid "Display Settings"
 msgstr "디스플레이 설정"
 
-#: modules/gui/macosx/simple_prefs.m:269 modules/gui/macosx/wizard.m:346
+#: modules/gui/macosx/simple_prefs.m:272 modules/gui/macosx/wizard.m:346
 #: modules/gui/macosx/wizard.m:414
 msgid "Choose..."
 msgstr "선택..."
 
-#: modules/gui/macosx/simple_prefs.m:270
+#: modules/gui/macosx/simple_prefs.m:273
 msgid "Font Color"
 msgstr "글꼴 색깔"
 
-#: modules/gui/macosx/simple_prefs.m:271
+#: modules/gui/macosx/simple_prefs.m:274
 msgid "Font Size"
 msgstr "글꼴 크기"
 
-#: modules/gui/macosx/simple_prefs.m:273
+#: modules/gui/macosx/simple_prefs.m:276
 msgid "Subtitle Languages"
 msgstr "자막 언어"
 
-#: modules/gui/macosx/simple_prefs.m:274
+#: modules/gui/macosx/simple_prefs.m:277
 msgid "Preferred Subtitle Language"
 msgstr "선호하는 자막 언어"
 
-#: modules/gui/macosx/simple_prefs.m:276
+#: modules/gui/macosx/simple_prefs.m:279
 #: modules/gui/qt4/ui/sprefs_subtitles.h:209
 msgid "Enable OSD"
 msgstr "OSD 사용"
 
-#: modules/gui/macosx/simple_prefs.m:279
+#: modules/gui/macosx/simple_prefs.m:282
 msgid "Black screens in Fullscreen mode"
 msgstr "전체화면 모드시 검은 화면"
 
-#: modules/gui/macosx/simple_prefs.m:281 modules/gui/qt4/ui/sprefs_video.h:280
+#: modules/gui/macosx/simple_prefs.m:284 modules/gui/qt4/ui/sprefs_video.h:280
 #: modules/stream_out/display.c:54 modules/video_filter/deinterlace.c:132
 msgid "Display"
 msgstr "디스플레이"
 
-#: modules/gui/macosx/simple_prefs.m:282
+#: modules/gui/macosx/simple_prefs.m:285
 msgid "Enable Video"
 msgstr "비디오 사용"
 
-#: modules/gui/macosx/simple_prefs.m:285
+#: modules/gui/macosx/simple_prefs.m:288
 msgid "Output module"
 msgstr "출력 모듈"
 
-#: modules/gui/macosx/simple_prefs.m:287 modules/gui/qt4/ui/sprefs_video.h:294
+#: modules/gui/macosx/simple_prefs.m:290 modules/gui/qt4/ui/sprefs_video.h:294
 msgid "Video snapshots"
 msgstr "비디오 스냅샷"
 
-#: modules/gui/macosx/simple_prefs.m:289 modules/meta_engine/folder.c:56
+#: modules/gui/macosx/simple_prefs.m:292 modules/meta_engine/folder.c:56
 msgid "Folder"
 msgstr "폴더"
 
-#: modules/gui/macosx/simple_prefs.m:290 modules/gui/qt4/ui/sprefs_video.h:299
+#: modules/gui/macosx/simple_prefs.m:293 modules/gui/qt4/ui/sprefs_video.h:299
 msgid "Format"
 msgstr "형식"
 
-#: modules/gui/macosx/simple_prefs.m:291 modules/gui/qt4/ui/sprefs_video.h:297
+#: modules/gui/macosx/simple_prefs.m:294 modules/gui/qt4/ui/sprefs_video.h:297
 msgid "Prefix"
 msgstr "접두어"
 
-#: modules/gui/macosx/simple_prefs.m:292 modules/gui/qt4/ui/sprefs_video.h:300
+#: modules/gui/macosx/simple_prefs.m:295 modules/gui/qt4/ui/sprefs_video.h:300
 msgid "Sequential numbering"
 msgstr "순차 번호 부여"
 
-#: modules/gui/macosx/simple_prefs.m:514 modules/gui/macosx/simple_prefs.m:558
-#: modules/gui/macosx/simple_prefs.m:1153
+#: modules/gui/macosx/simple_prefs.m:519 modules/gui/macosx/simple_prefs.m:563
+#: modules/gui/macosx/simple_prefs.m:1171
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "사용자 지정"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:519
 #: modules/gui/qt4/components/simple_preferences.cpp:413
 msgid "Lowest latency"
 msgstr "가장 낮은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:519
 #: modules/gui/qt4/components/simple_preferences.cpp:414
 msgid "Low latency"
 msgstr "낮은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:519
 #: modules/gui/qt4/components/simple_preferences.cpp:415
 #: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Normal"
 msgstr "보통"
 
-#: modules/gui/macosx/simple_prefs.m:515
+#: modules/gui/macosx/simple_prefs.m:520
 #: modules/gui/qt4/components/simple_preferences.cpp:416
 msgid "High latency"
 msgstr "높은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:515
+#: modules/gui/macosx/simple_prefs.m:520
 #: modules/gui/qt4/components/simple_preferences.cpp:417
 msgid "Higher latency"
 msgstr "더 높은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:743
+#: modules/gui/macosx/simple_prefs.m:761
 msgid "Interface Settings not saved"
 msgstr "인터페이스 설정이 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:744 modules/gui/macosx/simple_prefs.m:819
-#: modules/gui/macosx/simple_prefs.m:852 modules/gui/macosx/simple_prefs.m:918
-#: modules/gui/macosx/simple_prefs.m:956 modules/gui/macosx/simple_prefs.m:981
+#: modules/gui/macosx/simple_prefs.m:762 modules/gui/macosx/simple_prefs.m:837
+#: modules/gui/macosx/simple_prefs.m:870 modules/gui/macosx/simple_prefs.m:936
+#: modules/gui/macosx/simple_prefs.m:974 modules/gui/macosx/simple_prefs.m:999
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:818
+#: modules/gui/macosx/simple_prefs.m:836
 msgid "Audio Settings not saved"
 msgstr "오디오 설정이 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:851
+#: modules/gui/macosx/simple_prefs.m:869
 msgid "Video Settings not saved"
 msgstr "비디오 설정이 저정되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:917
+#: modules/gui/macosx/simple_prefs.m:935
 msgid "Input Settings not saved"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:955
+#: modules/gui/macosx/simple_prefs.m:973
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:980
+#: modules/gui/macosx/simple_prefs.m:998
 msgid "Hotkeys not saved"
 msgstr "단축기가 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:1079
+#: modules/gui/macosx/simple_prefs.m:1097
 msgid "Choose the folder to save your video snapshots to."
 msgstr "비디오 스냅샷 저장 폴더 선택."
 
-#: modules/gui/macosx/simple_prefs.m:1081
+#: modules/gui/macosx/simple_prefs.m:1099
 msgid "Choose"
 msgstr "선택"
 
-#: modules/gui/macosx/simple_prefs.m:1171
+#: modules/gui/macosx/simple_prefs.m:1189
 msgid ""
 "Press new keys for\n"
 "\"%@\""
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:1245
+#: modules/gui/macosx/simple_prefs.m:1263
 msgid "Invalid combination"
 msgstr "잘못된 조합"
 
-#: modules/gui/macosx/simple_prefs.m:1246
+#: modules/gui/macosx/simple_prefs.m:1264
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:1264
+#: modules/gui/macosx/simple_prefs.m:1282
 msgid "This combination is already taken by \"%@\"."
 msgstr ""
 
-#: modules/gui/macosx/update.m:63
+#: modules/gui/macosx/update.m:74
 msgid "Check for Updates"
 msgstr "업데이트 확인"
 
-#: modules/gui/macosx/update.m:64
+#: modules/gui/macosx/update.m:75
 msgid "Download now"
 msgstr "지금 다운로드"
 
-#: modules/gui/macosx/update.m:66
+#: modules/gui/macosx/update.m:77
 msgid "Automatically check for updates"
 msgstr "자동으로 업데이트 확인"
 
@@ -14401,10 +14440,6 @@ msgstr ""
 msgid ""
 "MPEG Audio Layer 3 (useable with MPEG PS, MPEG TS, MPEG1, ASF, OGG and RAW)"
 msgstr "MP3 (MPEG PS, MPEG TS, MPEG1, ASF, OGG, RAW와 함께 사용 가능)"
-
-#: modules/gui/macosx/wizard.m:188
-msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
-msgstr "MPEG4 음성 형식 (MPEG TS, MPEG4와 함께 사용 가능)"
 
 #: modules/gui/macosx/wizard.m:191
 msgid ""
@@ -14875,7 +14910,7 @@ msgstr "최소 Mac OS X 인터페이스"
 
 #: modules/gui/minimal_macosx/macosx.c:68
 msgid "Minimal Mac OS X OpenGL video output (opens a borderless window)"
-msgstr "최소 Mac OS X OpenGL 영상 출력 (외곽선 없는 창 열기)"
+msgstr "최소 Mac OS X OpenGL 비디오 출력 (테두리 없는 창 열기)"
 
 #: modules/gui/ncurses.c:118
 msgid "Filebrowser starting point"
@@ -15763,7 +15798,7 @@ msgstr ""
 
 #: modules/gui/qt4/components/controller_widget.cpp:220
 msgid "Click to set point B"
-msgstr ""
+msgstr "B 위치를 설정하려면 누르세요"
 
 #: modules/gui/qt4/components/controller_widget.cpp:225
 msgid "Stop the A to B loop"
@@ -16045,6 +16080,8 @@ msgstr ""
 #: modules/gui/qt4/components/simple_preferences.cpp:468
 msgid "This is VLC's skinnable interface. You can download other skins at"
 msgstr ""
+"VLC 의 스키너블 인터페이스 입니다. 다른 스킨은 다음에서 다운로드할수 있습니"
+"다:"
 
 #: modules/gui/qt4/components/simple_preferences.cpp:567
 msgid "Configure Hotkeys"
@@ -16098,7 +16135,7 @@ msgstr "새 프로파일 만들기"
 
 #: modules/gui/qt4/components/sout/profile_selector.cpp:399
 msgid " Profile Name Missing"
-msgstr ""
+msgstr " 프로파일 이름 없음"
 
 #: modules/gui/qt4/components/sout/profile_selector.cpp:400
 msgid "You must set a name for the profile."
@@ -16182,7 +16219,7 @@ msgstr "만들기"
 
 #: modules/gui/qt4/dialogs/bookmarks.cpp:45
 msgid "Create a new bookmark"
-msgstr ""
+msgstr "새 북마크 만들기"
 
 #: modules/gui/qt4/dialogs/bookmarks.cpp:47
 msgid "Delete the selected item"
@@ -16419,7 +16456,7 @@ msgstr "다른 이름으로 저장(&S)..."
 
 #: modules/gui/qt4/dialogs/messages.cpp:113
 msgid "Saves all the displayed logs to a file"
-msgstr ""
+msgstr "모든 표시된 로그 파일에 저장"
 
 #: modules/gui/qt4/dialogs/messages.cpp:121
 msgid "Verbosity Level"
@@ -16435,13 +16472,15 @@ msgstr "로그 파일을 다른 이름으로 저장..."
 
 #: modules/gui/qt4/dialogs/messages.cpp:249
 msgid "Texts / Logs (*.log *.txt);; All (*.*) "
-msgstr ""
+msgstr "텍스트 / 로그 (*.log *.txt);; 모두 (*.*) "
 
 #: modules/gui/qt4/dialogs/messages.cpp:256
 msgid ""
 "Cannot write to file %1:\n"
 "%2."
 msgstr ""
+"파일 %1 에 쓸수 없음:\n"
+"%2."
 
 #: modules/gui/qt4/dialogs/open.cpp:80 modules/gui/qt4/menus.cpp:806
 msgid "Open Media"
@@ -16495,11 +16534,11 @@ msgstr "URL 열기"
 
 #: modules/gui/qt4/dialogs/openurl.cpp:77
 msgid "Enter URL here..."
-msgstr ""
+msgstr "이곳에 URL 입력..."
 
 #: modules/gui/qt4/dialogs/openurl.cpp:79
 msgid "Please enter the URL or path to the media you want to play"
-msgstr ""
+msgstr "재생을 원하는 미디어의 URL 또는 경로를 입력하세요"
 
 #: modules/gui/qt4/dialogs/openurl.cpp:83
 msgid ""
@@ -16748,27 +16787,27 @@ msgstr "VOD: "
 msgid "Open Directory"
 msgstr "디렉토리 열기"
 
-#: modules/gui/qt4/dialogs_provider.cpp:519
+#: modules/gui/qt4/dialogs_provider.cpp:520
 msgid "Open playlist..."
 msgstr "재생목록 열기..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:530
+#: modules/gui/qt4/dialogs_provider.cpp:531
 msgid "Save playlist as..."
 msgstr "재생목록을 다른 이름으로 저장..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:532
+#: modules/gui/qt4/dialogs_provider.cpp:533
 msgid "XSPF playlist (*.xspf);; "
 msgstr "XSPF 재생목록 (*.xspf);; "
 
-#: modules/gui/qt4/dialogs_provider.cpp:533
+#: modules/gui/qt4/dialogs_provider.cpp:534
 msgid "M3U playlist (*.m3u);; "
 msgstr "M3U 재생목록 (*.m3u);; "
 
-#: modules/gui/qt4/dialogs_provider.cpp:534
+#: modules/gui/qt4/dialogs_provider.cpp:535
 msgid "HTML playlist (*.html)"
 msgstr "HTML 재생목록 (*.html)"
 
-#: modules/gui/qt4/dialogs_provider.cpp:658
+#: modules/gui/qt4/dialogs_provider.cpp:659
 msgid "Open subtitles..."
 msgstr "자막 열기..."
 
@@ -17171,58 +17210,70 @@ msgid ""
 msgstr ""
 
 #: modules/gui/qt4/qt4.cpp:113
+#, fuzzy
+msgid "Fullscreen controller opacity opacity between 0.1 and 1."
+msgstr "창 투명도 (0.1 ~ 1)."
+
+#: modules/gui/qt4/qt4.cpp:114
+msgid ""
+"Sets the fullscreen controller opacity between 0.1 and 1 for main interface, "
+"playlist and extended panel. This option only works with Windows and X11 "
+"with composite extensions."
+msgstr ""
+
+#: modules/gui/qt4/qt4.cpp:120
 msgid "Show unimportant error and warnings dialogs"
 msgstr "중요하지 않은 오류 및 경고 대화상자 보기"
 
-#: modules/gui/qt4/qt4.cpp:115
+#: modules/gui/qt4/qt4.cpp:122
 msgid "Activate the updates availability notification"
 msgstr "업데이트 가능 알림 활성화"
 
-#: modules/gui/qt4/qt4.cpp:116
+#: modules/gui/qt4/qt4.cpp:123
 msgid ""
 "Activate the automatic notification of new versions of the software. It runs "
 "once every two weeks."
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:119
+#: modules/gui/qt4/qt4.cpp:126
 msgid "Number of days between two update checks"
-msgstr ""
+msgstr "두 업데이트 확인 사이의 날짜 수"
 
-#: modules/gui/qt4/qt4.cpp:121
+#: modules/gui/qt4/qt4.cpp:128
 msgid "Allow the volume to be set to 400%"
 msgstr "음량 400% 설정 허용"
 
-#: modules/gui/qt4/qt4.cpp:122
+#: modules/gui/qt4/qt4.cpp:129
 msgid ""
 "Allow the volume to have range from 0% to 400%, instead of 0% to 200%. This "
 "option can distort the audio, since it uses software amplification."
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:127
+#: modules/gui/qt4/qt4.cpp:134
 msgid "Automatically save the volume on exit"
 msgstr "종료시 자동으로 음량 저장"
 
-#: modules/gui/qt4/qt4.cpp:129
+#: modules/gui/qt4/qt4.cpp:136
 msgid "Ask for network policy at start"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:131
+#: modules/gui/qt4/qt4.cpp:138
 msgid "Save the recently played items in the menu"
 msgstr "메뉴에서 최근 재생된 항목 저장"
 
-#: modules/gui/qt4/qt4.cpp:133
+#: modules/gui/qt4/qt4.cpp:140
 msgid "List of words separated by | to filter"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:134
+#: modules/gui/qt4/qt4.cpp:141
 msgid "Regular expression used to filter the recent items played in the player"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:137
+#: modules/gui/qt4/qt4.cpp:144
 msgid "Define the colors of the volume slider "
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:138
+#: modules/gui/qt4/qt4.cpp:145
 msgid ""
 "Define the colors of the volume slider\n"
 "By specifying the 12 numbers separated by a ';'\n"
@@ -17230,11 +17281,11 @@ msgid ""
 "An alternative can be '30;30;50;40;40;100;50;50;160;150;150;255' "
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:143
+#: modules/gui/qt4/qt4.cpp:150
 msgid "Selection of the starting mode and look "
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:144
+#: modules/gui/qt4/qt4.cpp:151
 msgid ""
 "Start VLC with:\n"
 " - normal mode\n"
@@ -17246,27 +17297,27 @@ msgstr ""
 " - 가사, 앨범 아트 등의 정보 보기 구역 항상 제공\n"
 " - 제한된 제어의 최소 모드"
 
-#: modules/gui/qt4/qt4.cpp:150
+#: modules/gui/qt4/qt4.cpp:157
 msgid "Classic look"
-msgstr ""
+msgstr "고전 모양새"
 
-#: modules/gui/qt4/qt4.cpp:151
+#: modules/gui/qt4/qt4.cpp:158
 msgid "Complete look with information area"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:152
+#: modules/gui/qt4/qt4.cpp:159
 msgid "Minimal look with no menus"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:154
+#: modules/gui/qt4/qt4.cpp:161
 msgid "Show a controller in fullscreen mode"
 msgstr "전체화면 모드에서 제어기 보이기"
 
-#: modules/gui/qt4/qt4.cpp:155
+#: modules/gui/qt4/qt4.cpp:162
 msgid "Embed the file browser in open dialog"
 msgstr ""
 
-#: modules/gui/qt4/qt4.cpp:167
+#: modules/gui/qt4/qt4.cpp:174
 msgid "Qt interface"
 msgstr "Qt 인터페이스"
 
@@ -17492,7 +17543,7 @@ msgstr " kb/s"
 
 #: modules/gui/qt4/ui/profiles.h:473
 msgid "Frame Rate"
-msgstr "프레임 비율"
+msgstr "프레임 레이트"
 
 #: modules/gui/qt4/ui/profiles.h:475
 msgid " fps"
@@ -17576,7 +17627,7 @@ msgstr "기본 음량"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:337
 msgid "256 corresponds to 100%, 1024 to 400%"
-msgstr ""
+msgstr "256 은 100%, 1024 는 400% 에 해당"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:339
 msgid " %"
@@ -17676,7 +17727,7 @@ msgstr "고유"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:331
 msgid "This is VLC's default interface, with a native look and feel."
-msgstr "이것은 고유한 룩앤필을 제공하는 VLC의 기본 인터페이스입니다."
+msgstr "기본 모양 및 느낌을 제공하는 VLC의 기본 인터페이스입니다."
 
 #: modules/gui/qt4/ui/sprefs_interface.h:332
 msgid "Display mode"
@@ -18519,6 +18570,9 @@ msgid ""
 "VLC.\n"
 "Visit http://www.last.fm/join/ to get an account."
 msgstr ""
+"사용자명 또는 음악통계기 플러그인을 사용안함 설정, 그리고 VLC 재시작 하세"
+"요.\n"
+"계정을 얻으려면 http://www.last.fm/join/ 를 방문하세요."
 
 #: modules/misc/audioscrobbler.c:834
 msgid "last.fm: Authentication failed"
@@ -18529,6 +18583,8 @@ msgid ""
 "last.fm username or password is incorrect. Please verify your settings and "
 "relaunch VLC."
 msgstr ""
+"last.fm 사용자명 또는 비밀번호가 정확하지 않습니다. 설정을 확인하고 VLC 를 재"
+"실행 하세요."
 
 #: modules/misc/dummy/dummy.c:40
 msgid "Dummy image chroma format"
@@ -18849,7 +18905,7 @@ msgstr "AltiVec memcpy"
 msgid "Growl Notification Plugin"
 msgstr "Growl 알림 플러그인"
 
-#: modules/misc/notify/growl.m:272
+#: modules/misc/notify/growl.m:273
 msgid "Now playing"
 msgstr "지금 재생중"
 
@@ -19893,7 +19949,7 @@ msgstr "X 오프셋"
 
 #: modules/stream_out/mosaic_bridge.c:165
 msgid "X coordinate of the upper left corner in the mosaic if non negative."
-msgstr ""
+msgstr "모자이크의 외쪽 위 모서리의 X 좌표, 음수가 아니면."
 
 #: modules/stream_out/mosaic_bridge.c:167 modules/video_filter/marq.c:107
 #: modules/video_filter/rss.c:144
@@ -19902,7 +19958,7 @@ msgstr "Y 오프셋"
 
 #: modules/stream_out/mosaic_bridge.c:169
 msgid "Y coordinate of the upper left corner in the mosaic if non negative."
-msgstr ""
+msgstr "모자이크의 외쪽 위 모서리의 Y 좌표, 음수가 아니면."
 
 #: modules/stream_out/mosaic_bridge.c:174
 msgid "Mosaic bridge"
@@ -19914,13 +19970,14 @@ msgstr "모자이크 브릿지 스트림 출력"
 
 #: modules/stream_out/raop.c:141
 msgid "Hostname or IP address of target device"
-msgstr ""
+msgstr "대상 장치의 호스트명 또는 IP 주소"
 
 #: modules/stream_out/raop.c:144
 msgid ""
 "Output volume for analog output: 0 for silence, 1..255 from almost silent to "
 "very loud."
 msgstr ""
+"아날로그 출력의 출력 음량: 0 은 조용함, 1..255 가장 조용함부터 가장 시끄러운."
 
 #: modules/stream_out/raop.c:148
 msgid "RAOP"
@@ -19928,7 +19985,7 @@ msgstr "RAOP"
 
 #: modules/stream_out/raop.c:149
 msgid "Remote Audio Output Protocol stream output"
-msgstr ""
+msgstr "원격 오디오 출력 프로토콜 스트림 출력"
 
 #: modules/stream_out/record.c:50
 msgid "Destination prefix"
@@ -19944,7 +20001,7 @@ msgstr "스트림 출력 녹음"
 
 #: modules/stream_out/rtp.c:73
 msgid "This is the output URL that will be used."
-msgstr ""
+msgstr "사용중이 출력 URL 입니다."
 
 #: modules/stream_out/rtp.c:74
 msgid "SDP"
@@ -20087,11 +20144,11 @@ msgstr "RTP 스트림 출력"
 
 #: modules/stream_out/standard.c:47
 msgid "Output method to use for the stream."
-msgstr ""
+msgstr "스트림에 사용되는 출력 방식."
 
 #: modules/stream_out/standard.c:50
 msgid "Muxer to use for the stream."
-msgstr ""
+msgstr "스트림에 사용되는 멀티플렉서."
 
 #: modules/stream_out/standard.c:51
 msgid "Output destination"
@@ -20714,7 +20771,7 @@ msgstr "LED 스트라이프의 전반적인 밝기"
 
 #: modules/video_filter/atmo/atmo.cpp:198
 msgid "Darkness Limit"
-msgstr ""
+msgstr "어두움 제한"
 
 #: modules/video_filter/atmo/atmo.cpp:199
 msgid ""
@@ -20876,7 +20933,7 @@ msgstr ""
 
 #: modules/video_filter/atmo/atmo.cpp:275
 msgid "Use built-in AtmoLight"
-msgstr ""
+msgstr "내장 AtmoLight 사용"
 
 #: modules/video_filter/atmo/atmo.cpp:276
 msgid ""
@@ -20886,19 +20943,19 @@ msgstr ""
 
 #: modules/video_filter/atmo/atmo.cpp:287
 msgid "AtmoLight Filter"
-msgstr ""
+msgstr "AtmoLight 필터"
 
 #: modules/video_filter/atmo/atmo.cpp:289
 msgid "AtmoLight"
-msgstr ""
+msgstr "AtmoLight"
 
 #: modules/video_filter/atmo/atmo.cpp:296
 msgid "Choose between the built-in AtmoLight driver or the external"
-msgstr ""
+msgstr "내장 AtmoLight 드라이버 또는 외장중에 선택"
 
 #: modules/video_filter/atmo/atmo.cpp:315
 msgid "Enter the connection of your AtmoLight hardware"
-msgstr ""
+msgstr "AtmoLight 하드웨어 연결 입력"
 
 #: modules/video_filter/atmo/atmo.cpp:324
 msgid "Illuminate the room with this color on pause"
@@ -21064,7 +21121,7 @@ msgstr "이미지 높이"
 
 #: modules/video_filter/canvas.c:55
 msgid "Set aspect (like 4:3) of the video canvas"
-msgstr ""
+msgstr "비디오 캔버스의 가로세로비 (4:3 처럼) 설정"
 
 #: modules/video_filter/canvas.c:56
 msgid "Padd video"
@@ -21219,7 +21276,7 @@ msgstr "잘라내기 실패"
 
 #: modules/video_filter/crop.c:375 modules/video_filter/crop.c:467
 msgid "VLC could not open the video output module."
-msgstr ""
+msgstr "VLC 가 비디오 출력 모듈을 열수 없습니다."
 
 #: modules/video_filter/croppadd.c:47
 msgid "Pixels to crop from top"
@@ -21559,14 +21616,22 @@ msgid ""
 "position (in %), $R = rate, $S = audio sample rate (in kHz), $T = time, $U = "
 "publisher, $V = volume, $_ = new line) "
 msgstr ""
+"표시할 마키 문자. (Available format strings: 시간 관련: %Y = 년, %m = 월, %d "
+"= 일, %H = 시, %M = 분, %S = 초, ... 메타 데이터 관련: $a = 아티스트, $b = 앨"
+"범, $c = 저작권, $d = 설명, $e = 인코딩, $g = 장르, $l = 언어, $n = 트렉 번"
+"호, $p = 현재 재생, $r = 등급, $s = 자막 언어, $t = 제목, $u = url, $A = 날"
+"짜, $B = 오디오 비트레이트 (in kb/s), $C = 챕터,$D = 재생시간, $F = 경로포함 "
+"전체 이름, $I = 제목, $L = 남은 시간, $N = 이름, $O = 오디오 언어, $P = 위치 "
+"(%), $R = 배율, $S = 오디오 샘플레이트 (kHz), $T = 시간, $U = 발행인, $V = 음"
+"량, $_ = 개행) "
 
 #: modules/video_filter/marq.c:106 modules/video_filter/rss.c:143
 msgid "X offset, from the left screen edge."
-msgstr ""
+msgstr "X 오프셋, 화면 왼쪽 가장자리부터."
 
 #: modules/video_filter/marq.c:108 modules/video_filter/rss.c:145
 msgid "Y offset, down from the top."
-msgstr ""
+msgstr "Y 오프셋, 상단에서 아래쪽"
 
 #: modules/video_filter/marq.c:109
 msgid "Timeout"
@@ -21576,7 +21641,7 @@ msgstr "시간제한"
 msgid ""
 "Number of milliseconds the marquee must remain displayed. Default value is 0 "
 "(remains forever)."
-msgstr ""
+msgstr "마키 표시 유지 시간 (밀리초). 기본값 0 (항상 유지)"
 
 #: modules/video_filter/marq.c:113
 msgid "Refresh period in ms"
@@ -21590,7 +21655,7 @@ msgstr ""
 
 #: modules/video_filter/marq.c:130
 msgid "Marquee position"
-msgstr "표시할 위치"
+msgstr "마키 위치"
 
 #: modules/video_filter/marq.c:132
 msgid ""
@@ -21598,10 +21663,12 @@ msgid ""
 "2=right, 4=top, 8=bottom, you can also use combinations of these values, eg "
 "6 = top-right)."
 msgstr ""
+"비디오의 마키 위치 강제 (0=중앙, 1=왼쪽, 2=오른쪽, 4=상단, 8=하단, 또한 값들"
+"을 조합할수 있습니다, 예 6 = 상단-오른쪽)."
 
 #: modules/video_filter/marq.c:148
 msgid "Marquee"
-msgstr ""
+msgstr "마키"
 
 #: modules/video_filter/marq.c:171 modules/video_filter/rss.c:212
 msgid "Misc"
@@ -21609,7 +21676,7 @@ msgstr "기타"
 
 #: modules/video_filter/marq.c:177
 msgid "Marquee display"
-msgstr "움직이는 글자 (Marquee)"
+msgstr "마키 표시"
 
 #: modules/video_filter/mosaic.c:91
 msgid ""
@@ -21627,23 +21694,23 @@ msgstr ""
 
 #: modules/video_filter/mosaic.c:99
 msgid "Top left corner X coordinate"
-msgstr "왼쪽 위의 X 좌표"
+msgstr "상단 왼쪽 모서리 X 좌표"
 
 #: modules/video_filter/mosaic.c:101
 msgid "X Coordinate of the top-left corner of the mosaic."
-msgstr ""
+msgstr "모자이크 상단-왼쪽 모서리 X 좌표."
 
 #: modules/video_filter/mosaic.c:102
 msgid "Top left corner Y coordinate"
-msgstr "왼쪽 위의 Y 좌표"
+msgstr "상단 왼쪽 모서리 Y 좌표"
 
 #: modules/video_filter/mosaic.c:104
 msgid "Y Coordinate of the top-left corner of the mosaic."
-msgstr ""
+msgstr "모자이크 상단-왼쪽 모서리 Y 좌표."
 
 #: modules/video_filter/mosaic.c:106
 msgid "Border width"
-msgstr "외곽선 너비"
+msgstr "테두리 너비"
 
 #: modules/video_filter/mosaic.c:108
 msgid "Width in pixels of the border between miniatures."
@@ -21651,7 +21718,7 @@ msgstr ""
 
 #: modules/video_filter/mosaic.c:109
 msgid "Border height"
-msgstr "외곽선 높이"
+msgstr "테두리 높이"
 
 #: modules/video_filter/mosaic.c:111
 msgid "Height in pixels of the border between miniatures."
@@ -22023,7 +22090,7 @@ msgstr "감쇠, 처음 (%)"
 
 #: modules/video_filter/panoramix.c:130
 msgid "Select in percent the Lagrange coeff of the beginning blended zone"
-msgstr ""
+msgstr "혼합 구역 시작의 라그랑주 계수 선택 (%)"
 
 #: modules/video_filter/panoramix.c:133
 msgid "Attenuation, middle (in %)"
@@ -22031,7 +22098,7 @@ msgstr "감쇠, 중간 (%)"
 
 #: modules/video_filter/panoramix.c:134
 msgid "Select in percent the Lagrange coeff of the middle of blended zone"
-msgstr ""
+msgstr "혼합 구역 중간의 라그랑주 계수 선택 (%)"
 
 #: modules/video_filter/panoramix.c:137
 msgid "Attenuation, end (in %)"
@@ -22039,7 +22106,7 @@ msgstr "감쇠, 끝 (%)"
 
 #: modules/video_filter/panoramix.c:138
 msgid "Select in percent the Lagrange coeff of the end of blended zone"
-msgstr ""
+msgstr "혼합 구역 끝의 라그랑주 계수 선택 (%)"
 
 #: modules/video_filter/panoramix.c:141
 msgid "middle position (in %)"
@@ -22058,7 +22125,7 @@ msgstr "감마 (빨강) 보정"
 #: modules/video_filter/panoramix.c:146
 msgid ""
 "Select the gamma for the correction of blended zone (Red or Y component)"
-msgstr ""
+msgstr "혼합 구역 교정을 위해 감마 선택 (빨강 or Y component)"
 
 #: modules/video_filter/panoramix.c:149
 msgid "Gamma (Green) correction"
@@ -22067,7 +22134,7 @@ msgstr "감마 (녹색) 보정"
 #: modules/video_filter/panoramix.c:150
 msgid ""
 "Select the gamma for the correction of blended zone (Green or U component)"
-msgstr ""
+msgstr "혼합 구역 교정을 위해 감마 선택 (녹색 or U component)"
 
 #: modules/video_filter/panoramix.c:153
 msgid "Gamma (Blue) correction"
@@ -22076,7 +22143,7 @@ msgstr "감마 (파랑) 보정"
 #: modules/video_filter/panoramix.c:154
 msgid ""
 "Select the gamma for the correction of blended zone (Blue or V component)"
-msgstr ""
+msgstr "혼합 구역 교정을 위해 감마 선택 (파랑 or V component)"
 
 #: modules/video_filter/panoramix.c:157
 msgid "Black Crush for Red"
@@ -22084,7 +22151,7 @@ msgstr "빨강의 블랙 크러쉬"
 
 #: modules/video_filter/panoramix.c:158
 msgid "Select the Black Crush of blended zone (Red or Y component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 크러쉬 선택 (빨강 or Y component)"
 
 #: modules/video_filter/panoramix.c:159
 msgid "Black Crush for Green"
@@ -22092,7 +22159,7 @@ msgstr "녹색의 블랙 크러쉬"
 
 #: modules/video_filter/panoramix.c:160
 msgid "Select the Black Crush of blended zone (Green or U component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 크러쉬 선택 (녹색 or U component)"
 
 #: modules/video_filter/panoramix.c:161
 msgid "Black Crush for Blue"
@@ -22100,7 +22167,7 @@ msgstr "파랑의 블랙 크러쉬"
 
 #: modules/video_filter/panoramix.c:162
 msgid "Select the Black Crush of blended zone (Blue or V component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 크러쉬 선택 (파랑 or V component)"
 
 #: modules/video_filter/panoramix.c:164
 msgid "White Crush for Red"
@@ -22108,7 +22175,7 @@ msgstr "빨강의 화이트 크러쉬"
 
 #: modules/video_filter/panoramix.c:165
 msgid "Select the White Crush of blended zone (Red or Y component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 크러쉬 선택 (빨강 or Y component)"
 
 #: modules/video_filter/panoramix.c:166
 msgid "White Crush for Green"
@@ -22116,7 +22183,7 @@ msgstr "녹색의 화이트 크러쉬"
 
 #: modules/video_filter/panoramix.c:167
 msgid "Select the White Crush of blended zone (Green or U component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 크러쉬 선택 (녹색 or U component)"
 
 #: modules/video_filter/panoramix.c:168
 msgid "White Crush for Blue"
@@ -22124,7 +22191,7 @@ msgstr "파랑의 화이트 크러쉬"
 
 #: modules/video_filter/panoramix.c:169
 msgid "Select the White Crush of blended zone (Blue or V component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 크러쉬 선택 (파랑 or V component)"
 
 #: modules/video_filter/panoramix.c:171
 msgid "Black Level for Red"
@@ -22132,7 +22199,7 @@ msgstr "빨강의 블랙 레벨"
 
 #: modules/video_filter/panoramix.c:172
 msgid "Select the Black Level of blended zone (Red or Y component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 레벨 선택 (빨강 or Y component)"
 
 #: modules/video_filter/panoramix.c:173
 msgid "Black Level for Green"
@@ -22140,7 +22207,7 @@ msgstr "녹색의 블랙 레벨"
 
 #: modules/video_filter/panoramix.c:174
 msgid "Select the Black Level of blended zone (Green or U component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 레벨 선택 (녹색 or U component)"
 
 #: modules/video_filter/panoramix.c:175
 msgid "Black Level for Blue"
@@ -22148,7 +22215,7 @@ msgstr "파랑의 블랙 레벨"
 
 #: modules/video_filter/panoramix.c:176
 msgid "Select the Black Level of blended zone (Blue or V component)"
-msgstr ""
+msgstr "혼합 구역의 블랙 레벨 선택 (파랑 or V component)"
 
 #: modules/video_filter/panoramix.c:178
 msgid "White Level for Red"
@@ -22156,7 +22223,7 @@ msgstr "빨강의 화이트 레벨"
 
 #: modules/video_filter/panoramix.c:179
 msgid "Select the White Level of blended zone (Red or Y component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 레벨 선택 (빨강 or Y component)"
 
 #: modules/video_filter/panoramix.c:180
 msgid "White Level for Green"
@@ -22164,7 +22231,7 @@ msgstr "녹색의 화이트 레벨"
 
 #: modules/video_filter/panoramix.c:181
 msgid "Select the White Level of blended zone (Green or U component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 레벨 선택 (녹색 or U component)"
 
 #: modules/video_filter/panoramix.c:182
 msgid "White Level for Blue"
@@ -22172,7 +22239,7 @@ msgstr "파랑의 화이트 레벨"
 
 #: modules/video_filter/panoramix.c:183
 msgid "Select the White Level of blended zone (Blue or V component)"
-msgstr ""
+msgstr "혼합 구역의 화이트 레벨 선택 (파랑 or V component)"
 
 #: modules/video_filter/panoramix.c:197
 msgid "Xinerama option"
@@ -22248,7 +22315,7 @@ msgstr "VNC 호스트"
 
 #: modules/video_filter/remoteosd.c:76
 msgid "VNC hostname or IP address."
-msgstr ""
+msgstr "VNC 호스트명 또는 IP 주소."
 
 #: modules/video_filter/remoteosd.c:78
 msgid "VNC Port"
@@ -22427,7 +22494,7 @@ msgstr "이미지 형식"
 
 #: modules/video_filter/scene.c:58
 msgid "Format of the output images (png, jpeg, ...)."
-msgstr ""
+msgstr "출력 이미지의 형식 (png, jpeg, ...)."
 
 #: modules/video_filter/scene.c:61
 msgid ""
@@ -22767,7 +22834,7 @@ msgstr ""
 
 #: modules/video_output/msw/directx.c:149
 msgid "Name of desired display device"
-msgstr ""
+msgstr "요구되는 표시 장치 이름"
 
 #: modules/video_output/msw/directx.c:150
 msgid ""
@@ -23304,6 +23371,9 @@ msgstr "시각화 필터"
 #: modules/visualization/visual/visual.c:123
 msgid "Spectrum analyser"
 msgstr "스펙트럼 분석기"
+
+#~ msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
+#~ msgstr "MPEG4 음성 형식 (MPEG TS, MPEG4와 함께 사용 가능)"
 
 #~ msgid "VIDEO_TS directory"
 #~ msgstr "VIDEO_TS 디렉토리"
