@@ -104,7 +104,8 @@ PLModel::PLModel( playlist_t *_p_playlist,  /* THEPL */
 
 PLModel::~PLModel()
 {
-    getSettings()->setValue( "qt-pl-showflags", rootItem->i_showflags );
+    if(i_depth == -1)
+        getSettings()->setValue( "qt-pl-showflags", rootItem->i_showflags );
     delCallbacks();
     delete rootItem;
 }
