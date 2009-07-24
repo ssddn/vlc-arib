@@ -325,9 +325,10 @@ create_toolbar_item( NSString * o_itemIdent, NSString * o_name, NSString * o_des
         }
         else if( p_item->ppsz_list[i] )
             mi = [[NSMenuItem alloc] initWithTitle: [NSString stringWithUTF8String: p_item->ppsz_list[i]] action:NULL keyEquivalent: @""];
-        else NSLog( @"item %d of pref %s failed to be created", i, name);
+        else 
+            msg_Err( VLCIntf, "item %d of pref %s failed to be created", i, name);
         [mi setRepresentedObject:[NSString stringWithUTF8String: p_item->ppsz_list[i]]];
-        [[object menu] addItem: [mi autorelease]];
+        [[object menu] addItem: mi];
         if( p_item->value.psz && !strcmp( p_item->value.psz, p_item->ppsz_list[i] ) )
             [object selectItem:[object lastItem]];
     }
@@ -747,9 +748,9 @@ static inline void save_module_list( intf_thread_t * p_intf, id object, const ch
 			[[[VLCMain sharedInstance] appleRemoteController] startListening: [VLCMain sharedInstance]];
 		else
 			[[[VLCMain sharedInstance] appleRemoteController] stopListening: [VLCMain sharedInstance]];
-        //[[NSNotificationCenter defaultCenter] postNotificationName: @"VLCMediaKeySupportSettingChanged" 
-        //                                                    object: nil 
-        //                                                  userInfo: nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName: @"VLCMediaKeySupportSettingChanged" 
+                                                            object: nil
+                                                          userInfo: nil];
 
         /* okay, let's save our changes to vlcrc */
         i = config_SaveConfigFile( p_intf, "main" );

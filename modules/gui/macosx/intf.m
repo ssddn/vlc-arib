@@ -2840,7 +2840,7 @@ end:
 	b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
 }
 
-/*
+
 - (void)sendEvent: (NSEvent*)event
 {
     if( b_mediaKeySupport )
@@ -2889,7 +2889,7 @@ end:
         }
     }
 	[super sendEvent: event];
-}*/
+}
 
 - (void)resetJump
 {
