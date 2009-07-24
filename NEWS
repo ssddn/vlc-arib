@@ -4,7 +4,12 @@ Changes between 1.0.0 and 1.0.1-pre:
 Demuxers:
  * Fix wmv/asf issues that caused audio to drop
  * Various fixes for ac3, mp3, dts and stability for wav format
- * Fix crashes in xspf files handler, in Qt4 interface
+ * Fix crashes in xspf files handler
+ * Fix seek in RTSP in conformity to RFC 2326
+ * Fix Dailymotion access script
+
+Access:
+ * Add extra caching for files on network shares
 
 Muxers:
  * Fix sound recording of .flv files with mp3 audio
@@ -14,7 +19,7 @@ Decoders:
 
 Qt Interface:
  * Possibility to change the opacity level of the Fullscreen controller
- * Fix crashes and VIDEO_TS folders opening
+ * Fix various crashes and VIDEO_TS folders opening
 
 Mac OS X Interface:
  * Added options to disable support for Apple Remote and Media Keys
