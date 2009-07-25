@@ -2825,8 +2825,11 @@ end:
 
 - (void)awakeFromNib
 {
-	b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+	b_active = b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+    b_activeInBackground = config_GetInt( VLCIntf, "macosx-mediakeys-background" );
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(coreChangedMediaKeySupportSetting:) name: @"VLCMediaKeySupportSettingChanged" object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(appGotActiveOrInactive:) name: @"NSApplicationDidBecomeActiveNotification" object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(appGotActiveOrInactive:) name: @"NSApplicationWillResignActiveNotification" object: nil];
 }
 
 - (void)dealloc
@@ -2835,15 +2838,24 @@ end:
     [super dealloc];
 }
 
+- (void)appGotActiveOrInactive: (NSNotification *)o_notification
+{
+    if(( [[o_notification name] isEqualToString: @"NSApplicationWillResignActiveNotification"] && !b_activeInBackground ) || !b_mediaKeySupport)
+        b_active = NO;
+    else
+        b_active = YES;
+}
+
 - (void)coreChangedMediaKeySupportSetting: (NSNotification *)o_notification
 {
-	b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+    b_active = b_mediaKeySupport = config_GetInt( VLCIntf, "macosx-mediakeys" );
+    b_activeInBackground = config_GetInt( VLCIntf, "macosx-mediakeys-background" );
 }
 
 
 - (void)sendEvent: (NSEvent*)event
 {
-    if( b_mediaKeySupport )
+    if( b_active )
 	{
         if( [event type] == NSSystemDefined && [event subtype] == 8 )
         {

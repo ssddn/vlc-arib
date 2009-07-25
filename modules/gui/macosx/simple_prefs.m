@@ -265,6 +265,7 @@ create_toolbar_item( NSString * o_itemIdent, NSString * o_name, NSString * o_des
     [o_intf_network_box setTitle: _NS("Privacy / Network Interaction")];
 	[o_intf_appleremote_ckb setTitle: _NS("Control playback with the Apple Remote")];
 	[o_intf_mediakeys_ckb setTitle: _NS("Control playback with media keys")];
+    [o_intf_mediakeys_bg_ckb setTitle: _NS("...when VLC is in background")];
 
     /* Subtitles and OSD */
     [o_osd_encoding_txt setStringValue: _NS("Default Encoding")];
@@ -451,6 +452,8 @@ static inline char * __config_GetLabel( vlc_object_t *p_this, const char *psz_na
     [self setupButton: o_intf_embedded_ckb forBoolValue: "embedded-video"];
 	[self setupButton: o_intf_appleremote_ckb forBoolValue: "macosx-appleremote"];
 	[self setupButton: o_intf_mediakeys_ckb forBoolValue: "macosx-mediakeys"];
+    [self setupButton: o_intf_mediakeys_bg_ckb forBoolValue: "macosx-mediakeys-background"];
+    [o_intf_mediakeys_bg_ckb setEnabled: [o_intf_mediakeys_ckb state]];
 
     /******************
      * audio settings *
@@ -779,6 +782,7 @@ static inline void save_module_list( intf_thread_t * p_intf, id object, const ch
         config_PutInt( p_intf, "embedded-video", [o_intf_embedded_ckb state] );
         config_PutInt( p_intf, "macosx-appleremote", [o_intf_appleremote_ckb state] );
 		config_PutInt( p_intf, "macosx-mediakeys", [o_intf_mediakeys_ckb state] );
+        config_PutInt( p_intf, "macosx-mediakeys-background", [o_intf_mediakeys_bg_ckb state] );
 
 		/* activate stuff without restart */
 		if( [o_intf_appleremote_ckb state] == YES )
@@ -1079,6 +1083,8 @@ static inline void save_module_list( intf_thread_t * p_intf, id object, const ch
 
 - (IBAction)interfaceSettingChanged:(id)sender
 {
+    if( sender == o_intf_mediakeys_ckb )
+        [o_intf_mediakeys_bg_ckb setEnabled: [o_intf_mediakeys_ckb state]];
     b_intfSettingChanged = YES;
 }
 

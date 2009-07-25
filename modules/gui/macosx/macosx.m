@@ -87,12 +87,16 @@ void CloseVideoGL ( vlc_object_t * );
 #define EQ_KEEP_LONGTEXT N_("By default, VLC keeps the last equalizer settings before " \
                             "termination. This feature can be disabled here.")
 
-#define USE_APPLE_REMOTE_TEXT N_("Allow playback control with the Apple Remote")
+#define USE_APPLE_REMOTE_TEXT N_("Control playback with the Apple Remote")
 #define USE_APPLE_REMOTE_LONGTEXT N_("By default, VLC can be remotely controlled with the Apple Remote.")
 
-#define USE_MEDIAKEYS_TEXT N_("Allow playback control with the media keys")
+#define USE_MEDIAKEYS_TEXT N_("Control playback with media keys")
 #define USE_MEDIAKEYS_LONGTEXT N_("By default, VLC can be controlled using the media keys on modern Apple " \
                                   "keyboards.")
+
+#define USE_MEDIAKEYS_BACKGROUND_TEXT N_("Use media key control when VLC is in background")
+#define USE_MEDIAKEYS_BACKGROUND_LONGTEXT N_("By default, VLC will accept media key events also when being " \
+                                             "in background.")
 
 vlc_module_begin ()
     set_description( N_("Mac OS X interface") )
@@ -111,6 +115,8 @@ vlc_module_begin ()
     add_bool( "macosx-appleremote", 1, NULL, USE_APPLE_REMOTE_TEXT, USE_APPLE_REMOTE_LONGTEXT,
              false )
     add_bool( "macosx-mediakeys", 1, NULL, USE_MEDIAKEYS_TEXT, USE_MEDIAKEYS_LONGTEXT,
+             false )
+    add_bool( "macosx-mediakeys-background", 1, NULL, USE_MEDIAKEYS_BACKGROUND_TEXT, USE_MEDIAKEYS_BACKGROUND_LONGTEXT,
              false )
 
     add_submodule ()

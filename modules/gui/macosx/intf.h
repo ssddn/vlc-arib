@@ -426,6 +426,8 @@ struct intf_sys_t
 {
     BOOL b_justJumped;
     BOOL b_mediaKeySupport;
+    BOOL b_activeInBackground;
+    BOOL b_active;
 }
 
 - (void)coreChangedMediaKeySupportSetting: (NSNotification *)o_notification;
