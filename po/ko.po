@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc korean lang\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-07-21 22:34+0100\n"
+"POT-Creation-Date: 2009-07-25 15:04+0200\n"
 "PO-Revision-Date: 2009-07-20 13:27+0900\n"
 "Last-Translator: airplanez <airplanez@gmail.com>\n"
 "Language-Team: \n"
@@ -2245,8 +2245,8 @@ msgstr ""
 #: modules/access/dshow/dshow.cpp:93 modules/access/v4l2.c:215
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
-#: modules/gui/macosx/simple_prefs.m:380 modules/gui/macosx/simple_prefs.m:485
-#: modules/gui/macosx/simple_prefs.m:717 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:406 modules/gui/macosx/simple_prefs.m:521
+#: modules/gui/macosx/simple_prefs.m:755 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -4370,7 +4370,7 @@ msgstr "다운로드중..."
 #: modules/gui/macosx/open.m:169 modules/gui/macosx/open.m:196
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:300
-#: modules/gui/macosx/simple_prefs.m:643 modules/gui/macosx/wizard.m:320
+#: modules/gui/macosx/simple_prefs.m:681 modules/gui/macosx/wizard.m:320
 #: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
@@ -4487,7 +4487,7 @@ msgstr "갈무리 오디오 스트림 샘플레이트(Hz, 예: 11025, 22050, 441
 #: modules/access/dshow/dshow.cpp:99 modules/access/dv.c:71
 #: modules/access/dvb/access.c:84 modules/access/dvdnav.c:73
 #: modules/access/dvdread.c:76 modules/access/eyetv.m:61
-#: modules/access/fake.c:44 modules/access/file.c:85 modules/access/ftp.c:57
+#: modules/access/fake.c:44 modules/access/file.c:86 modules/access/ftp.c:57
 #: modules/access/gnomevfs.c:47 modules/access/http.c:75
 #: modules/access/jack.c:62 modules/access/mms/mms.c:49
 #: modules/access/mtp.c:65 modules/access/oss.c:72 modules/access/pvr.c:60
@@ -5780,15 +5780,15 @@ msgstr "Fake"
 msgid "Fake input"
 msgstr "Fake 입력"
 
-#: modules/access/file.c:87 modules/access/mtp.c:67
+#: modules/access/file.c:88 modules/access/mtp.c:67
 msgid "Caching value for files. This value should be set in milliseconds."
 msgstr "파일 캐싱 값. 이 값은 밀리초로 설정되어야 합니다."
 
-#: modules/access/file.c:91
+#: modules/access/file.c:92
 msgid "File input"
 msgstr "파일 입력"
 
-#: modules/access/file.c:92 modules/access_output/file.c:70
+#: modules/access/file.c:93 modules/access_output/file.c:70
 #: modules/audio_output/file.c:114 modules/gui/beos/InterfaceWindow.cpp:264
 #: modules/gui/beos/MediaControlView.cpp:1235
 #: modules/gui/beos/PlayListWindow.cpp:88 modules/gui/macosx/open.m:171
@@ -5799,17 +5799,17 @@ msgstr "파일 입력"
 msgid "File"
 msgstr "파일"
 
-#: modules/access/file.c:273 modules/access/file.c:393
+#: modules/access/file.c:285 modules/access/file.c:405
 #: modules/access/mmap.c:229 modules/access/mtp.c:218 modules/access/mtp.c:306
 msgid "File reading failed"
 msgstr "파일 읽기 실패"
 
-#: modules/access/file.c:274 modules/access/mmap.c:230
+#: modules/access/file.c:286 modules/access/mmap.c:230
 #: modules/access/mtp.c:219
 msgid "VLC could not read the file."
 msgstr "VLC 가 파일을 읽을수 없습니다."
 
-#: modules/access/file.c:394 modules/access/mtp.c:307
+#: modules/access/file.c:406 modules/access/mtp.c:307
 #, c-format
 msgid "VLC could not open the file \"%s\"."
 msgstr "VLC 가 파일 \"%s\" 를 열수 없습니다."
@@ -6441,7 +6441,7 @@ msgstr "스크린 입력"
 
 #: modules/access/screen/screen.c:95 modules/gui/macosx/open.m:213
 #: modules/gui/macosx/open.m:414 modules/gui/macosx/open.m:979
-#: modules/gui/macosx/simple_prefs.m:491 modules/gui/macosx/vout.m:226
+#: modules/gui/macosx/simple_prefs.m:527 modules/gui/macosx/vout.m:226
 msgid "Screen"
 msgstr "스크린"
 
@@ -7815,7 +7815,7 @@ msgid "ALSA Device Name"
 msgstr "ALSA 장치 이름"
 
 #: modules/audio_output/alsa.c:133 modules/audio_output/auhal.c:131
-#: modules/audio_output/auhal.c:968 modules/audio_output/directx.c:457
+#: modules/audio_output/auhal.c:969 modules/audio_output/directx.c:457
 #: modules/audio_output/oss.c:133 modules/audio_output/portaudio.c:385
 #: modules/audio_output/sdl.c:179 modules/audio_output/sdl.c:197
 #: modules/audio_output/waveout.c:462 modules/gui/macosx/intf.m:667
@@ -7888,7 +7888,7 @@ msgid ""
 "utility in /Applications/Utilities. Stereo mode is being used now."
 msgstr ""
 
-#: modules/audio_output/auhal.c:1015
+#: modules/audio_output/auhal.c:1016
 #, c-format
 msgid "%s (Encoded Output)"
 msgstr "%s (인코딩된 출력)"
@@ -9258,11 +9258,11 @@ msgstr "Kate 텍스트 자막 패킷타이저"
 msgid "Subtitle renderers using libass"
 msgstr ""
 
-#: modules/codec/libass.c:692
+#: modules/codec/libass.c:703
 msgid "Building font cache"
 msgstr ""
 
-#: modules/codec/libass.c:693
+#: modules/codec/libass.c:704
 msgid ""
 "Please wait while your font cache is rebuild.\n"
 "This should take less than a minute."
@@ -11690,11 +11690,11 @@ msgstr "HTTP 터널 포트"
 msgid "Port to use for tunneling the RTSP/RTP over HTTP."
 msgstr ""
 
-#: modules/demux/live555.cpp:622
+#: modules/demux/live555.cpp:624
 msgid "RTSP authentication"
 msgstr "RTSP 인증"
 
-#: modules/demux/live555.cpp:623
+#: modules/demux/live555.cpp:625
 msgid "Please enter a valid login name and a password."
 msgstr ""
 
@@ -13340,7 +13340,7 @@ msgid "No CrashLog found"
 msgstr "충돌 로그를 찾을 수 없음"
 
 #: modules/gui/macosx/intf.m:2417 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:644
+#: modules/gui/macosx/simple_prefs.m:682
 msgid "Continue"
 msgstr "계속"
 
@@ -13985,12 +13985,12 @@ msgstr "모두 초기화"
 msgid "Basic"
 msgstr "기본"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:643
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:681
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "선택사항 초기화"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:646
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:684
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -14236,93 +14236,94 @@ msgstr "접두어"
 msgid "Sequential numbering"
 msgstr "순차 번호 부여"
 
-#: modules/gui/macosx/simple_prefs.m:519 modules/gui/macosx/simple_prefs.m:563
-#: modules/gui/macosx/simple_prefs.m:1171
+#: modules/gui/macosx/simple_prefs.m:557 modules/gui/macosx/simple_prefs.m:601
+#: modules/gui/macosx/simple_prefs.m:1209
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "사용자 지정"
 
-#: modules/gui/macosx/simple_prefs.m:519
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:413
 msgid "Lowest latency"
 msgstr "가장 낮은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:519
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:414
 msgid "Low latency"
 msgstr "낮은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:519
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:415
 #: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Normal"
 msgstr "보통"
 
-#: modules/gui/macosx/simple_prefs.m:520
+#: modules/gui/macosx/simple_prefs.m:558
 #: modules/gui/qt4/components/simple_preferences.cpp:416
 msgid "High latency"
 msgstr "높은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:520
+#: modules/gui/macosx/simple_prefs.m:558
 #: modules/gui/qt4/components/simple_preferences.cpp:417
 msgid "Higher latency"
 msgstr "더 높은 대기시간"
 
-#: modules/gui/macosx/simple_prefs.m:761
+#: modules/gui/macosx/simple_prefs.m:799
 msgid "Interface Settings not saved"
 msgstr "인터페이스 설정이 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:762 modules/gui/macosx/simple_prefs.m:837
-#: modules/gui/macosx/simple_prefs.m:870 modules/gui/macosx/simple_prefs.m:936
-#: modules/gui/macosx/simple_prefs.m:974 modules/gui/macosx/simple_prefs.m:999
+#: modules/gui/macosx/simple_prefs.m:800 modules/gui/macosx/simple_prefs.m:875
+#: modules/gui/macosx/simple_prefs.m:908 modules/gui/macosx/simple_prefs.m:974
+#: modules/gui/macosx/simple_prefs.m:1012
+#: modules/gui/macosx/simple_prefs.m:1037
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:836
+#: modules/gui/macosx/simple_prefs.m:874
 msgid "Audio Settings not saved"
 msgstr "오디오 설정이 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:869
+#: modules/gui/macosx/simple_prefs.m:907
 msgid "Video Settings not saved"
 msgstr "비디오 설정이 저정되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:935
+#: modules/gui/macosx/simple_prefs.m:973
 msgid "Input Settings not saved"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:973
+#: modules/gui/macosx/simple_prefs.m:1011
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:998
+#: modules/gui/macosx/simple_prefs.m:1036
 msgid "Hotkeys not saved"
 msgstr "단축기가 저장되지 않음"
 
-#: modules/gui/macosx/simple_prefs.m:1097
+#: modules/gui/macosx/simple_prefs.m:1135
 msgid "Choose the folder to save your video snapshots to."
 msgstr "비디오 스냅샷 저장 폴더 선택."
 
-#: modules/gui/macosx/simple_prefs.m:1099
+#: modules/gui/macosx/simple_prefs.m:1137
 msgid "Choose"
 msgstr "선택"
 
-#: modules/gui/macosx/simple_prefs.m:1189
+#: modules/gui/macosx/simple_prefs.m:1227
 msgid ""
 "Press new keys for\n"
 "\"%@\""
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:1263
+#: modules/gui/macosx/simple_prefs.m:1301
 msgid "Invalid combination"
 msgstr "잘못된 조합"
 
-#: modules/gui/macosx/simple_prefs.m:1264
+#: modules/gui/macosx/simple_prefs.m:1302
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:1282
+#: modules/gui/macosx/simple_prefs.m:1320
 msgid "This combination is already taken by \"%@\"."
 msgstr ""
 
@@ -16759,27 +16760,27 @@ msgstr "가져오기(&M)"
 msgid "E&xport"
 msgstr "내보내기(&X)"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:268
+#: modules/gui/qt4/dialogs/vlm.cpp:269
 msgid "Save VLM configuration as..."
 msgstr "VML 설정을 다른 이름으로 저장..."
 
-#: modules/gui/qt4/dialogs/vlm.cpp:270 modules/gui/qt4/dialogs/vlm.cpp:357
+#: modules/gui/qt4/dialogs/vlm.cpp:271 modules/gui/qt4/dialogs/vlm.cpp:343
 msgid "VLM conf (*.vlm);;All (*)"
 msgstr "VLM 설정 (*.vlm);;모두 (*)"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:355
+#: modules/gui/qt4/dialogs/vlm.cpp:341
 msgid "Open VLM configuration..."
 msgstr "VLM 설정 열기..."
 
-#: modules/gui/qt4/dialogs/vlm.cpp:549
+#: modules/gui/qt4/dialogs/vlm.cpp:535
 msgid "Broadcast: "
 msgstr "방송:"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:617
+#: modules/gui/qt4/dialogs/vlm.cpp:603
 msgid "Schedule: "
 msgstr "일정:"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:639
+#: modules/gui/qt4/dialogs/vlm.cpp:625
 msgid "VOD: "
 msgstr "VOD: "
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc 0.9.0-test2\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-07-06 02:14+0200\n"
+"POT-Creation-Date: 2009-07-25 15:04+0200\n"
 "PO-Revision-Date: 2009-06-02 19:16+0200\n"
 "Last-Translator: Ivo Ivanov <bestran@mail.bg>\n"
 "Language-Team: Bulgarian <bestran@mail.bg>\n"
@@ -37,7 +37,7 @@ msgstr "Настройки на VLC "
 msgid "Select \"Advanced Options\" to see all options."
 msgstr "Изберете \"Разширени опции \", за да видите всички опции."
 
-#: include/vlc_config_cat.h:37 modules/gui/macosx/simple_prefs.m:174
+#: include/vlc_config_cat.h:37 modules/gui/macosx/simple_prefs.m:175
 #: modules/gui/qt4/components/simple_preferences.cpp:77
 #: modules/gui/qt4/menus.cpp:967 modules/misc/dummy/dummy.c:67
 msgid "Interface"
@@ -68,14 +68,14 @@ msgid "Settings for VLC's control interfaces"
 msgstr "Настройки на VLC за управление на интерфейсите"
 
 #: include/vlc_config_cat.h:48 include/vlc_config_cat.h:49
-#: modules/gui/macosx/simple_prefs.m:194
+#: modules/gui/macosx/simple_prefs.m:195
 msgid "Hotkeys settings"
 msgstr "Настройки на клавишните комбинации"
 
 #: include/vlc_config_cat.h:52 src/input/es_out.c:2657 src/input/es_out.c:2691
 #: src/libvlc-module.c:1508 modules/gui/beos/InterfaceWindow.cpp:283
 #: modules/gui/macosx/intf.m:659 modules/gui/macosx/output.m:170
-#: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:178
+#: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
 #: modules/gui/qt4/components/info_panels.cpp:517
 #: modules/gui/qt4/components/simple_preferences.cpp:79
@@ -130,7 +130,7 @@ msgstr "Различни настройки за звука и модулите.
 #: include/vlc_config_cat.h:70 src/input/es_out.c:2660 src/input/es_out.c:2740
 #: src/libvlc-module.c:1561 modules/gui/macosx/intf.m:672
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
-#: modules/gui/macosx/simple_prefs.m:182 modules/gui/macosx/wizard.m:381
+#: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
 #: modules/gui/qt4/components/info_panels.cpp:518
 #: modules/gui/qt4/components/simple_preferences.cpp:80
 #: modules/gui/qt4/ui/profiles.h:469 modules/gui/qt4/ui/sprefs_video.h:291
@@ -406,7 +406,7 @@ msgid "Advanced settings"
 msgstr "Допълнителни настройки"
 
 #: include/vlc_config_cat.h:198 modules/gui/macosx/open.m:173
-#: modules/gui/macosx/open.m:447 modules/gui/macosx/simple_prefs.m:253
+#: modules/gui/macosx/open.m:447 modules/gui/macosx/simple_prefs.m:254
 #: modules/gui/pda/pda_interface.c:546 modules/gui/qt4/ui/sprefs_input.h:240
 msgid "Network"
 msgstr "Мрежа"
@@ -524,9 +524,9 @@ msgstr "Относно"
 #: modules/gui/macosx/embeddedwindow.m:67
 #: modules/gui/macosx/embeddedwindow.m:157 modules/gui/macosx/intf.m:595
 #: modules/gui/macosx/intf.m:640 modules/gui/macosx/intf.m:727
-#: modules/gui/macosx/intf.m:734 modules/gui/macosx/intf.m:1985
-#: modules/gui/macosx/intf.m:1986 modules/gui/macosx/intf.m:1987
-#: modules/gui/macosx/intf.m:1988 modules/gui/macosx/playlist.m:438
+#: modules/gui/macosx/intf.m:734 modules/gui/macosx/intf.m:1990
+#: modules/gui/macosx/intf.m:1991 modules/gui/macosx/intf.m:1992
+#: modules/gui/macosx/intf.m:1993 modules/gui/macosx/playlist.m:438
 #: modules/gui/pda/pda_interface.c:260 modules/gui/pda/pda_interface.c:261
 #: modules/gui/qt4/components/controller.hpp:101 modules/gui/qt4/menus.cpp:730
 #: modules/gui/qt4/ui/open.h:275
@@ -827,23 +827,23 @@ msgstr ""
 msgid "Reverse stereo"
 msgstr "Реверсивно стерео"
 
-#: src/config/file.c:599
+#: src/config/file.c:605
 msgid "key"
 msgstr "Ключ"
 
-#: src/config/file.c:608
+#: src/config/file.c:614
 msgid "boolean"
 msgstr ""
 
-#: src/config/file.c:608 src/libvlc.c:1649
+#: src/config/file.c:614 src/libvlc.c:1649
 msgid "integer"
 msgstr "цяло число"
 
-#: src/config/file.c:617 src/libvlc.c:1678
+#: src/config/file.c:623 src/libvlc.c:1678
 msgid "float"
 msgstr "с плаваща запетая"
 
-#: src/config/file.c:640 src/libvlc.c:1628
+#: src/config/file.c:646 src/libvlc.c:1628
 msgid "string"
 msgstr "текстов низ"
 
@@ -993,7 +993,7 @@ msgstr "Кодек"
 
 #: src/input/es_out.c:2681 src/input/meta.c:50 src/libvlc-module.c:201
 #: modules/gui/beos/InterfaceWindow.cpp:279
-#: modules/gui/macosx/simple_prefs.m:263
+#: modules/gui/macosx/simple_prefs.m:264
 #: modules/gui/qt4/ui/sprefs_interface.h:314
 msgid "Language"
 msgstr "Език"
@@ -1617,7 +1617,7 @@ msgstr ""
 "това е възможно (ако вашия хардуер и възпроизвеждания аудио поток го "
 "поддържа)."
 
-#: src/libvlc-module.c:295 modules/gui/macosx/simple_prefs.m:231
+#: src/libvlc-module.c:295 modules/gui/macosx/simple_prefs.m:232
 #: modules/gui/qt4/ui/sprefs_audio.h:340
 msgid "Use S/PDIF when available"
 msgstr "Използване на аудио извеждане S/PDIF, ако е възможно"
@@ -1630,7 +1630,7 @@ msgstr ""
 "Използване на S/PDIF аудио извеждане по подразбиране, когато вашия хардуер и "
 "възпроизвеждания аудио поток го поддържа."
 
-#: src/libvlc-module.c:300 modules/gui/macosx/simple_prefs.m:221
+#: src/libvlc-module.c:300 modules/gui/macosx/simple_prefs.m:222
 #: modules/gui/qt4/ui/sprefs_audio.h:342
 msgid "Force detection of Dolby Surround"
 msgstr "Откриване на Dolby Surround"
@@ -1945,7 +1945,7 @@ msgstr ""
 " VLC ще се опита да го използва по подразбиране."
 
 #: src/libvlc-module.c:431 src/video_output/vout_intf.c:421
-#: modules/gui/macosx/simple_prefs.m:284 modules/gui/qt4/ui/sprefs_video.h:283
+#: modules/gui/macosx/simple_prefs.m:287 modules/gui/qt4/ui/sprefs_video.h:283
 msgid "Always on top"
 msgstr "Винаги най-отгоре"
 
@@ -2218,7 +2218,7 @@ msgstr ""
 "(1:1). Ако имате екран 16:9, трябва да го промените на 4:3 за да запазите "
 "пропорциите."
 
-#: src/libvlc-module.c:559 modules/gui/macosx/simple_prefs.m:286
+#: src/libvlc-module.c:559 modules/gui/macosx/simple_prefs.m:289
 #: modules/gui/qt4/ui/sprefs_video.h:286
 msgid "Skip frames"
 msgstr "Пропускане на кадри"
@@ -2331,8 +2331,8 @@ msgstr ""
 #: modules/access/dshow/dshow.cpp:93 modules/access/v4l2.c:215
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
-#: modules/gui/macosx/simple_prefs.m:377 modules/gui/macosx/simple_prefs.m:480
-#: modules/gui/macosx/simple_prefs.m:710 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:406 modules/gui/macosx/simple_prefs.m:521
+#: modules/gui/macosx/simple_prefs.m:755 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -2644,7 +2644,7 @@ msgid "You can completely disable the sub-picture processing."
 msgstr "Можете напълно да изключите обработката на слоевете."
 
 #: src/libvlc-module.c:760 src/libvlc-module.c:1675
-#: modules/gui/macosx/simple_prefs.m:275
+#: modules/gui/macosx/simple_prefs.m:278
 #: modules/gui/qt4/ui/sprefs_subtitles.h:208
 #: modules/stream_out/transcode.c:228
 msgid "On Screen Display"
@@ -3567,7 +3567,7 @@ msgstr ""
 #: modules/gui/macosx/controls.m:515 modules/gui/macosx/controls.m:1083
 #: modules/gui/macosx/controls.m:1114 modules/gui/macosx/embeddedwindow.m:66
 #: modules/gui/macosx/intf.m:599 modules/gui/macosx/intf.m:677
-#: modules/gui/macosx/intf.m:741 modules/gui/macosx/simple_prefs.m:283
+#: modules/gui/macosx/intf.m:741 modules/gui/macosx/simple_prefs.m:286
 #: modules/gui/qt4/components/controller.hpp:102
 #: modules/gui/qt4/ui/sprefs_video.h:282
 msgid "Fullscreen"
@@ -4597,9 +4597,9 @@ msgstr "Изтегляне ..."
 #: modules/gui/macosx/coredialogs.m:68 modules/gui/macosx/coredialogs.m:186
 #: modules/gui/macosx/open.m:169 modules/gui/macosx/open.m:196
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
-#: modules/gui/macosx/simple_prefs.m:238 modules/gui/macosx/simple_prefs.m:297
-#: modules/gui/macosx/simple_prefs.m:636 modules/gui/macosx/wizard.m:320
-#: modules/gui/qt4/components/open_panels.cpp:1316
+#: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:300
+#: modules/gui/macosx/simple_prefs.m:681 modules/gui/macosx/wizard.m:320
+#: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
 msgid "Cancel"
@@ -4721,7 +4721,7 @@ msgstr ""
 #: modules/access/dshow/dshow.cpp:99 modules/access/dv.c:71
 #: modules/access/dvb/access.c:84 modules/access/dvdnav.c:73
 #: modules/access/dvdread.c:76 modules/access/eyetv.m:61
-#: modules/access/fake.c:44 modules/access/file.c:77 modules/access/ftp.c:57
+#: modules/access/fake.c:44 modules/access/file.c:86 modules/access/ftp.c:57
 #: modules/access/gnomevfs.c:47 modules/access/http.c:75
 #: modules/access/jack.c:62 modules/access/mms/mms.c:49
 #: modules/access/mtp.c:65 modules/access/oss.c:72 modules/access/pvr.c:60
@@ -6176,17 +6176,17 @@ msgstr "Фиктивен"
 msgid "Fake input"
 msgstr "Фиктивно въвеждане"
 
-#: modules/access/file.c:79 modules/access/mtp.c:67
+#: modules/access/file.c:88 modules/access/mtp.c:67
 msgid "Caching value for files. This value should be set in milliseconds."
 msgstr ""
 "Стойност на кеширане за файловете. Тази стойност трябва да бъде настроена в "
 "милисекунди."
 
-#: modules/access/file.c:83
+#: modules/access/file.c:92
 msgid "File input"
 msgstr "Въвеждане от файл"
 
-#: modules/access/file.c:84 modules/access_output/file.c:70
+#: modules/access/file.c:93 modules/access_output/file.c:70
 #: modules/audio_output/file.c:114 modules/gui/beos/InterfaceWindow.cpp:264
 #: modules/gui/beos/MediaControlView.cpp:1235
 #: modules/gui/beos/PlayListWindow.cpp:88 modules/gui/macosx/open.m:171
@@ -6197,17 +6197,17 @@ msgstr "Въвеждане от файл"
 msgid "File"
 msgstr "Файл"
 
-#: modules/access/file.c:225 modules/access/file.c:345
+#: modules/access/file.c:285 modules/access/file.c:405
 #: modules/access/mmap.c:229 modules/access/mtp.c:218 modules/access/mtp.c:306
 msgid "File reading failed"
 msgstr "Грешка при четене на файла"
 
-#: modules/access/file.c:226 modules/access/mmap.c:230
+#: modules/access/file.c:286 modules/access/mmap.c:230
 #: modules/access/mtp.c:219
 msgid "VLC could not read the file."
 msgstr "VLC не може да прочете файла"
 
-#: modules/access/file.c:346 modules/access/mtp.c:307
+#: modules/access/file.c:406 modules/access/mtp.c:307
 #, c-format
 msgid "VLC could not open the file \"%s\"."
 msgstr "VLC не може да отвори файла \"%s\"."
@@ -6363,11 +6363,11 @@ msgstr "Въвеждане от HTTP"
 msgid "HTTP(S)"
 msgstr ""
 
-#: modules/access/http.c:450
+#: modules/access/http.c:461
 msgid "HTTP authentication"
 msgstr "HTTP достоверност"
 
-#: modules/access/http.c:451
+#: modules/access/http.c:462
 #, c-format
 msgid "Please enter a valid login name and a password for realm %s."
 msgstr "Моля, въведете валидно име и парола за realm %s."
@@ -6892,7 +6892,7 @@ msgstr "Въвеждане от екрана"
 
 #: modules/access/screen/screen.c:95 modules/gui/macosx/open.m:213
 #: modules/gui/macosx/open.m:414 modules/gui/macosx/open.m:979
-#: modules/gui/macosx/simple_prefs.m:486 modules/gui/macosx/vout.m:226
+#: modules/gui/macosx/simple_prefs.m:527 modules/gui/macosx/vout.m:226
 msgid "Screen"
 msgstr "Екран"
 
@@ -7670,7 +7670,7 @@ msgid "User name that will be requested to access the stream."
 msgstr "Потребителско име, което ще бъде изисквано за достъп до потока."
 
 #: modules/access_output/http.c:68 modules/control/telnet.c:87
-#: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:228
+#: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:229
 #: modules/gui/qt4/dialogs/external.cpp:145
 #: modules/gui/qt4/ui/sprefs_audio.h:356 modules/misc/audioscrobbler.c:135
 #: modules/misc/notify/growl_udp.c:64
@@ -8194,7 +8194,7 @@ msgstr ""
 "запетая. Подходящи са стойности между 0.5 и 10."
 
 #: modules/audio_filter/normvol.c:83 modules/audio_filter/normvol.c:84
-#: modules/gui/macosx/simple_prefs.m:230 modules/gui/qt4/ui/sprefs_audio.h:350
+#: modules/gui/macosx/simple_prefs.m:231 modules/gui/qt4/ui/sprefs_audio.h:350
 msgid "Volume normalizer"
 msgstr "Нормализатор на звука"
 
@@ -8368,7 +8368,7 @@ msgid "ALSA Device Name"
 msgstr "Име на устройството ALSA"
 
 #: modules/audio_output/alsa.c:133 modules/audio_output/auhal.c:131
-#: modules/audio_output/auhal.c:968 modules/audio_output/directx.c:457
+#: modules/audio_output/auhal.c:969 modules/audio_output/directx.c:457
 #: modules/audio_output/oss.c:133 modules/audio_output/portaudio.c:385
 #: modules/audio_output/sdl.c:179 modules/audio_output/sdl.c:197
 #: modules/audio_output/waveout.c:462 modules/gui/macosx/intf.m:667
@@ -8448,7 +8448,7 @@ msgstr ""
 "Трябва да настроите положението на говорителя с \"Audio Midi Setup\" "
 "функцията в /Applications/Utilities. Режим стерео се използва сега."
 
-#: modules/audio_output/auhal.c:1015
+#: modules/audio_output/auhal.c:1016
 #, c-format
 msgid "%s (Encoded Output)"
 msgstr "%s (Кодирано извеждане)"
@@ -8608,7 +8608,7 @@ msgid "PORTAUDIO audio output"
 msgstr "Извеждане на звука чрез PORTAUDIO"
 
 #: modules/audio_output/pulse.c:61 modules/gui/macosx/intf.m:589
-#: modules/gui/macosx/intf.m:590 modules/gui/macosx/intf.m:1965
+#: modules/gui/macosx/intf.m:590 modules/gui/macosx/intf.m:1970
 #: modules/gui/pda/pda_interface.c:210 modules/gui/pda/pda_interface.c:1353
 #: modules/gui/qt4/dialogs/help.cpp:99 modules/gui/qt4/main_interface.cpp:930
 #: modules/gui/qt4/main_interface.cpp:934
@@ -8699,7 +8699,7 @@ msgid "Non-key"
 msgstr ""
 
 #: modules/codec/avcodec/avcodec.c:71 modules/gui/macosx/prefs.m:207
-#: modules/gui/macosx/simple_prefs.m:296
+#: modules/gui/macosx/simple_prefs.m:299
 #: modules/gui/qt4/dialogs/preferences.cpp:68
 msgid "All"
 msgstr "Всички"
@@ -8886,7 +8886,7 @@ msgid ""
 msgstr ""
 "Декодиране на видео само с ниска резолюция. Това изисква по-малко ресурси"
 
-#: modules/codec/avcodec/avcodec.h:125 modules/gui/macosx/simple_prefs.m:256
+#: modules/codec/avcodec/avcodec.h:125 modules/gui/macosx/simple_prefs.m:257
 #: modules/gui/qt4/ui/sprefs_input.h:250
 msgid "Skip the loop filter for H.264 decoding"
 msgstr "Пропускане на loop филтъра при декодиране H.264"
@@ -9920,11 +9920,11 @@ msgstr "Опаковчик на текстови субтитри Kate"
 msgid "Subtitle renderers using libass"
 msgstr "Извеждане на субтитри, като се използва libass"
 
-#: modules/codec/libass.c:692
+#: modules/codec/libass.c:703
 msgid "Building font cache"
 msgstr ""
 
-#: modules/codec/libass.c:693
+#: modules/codec/libass.c:704
 msgid ""
 "Please wait while your font cache is rebuild.\n"
 "This should take less than a minute."
@@ -11397,11 +11397,11 @@ msgstr "Управление нивото на звука"
 msgid "Position Control"
 msgstr "Управление на позицията"
 
-#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2441
+#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2446
 msgid "Ignore"
 msgstr "Игнориране"
 
-#: modules/control/hotkeys.c:101 modules/gui/macosx/simple_prefs.m:194
+#: modules/control/hotkeys.c:101 modules/gui/macosx/simple_prefs.m:195
 #: modules/gui/qt4/components/simple_preferences.cpp:85
 msgid "Hotkeys"
 msgstr "Клавишни комбинации"
@@ -11700,8 +11700,8 @@ msgid "Opening"
 msgstr "Отваряне"
 
 #: modules/control/rc.c:77 modules/gui/macosx/embeddedwindow.m:151
-#: modules/gui/macosx/intf.m:1975 modules/gui/macosx/intf.m:1976
-#: modules/gui/macosx/intf.m:1977 modules/gui/macosx/intf.m:1978
+#: modules/gui/macosx/intf.m:1980 modules/gui/macosx/intf.m:1981
+#: modules/gui/macosx/intf.m:1982 modules/gui/macosx/intf.m:1983
 #: modules/gui/pda/pda_interface.c:248 modules/gui/pda/pda_interface.c:249
 #: modules/gui/qt4/menus.cpp:736 modules/misc/notify/xosd.c:238
 msgid "Pause"
@@ -12518,7 +12518,7 @@ msgid "RTSP/RTP access and demux"
 msgstr "Достъп и демултиплексор RTSP/RTP"
 
 #: modules/demux/live555.cpp:111 modules/demux/live555.cpp:112
-#: modules/gui/macosx/simple_prefs.m:255 modules/gui/qt4/ui/sprefs_input.h:249
+#: modules/gui/macosx/simple_prefs.m:256 modules/gui/qt4/ui/sprefs_input.h:249
 msgid "Use RTP over RTSP (TCP)"
 msgstr "Използване на RTP над RTSP (TCP)"
 
@@ -12546,11 +12546,11 @@ msgstr "Порт на тунела HTTP"
 msgid "Port to use for tunneling the RTSP/RTP over HTTP."
 msgstr "Порт за тунелиране на RTSP/RTP по HTTP."
 
-#: modules/demux/live555.cpp:622
+#: modules/demux/live555.cpp:624
 msgid "RTSP authentication"
 msgstr "RTSP достоверност"
 
-#: modules/demux/live555.cpp:623
+#: modules/demux/live555.cpp:625
 msgid "Please enter a valid login name and a password."
 msgstr "Моля, въведете валидно потребителско име и парола"
 
@@ -13273,7 +13273,7 @@ msgstr "Отваряне"
 
 #: modules/gui/beos/InterfaceWindow.cpp:226
 #: modules/gui/beos/InterfaceWindow.cpp:331 modules/gui/macosx/prefs.m:202
-#: modules/gui/macosx/simple_prefs.m:300
+#: modules/gui/macosx/simple_prefs.m:303
 #: modules/gui/qt4/dialogs/preferences.cpp:46
 msgid "Preferences"
 msgstr "Настройки..."
@@ -13337,16 +13337,16 @@ msgstr ""
 #: modules/gui/macosx/bookmarks.m:271 modules/gui/macosx/bookmarks.m:279
 #: modules/gui/macosx/controls.m:85 modules/gui/macosx/coredialogs.m:67
 #: modules/gui/macosx/coredialogs.m:105 modules/gui/macosx/coredialogs.m:163
-#: modules/gui/macosx/extended.m:519 modules/gui/macosx/intf.m:2314
+#: modules/gui/macosx/extended.m:519 modules/gui/macosx/intf.m:2319
 #: modules/gui/macosx/open.m:310 modules/gui/macosx/output.m:138
-#: modules/gui/macosx/playlistinfo.m:430 modules/gui/macosx/simple_prefs.m:239
-#: modules/gui/macosx/update.m:65 modules/gui/macosx/wizard.m:600
+#: modules/gui/macosx/playlistinfo.m:430 modules/gui/macosx/simple_prefs.m:240
+#: modules/gui/macosx/update.m:76 modules/gui/macosx/wizard.m:600
 #: modules/gui/macosx/wizard.m:664 modules/gui/macosx/wizard.m:1063
 #: modules/gui/macosx/wizard.m:1148 modules/gui/macosx/wizard.m:1155
 #: modules/gui/macosx/wizard.m:1681 modules/gui/macosx/wizard.m:1689
 #: modules/gui/macosx/wizard.m:1870 modules/gui/macosx/wizard.m:1881
 #: modules/gui/macosx/wizard.m:1894
-#: modules/gui/qt4/components/open_panels.cpp:1315
+#: modules/gui/qt4/components/open_panels.cpp:1314
 #: modules/gui/qt4/components/preferences_widgets.cpp:1366
 #: modules/gui/qt4/main_interface.cpp:553
 msgid "OK"
@@ -13419,7 +13419,7 @@ msgid "Path"
 msgstr "Път"
 
 #: modules/gui/beos/PlayListWindow.cpp:150 modules/gui/macosx/bookmarks.m:103
-#: modules/gui/macosx/playlist.m:128 modules/gui/qt4/dialogs/plugins.cpp:62
+#: modules/gui/macosx/playlist.m:128 modules/gui/qt4/dialogs/plugins.cpp:60
 msgid "Name"
 msgstr "Име"
 
@@ -13429,7 +13429,7 @@ msgstr "Прилагане"
 
 #: modules/gui/beos/PreferencesWindow.cpp:257 modules/gui/macosx/output.m:526
 #: modules/gui/macosx/playlist.m:711 modules/gui/macosx/prefs.m:203
-#: modules/gui/macosx/simple_prefs.m:299
+#: modules/gui/macosx/simple_prefs.m:302
 #: modules/gui/qt4/components/sout/profile_selector.cpp:250
 #: modules/gui/qt4/ui/vlm.h:302
 msgid "Save"
@@ -13611,7 +13611,7 @@ msgstr ""
 "Всички извеждани изображения и текст ще бъдат показани на overlay "
 "фреймбуфера."
 
-#: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:272
+#: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:275
 #: modules/gui/qt4/ui/sprefs_subtitles.h:219 modules/misc/freetype.c:83
 #: modules/misc/notify/xosd.c:80 modules/misc/quartztext.c:92
 #: modules/misc/win32text.c:57 modules/video_filter/marq.c:161
@@ -13665,7 +13665,7 @@ msgid "Add"
 msgstr "Добавяне"
 
 #: modules/gui/macosx/bookmarks.m:89 modules/gui/macosx/intf.m:636
-#: modules/gui/macosx/simple_prefs.m:240
+#: modules/gui/macosx/simple_prefs.m:241
 #: modules/gui/qt4/components/preferences_widgets.cpp:1154
 #: modules/gui/qt4/dialogs/bookmarks.cpp:48 modules/gui/qt4/ui/vlm.h:301
 #: modules/gui/qt4/util/customwidgets.cpp:136
@@ -13807,7 +13807,7 @@ msgstr "Стъпка напред"
 msgid "Step Backward"
 msgstr "Стъпка назад"
 
-#: modules/gui/macosx/coredialogs.m:64 modules/gui/macosx/simple_prefs.m:229
+#: modules/gui/macosx/coredialogs.m:64 modules/gui/macosx/simple_prefs.m:230
 #: modules/gui/qt4/dialogs/external.cpp:140
 msgid "User name"
 msgstr "Потребителско име"
@@ -14083,7 +14083,7 @@ msgstr "Отваряне на устр. за захващане"
 msgid "Open Recent"
 msgstr "Отваряне на последния"
 
-#: modules/gui/macosx/intf.m:629 modules/gui/macosx/intf.m:2730
+#: modules/gui/macosx/intf.m:629 modules/gui/macosx/intf.m:2735
 msgid "Clear Menu"
 msgstr "Изчистване на менюто"
 
@@ -14116,7 +14116,7 @@ msgid "Decrease Volume"
 msgstr "Намаляване нивото на звука"
 
 #: modules/gui/macosx/intf.m:686 modules/gui/macosx/intf.m:687
-#: modules/gui/macosx/simple_prefs.m:280 modules/gui/macosx/vout.m:209
+#: modules/gui/macosx/simple_prefs.m:283 modules/gui/macosx/vout.m:209
 msgid "Fullscreen Video Device"
 msgstr "Видео устройство за цял екран"
 
@@ -14244,57 +14244,57 @@ msgstr ""
 "Само вашия E-Mail по подразбиране ще бъде изпратен, няма да включва никаква "
 "друга информация."
 
-#: modules/gui/macosx/intf.m:1806
+#: modules/gui/macosx/intf.m:1811
 #, c-format
 msgid "Volume: %d%%"
 msgstr "Ниво на звука: %d%%"
 
-#: modules/gui/macosx/intf.m:2205
+#: modules/gui/macosx/intf.m:2210
 msgid "Update check failed"
 msgstr "Неуспех при проверка за обновление"
 
-#: modules/gui/macosx/intf.m:2205
+#: modules/gui/macosx/intf.m:2210
 msgid "Checking for updates was not enabled in this build."
 msgstr "Проверката за обновления не е включена в тази версия"
 
-#: modules/gui/macosx/intf.m:2312
+#: modules/gui/macosx/intf.m:2317
 msgid "Crash Report successfully sent"
 msgstr "Доклада за срива е изпратен успешно"
 
-#: modules/gui/macosx/intf.m:2313
+#: modules/gui/macosx/intf.m:2318
 msgid "Thanks for your report!"
 msgstr "Благодарим за вашия доклад!"
 
-#: modules/gui/macosx/intf.m:2321
+#: modules/gui/macosx/intf.m:2326
 msgid "Error when sending the Crash Report"
 msgstr "Грешка при изпращането на доклада за срива."
 
-#: modules/gui/macosx/intf.m:2412
+#: modules/gui/macosx/intf.m:2417
 msgid "No CrashLog found"
 msgstr "Не е намерен лога за срив"
 
-#: modules/gui/macosx/intf.m:2412 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:637
+#: modules/gui/macosx/intf.m:2417 modules/gui/macosx/prefs.m:226
+#: modules/gui/macosx/simple_prefs.m:682
 msgid "Continue"
 msgstr "Продължаване"
 
-#: modules/gui/macosx/intf.m:2412
+#: modules/gui/macosx/intf.m:2417
 msgid "Couldn't find any trace of a previous crash."
 msgstr "Не може да се намери никаква следа от предишен срив."
 
-#: modules/gui/macosx/intf.m:2439
+#: modules/gui/macosx/intf.m:2444
 msgid "Remove old preferences?"
 msgstr "Да се изтрият ли старите настройки?"
 
-#: modules/gui/macosx/intf.m:2440
+#: modules/gui/macosx/intf.m:2445
 msgid "We just found an older version of VLC's preferences files."
 msgstr "Намерени са файлове с настройки на VLC за стари версии."
 
-#: modules/gui/macosx/intf.m:2441
+#: modules/gui/macosx/intf.m:2446
 msgid "Move To Trash and Relaunch VLC"
 msgstr "Изпращане в кошчето и рестартиране на VLC"
 
-#: modules/gui/macosx/intf.m:2575
+#: modules/gui/macosx/intf.m:2580
 #, c-format
 msgid "VLC Debug Log (%s).rtfd"
 msgstr ""
@@ -14396,7 +14396,25 @@ msgstr ""
 "По подразбиране VLC запазва последните настройки на Еквалайзера, преди "
 "затварянето. Тук можете да изключите тази опция."
 
+#: modules/gui/macosx/macosx.m:90
+msgid "Allow playback control with the Apple Remote"
+msgstr ""
+
 #: modules/gui/macosx/macosx.m:91
+msgid "By default, VLC can be remotely controlled with the Apple Remote."
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:93
+msgid "Allow playback control with the media keys"
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:94
+msgid ""
+"By default, VLC can be controlled using the media keys on modern Apple "
+"keyboards."
+msgstr ""
+
+#: modules/gui/macosx/macosx.m:98
 msgid "Mac OS X interface"
 msgstr "Интерфейс Mac OS X"
 
@@ -14432,7 +14450,7 @@ msgstr "Захващане"
 #: modules/gui/macosx/open.m:176 modules/gui/macosx/open.m:182
 #: modules/gui/macosx/open.m:298 modules/gui/macosx/output.m:145
 #: modules/gui/macosx/prefs_widgets.m:1181
-#: modules/gui/macosx/simple_prefs.m:288
+#: modules/gui/macosx/simple_prefs.m:291
 #: modules/gui/qt4/components/preferences_widgets.cpp:264
 #: modules/gui/qt4/components/simple_preferences.cpp:245
 #: modules/gui/qt4/components/sout/sout_widgets.cpp:98
@@ -14876,7 +14894,7 @@ msgstr "Загубени кадри"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
 #: modules/gui/qt4/components/info_panels.cpp:520
-#: modules/gui/qt4/dialogs_provider.cpp:607
+#: modules/gui/qt4/dialogs_provider.cpp:608
 #: modules/video_filter/deinterlace.c:143
 msgid "Streaming"
 msgstr "Извеждане на поток"
@@ -14917,21 +14935,21 @@ msgstr "Мета-данните не могат да се  запишат"
 msgid "Information"
 msgstr "Информация"
 
-#: modules/gui/macosx/prefs.m:205 modules/gui/macosx/simple_prefs.m:298
+#: modules/gui/macosx/prefs.m:205 modules/gui/macosx/simple_prefs.m:301
 msgid "Reset All"
 msgstr "Възстановяване"
 
-#: modules/gui/macosx/prefs.m:206 modules/gui/macosx/simple_prefs.m:295
+#: modules/gui/macosx/prefs.m:206 modules/gui/macosx/simple_prefs.m:298
 #: modules/gui/qt4/ui/video_effects.h:882
 msgid "Basic"
 msgstr "Основни"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:636
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:681
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "Стандартни настройки"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:639
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:684
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -14951,108 +14969,108 @@ msgstr "Изберете файл"
 msgid "Select"
 msgstr "Избор"
 
-#: modules/gui/macosx/simple_prefs.m:90
+#: modules/gui/macosx/simple_prefs.m:91
 msgid "Not Set"
 msgstr "Не е зададен"
 
-#: modules/gui/macosx/simple_prefs.m:174
+#: modules/gui/macosx/simple_prefs.m:175
 #: modules/gui/qt4/components/simple_preferences.cpp:465
 msgid "Interface Settings"
 msgstr "Настройки на интерфейса"
 
-#: modules/gui/macosx/simple_prefs.m:178
+#: modules/gui/macosx/simple_prefs.m:179
 msgid "General Audio Settings"
 msgstr "Основни настройки на аудиото"
 
-#: modules/gui/macosx/simple_prefs.m:182
+#: modules/gui/macosx/simple_prefs.m:183
 msgid "General Video Settings"
 msgstr "Основни настройки на видеото"
 
-#: modules/gui/macosx/simple_prefs.m:186
+#: modules/gui/macosx/simple_prefs.m:187
 msgid "Subtitles & OSD"
 msgstr "Субтитри / OSD (Екранно меню) "
 
-#: modules/gui/macosx/simple_prefs.m:186
+#: modules/gui/macosx/simple_prefs.m:187
 #: modules/gui/qt4/components/simple_preferences.cpp:538
 msgid "Subtitles & On Screen Display Settings"
 msgstr "Настройки на субтитрите & OSD (Екранно меню)"
 
-#: modules/gui/macosx/simple_prefs.m:190
+#: modules/gui/macosx/simple_prefs.m:191
 msgid "Input & Codecs"
 msgstr "Въвеждане / Кодеци "
 
-#: modules/gui/macosx/simple_prefs.m:190
+#: modules/gui/macosx/simple_prefs.m:191
 msgid "Input & Codec settings"
 msgstr "Настройки на въвеждане & кодеци "
 
-#: modules/gui/macosx/simple_prefs.m:222 modules/gui/qt4/ui/sprefs_audio.h:348
+#: modules/gui/macosx/simple_prefs.m:223 modules/gui/qt4/ui/sprefs_audio.h:348
 msgid "Effects"
 msgstr "Ефекти"
 
-#: modules/gui/macosx/simple_prefs.m:223
+#: modules/gui/macosx/simple_prefs.m:224
 msgid "Enable Audio"
 msgstr "Включване на звука"
 
-#: modules/gui/macosx/simple_prefs.m:224 modules/gui/qt4/ui/sprefs_audio.h:334
+#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:334
 msgid "General Audio"
 msgstr "Основно аудио"
 
-#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:349
+#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:349
 msgid "Headphone surround effect"
 msgstr ""
 "Без декодиране на Dolby Surround за виртуалното пространство за слушалки"
 
-#: modules/gui/macosx/simple_prefs.m:226
+#: modules/gui/macosx/simple_prefs.m:227
 msgid "Preferred Audio language"
 msgstr "Предпочитан език за аудито"
 
-#: modules/gui/macosx/simple_prefs.m:227
+#: modules/gui/macosx/simple_prefs.m:228
 msgid "Enable Last.fm submissions"
 msgstr "Представяне на възпроизведената песен в Last.fm"
 
-#: modules/gui/macosx/simple_prefs.m:232 modules/gui/qt4/ui/sprefs_audio.h:351
+#: modules/gui/macosx/simple_prefs.m:233 modules/gui/qt4/ui/sprefs_audio.h:351
 msgid "Visualization"
 msgstr "Визуализация"
 
-#: modules/gui/macosx/simple_prefs.m:233
+#: modules/gui/macosx/simple_prefs.m:234
 msgid "Default Volume"
 msgstr "Ниво на звука по подразбиране"
 
-#: modules/gui/macosx/simple_prefs.m:236
+#: modules/gui/macosx/simple_prefs.m:237
 msgid "Change"
 msgstr "Промяна"
 
-#: modules/gui/macosx/simple_prefs.m:237
+#: modules/gui/macosx/simple_prefs.m:238
 msgid "Change Hotkey"
 msgstr "Промяна на клавишната комбинация"
 
-#: modules/gui/macosx/simple_prefs.m:241
+#: modules/gui/macosx/simple_prefs.m:242
 msgid "Select an action to change the associated hotkey:"
 msgstr "Изберете действие, за да промените асоциираната клавишна комбинация:"
 
-#: modules/gui/macosx/simple_prefs.m:242
+#: modules/gui/macosx/simple_prefs.m:243
 #: modules/gui/qt4/components/preferences_widgets.cpp:1146
 msgid "Action"
 msgstr "Действие"
 
-#: modules/gui/macosx/simple_prefs.m:243
+#: modules/gui/macosx/simple_prefs.m:244
 msgid "Shortcut"
 msgstr "Клавиш"
 
-#: modules/gui/macosx/simple_prefs.m:246
+#: modules/gui/macosx/simple_prefs.m:247
 msgid "Repair AVI Files"
 msgstr "Поправяне на AVI файлове"
 
-#: modules/gui/macosx/simple_prefs.m:247
+#: modules/gui/macosx/simple_prefs.m:248
 msgid "Default Caching Level"
 msgstr "Ниво на кеширане по подразбиране"
 
-#: modules/gui/macosx/simple_prefs.m:248 modules/gui/qt4/ui/open.h:251
+#: modules/gui/macosx/simple_prefs.m:249 modules/gui/qt4/ui/open.h:251
 #: modules/gui/qt4/ui/sprefs_input.h:243
 msgid "Caching"
 msgstr "Кеширане"
 
-#: modules/gui/macosx/simple_prefs.m:249
+#: modules/gui/macosx/simple_prefs.m:250
 msgid ""
 "Use the complete preferences to configure custom caching values for each "
 "access module."
@@ -15060,191 +15078,200 @@ msgstr ""
 "Използвайте всички налични опции, за да настроите потребителските стойности "
 "на кеширане за всеки модул на въвеждане."
 
-#: modules/gui/macosx/simple_prefs.m:250
+#: modules/gui/macosx/simple_prefs.m:251
 msgid "HTTP Proxy"
 msgstr "Прокси HTTP"
 
-#: modules/gui/macosx/simple_prefs.m:251
+#: modules/gui/macosx/simple_prefs.m:252
 msgid "Password for HTTP Proxy"
 msgstr "Прокси HTTP парола"
 
-#: modules/gui/macosx/simple_prefs.m:252 modules/gui/qt4/ui/sprefs_input.h:245
+#: modules/gui/macosx/simple_prefs.m:253 modules/gui/qt4/ui/sprefs_input.h:245
 msgid "Codecs / Muxers"
 msgstr "Кодеци / Мултиплексори"
 
-#: modules/gui/macosx/simple_prefs.m:254
+#: modules/gui/macosx/simple_prefs.m:255
 msgid "Post-Processing Quality"
 msgstr "Качество на допълнителната обработка"
 
-#: modules/gui/macosx/simple_prefs.m:257
+#: modules/gui/macosx/simple_prefs.m:258
 msgid "Default Server Port"
 msgstr "Порт на сървъра по подразбиране"
 
-#: modules/gui/macosx/simple_prefs.m:260
+#: modules/gui/macosx/simple_prefs.m:261
 #: modules/gui/qt4/ui/sprefs_interface.h:321
 msgid "Album art download policy"
 msgstr "Управление зареждането на обложка на албум"
 
-#: modules/gui/macosx/simple_prefs.m:261
+#: modules/gui/macosx/simple_prefs.m:262
 msgid "Add controls to the video window"
 msgstr "Добавяне на регулатори във видео прозореца"
 
-#: modules/gui/macosx/simple_prefs.m:262
+#: modules/gui/macosx/simple_prefs.m:263
 msgid "Show Fullscreen Controller"
 msgstr "Показване на регулаторите, когато е на цял екран"
 
-#: modules/gui/macosx/simple_prefs.m:264
+#: modules/gui/macosx/simple_prefs.m:265
 #: modules/gui/qt4/ui/sprefs_interface.h:320
 msgid "Privacy / Network Interaction"
 msgstr "Управление / Мрежа"
 
+#: modules/gui/macosx/simple_prefs.m:266
+msgid "Control playback with the Apple Remote"
+msgstr ""
+
 #: modules/gui/macosx/simple_prefs.m:267
+msgid "Control playback with media keys"
+msgstr ""
+
+#: modules/gui/macosx/simple_prefs.m:270
 msgid "Default Encoding"
 msgstr "Кодиране по подразбиране"
 
-#: modules/gui/macosx/simple_prefs.m:268
+#: modules/gui/macosx/simple_prefs.m:271
 #: modules/gui/qt4/ui/sprefs_subtitles.h:214
 msgid "Display Settings"
 msgstr "Настройки за начина на показване"
 
-#: modules/gui/macosx/simple_prefs.m:269 modules/gui/macosx/wizard.m:346
+#: modules/gui/macosx/simple_prefs.m:272 modules/gui/macosx/wizard.m:346
 #: modules/gui/macosx/wizard.m:414
 msgid "Choose..."
 msgstr "Изберете..."
 
-#: modules/gui/macosx/simple_prefs.m:270
+#: modules/gui/macosx/simple_prefs.m:273
 msgid "Font Color"
 msgstr "Цвят на шрифта"
 
-#: modules/gui/macosx/simple_prefs.m:271
+#: modules/gui/macosx/simple_prefs.m:274
 msgid "Font Size"
 msgstr "Размер на шрифта"
 
-#: modules/gui/macosx/simple_prefs.m:273
+#: modules/gui/macosx/simple_prefs.m:276
 msgid "Subtitle Languages"
 msgstr "Език на субтитрите"
 
-#: modules/gui/macosx/simple_prefs.m:274
+#: modules/gui/macosx/simple_prefs.m:277
 msgid "Preferred Subtitle Language"
 msgstr "Предпочитан език за субтитрите"
 
-#: modules/gui/macosx/simple_prefs.m:276
+#: modules/gui/macosx/simple_prefs.m:279
 #: modules/gui/qt4/ui/sprefs_subtitles.h:209
 msgid "Enable OSD"
 msgstr "Включване на екранно меню"
 
-#: modules/gui/macosx/simple_prefs.m:279
+#: modules/gui/macosx/simple_prefs.m:282
 msgid "Black screens in Fullscreen mode"
 msgstr "Черни екрани в пълноекранен режим"
 
-#: modules/gui/macosx/simple_prefs.m:281 modules/gui/qt4/ui/sprefs_video.h:280
+#: modules/gui/macosx/simple_prefs.m:284 modules/gui/qt4/ui/sprefs_video.h:280
 #: modules/stream_out/display.c:54 modules/video_filter/deinterlace.c:132
 msgid "Display"
 msgstr "Показване"
 
-#: modules/gui/macosx/simple_prefs.m:282
+#: modules/gui/macosx/simple_prefs.m:285
 msgid "Enable Video"
 msgstr "Включване на видеото"
 
-#: modules/gui/macosx/simple_prefs.m:285
+#: modules/gui/macosx/simple_prefs.m:288
 msgid "Output module"
 msgstr "Модул за извеждане"
 
-#: modules/gui/macosx/simple_prefs.m:287 modules/gui/qt4/ui/sprefs_video.h:294
+#: modules/gui/macosx/simple_prefs.m:290 modules/gui/qt4/ui/sprefs_video.h:294
 msgid "Video snapshots"
 msgstr "Снимки на видеото"
 
-#: modules/gui/macosx/simple_prefs.m:289 modules/meta_engine/folder.c:56
+#: modules/gui/macosx/simple_prefs.m:292 modules/meta_engine/folder.c:56
 msgid "Folder"
 msgstr "Папка"
 
-#: modules/gui/macosx/simple_prefs.m:290 modules/gui/qt4/ui/sprefs_video.h:299
+#: modules/gui/macosx/simple_prefs.m:293 modules/gui/qt4/ui/sprefs_video.h:299
 msgid "Format"
 msgstr "Формат"
 
-#: modules/gui/macosx/simple_prefs.m:291 modules/gui/qt4/ui/sprefs_video.h:297
+#: modules/gui/macosx/simple_prefs.m:294 modules/gui/qt4/ui/sprefs_video.h:297
 msgid "Prefix"
 msgstr "Представка"
 
-#: modules/gui/macosx/simple_prefs.m:292 modules/gui/qt4/ui/sprefs_video.h:300
+#: modules/gui/macosx/simple_prefs.m:295 modules/gui/qt4/ui/sprefs_video.h:300
 msgid "Sequential numbering"
 msgstr "Поредни числа"
 
-#: modules/gui/macosx/simple_prefs.m:514 modules/gui/macosx/simple_prefs.m:558
-#: modules/gui/macosx/simple_prefs.m:1153
+#: modules/gui/macosx/simple_prefs.m:557 modules/gui/macosx/simple_prefs.m:601
+#: modules/gui/macosx/simple_prefs.m:1209
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "Потребителски"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:413
 msgid "Lowest latency"
 msgstr "Най-малко задържане"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:414
 msgid "Low latency"
 msgstr "Малко задържане"
 
-#: modules/gui/macosx/simple_prefs.m:514
+#: modules/gui/macosx/simple_prefs.m:557
 #: modules/gui/qt4/components/simple_preferences.cpp:415
 #: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Normal"
 msgstr "Нормален"
 
-#: modules/gui/macosx/simple_prefs.m:515
+#: modules/gui/macosx/simple_prefs.m:558
 #: modules/gui/qt4/components/simple_preferences.cpp:416
 msgid "High latency"
 msgstr "Голямо задържане"
 
-#: modules/gui/macosx/simple_prefs.m:515
+#: modules/gui/macosx/simple_prefs.m:558
 #: modules/gui/qt4/components/simple_preferences.cpp:417
 msgid "Higher latency"
 msgstr "Най-голямо задържане"
 
-#: modules/gui/macosx/simple_prefs.m:743
+#: modules/gui/macosx/simple_prefs.m:799
 msgid "Interface Settings not saved"
 msgstr "Настройките на интерфейса не са записани"
 
-#: modules/gui/macosx/simple_prefs.m:744 modules/gui/macosx/simple_prefs.m:819
-#: modules/gui/macosx/simple_prefs.m:852 modules/gui/macosx/simple_prefs.m:918
-#: modules/gui/macosx/simple_prefs.m:956 modules/gui/macosx/simple_prefs.m:981
+#: modules/gui/macosx/simple_prefs.m:800 modules/gui/macosx/simple_prefs.m:875
+#: modules/gui/macosx/simple_prefs.m:908 modules/gui/macosx/simple_prefs.m:974
+#: modules/gui/macosx/simple_prefs.m:1012
+#: modules/gui/macosx/simple_prefs.m:1037
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 "Възникна грешка при записването на вашите настройки чрез Опростени Настройки "
 "(%i)."
 
-#: modules/gui/macosx/simple_prefs.m:818
+#: modules/gui/macosx/simple_prefs.m:874
 msgid "Audio Settings not saved"
 msgstr "Аудио настройките не са записани"
 
-#: modules/gui/macosx/simple_prefs.m:851
+#: modules/gui/macosx/simple_prefs.m:907
 msgid "Video Settings not saved"
 msgstr "Видео настройките не са записани"
 
-#: modules/gui/macosx/simple_prefs.m:917
+#: modules/gui/macosx/simple_prefs.m:973
 msgid "Input Settings not saved"
 msgstr "Въведените настройки не са записани"
 
-#: modules/gui/macosx/simple_prefs.m:955
+#: modules/gui/macosx/simple_prefs.m:1011
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr "Настройките на Екранното меню/Субтитрите не са запазени"
 
-#: modules/gui/macosx/simple_prefs.m:980
+#: modules/gui/macosx/simple_prefs.m:1036
 msgid "Hotkeys not saved"
 msgstr "Клавишните комбинации не са записани"
 
-#: modules/gui/macosx/simple_prefs.m:1079
+#: modules/gui/macosx/simple_prefs.m:1135
 msgid "Choose the folder to save your video snapshots to."
 msgstr "Избор на папка, където да се съхраняват видео снимките."
 
-#: modules/gui/macosx/simple_prefs.m:1081
+#: modules/gui/macosx/simple_prefs.m:1137
 msgid "Choose"
 msgstr "Избор"
 
-#: modules/gui/macosx/simple_prefs.m:1171
+#: modules/gui/macosx/simple_prefs.m:1227
 msgid ""
 "Press new keys for\n"
 "\"%@\""
@@ -15252,27 +15279,27 @@ msgstr ""
 "Натиснете нов клавиш за \n"
 "\"%@\""
 
-#: modules/gui/macosx/simple_prefs.m:1245
+#: modules/gui/macosx/simple_prefs.m:1301
 msgid "Invalid combination"
 msgstr "Невалидна комбинация"
 
-#: modules/gui/macosx/simple_prefs.m:1246
+#: modules/gui/macosx/simple_prefs.m:1302
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr "Тези клавиши не могат да приемат действие за клавишни комбинации"
 
-#: modules/gui/macosx/simple_prefs.m:1264
+#: modules/gui/macosx/simple_prefs.m:1320
 msgid "This combination is already taken by \"%@\"."
 msgstr "Тази комбинация вече е зададена за \"%@\"."
 
-#: modules/gui/macosx/update.m:63
+#: modules/gui/macosx/update.m:74
 msgid "Check for Updates"
 msgstr "Проверка за обновления"
 
-#: modules/gui/macosx/update.m:64
+#: modules/gui/macosx/update.m:75
 msgid "Download now"
 msgstr "Изтегляне сега"
 
-#: modules/gui/macosx/update.m:66
+#: modules/gui/macosx/update.m:77
 msgid "Automatically check for updates"
 msgstr "Автоматична проверка за обновления"
 
@@ -15381,10 +15408,6 @@ msgid ""
 msgstr ""
 "Стандартно MPEG аудио (1/2) формат (използва се с MPEG PS, MPEG TS, MPEG1, "
 "ASF, OGG и RAW)"
-
-#: modules/gui/macosx/wizard.m:188
-msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
-msgstr "Аудио формат за MPEG4 (използва се с MPEG TS и MPEG4)"
 
 #: modules/gui/macosx/wizard.m:191
 msgid ""
@@ -17007,7 +17030,7 @@ msgstr ""
 "Вашият дисплей ще бъде отворен и възпроизведен и ще бъде в готовност за "
 "изпращане на потока или за записването му."
 
-#: modules/gui/qt4/components/open_panels.cpp:1289
+#: modules/gui/qt4/components/open_panels.cpp:1288
 msgid "Advanced Options"
 msgstr "Разширени настройки"
 
@@ -17268,7 +17291,7 @@ msgstr "Изтриване на всички отметки"
 #: modules/gui/qt4/dialogs/help.cpp:94
 #: modules/gui/qt4/dialogs/mediainfo.cpp:72
 #: modules/gui/qt4/dialogs/messages.cpp:109
-#: modules/gui/qt4/dialogs/plugins.cpp:85
+#: modules/gui/qt4/dialogs/plugins.cpp:83
 #: modules/gui/qt4/dialogs/podcast_configuration.cpp:38
 #: modules/gui/qt4/dialogs/vlm.cpp:139
 msgid "&Close"
@@ -17597,19 +17620,19 @@ msgstr ""
 "или път до файл на вашия компютър,\n"
 "той автоматично ще бъде избран."
 
-#: modules/gui/qt4/dialogs/plugins.cpp:47
+#: modules/gui/qt4/dialogs/plugins.cpp:45
 msgid "Plugins and extensions"
 msgstr "Плъгини и разширения"
 
-#: modules/gui/qt4/dialogs/plugins.cpp:62
+#: modules/gui/qt4/dialogs/plugins.cpp:60
 msgid "Capability"
 msgstr ""
 
-#: modules/gui/qt4/dialogs/plugins.cpp:62
+#: modules/gui/qt4/dialogs/plugins.cpp:60
 msgid "Score"
 msgstr ""
 
-#: modules/gui/qt4/dialogs/plugins.cpp:75
+#: modules/gui/qt4/dialogs/plugins.cpp:73
 msgid "&Search:"
 msgstr "Търсене:"
 
@@ -17819,27 +17842,27 @@ msgstr "Внасяне"
 msgid "E&xport"
 msgstr "Изнасяне"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:268
+#: modules/gui/qt4/dialogs/vlm.cpp:269
 msgid "Save VLM configuration as..."
 msgstr "Запис на VLM конфигурацията като..."
 
-#: modules/gui/qt4/dialogs/vlm.cpp:270 modules/gui/qt4/dialogs/vlm.cpp:357
+#: modules/gui/qt4/dialogs/vlm.cpp:271 modules/gui/qt4/dialogs/vlm.cpp:343
 msgid "VLM conf (*.vlm);;All (*)"
 msgstr ""
 
-#: modules/gui/qt4/dialogs/vlm.cpp:355
+#: modules/gui/qt4/dialogs/vlm.cpp:341
 msgid "Open VLM configuration..."
 msgstr "Отваряне на VLM конфигурация..."
 
-#: modules/gui/qt4/dialogs/vlm.cpp:549
+#: modules/gui/qt4/dialogs/vlm.cpp:535
 msgid "Broadcast: "
 msgstr "Разпространение:"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:617
+#: modules/gui/qt4/dialogs/vlm.cpp:603
 msgid "Schedule: "
 msgstr "График:"
 
-#: modules/gui/qt4/dialogs/vlm.cpp:639
+#: modules/gui/qt4/dialogs/vlm.cpp:625
 msgid "VOD: "
 msgstr ""
 
@@ -17847,27 +17870,27 @@ msgstr ""
 msgid "Open Directory"
 msgstr "Отваряне на директория"
 
-#: modules/gui/qt4/dialogs_provider.cpp:519
+#: modules/gui/qt4/dialogs_provider.cpp:520
 msgid "Open playlist..."
 msgstr "Отваряне на плейлист..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:530
+#: modules/gui/qt4/dialogs_provider.cpp:531
 msgid "Save playlist as..."
 msgstr "Запис на плейлиста като..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:532
+#: modules/gui/qt4/dialogs_provider.cpp:533
 msgid "XSPF playlist (*.xspf);; "
 msgstr ""
 
-#: modules/gui/qt4/dialogs_provider.cpp:533
+#: modules/gui/qt4/dialogs_provider.cpp:534
 msgid "M3U playlist (*.m3u);; "
 msgstr "M3U playlist (*.m3u);; "
 
-#: modules/gui/qt4/dialogs_provider.cpp:534
+#: modules/gui/qt4/dialogs_provider.cpp:535
 msgid "HTML playlist (*.html)"
 msgstr ""
 
-#: modules/gui/qt4/dialogs_provider.cpp:658
+#: modules/gui/qt4/dialogs_provider.cpp:659
 msgid "Open subtitles..."
 msgstr "Отваряне на субтитри..."
 
@@ -18284,14 +18307,30 @@ msgstr ""
 "X11 със съставните разширения."
 
 #: modules/gui/qt4/qt4.cpp:113
+#, fuzzy
+msgid "Fullscreen controller opacity opacity between 0.1 and 1."
+msgstr "Непрозрачност на прозорците между 0.1 и 1."
+
+#: modules/gui/qt4/qt4.cpp:114
+#, fuzzy
+msgid ""
+"Sets the fullscreen controller opacity between 0.1 and 1 for main interface, "
+"playlist and extended panel. This option only works with Windows and X11 "
+"with composite extensions."
+msgstr ""
+"Настройка на непрозрачността на прозорците, между 0.1 и 1 за основния "
+"интерфейс, плейлиста и разширения панел. Тази опция работи само с Windows и "
+"X11 със съставните разширения."
+
+#: modules/gui/qt4/qt4.cpp:120
 msgid "Show unimportant error and warnings dialogs"
 msgstr "Показване на незначителни грешки и предупредителни прозорци"
 
-#: modules/gui/qt4/qt4.cpp:115
+#: modules/gui/qt4/qt4.cpp:122
 msgid "Activate the updates availability notification"
 msgstr "Активиране на съобщение при наличие на обновления"
 
-#: modules/gui/qt4/qt4.cpp:116
+#: modules/gui/qt4/qt4.cpp:123
 msgid ""
 "Activate the automatic notification of new versions of the software. It runs "
 "once every two weeks."
@@ -18299,15 +18338,15 @@ msgstr ""
 "Активиране на автоматично съобщаване при наличие на нови версии на "
 "програмата. Стартира се един път на всеки две седмици."
 
-#: modules/gui/qt4/qt4.cpp:119
+#: modules/gui/qt4/qt4.cpp:126
 msgid "Number of days between two update checks"
 msgstr "Брой дни между две проверки за обновления"
 
-#: modules/gui/qt4/qt4.cpp:121
+#: modules/gui/qt4/qt4.cpp:128
 msgid "Allow the volume to be set to 400%"
 msgstr "Задаване нивото на звука да бъде настроено до 400%"
 
-#: modules/gui/qt4/qt4.cpp:122
+#: modules/gui/qt4/qt4.cpp:129
 msgid ""
 "Allow the volume to have range from 0% to 400%, instead of 0% to 200%. This "
 "option can distort the audio, since it uses software amplification."
@@ -18315,33 +18354,33 @@ msgstr ""
 "Позволява нивото на звука да има обхват от 0% до 400%, вместо от 0% до 200%. "
 "Тази опция може да изкриви звука, тъй като използва софтуерно усилване."
 
-#: modules/gui/qt4/qt4.cpp:127
+#: modules/gui/qt4/qt4.cpp:134
 msgid "Automatically save the volume on exit"
 msgstr "Автоматично запазване нивото на звука при изход"
 
-#: modules/gui/qt4/qt4.cpp:129
+#: modules/gui/qt4/qt4.cpp:136
 msgid "Ask for network policy at start"
 msgstr "Запитване за управлението на мрежата при стартиране"
 
-#: modules/gui/qt4/qt4.cpp:131
+#: modules/gui/qt4/qt4.cpp:138
 msgid "Save the recently played items in the menu"
 msgstr "Запазване на скоро възпроизведените елементи в менюто"
 
-#: modules/gui/qt4/qt4.cpp:133
+#: modules/gui/qt4/qt4.cpp:140
 msgid "List of words separated by | to filter"
 msgstr "Списък с думи, разделени с | за филтриране"
 
-#: modules/gui/qt4/qt4.cpp:134
+#: modules/gui/qt4/qt4.cpp:141
 msgid "Regular expression used to filter the recent items played in the player"
 msgstr ""
 "Обикновен израз, който да се използва за филтиране на последните "
 "възпроизведени елементи от плеъра"
 
-#: modules/gui/qt4/qt4.cpp:137
+#: modules/gui/qt4/qt4.cpp:144
 msgid "Define the colors of the volume slider "
 msgstr "Определяне цветовете на плъзгача за нивото на звука"
 
-#: modules/gui/qt4/qt4.cpp:138
+#: modules/gui/qt4/qt4.cpp:145
 msgid ""
 "Define the colors of the volume slider\n"
 "By specifying the 12 numbers separated by a ';'\n"
@@ -18353,11 +18392,11 @@ msgstr ""
 "По подразбиране е: '255;255;255;20;226;20;255;176;15;235;30;20'.\n"
 " Като алтернатива може да бъде: '30;30;50;40;40;100;50;50;160;150;150;255' "
 
-#: modules/gui/qt4/qt4.cpp:143
+#: modules/gui/qt4/qt4.cpp:150
 msgid "Selection of the starting mode and look "
 msgstr "Избор на режим при стартиране и изглед"
 
-#: modules/gui/qt4/qt4.cpp:144
+#: modules/gui/qt4/qt4.cpp:151
 msgid ""
 "Start VLC with:\n"
 " - normal mode\n"
@@ -18369,28 +18408,28 @@ msgstr ""
 "  - Винаги да се показва информация, като lyrics, обложки на албум...\n"
 "  - Минимален режим с ограничено управление."
 
-#: modules/gui/qt4/qt4.cpp:150
+#: modules/gui/qt4/qt4.cpp:157
 msgid "Classic look"
 msgstr "Класически изглед"
 
-#: modules/gui/qt4/qt4.cpp:151
+#: modules/gui/qt4/qt4.cpp:158
 msgid "Complete look with information area"
 msgstr "Пълен изглед с информационна област"
 
-#: modules/gui/qt4/qt4.cpp:152
+#: modules/gui/qt4/qt4.cpp:159
 msgid "Minimal look with no menus"
 msgstr "Минимален изглед без менюта"
 
-#: modules/gui/qt4/qt4.cpp:154
+#: modules/gui/qt4/qt4.cpp:161
 msgid "Show a controller in fullscreen mode"
 msgstr "Показване на регулатори, когато е в пълноекранен режим."
 
-#: modules/gui/qt4/qt4.cpp:155
+#: modules/gui/qt4/qt4.cpp:162
 msgid "Embed the file browser in open dialog"
 msgstr ""
 "Вграждане на браузъра за файлове в диалоговия прозорец за отваряне на файл"
 
-#: modules/gui/qt4/qt4.cpp:167
+#: modules/gui/qt4/qt4.cpp:174
 msgid "Qt interface"
 msgstr "Интерфейс Qt"
 
@@ -20012,7 +20051,7 @@ msgstr ""
 msgid "Growl Notification Plugin"
 msgstr "Плъгин за съобщения Growl "
 
-#: modules/misc/notify/growl.m:272
+#: modules/misc/notify/growl.m:273
 msgid "Now playing"
 msgstr "Сега се възпроизвежда"
 
@@ -20369,7 +20408,7 @@ msgstr ""
 msgid "ASF muxer"
 msgstr "Мултиплексор ASF"
 
-#: modules/mux/asf.c:575
+#: modules/mux/asf.c:576
 msgid "Unknown Video"
 msgstr "Неизвестно видео"
 
@@ -24865,6 +24904,9 @@ msgstr "Визуализатор"
 #: modules/visualization/visual/visual.c:123
 msgid "Spectrum analyser"
 msgstr "Анализатор на спектъра"
+
+#~ msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
+#~ msgstr "Аудио формат за MPEG4 (използва се с MPEG TS и MPEG4)"
 
 #~ msgid "Path to use in openfile dialog"
 #~ msgstr "Път, който да се използва в прозореца за отваряне на файл"
