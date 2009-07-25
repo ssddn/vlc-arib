@@ -772,6 +772,7 @@ void vlc_threads_setup (libvlc_int_t *p_libvlc)
 void vlc_threads_setup (libvlc_int_t *p_libvlc)
 {
     (void) p_libvlc;
+}
 #endif
 
 /**
