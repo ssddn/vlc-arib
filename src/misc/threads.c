@@ -743,6 +743,37 @@ static unsigned __stdcall vlc_entry (void *data)
 }
 #endif
 
+#if defined (LIBVLC_USE_PTHREAD)
+static bool rt_priorities = false;
+static int rt_offset;
+
+void vlc_threads_setup (libvlc_int_t *p_libvlc)
+{
+    static vlc_mutex_t lock = VLC_STATIC_MUTEX;
+    static bool initialized = false;
+
+    vlc_mutex_lock (&lock);
+    /* Initializes real-time priorities before any thread is created,
+     * just once per process. */
+    if (!initialized)
+    {
+#ifndef __APPLE__
+        if (config_GetInt (p_libvlc, "rt-priority"))
+#endif
+        {
+            rt_offset = config_GetInt (p_libvlc, "rt-offset");
+            rt_priorities = true;
+        }
+        initialized = true;
+    }
+    vlc_mutex_unlock (&lock);
+}
+#else
+void vlc_threads_setup (libvlc_int_t *p_libvlc)
+{
+    (void) p_libvlc;
+#endif
+
 /**
  * Creates and starts new thread.
  *
@@ -787,8 +818,9 @@ int vlc_clone (vlc_thread_t *p_handle, void * (*entry) (void *), void *data,
 #if defined (_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING >= 0) \
  && defined (_POSIX_THREAD_PRIORITY_SCHEDULING) \
  && (_POSIX_THREAD_PRIORITY_SCHEDULING >= 0)
+    if (rt_priorities)
     {
-        struct sched_param sp = { .sched_priority = priority, };
+        struct sched_param sp = { .sched_priority = priority + rt_offset, };
         int policy;
 
         if (sp.sched_priority <= 0)
@@ -1044,7 +1076,6 @@ void vlc_testcancel (void)
 #endif
 }
 
-
 struct vlc_thread_boot
 {
     void * (*entry) (vlc_object_t *);
@@ -1086,17 +1117,6 @@ int vlc_thread_create( vlc_object_t *p_this, const char * psz_file, int i_line,
 
     /* Make sure we don't re-create a thread if the object has already one */
     assert( !p_priv->b_thread );
-
-#if defined( LIBVLC_USE_PTHREAD )
-#ifndef __APPLE__
-    if( config_GetInt( p_this, "rt-priority" ) > 0 )
-#endif
-    {
-        /* Hack to avoid error msg */
-        if( config_GetType( p_this, "rt-offset" ) )
-            i_priority += config_GetInt( p_this, "rt-offset" );
-    }
-#endif
 
     p_priv->b_thread = true;
     i_ret = vlc_clone( &p_priv->thread_id, thread_entry, boot, i_priority );
