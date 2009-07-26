@@ -987,9 +987,9 @@ static inline void save_module_list( intf_thread_t * p_intf, id object, const ch
     if( b_osdSettingChanged )
     {
         config_PutInt( p_intf, "osd", [o_osd_osd_ckb state] );
-
-        if( [o_osd_encoding_pop indexOfSelectedItem] >= 0 )
-            config_PutPsz( p_intf, "subsdec-encoding", [[[o_osd_encoding_pop selectedItem] title] UTF8String] );
+        SaveStringList( o_osd_encoding_pop, "subsdec-encoding" );
+//        if( [o_osd_encoding_pop indexOfSelectedItem] >= 0 )
+//            config_PutPsz( p_intf, "subsdec-encoding", [[[o_osd_encoding_pop selectedItem] title] UTF8String] );
 
         config_PutPsz( p_intf, "sub-language", [[o_osd_lang_fld stringValue] UTF8String] );
         
