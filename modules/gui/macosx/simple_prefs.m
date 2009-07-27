@@ -939,7 +939,10 @@ static inline void save_module_list( intf_thread_t * p_intf, id object, const ch
     {
         config_PutInt( p_intf, "osd", [o_osd_osd_ckb state] );
 
-        SaveStringList( o_osd_encoding_pop, "subsdec-encoding" );
+        if( [o_osd_encoding_pop indexOfSelectedItem] >= 0 )
+            SaveStringList( o_osd_encoding_pop, "subsdec-encoding" );
+        else
+            config_PutPsz( p_intf, "subsdec-encoding", "" );
 
         config_PutPsz( p_intf, "sub-language", [[o_osd_lang_fld stringValue] UTF8String] );
         config_PutPsz( p_intf, "quartztext-font", [[o_osd_font_fld stringValue] UTF8String] );
