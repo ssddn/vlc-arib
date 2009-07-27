@@ -1,4 +1,4 @@
-Changes between 0.9.9a and 0.9.10-rc:
+Changes between 0.9.9a and 0.9.10:
 --------------------------------------
 
 HTTP Interface:
@@ -17,6 +17,8 @@ Various fixes to the following modules:
  * access:
    - HTTP, SMB
    - updated and additional access scripts (BBC radio, dailymotion, ...)
+   - Prevent integer underflow in Real pseudo-RTSP module, discovered by tixxDZ,
+     DZCORE Labs, Algeria
  * stream out:
    - RTP, RTSP VoD, Mosaic Bridge
  * decoder:
