@@ -1570,6 +1570,12 @@ static void DecoderPlaySpu( decoder_t *p_dec, subpicture_t *p_subpic,
 
         vlc_mutex_unlock( &p_owner->lock );
 
+        if( p_subpic->i_start <= VLC_TS_INVALID )
+            b_reject = true;
+
+        DecoderWaitDate( p_dec, &b_reject,
+                         p_subpic->i_start - SPU_MAX_PREPARE_TIME );
+
         if( !b_reject )
             spu_DisplaySubpicture( p_vout->p_spu, p_subpic );
         else
