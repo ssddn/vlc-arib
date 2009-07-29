@@ -180,7 +180,7 @@ static void SubFilterAllocationClean( filter_t * );
 /* */
 static void SpuRenderCreateAndLoadText( spu_t * );
 static void SpuRenderCreateAndLoadScale( spu_t * );
-static void SpuRenderCreateBlend( spu_t *, vlc_fourcc_t i_chroma, int i_aspect );
+static void SpuRenderCreateBlend( spu_t *, const video_format_t * );
 static void FilterRelease( filter_t *p_filter );
 
 /*****************************************************************************
@@ -426,7 +426,7 @@ void spu_RenderSubpictures( spu_t *p_spu,
 
     /* Create the blending module */
     if( !p_sys->p_blend )
-        SpuRenderCreateBlend( p_spu, p_fmt_dst->i_chroma, p_fmt_dst->i_aspect );
+        SpuRenderCreateBlend( p_spu, p_fmt_dst );
 
     /* Process all subpictures and regions (in the right order) */
     for( unsigned int i_index = 0; i_index < i_subpicture; i_index++ )
@@ -899,7 +899,7 @@ static void FilterRelease( filter_t *p_filter )
     vlc_object_release( p_filter );
 }
 
-static void SpuRenderCreateBlend( spu_t *p_spu, vlc_fourcc_t i_chroma, int i_aspect )
+static void SpuRenderCreateBlend( spu_t *p_spu, const video_format_t *p_fmt )
 {
     filter_t *p_blend;
 
@@ -916,8 +916,19 @@ static void SpuRenderCreateBlend( spu_t *p_spu, vlc_fourcc_t i_chroma, int i_asp
     es_format_Init( &p_blend->fmt_out, VIDEO_ES, 0 );
     p_blend->fmt_out.video.i_x_offset = 0;
     p_blend->fmt_out.video.i_y_offset = 0;
-    p_blend->fmt_out.video.i_chroma = i_chroma;
-    p_blend->fmt_out.video.i_aspect = i_aspect;
+    p_blend->fmt_out.video.i_chroma = p_fmt->i_chroma;
+    p_blend->fmt_out.video.i_aspect = p_fmt->i_aspect;
+    p_blend->fmt_out.video.i_chroma = p_fmt->i_chroma;
+    p_blend->fmt_out.video.i_rmask  = p_fmt->i_rmask;
+    p_blend->fmt_out.video.i_gmask  = p_fmt->i_gmask;
+    p_blend->fmt_out.video.i_bmask  = p_fmt->i_bmask;
+    p_blend->fmt_out.video.i_rrshift= p_fmt->i_rrshift;
+    p_blend->fmt_out.video.i_rgshift= p_fmt->i_rgshift;
+    p_blend->fmt_out.video.i_rbshift= p_fmt->i_rbshift;
+    p_blend->fmt_out.video.i_lrshift= p_fmt->i_lrshift;
+    p_blend->fmt_out.video.i_lgshift= p_fmt->i_lgshift;
+    p_blend->fmt_out.video.i_lbshift= p_fmt->i_lbshift;
+
 
     /* The blend module will be loaded when needed with the real
     * input format */
