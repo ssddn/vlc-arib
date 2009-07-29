@@ -813,10 +813,6 @@ static VLCMain *_o_sharedMainInstance = nil;
     /* remove global observer watching for vout device changes correctly */
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 
-#ifdef UPDATE_CHECK
-    [o_update end];
-#endif
-
     /* release some other objects here, because it isn't sure whether dealloc
      * will be called later on */
     if( nib_about_loaded )
@@ -847,6 +843,10 @@ static VLCMain *_o_sharedMainInstance = nil;
 
     if( nib_wizard_loaded )
         [o_wizard release];
+
+#ifdef UPDATE_CHECK
+    [o_update release]; 
+#endif
 
     [crashLogURLConnection cancel];
     [crashLogURLConnection release];

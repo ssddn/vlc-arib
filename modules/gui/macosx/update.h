@@ -1,7 +1,7 @@
 /*****************************************************************************
  * update.h: MacOS X Check-For-Update window
  *****************************************************************************
- * Copyright © 2005-2008 the VideoLAN team
+ * Copyright (C) 2005-2009 the VideoLAN team
  * $Id$
  *
  * Authors: Felix Kühne <fkuehne@users.sf.net>
@@ -43,11 +43,9 @@
     IBOutlet id o_bar_checking;
     IBOutlet id o_chk_updateOnStartup;
 
-    update_t * p_u;
+    update_t * p_update;
     bool b_checked;
 }
-
-- (void)end;
 
 - (IBAction)download:(id)sender;
 - (IBAction)okay:(id)sender;
