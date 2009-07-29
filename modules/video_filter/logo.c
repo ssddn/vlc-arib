@@ -393,6 +393,18 @@ static int Init( vout_thread_t *p_vout )
         p_sys->p_blend->fmt_in.video.i_y_offset = 0;
     p_sys->p_blend->fmt_out.video.i_aspect = p_vout->render.i_aspect;
     p_sys->p_blend->fmt_out.video.i_chroma = p_vout->output.i_chroma;
+
+    p_sys->p_blend->fmt_out.video.i_chroma = p_vout->output.i_chroma;
+    p_sys->p_blend->fmt_out.video.i_rmask  = p_vout->output.i_rmask;
+    p_sys->p_blend->fmt_out.video.i_gmask  = p_vout->output.i_gmask;
+    p_sys->p_blend->fmt_out.video.i_bmask  = p_vout->output.i_bmask;
+    p_sys->p_blend->fmt_out.video.i_rrshift= p_vout->output.i_rrshift;
+    p_sys->p_blend->fmt_out.video.i_rgshift= p_vout->output.i_rgshift;
+    p_sys->p_blend->fmt_out.video.i_rbshift= p_vout->output.i_rbshift;
+    p_sys->p_blend->fmt_out.video.i_lrshift= p_vout->output.i_lrshift;
+    p_sys->p_blend->fmt_out.video.i_lgshift= p_vout->output.i_lgshift;
+    p_sys->p_blend->fmt_out.video.i_lbshift= p_vout->output.i_lbshift;
+
     p_sys->p_blend->fmt_in.video.i_chroma = VLC_FOURCC('Y','U','V','A');
     p_sys->p_blend->fmt_in.video.i_aspect = VOUT_ASPECT_FACTOR;
     p_sys->i_width =
