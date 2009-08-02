@@ -62,7 +62,6 @@ StandardPLPanel::StandardPLPanel( PlaylistWidget *_parent,
     /* Create and configure the QTreeView */
     view = new QVLCTreeView;
 
-
     view->setModel( model );
     view->setIconSize( QSize( 20, 20 ) );
     view->setAlternatingRowColors( true );
@@ -72,6 +71,8 @@ StandardPLPanel::StandardPLPanel( PlaylistWidget *_parent,
     view->setDragEnabled( true );
     view->setAcceptDrops( true );
     view->setDropIndicatorShown( true );
+    view->header()->setSortIndicator( -1 , Qt::AscendingOrder );
+    view->setSortingEnabled( true );
 
 
     getSettings()->beginGroup("Playlist");
