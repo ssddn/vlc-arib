@@ -854,6 +854,7 @@ void PLModel::viewchanged( int meta )
             rootItem->updateColumnHeaders();
             endInsertColumns();
         }
+        emit columnsChanged( meta );
         rebuild();
     }
 }
