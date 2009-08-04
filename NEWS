@@ -5,8 +5,16 @@ Decoders:
  * Fix issues in subtitles, especially SSA ones
  * Various fixes on theora and ogg
 
-Mac OS:
- * Fix a crash when updating VLC
+Mac OS X Interface:
+ * Fixed a crash when updating VLC
+ * Added the ability to play 2nd media in sync to the primary item (input-slave)
+ * Added the "Quit after Playback" feature
+
+Mac OS X Port:
+ * Full 64bit runtime compatibility on both Mac OS X 10.5 and 10.6
+   - no support for Goom and SDL
+   - limited text rendering support
+   - This port is still considered as EXPERIMENTAL despite its binary release.
 
 
 Changes between 1.0.0 and 1.0.1:
