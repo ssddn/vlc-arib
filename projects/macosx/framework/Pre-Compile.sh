@@ -35,7 +35,7 @@ if test "${ACTION}" = "build"; then
     target_modules="${target}/${modules}"    # Should we consider using a different well-known folder like shared resources?
     target_share="${target}/${share}"    # Should we consider using a different well-known folder like shared resources?
     target_include="${target}/${include}"    # Should we consider using a different well-known folder like shared resources?
-    linked_libs=" "
+    linked_libs="${src_dir}/extras/contrib/lib/* "
     
     ##########################
     # @function install_library(src_lib, dest_dir, type, lib_install_prefix, destination_name)
