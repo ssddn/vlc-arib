@@ -2895,7 +2895,8 @@ static int EITConvertDuration( uint32_t i_duration )
 #undef CVT_FROM_BCD
 
 
-static void EITCallBack( demux_t *p_demux, dvbpsi_eit_t *p_eit )
+static void EITCallBack( demux_t *p_demux,
+                         dvbpsi_eit_t *p_eit, bool b_current_following )
 {
     demux_sys_t        *p_sys = p_demux->p_sys;
     dvbpsi_eit_event_t *p_evt;
@@ -3014,7 +3015,7 @@ static void EITCallBack( demux_t *p_demux, dvbpsi_eit_t *p_eit )
     }
     if( p_epg->i_event > 0 )
     {
-        if( p_eit->i_service_id == p_sys->i_current_program )
+        if( p_eit->i_service_id == p_sys->i_current_program && b_current_following )
         {
             p_sys->i_dvb_length = 0;
             p_sys->i_dvb_start = 0;
@@ -3030,6 +3031,14 @@ static void EITCallBack( demux_t *p_demux, dvbpsi_eit_t *p_eit )
     vlc_epg_Delete( p_epg );
 
     dvbpsi_DeleteEIT( p_eit );
+}
+static void EITCallBackCurrentFollowing( demux_t *p_demux, dvbpsi_eit_t *p_eit )
+{
+    EITCallBack( p_demux, p_eit, true );
+}
+static void EITCallBackSchedule( demux_t *p_demux, dvbpsi_eit_t *p_eit )
+{
+    EITCallBack( p_demux, p_eit, false );
 }
 
 static void PSINewTableCallBack( demux_t *p_demux, dvbpsi_handle h,
@@ -3054,8 +3063,10 @@ static void PSINewTableCallBack( demux_t *p_demux, dvbpsi_handle h,
         msg_Dbg( p_demux, "PSINewTableCallBack: table 0x%x(%d) ext=0x%x(%d)",
                  i_table_id, i_table_id, i_extension, i_extension );
 
-        dvbpsi_AttachEIT( h, i_table_id, i_extension,
-                          (dvbpsi_eit_callback)EITCallBack, p_demux );
+        dvbpsi_eit_callback cb = i_table_id == 0x4e ?
+                                    (dvbpsi_eit_callback)EITCallBackCurrentFollowing :
+                                    (dvbpsi_eit_callback)EITCallBackSchedule;
+        dvbpsi_AttachEIT( h, i_table_id, i_extension, cb, p_demux );
     }
 }
 #endif
