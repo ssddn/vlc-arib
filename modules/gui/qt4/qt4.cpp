@@ -550,14 +550,14 @@ static int WindowOpen (vlc_object_t *obj)
     msg_Dbg (obj, "requesting video...");
 
 #if defined (Q_WS_X11)
-    wnd->handle.xid = p_mi->requestVideo (wnd->vout, &wnd->pos_x, &wnd->pos_y,
-                                          &wnd->width, &wnd->height);
+    wnd->handle.xid = p_mi->getVideo (wnd->vout, &wnd->pos_x, &wnd->pos_y,
+                                      &wnd->width, &wnd->height);
     if (!wnd->handle.xid)
         return VLC_EGENERIC;
 
 #elif defined (WIN32)
-    wnd->handle.hwnd = p_mi->requestVideo (wnd->vout, &wnd->pos_x, &wnd->pos_y,
-                                           &wnd->width, &wnd->height);
+    wnd->handle.hwnd = p_mi->getVideo (wnd->vout, &wnd->pos_x, &wnd->pos_y,
+                                       &wnd->width, &wnd->height);
     if (!wnd->handle.hwnd)
         return VLC_EGENERIC;
 
