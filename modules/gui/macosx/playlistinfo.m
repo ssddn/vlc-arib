@@ -592,11 +592,11 @@ error:
     o_children = nil;
 }
 
-- (VLCInfoTreeItem *)childAtIndex:(int)i_index {
+- (VLCInfoTreeItem *)childAtIndex:(NSUInteger)i_index {
     return [[self children] objectAtIndex:i_index];
 }
 
-- (int)numberOfChildren {
+- (NSInteger)numberOfChildren {
 
     id i_tmp = [self children];
     return ( i_tmp == IsALeafNode ) ? (-1) : (int)[i_tmp count];

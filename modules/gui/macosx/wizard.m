@@ -1177,11 +1177,8 @@ static VLCWizard *_o_sharedInstance = nil;
                 {
                     NSString * fileNameToUse;
                     /* check whether the extension is hidden or not.
-                     * if not, remove it
-                     * we need the casting to make GCC4 happy */
-                    if( [[[NSFileManager defaultManager] fileAttributesAtPath:
-                        [[o_userSelections objectForKey:@"pathToStrm"]
-                        objectAtIndex: x] traverseLink: NO] objectForKey:
+                     * if not, remove it */
+                    if( [[[NSFileManager defaultManager] attributesOfItemAtPath: [[o_userSelections objectForKey:@"pathToStrm"] objectAtIndex: x] error: nil] objectForKey:
                         NSFileExtensionHidden] )
                         fileNameToUse = [NSString stringWithString:
                             [[NSFileManager defaultManager] displayNameAtPath:
