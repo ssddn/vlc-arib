@@ -259,6 +259,12 @@ uint32_t CPUCapabilities( void )
 #   endif
     return i_capabilities;
 
+#elif defined( __arm__ )
+#   if defined( __ARM_EABI__ ) && !defined( __SOFTFP__ )
+    i_capabilities |= CPU_CAPABILITY_FPU;
+#   endif
+    return i_capabilities;
+
 #elif defined( __powerpc__ ) || defined( __ppc__ ) || defined( __ppc64__ )
 
 #   ifdef CAN_COMPILE_ALTIVEC
