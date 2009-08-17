@@ -1187,6 +1187,7 @@ float libvlc_media_player_get_rate(
     b_can_rewind = var_GetBool( p_input_thread, "can-rewind" );
     if( (val.i_int < 0) && !b_can_rewind )
     {
+        vlc_object_release( p_input_thread );
         libvlc_exception_raise( p_e, "invalid rate" );
         return 0.0;
     }
