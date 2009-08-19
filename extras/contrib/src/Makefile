@@ -944,14 +944,8 @@ DISTCLEAN_PKG += lame-$(LAME_VERSION).tar.gz
 libebml-$(LIBEBML_VERSION).tar.bz2:
 	$(WGET) $(LIBEBML_URL)
 
-## No reasons to use SVN anymore
-#ifdef SVN
-#libebml:
-#	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libebml libebml
-#else
 libebml: libebml-$(LIBEBML_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-#endif
 ifdef HAVE_WIN32
 	(cd $@; patch -p0 < ../Patches/libebml-svn-win32.patch)
 endif
@@ -964,12 +958,6 @@ else
 	$(RANLIB) $(PREFIX)/lib/libebml.a
 endif
 	touch $@
-## No reasons to use SVN anymore
-#ifdef SVN
-#libebml-source: libebml
-#	tar cfvz  libebml-$(DATE).tar.gz libebml
-#SOURCE += libebml-source
-#endif
 
 CLEAN_FILE += .ebml
 CLEAN_PKG += libebml
@@ -982,14 +970,8 @@ DISTCLEAN_PKG += libebml-$(LIBEBML_VERSION).tar.bz2
 libmatroska-$(LIBMATROSKA_VERSION).tar.bz2:
 	$(WGET) $(LIBMATROSKA_URL)
 
-## No reasons to use SVN anymore
-#if SVN
-#libmatroska:
-#	$(SVN) co http://svn.matroska.org/svn/matroska/trunk/libmatroska libmatroska
-#else
 libmatroska: libmatroska-$(LIBMATROSKA_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
-#endif
 	patch -p0 < ./Patches/libmatroska-kaxblock.patch
 ifdef HAVE_WIN32
 	(cd $@; patch -p0 < ../Patches/libmatroska-win32.patch)
@@ -1004,13 +986,6 @@ else
 endif
 	touch $@
 
-## No reasons to use SVN anymore
-#ifdef SVN
-#libmatroska-source: libmatroska
-#	tar cfvz libmatroska-$(DATE).tar.gz libmatroska
-#
-#SOURCE += libmatroska-source
-#endif
 
 CLEAN_FILE += .matroska
 CLEAN_PKG += libmatroska
@@ -1344,8 +1319,8 @@ libcaca: libcaca-$(LIBCACA_VERSION).tar.gz
 	$(EXTRACT_GZ)
 ifdef HAVE_DARWIN_OS
 	#remove me at next libcaca upgrade
-	patch -p0 < Patches/caca_driver_cocoa.diff
-	patch -p0 < Patches/caca_macosx.diff
+	patch -p0 < Patches/libcaca_driver_cocoa.diff
+	patch -p0 < Patches/libcaca_macosx.diff
 	patch -p0 < Patches/libcaca-osx-sdkofourchoice.patch
 	(cd $@; sed -e 's%/Developer/SDKs/MacOSX10.4u.sdk%$(MACOSX_SDK)%' -i.orig  configure)
 endif
@@ -2153,7 +2128,6 @@ SDL_image-$(SDL_IMAGE_VERSION).tar.gz:
 SDL_image: SDL_image-$(SDL_IMAGE_VERSION).tar.gz
 	$(EXTRACT_GZ)
 	patch -p0 < Patches/SDL_image.patch
-	patch -p0 < Patches/SDL_image-CVE-2006-4484.patch
 
 .SDL_image: SDL_image .SDL .png .jpeg .tiff
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" --enable-tif --disable-sdltest && make && make install)
