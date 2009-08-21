@@ -51,8 +51,15 @@ static void SigHandler   ( int );
  *****************************************************************************/
 static jmp_buf env;
 static int     i_illegal;
+
 #if defined( __i386__ ) || defined( __x86_64__ )
-static const char *psz_capability;
+static void warn_cap( const char *psz_capability )
+{
+    fprintf( stderr, "warning: your CPU has %s instructions, but not your "
+                     "operating system.\n", psz_capability );
+    fprintf( stderr, "         some optimizations will be disabled unless "
+                     "you upgrade your OS\n" );
+}
 #endif
 
 /*****************************************************************************
@@ -180,7 +187,6 @@ uint32_t CPUCapabilities( void )
 
 #   ifdef CAN_COMPILE_SSE
         /* We test if OS supports the SSE instructions */
-        psz_capability = "SSE";
         i_illegal = 0;
 
         if( setjmp( env ) == 0 )
@@ -190,9 +196,9 @@ uint32_t CPUCapabilities( void )
         }
 
         if( i_illegal == 0 )
-        {
             i_capabilities |= CPU_CAPABILITY_SSE;
-        }
+        else
+            warn_cap( "SSE" );
 #   endif
     }
 
@@ -200,7 +206,6 @@ uint32_t CPUCapabilities( void )
     {
 #   if defined(CAN_COMPILE_SSE)
         /* We test if OS supports the SSE instructions */
-        psz_capability = "SSE2";
         i_illegal = 0;
 
         if( setjmp( env ) == 0 )
@@ -210,9 +215,9 @@ uint32_t CPUCapabilities( void )
         }
 
         if( i_illegal == 0 )
-        {
             i_capabilities |= CPU_CAPABILITY_SSE2;
-        }
+        else
+            warn_cap( "SSE2" );
 #   endif
     }
 
@@ -233,7 +238,6 @@ uint32_t CPUCapabilities( void )
 #   ifdef CAN_COMPILE_3DNOW
     if( i_edx & 0x80000000 )
     {
-        psz_capability = "3D Now!";
         i_illegal = 0;
 
         if( setjmp( env ) == 0 )
@@ -243,9 +247,9 @@ uint32_t CPUCapabilities( void )
         }
 
         if( i_illegal == 0 )
-        {
             i_capabilities |= CPU_CAPABILITY_3DNOW;
-        }
+        else
+            warn_cap( "3D Now!" );
     }
 #   endif
 
@@ -326,17 +330,6 @@ static void SigHandler( int i_signal )
 #else
     VLC_UNUSED( i_signal );
 #endif
-
-#if defined( __i386__ )
-    fprintf( stderr, "warning: your CPU has %s instructions, but not your "
-                     "operating system.\n", psz_capability );
-    fprintf( stderr, "         some optimizations will be disabled unless "
-                     "you upgrade your OS\n" );
-#   if defined( __linux__ )
-    fprintf( stderr, "         (for instance Linux kernel 2.4.x or later)\n" );
-#   endif
-#endif
-
     longjmp( env, 1 );
 }
 
