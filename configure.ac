@@ -738,6 +738,11 @@ AC_CHECK_LIB(m,sqrtf,[
 ])
 fi # end "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
 
+AC_CHECK_LIB(m,lrintf, [
+  AC_DEFINE(HAVE_LRINTF, 1, [Define to 1 if you have the lrintf function])
+  VLC_ADD_LIBS([skins2],[-lm])
+])
+
 dnl Check for dynamic plugins
 ac_cv_have_plugins=no
 
