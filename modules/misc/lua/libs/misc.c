@@ -120,7 +120,9 @@ static int vlclua_datadir( lua_State *L )
 
 static int vlclua_userdatadir( lua_State *L )
 {
-    lua_pushstring( L, config_GetUserDataDir() );
+    char *data = config_GetUserDataDir();
+    lua_pushstring( L, data );
+    free( data );
     return 1;
 }
 
