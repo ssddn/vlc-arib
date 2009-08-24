@@ -35,7 +35,7 @@ VoutWindow::VoutWindow( intf_thread_t *pIntf, vout_thread_t* pVout,
                         int width, int height, GenericWindow* pParent ) :
       GenericWindow( pIntf, 0, 0, false, false, pParent ),
       m_pVout( pVout ), original_width( width ), original_height( height ),
-      m_pParentWindow( pParent ), m_pImage( NULL )
+      m_pParentWindow( pParent ), m_pCtrlVideo( NULL ), m_pImage( NULL )
 {
     // counter for debug
     count++;
