@@ -1095,9 +1095,6 @@ else
 .ffmpeg: ffmpeg .lame .gsm
 endif
 endif
-ifdef HAVE_ISA_THUMB
-	patch -p0 < Patches/ffmpeg-avcodec-no-thumb.patch
-endif
 	(cd $<; $(HOSTCC) ./configure $(FFMPEGCONF) --prefix=$(PREFIX) --extra-cflags="$(CFLAGS) $(FFMPEG_CFLAGS)" --extra-ldflags="$(LDFLAGS)" $(FFMPEGCONF) --disable-shared --enable-static && make && make install-libs install-headers)
 	touch $@
 
