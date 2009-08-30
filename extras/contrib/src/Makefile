@@ -461,9 +461,21 @@ ifdef HAVE_DARWIN_OS
 endif
 	patch -p0 < Patches/libiconv-autoconf-uclibc.patch
 
+libiconv-snowleopard.tar.bz2:
+	$(WGET) $(LIBICONVMAC_URL)
+
+libiconv-snowleopard: libiconv-snowleopard.tar.bz2
+	$(EXTRACT_BZ2)
+
 ifdef HAVE_DARWIN_OS
+ifdef HAVE_DARWIN_64
+.iconv: libiconv-snowleopard
+	(cd libiconv-snowleopard && cp libiconv.* ../../lib/)
+	touch $@
+else
 .iconv:
 	touch $@
+endif
 else
 .iconv: libiconv
 	(cd libiconv; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-nls && make && make install)
