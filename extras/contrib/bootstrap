@@ -234,13 +234,6 @@ case $HOST in
         echo "PKG_CONFIG_PATH = \$(PREFIX)/lib/pkgconfig" >> config.mak
         DISTRO=wince
     ;;
-<<<<<<< HEAD
-    *mingw32*)
-        echo "HAVE_WIN32 = 1" >> config.mak
-        echo "PKG_CONFIG_PATH = \$(PREFIX)/lib/pkgconfig" >> config.mak
-	    EXTRA_CFLAGS="-O3"
-        cat src/Distributions/win32.mak >> distro.mak
-=======
     x86_64-*-mingw*)
         echo "HAVE_WIN64 = 1" >> config.mak
         echo "HAVE_WIN32 = 1" >> config.mak
@@ -253,7 +246,6 @@ case $HOST in
         echo "PKG_CONFIG_PATH = \$(PREFIX)/lib/pkgconfig" >> config.mak
         EXTRA_CFLAGS="-O3"
         DISTRO=win32
->>>>>>> c1bc979... contribs: fix DISTRO specification
     ;;
     i686-pc-cygwin)
         echo "HAVE_WIN32 = 1" >> config.mak
