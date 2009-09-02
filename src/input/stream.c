@@ -1149,7 +1149,7 @@ static int AStreamSeekStream( stream_t *s, int64_t i_pos )
     }
 
     bool   b_afastseek;
-    access_Control( p_access, ACCESS_CAN_SEEK, &b_afastseek );
+    access_Control( p_access, ACCESS_CAN_FASTSEEK, &b_afastseek );
 
     /* FIXME compute seek cost (instead of static 'stupid' value) */
     int64_t i_skip_threshold;
