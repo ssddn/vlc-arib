@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-08-25 23:58+0100\n"
+"POT-Creation-Date: 2009-09-03 19:41+0200\n"
 "PO-Revision-Date: 2009-08-14 13:31+0300\n"
 "Last-Translator: Oleksandr Natalenko <pfactum@gmail.com>\n"
 "Language-Team: Ukrainian <pfactum@gmail.com>\n"
@@ -64,7 +64,7 @@ msgstr "Основні інтерфейси"
 msgid "Settings for the main interface"
 msgstr "Параметри головного інтерфейсу"
 
-#: include/vlc_config_cat.h:45 src/libvlc-module.c:176
+#: include/vlc_config_cat.h:45 src/libvlc-module.c:178
 msgid "Control interfaces"
 msgstr "Інтерфейси керування"
 
@@ -78,7 +78,7 @@ msgid "Hotkeys settings"
 msgstr "Налаштування гарячих клавіш"
 
 #: include/vlc_config_cat.h:52 src/input/es_out.c:2657 src/input/es_out.c:2691
-#: src/libvlc-module.c:1510 modules/gui/beos/InterfaceWindow.cpp:283
+#: src/libvlc-module.c:1512 modules/gui/beos/InterfaceWindow.cpp:283
 #: modules/gui/macosx/intf.m:659 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
@@ -123,7 +123,7 @@ msgstr "Модулі виводу"
 msgid "General settings for audio output modules."
 msgstr "Загальні параметри модулів виведення звуку."
 
-#: include/vlc_config_cat.h:66 src/libvlc-module.c:1946
+#: include/vlc_config_cat.h:66 src/libvlc-module.c:1948
 #: modules/stream_out/transcode.c:232
 msgid "Miscellaneous"
 msgstr "Інше"
@@ -133,7 +133,7 @@ msgid "Miscellaneous audio settings and modules."
 msgstr "Інші налаштування звуку та модулі."
 
 #: include/vlc_config_cat.h:70 src/input/es_out.c:2660 src/input/es_out.c:2740
-#: src/libvlc-module.c:1563 modules/gui/macosx/intf.m:672
+#: src/libvlc-module.c:1565 modules/gui/macosx/intf.m:672
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
 #: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
 #: modules/gui/qt4/components/info_panels.cpp:518
@@ -242,7 +242,7 @@ msgstr "Загальний ввід"
 msgid "General input settings. Use with care..."
 msgstr "Загальні налаштування вводу. Використовуйте обережно…"
 
-#: include/vlc_config_cat.h:124 src/libvlc-module.c:1873
+#: include/vlc_config_cat.h:124 src/libvlc-module.c:1875
 msgid "Stream output"
 msgstr "Виведення потоку"
 
@@ -353,7 +353,7 @@ msgstr "VOD"
 msgid "VLC's implementation of Video On Demand"
 msgstr "VLC-реалізація відео-за-вимогою"
 
-#: include/vlc_config_cat.h:175 src/libvlc-module.c:2007
+#: include/vlc_config_cat.h:175 src/libvlc-module.c:2009
 #: src/playlist/engine.c:119 modules/demux/playlist/playlist.c:66
 #: modules/demux/playlist/playlist.c:67
 #: modules/gui/beos/InterfaceWindow.cpp:232
@@ -391,7 +391,7 @@ msgid ""
 msgstr ""
 "Модулі пошуку служб автоматично додають елементи до списку відтворення."
 
-#: include/vlc_config_cat.h:186 src/libvlc-module.c:1823
+#: include/vlc_config_cat.h:186 src/libvlc-module.c:1825
 msgid "Advanced"
 msgstr "Додатково"
 
@@ -545,7 +545,7 @@ msgstr "Отримати інформацію"
 
 #: include/vlc_intf_strings.h:54 modules/gui/macosx/playlist.m:439
 #: modules/gui/pda/pda_interface.c:1252
-#: modules/gui/qt4/dialogs/bookmarks.cpp:46 modules/gui/qt4/ui/open_file.h:207
+#: modules/gui/qt4/dialogs/bookmarks.cpp:46
 #: modules/gui/qt4/ui/podcast_configuration.h:105
 #: modules/gui/qt4/ui/streampanel.h:173
 msgid "Delete"
@@ -575,7 +575,7 @@ msgstr "Зберегти…"
 msgid "Open Folder..."
 msgstr "Відкрити каталог…"
 
-#: include/vlc_intf_strings.h:64 src/libvlc-module.c:1185
+#: include/vlc_intf_strings.h:64 src/libvlc-module.c:1187
 msgid "Repeat all"
 msgstr "Повторити все"
 
@@ -587,7 +587,7 @@ msgstr "Повторювати один"
 msgid "No repeat"
 msgstr "Без повторення"
 
-#: include/vlc_intf_strings.h:68 src/libvlc-module.c:1401
+#: include/vlc_intf_strings.h:68 src/libvlc-module.c:1403
 #: modules/gui/macosx/controls.m:1051 modules/gui/macosx/intf.m:645
 msgid "Random"
 msgstr "Випадковий"
@@ -775,7 +775,7 @@ msgid "The maximum number of filters (%d) was reached."
 msgstr "Максимальна кількість фільтрів (%d) досягнута."
 
 #: src/audio_output/input.c:114 src/audio_output/input.c:160
-#: src/input/es_out.c:890 src/libvlc-module.c:614
+#: src/input/es_out.c:890 src/libvlc-module.c:616
 #: src/video_output/video_output.c:1770 modules/video_filter/postproc.c:236
 msgid "Disable"
 msgstr "Відключити"
@@ -801,7 +801,7 @@ msgstr "Vu-метр"
 msgid "Equalizer"
 msgstr "Еквалайзер"
 
-#: src/audio_output/input.c:179 src/libvlc-module.c:314
+#: src/audio_output/input.c:179 src/libvlc-module.c:316
 msgid "Audio filters"
 msgstr "Аудіофільтри"
 
@@ -826,7 +826,7 @@ msgid "Stereo"
 msgstr "Стерео"
 
 #: src/audio_output/output.c:107 src/audio_output/output.c:143
-#: src/libvlc-module.c:408 src/libvlc-module.c:457
+#: src/libvlc-module.c:410 src/libvlc-module.c:459
 #: modules/audio_filter/channel_mixer/mono.c:96 modules/codec/dvbsub.c:75
 #: modules/codec/subtitles/subsdec.c:187 modules/codec/zvbi.c:79
 #: modules/control/gestures.c:91 modules/gui/fbosd.c:162
@@ -839,7 +839,7 @@ msgid "Left"
 msgstr "Лівий"
 
 #: src/audio_output/output.c:109 src/audio_output/output.c:145
-#: src/libvlc-module.c:408 src/libvlc-module.c:457
+#: src/libvlc-module.c:410 src/libvlc-module.c:459
 #: modules/audio_filter/channel_mixer/mono.c:96 modules/codec/dvbsub.c:75
 #: modules/codec/subtitles/subsdec.c:187 modules/codec/zvbi.c:79
 #: modules/control/gestures.c:91 modules/gui/fbosd.c:162
@@ -966,7 +966,7 @@ msgstr ""
 "VLC не підтримує аудіо чи відеоформат \"%4.4s\". Нажаль, Ви не маєте змоги "
 "це виправити."
 
-#: src/input/es_out.c:911 src/input/es_out.c:916 src/libvlc-module.c:352
+#: src/input/es_out.c:911 src/input/es_out.c:916 src/libvlc-module.c:354
 #: modules/access/cdda/info.c:391 modules/access/vcdx/access.c:477
 #: modules/access/vcdx/info.c:290 modules/access/vcdx/info.c:291
 #: modules/gui/qt4/components/open_panels.cpp:383
@@ -979,7 +979,7 @@ msgid "%s [%s %d]"
 msgstr "%s [%s %d]"
 
 #: src/input/es_out.c:1119 src/input/es_out.c:1124 src/input/var.c:173
-#: src/libvlc-module.c:647 modules/gui/macosx/intf.m:652
+#: src/libvlc-module.c:649 modules/gui/macosx/intf.m:652
 #: modules/gui/macosx/intf.m:653
 msgid "Program"
 msgstr "Програма"
@@ -1008,7 +1008,6 @@ msgstr "Субтитри"
 
 #: src/input/es_out.c:2671 src/input/es_out.c:2691 src/input/es_out.c:2740
 #: src/input/es_out.c:2771 modules/gui/macosx/output.m:153
-#: modules/gui/qt4/ui/sprefs_audio.h:345
 msgid "Type"
 msgstr "Тип"
 
@@ -1021,10 +1020,10 @@ msgstr "Оригінальний ID"
 msgid "Codec"
 msgstr "Кодек"
 
-#: src/input/es_out.c:2681 src/input/meta.c:50 src/libvlc-module.c:203
+#: src/input/es_out.c:2681 src/input/meta.c:50 src/libvlc-module.c:205
 #: modules/gui/beos/InterfaceWindow.cpp:279
 #: modules/gui/macosx/simple_prefs.m:264
-#: modules/gui/qt4/ui/sprefs_interface.h:314
+#: modules/gui/qt4/ui/sprefs_interface.h:373
 msgid "Language"
 msgstr "Мова"
 
@@ -1130,7 +1129,7 @@ msgstr "Жанр"
 msgid "Copyright"
 msgstr "Авторські права"
 
-#: src/input/meta.c:43 src/libvlc-module.c:352 modules/access/vcdx/info.c:94
+#: src/input/meta.c:43 src/libvlc-module.c:354 modules/access/vcdx/info.c:94
 msgid "Album"
 msgstr "Альбом"
 
@@ -1179,7 +1178,7 @@ msgstr "ID доріжки"
 msgid "Bookmark"
 msgstr "У закладки"
 
-#: src/input/var.c:178 src/libvlc-module.c:653
+#: src/input/var.c:178 src/libvlc-module.c:655
 msgid "Programs"
 msgstr "Програми"
 
@@ -1236,7 +1235,7 @@ msgstr "Наступний розділ"
 msgid "Previous chapter"
 msgstr "Попередній розділ"
 
-#: src/input/vlm.c:531 src/input/vlm.c:882
+#: src/input/vlm.c:531 src/input/vlm.c:884
 #, c-format
 msgid "Media: %s"
 msgstr "Медіа: %s"
@@ -1348,34 +1347,34 @@ msgstr ""
 "\n"
 "Для продовження натисніть ENTER…\n"
 
-#: src/libvlc.h:188 src/libvlc-module.c:1404 src/libvlc-module.c:1405
-#: src/libvlc-module.c:2538 src/video_output/vout_intf.c:278
+#: src/libvlc.h:188 src/libvlc-module.c:1406 src/libvlc-module.c:1407
+#: src/libvlc-module.c:2540 src/video_output/vout_intf.c:278
 msgid "Zoom"
 msgstr "Масштаб"
 
-#: src/libvlc.h:189 src/libvlc-module.c:1324 src/video_output/vout_intf.c:172
+#: src/libvlc.h:189 src/libvlc-module.c:1326 src/video_output/vout_intf.c:172
 msgid "1:4 Quarter"
 msgstr "1:4 Чверть"
 
-#: src/libvlc.h:190 src/libvlc-module.c:1325 src/video_output/vout_intf.c:173
+#: src/libvlc.h:190 src/libvlc-module.c:1327 src/video_output/vout_intf.c:173
 msgid "1:2 Half"
 msgstr "1:2 Половина"
 
-#: src/libvlc.h:191 src/libvlc-module.c:1326 src/video_output/vout_intf.c:174
+#: src/libvlc.h:191 src/libvlc-module.c:1328 src/video_output/vout_intf.c:174
 msgid "1:1 Original"
 msgstr "1:1 Оригінал"
 
-#: src/libvlc.h:192 src/libvlc-module.c:1327 src/video_output/vout_intf.c:175
+#: src/libvlc.h:192 src/libvlc-module.c:1329 src/video_output/vout_intf.c:175
 msgid "2:1 Double"
 msgstr "2:1 Подвійний"
 
-#: src/libvlc-module.c:96 src/libvlc-module.c:311 modules/access/bda/bda.c:69
+#: src/libvlc-module.c:97 src/libvlc-module.c:313 modules/access/bda/bda.c:69
 #: modules/codec/subtitles/subsdec.c:97
 #: modules/gui/qt4/components/open_panels.cpp:1033
 msgid "Auto"
 msgstr "Автоматично"
 
-#: src/libvlc-module.c:159
+#: src/libvlc-module.c:161
 msgid ""
 "These options allow you to configure the interfaces used by VLC. You can "
 "select the main interface, additional interface modules, and define various "
@@ -1385,11 +1384,11 @@ msgstr ""
 "можете вибрати головний інтерфейс, додаткові модулі інтерфейсу та "
 "налаштувати різні параметри."
 
-#: src/libvlc-module.c:163
+#: src/libvlc-module.c:165
 msgid "Interface module"
 msgstr "Модуль інтерфейсу"
 
-#: src/libvlc-module.c:165
+#: src/libvlc-module.c:167
 msgid ""
 "This is the main interface used by VLC. The default behavior is to "
 "automatically select the best module available."
@@ -1397,11 +1396,11 @@ msgstr ""
 "Це головний інтерфейс, використовуваний VLC. За змовчуванням автоматично "
 "вибирається найкращий доступний модуль."
 
-#: src/libvlc-module.c:169 modules/control/ntservice.c:57
+#: src/libvlc-module.c:171 modules/control/ntservice.c:57
 msgid "Extra interface modules"
 msgstr "Додаткові модулі інтерфейсу"
 
-#: src/libvlc-module.c:171
+#: src/libvlc-module.c:173
 msgid ""
 "You can select \"additional interfaces\" for VLC. They will be launched in "
 "the background in addition to the default interface. Use a comma separated "
@@ -1413,15 +1412,15 @@ msgstr ""
 "комами (звичайні значення - «rc» (віддалене керування), \"http\", \"gestures"
 "\"…)"
 
-#: src/libvlc-module.c:178
+#: src/libvlc-module.c:180
 msgid "You can select control interfaces for VLC."
 msgstr "Ви можете вибрати інтерфейси керування VLC."
 
-#: src/libvlc-module.c:180
+#: src/libvlc-module.c:182
 msgid "Verbosity (0,1,2)"
 msgstr "Рівень подробиць (0,1,2)"
 
-#: src/libvlc-module.c:182
+#: src/libvlc-module.c:184
 msgid ""
 "This is the verbosity level (0=only errors and standard messages, "
 "1=warnings, 2=debug)."
@@ -1429,11 +1428,11 @@ msgstr ""
 "Встановлює, наскільки докладно показувати повідомлення програми (0=тільки "
 "помилки та стандартні повідомлення, 1=попередження, 2=відлагоджування)."
 
-#: src/libvlc-module.c:185
+#: src/libvlc-module.c:187
 msgid "Choose which objects should print debug message"
 msgstr "Оберіть об’єкти, які мають друкувати повідомлення відлагоджування"
 
-#: src/libvlc-module.c:188
+#: src/libvlc-module.c:190
 msgid ""
 "This is a ',' separated string, each objects should be prefixed by a '+' or "
 "a '-' to respectively enable or disable it. The keyword 'all' refers to all "
@@ -1449,23 +1448,23 @@ msgstr ""
 "ніж правила, які застосовуються до типів об’єктів. Зауважте, що Вам все ще "
 "необхідно використовувати -vvv для відображення повідомлення відлагоджування."
 
-#: src/libvlc-module.c:195
+#: src/libvlc-module.c:197
 msgid "Be quiet"
 msgstr "Режим тиші"
 
-#: src/libvlc-module.c:197
+#: src/libvlc-module.c:199
 msgid "Turn off all warning and information messages."
 msgstr "Цей параметр вимикає всі попередження та інформаційні повідомлення."
 
-#: src/libvlc-module.c:199
+#: src/libvlc-module.c:201
 msgid "Default stream"
 msgstr "Потік за змовчуванням"
 
-#: src/libvlc-module.c:201
+#: src/libvlc-module.c:203
 msgid "This stream will always be opened at VLC startup."
 msgstr "Цей потік буде відкриватися при старті VLC."
 
-#: src/libvlc-module.c:204
+#: src/libvlc-module.c:206
 msgid ""
 "You can manually select a language for the interface. The system language is "
 "auto-detected if \"auto\" is specified here."
@@ -1473,11 +1472,11 @@ msgstr ""
 "Ви можете вручну обрати мову інтерфейсу. Якщо тут зазначено «автоматично», то "
 "буде автоматично визначена системна мова."
 
-#: src/libvlc-module.c:208
+#: src/libvlc-module.c:210
 msgid "Color messages"
 msgstr "Кольорові повідомлення"
 
-#: src/libvlc-module.c:210
+#: src/libvlc-module.c:212
 msgid ""
 "This enables colorization of the messages sent to the console Your terminal "
 "needs Linux color support for this to work."
@@ -1485,11 +1484,11 @@ msgstr ""
 "При включенні цього параметра повідомлення в консолі будуть кольоровими. "
 "Термінал при цьому повинен підтримувати кольори Linux."
 
-#: src/libvlc-module.c:213
+#: src/libvlc-module.c:215
 msgid "Show advanced options"
 msgstr "Показати додаткові параметри"
 
-#: src/libvlc-module.c:215
+#: src/libvlc-module.c:217
 msgid ""
 "When this is enabled, the preferences and/or interfaces will show all "
 "available options, including those that most users should never touch."
@@ -1497,11 +1496,11 @@ msgstr ""
 "Показує всі доступні параметри, включаючи ті, які більшість користувачів "
 "ніколи не повинні змінювати."
 
-#: src/libvlc-module.c:219 modules/control/showintf.c:71
+#: src/libvlc-module.c:221 modules/control/showintf.c:71
 msgid "Show interface with mouse"
 msgstr "Показувати інтерфейс мишкою"
 
-#: src/libvlc-module.c:221
+#: src/libvlc-module.c:223
 msgid ""
 "When this is enabled, the interface is shown when you move the mouse to the "
 "edge of the screen in fullscreen mode."
@@ -1509,11 +1508,11 @@ msgstr ""
 "При увімкненні цього параметра інтерфейс програми показується в "
 "повноекранному режимі, коли ви підведете мишку до краю екрана."
 
-#: src/libvlc-module.c:224
+#: src/libvlc-module.c:226
 msgid "Interface interaction"
 msgstr "Взаємодія інтерфейсів"
 
-#: src/libvlc-module.c:226
+#: src/libvlc-module.c:228
 msgid ""
 "When this is enabled, the interface will show a dialog box each time some "
 "user input is required."
@@ -1521,7 +1520,7 @@ msgstr ""
 "При увімкненні цього параметра інтерфейс програми показуватиме діалогове "
 "вікно кожного разу, коли необхідний ввід даних користувачем."
 
-#: src/libvlc-module.c:236
+#: src/libvlc-module.c:238
 msgid ""
 "These options allow you to modify the behavior of the audio subsystem, and "
 "to add audio filters which can be used for post processing or visual effects "
@@ -1533,11 +1532,11 @@ msgstr ""
 "ефектів (аналізатор спектра і т.д.). Конфігурація кожного з фільтрів "
 "перебуває в розділі модулів «Аудіофільтри»."
 
-#: src/libvlc-module.c:242
+#: src/libvlc-module.c:244
 msgid "Audio output module"
 msgstr "Модуль виведення звуку"
 
-#: src/libvlc-module.c:244
+#: src/libvlc-module.c:246
 msgid ""
 "This is the audio output method used by VLC. The default behavior is to "
 "automatically select the best method available."
@@ -1545,12 +1544,12 @@ msgstr ""
 "Метод виводу звуку, використовуваний VLC. За змовчуванням автоматично "
 "вибирається найкращий доступний метод."
 
-#: src/libvlc-module.c:248 modules/gui/qt4/ui/sprefs_audio.h:333
+#: src/libvlc-module.c:250 modules/gui/qt4/ui/sprefs_audio.h:422
 #: modules/stream_out/display.c:41
 msgid "Enable audio"
 msgstr "Увімкнути звук"
 
-#: src/libvlc-module.c:250
+#: src/libvlc-module.c:252
 msgid ""
 "You can completely disable the audio output. The audio decoding stage will "
 "not take place, thus saving some processing power."
@@ -1558,28 +1557,28 @@ msgstr ""
 "Ви можете повністю вимкнути виведення звуку. У цьому випадку звук не буде "
 "декодуватися, що трохи розвантажить центральний процесор."
 
-#: src/libvlc-module.c:254
+#: src/libvlc-module.c:256
 msgid "Force mono audio"
 msgstr "Примусово увімкнути моно-звук"
 
-#: src/libvlc-module.c:255
+#: src/libvlc-module.c:257
 msgid "This will force a mono audio output."
 msgstr "Будь-який звук буде відтворюватися в моно-режимі."
 
-#: src/libvlc-module.c:258
+#: src/libvlc-module.c:260
 msgid "Default audio volume"
 msgstr "Гучність за змовчуванням"
 
-#: src/libvlc-module.c:260
+#: src/libvlc-module.c:262
 msgid ""
 "You can set the default audio output volume here, in a range from 0 to 1024."
 msgstr "Гучність виводу звуку за змовчуванням в діапазоні від 0 до 1024."
 
-#: src/libvlc-module.c:263
+#: src/libvlc-module.c:265
 msgid "Audio output saved volume"
 msgstr "Збережена гучність виведення звуку"
 
-#: src/libvlc-module.c:265
+#: src/libvlc-module.c:267
 msgid ""
 "This saves the audio output volume when you use the mute function. You "
 "should not change this option manually."
@@ -1587,21 +1586,21 @@ msgstr ""
 "Цей параметр зберігає гучність виводу звуку при вимиканні звуку. Звичайно "
 "його не потрібно змінювати."
 
-#: src/libvlc-module.c:268
+#: src/libvlc-module.c:270
 msgid "Audio output volume step"
 msgstr "Крок гучності виведення звуку"
 
-#: src/libvlc-module.c:270
+#: src/libvlc-module.c:272
 msgid ""
 "The step size of the volume is adjustable using this option, in a range from "
 "0 to 1024."
 msgstr "Величина кроку зміни гучності в діапазоні від 0 до 1024."
 
-#: src/libvlc-module.c:273
+#: src/libvlc-module.c:275
 msgid "Audio output frequency (Hz)"
 msgstr "Частота виводу звуку (Гц)"
 
-#: src/libvlc-module.c:275
+#: src/libvlc-module.c:277
 msgid ""
 "You can force the audio output frequency here. Common values are -1 "
 "(default), 48000, 44100, 32000, 22050, 16000, 11025, 8000."
@@ -1609,11 +1608,11 @@ msgstr ""
 "Тут ви можете вказати частоту виведення звуку. Звичайні значення: -1 (за "
 "змовчуванням), 48000, 44100, 32000, 22050, 16000, 11025, 8000."
 
-#: src/libvlc-module.c:279
+#: src/libvlc-module.c:281
 msgid "High quality audio resampling"
 msgstr "Високоякісна обробка звуку"
 
-#: src/libvlc-module.c:281
+#: src/libvlc-module.c:283
 msgid ""
 "This uses a high quality audio resampling algorithm. High quality audio "
 "resampling can be processor intensive so you can disable it and a cheaper "
@@ -1623,11 +1622,11 @@ msgstr ""
 "може сильно завантажити процесор, тому Ви можете вимкнути його й "
 "використовувати більш простий алгоритм."
 
-#: src/libvlc-module.c:286
+#: src/libvlc-module.c:288
 msgid "Audio desynchronization compensation"
 msgstr "Компенсація десинхронізації звуку"
 
-#: src/libvlc-module.c:288
+#: src/libvlc-module.c:290
 msgid ""
 "This delays the audio output. The delay must be given in milliseconds.This "
 "can be handy if you notice a lag between the video and the audio."
@@ -1635,11 +1634,11 @@ msgstr ""
 "Затримка виводу звуку в мілісекундах. Це може бути зручним, якщо існують "
 "розбіжності між відео та звуком."
 
-#: src/libvlc-module.c:291
+#: src/libvlc-module.c:293
 msgid "Audio output channels mode"
 msgstr "Режим каналів виведення звуку"
 
-#: src/libvlc-module.c:293
+#: src/libvlc-module.c:295
 msgid ""
 "This sets the audio output channels mode that will be used by default when "
 "possible (ie. if your hardware supports it as well as the audio stream being "
@@ -1648,12 +1647,12 @@ msgstr ""
 "Режим каналів виводу звуку, використовуваний за змовчуванням, якщо це "
 "можливо (тобто якщо Ваше обладнання й відтворений потік їх підтримують)."
 
-#: src/libvlc-module.c:297 modules/gui/macosx/simple_prefs.m:232
-#: modules/gui/qt4/ui/sprefs_audio.h:340
+#: src/libvlc-module.c:299 modules/gui/macosx/simple_prefs.m:232
+#: modules/gui/qt4/ui/sprefs_audio.h:431
 msgid "Use S/PDIF when available"
 msgstr "Використовувати S/PDIF, якщо можливо"
 
-#: src/libvlc-module.c:299
+#: src/libvlc-module.c:301
 msgid ""
 "S/PDIF can be used by default when your hardware supports it as well as the "
 "audio stream being played."
@@ -1661,12 +1660,11 @@ msgstr ""
 "Використовувати вихід S/PDIF за змовчуванням, якщо Ваше устаткування й "
 "відтворений потік їх підтримують."
 
-#: src/libvlc-module.c:302 modules/gui/macosx/simple_prefs.m:222
-#: modules/gui/qt4/ui/sprefs_audio.h:342
+#: src/libvlc-module.c:304 modules/gui/macosx/simple_prefs.m:222
 msgid "Force detection of Dolby Surround"
 msgstr "Примусово визначати Dolby Surround"
 
-#: src/libvlc-module.c:304
+#: src/libvlc-module.c:306
 msgid ""
 "Use this when you know your stream is (or is not) encoded with Dolby "
 "Surround but fails to be detected as such. Even if the stream is not "
@@ -1679,39 +1677,39 @@ msgstr ""
 "може поліпшити якість звуку, особливо при спільному використанні з "
 "мікшуванням каналів навушників."
 
-#: src/libvlc-module.c:311 modules/access/bda/bda.c:69
+#: src/libvlc-module.c:313 modules/access/bda/bda.c:69
 msgid "On"
 msgstr "Увімкнено"
 
-#: src/libvlc-module.c:311 modules/access/bda/bda.c:68
+#: src/libvlc-module.c:313 modules/access/bda/bda.c:68
 msgid "Off"
 msgstr "Вимкнено"
 
-#: src/libvlc-module.c:316
+#: src/libvlc-module.c:318
 msgid "This adds audio post processing filters, to modify the sound rendering."
 msgstr "Це дозволить вам додати фільтри пост-обробки звуку для його зміни."
 
-#: src/libvlc-module.c:319
+#: src/libvlc-module.c:321
 msgid "Audio visualizations "
 msgstr "Візуалізації звуку "
 
-#: src/libvlc-module.c:321
+#: src/libvlc-module.c:323
 msgid "This adds visualization modules (spectrum analyzer, etc.)."
 msgstr "Додає модулі візуалізації (аналізатор спектра та інші)."
 
-#: src/libvlc-module.c:325 modules/gui/qt4/ui/sprefs_audio.h:352
+#: src/libvlc-module.c:327
 msgid "Replay gain mode"
 msgstr "Режим автонормалізації гучності звуку"
 
-#: src/libvlc-module.c:327
+#: src/libvlc-module.c:329
 msgid "Select the replay gain mode"
 msgstr "Оберіть режим автонормалізації гучності звуку"
 
-#: src/libvlc-module.c:329
+#: src/libvlc-module.c:331
 msgid "Replay preamp"
 msgstr "Підсилення автонормалізації гучності звуку"
 
-#: src/libvlc-module.c:331
+#: src/libvlc-module.c:333
 msgid ""
 "This allows you to change the default target level (89 dB) for stream with "
 "replay gain information"
@@ -1719,29 +1717,29 @@ msgstr ""
 "Це доволяє Вам змінити цільовий рівень за змовчуванням (89 dB) для потоку з "
 "інформацією автонормалізації гучності звуку"
 
-#: src/libvlc-module.c:334
+#: src/libvlc-module.c:336
 msgid "Default replay gain"
 msgstr "Автонормалізація гучності звуку за змовчуванням"
 
-#: src/libvlc-module.c:336
+#: src/libvlc-module.c:338
 msgid "This is the gain used for stream without replay gain information"
 msgstr ""
 "Цей приріст використовується для потоку без інформації про автонормалізацію "
 "гучності звуку"
 
-#: src/libvlc-module.c:338
+#: src/libvlc-module.c:340
 msgid "Peak protection"
 msgstr "Захист від піків"
 
-#: src/libvlc-module.c:340
+#: src/libvlc-module.c:342
 msgid "Protect against sound clipping"
 msgstr "Захист від клацання звуку"
 
-#: src/libvlc-module.c:343
+#: src/libvlc-module.c:345
 msgid "Enable time streching audio"
 msgstr "Включити часове розтягнення звуку"
 
-#: src/libvlc-module.c:345
+#: src/libvlc-module.c:347
 msgid ""
 "This allows to play audio at lower or higher speed withoutaffecting the "
 "audio pitch"
@@ -1749,14 +1747,14 @@ msgstr ""
 "Це дозволяє програвати звук з нижчою чи вищою швидкістю без дії на рівень "
 "звуку"
 
-#: src/libvlc-module.c:352 src/libvlc-module.c:584
+#: src/libvlc-module.c:354 src/libvlc-module.c:586
 #: modules/access/dshow/dshow.cpp:82 modules/access/dshow/dshow.cpp:84
 #: modules/codec/avcodec/avcodec.c:71 modules/codec/kate.c:204
 #: modules/gui/qt4/components/interface_widgets.cpp:255
 msgid "None"
 msgstr "Немає"
 
-#: src/libvlc-module.c:360
+#: src/libvlc-module.c:362
 msgid ""
 "These options allow you to modify the behavior of the video output "
 "subsystem. You can for example enable video filters (deinterlacing, image "
@@ -1769,11 +1767,11 @@ msgstr ""
 "Вмикайте ці фільтри тут і налаштовуйте в розділі модулів «Відео фільтри». Ви "
 "також можете налаштувати тут безліч інших параметрів відео."
 
-#: src/libvlc-module.c:366
+#: src/libvlc-module.c:368
 msgid "Video output module"
 msgstr "Модуль виводу відео"
 
-#: src/libvlc-module.c:368
+#: src/libvlc-module.c:370
 msgid ""
 "This is the the video output method used by VLC. The default behavior is to "
 "automatically select the best method available."
@@ -1781,12 +1779,12 @@ msgstr ""
 "Метод виведення відео, використовуваний VLC за змовчуванням. Автоматично "
 "вибирається найкращий доступний метод."
 
-#: src/libvlc-module.c:371 modules/gui/qt4/ui/sprefs_video.h:279
+#: src/libvlc-module.c:373 modules/gui/qt4/ui/sprefs_video.h:279
 #: modules/stream_out/display.c:43
 msgid "Enable video"
 msgstr "Увімкнути відео"
 
-#: src/libvlc-module.c:373
+#: src/libvlc-module.c:375
 msgid ""
 "You can completely disable the video output. The video decoding stage will "
 "not take place, thus saving some processing power."
@@ -1794,13 +1792,13 @@ msgstr ""
 "Ви можете повністю вимкнути вивід відео. У цьому випадку відео не буде "
 "декодуватися, що розвантажить центральний процесор."
 
-#: src/libvlc-module.c:376 modules/codec/fake.c:59
+#: src/libvlc-module.c:378 modules/codec/fake.c:59
 #: modules/stream_out/mosaic_bridge.c:140 modules/stream_out/transcode.c:77
 #: modules/visualization/visual/visual.c:46
 msgid "Video width"
 msgstr "Ширина відео"
 
-#: src/libvlc-module.c:378
+#: src/libvlc-module.c:380
 msgid ""
 "You can enforce the video width. By default (-1) VLC will adapt to the video "
 "characteristics."
@@ -1808,13 +1806,13 @@ msgstr ""
 "Ви можете змінити ширину відео. За змовчуванням (-1) VLC буде адаптувати "
 "ширину під характеристики відео."
 
-#: src/libvlc-module.c:381 modules/codec/fake.c:62
+#: src/libvlc-module.c:383 modules/codec/fake.c:62
 #: modules/stream_out/mosaic_bridge.c:143 modules/stream_out/transcode.c:80
 #: modules/visualization/visual/visual.c:50
 msgid "Video height"
 msgstr "Висота відео"
 
-#: src/libvlc-module.c:383
+#: src/libvlc-module.c:385
 msgid ""
 "You can enforce the video height. By default (-1) VLC will adapt to the "
 "video characteristics."
@@ -1822,11 +1820,11 @@ msgstr ""
 "Ви можете змінити висоту відео. За змовчуванням (-1) VLC буде адаптувати "
 "висоту під характеристики відео."
 
-#: src/libvlc-module.c:386
+#: src/libvlc-module.c:388
 msgid "Video X coordinate"
 msgstr "Координата X відео"
 
-#: src/libvlc-module.c:388
+#: src/libvlc-module.c:390
 msgid ""
 "You can enforce the position of the top left corner of the video window (X "
 "coordinate)."
@@ -1834,11 +1832,11 @@ msgstr ""
 "Ви можете призначити позицію верхнього лівого кута вікна відео (координата "
 "Х)."
 
-#: src/libvlc-module.c:391
+#: src/libvlc-module.c:393
 msgid "Video Y coordinate"
 msgstr "Координата Y відео"
 
-#: src/libvlc-module.c:393
+#: src/libvlc-module.c:395
 msgid ""
 "You can enforce the position of the top left corner of the video window (Y "
 "coordinate)."
@@ -1846,11 +1844,11 @@ msgstr ""
 "Тут Ви можете призначити позицію верхнього лівого кута вікна відео "
 "(координата Y)."
 
-#: src/libvlc-module.c:396
+#: src/libvlc-module.c:398
 msgid "Video title"
 msgstr "Заголовок відео"
 
-#: src/libvlc-module.c:398
+#: src/libvlc-module.c:400
 msgid ""
 "Custom title for the video window (in case the video is not embedded in the "
 "interface)."
@@ -1858,11 +1856,11 @@ msgstr ""
 "Заголовок вікна виведення відео (у випадку, якщо відеовиведення не вбудоване "
 "в інтерфейс)."
 
-#: src/libvlc-module.c:401
+#: src/libvlc-module.c:403
 msgid "Video alignment"
 msgstr "Вирівнювання відео"
 
-#: src/libvlc-module.c:403
+#: src/libvlc-module.c:405
 msgid ""
 "Enforce the alignment of the video in its window. By default (0) it will be "
 "centered (0=center, 1=left, 2=right, 4=top, 8=bottom, you can also use "
@@ -1873,7 +1871,7 @@ msgstr ""
 "можете також використовувати комбінації цих значень, наприклад 6=4+2, що "
 "означає «зверху праворуч»)."
 
-#: src/libvlc-module.c:408 src/libvlc-module.c:457
+#: src/libvlc-module.c:410 src/libvlc-module.c:459
 #: modules/audio_filter/channel_mixer/mono.c:96 modules/codec/dvbsub.c:75
 #: modules/codec/subtitles/subsdec.c:187 modules/codec/zvbi.c:79
 #: modules/gui/fbosd.c:162 modules/video_filter/logo.c:99
@@ -1882,7 +1880,7 @@ msgstr ""
 msgid "Center"
 msgstr "Центр"
 
-#: src/libvlc-module.c:408 src/libvlc-module.c:457 modules/codec/dvbsub.c:75
+#: src/libvlc-module.c:410 src/libvlc-module.c:459 modules/codec/dvbsub.c:75
 #: modules/codec/zvbi.c:79 modules/gui/fbosd.c:162
 #: modules/gui/qt4/ui/video_effects.h:883
 #: modules/gui/qt4/ui/video_effects.h:939
@@ -1892,7 +1890,7 @@ msgstr "Центр"
 msgid "Top"
 msgstr "Зверху"
 
-#: src/libvlc-module.c:408 src/libvlc-module.c:457 modules/codec/dvbsub.c:75
+#: src/libvlc-module.c:410 src/libvlc-module.c:459 modules/codec/dvbsub.c:75
 #: modules/codec/zvbi.c:79 modules/gui/fbosd.c:162
 #: modules/gui/qt4/ui/video_effects.h:889 modules/video_filter/logo.c:99
 #: modules/video_filter/marq.c:138 modules/video_filter/mosaic.c:172
@@ -1900,7 +1898,7 @@ msgstr "Зверху"
 msgid "Bottom"
 msgstr "Знизу"
 
-#: src/libvlc-module.c:409 src/libvlc-module.c:458 modules/codec/dvbsub.c:76
+#: src/libvlc-module.c:411 src/libvlc-module.c:460 modules/codec/dvbsub.c:76
 #: modules/codec/zvbi.c:80 modules/gui/fbosd.c:163
 #: modules/video_filter/logo.c:100 modules/video_filter/marq.c:139
 #: modules/video_filter/mosaic.c:173 modules/video_filter/osdmenu.c:86
@@ -1908,7 +1906,7 @@ msgstr "Знизу"
 msgid "Top-Left"
 msgstr "Верхній лівий кут"
 
-#: src/libvlc-module.c:409 src/libvlc-module.c:458 modules/codec/dvbsub.c:76
+#: src/libvlc-module.c:411 src/libvlc-module.c:460 modules/codec/dvbsub.c:76
 #: modules/codec/zvbi.c:80 modules/gui/fbosd.c:163
 #: modules/video_filter/logo.c:100 modules/video_filter/marq.c:139
 #: modules/video_filter/mosaic.c:173 modules/video_filter/osdmenu.c:86
@@ -1916,7 +1914,7 @@ msgstr "Верхній лівий кут"
 msgid "Top-Right"
 msgstr "Верхній правий кут"
 
-#: src/libvlc-module.c:409 src/libvlc-module.c:458 modules/codec/dvbsub.c:76
+#: src/libvlc-module.c:411 src/libvlc-module.c:460 modules/codec/dvbsub.c:76
 #: modules/codec/zvbi.c:80 modules/gui/fbosd.c:163
 #: modules/video_filter/logo.c:100 modules/video_filter/marq.c:139
 #: modules/video_filter/mosaic.c:173 modules/video_filter/osdmenu.c:86
@@ -1924,7 +1922,7 @@ msgstr "Верхній правий кут"
 msgid "Bottom-Left"
 msgstr "Нижній лівий кут"
 
-#: src/libvlc-module.c:409 src/libvlc-module.c:458 modules/codec/dvbsub.c:76
+#: src/libvlc-module.c:411 src/libvlc-module.c:460 modules/codec/dvbsub.c:76
 #: modules/codec/zvbi.c:80 modules/gui/fbosd.c:163
 #: modules/video_filter/logo.c:100 modules/video_filter/marq.c:139
 #: modules/video_filter/mosaic.c:173 modules/video_filter/osdmenu.c:86
@@ -1932,19 +1930,19 @@ msgstr "Нижній лівий кут"
 msgid "Bottom-Right"
 msgstr "Нижній правий кут"
 
-#: src/libvlc-module.c:411
+#: src/libvlc-module.c:413
 msgid "Zoom video"
 msgstr "Масштаб відео"
 
-#: src/libvlc-module.c:413
+#: src/libvlc-module.c:415
 msgid "You can zoom the video by the specified factor."
 msgstr "Ви можете змінити масштаб зображення відео зазначеним множником."
 
-#: src/libvlc-module.c:415
+#: src/libvlc-module.c:417
 msgid "Grayscale video output"
 msgstr "Вивід відео півтонами сірого"
 
-#: src/libvlc-module.c:417
+#: src/libvlc-module.c:419
 msgid ""
 "Output video in grayscale. As the color information aren't decoded, this can "
 "save some processing power."
@@ -1952,27 +1950,27 @@ msgstr ""
 "Виведення відео півтонами сірого. Оскільки інформація про кольоровість відео "
 "не декодується, це трохи знижує навантаження на центральний процесор."
 
-#: src/libvlc-module.c:420
+#: src/libvlc-module.c:422
 msgid "Embedded video"
 msgstr "Вбудоване відео"
 
-#: src/libvlc-module.c:422
+#: src/libvlc-module.c:424
 msgid "Embed the video output in the main interface."
 msgstr "Вбудувати відео до головного інтерфейсу."
 
-#: src/libvlc-module.c:424
+#: src/libvlc-module.c:426
 msgid "Fullscreen video output"
 msgstr "Повноекранне виведення відео"
 
-#: src/libvlc-module.c:426
+#: src/libvlc-module.c:428
 msgid "Start video in fullscreen mode"
 msgstr "Запускати відео в повноекранному режимі"
 
-#: src/libvlc-module.c:428
+#: src/libvlc-module.c:430
 msgid "Overlay video output"
 msgstr "Оверлейний вивід відео"
 
-#: src/libvlc-module.c:430
+#: src/libvlc-module.c:432
 msgid ""
 "Overlay is the hardware acceleration capability of your video card (ability "
 "to render video directly). VLC will try to use it by default."
@@ -1980,45 +1978,45 @@ msgstr ""
 "Оверлейне виведення — це вбудована у відеокарту здатність виводити "
 "відеопотік напряму. VLC буде намагатися використовувати це за змовчуванням."
 
-#: src/libvlc-module.c:433 src/video_output/vout_intf.c:421
+#: src/libvlc-module.c:435 src/video_output/vout_intf.c:421
 #: modules/gui/macosx/simple_prefs.m:288 modules/gui/qt4/ui/sprefs_video.h:283
 msgid "Always on top"
 msgstr "Зверху всіх вікон"
 
-#: src/libvlc-module.c:435
+#: src/libvlc-module.c:437
 msgid "Always place the video window on top of other windows."
 msgstr "Завжди поміщує вікно відео поверх інших."
 
-#: src/libvlc-module.c:437 modules/gui/qt4/ui/sprefs_subtitles.h:210
+#: src/libvlc-module.c:439
 msgid "Show media title on video"
 msgstr "Показувати заголовок медіа на відео"
 
-#: src/libvlc-module.c:439
+#: src/libvlc-module.c:441
 msgid "Display the title of the video on top of the movie."
 msgstr "Показує заголовок відео на самому відео."
 
-#: src/libvlc-module.c:441
+#: src/libvlc-module.c:443
 msgid "Show video title for x milliseconds"
 msgstr "Показувати заголовок відео x мілісекунд"
 
-#: src/libvlc-module.c:443
+#: src/libvlc-module.c:445
 msgid "Show the video title for n milliseconds, default is 5000 ms (5 sec.)"
 msgstr "Показувати заголовок відео n мілісекунд, за змовчуванням 5000 мс (5 с)"
 
-#: src/libvlc-module.c:445
+#: src/libvlc-module.c:447
 msgid "Position of video title"
 msgstr "Розташування заголовку відео"
 
-#: src/libvlc-module.c:447
+#: src/libvlc-module.c:449
 msgid "Place on video where to display the title (default bottom center)."
 msgstr ""
 "Місце на відео, де відображати заголовок (за змовчуванням знизу по центру)."
 
-#: src/libvlc-module.c:449
+#: src/libvlc-module.c:451
 msgid "Hide cursor and fullscreen controller after x milliseconds"
 msgstr "Ховати курсор та повноекранне керування через x мілісекунд"
 
-#: src/libvlc-module.c:452
+#: src/libvlc-module.c:454
 msgid ""
 "Hide mouse cursor and fullscreen controller after n milliseconds, default is "
 "3000 ms (3 sec.)"
@@ -2026,19 +2024,19 @@ msgstr ""
 "Ховати курсор миші та повноекранне керування через n мілісекунд, за "
 "змовчуванням 3000 мс (3 с)"
 
-#: src/libvlc-module.c:460
+#: src/libvlc-module.c:462
 msgid "Disable screensaver"
 msgstr "Відключати заставку"
 
-#: src/libvlc-module.c:461
+#: src/libvlc-module.c:463
 msgid "Disable the screensaver during video playback."
 msgstr "Відключати заставку під час відтворення відео."
 
-#: src/libvlc-module.c:463
+#: src/libvlc-module.c:465
 msgid "Inhibit the power management daemon during playback"
 msgstr "Зупиняти демон керування живленням під час програвання"
 
-#: src/libvlc-module.c:464
+#: src/libvlc-module.c:466
 msgid ""
 "Inhibits the power management daemon during any playback, to avoid the "
 "computer being suspended because of inactivity."
@@ -2046,11 +2044,11 @@ msgstr ""
 "Зупиняє демон керування живленням під час будь-якого програвання для "
 "запобігання переходу комп’ютера до режиму сну через неактивність."
 
-#: src/libvlc-module.c:467 modules/gui/qt4/ui/sprefs_video.h:281
+#: src/libvlc-module.c:469 modules/gui/qt4/ui/sprefs_video.h:281
 msgid "Window decorations"
 msgstr "Оформлення вікна"
 
-#: src/libvlc-module.c:469
+#: src/libvlc-module.c:471
 msgid ""
 "VLC can avoid creating window caption, frames, etc... around the video, "
 "giving a \"minimal\" window."
@@ -2058,19 +2056,19 @@ msgstr ""
 "Якщо вимкнено, VLC не буде промальовувати заголовок вікна, фрейми та інші "
 "елементи навколо відео, що дає «мінімальне» вікно."
 
-#: src/libvlc-module.c:472
+#: src/libvlc-module.c:474
 msgid "Video output filter module"
 msgstr "Модуль фільтру відеовиводу"
 
-#: src/libvlc-module.c:474
+#: src/libvlc-module.c:476
 msgid "This adds video output filters like clone or wall"
 msgstr "Це додає фільтри відеовиводу типу «клон» чи «стіна»"
 
-#: src/libvlc-module.c:476
+#: src/libvlc-module.c:478
 msgid "Video filter module"
 msgstr "Модуль відеофільтра"
 
-#: src/libvlc-module.c:478
+#: src/libvlc-module.c:480
 msgid ""
 "This adds post-processing filters to enhance the picture quality, for "
 "instance deinterlacing, or distortthe video."
@@ -2078,51 +2076,51 @@ msgstr ""
 "Дозволяє додавати фільтри пост-обробки для поліпшення якості зображення, "
 "усунення черезрядковості, для клонування або розтягання вікна відео."
 
-#: src/libvlc-module.c:482
+#: src/libvlc-module.c:484
 msgid "Video snapshot directory (or filename)"
 msgstr "Каталог (або ім’я файлу) знятих стоп-кадрів"
 
-#: src/libvlc-module.c:484
+#: src/libvlc-module.c:486
 msgid "Directory where the video snapshots will be stored."
 msgstr "Дозволяє вказати каталог для зберігання стоп-кадрів."
 
-#: src/libvlc-module.c:486 src/libvlc-module.c:488
+#: src/libvlc-module.c:488 src/libvlc-module.c:490
 msgid "Video snapshot file prefix"
 msgstr "Префікс імені файлу стоп-кадру"
 
-#: src/libvlc-module.c:490
+#: src/libvlc-module.c:492
 msgid "Video snapshot format"
 msgstr "Формат стоп-кадру"
 
-#: src/libvlc-module.c:492
+#: src/libvlc-module.c:494
 msgid "Image format which will be used to store the video snapshots"
 msgstr ""
 "Формат зображення, який буде використовуватися для зберігання стоп-кадрів"
 
-#: src/libvlc-module.c:494
+#: src/libvlc-module.c:496
 msgid "Display video snapshot preview"
 msgstr "Показати попередній перегляд стоп-кадру"
 
-#: src/libvlc-module.c:496
+#: src/libvlc-module.c:498
 msgid "Display the snapshot preview in the screen's top-left corner."
 msgstr ""
 "Показувати попередній перегляд стоп-кадру у верхньому лівому куті екрана."
 
-#: src/libvlc-module.c:498
+#: src/libvlc-module.c:500
 msgid "Use sequential numbers instead of timestamps"
 msgstr "Використовувати порядкові номера замість часових відміток"
 
-#: src/libvlc-module.c:500
+#: src/libvlc-module.c:502
 msgid "Use sequential numbers instead of timestamps for snapshot numbering"
 msgstr ""
 "Використовувати порядкові номера замість часових відміток для нумерування "
 "стоп-кадрів"
 
-#: src/libvlc-module.c:502
+#: src/libvlc-module.c:504
 msgid "Video snapshot width"
 msgstr "Ширина стоп-кадру"
 
-#: src/libvlc-module.c:504
+#: src/libvlc-module.c:506
 msgid ""
 "You can enforce the width of the video snapshot. By default it will keep the "
 "original width (-1). Using 0 will scale the width to keep the aspect ratio."
@@ -2131,11 +2129,11 @@ msgstr ""
 "використовуватися оригінальна ширина (-1). Використання 0 буде змінювати "
 "ширину, враховуючи співвідношення сторін."
 
-#: src/libvlc-module.c:508
+#: src/libvlc-module.c:510
 msgid "Video snapshot height"
 msgstr "Висота стоп-кадру"
 
-#: src/libvlc-module.c:510
+#: src/libvlc-module.c:512
 msgid ""
 "You can enforce the height of the video snapshot. By default it will keep "
 "the original height (-1). Using 0 will scale the height to keep the aspect "
@@ -2145,11 +2143,11 @@ msgstr ""
 "використовуватися оригінальна висота (-1). Використання 0 буде змінювати "
 "висоту, враховуючи співвідношення сторін."
 
-#: src/libvlc-module.c:514
+#: src/libvlc-module.c:516
 msgid "Video cropping"
 msgstr "Обрізання відео"
 
-#: src/libvlc-module.c:516
+#: src/libvlc-module.c:518
 msgid ""
 "This forces the cropping of the source video. Accepted formats are x:y (4:3, "
 "16:9, etc.) expressing the global image aspect."
@@ -2157,11 +2155,11 @@ msgstr ""
 "Вмикає обрізання відео. Можливими форматами є x:y (4:3, 16:9 і т.д.), що "
 "виражає співвідношення сторін відео."
 
-#: src/libvlc-module.c:520
+#: src/libvlc-module.c:522
 msgid "Source aspect ratio"
 msgstr "Вихідне співвідношення сторін"
 
-#: src/libvlc-module.c:522
+#: src/libvlc-module.c:524
 msgid ""
 "This forces the source aspect ratio. For instance, some DVDs claim to be "
 "16:9 while they are actually 4:3. This can also be used as a hint for VLC "
@@ -2176,21 +2174,21 @@ msgstr ""
 "д.), що виражає співвідношення сторін відео або значення із плаваючою "
 "крапкою (1.25, 1.3333 і т.д.), що виражає «квадратність» пікселя."
 
-#: src/libvlc-module.c:529
+#: src/libvlc-module.c:531
 msgid "Video Auto Scaling"
 msgstr "Автомасштабування відео"
 
-#: src/libvlc-module.c:531
+#: src/libvlc-module.c:533
 msgid "Let the video scale to fit a given window or fullscreen."
 msgstr ""
 "Дозволяє масштабувати відео для того, аби воно вміщалося у вікно чи у повний "
 "екран."
 
-#: src/libvlc-module.c:533
+#: src/libvlc-module.c:535
 msgid "Video scaling factor"
 msgstr "Множник масштабування відео"
 
-#: src/libvlc-module.c:535
+#: src/libvlc-module.c:537
 msgid ""
 "Scaling factor used when Auto Scaling is disabled.\n"
 "Default value is 1.0 (original video size)."
@@ -2199,11 +2197,11 @@ msgstr ""
 "відключене.\n"
 "Значення за змовчуванням — 1.0 (оригінальний розмір відео)."
 
-#: src/libvlc-module.c:538
+#: src/libvlc-module.c:540
 msgid "Custom crop ratios list"
 msgstr "Список довільних співвідношень обрізання"
 
-#: src/libvlc-module.c:540
+#: src/libvlc-module.c:542
 msgid ""
 "Comma seperated list of crop ratios which will be added in the interface's "
 "crop ratios list."
@@ -2211,11 +2209,11 @@ msgstr ""
 "Список, елементи якого розділені комами, співвідношень обрізання, який буде "
 "додано до інтерфейсного списку співвідношень обрізання."
 
-#: src/libvlc-module.c:543
+#: src/libvlc-module.c:545
 msgid "Custom aspect ratios list"
 msgstr "Довільний список співвідношень сторін"
 
-#: src/libvlc-module.c:545
+#: src/libvlc-module.c:547
 msgid ""
 "Comma seperated list of aspect ratios which will be added in the interface's "
 "aspect ratio list."
@@ -2223,11 +2221,11 @@ msgstr ""
 "Список, елементи якого розділені комами, співвідношень сторін, який буде "
 "додано до інтерфейсного списку співвідношень сторін."
 
-#: src/libvlc-module.c:548
+#: src/libvlc-module.c:550
 msgid "Fix HDTV height"
 msgstr "Виправляти висоту HDTV"
 
-#: src/libvlc-module.c:550
+#: src/libvlc-module.c:552
 msgid ""
 "This allows proper handling of HDTV-1080 video format even if broken encoder "
 "incorrectly sets height to 1088 lines. You should only disable this option "
@@ -2238,11 +2236,11 @@ msgstr ""
 "випадку, якщо Ваше відео закодоване в нестандартному форматі, що потребує "
 "усіх 1088 ліній."
 
-#: src/libvlc-module.c:555
+#: src/libvlc-module.c:557
 msgid "Monitor pixel aspect ratio"
 msgstr "Співвідношення сторін пікселів монітора"
 
-#: src/libvlc-module.c:557
+#: src/libvlc-module.c:559
 msgid ""
 "This forces the monitor aspect ratio. Most monitors have square pixels "
 "(1:1). If you have a 16:9 screen, you might need to change this to 4:3 in "
@@ -2253,12 +2251,12 @@ msgstr ""
 "можливо, варто змінити це налаштування на 4:3, щоб пропорції залишалися "
 "вірними."
 
-#: src/libvlc-module.c:561 modules/gui/macosx/simple_prefs.m:290
+#: src/libvlc-module.c:563 modules/gui/macosx/simple_prefs.m:290
 #: modules/gui/qt4/ui/sprefs_video.h:286
 msgid "Skip frames"
 msgstr "Пропускати кадри"
 
-#: src/libvlc-module.c:563
+#: src/libvlc-module.c:565
 msgid ""
 "Enables framedropping on MPEG2 stream. Framedropping occurs when your "
 "computer is not powerful enough"
@@ -2266,11 +2264,11 @@ msgstr ""
 "Включає пропускання кадрів потоку MPEG2. Пропускання кадрів виникає тоді, "
 "коли Ваш комп’ютер недостатньо потужний"
 
-#: src/libvlc-module.c:566
+#: src/libvlc-module.c:568
 msgid "Drop late frames"
 msgstr "Пропускати спізнілі кадри"
 
-#: src/libvlc-module.c:568
+#: src/libvlc-module.c:570
 msgid ""
 "This drops frames that are late (arrive to the video output after their "
 "intended display date)."
@@ -2278,11 +2276,11 @@ msgstr ""
 "Дозволяє пропускати спізнілі карти (вони з’являються на модулі виводу після "
 "наміченої дати виведення)."
 
-#: src/libvlc-module.c:571
+#: src/libvlc-module.c:573
 msgid "Quiet synchro"
 msgstr "Тиха синхронізація"
 
-#: src/libvlc-module.c:573
+#: src/libvlc-module.c:575
 msgid ""
 "This avoids flooding the message log with debug output from the video output "
 "synchronization mechanism."
@@ -2290,11 +2288,11 @@ msgstr ""
 "Дозволяє не забивати журнал повідомленнями механізму синхронізації "
 "відеовиводу."
 
-#: src/libvlc-module.c:576
+#: src/libvlc-module.c:578
 msgid "key and mouse event handling at vout level."
 msgstr "перехоплення подій клавіш та миші на рівні vout."
 
-#: src/libvlc-module.c:578
+#: src/libvlc-module.c:580
 msgid ""
 "This parameter accepts values : 1 (full event handling support), 2 (event "
 "handling only for fullscreen) or 3 (No event handling). Full event handling "
@@ -2304,15 +2302,15 @@ msgstr ""
 "(подія перехоплюється лише у повноекранному режимі) або 3 (без перехоплення "
 "подій). За змовчуванням використовується повне перехоплення подій."
 
-#: src/libvlc-module.c:584
+#: src/libvlc-module.c:586
 msgid "Full support"
 msgstr "Повна підтримка"
 
-#: src/libvlc-module.c:584
+#: src/libvlc-module.c:586
 msgid "Fullscreen-only"
 msgstr "Тільки повноекранний режим"
 
-#: src/libvlc-module.c:592
+#: src/libvlc-module.c:594
 msgid ""
 "These options allow you to modify the behavior of the input subsystem, such "
 "as the DVD or VCD device, the network interface settings or the subtitle "
@@ -2322,11 +2320,11 @@ msgstr ""
 "пристроїв, як DVD або VCD, налаштування мережевого інтерфейсу або канал "
 "субтитрів."
 
-#: src/libvlc-module.c:596
+#: src/libvlc-module.c:598
 msgid "Clock reference average counter"
 msgstr "Еталонний середній лічильник"
 
-#: src/libvlc-module.c:598
+#: src/libvlc-module.c:600
 msgid ""
 "When using the PVR input (or a very irregular source), you should set this "
 "to 10000."
@@ -2334,11 +2332,11 @@ msgstr ""
 "При використанні введення з PVR (або іншого несинхронізованого джерела), "
 "варто встановити значення 10000."
 
-#: src/libvlc-module.c:601
+#: src/libvlc-module.c:603
 msgid "Clock synchronisation"
 msgstr "Синхронізація годинника"
 
-#: src/libvlc-module.c:603
+#: src/libvlc-module.c:605
 msgid ""
 "It is possible to disable the input clock synchronisation for real-time "
 "sources. Use this if you experience jerky playback of network streams."
@@ -2346,11 +2344,11 @@ msgstr ""
 "Можливе відключення синхронізації вхідних дат для джерел реального часу. "
 "Використовуйте, якщо відтворення мережевих потоків часто переривається."
 
-#: src/libvlc-module.c:607 modules/control/netsync.c:77
+#: src/libvlc-module.c:609 modules/control/netsync.c:77
 msgid "Network synchronisation"
 msgstr "Мережева синхронізація"
 
-#: src/libvlc-module.c:608
+#: src/libvlc-module.c:610
 msgid ""
 "This allows you to remotely synchronise clocks for server and client. The "
 "detailed settings are available in Advanced / Network Sync."
@@ -2358,7 +2356,7 @@ msgstr ""
 "Дозволяє віддалено синхронізувати годинник сервера й клієнта. Детальні "
 "налаштування доступні в розділі «Додатково / Мережева синхронізація»."
 
-#: src/libvlc-module.c:614 src/video_output/vout_intf.c:183
+#: src/libvlc-module.c:616 src/video_output/vout_intf.c:183
 #: src/video_output/vout_intf.c:201 modules/access/dshow/dshow.cpp:82
 #: modules/access/dshow/dshow.cpp:84 modules/access/dshow/dshow.cpp:87
 #: modules/access/dshow/dshow.cpp:93 modules/access/v4l2.c:215
@@ -2372,26 +2370,26 @@ msgstr ""
 msgid "Default"
 msgstr "За змовчуванням"
 
-#: src/libvlc-module.c:614 modules/gui/macosx/equalizer.m:157
+#: src/libvlc-module.c:616 modules/gui/macosx/equalizer.m:157
 #: modules/gui/macosx/extended.m:96 modules/gui/macosx/wizard.m:354
 #: modules/gui/qt4/ui/equalizer.h:127 modules/gui/qt4/ui/vlm.h:290
 msgid "Enable"
 msgstr "Увімкнути"
 
-#: src/libvlc-module.c:616 modules/misc/notify/growl_udp.c:66
+#: src/libvlc-module.c:618 modules/misc/notify/growl_udp.c:66
 msgid "UDP port"
 msgstr "UDP порт"
 
-#: src/libvlc-module.c:618
+#: src/libvlc-module.c:620
 msgid "This is the default port used for UDP streams. Default is 1234."
 msgstr ""
 "Порт, використовуваний для потоків UDP. за змовчуванням вибирається 1234."
 
-#: src/libvlc-module.c:620
+#: src/libvlc-module.c:622
 msgid "MTU of the network interface"
 msgstr "MTU мережевого інтерфейсу"
 
-#: src/libvlc-module.c:622
+#: src/libvlc-module.c:624
 msgid ""
 "This is the maximum application-layer packet size that can be transmitted "
 "over the network (in bytes)."
@@ -2399,11 +2397,11 @@ msgstr ""
 "Максимальний розмір пакета рівня програм, який може бути переданий через "
 "мережевий інтерфейс (у байтах)."
 
-#: src/libvlc-module.c:627 modules/stream_out/rtp.c:119
+#: src/libvlc-module.c:629 modules/stream_out/rtp.c:119
 msgid "Hop limit (TTL)"
 msgstr "Ліміт хопів (TTL)"
 
-#: src/libvlc-module.c:629 modules/stream_out/rtp.c:121
+#: src/libvlc-module.c:631 modules/stream_out/rtp.c:121
 msgid ""
 "This is the hop limit (also known as \"Time-To-Live\" or TTL) of the "
 "multicast packets sent by the stream output (-1 = use operating system built-"
@@ -2413,20 +2411,20 @@ msgstr ""
 "пакетів, що надсилаються модулями виведення потоку (-1 = використовувати "
 "значення за змовчуванням в операційній системі)."
 
-#: src/libvlc-module.c:633
+#: src/libvlc-module.c:635
 msgid "Multicast output interface"
 msgstr "Інтерфейс виводу групових пакетів"
 
-#: src/libvlc-module.c:635
+#: src/libvlc-module.c:637
 msgid "Default multicast interface. This overrides the routing table."
 msgstr ""
 "Інтерфейс групових пакетів за змовчуванням. Перекриває таблицю маршрутизації."
 
-#: src/libvlc-module.c:637
+#: src/libvlc-module.c:639
 msgid "IPv4 multicast output interface address"
 msgstr "Інтерфейс виводу IPv4 групових пакетів"
 
-#: src/libvlc-module.c:639
+#: src/libvlc-module.c:641
 msgid ""
 "IPv4 adress for the default multicast interface. This overrides the routing "
 "table."
@@ -2434,11 +2432,11 @@ msgstr ""
 "IPv4 адреса для інтерфейсу групових пакетів за змовчуванням. Перекриває "
 "таблицю маршрутизації."
 
-#: src/libvlc-module.c:642
+#: src/libvlc-module.c:644
 msgid "DiffServ Code Point"
 msgstr "Точка коду диференційованих сервісів"
 
-#: src/libvlc-module.c:643
+#: src/libvlc-module.c:645
 msgid ""
 "Differentiated Services Code Point for outgoing UDP streams (or IPv4 Type Of "
 "Service, or IPv6 Traffic Class). This is used for network Quality of Service."
@@ -2447,7 +2445,7 @@ msgstr ""
 "сервісу IPv4, або клас трафіку IPv6). Це використовується для мережевої "
 "якості сервісу."
 
-#: src/libvlc-module.c:649
+#: src/libvlc-module.c:651
 msgid ""
 "Choose the program to select by giving its Service ID. Only use this option "
 "if you want to read a multi-program stream (like DVB streams for example)."
@@ -2456,7 +2454,7 @@ msgstr ""
 "випадку, якщо бажаєте переглянути потік з декількома програмами (наприклад, "
 "потік DVB)."
 
-#: src/libvlc-module.c:655
+#: src/libvlc-module.c:657
 msgid ""
 "Choose the programs to select by giving a comma-separated list of Service "
 "IDs (SIDs). Only use this option if you want to read a multi-program stream "
@@ -2466,27 +2464,27 @@ msgstr ""
 "(SID’и). Використовуйте тільки в тому випадку, якщо бажаєте переглянути "
 "потік з декількома програмами (наприклад, потік DVB)."
 
-#: src/libvlc-module.c:661 modules/gui/qt4/ui/open_disk.h:305
+#: src/libvlc-module.c:663 modules/gui/qt4/ui/open_disk.h:305
 msgid "Audio track"
 msgstr "Аудіодоріжка"
 
-#: src/libvlc-module.c:663
+#: src/libvlc-module.c:665
 msgid "Stream number of the audio track to use (from 0 to n)."
 msgstr "Номер аудіодоріжки, яку ви бажаєте використовувати (від 0 до n)."
 
-#: src/libvlc-module.c:666 modules/gui/qt4/ui/open_disk.h:306
+#: src/libvlc-module.c:668 modules/gui/qt4/ui/open_disk.h:306
 msgid "Subtitles track"
 msgstr "Доріжка субтитрів"
 
-#: src/libvlc-module.c:668
+#: src/libvlc-module.c:670
 msgid "Stream number of the subtitle track to use (from 0 to n)."
 msgstr "Номер доріжки субтитрів, яку Ви бажаєте використовувати (від 0 до n)."
 
-#: src/libvlc-module.c:671
+#: src/libvlc-module.c:673
 msgid "Audio language"
 msgstr "Мова звуку"
 
-#: src/libvlc-module.c:673
+#: src/libvlc-module.c:675
 msgid ""
 "Language of the audio track you want to use (comma separated, two or three "
 "letter country code)."
@@ -2494,11 +2492,11 @@ msgstr ""
 "Вкажіть мову звукової доріжки, яку Ви бажаєте використовувати (розділений "
 "комами дво- або трибуквенний код країни)."
 
-#: src/libvlc-module.c:676
+#: src/libvlc-module.c:678
 msgid "Subtitle language"
 msgstr "Мова субтитрів"
 
-#: src/libvlc-module.c:678
+#: src/libvlc-module.c:680
 msgid ""
 "Language of the subtitle track you want to use (comma separated, two or "
 "three letters country code)."
@@ -2506,67 +2504,67 @@ msgstr ""
 "Вкажіть мову доріжки субтитрів, яку Ви бажаєте використовувати (розділений "
 "комами дво- або трибуквений код країни)."
 
-#: src/libvlc-module.c:682
+#: src/libvlc-module.c:684
 msgid "Audio track ID"
 msgstr "ID аудіодоріжки"
 
-#: src/libvlc-module.c:684
+#: src/libvlc-module.c:686
 msgid "Stream ID of the audio track to use."
 msgstr "ID потоку аудіодоріжки, яку Ви бажаєте використовувати."
 
-#: src/libvlc-module.c:686
+#: src/libvlc-module.c:688
 msgid "Subtitles track ID"
 msgstr "ID доріжки субтитрів"
 
-#: src/libvlc-module.c:688
+#: src/libvlc-module.c:690
 msgid "Stream ID of the subtitle track to use."
 msgstr "Номер доріжки субтитрів, яку Ви бажаєте використовувати."
 
-#: src/libvlc-module.c:690
+#: src/libvlc-module.c:692
 msgid "Input repetitions"
 msgstr "Повторення вводу"
 
-#: src/libvlc-module.c:692
+#: src/libvlc-module.c:694
 msgid "Number of time the same input will be repeated"
 msgstr "Число повторень того самого потоку введення"
 
-#: src/libvlc-module.c:694
+#: src/libvlc-module.c:696
 msgid "Start time"
 msgstr "Час початку"
 
-#: src/libvlc-module.c:696
+#: src/libvlc-module.c:698
 msgid "The stream will start at this position (in seconds)."
 msgstr "Потік почнеться із цієї позиції (у секундах)."
 
-#: src/libvlc-module.c:698
+#: src/libvlc-module.c:700
 msgid "Stop time"
 msgstr "Час зупинки"
 
-#: src/libvlc-module.c:700
+#: src/libvlc-module.c:702
 msgid "The stream will stop at this position (in seconds)."
 msgstr "Потік зупиниться на цій позиції (у секундах)."
 
-#: src/libvlc-module.c:702
+#: src/libvlc-module.c:704
 msgid "Run time"
 msgstr "Час виконання"
 
-#: src/libvlc-module.c:704
+#: src/libvlc-module.c:706
 msgid "The stream will run this duration (in seconds)."
 msgstr "Потік виконуватиметься заданий час (у секундах)."
 
-#: src/libvlc-module.c:706
+#: src/libvlc-module.c:708
 msgid "Fast seek"
 msgstr "Швидке позиціонування"
 
-#: src/libvlc-module.c:708
+#: src/libvlc-module.c:710
 msgid "Favor speed over precision while seeking"
 msgstr "Під час позиціонування швидкість переважає над точністю"
 
-#: src/libvlc-module.c:710
+#: src/libvlc-module.c:712
 msgid "Input list"
 msgstr "Вхідний список"
 
-#: src/libvlc-module.c:712
+#: src/libvlc-module.c:714
 msgid ""
 "You can give a comma-separated list of inputs that will be concatenated "
 "together after the normal one."
@@ -2574,11 +2572,11 @@ msgstr ""
 "Тут можна задати розділений комами список потоків вводу, які будуть "
 "об'єднані після стандартного."
 
-#: src/libvlc-module.c:715
+#: src/libvlc-module.c:717
 msgid "Input slave (experimental)"
 msgstr "Ведені потоки введення (експериментально)"
 
-#: src/libvlc-module.c:717
+#: src/libvlc-module.c:719
 msgid ""
 "This allows you to play from several inputs at the same time. This feature "
 "is experimental, not all formats are supported. Use a '#' separated list of "
@@ -2588,11 +2586,11 @@ msgstr ""
 "експериментальна, не всі формати підтримуються. Використовуйте список вводу "
 "з елементами, розділеними символом '#'."
 
-#: src/libvlc-module.c:721
+#: src/libvlc-module.c:723
 msgid "Bookmarks list for a stream"
 msgstr "Список закладок для потоку"
 
-#: src/libvlc-module.c:723
+#: src/libvlc-module.c:725
 msgid ""
 "You can manually give a list of bookmarks for a stream in the form "
 "\"{name=bookmark-name,time=optional-time-offset,bytes=optional-byte-offset},"
@@ -2601,19 +2599,19 @@ msgstr ""
 "Можна задати список закладок для потоку у формі «{name=ім’я-закладки,time= "
 "необов'язковий-зсув-часу,bytes= необов'язковий-зсув-по-байтам},{...}»."
 
-#: src/libvlc-module.c:727 modules/gui/qt4/ui/sprefs_input.h:238
+#: src/libvlc-module.c:729 modules/gui/qt4/ui/sprefs_input.h:238
 msgid "Record directory or filename"
 msgstr "Каталог чи ім’я файлу для запису"
 
-#: src/libvlc-module.c:729
+#: src/libvlc-module.c:731
 msgid "Directory or filename where the records will be stored"
 msgstr "Каталог чи ім’я файлу, куди будуть зберігатися записи"
 
-#: src/libvlc-module.c:731
+#: src/libvlc-module.c:733
 msgid "Prefer native stream recording"
 msgstr "Надавати перевагу запису рідного потоку"
 
-#: src/libvlc-module.c:733
+#: src/libvlc-module.c:735
 msgid ""
 "When possible, the input stream will be recorded instead of usingthe stream "
 "output module"
@@ -2621,19 +2619,19 @@ msgstr ""
 "Коли можливо, вхідний потік буде записаний замість використання модуля "
 "виводу потоку"
 
-#: src/libvlc-module.c:736
+#: src/libvlc-module.c:738
 msgid "Timeshift directory"
 msgstr "Каталог зсуву за часом"
 
-#: src/libvlc-module.c:738
+#: src/libvlc-module.c:740
 msgid "Directory used to store the timeshift temporary files."
 msgstr "Каталог, де будуть зберігатися тимчасові файли модуля зсуву за часом."
 
-#: src/libvlc-module.c:740
+#: src/libvlc-module.c:742
 msgid "Timeshift granularity"
 msgstr "Розмір зсуву за часом"
 
-#: src/libvlc-module.c:742
+#: src/libvlc-module.c:744
 msgid ""
 "This is the maximum size in bytes of the temporary files that will be used "
 "to store the timeshifted streams."
@@ -2641,7 +2639,7 @@ msgstr ""
 "Максимальний розмір тимчасових файлів, які будуть містити зсунуті за часом "
 "потоки."
 
-#: src/libvlc-module.c:747
+#: src/libvlc-module.c:749
 msgid ""
 "These options allow you to modify the behavior of the subpictures subsystem. "
 "You can for example enable subpictures filters (logo, etc.). Enable these "
@@ -2653,11 +2651,11 @@ msgstr ""
 "налаштування у розділі «Фільтри шарів». Також можна задати безліч додаткових "
 "налаштувань даних модулів."
 
-#: src/libvlc-module.c:753 modules/gui/qt4/ui/sprefs_subtitles.h:221
+#: src/libvlc-module.c:755 modules/gui/qt4/ui/sprefs_subtitles.h:213
 msgid "Force subtitle position"
 msgstr "Задати позицію субтитрів"
 
-#: src/libvlc-module.c:755
+#: src/libvlc-module.c:757
 msgid ""
 "You can use this option to place the subtitles under the movie, instead of "
 "over the movie. Try several positions."
@@ -2665,32 +2663,32 @@ msgstr ""
 "Дозволяє розмістити субтитри під фільмом, замість або над фільмом. Спробуйте "
 "різні позиції."
 
-#: src/libvlc-module.c:758
+#: src/libvlc-module.c:760
 msgid "Enable sub-pictures"
 msgstr "Увімкнути «шари»"
 
-#: src/libvlc-module.c:760
+#: src/libvlc-module.c:762
 msgid "You can completely disable the sub-picture processing."
 msgstr "Можна повністю вимкнути обробку шарів."
 
-#: src/libvlc-module.c:762 src/libvlc-module.c:1678
+#: src/libvlc-module.c:764 src/libvlc-module.c:1680
 #: modules/gui/macosx/simple_prefs.m:279
-#: modules/gui/qt4/ui/sprefs_subtitles.h:208
+#: modules/gui/qt4/ui/sprefs_subtitles.h:201
 #: modules/stream_out/transcode.c:228
 msgid "On Screen Display"
 msgstr "OSD"
 
-#: src/libvlc-module.c:764
+#: src/libvlc-module.c:766
 msgid ""
 "VLC can display messages on the video. This is called OSD (On Screen "
 "Display)."
 msgstr "VLC може відображати повідомлення на відео (OSD, On Screen Display)."
 
-#: src/libvlc-module.c:767
+#: src/libvlc-module.c:769
 msgid "Text rendering module"
 msgstr "Модуль виведення тексту"
 
-#: src/libvlc-module.c:769
+#: src/libvlc-module.c:771
 msgid ""
 "VLC normally uses Freetype for rendering, but this allows you to use svg for "
 "instance."
@@ -2698,11 +2696,11 @@ msgstr ""
 "За змовчуванням VLC використовує для виведення тексту модуль Freetype, але "
 "Ви можете вказати інший, наприклад svg."
 
-#: src/libvlc-module.c:771
+#: src/libvlc-module.c:773
 msgid "Subpictures filter module"
 msgstr "Модуль фільтрів шарів"
 
-#: src/libvlc-module.c:773
+#: src/libvlc-module.c:775
 msgid ""
 "This adds so-called \"subpicture filters\". These filters overlay some "
 "images or text over the video (like a logo, arbitrary text, ...)."
@@ -2710,11 +2708,11 @@ msgstr ""
 "Це додає так звані «фільтри шарів». Ці фільтри перекривають деякими "
 "зображеннями чи текстом відео (типу лого, довільний текст…)."
 
-#: src/libvlc-module.c:776
+#: src/libvlc-module.c:778
 msgid "Autodetect subtitle files"
 msgstr "Автоматично визначати файли субтитрів"
 
-#: src/libvlc-module.c:778
+#: src/libvlc-module.c:780
 msgid ""
 "Automatically detect a subtitle file, if no subtitle filename is specified "
 "(based on the filename of the movie)."
@@ -2722,11 +2720,11 @@ msgstr ""
 "Автоматично визначати файл субтитрів, якщо ім'я файлу не зазначене "
 "(ґрунтується на імені файлу фільму)."
 
-#: src/libvlc-module.c:781
+#: src/libvlc-module.c:783
 msgid "Subtitle autodetection fuzziness"
 msgstr "Нечітке автовизначення субтитрів"
 
-#: src/libvlc-module.c:783
+#: src/libvlc-module.c:785
 msgid ""
 "This determines how fuzzy subtitle and movie filename matching will be. "
 "Options are:\n"
@@ -2744,11 +2742,11 @@ msgstr ""
 "3 = файл субтитрів, що містить ім'я файлу фільму й додаткові знаки\n"
 "4 = файл субтитрів, що містить тільки ім'я файлу фільму"
 
-#: src/libvlc-module.c:791
+#: src/libvlc-module.c:793
 msgid "Subtitle autodetection paths"
 msgstr "Шляхи автовизначення файлів субтитрів"
 
-#: src/libvlc-module.c:793
+#: src/libvlc-module.c:795
 msgid ""
 "Look for a subtitle file in those paths too, if your subtitle file was not "
 "found in the current directory."
@@ -2756,11 +2754,11 @@ msgstr ""
 "Якщо файл субтитрів не був знайдений у поточному каталозі, шукати також і в "
 "цих каталогах."
 
-#: src/libvlc-module.c:796
+#: src/libvlc-module.c:798
 msgid "Use subtitle file"
 msgstr "Використовувати файл субтитрів"
 
-#: src/libvlc-module.c:798
+#: src/libvlc-module.c:800
 msgid ""
 "Load this subtitle file. To be used when autodetect cannot detect your "
 "subtitle file."
@@ -2768,11 +2766,11 @@ msgstr ""
 "Використовувати саме цей файл субтитрів. Має сенс задавати, якщо "
 "автовизначення не спрацьовує."
 
-#: src/libvlc-module.c:801
+#: src/libvlc-module.c:803
 msgid "DVD device"
 msgstr "Пристрій DVD"
 
-#: src/libvlc-module.c:804
+#: src/libvlc-module.c:806
 msgid ""
 "This is the default DVD drive (or file) to use. Don't forget the colon after "
 "the drive letter (eg. D:)"
@@ -2780,15 +2778,15 @@ msgstr ""
 "Пристрій (або файл) DVD для використання за змовчуванням. Не забудьте про "
 "двокрапку після імені диска (наприклад, D:)."
 
-#: src/libvlc-module.c:808
+#: src/libvlc-module.c:810
 msgid "This is the default DVD device to use."
 msgstr "Пристрій (або файл) DVD для використання за змовчуванням."
 
-#: src/libvlc-module.c:811
+#: src/libvlc-module.c:813
 msgid "VCD device"
 msgstr "Пристрій VCD"
 
-#: src/libvlc-module.c:814
+#: src/libvlc-module.c:816
 msgid ""
 "This is the default VCD device to use. If you don't specify anything, we'll "
 "scan for a suitable CD-ROM device."
@@ -2796,15 +2794,15 @@ msgstr ""
 "Пристрій VCD для використання за змовчуванням. Якщо ви не вкажете тут "
 "нічого, VLC просканує систему на предмет відповідного пристрою CD-ROM."
 
-#: src/libvlc-module.c:818
+#: src/libvlc-module.c:820
 msgid "This is the default VCD device to use."
 msgstr "Пристрій VCD для використання за змовчуванням."
 
-#: src/libvlc-module.c:821
+#: src/libvlc-module.c:823
 msgid "Audio CD device"
 msgstr "Пристрій Audio CD"
 
-#: src/libvlc-module.c:824
+#: src/libvlc-module.c:826
 msgid ""
 "This is the default Audio CD device to use. If you don't specify anything, "
 "we'll scan for a suitable CD-ROM device."
@@ -2812,39 +2810,39 @@ msgstr ""
 "Пристрій Audio CD для використання за змовчуванням. Якщо ви не вкажете тут "
 "нічого, VLC просканує систему на предмет відповідного пристрою CD-ROM."
 
-#: src/libvlc-module.c:828
+#: src/libvlc-module.c:830
 msgid "This is the default Audio CD device to use."
 msgstr "Пристрій Audio CD для використання за змовчуванням."
 
-#: src/libvlc-module.c:831
+#: src/libvlc-module.c:833
 msgid "Force IPv6"
 msgstr "Примусове використання IPv6"
 
-#: src/libvlc-module.c:833
+#: src/libvlc-module.c:835
 msgid "IPv6 will be used by default for all connections."
 msgstr "IPv6 буде використаний за змовчуванням для всіх з'єднань."
 
-#: src/libvlc-module.c:835
+#: src/libvlc-module.c:837
 msgid "Force IPv4"
 msgstr "Примусове використання IPv4"
 
-#: src/libvlc-module.c:837
+#: src/libvlc-module.c:839
 msgid "IPv4 will be used by default for all connections."
 msgstr "IPv4 буде використаний за змовчуванням для всіх з'єднань."
 
-#: src/libvlc-module.c:839
+#: src/libvlc-module.c:841
 msgid "TCP connection timeout"
 msgstr "Таймаут TCP-з'єднання"
 
-#: src/libvlc-module.c:841
+#: src/libvlc-module.c:843
 msgid "Default TCP connection timeout (in milliseconds). "
 msgstr "Таймаут TCP-з'єднання за змовчуванням (у мілісекундах). "
 
-#: src/libvlc-module.c:843
+#: src/libvlc-module.c:845
 msgid "SOCKS server"
 msgstr "SOCKS-сервер"
 
-#: src/libvlc-module.c:845
+#: src/libvlc-module.c:847
 msgid ""
 "SOCKS proxy server to use. This must be of the form address:port. It will be "
 "used for all TCP connections"
@@ -2852,88 +2850,88 @@ msgstr ""
 "SOCKS проксі-сервер для підключення. Повинен бути заданий у формі адреса:"
 "порт. Буде використано для всіх TCP-з'єднань"
 
-#: src/libvlc-module.c:848
+#: src/libvlc-module.c:850
 msgid "SOCKS user name"
 msgstr "Ім'я користувача SOCKS"
 
-#: src/libvlc-module.c:850
+#: src/libvlc-module.c:852
 msgid "User name to be used for connection to the SOCKS proxy."
 msgstr ""
 "Ім'я користувача, яке буде використано при під’єднанні до SOCKS-проксі."
 
-#: src/libvlc-module.c:852
+#: src/libvlc-module.c:854
 msgid "SOCKS password"
 msgstr "Пароль SOCKS"
 
-#: src/libvlc-module.c:854
+#: src/libvlc-module.c:856
 msgid "Password to be used for connection to the SOCKS proxy."
 msgstr "Пароль, який буде використаний при з'єднанні з SOCKS."
 
-#: src/libvlc-module.c:856
+#: src/libvlc-module.c:858
 msgid "Title metadata"
 msgstr "Метадані назви"
 
-#: src/libvlc-module.c:858
+#: src/libvlc-module.c:860
 msgid "Allows you to specify a \"title\" metadata for an input."
 msgstr "Дозволяє вибрати метадані «назви» для вхідного потоку."
 
-#: src/libvlc-module.c:860
+#: src/libvlc-module.c:862
 msgid "Author metadata"
 msgstr "Метадані автора"
 
-#: src/libvlc-module.c:862
+#: src/libvlc-module.c:864
 msgid "Allows you to specify an \"author\" metadata for an input."
 msgstr "Дозволяє задати метадані «автора» для вхідного потоку."
 
-#: src/libvlc-module.c:864
+#: src/libvlc-module.c:866
 msgid "Artist metadata"
 msgstr "Метадані виконавця"
 
-#: src/libvlc-module.c:866
+#: src/libvlc-module.c:868
 msgid "Allows you to specify an \"artist\" metadata for an input."
 msgstr "Дозволяє задати метадані «виконавця» для вхідного потоку."
 
-#: src/libvlc-module.c:868
+#: src/libvlc-module.c:870
 msgid "Genre metadata"
 msgstr "Метадані жанру"
 
-#: src/libvlc-module.c:870
+#: src/libvlc-module.c:872
 msgid "Allows you to specify a \"genre\" metadata for an input."
 msgstr "Дозволяє задати метадані «жанру» для вхідного потоку."
 
-#: src/libvlc-module.c:872
+#: src/libvlc-module.c:874
 msgid "Copyright metadata"
 msgstr "Метадані авторських прав"
 
-#: src/libvlc-module.c:874
+#: src/libvlc-module.c:876
 msgid "Allows you to specify a \"copyright\" metadata for an input."
 msgstr "Дозволяє задати метадані «авторських прав» для вхідного потоку."
 
-#: src/libvlc-module.c:876
+#: src/libvlc-module.c:878
 msgid "Description metadata"
 msgstr "Опис метаданих"
 
-#: src/libvlc-module.c:878
+#: src/libvlc-module.c:880
 msgid "Allows you to specify a \"description\" metadata for an input."
 msgstr "Дозволяє задати метадані «опису» для вхідного потоку."
 
-#: src/libvlc-module.c:880
+#: src/libvlc-module.c:882
 msgid "Date metadata"
 msgstr "Метадані дати"
 
-#: src/libvlc-module.c:882
+#: src/libvlc-module.c:884
 msgid "Allows you to specify a \"date\" metadata for an input."
 msgstr "Дозволяє задати метадані «дати» для вхідного потоку."
 
-#: src/libvlc-module.c:884
+#: src/libvlc-module.c:886
 msgid "URL metadata"
 msgstr "Метадані URL"
 
-#: src/libvlc-module.c:886
+#: src/libvlc-module.c:888
 msgid "Allows you to specify a \"url\" metadata for an input."
 msgstr "Дозволяє задати метадані «URL» для вхідного потоку."
 
-#: src/libvlc-module.c:890
+#: src/libvlc-module.c:892
 msgid ""
 "This option can be used to alter the way VLC selects its codecs "
 "(decompression methods). Only advanced users should alter this option as it "
@@ -2944,11 +2942,11 @@ msgstr ""
 "налаштування, тому що вони можуть зламати існуюче відтворення усіх Ваших "
 "потоків."
 
-#: src/libvlc-module.c:894
+#: src/libvlc-module.c:896
 msgid "Preferred decoders list"
 msgstr "Список бажаних декодерів"
 
-#: src/libvlc-module.c:896
+#: src/libvlc-module.c:898
 msgid ""
 "List of codecs that VLC will use in priority. For instance, 'dummy,a52' will "
 "try the dummy and a52 codecs before trying the other ones. Only advanced "
@@ -2960,22 +2958,22 @@ msgstr ""
 "ці налаштування, тому що вони можуть зламати існуюче відтворення усіх Ваших "
 "потоків."
 
-#: src/libvlc-module.c:901
+#: src/libvlc-module.c:903
 msgid "Preferred encoders list"
 msgstr "Список бажаних кодувальників"
 
-#: src/libvlc-module.c:903
+#: src/libvlc-module.c:905
 msgid ""
 "This allows you to select a list of encoders that VLC will use in priority."
 msgstr ""
 "Список кодувальників, які VLC буде використовувати, залежно від їх "
 "пріоритету."
 
-#: src/libvlc-module.c:906
+#: src/libvlc-module.c:908
 msgid "Prefer system plugins over VLC"
 msgstr "Надавати перевагу системним плагінам"
 
-#: src/libvlc-module.c:908
+#: src/libvlc-module.c:910
 msgid ""
 "Indicates whether VLC will prefer native plugins installed on system over "
 "VLC owns plugins whenever a choice is available."
@@ -2983,7 +2981,7 @@ msgstr ""
 "Показує, чи буде VLC надавати перевагу рідним плагінам, встановленим у "
 "системі, замість вбудованих плагінів, коли існує вибір."
 
-#: src/libvlc-module.c:917
+#: src/libvlc-module.c:919
 msgid ""
 "These options allow you to set default global options for the stream output "
 "subsystem."
@@ -2991,11 +2989,11 @@ msgstr ""
 "Ці параметри дозволяють задати загальні налаштування за змовчуванням для "
 "підсистеми виводу потоку."
 
-#: src/libvlc-module.c:920
+#: src/libvlc-module.c:922
 msgid "Default stream output chain"
 msgstr "Ланцюжок виводу потоку за змовчуванням"
 
-#: src/libvlc-module.c:922
+#: src/libvlc-module.c:924
 msgid ""
 "You can enter here a default stream output chain. Refer to the documentation "
 "to learn how to build such chains.Warning: this chain will be enabled for "
@@ -3006,27 +3004,27 @@ msgstr ""
 "створювати такі ланцюжки. Попередження: цей ланцюжок буде застосовуватись "
 "для всіх потоків."
 
-#: src/libvlc-module.c:926
+#: src/libvlc-module.c:928
 msgid "Enable streaming of all ES"
 msgstr "Увімкнути мовлення всіх елементарних потоків"
 
-#: src/libvlc-module.c:928
+#: src/libvlc-module.c:930
 msgid "Stream all elementary streams (video, audio and subtitles)"
 msgstr "Вести мовлення всі елементарні потоки (відео, аудіо та субтитри)"
 
-#: src/libvlc-module.c:930
+#: src/libvlc-module.c:932
 msgid "Display while streaming"
 msgstr "Показувати під час мовлення"
 
-#: src/libvlc-module.c:932
+#: src/libvlc-module.c:934
 msgid "Play locally the stream while streaming it."
 msgstr "Відтворювати потік локально під час мовлення."
 
-#: src/libvlc-module.c:934
+#: src/libvlc-module.c:936
 msgid "Enable video stream output"
 msgstr "Увімкнути вивід відеопотоку"
 
-#: src/libvlc-module.c:936
+#: src/libvlc-module.c:938
 msgid ""
 "Choose whether the video stream should be redirected to the stream output "
 "facility when this last one is enabled."
@@ -3034,11 +3032,11 @@ msgstr ""
 "Перенаправлення відеопотоку у відповідний модуль виведення, якщо останній "
 "увімкнений."
 
-#: src/libvlc-module.c:939
+#: src/libvlc-module.c:941
 msgid "Enable audio stream output"
 msgstr "Увімкнути вивід аудіопотоку"
 
-#: src/libvlc-module.c:941
+#: src/libvlc-module.c:943
 msgid ""
 "Choose whether the audio stream should be redirected to the stream output "
 "facility when this last one is enabled."
@@ -3046,11 +3044,11 @@ msgstr ""
 "Перенаправлення аудіопотоку у відповідний модуль виведення, якщо останній "
 "увімкнений."
 
-#: src/libvlc-module.c:944
+#: src/libvlc-module.c:946
 msgid "Enable SPU stream output"
 msgstr "Увімкнути виведення субтитрів"
 
-#: src/libvlc-module.c:946
+#: src/libvlc-module.c:948
 msgid ""
 "Choose whether the SPU streams should be redirected to the stream output "
 "facility when this last one is enabled."
@@ -3058,11 +3056,11 @@ msgstr ""
 "Перенаправлення потоку субтитрів у відповідний модуль виводу, якщо останній "
 "увімкнений."
 
-#: src/libvlc-module.c:949 modules/gui/qt4/ui/sout.h:348
+#: src/libvlc-module.c:951 modules/gui/qt4/ui/sout.h:348
 msgid "Keep stream output open"
 msgstr "Тримати потік виведення відкритим"
 
-#: src/libvlc-module.c:951
+#: src/libvlc-module.c:953
 msgid ""
 "This allows you to keep an unique stream output instance across multiple "
 "playlist item (automatically insert the gather stream output if not "
@@ -3072,11 +3070,11 @@ msgstr ""
 "елементів списку відтворення (автоматично вставляти вихідний потік, якщо "
 "нічого не зазначено)"
 
-#: src/libvlc-module.c:955
+#: src/libvlc-module.c:957
 msgid "Stream output muxer caching (ms)"
 msgstr "Кешування вихідного потоку мультиплексора (мс)"
 
-#: src/libvlc-module.c:957
+#: src/libvlc-module.c:959
 msgid ""
 "This allow you to configure the initial caching amount for stream output  "
 "muxer. This value should be set in milliseconds."
@@ -3084,38 +3082,38 @@ msgstr ""
 "Дозволяє змінювати початкове значення кеша за змовчуванням для вихідного "
 "потоку мультиплексора. Значення вказується в мілісекундах."
 
-#: src/libvlc-module.c:960
+#: src/libvlc-module.c:962
 msgid "Preferred packetizer list"
 msgstr "Cписок бажаних пакетувальників"
 
-#: src/libvlc-module.c:962
+#: src/libvlc-module.c:964
 msgid ""
 "This allows you to select the order in which VLC will choose its packetizers."
 msgstr ""
 "Цей параметр дозволяє вибирати порядок, у якому VLC буде використовувати "
 "пакетувальники."
 
-#: src/libvlc-module.c:965
+#: src/libvlc-module.c:967
 msgid "Mux module"
 msgstr "Модуль мультиплексування"
 
-#: src/libvlc-module.c:967
+#: src/libvlc-module.c:969
 msgid "This is a legacy entry to let you configure mux modules"
 msgstr "Застарілий параметр, дозволяє налаштувати модулі мультиплексування"
 
-#: src/libvlc-module.c:969
+#: src/libvlc-module.c:971
 msgid "Access output module"
 msgstr "Модуль доступу виводу"
 
-#: src/libvlc-module.c:971
+#: src/libvlc-module.c:973
 msgid "This is a legacy entry to let you configure access output modules"
 msgstr "Застарілий параметр, дозволяє налаштувати модулі доступу виводу"
 
-#: src/libvlc-module.c:973
+#: src/libvlc-module.c:975
 msgid "Control SAP flow"
 msgstr "Керування потоком SAP"
 
-#: src/libvlc-module.c:975
+#: src/libvlc-module.c:977
 msgid ""
 "If this option is enabled, the flow on the SAP multicast address will be "
 "controlled. This is needed if you want to make announcements on the MBone."
@@ -3123,11 +3121,11 @@ msgstr ""
 "Якщо цей параметр увімкнений, вмикається контроль над потоком на груповій "
 "адресі SAP. Це необхідно, якщо Ви бажаєте розсилати сповіщення на Mbone."
 
-#: src/libvlc-module.c:979
+#: src/libvlc-module.c:981
 msgid "SAP announcement interval"
 msgstr "Інтервал сповіщень SAP"
 
-#: src/libvlc-module.c:981
+#: src/libvlc-module.c:983
 msgid ""
 "When the SAP flow control is disabled, this lets you set the fixed interval "
 "between SAP announcements."
@@ -3135,7 +3133,7 @@ msgstr ""
 "Коли керування потоком SAP вимкнено, цей параметр дозволяє встановити "
 "фіксований інтервал розсилання сповіщень SAP."
 
-#: src/libvlc-module.c:990
+#: src/libvlc-module.c:992
 msgid ""
 "These options allow you to enable special CPU optimizations. You should "
 "always leave all these enabled."
@@ -3143,12 +3141,12 @@ msgstr ""
 "Ці параметри дозволяють вам увімкнути спеціальну оптимізацію центрального "
 "процесора. Не варто відключати тут що-небудь."
 
-#: src/libvlc-module.c:993
+#: src/libvlc-module.c:995
 msgid "Enable FPU support"
 msgstr ""
 "Увімкнути підтримку співпроцесора для операцій із плаваючою крапкою (FPU)"
 
-#: src/libvlc-module.c:995
+#: src/libvlc-module.c:997
 msgid ""
 "If your processor has a floating point calculation unit, VLC can take "
 "advantage of it."
@@ -3156,22 +3154,22 @@ msgstr ""
 "Якщо Ваш процесор має модуль обчислення із плаваючою крапкою, VLC може його "
 "використовувати."
 
-#: src/libvlc-module.c:998
+#: src/libvlc-module.c:1000
 msgid "Enable CPU MMX support"
 msgstr "Увімкнути підтримку MMX"
 
-#: src/libvlc-module.c:1000
+#: src/libvlc-module.c:1002
 msgid ""
 "If your processor supports the MMX instructions set, VLC can take advantage "
 "of them."
 msgstr ""
 "Якщо ваш процесор підтримує набір команд MMX, VLC може їх використовувати."
 
-#: src/libvlc-module.c:1003
+#: src/libvlc-module.c:1005
 msgid "Enable CPU 3D Now! support"
 msgstr "Увімкнути підтримку 3D Now!"
 
-#: src/libvlc-module.c:1005
+#: src/libvlc-module.c:1007
 msgid ""
 "If your processor supports the 3D Now! instructions set, VLC can take "
 "advantage of them."
@@ -3179,11 +3177,11 @@ msgstr ""
 "Якщо ваш процесор підтримує набір команд 3D Now!, VLC може їх "
 "використовувати."
 
-#: src/libvlc-module.c:1008
+#: src/libvlc-module.c:1010
 msgid "Enable CPU MMX EXT support"
 msgstr "Увімкнути підтримку MMX EXT"
 
-#: src/libvlc-module.c:1010
+#: src/libvlc-module.c:1012
 msgid ""
 "If your processor supports the MMX EXT instructions set, VLC can take "
 "advantage of them."
@@ -3191,33 +3189,33 @@ msgstr ""
 "Якщо ваш процесор підтримує набір команд MMX EXT, VLC може їх "
 "використовувати."
 
-#: src/libvlc-module.c:1013
+#: src/libvlc-module.c:1015
 msgid "Enable CPU SSE support"
 msgstr "Увімкнути підтримку SSE"
 
-#: src/libvlc-module.c:1015
+#: src/libvlc-module.c:1017
 msgid ""
 "If your processor supports the SSE instructions set, VLC can take advantage "
 "of them."
 msgstr ""
 "Якщо ваш процесор підтримує набір команд SSE, VLC може їх використовувати."
 
-#: src/libvlc-module.c:1018
+#: src/libvlc-module.c:1020
 msgid "Enable CPU SSE2 support"
 msgstr "Увімкнути підтримку SSE2"
 
-#: src/libvlc-module.c:1020
+#: src/libvlc-module.c:1022
 msgid ""
 "If your processor supports the SSE2 instructions set, VLC can take advantage "
 "of them."
 msgstr ""
 "Якщо ваш процесор підтримує набір команд SSE2, VLC може їх використовувати."
 
-#: src/libvlc-module.c:1023
+#: src/libvlc-module.c:1025
 msgid "Enable CPU AltiVec support"
 msgstr "Увімкнути підтримку AltiVec"
 
-#: src/libvlc-module.c:1025
+#: src/libvlc-module.c:1027
 msgid ""
 "If your processor supports the AltiVec instructions set, VLC can take "
 "advantage of them."
@@ -3225,7 +3223,7 @@ msgstr ""
 "Якщо ваш процесор підтримує набір команд AltiVec, VLC може їх "
 "використовувати."
 
-#: src/libvlc-module.c:1030
+#: src/libvlc-module.c:1032
 msgid ""
 "These options allow you to select default modules. Leave these alone unless "
 "you really know what you are doing."
@@ -3233,11 +3231,11 @@ msgstr ""
 "Ці параметри дозволяють вибирати модулі за змовчуванням. Не змінюйте їх, "
 "якщо Ви не впевнені в тому, що робите."
 
-#: src/libvlc-module.c:1033
+#: src/libvlc-module.c:1035
 msgid "Memory copy module"
 msgstr "Модуль копіювання пам’яті"
 
-#: src/libvlc-module.c:1035
+#: src/libvlc-module.c:1037
 msgid ""
 "You can select which memory copy module you want to use. By default VLC will "
 "select the fastest one supported by your hardware."
@@ -3245,11 +3243,11 @@ msgstr ""
 "Ви можете вибрати, який модуль копіювання пам'яті використовувати. За "
 "змовчуванням VLC вибере найшвидший з підтримуваних Вашим обладнанням."
 
-#: src/libvlc-module.c:1038
+#: src/libvlc-module.c:1040
 msgid "Access module"
 msgstr "Модуль доступу"
 
-#: src/libvlc-module.c:1040
+#: src/libvlc-module.c:1042
 msgid ""
 "This allows you to force an access module. You can use it if the correct "
 "access is not automatically detected. You should not set this as a global "
@@ -3259,19 +3257,19 @@ msgstr ""
 "автовизначення не спрацювало. Не встановлюйте цей параметр, як глобальний, "
 "якщо Ви не впевнені в тому, що робите."
 
-#: src/libvlc-module.c:1044
+#: src/libvlc-module.c:1046
 msgid "Stream filter module"
 msgstr "Модуль фільтру потоку"
 
-#: src/libvlc-module.c:1046
+#: src/libvlc-module.c:1048
 msgid "Stream filters are used to modify the stream that is being read. "
 msgstr "Фільтри потоку використовуються для зміни потоку після читання."
 
-#: src/libvlc-module.c:1048
+#: src/libvlc-module.c:1050
 msgid "Demux module"
 msgstr "Модуль демультиплексора"
 
-#: src/libvlc-module.c:1050
+#: src/libvlc-module.c:1052
 msgid ""
 "Demultiplexers are used to separate the \"elementary\" streams (like audio "
 "and video streams). You can use it if the correct demuxer is not "
@@ -3283,11 +3281,11 @@ msgstr ""
 "автовизначення не спрацювало. Не встановлюйте цей параметр, як глобальний, "
 "якщо Ви не впевнені в тому, що робите."
 
-#: src/libvlc-module.c:1055
+#: src/libvlc-module.c:1057
 msgid "Allow real-time priority"
 msgstr "Дозволити пріоритет реального часу"
 
-#: src/libvlc-module.c:1057
+#: src/libvlc-module.c:1059
 msgid ""
 "Running VLC in real-time priority will allow for much more precise "
 "scheduling and yield better, especially when streaming content. It can "
@@ -3300,11 +3298,11 @@ msgstr ""
 "повинні вмикати цей параметр тільки в тому випадку, якщо впевнені в тому, що "
 "робите."
 
-#: src/libvlc-module.c:1063
+#: src/libvlc-module.c:1065
 msgid "Adjust VLC priority"
 msgstr "Налаштувати пріоритет VLC"
 
-#: src/libvlc-module.c:1065
+#: src/libvlc-module.c:1067
 msgid ""
 "This option adds an offset (positive or negative) to VLC default priorities. "
 "You can use it to tune VLC priority against other programs, or against other "
@@ -3314,20 +3312,20 @@ msgstr ""
 "змовчуванням. Ви можете налаштувати пріоритет відносно інших програм або "
 "щодо інших процесів VLC."
 
-#: src/libvlc-module.c:1069
+#: src/libvlc-module.c:1071
 msgid "(Experimental) Don't do caching at the access level."
 msgstr "(Експериментально) Не проводити кешування на рівні доступу."
 
-#: src/libvlc-module.c:1071
+#: src/libvlc-module.c:1073
 msgid ""
 "This option is useful if you want to lower the latency when reading a stream"
 msgstr "Цей параметр корисний, якщо Ви хочете знизити затримку читання потоку"
 
-#: src/libvlc-module.c:1074
+#: src/libvlc-module.c:1076
 msgid "Modules search path"
 msgstr "Шлях пошуку модулів"
 
-#: src/libvlc-module.c:1076
+#: src/libvlc-module.c:1078
 msgid ""
 "Additional path for VLC to look for its modules. You can add several paths "
 "by concatenating them using \" PATH_SEP \" as separator"
@@ -3335,67 +3333,67 @@ msgstr ""
 "Додатковий шлях для пошуку модулів VLC. Ви можете додати кілька шляхів, "
 "поєднуючи їх, використовуючи «PATH_SEP», як роздільник."
 
-#: src/libvlc-module.c:1079
+#: src/libvlc-module.c:1081
 msgid "VLM configuration file"
 msgstr "Конфігураційний файл VLM"
 
-#: src/libvlc-module.c:1081
+#: src/libvlc-module.c:1083
 msgid "Read a VLM configuration file as soon as VLM is started."
 msgstr "Завантажити зазначений конфігураційний файл при запуску VLM."
 
-#: src/libvlc-module.c:1083
+#: src/libvlc-module.c:1085
 msgid "Use a plugins cache"
 msgstr "Використовувати кеш плагінів"
 
-#: src/libvlc-module.c:1085
+#: src/libvlc-module.c:1087
 msgid "Use a plugins cache which will greatly improve the startup time of VLC."
 msgstr "Використання кеша плагінів суттєво прискорює запуск VLC."
 
-#: src/libvlc-module.c:1087
+#: src/libvlc-module.c:1089
 msgid "Collect statistics"
 msgstr "Збирати статистику"
 
-#: src/libvlc-module.c:1089
+#: src/libvlc-module.c:1091
 msgid "Collect miscellaneous statistics."
 msgstr "Збирати різноманітну статистику."
 
-#: src/libvlc-module.c:1091
+#: src/libvlc-module.c:1093
 msgid "Run as daemon process"
 msgstr "Запускати як процес-демон"
 
-#: src/libvlc-module.c:1093
+#: src/libvlc-module.c:1095
 msgid "Runs VLC as a background daemon process."
 msgstr "Запускає VLC як фоновий процес-демон."
 
-#: src/libvlc-module.c:1095
+#: src/libvlc-module.c:1097
 msgid "Write process id to file"
 msgstr "Записувати ID процесу до файлу"
 
-#: src/libvlc-module.c:1097
+#: src/libvlc-module.c:1099
 msgid "Writes process id into specified file."
 msgstr "Записує ID процесу до вказаного файлу."
 
-#: src/libvlc-module.c:1099
+#: src/libvlc-module.c:1101
 msgid "Log to file"
 msgstr "Журналювати у файл"
 
-#: src/libvlc-module.c:1101
+#: src/libvlc-module.c:1103
 msgid "Log all VLC messages to a text file."
 msgstr "Журналювати всі повідомлення VLC у текстовий файл."
 
-#: src/libvlc-module.c:1103
+#: src/libvlc-module.c:1105
 msgid "Log to syslog"
 msgstr "Журналювати до syslog’у"
 
-#: src/libvlc-module.c:1105
+#: src/libvlc-module.c:1107
 msgid "Log all VLC messages to syslog (UNIX systems)."
 msgstr "Журналювати всі повідомлення VLC до syslog’у (UNIX-системи)."
 
-#: src/libvlc-module.c:1107
+#: src/libvlc-module.c:1109
 msgid "Allow only one running instance"
 msgstr "Дозволяти запуск тільки однієї копії VLC"
 
-#: src/libvlc-module.c:1110
+#: src/libvlc-module.c:1112
 msgid ""
 "Allowing only one running instance of VLC can sometimes be useful, for "
 "example if you associated VLC with some media types and you don't want a new "
@@ -3409,7 +3407,7 @@ msgstr ""
 "вам відтворювати вибраний файл вже існуючим процесом або додати його до "
 "списку відтворення."
 
-#: src/libvlc-module.c:1117
+#: src/libvlc-module.c:1119
 msgid ""
 "Allowing only one running instance of VLC can sometimes be useful, for "
 "example if you associated VLC with some media types and you don't want a new "
@@ -3426,27 +3424,27 @@ msgstr ""
 "сесії D-Bus і працюючої копії VLC для використання інтерфейсу керування D-"
 "Bus."
 
-#: src/libvlc-module.c:1126
+#: src/libvlc-module.c:1128
 msgid "VLC is started from file association"
 msgstr "VLC запущено з асоціації файлу"
 
-#: src/libvlc-module.c:1128
+#: src/libvlc-module.c:1130
 msgid "Tell VLC that it is being launched due to a file association in the OS"
 msgstr "Вказує, що VLC запущений з асоціації файлу в ОС"
 
-#: src/libvlc-module.c:1131
+#: src/libvlc-module.c:1133
 msgid "One instance when started from file"
 msgstr "Одна копія при запуску з файлу"
 
-#: src/libvlc-module.c:1133
+#: src/libvlc-module.c:1135
 msgid "Allow only one running instance when started from file."
 msgstr "Дозволити запуск тільки однієї копії при запуску з файлу."
 
-#: src/libvlc-module.c:1135
+#: src/libvlc-module.c:1137
 msgid "Increase the priority of the process"
 msgstr "Збільшити пріоритет процесу"
 
-#: src/libvlc-module.c:1137
+#: src/libvlc-module.c:1139
 msgid ""
 "Increasing the priority of the process will very likely improve your playing "
 "experience as it allows VLC not to be disturbed by other applications that "
@@ -3462,11 +3460,11 @@ msgstr ""
 "виразитися у відсутності реакції системи на які-небудь дії та зажадати "
 "перезавантаження комп'ютера."
 
-#: src/libvlc-module.c:1145
+#: src/libvlc-module.c:1147
 msgid "Enqueue items to playlist when in one instance mode"
 msgstr "Додавати елементи до списку відтворення у режимі однієї копії"
 
-#: src/libvlc-module.c:1147
+#: src/libvlc-module.c:1149
 msgid ""
 "When using the one instance only option, enqueue items to playlist and keep "
 "playing current item."
@@ -3474,7 +3472,7 @@ msgstr ""
 "Коли дозволений запуск тільки однієї копії VLC, нові елементи додаються до "
 "списку відтворення, і поточний елемент продовжує відтворюватись."
 
-#: src/libvlc-module.c:1156
+#: src/libvlc-module.c:1158
 msgid ""
 "These options define the behavior of the playlist. Some of them can be "
 "overridden in the playlist dialog box."
@@ -3482,11 +3480,11 @@ msgstr ""
 "Ці параметри визначають поведінку списку відтворення. Деякі з них можуть "
 "бути перевизначені в діалоговому вікні списку відтворення."
 
-#: src/libvlc-module.c:1159
+#: src/libvlc-module.c:1161
 msgid "Automatically preparse files"
 msgstr "Автоматичне попереднє розбирання файлів"
 
-#: src/libvlc-module.c:1161
+#: src/libvlc-module.c:1163
 msgid ""
 "Automatically preparse files added to the playlist (to retrieve some "
 "metadata)."
@@ -3494,31 +3492,31 @@ msgstr ""
 "Автоматично попередньо розбирати файли, що додаються до списку відтворення "
 "(для отримання метаданих)."
 
-#: src/libvlc-module.c:1164
+#: src/libvlc-module.c:1166
 msgid "Album art policy"
 msgstr "Політика мистецтва альбому"
 
-#: src/libvlc-module.c:1166
+#: src/libvlc-module.c:1168
 msgid "Choose how album art will be downloaded."
 msgstr "Оберіть, як альбомне мистецтво буде завантажуватися."
 
-#: src/libvlc-module.c:1172
+#: src/libvlc-module.c:1174
 msgid "Manual download only"
 msgstr "Завантажувати лише вручну"
 
-#: src/libvlc-module.c:1173
+#: src/libvlc-module.c:1175
 msgid "When track starts playing"
 msgstr "Коли доріжка починає відтворюватися"
 
-#: src/libvlc-module.c:1174
+#: src/libvlc-module.c:1176
 msgid "As soon as track is added"
 msgstr "Як тільки доріжка додана"
 
-#: src/libvlc-module.c:1176
+#: src/libvlc-module.c:1178
 msgid "Services discovery modules"
 msgstr "Модулі пошуку служб"
 
-#: src/libvlc-module.c:1178
+#: src/libvlc-module.c:1180
 msgid ""
 "Specifies the services discovery modules to load, separated by semi-colons. "
 "Typical values are sap, hal, ..."
@@ -3526,49 +3524,49 @@ msgstr ""
 "Список завантажуваних модулів пошуку служб через двокрапку. Звичайні "
 "значення: sap, hal…"
 
-#: src/libvlc-module.c:1181
+#: src/libvlc-module.c:1183
 msgid "Play files randomly forever"
 msgstr "Завжди відтворювати файли у випадковому порядку"
 
-#: src/libvlc-module.c:1183
+#: src/libvlc-module.c:1185
 msgid "VLC will randomly play files in the playlist until interrupted."
 msgstr ""
 "Завжди відтворювати файли зі списку відтворення у випадковому порядку до "
 "переривання."
 
-#: src/libvlc-module.c:1187
+#: src/libvlc-module.c:1189
 msgid "VLC will keep playing the playlist indefinitely."
 msgstr "VLC буде відтворювати елементи списку відтворення нескінченно."
 
-#: src/libvlc-module.c:1189
+#: src/libvlc-module.c:1191
 msgid "Repeat current item"
 msgstr "Повторити поточний елемент"
 
-#: src/libvlc-module.c:1191
+#: src/libvlc-module.c:1193
 msgid "VLC will keep playing the current playlist item."
 msgstr "VLC буде повторювати даний елемент списку відтворення."
 
-#: src/libvlc-module.c:1193
+#: src/libvlc-module.c:1195
 msgid "Play and stop"
 msgstr "Відтворити й зупинити"
 
-#: src/libvlc-module.c:1195
+#: src/libvlc-module.c:1197
 msgid "Stop the playlist after each played playlist item."
 msgstr "Зупинити відтворення після кожного відтвореного елемента."
 
-#: src/libvlc-module.c:1197
+#: src/libvlc-module.c:1199
 msgid "Play and exit"
 msgstr "Відтворити та вийти"
 
-#: src/libvlc-module.c:1199
+#: src/libvlc-module.c:1201
 msgid "Exit if there are no more items in the playlist."
 msgstr "Вийти, якщо немає більше пунктів у списку відтворення."
 
-#: src/libvlc-module.c:1201
+#: src/libvlc-module.c:1203
 msgid "Use media library"
 msgstr "Використовувати медіабібліотеку"
 
-#: src/libvlc-module.c:1203
+#: src/libvlc-module.c:1205
 msgid ""
 "The media library is automatically saved and reloaded each time you start "
 "VLC."
@@ -3576,11 +3574,11 @@ msgstr ""
 "Медіабібліотека автоматично зберігається та перевантажується кожного разу, "
 "коли стартує VLC."
 
-#: src/libvlc-module.c:1206
+#: src/libvlc-module.c:1208
 msgid "Display playlist tree"
 msgstr "Відображати дерево списку відтворення"
 
-#: src/libvlc-module.c:1208
+#: src/libvlc-module.c:1210
 msgid ""
 "The playlist can use a tree to categorize some items, like the contents of a "
 "directory."
@@ -3588,12 +3586,12 @@ msgstr ""
 "Список відтворення може використовувати дерево для категоризації деяких "
 "елементів, типу змісту каталогу."
 
-#: src/libvlc-module.c:1217
+#: src/libvlc-module.c:1219
 msgid "These settings are the global VLC key bindings, known as \"hotkeys\"."
 msgstr ""
 "Ці параметри налаштовують глобальні комбінації клавіш («гарячі клавіші»)."
 
-#: src/libvlc-module.c:1220 src/video_output/vout_intf.c:434
+#: src/libvlc-module.c:1222 src/video_output/vout_intf.c:434
 #: modules/gui/beos/VideoOutput.cpp:1058 modules/gui/macosx/controls.m:471
 #: modules/gui/macosx/controls.m:525 modules/gui/macosx/controls.m:1100
 #: modules/gui/macosx/controls.m:1131 modules/gui/macosx/embeddedwindow.m:66
@@ -3604,82 +3602,82 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Повноекранний режим"
 
-#: src/libvlc-module.c:1221
+#: src/libvlc-module.c:1223
 msgid "Select the hotkey to use to swap fullscreen state."
 msgstr "Виберіть гарячу клавішу для перемикання повноекранного режиму."
 
-#: src/libvlc-module.c:1222
+#: src/libvlc-module.c:1224
 msgid "Leave fullscreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/libvlc-module.c:1223
+#: src/libvlc-module.c:1225
 msgid "Select the hotkey to use to leave fullscreen state."
 msgstr "Виберіть гарячу клавішу для виходу з повноекранного режиму."
 
-#: src/libvlc-module.c:1224
+#: src/libvlc-module.c:1226
 msgid "Play/Pause"
 msgstr "Відтворення/Пауза"
 
-#: src/libvlc-module.c:1225
+#: src/libvlc-module.c:1227
 msgid "Select the hotkey to use to swap paused state."
 msgstr "Виберіть гарячу клавішу для перемикання паузи."
 
-#: src/libvlc-module.c:1226
+#: src/libvlc-module.c:1228
 msgid "Pause only"
 msgstr "Тільки пауза"
 
-#: src/libvlc-module.c:1227
+#: src/libvlc-module.c:1229
 msgid "Select the hotkey to use to pause."
 msgstr "Виберіть гарячу клавішу для паузи."
 
-#: src/libvlc-module.c:1228
+#: src/libvlc-module.c:1230
 msgid "Play only"
 msgstr "Тільки відтворення"
 
-#: src/libvlc-module.c:1229
+#: src/libvlc-module.c:1231
 msgid "Select the hotkey to use to play."
 msgstr "Виберіть гарячу клавішу для відтворення."
 
-#: src/libvlc-module.c:1230 modules/control/hotkeys.c:718
+#: src/libvlc-module.c:1232 modules/control/hotkeys.c:718
 #: modules/gui/macosx/controls.m:1023 modules/gui/macosx/intf.m:641
 #: modules/gui/qt4/components/controller.hpp:102
 #: modules/gui/qt4/components/controller.hpp:109
 msgid "Faster"
 msgstr "Швидше"
 
-#: src/libvlc-module.c:1231 src/libvlc-module.c:1237
+#: src/libvlc-module.c:1233 src/libvlc-module.c:1239
 msgid "Select the hotkey to use for fast forward playback."
 msgstr "Виберіть гарячу клавішу для швидкого промотування вперед."
 
-#: src/libvlc-module.c:1232 modules/control/hotkeys.c:724
+#: src/libvlc-module.c:1234 modules/control/hotkeys.c:724
 #: modules/gui/macosx/controls.m:1024 modules/gui/macosx/intf.m:642
 #: modules/gui/qt4/components/controller.hpp:102
 #: modules/gui/qt4/components/controller.hpp:109
 msgid "Slower"
 msgstr "Повільніше"
 
-#: src/libvlc-module.c:1233 src/libvlc-module.c:1239
+#: src/libvlc-module.c:1235 src/libvlc-module.c:1241
 msgid "Select the hotkey to use for slow motion playback."
 msgstr "Виберіть гарячу клавішу для сповільнення відтворення."
 
-#: src/libvlc-module.c:1234
+#: src/libvlc-module.c:1236
 msgid "Normal rate"
 msgstr "Нормальна швидкість"
 
-#: src/libvlc-module.c:1235
+#: src/libvlc-module.c:1237
 msgid "Select the hotkey to set the playback rate back to normal."
 msgstr ""
 "Виберіть гарячу клавішу для повернення нормальної швидкості відтворення."
 
-#: src/libvlc-module.c:1236 modules/gui/qt4/menus.cpp:751
+#: src/libvlc-module.c:1238 modules/gui/qt4/menus.cpp:751
 msgid "Faster (fine)"
 msgstr "Швидше (добре)"
 
-#: src/libvlc-module.c:1238 modules/gui/qt4/menus.cpp:759
+#: src/libvlc-module.c:1240 modules/gui/qt4/menus.cpp:759
 msgid "Slower (fine)"
 msgstr "Повільніше (добре)"
 
-#: src/libvlc-module.c:1240 modules/control/hotkeys.c:695
+#: src/libvlc-module.c:1242 modules/control/hotkeys.c:695
 #: modules/gui/macosx/about.m:185 modules/gui/macosx/controls.m:1044
 #: modules/gui/macosx/intf.m:597 modules/gui/macosx/intf.m:644
 #: modules/gui/macosx/intf.m:729 modules/gui/macosx/intf.m:737
@@ -3691,13 +3689,13 @@ msgstr "Повільніше (добре)"
 msgid "Next"
 msgstr "Наступний"
 
-#: src/libvlc-module.c:1241
+#: src/libvlc-module.c:1243
 msgid "Select the hotkey to use to skip to the next item in the playlist."
 msgstr ""
 "Виберіть гарячу клавішу для перемикання на наступний елемент списку "
 "відтворення."
 
-#: src/libvlc-module.c:1242 modules/control/hotkeys.c:701
+#: src/libvlc-module.c:1244 modules/control/hotkeys.c:701
 #: modules/gui/macosx/about.m:186 modules/gui/macosx/controls.m:1043
 #: modules/gui/macosx/intf.m:592 modules/gui/macosx/intf.m:643
 #: modules/gui/macosx/intf.m:730 modules/gui/macosx/intf.m:736
@@ -3706,13 +3704,13 @@ msgstr ""
 msgid "Previous"
 msgstr "Попередній"
 
-#: src/libvlc-module.c:1243
+#: src/libvlc-module.c:1245
 msgid "Select the hotkey to use to skip to the previous item in the playlist."
 msgstr ""
 "Виберіть гарячу клавішу для перемикання на попередній елемент списку "
 "відтворення."
 
-#: src/libvlc-module.c:1244 modules/gui/macosx/controls.m:1035
+#: src/libvlc-module.c:1246 modules/gui/macosx/controls.m:1035
 #: modules/gui/macosx/intf.m:595 modules/gui/macosx/intf.m:640
 #: modules/gui/macosx/intf.m:728 modules/gui/macosx/intf.m:735
 #: modules/gui/pda/pda_interface.c:272 modules/gui/pda/pda_interface.c:273
@@ -3721,11 +3719,11 @@ msgstr ""
 msgid "Stop"
 msgstr "Зупинити"
 
-#: src/libvlc-module.c:1245
+#: src/libvlc-module.c:1247
 msgid "Select the hotkey to stop playback."
 msgstr "Виберіть гарячу клавішу для зупинки відтворення."
 
-#: src/libvlc-module.c:1246 modules/gui/fbosd.c:127 modules/gui/fbosd.c:195
+#: src/libvlc-module.c:1248 modules/gui/fbosd.c:127 modules/gui/fbosd.c:195
 #: modules/gui/macosx/bookmarks.m:96 modules/gui/macosx/bookmarks.m:105
 #: modules/gui/macosx/embeddedwindow.m:68 modules/gui/macosx/intf.m:600
 #: modules/gui/qt4/ui/video_effects.h:928 modules/video_filter/marq.c:155
@@ -3733,115 +3731,115 @@ msgstr "Виберіть гарячу клавішу для зупинки ві�
 msgid "Position"
 msgstr "Позиція"
 
-#: src/libvlc-module.c:1247
+#: src/libvlc-module.c:1249
 msgid "Select the hotkey to display the position."
 msgstr "Виберіть гарячу клавішу для відображення поточної позиції."
 
-#: src/libvlc-module.c:1249
+#: src/libvlc-module.c:1251
 msgid "Very short backwards jump"
 msgstr "Дуже короткий стрибок назад"
 
-#: src/libvlc-module.c:1251
+#: src/libvlc-module.c:1253
 msgid "Select the hotkey to make a very short backwards jump."
 msgstr "Виберіть гарячу клавішу для дуже короткого стрибка назад."
 
-#: src/libvlc-module.c:1252
+#: src/libvlc-module.c:1254
 msgid "Short backwards jump"
 msgstr "Короткий стрибок назад"
 
-#: src/libvlc-module.c:1254
+#: src/libvlc-module.c:1256
 msgid "Select the hotkey to make a short backwards jump."
 msgstr "Виберіть гарячу клавішу для короткого стрибка назад."
 
-#: src/libvlc-module.c:1255
+#: src/libvlc-module.c:1257
 msgid "Medium backwards jump"
 msgstr "Середній стрибок назад"
 
-#: src/libvlc-module.c:1257
+#: src/libvlc-module.c:1259
 msgid "Select the hotkey to make a medium backwards jump."
 msgstr "Виберіть гарячу клавішу для середнього стрибка назад."
 
-#: src/libvlc-module.c:1258
+#: src/libvlc-module.c:1260
 msgid "Long backwards jump"
 msgstr "Довгий стрибок назад"
 
-#: src/libvlc-module.c:1260
+#: src/libvlc-module.c:1262
 msgid "Select the hotkey to make a long backwards jump."
 msgstr "Виберіть гарячу клавішу для довгого стрибка назад."
 
-#: src/libvlc-module.c:1262
+#: src/libvlc-module.c:1264
 msgid "Very short forward jump"
 msgstr "Дуже короткий стрибок вперед"
 
-#: src/libvlc-module.c:1264
+#: src/libvlc-module.c:1266
 msgid "Select the hotkey to make a very short forward jump."
 msgstr "Виберіть гарячу клавішу для дуже короткого стрибка вперед."
 
-#: src/libvlc-module.c:1265
+#: src/libvlc-module.c:1267
 msgid "Short forward jump"
 msgstr "Короткий стрибок вперед"
 
-#: src/libvlc-module.c:1267
+#: src/libvlc-module.c:1269
 msgid "Select the hotkey to make a short forward jump."
 msgstr "Виберіть гарячу клавішу для короткого стрибка вперед."
 
-#: src/libvlc-module.c:1268
+#: src/libvlc-module.c:1270
 msgid "Medium forward jump"
 msgstr "Середній стрибок вперед"
 
-#: src/libvlc-module.c:1270
+#: src/libvlc-module.c:1272
 msgid "Select the hotkey to make a medium forward jump."
 msgstr "Виберіть гарячу клавішу для середнього стрибка вперед."
 
-#: src/libvlc-module.c:1271
+#: src/libvlc-module.c:1273
 msgid "Long forward jump"
 msgstr "Довгий стрибок вперед"
 
-#: src/libvlc-module.c:1273
+#: src/libvlc-module.c:1275
 msgid "Select the hotkey to make a long forward jump."
 msgstr "Виберіть гарячу клавішу для довгого стрибка вперед."
 
-#: src/libvlc-module.c:1274 modules/control/hotkeys.c:712
+#: src/libvlc-module.c:1276 modules/control/hotkeys.c:712
 msgid "Next frame"
 msgstr "Наступний кадр"
 
-#: src/libvlc-module.c:1276
+#: src/libvlc-module.c:1278
 msgid "Select the hotkey to got to the next video frame."
 msgstr "Виберіть клавішу для вибору наступного відеокадру."
 
-#: src/libvlc-module.c:1278
+#: src/libvlc-module.c:1280
 msgid "Very short jump length"
 msgstr "Тривалість дуже короткого стрибка"
 
-#: src/libvlc-module.c:1279
+#: src/libvlc-module.c:1281
 msgid "Very short jump length, in seconds."
 msgstr "Тривалість дуже короткого стрибка, у секундах."
 
-#: src/libvlc-module.c:1280
+#: src/libvlc-module.c:1282
 msgid "Short jump length"
 msgstr "Тривалість короткого стрибка"
 
-#: src/libvlc-module.c:1281
+#: src/libvlc-module.c:1283
 msgid "Short jump length, in seconds."
 msgstr "Тривалість короткого стрибка, у секундах."
 
-#: src/libvlc-module.c:1282
+#: src/libvlc-module.c:1284
 msgid "Medium jump length"
 msgstr "Тривалість середнього стрибка"
 
-#: src/libvlc-module.c:1283
+#: src/libvlc-module.c:1285
 msgid "Medium jump length, in seconds."
 msgstr "Тривалість середнього стрибка, у секуднах."
 
-#: src/libvlc-module.c:1284
+#: src/libvlc-module.c:1286
 msgid "Long jump length"
 msgstr "Тривалість довгого стрибка"
 
-#: src/libvlc-module.c:1285
+#: src/libvlc-module.c:1287
 msgid "Long jump length, in seconds."
 msgstr "Тривалість довгого стрибка, у секундах."
 
-#: src/libvlc-module.c:1287 modules/control/hotkeys.c:209
+#: src/libvlc-module.c:1289 modules/control/hotkeys.c:209
 #: modules/gui/beos/InterfaceWindow.cpp:277 modules/gui/macosx/intf.m:383
 #: modules/gui/qt4/components/controller.hpp:105
 #: modules/gui/qt4/components/controller.hpp:114 modules/gui/qt4/menus.cpp:826
@@ -3849,107 +3847,107 @@ msgstr "Тривалість довгого стрибка, у секундах.
 msgid "Quit"
 msgstr "Вихід"
 
-#: src/libvlc-module.c:1288
+#: src/libvlc-module.c:1290
 msgid "Select the hotkey to quit the application."
 msgstr "Виберіть гарячу клавішу для виходу із програми."
 
-#: src/libvlc-module.c:1289
+#: src/libvlc-module.c:1291
 msgid "Navigate up"
 msgstr "Переміщення уверх"
 
-#: src/libvlc-module.c:1290
+#: src/libvlc-module.c:1292
 msgid "Select the key to move the selector up in DVD menus."
 msgstr "Виберіть гарячу клавішу для переміщення покажчика уверх в DVD-меню."
 
-#: src/libvlc-module.c:1291
+#: src/libvlc-module.c:1293
 msgid "Navigate down"
 msgstr "Переміщення вниз"
 
-#: src/libvlc-module.c:1292
+#: src/libvlc-module.c:1294
 msgid "Select the key to move the selector down in DVD menus."
 msgstr "Виберіть гарячу клавішу для переміщення покажчика вниз в DVD-меню."
 
-#: src/libvlc-module.c:1293
+#: src/libvlc-module.c:1295
 msgid "Navigate left"
 msgstr "Переміщення вліво"
 
-#: src/libvlc-module.c:1294
+#: src/libvlc-module.c:1296
 msgid "Select the key to move the selector left in DVD menus."
 msgstr "Виберіть гарячу клавішу для переміщення покажчика вліво в DVD-меню."
 
-#: src/libvlc-module.c:1295
+#: src/libvlc-module.c:1297
 msgid "Navigate right"
 msgstr "Переміщення вправо"
 
-#: src/libvlc-module.c:1296
+#: src/libvlc-module.c:1298
 msgid "Select the key to move the selector right in DVD menus."
 msgstr "Виберіть гарячу клавішу для переміщення покажчика вправо в DVD-меню."
 
-#: src/libvlc-module.c:1297
+#: src/libvlc-module.c:1299
 msgid "Activate"
 msgstr "Активувати"
 
-#: src/libvlc-module.c:1298
+#: src/libvlc-module.c:1300
 msgid "Select the key to activate selected item in DVD menus."
 msgstr "Виберіть гарячу клавішу для активації поточного пункту DVD-меню."
 
-#: src/libvlc-module.c:1299
+#: src/libvlc-module.c:1301
 msgid "Go to the DVD menu"
 msgstr "Перейти до DVD-меню"
 
-#: src/libvlc-module.c:1300
+#: src/libvlc-module.c:1302
 msgid "Select the key to take you to the DVD menu"
 msgstr "Виберіть гарячу клавішу для переходу до DVD-меню"
 
-#: src/libvlc-module.c:1301
+#: src/libvlc-module.c:1303
 msgid "Select previous DVD title"
 msgstr "Вибрати попередній розділ DVD"
 
-#: src/libvlc-module.c:1302
+#: src/libvlc-module.c:1304
 msgid "Select the key to choose the previous title from the DVD"
 msgstr "Виберіть гарячу клавішу для вибору попереднього розділу DVD"
 
-#: src/libvlc-module.c:1303
+#: src/libvlc-module.c:1305
 msgid "Select next DVD title"
 msgstr "Вибрати наступний розділ DVD"
 
-#: src/libvlc-module.c:1304
+#: src/libvlc-module.c:1306
 msgid "Select the key to choose the next title from the DVD"
 msgstr "Виберіть клавішу для вибору наступного розділу DVD"
 
-#: src/libvlc-module.c:1305
+#: src/libvlc-module.c:1307
 msgid "Select prev DVD chapter"
 msgstr "Вибрати попередній розділ DVD"
 
-#: src/libvlc-module.c:1306
+#: src/libvlc-module.c:1308
 msgid "Select the key to choose the previous chapter from the DVD"
 msgstr "Виберіть клавішу для вибору попереднього розділу DVD"
 
-#: src/libvlc-module.c:1307
+#: src/libvlc-module.c:1309
 msgid "Select next DVD chapter"
 msgstr "Вибрати наступний розділ DVD"
 
-#: src/libvlc-module.c:1308
+#: src/libvlc-module.c:1310
 msgid "Select the key to choose the next chapter from the DVD"
 msgstr "Виберіть гарячу клавішу для вибору наступного розділу DVD"
 
-#: src/libvlc-module.c:1309
+#: src/libvlc-module.c:1311
 msgid "Volume up"
 msgstr "Голосніше"
 
-#: src/libvlc-module.c:1310
+#: src/libvlc-module.c:1312
 msgid "Select the key to increase audio volume."
 msgstr "Виберіть гарячу клавішу для збільшення гучності звуку."
 
-#: src/libvlc-module.c:1311
+#: src/libvlc-module.c:1313
 msgid "Volume down"
 msgstr "Тихіше"
 
-#: src/libvlc-module.c:1312
+#: src/libvlc-module.c:1314
 msgid "Select the key to decrease audio volume."
 msgstr "Виберіть гарячу клавішу для зменшення гучності звуку."
 
-#: src/libvlc-module.c:1313 modules/access/v4l2.c:166
+#: src/libvlc-module.c:1315 modules/access/v4l2.c:166
 #: modules/gui/macosx/controls.m:1090 modules/gui/macosx/intf.m:662
 #: modules/gui/macosx/intf.m:731 modules/gui/macosx/intf.m:740
 #: modules/gui/qt4/components/controller_widget.cpp:150
@@ -3957,179 +3955,179 @@ msgstr "Виберіть гарячу клавішу для зменшення �
 msgid "Mute"
 msgstr "Вимкнути звук"
 
-#: src/libvlc-module.c:1314
+#: src/libvlc-module.c:1316
 msgid "Select the key to mute audio."
 msgstr "Виберіть гарячу клавішу для вимикання звуку."
 
-#: src/libvlc-module.c:1315
+#: src/libvlc-module.c:1317
 msgid "Subtitle delay up"
 msgstr "Збільшити затримку субтитрів"
 
-#: src/libvlc-module.c:1316
+#: src/libvlc-module.c:1318
 msgid "Select the key to increase the subtitle delay."
 msgstr "Виберіть гарячу клавішу для збільшення затримки субтитрів."
 
-#: src/libvlc-module.c:1317
+#: src/libvlc-module.c:1319
 msgid "Subtitle delay down"
 msgstr "Зменшити затримку субтитрів"
 
-#: src/libvlc-module.c:1318
+#: src/libvlc-module.c:1320
 msgid "Select the key to decrease the subtitle delay."
 msgstr "Виберіть гарячу клавішу для зменшення затримки субтитрів."
 
-#: src/libvlc-module.c:1319
+#: src/libvlc-module.c:1321
 msgid "Audio delay up"
 msgstr "Збільшити затримку звуку"
 
-#: src/libvlc-module.c:1320
+#: src/libvlc-module.c:1322
 msgid "Select the key to increase the audio delay."
 msgstr "Виберіть гарячу клавішу для збільшення затримки звуку."
 
-#: src/libvlc-module.c:1321
+#: src/libvlc-module.c:1323
 msgid "Audio delay down"
 msgstr "Зменшити затримку звуку"
 
-#: src/libvlc-module.c:1322
+#: src/libvlc-module.c:1324
 msgid "Select the key to decrease the audio delay."
 msgstr "Виберіть гарячу клавішу для зменшення затримки звуку."
 
-#: src/libvlc-module.c:1329
+#: src/libvlc-module.c:1331
 msgid "Play playlist bookmark 1"
 msgstr "Відтворити закладку 1"
 
-#: src/libvlc-module.c:1330
+#: src/libvlc-module.c:1332
 msgid "Play playlist bookmark 2"
 msgstr "Відтворити закладку 2"
 
-#: src/libvlc-module.c:1331
+#: src/libvlc-module.c:1333
 msgid "Play playlist bookmark 3"
 msgstr "Відтворити закладку 3"
 
-#: src/libvlc-module.c:1332
+#: src/libvlc-module.c:1334
 msgid "Play playlist bookmark 4"
 msgstr "Відтворити закладку 4"
 
-#: src/libvlc-module.c:1333
+#: src/libvlc-module.c:1335
 msgid "Play playlist bookmark 5"
 msgstr "Відтворити закладку 5"
 
-#: src/libvlc-module.c:1334
+#: src/libvlc-module.c:1336
 msgid "Play playlist bookmark 6"
 msgstr "Відтворити закладку 6"
 
-#: src/libvlc-module.c:1335
+#: src/libvlc-module.c:1337
 msgid "Play playlist bookmark 7"
 msgstr "Відтворити закладку 7"
 
-#: src/libvlc-module.c:1336
+#: src/libvlc-module.c:1338
 msgid "Play playlist bookmark 8"
 msgstr "Відтворити закладку 8"
 
-#: src/libvlc-module.c:1337
+#: src/libvlc-module.c:1339
 msgid "Play playlist bookmark 9"
 msgstr "Відтворити закладку 9"
 
-#: src/libvlc-module.c:1338
+#: src/libvlc-module.c:1340
 msgid "Play playlist bookmark 10"
 msgstr "Відтворити закладку 10"
 
-#: src/libvlc-module.c:1339
+#: src/libvlc-module.c:1341
 msgid "Select the key to play this bookmark."
 msgstr "Виберіть гарячу клавішу для відтворення цієї закладки."
 
-#: src/libvlc-module.c:1340
+#: src/libvlc-module.c:1342
 msgid "Set playlist bookmark 1"
 msgstr "Встановити закладку 1"
 
-#: src/libvlc-module.c:1341
+#: src/libvlc-module.c:1343
 msgid "Set playlist bookmark 2"
 msgstr "Встановити закладку 2"
 
-#: src/libvlc-module.c:1342
+#: src/libvlc-module.c:1344
 msgid "Set playlist bookmark 3"
 msgstr "Встановити закладку 3"
 
-#: src/libvlc-module.c:1343
+#: src/libvlc-module.c:1345
 msgid "Set playlist bookmark 4"
 msgstr "Встановити закладку 4"
 
-#: src/libvlc-module.c:1344
+#: src/libvlc-module.c:1346
 msgid "Set playlist bookmark 5"
 msgstr "Встановити закладку 5"
 
-#: src/libvlc-module.c:1345
+#: src/libvlc-module.c:1347
 msgid "Set playlist bookmark 6"
 msgstr "Встановити закладку 6"
 
-#: src/libvlc-module.c:1346
+#: src/libvlc-module.c:1348
 msgid "Set playlist bookmark 7"
 msgstr "Встановити закладку 7"
 
-#: src/libvlc-module.c:1347
+#: src/libvlc-module.c:1349
 msgid "Set playlist bookmark 8"
 msgstr "Встановити закладку 8"
 
-#: src/libvlc-module.c:1348
+#: src/libvlc-module.c:1350
 msgid "Set playlist bookmark 9"
 msgstr "Встановити закладку 9"
 
-#: src/libvlc-module.c:1349
+#: src/libvlc-module.c:1351
 msgid "Set playlist bookmark 10"
 msgstr "Встановити закладку 10"
 
-#: src/libvlc-module.c:1350
+#: src/libvlc-module.c:1352
 msgid "Select the key to set this playlist bookmark."
 msgstr "Виберіть клавішу для додавання закладки на цей список відтворення."
 
-#: src/libvlc-module.c:1352
+#: src/libvlc-module.c:1354
 msgid "Playlist bookmark 1"
 msgstr "Закладка 1"
 
-#: src/libvlc-module.c:1353
+#: src/libvlc-module.c:1355
 msgid "Playlist bookmark 2"
 msgstr "Закладка 2"
 
-#: src/libvlc-module.c:1354
+#: src/libvlc-module.c:1356
 msgid "Playlist bookmark 3"
 msgstr "Закладка 3"
 
-#: src/libvlc-module.c:1355
+#: src/libvlc-module.c:1357
 msgid "Playlist bookmark 4"
 msgstr "Закладка 4"
 
-#: src/libvlc-module.c:1356
+#: src/libvlc-module.c:1358
 msgid "Playlist bookmark 5"
 msgstr "Закладка 5"
 
-#: src/libvlc-module.c:1357
+#: src/libvlc-module.c:1359
 msgid "Playlist bookmark 6"
 msgstr "Закладка 6"
 
-#: src/libvlc-module.c:1358
+#: src/libvlc-module.c:1360
 msgid "Playlist bookmark 7"
 msgstr "Закладка 7"
 
-#: src/libvlc-module.c:1359
+#: src/libvlc-module.c:1361
 msgid "Playlist bookmark 8"
 msgstr "Закладка 8"
 
-#: src/libvlc-module.c:1360
+#: src/libvlc-module.c:1362
 msgid "Playlist bookmark 9"
 msgstr "Закладка 9"
 
-#: src/libvlc-module.c:1361
+#: src/libvlc-module.c:1363
 msgid "Playlist bookmark 10"
 msgstr "Закладка 10"
 
-#: src/libvlc-module.c:1363
+#: src/libvlc-module.c:1365
 msgid "This allows you to define playlist bookmarks."
 msgstr "Дозволяє задати закладки списку відтворення."
 
-#: src/libvlc-module.c:1365
+#: src/libvlc-module.c:1367
 msgid "Go back in browsing history"
 msgstr "Повернення по історії переглядів"
 
-#: src/libvlc-module.c:1366
+#: src/libvlc-module.c:1368
 msgid ""
 "Select the key to go back (to the previous media item) in the browsing "
 "history."
@@ -4137,11 +4135,11 @@ msgstr ""
 "Виберіть гарячу клавішу для повернення до попереднього елемента в історії "
 "списку відтворення."
 
-#: src/libvlc-module.c:1367
+#: src/libvlc-module.c:1369
 msgid "Go forward in browsing history"
 msgstr "Вперед по історії переглядів"
 
-#: src/libvlc-module.c:1368
+#: src/libvlc-module.c:1370
 msgid ""
 "Select the key to go forward (to the next media item) in the browsing "
 "history."
@@ -4149,231 +4147,231 @@ msgstr ""
 "Виберіть гарячу клавішу для перехід до наступного елемента в історії списку "
 "відтворення."
 
-#: src/libvlc-module.c:1370
+#: src/libvlc-module.c:1372
 msgid "Cycle audio track"
 msgstr "Циклічно переключити аудіодоріжку"
 
-#: src/libvlc-module.c:1371
+#: src/libvlc-module.c:1373
 msgid "Cycle through the available audio tracks(languages)."
 msgstr "Циклічно перемикати доступні аудіо доріжки (мови)."
 
-#: src/libvlc-module.c:1372
+#: src/libvlc-module.c:1374
 msgid "Cycle subtitle track"
 msgstr "Циклічно переключити доріжку субтитрів"
 
-#: src/libvlc-module.c:1373
+#: src/libvlc-module.c:1375
 msgid "Cycle through the available subtitle tracks."
 msgstr "Циклічно перемикати доступні доріжки субтитрів."
 
-#: src/libvlc-module.c:1374
+#: src/libvlc-module.c:1376
 msgid "Cycle source aspect ratio"
 msgstr "Циклічно переключити співвідношення сторін"
 
-#: src/libvlc-module.c:1375
+#: src/libvlc-module.c:1377
 msgid "Cycle through a predefined list of source aspect ratios."
 msgstr "Циклічно перемикати співвідношення сторін з визначеного списку."
 
-#: src/libvlc-module.c:1376
+#: src/libvlc-module.c:1378
 msgid "Cycle video crop"
 msgstr "Циклічно переключити обрізання"
 
-#: src/libvlc-module.c:1377
+#: src/libvlc-module.c:1379
 msgid "Cycle through a predefined list of crop formats."
 msgstr "Циклічно перемикати обрізання з визначеного списку."
 
-#: src/libvlc-module.c:1378
+#: src/libvlc-module.c:1380
 msgid "Toggle autoscaling"
 msgstr "Увімкнути/вимкнути автомасштабування"
 
-#: src/libvlc-module.c:1379
+#: src/libvlc-module.c:1381
 msgid "Activate or deactivate autoscaling."
 msgstr "Активує чи деактивує автомасштабування."
 
-#: src/libvlc-module.c:1380
+#: src/libvlc-module.c:1382
 msgid "Increase scale factor"
 msgstr "Множник збільшення масштабу"
 
-#: src/libvlc-module.c:1381
+#: src/libvlc-module.c:1383
 msgid "Increase scale factor."
 msgstr "Множник збільшення масштабу."
 
-#: src/libvlc-module.c:1382
+#: src/libvlc-module.c:1384
 msgid "Decrease scale factor"
 msgstr "Множник зменшення масштабу"
 
-#: src/libvlc-module.c:1383
+#: src/libvlc-module.c:1385
 msgid "Decrease scale factor."
 msgstr "Множник зменшення масштабу."
 
-#: src/libvlc-module.c:1384
+#: src/libvlc-module.c:1386
 msgid "Cycle deinterlace modes"
 msgstr "Циклічно переключити режим деінтерлейсу"
 
-#: src/libvlc-module.c:1385
+#: src/libvlc-module.c:1387
 msgid "Cycle through deinterlace modes."
 msgstr "Циклічно перемикати режим деінтерлейсу."
 
-#: src/libvlc-module.c:1386
+#: src/libvlc-module.c:1388
 msgid "Show interface"
 msgstr "Показати інтерфейс"
 
-#: src/libvlc-module.c:1387
+#: src/libvlc-module.c:1389
 msgid "Raise the interface above all other windows."
 msgstr "Показати інтерфейс над усіма іншими вікнами."
 
-#: src/libvlc-module.c:1388
+#: src/libvlc-module.c:1390
 msgid "Hide interface"
 msgstr "Приховати інтерфейс"
 
-#: src/libvlc-module.c:1389
+#: src/libvlc-module.c:1391
 msgid "Lower the interface below all other windows."
 msgstr "Приховати інтерфейс під іншими вікнами."
 
-#: src/libvlc-module.c:1390
+#: src/libvlc-module.c:1392
 msgid "Take video snapshot"
 msgstr "Зробити стоп-кадр"
 
-#: src/libvlc-module.c:1391
+#: src/libvlc-module.c:1393
 msgid "Takes a video snapshot and writes it to disk."
 msgstr "Робить стоп-кадр відео та зберігає його на диск."
 
-#: src/libvlc-module.c:1393 modules/gui/qt4/components/controller.hpp:104
+#: src/libvlc-module.c:1395 modules/gui/qt4/components/controller.hpp:104
 #: modules/gui/qt4/components/controller.hpp:112
 #: modules/stream_out/record.c:60
 msgid "Record"
 msgstr "Запис"
 
-#: src/libvlc-module.c:1394
+#: src/libvlc-module.c:1396
 msgid "Record access filter start/stop."
 msgstr "Увімкнення/вимкнення фільтра доступу запису."
 
-#: src/libvlc-module.c:1395
+#: src/libvlc-module.c:1397
 msgid "Dump"
 msgstr "Дамп"
 
-#: src/libvlc-module.c:1396
+#: src/libvlc-module.c:1398
 msgid "Media dump access filter trigger."
 msgstr "Триггер дампу фільтру доступу медіа."
 
-#: src/libvlc-module.c:1398
+#: src/libvlc-module.c:1400
 msgid "Normal/Repeat/Loop"
 msgstr "Нормально/Повтор/Цикл"
 
-#: src/libvlc-module.c:1399
+#: src/libvlc-module.c:1401
 msgid "Toggle Normal/Repeat/Loop playlist modes"
 msgstr "Включити нормальний/з повторенням/циклічний режим списку відтворення"
 
-#: src/libvlc-module.c:1402
+#: src/libvlc-module.c:1404
 msgid "Toggle random playlist playback"
 msgstr "Увімкнути/вимкнути випадкове відтворення зі списку відтворення"
 
-#: src/libvlc-module.c:1407 src/libvlc-module.c:1408
+#: src/libvlc-module.c:1409 src/libvlc-module.c:1410
 msgid "Un-Zoom"
 msgstr "Зменшення масштабу"
 
-#: src/libvlc-module.c:1410 src/libvlc-module.c:1411
+#: src/libvlc-module.c:1412 src/libvlc-module.c:1413
 msgid "Crop one pixel from the top of the video"
 msgstr "Обрізати один піксель зверху відео"
 
-#: src/libvlc-module.c:1412 src/libvlc-module.c:1413
+#: src/libvlc-module.c:1414 src/libvlc-module.c:1415
 msgid "Uncrop one pixel from the top of the video"
 msgstr "Повернути один обрізаний піксель зверху відео"
 
-#: src/libvlc-module.c:1415 src/libvlc-module.c:1416
+#: src/libvlc-module.c:1417 src/libvlc-module.c:1418
 msgid "Crop one pixel from the left of the video"
 msgstr "Обрізати один піксель зліва відео"
 
-#: src/libvlc-module.c:1417 src/libvlc-module.c:1418
+#: src/libvlc-module.c:1419 src/libvlc-module.c:1420
 msgid "Uncrop one pixel from the left of the video"
 msgstr "Повернути один обрізаний піксель зліва відео"
 
-#: src/libvlc-module.c:1420 src/libvlc-module.c:1421
+#: src/libvlc-module.c:1422 src/libvlc-module.c:1423
 msgid "Crop one pixel from the bottom of the video"
 msgstr "Обрізати один піксель знизу відео"
 
-#: src/libvlc-module.c:1422 src/libvlc-module.c:1423
+#: src/libvlc-module.c:1424 src/libvlc-module.c:1425
 msgid "Uncrop one pixel from the bottom of the video"
 msgstr "Повернути один обрізаний піксель знизу відео"
 
-#: src/libvlc-module.c:1425 src/libvlc-module.c:1426
+#: src/libvlc-module.c:1427 src/libvlc-module.c:1428
 msgid "Crop one pixel from the right of the video"
 msgstr "Обрізати один піксель справа відео"
 
-#: src/libvlc-module.c:1427 src/libvlc-module.c:1428
+#: src/libvlc-module.c:1429 src/libvlc-module.c:1430
 msgid "Uncrop one pixel from the right of the video"
 msgstr "Повернути один обрізаний піксель відео"
 
-#: src/libvlc-module.c:1430
+#: src/libvlc-module.c:1432
 msgid "Toggle wallpaper mode in video output"
 msgstr "Вивід відео на робочому столі"
 
-#: src/libvlc-module.c:1432
+#: src/libvlc-module.c:1434
 msgid ""
 "Toggle wallpaper mode in video output. Only works with the directx video "
 "output for the time being."
 msgstr "Вивід відео на робочому столі. Працює лише з DirectX-виводом відео."
 
-#: src/libvlc-module.c:1435 src/libvlc-module.c:1436
+#: src/libvlc-module.c:1437 src/libvlc-module.c:1438
 msgid "Display OSD menu on top of video output"
 msgstr "Показувати меню OSD зверху відеовиводу"
 
-#: src/libvlc-module.c:1437
+#: src/libvlc-module.c:1439
 msgid "Do not display OSD menu on video output"
 msgstr "Не показувати меню OSD на відео"
 
-#: src/libvlc-module.c:1438
+#: src/libvlc-module.c:1440
 msgid "Do not display OSD menu on top of video output"
 msgstr "Не показувати меню OSD зверху відеовиводу"
 
-#: src/libvlc-module.c:1439
+#: src/libvlc-module.c:1441
 msgid "Highlight widget on the right"
 msgstr "Підсвітити віджет справа"
 
-#: src/libvlc-module.c:1441
+#: src/libvlc-module.c:1443
 msgid "Move OSD menu highlight to the widget on the right"
 msgstr "Перемістити підсвічування меню OSD у віджет справа"
 
-#: src/libvlc-module.c:1442
+#: src/libvlc-module.c:1444
 msgid "Highlight widget on the left"
 msgstr "Підсвітити віджет зліва"
 
-#: src/libvlc-module.c:1444
+#: src/libvlc-module.c:1446
 msgid "Move OSD menu highlight to the widget on the left"
 msgstr "Перемістити підсвічування меню OSD у віджет зліва"
 
-#: src/libvlc-module.c:1445
+#: src/libvlc-module.c:1447
 msgid "Highlight widget on top"
 msgstr "Підсвітити віджет зверху"
 
-#: src/libvlc-module.c:1447
+#: src/libvlc-module.c:1449
 msgid "Move OSD menu highlight to the widget on top"
 msgstr "Перемістити підсвічування меню OSD у віджет зверху"
 
-#: src/libvlc-module.c:1448
+#: src/libvlc-module.c:1450
 msgid "Highlight widget below"
 msgstr "Підсвітити віджет знизу"
 
-#: src/libvlc-module.c:1450
+#: src/libvlc-module.c:1452
 msgid "Move OSD menu highlight to the widget below"
 msgstr "Перемістити підсвічування меню OSD у віджет знизу"
 
-#: src/libvlc-module.c:1451
+#: src/libvlc-module.c:1453
 msgid "Select current widget"
 msgstr "Обрати поточний віджет"
 
-#: src/libvlc-module.c:1453
+#: src/libvlc-module.c:1455
 msgid "Selecting current widget performs the associated action."
 msgstr "Обрання поточного віджету виконує асоційовану дію."
 
-#: src/libvlc-module.c:1455
+#: src/libvlc-module.c:1457
 msgid "Cycle through audio devices"
 msgstr "Циклічно перемикати аудіопристрої"
 
-#: src/libvlc-module.c:1456
+#: src/libvlc-module.c:1458
 msgid "Cycle through available audio devices"
 msgstr "Циклічно перемикати доступні аудіопристрої"
 
-#: src/libvlc-module.c:1458
+#: src/libvlc-module.c:1460
 #, c-format
 msgid ""
 "Usage: %s [options] [stream] ...\n"
@@ -4445,7 +4443,7 @@ msgstr ""
 "відтворення на певний час\n"
 "  vlc:quit                           Спеціальний пункт для виходу з VLC\n"
 
-#: src/libvlc-module.c:1610 src/video_output/vout_intf.c:440
+#: src/libvlc-module.c:1612 src/video_output/vout_intf.c:440
 #: modules/gui/macosx/controls.m:509 modules/gui/macosx/controls.m:1099
 #: modules/gui/macosx/intf.m:679 modules/gui/macosx/intf.m:742
 #: modules/gui/qt4/components/controller.hpp:103
@@ -4453,97 +4451,97 @@ msgstr ""
 msgid "Snapshot"
 msgstr "Стоп-кадр"
 
-#: src/libvlc-module.c:1627
+#: src/libvlc-module.c:1629
 msgid "Window properties"
 msgstr "Налаштування вікна"
 
-#: src/libvlc-module.c:1679
+#: src/libvlc-module.c:1681
 msgid "Subpictures"
 msgstr "Шари"
 
-#: src/libvlc-module.c:1687 modules/codec/subtitles/subsdec.c:202
+#: src/libvlc-module.c:1689 modules/codec/subtitles/subsdec.c:202
 #: modules/demux/kate_categories.c:41 modules/demux/kate_categories.c:54
 #: modules/demux/subtitle.c:74 modules/gui/beos/InterfaceWindow.cpp:280
 #: modules/gui/qt4/ui/profiles.h:495 modules/gui/qt4/ui/profiles.h:497
 msgid "Subtitles"
 msgstr "Субтитри"
 
-#: src/libvlc-module.c:1704 modules/stream_out/transcode.c:123
+#: src/libvlc-module.c:1706 modules/stream_out/transcode.c:123
 msgid "Overlays"
 msgstr "Накладення"
 
-#: src/libvlc-module.c:1712
+#: src/libvlc-module.c:1714
 msgid "Track settings"
 msgstr "Налаштування доріжки"
 
-#: src/libvlc-module.c:1742
+#: src/libvlc-module.c:1744
 msgid "Playback control"
 msgstr "Керування відтворенням"
 
-#: src/libvlc-module.c:1767
+#: src/libvlc-module.c:1769
 msgid "Default devices"
 msgstr "Пристрої за змовчуванням"
 
-#: src/libvlc-module.c:1776
+#: src/libvlc-module.c:1778
 msgid "Network settings"
 msgstr "Налаштування мережі"
 
-#: src/libvlc-module.c:1788
+#: src/libvlc-module.c:1790
 msgid "Socks proxy"
 msgstr "Проксі-сервер Socks"
 
-#: src/libvlc-module.c:1797 modules/demux/kate_categories.c:47
+#: src/libvlc-module.c:1799 modules/demux/kate_categories.c:47
 msgid "Metadata"
 msgstr "Метадані"
 
-#: src/libvlc-module.c:1845
+#: src/libvlc-module.c:1847
 msgid "Decoders"
 msgstr "Декодери"
 
-#: src/libvlc-module.c:1852 modules/access/v4l2.c:77
+#: src/libvlc-module.c:1854 modules/access/v4l2.c:77
 #: modules/gui/macosx/playlistinfo.m:97
 #: modules/gui/qt4/components/info_panels.cpp:519
 msgid "Input"
 msgstr "Ввід"
 
-#: src/libvlc-module.c:1891
+#: src/libvlc-module.c:1893
 msgid "VLM"
 msgstr "VLM"
 
-#: src/libvlc-module.c:1923
+#: src/libvlc-module.c:1925
 msgid "CPU"
 msgstr "ЦП"
 
-#: src/libvlc-module.c:1945
+#: src/libvlc-module.c:1947
 msgid "Special modules"
 msgstr "Спеціальні модулі"
 
-#: src/libvlc-module.c:1951
+#: src/libvlc-module.c:1953
 msgid "Plugins"
 msgstr "Плагіни"
 
-#: src/libvlc-module.c:1959
+#: src/libvlc-module.c:1961
 msgid "Performance options"
 msgstr "Налаштування швидкодії"
 
-#: src/libvlc-module.c:2109
+#: src/libvlc-module.c:2111
 msgid "Hot keys"
 msgstr "Гарячі клавіші"
 
-#: src/libvlc-module.c:2548
+#: src/libvlc-module.c:2550
 msgid "Jump sizes"
 msgstr "Розміри переходів"
 
-#: src/libvlc-module.c:2625
+#: src/libvlc-module.c:2627
 msgid "print help for VLC (can be combined with --advanced and --help-verbose)"
 msgstr ""
 "друкувати допомогу по VLC (може бути разом з --advanced та --help-verbose)"
 
-#: src/libvlc-module.c:2628
+#: src/libvlc-module.c:2630
 msgid "Exhaustive help for VLC and its modules"
 msgstr "Вичерпна допомога по VLC та його модулям"
 
-#: src/libvlc-module.c:2630
+#: src/libvlc-module.c:2632
 msgid ""
 "print help for VLC and all its modules (can be combined with --advanced and "
 "--help-verbose)"
@@ -4551,19 +4549,19 @@ msgstr ""
 "друкувати допомогу по VLC та усіх його модулях (може бути разом з -advanced "
 "та --help-verbose)"
 
-#: src/libvlc-module.c:2633
+#: src/libvlc-module.c:2635
 msgid "ask for extra verbosity when displaying help"
 msgstr "запитувати про додаткові подробиці під час показу довідки"
 
-#: src/libvlc-module.c:2635
+#: src/libvlc-module.c:2637
 msgid "print a list of available modules"
 msgstr "показати список доступних модулів"
 
-#: src/libvlc-module.c:2637
+#: src/libvlc-module.c:2639
 msgid "print a list of available modules with extra detail"
 msgstr "показати список доступних модулів із додатковими деталями"
 
-#: src/libvlc-module.c:2639
+#: src/libvlc-module.c:2641
 msgid ""
 "print help on a specific module (can be combined with --advanced and --help-"
 "verbose). Prefix the module name with = for strictmatches."
@@ -4572,33 +4570,33 @@ msgstr ""
 "help-verbose). Для чіткої відповідності поставте префікс «=» перед іменем "
 "модуля."
 
-#: src/libvlc-module.c:2643
+#: src/libvlc-module.c:2645
 msgid "no configuration option will be loaded nor saved to config file"
 msgstr ""
 "параметри конфігурації не будуть завантажені та збережені до "
 "конфігураційного файлу"
 
-#: src/libvlc-module.c:2645
+#: src/libvlc-module.c:2647
 msgid "save the current command line options in the config"
 msgstr "зберегти поточні параметри командного рядка у файл конфігурації"
 
-#: src/libvlc-module.c:2647
+#: src/libvlc-module.c:2649
 msgid "reset the current config to the default values"
 msgstr "скинути поточну конфігурацію до параметрів за змовчуванням"
 
-#: src/libvlc-module.c:2649
+#: src/libvlc-module.c:2651
 msgid "use alternate config file"
 msgstr "використовувати альтернативний файл конфігурації"
 
-#: src/libvlc-module.c:2651
+#: src/libvlc-module.c:2653
 msgid "resets the current plugins cache"
 msgstr "очистити поточний кеш розширень"
 
-#: src/libvlc-module.c:2653
+#: src/libvlc-module.c:2655
 msgid "print version information"
 msgstr "показати інформацію про версію"
 
-#: src/libvlc-module.c:2709
+#: src/libvlc-module.c:2711
 msgid "main program"
 msgstr "головна програма"
 
@@ -5544,6 +5542,7 @@ msgid "Media Catalog Number (MCN)"
 msgstr "Номер у медіакаталозі (MCN)"
 
 #: modules/access/cdda/info.c:338 modules/access/vcdx/info.c:106
+#: modules/gui/qt4/ui/sprefs_audio.h:439
 msgid "Tracks"
 msgstr "Доріжки"
 
@@ -6202,8 +6201,7 @@ msgstr "Ввід з файлу"
 #: modules/gui/beos/PlayListWindow.cpp:88 modules/gui/macosx/open.m:178
 #: modules/gui/macosx/open.m:451 modules/gui/macosx/output.m:142
 #: modules/gui/macosx/output.m:230 modules/gui/macosx/output.m:369
-#: modules/gui/pda/pda_interface.c:364 modules/gui/qt4/dialogs/sout.cpp:72
-#: modules/gui/qt4/ui/sprefs_audio.h:346
+#: modules/gui/pda/pda_interface.c:364 modules/gui/qt4/dialogs/sout.cpp:73
 msgid "File"
 msgstr "Файл"
 
@@ -6616,7 +6614,8 @@ msgstr "Бітова маска, використовувана аудіочас
 
 #: modules/access/pvr.c:110 modules/access/v4l2.c:160
 #: modules/access/vcdx/info.c:100 modules/gui/macosx/intf.m:599
-#: modules/gui/qt4/dialogs/toolbar.cpp:343 modules/stream_out/raop.c:143
+#: modules/gui/qt4/dialogs/toolbar.cpp:343
+#: modules/gui/qt4/ui/sprefs_audio.h:423 modules/stream_out/raop.c:143
 msgid "Volume"
 msgstr "Гучність"
 
@@ -7632,8 +7631,7 @@ msgstr "Дописувати до файлу замість того, щоб з�
 msgid "File stream output"
 msgstr "Вивід потоку у файл"
 
-#: modules/access_output/http.c:65 modules/gui/qt4/ui/sprefs_audio.h:355
-#: modules/misc/audioscrobbler.c:133
+#: modules/access_output/http.c:65 modules/misc/audioscrobbler.c:133
 msgid "Username"
 msgstr "Ім'я користувача"
 
@@ -7643,8 +7641,7 @@ msgstr "Ім'я користувача, яке буде запитано для 
 
 #: modules/access_output/http.c:68 modules/control/telnet.c:87
 #: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:229
-#: modules/gui/qt4/dialogs/external.cpp:145
-#: modules/gui/qt4/ui/sprefs_audio.h:356 modules/misc/audioscrobbler.c:135
+#: modules/gui/qt4/dialogs/external.cpp:145 modules/misc/audioscrobbler.c:135
 #: modules/misc/notify/growl_udp.c:64
 msgid "Password"
 msgstr "Пароль"
@@ -8167,7 +8164,7 @@ msgstr ""
 "крапкою. Числа між 0.5 і 10 найбільш відповідні в загальних випадках."
 
 #: modules/audio_filter/normvol.c:83 modules/audio_filter/normvol.c:84
-#: modules/gui/macosx/simple_prefs.m:231 modules/gui/qt4/ui/sprefs_audio.h:350
+#: modules/gui/macosx/simple_prefs.m:231
 msgid "Volume normalizer"
 msgstr "Нормалізація гучності"
 
@@ -9675,40 +9672,40 @@ msgstr ""
 msgid "Shadow"
 msgstr "Тінь"
 
-#: modules/codec/kate.c:204 modules/misc/freetype.c:120
+#: modules/codec/kate.c:204 modules/misc/freetype.c:124
 msgid "Outline"
 msgstr "Обводка"
 
 #: modules/codec/kate.c:212 modules/gui/fbosd.c:171
-#: modules/misc/freetype.c:127 modules/misc/quartztext.c:110
+#: modules/misc/freetype.c:131 modules/misc/quartztext.c:110
 #: modules/misc/win32text.c:87 modules/video_filter/marq.c:61
 #: modules/video_filter/rss.c:70
 msgid "Black"
 msgstr "Чорний"
 
 #: modules/codec/kate.c:212 modules/gui/fbosd.c:172
-#: modules/misc/freetype.c:127 modules/misc/quartztext.c:110
+#: modules/misc/freetype.c:131 modules/misc/quartztext.c:110
 #: modules/misc/win32text.c:87 modules/video_filter/marq.c:61
 #: modules/video_filter/rss.c:71
 msgid "Gray"
 msgstr "Сірий"
 
 #: modules/codec/kate.c:212 modules/gui/fbosd.c:172
-#: modules/misc/freetype.c:127 modules/misc/quartztext.c:110
+#: modules/misc/freetype.c:131 modules/misc/quartztext.c:110
 #: modules/misc/win32text.c:87 modules/video_filter/marq.c:62
 #: modules/video_filter/rss.c:71
 msgid "Silver"
 msgstr "Срібний"
 
 #: modules/codec/kate.c:212 modules/gui/fbosd.c:172
-#: modules/misc/freetype.c:127 modules/misc/quartztext.c:110
+#: modules/misc/freetype.c:131 modules/misc/quartztext.c:110
 #: modules/misc/win32text.c:87 modules/video_filter/marq.c:62
 #: modules/video_filter/rss.c:71
 msgid "White"
 msgstr "Білий"
 
 #: modules/codec/kate.c:212 modules/gui/fbosd.c:172
-#: modules/misc/freetype.c:127 modules/misc/quartztext.c:110
+#: modules/misc/freetype.c:131 modules/misc/quartztext.c:110
 #: modules/misc/win32text.c:87 modules/video_filter/marq.c:62
 #: modules/video_filter/rss.c:71
 msgid "Maroon"
@@ -9716,14 +9713,14 @@ msgstr "Темно-бордовий"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:172
 #: modules/gui/macosx/controls.m:560 modules/gui/macosx/intf.m:698
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:62 modules/video_filter/rss.c:71
 msgid "Red"
 msgstr "Червоний"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:173
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:63 modules/video_filter/rss.c:72
 msgid "Fuchsia"
@@ -9731,14 +9728,14 @@ msgstr "Фуксія"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:173
 #: modules/gui/macosx/controls.m:564 modules/gui/macosx/intf.m:700
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:63 modules/video_filter/rss.c:72
 msgid "Yellow"
 msgstr "Жовтий"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:173
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/marq.c:63
 #: modules/video_filter/rss.c:72
 msgid "Olive"
@@ -9746,35 +9743,35 @@ msgstr "Оливковий"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:173
 #: modules/gui/macosx/controls.m:562 modules/gui/macosx/intf.m:699
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/marq.c:63
 #: modules/video_filter/rss.c:72
 msgid "Green"
 msgstr "Зелений"
 
 #: modules/codec/kate.c:213 modules/gui/fbosd.c:174
-#: modules/misc/freetype.c:128 modules/misc/quartztext.c:111
+#: modules/misc/freetype.c:132 modules/misc/quartztext.c:111
 #: modules/misc/win32text.c:88 modules/video_filter/marq.c:64
 #: modules/video_filter/rss.c:73
 msgid "Teal"
 msgstr "Зеленувато-голубий"
 
 #: modules/codec/kate.c:214 modules/gui/fbosd.c:174
-#: modules/misc/freetype.c:129 modules/misc/quartztext.c:112
+#: modules/misc/freetype.c:133 modules/misc/quartztext.c:112
 #: modules/misc/win32text.c:89 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:64 modules/video_filter/rss.c:73
 msgid "Lime"
 msgstr "Лимонний"
 
 #: modules/codec/kate.c:214 modules/gui/fbosd.c:174
-#: modules/misc/freetype.c:129 modules/misc/quartztext.c:112
+#: modules/misc/freetype.c:133 modules/misc/quartztext.c:112
 #: modules/misc/win32text.c:89 modules/video_filter/marq.c:64
 #: modules/video_filter/rss.c:73
 msgid "Purple"
 msgstr "Пурпурний"
 
 #: modules/codec/kate.c:214 modules/gui/fbosd.c:174
-#: modules/misc/freetype.c:129 modules/misc/quartztext.c:112
+#: modules/misc/freetype.c:133 modules/misc/quartztext.c:112
 #: modules/misc/win32text.c:89 modules/video_filter/marq.c:64
 #: modules/video_filter/rss.c:73
 msgid "Navy"
@@ -9782,14 +9779,14 @@ msgstr "Морський"
 
 #: modules/codec/kate.c:214 modules/gui/fbosd.c:174
 #: modules/gui/macosx/controls.m:566 modules/gui/macosx/intf.m:701
-#: modules/misc/freetype.c:129 modules/misc/quartztext.c:112
+#: modules/misc/freetype.c:133 modules/misc/quartztext.c:112
 #: modules/misc/win32text.c:89 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:64 modules/video_filter/rss.c:73
 msgid "Blue"
 msgstr "Блакитний"
 
 #: modules/codec/kate.c:214 modules/gui/fbosd.c:175
-#: modules/misc/freetype.c:129 modules/misc/quartztext.c:112
+#: modules/misc/freetype.c:133 modules/misc/quartztext.c:112
 #: modules/misc/win32text.c:89 modules/video_filter/colorthres.c:63
 #: modules/video_filter/marq.c:65 modules/video_filter/rss.c:74
 msgid "Aqua"
@@ -10180,7 +10177,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "Грецька (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-msgid "Greek (Windows-1256)"
+#, fuzzy
+msgid "Greek (Windows-1253)"
 msgstr "Грецька (Windows-1256)"
 
 #: modules/codec/subtitles/subsdec.c:126
@@ -12965,7 +12963,6 @@ msgid "Force chroma. This is a four character string."
 msgstr "Вимушена кольоровість. Це чотирисимвольний рядок."
 
 #: modules/demux/rawvid.c:60 modules/stream_out/switcher.c:95
-#: modules/video_filter/canvas.c:53
 msgid "Aspect ratio"
 msgstr "Співвідношення сторін"
 
@@ -13296,7 +13293,7 @@ msgstr "Повідомлення"
 #: modules/gui/beos/InterfaceWindow.cpp:266
 #: modules/gui/beos/PlayListWindow.cpp:90 modules/gui/macosx/open.m:587
 #: modules/gui/macosx/open.m:959 modules/gui/macosx/open.m:1195
-#: modules/gui/qt4/ui/open_file.h:200
+#: modules/gui/qt4/ui/open_file.h:217
 msgid "Open File"
 msgstr "Відкрити файл"
 
@@ -13411,6 +13408,7 @@ msgid "Randomize"
 msgstr "Перемішати"
 
 #: modules/gui/beos/PlayListWindow.cpp:130 modules/gui/macosx/bookmarks.m:92
+#: modules/gui/qt4/ui/open_file.h:224
 msgid "Remove"
 msgstr "Видалити"
 
@@ -13550,7 +13548,7 @@ msgstr ""
 "праворуч, 4 = зверху, 8 = знизу, Ви можете також використовувати комбінації "
 "цих значень, наприклад 6 = зверху праворуч)."
 
-#: modules/gui/fbosd.c:133 modules/misc/freetype.c:90
+#: modules/gui/fbosd.c:133 modules/misc/freetype.c:94
 #: modules/misc/win32text.c:64 modules/video_filter/marq.c:117
 #: modules/video_filter/rss.c:146
 msgid "Opacity"
@@ -13623,7 +13621,7 @@ msgstr ""
 "фреймбуфера."
 
 #: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:276
-#: modules/gui/qt4/ui/sprefs_subtitles.h:219 modules/misc/freetype.c:83
+#: modules/gui/qt4/ui/sprefs_subtitles.h:211 modules/misc/freetype.c:87
 #: modules/misc/notify/xosd.c:80 modules/misc/quartztext.c:92
 #: modules/misc/win32text.c:57 modules/video_filter/marq.c:161
 #: modules/video_filter/rss.c:203
@@ -14482,10 +14480,8 @@ msgstr "Заголовок"
 #: modules/gui/qt4/components/simple_preferences.cpp:245
 #: modules/gui/qt4/components/sout/sout_widgets.cpp:98
 #: modules/gui/qt4/ui/open.h:262 modules/gui/qt4/ui/open_disk.h:300
-#: modules/gui/qt4/ui/open_file.h:217 modules/gui/qt4/ui/sprefs_audio.h:347
+#: modules/gui/qt4/ui/open_file.h:232 modules/gui/qt4/ui/sprefs_audio.h:430
 #: modules/gui/qt4/ui/sprefs_input.h:237 modules/gui/qt4/ui/sprefs_input.h:239
-#: modules/gui/qt4/ui/sprefs_interface.h:338
-#: modules/gui/qt4/ui/sprefs_subtitles.h:218
 #: modules/gui/qt4/ui/sprefs_video.h:295
 #: modules/gui/wince/preferences_widgets.cpp:510
 msgid "Browse..."
@@ -14502,6 +14498,7 @@ msgstr "Відтворити синхронно інше медіа (зовні�
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
+#: modules/gui/qt4/ui/sprefs_interface.h:381
 msgid "Choose..."
 msgstr "Вибрати…"
 
@@ -14671,7 +14668,7 @@ msgstr "FPS"
 msgid "Subtitles encoding"
 msgstr "Кодування субтитрів"
 
-#: modules/gui/macosx/open.m:316 modules/gui/qt4/ui/sprefs_subtitles.h:217
+#: modules/gui/macosx/open.m:316 modules/gui/qt4/ui/sprefs_subtitles.h:210
 msgid "Font size"
 msgstr "Розмір шрифту"
 
@@ -15047,7 +15044,7 @@ msgstr "Вхід та кодеки"
 msgid "Input & Codec settings"
 msgstr "Вхід та налаштування кодеку"
 
-#: modules/gui/macosx/simple_prefs.m:223 modules/gui/qt4/ui/sprefs_audio.h:348
+#: modules/gui/macosx/simple_prefs.m:223
 msgid "Effects"
 msgstr "Ефекти"
 
@@ -15055,11 +15052,11 @@ msgstr "Ефекти"
 msgid "Enable Audio"
 msgstr "Увімкнути звук"
 
-#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:334
+#: modules/gui/macosx/simple_prefs.m:225
 msgid "General Audio"
 msgstr "Загальний звук"
 
-#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:349
+#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:433
 msgid "Headphone surround effect"
 msgstr "Ефект оточення для навушників"
 
@@ -15071,7 +15068,7 @@ msgstr "Бажана мова звуку"
 msgid "Enable Last.fm submissions"
 msgstr "Увімкнути публікацію на Last.fm"
 
-#: modules/gui/macosx/simple_prefs.m:233 modules/gui/qt4/ui/sprefs_audio.h:351
+#: modules/gui/macosx/simple_prefs.m:233
 msgid "Visualization"
 msgstr "Візуалізація"
 
@@ -15142,7 +15139,6 @@ msgid "Default Server Port"
 msgstr "Порт серверу за змовчуванням"
 
 #: modules/gui/macosx/simple_prefs.m:261
-#: modules/gui/qt4/ui/sprefs_interface.h:321
 msgid "Album art download policy"
 msgstr "Політика завантаження альбомного мистецтва"
 
@@ -15155,7 +15151,7 @@ msgid "Show Fullscreen Controller"
 msgstr "Показати керування повноекранним режимом"
 
 #: modules/gui/macosx/simple_prefs.m:265
-#: modules/gui/qt4/ui/sprefs_interface.h:320
+#: modules/gui/qt4/ui/sprefs_interface.h:363
 msgid "Privacy / Network Interaction"
 msgstr "Приватність/мережева взаємодія"
 
@@ -15168,7 +15164,7 @@ msgid "Default Encoding"
 msgstr "Кодування за змовчуванням"
 
 #: modules/gui/macosx/simple_prefs.m:272
-#: modules/gui/qt4/ui/sprefs_subtitles.h:214
+#: modules/gui/qt4/ui/sprefs_subtitles.h:207
 msgid "Display Settings"
 msgstr "Налаштування дисплею"
 
@@ -15189,7 +15185,6 @@ msgid "Preferred Subtitle Language"
 msgstr "Бажана мова субтитрів"
 
 #: modules/gui/macosx/simple_prefs.m:280
-#: modules/gui/qt4/ui/sprefs_subtitles.h:209
 msgid "Enable OSD"
 msgstr "Увімкнути OSD"
 
@@ -15248,7 +15243,7 @@ msgstr "Низька затримка"
 
 #: modules/gui/macosx/simple_prefs.m:560
 #: modules/gui/qt4/components/simple_preferences.cpp:415
-#: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
+#: modules/misc/freetype.c:110 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Normal"
 msgstr "Звичайна"
@@ -16440,7 +16435,7 @@ msgstr "Канал:"
 msgid "Norm:"
 msgstr "Норма:"
 
-#: modules/gui/pda/pda_interface.c:609 modules/gui/qt4/ui/open_file.h:212
+#: modules/gui/pda/pda_interface.c:609
 msgid "Size:"
 msgstr "Розмір:"
 
@@ -16997,6 +16992,7 @@ msgid "File names:"
 msgstr "Імена файлів:"
 
 #: modules/gui/qt4/components/open_panels.cpp:144
+#: modules/gui/qt4/ui/sprefs_interface.h:369
 msgid "Filter:"
 msgstr "Фільтри:"
 
@@ -17192,7 +17188,7 @@ msgstr "Застосувати"
 #: modules/gui/qt4/dialogs/help.cpp:207 modules/gui/qt4/dialogs/open.cpp:109
 #: modules/gui/qt4/dialogs/podcast_configuration.cpp:39
 #: modules/gui/qt4/dialogs/preferences.cpp:83
-#: modules/gui/qt4/dialogs/sout.cpp:93 modules/gui/qt4/dialogs/toolbar.cpp:185
+#: modules/gui/qt4/dialogs/sout.cpp:94 modules/gui/qt4/dialogs/toolbar.cpp:185
 msgid "&Cancel"
 msgstr "Скасувати"
 
@@ -17330,6 +17326,7 @@ msgid "Convert"
 msgstr "Конвертувати"
 
 #: modules/gui/qt4/dialogs/convert.cpp:57
+#: modules/gui/qt4/ui/sprefs_audio.h:429
 msgid "Destination file:"
 msgstr "Файл призначення:"
 
@@ -17608,7 +17605,7 @@ msgid "&Play"
 msgstr "Відтворити"
 
 #: modules/gui/qt4/dialogs/open.cpp:120 modules/gui/qt4/dialogs/open.cpp:211
-#: modules/gui/qt4/dialogs/sout.cpp:92
+#: modules/gui/qt4/dialogs/sout.cpp:93
 msgid "&Stream"
 msgstr "Потік"
 
@@ -17694,11 +17691,11 @@ msgstr "Скинути налаштування"
 msgid "Are you sure you want to reset your VLC media player preferences?"
 msgstr "Ви впевнені у скиданні налаштувань медіаплеєра VLC?"
 
-#: modules/gui/qt4/dialogs/sout.cpp:41 modules/gui/qt4/ui/sout.h:332
+#: modules/gui/qt4/dialogs/sout.cpp:42 modules/gui/qt4/ui/sout.h:332
 msgid "Stream Output"
 msgstr "Вивід потоку"
 
-#: modules/gui/qt4/dialogs/sout.cpp:46
+#: modules/gui/qt4/dialogs/sout.cpp:47
 msgid ""
 "This dialog will allow you to stream or convert your media for use locally, "
 "on your private network, or on the Internet.\n"
@@ -17710,7 +17707,7 @@ msgstr ""
 "Ви маєте почати із перевірки відповідності джерела тому, що Ви хочете "
 "ввести, потім натиснути кнопку «Далі», щоб продовжити.\n"
 
-#: modules/gui/qt4/dialogs/sout.cpp:53
+#: modules/gui/qt4/dialogs/sout.cpp:54
 msgid ""
 "Stream output string.\n"
 "This is automatically generated when you change the above settings,\n"
@@ -17849,7 +17846,7 @@ msgid "Repeat delay:"
 msgstr "Затримка повторення:"
 
 #: modules/gui/qt4/dialogs/vlm.cpp:114
-#: modules/gui/qt4/ui/sprefs_interface.h:323
+#: modules/gui/qt4/ui/sprefs_interface.h:366
 msgid " days"
 msgstr " дні"
 
@@ -18251,8 +18248,7 @@ msgstr ""
 "Показувати додаткові параметри замість простих при відкритті діалогу "
 "налаштування."
 
-#: modules/gui/qt4/qt4.cpp:79 modules/gui/qt4/ui/sprefs_interface.h:339
-#: modules/gui/skins2/src/skin_main.cpp:512
+#: modules/gui/qt4/qt4.cpp:79 modules/gui/skins2/src/skin_main.cpp:512
 msgid "Systray icon"
 msgstr "Значок в області сповіщень"
 
@@ -18459,9 +18455,9 @@ msgstr "Інтерфейс Qt"
 
 #: modules/gui/qt4/ui/equalizer.h:126 modules/gui/qt4/ui/open_disk.h:290
 #: modules/gui/qt4/ui/open_net.h:116 modules/gui/qt4/ui/profiles.h:454
-#: modules/gui/qt4/ui/sprefs_audio.h:332 modules/gui/qt4/ui/sprefs_input.h:234
-#: modules/gui/qt4/ui/sprefs_interface.h:313
-#: modules/gui/qt4/ui/sprefs_subtitles.h:207
+#: modules/gui/qt4/ui/sprefs_audio.h:421 modules/gui/qt4/ui/sprefs_input.h:234
+#: modules/gui/qt4/ui/sprefs_interface.h:359
+#: modules/gui/qt4/ui/sprefs_subtitles.h:200
 #: modules/gui/qt4/ui/sprefs_video.h:278 modules/gui/qt4/ui/streampanel.h:168
 #: modules/gui/qt4/ui/v4l2.h:58
 msgid "Form"
@@ -18576,38 +18572,44 @@ msgstr "Початкова позиція"
 msgid "Audio and Subtitles"
 msgstr "Звук та субтитри"
 
-#: modules/gui/qt4/ui/open_file.h:202
+#: modules/gui/qt4/ui/open_file.h:219
 msgid "Choose one or more media file to open"
 msgstr "Оберіть один чи більше медіафайлів для відкриття"
 
-#: modules/gui/qt4/ui/open_file.h:204
+#: modules/gui/qt4/ui/open_file.h:221
 msgid "File Selection"
 msgstr "Вибір файлу"
 
-#: modules/gui/qt4/ui/open_file.h:205
+#: modules/gui/qt4/ui/open_file.h:222
 msgid "You can select local files with the following list and buttons."
 msgstr ""
 "Ви можете обрати локальні файли за допомогою наступного списку та кнопок."
 
-#: modules/gui/qt4/ui/open_file.h:206
+#: modules/gui/qt4/ui/open_file.h:223
 msgid "Add..."
 msgstr "Додати…"
 
-#: modules/gui/qt4/ui/open_file.h:209
+#: modules/gui/qt4/ui/open_file.h:226
 msgid "Add a subtitles file"
 msgstr "Додати файл субтитрів"
 
-#: modules/gui/qt4/ui/open_file.h:211
+#: modules/gui/qt4/ui/open_file.h:228
 msgid "Use a sub&titles file"
 msgstr "Використовувати файл субтитрів"
 
-#: modules/gui/qt4/ui/open_file.h:213
-msgid "Alignment:"
-msgstr "Вирівнювання:"
-
-#: modules/gui/qt4/ui/open_file.h:215
+#: modules/gui/qt4/ui/open_file.h:230
 msgid "Select the subtitles file"
 msgstr "Оберіть файл субтитрів"
+
+#: modules/gui/qt4/ui/open_file.h:233
+#, fuzzy
+msgid "Font size:"
+msgstr "Розмір шрифту"
+
+#: modules/gui/qt4/ui/open_file.h:234
+#, fuzzy
+msgid "Text alignment:"
+msgstr "Вирівнювання телетексту"
 
 #: modules/gui/qt4/ui/open_net.h:117
 msgid "Network Protocol"
@@ -18763,37 +18765,75 @@ msgstr "Ім'я групи"
 msgid "Generated stream output string"
 msgstr "Генерований рядок вихідного потоку"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:335
-msgid "Default volume"
-msgstr "Гучність за змовчуванням"
+#: modules/gui/qt4/ui/sprefs_audio.h:424
+msgid "Keep audio level between sessions"
+msgstr ""
 
-#: modules/gui/qt4/ui/sprefs_audio.h:337
-msgid "256 corresponds to 100%, 1024 to 400%"
-msgstr "256 відповідає 100%, 1024 — 400%"
+#: modules/gui/qt4/ui/sprefs_audio.h:425
+msgid "Always reset audio start level to:"
+msgstr ""
 
-#: modules/gui/qt4/ui/sprefs_audio.h:339
+#: modules/gui/qt4/ui/sprefs_audio.h:426
 msgid " %"
 msgstr " %"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:341
-msgid "Save volume on exit"
-msgstr "Зберігати гучність при виході"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:343
-msgid "Preferred audio language"
-msgstr "Бажана мова звуку"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:344 modules/gui/qt4/ui/sprefs_video.h:284
+#: modules/gui/qt4/ui/sprefs_audio.h:427 modules/gui/qt4/ui/sprefs_video.h:284
 msgid "Output"
 msgstr "Вивід"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:353
-msgid "last.fm"
-msgstr "last.fm"
+#: modules/gui/qt4/ui/sprefs_audio.h:428
+#, fuzzy
+msgid "Output module:"
+msgstr "Модуль виводу"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:354
-msgid "Enable last.fm submission"
-msgstr "Включити публікацію на last.fm"
+#: modules/gui/qt4/ui/sprefs_audio.h:432
+#, fuzzy
+msgid "Spatialization"
+msgstr "Візуалізація"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:434
+#, fuzzy
+msgid "Dolby Surround:"
+msgstr "Dolby Surround"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:435
+#, fuzzy
+msgid "Processing"
+msgstr "Пост-обробка"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:436
+#, fuzzy
+msgid "Visualization:"
+msgstr "Візуалізація"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:437
+#, fuzzy
+msgid "Replay gain mode:"
+msgstr "Режим автонормалізації гучності звуку"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:438
+msgid "Normalize volume to:"
+msgstr ""
+
+#: modules/gui/qt4/ui/sprefs_audio.h:440
+#, fuzzy
+msgid "Preferred audio language:"
+msgstr "Бажана мова звуку"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:441
+#, fuzzy
+msgid "Password:"
+msgstr "Пароль"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:442
+#, fuzzy
+msgid "Username:"
+msgstr "Ім'я користувача"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:443
+#, fuzzy
+msgid "Submit played tracks stats to Last.fm"
+msgstr "Публікація відтворених пісень на last.fm"
 
 #: modules/gui/qt4/ui/sprefs_input.h:235
 msgid "Disc Devices"
@@ -18823,100 +18863,151 @@ msgstr "Виправити AVI-файли"
 msgid "Use system codecs if available (better quality)"
 msgstr "Використовувати системні кодеки, якщо доступні (краща якість)"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:315
+#: modules/gui/qt4/ui/sprefs_interface.h:360
 msgid "Instances"
 msgstr "Копії"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:316
+#: modules/gui/qt4/ui/sprefs_interface.h:361
 msgid "Allow only one instance"
 msgstr "Дозволяти тільки одну копію"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:317
-msgid "File associations:"
-msgstr "Файлові асоціації:"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:318
+#: modules/gui/qt4/ui/sprefs_interface.h:362
 msgid "Enqueue files when in one instance mode"
 msgstr "Додавати елементи до черги у режимі однієї копії"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:319
-msgid "Association Setup"
-msgstr "Налаштування асоціації"
+#: modules/gui/qt4/ui/sprefs_interface.h:364
+#, fuzzy
+msgid "Album art download policy:"
+msgstr "Політика завантаження альбомного мистецтва"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:322
+#: modules/gui/qt4/ui/sprefs_interface.h:365
 msgid "Activate update notifier"
 msgstr "Активувати сповіщення про поновлення"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:324
+#: modules/gui/qt4/ui/sprefs_interface.h:367
+#, fuzzy
+msgid "Every "
+msgstr "Оверлей"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:368
 msgid "Save recently played items"
 msgstr "Зберегти недавно відтворювані елементи"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:325
-msgid "Filter"
-msgstr "Фільтр"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:327
+#: modules/gui/qt4/ui/sprefs_interface.h:371
 msgid "Separate words by | (without space)"
 msgstr "Розділюйте слова за допомогою «|» (без пробілу)"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:329
-msgid "Interface Type"
-msgstr "Тип інтерфейсу"
+#: modules/gui/qt4/ui/sprefs_interface.h:374
+#, fuzzy
+msgid "Menus language:"
+msgstr "Мова звуку"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:330
-msgid "Native"
-msgstr "Рідний"
+#: modules/gui/qt4/ui/sprefs_interface.h:375
+#, fuzzy
+msgid "File associations"
+msgstr "Файлові асоціації:"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:331
-msgid "This is VLC's default interface, with a native look and feel."
-msgstr "Це інтерфейс VLC за змовчуванням з рідним виглядом."
+#: modules/gui/qt4/ui/sprefs_interface.h:376
+#, fuzzy
+msgid "Set up associations..."
+msgstr "Файлові асоціації:"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:332
-msgid "Display mode"
-msgstr "Режим відображення"
+#: modules/gui/qt4/ui/sprefs_interface.h:377
+msgid "Look and feel"
+msgstr ""
 
-#: modules/gui/qt4/ui/sprefs_interface.h:333 modules/gui/wince/wince.cpp:61
-msgid "Embed video in interface"
-msgstr "Вбудувати відео в інтерфейс"
+#: modules/gui/qt4/ui/sprefs_interface.h:378
+#, fuzzy
+msgid "Use custom skin"
+msgstr "Вибрати скін"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:334
-msgid "Show a controller in fullscreen"
-msgstr "Показати керуючий елемент у повноекранному режимі"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:335
-#: modules/gui/skins2/src/skin_main.cpp:544
-msgid "Skins"
-msgstr "Скіни"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:337
-msgid "Skin file"
+#: modules/gui/qt4/ui/sprefs_interface.h:380
+#, fuzzy
+msgid "Skin resource file:"
 msgstr "Файл скіну"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:340
+#: modules/gui/qt4/ui/sprefs_interface.h:382
+#, fuzzy
+msgid "Show controls in full screen mode"
+msgstr "Показувати елементи керування у повноекранному режимі"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:383
+#, fuzzy
+msgid "Display mode:"
+msgstr "Режим відображення"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:384
+#, fuzzy
+msgid "Show systray icon"
+msgstr "Значок в області сповіщень"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:385
 msgid "Resize interface to video size"
 msgstr "Змінити розмір інтерфейсу до розміру відео"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:211
+#: modules/gui/qt4/ui/sprefs_interface.h:386 modules/gui/wince/wince.cpp:61
+msgid "Embed video in interface"
+msgstr "Вбудувати відео в інтерфейс"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:387
+#, fuzzy
+msgid "Force window style:"
+msgstr "Новий стиль віджету:"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:388
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/prefsmenu/"
+"sample_skins\" /></p></body></html>"
+msgstr ""
+
+#: modules/gui/qt4/ui/sprefs_interface.h:394
+msgid "This is VLC's default interface, with a native look and feel."
+msgstr "Це інтерфейс VLC за змовчуванням з рідним виглядом."
+
+#: modules/gui/qt4/ui/sprefs_interface.h:396
+#, fuzzy
+msgid "Use native style"
+msgstr "Використовувати файл субтитрів"
+
+#: modules/gui/qt4/ui/sprefs_subtitles.h:202
+#, fuzzy
+msgid "Enable On Screen Display (OSD)"
+msgstr "OSD"
+
+#: modules/gui/qt4/ui/sprefs_subtitles.h:203
+#, fuzzy
+msgid "Show media title on video start"
+msgstr "Показувати заголовок медіа на відео"
+
+#: modules/gui/qt4/ui/sprefs_subtitles.h:204
 msgid "Subtitles Language"
 msgstr "Мова субтитрів"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:212
+#: modules/gui/qt4/ui/sprefs_subtitles.h:205
 msgid "Preferred subtitles language"
 msgstr "Бажана мова субтитрів"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:213
+#: modules/gui/qt4/ui/sprefs_subtitles.h:206
 msgid "Default encoding"
 msgstr "Кодування за змовчуванням"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:215
+#: modules/gui/qt4/ui/sprefs_subtitles.h:208
 msgid "Effect"
 msgstr "Ефект"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:216
+#: modules/gui/qt4/ui/sprefs_subtitles.h:209
 msgid "Font color"
 msgstr "Колір шрифту"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:220
+#: modules/gui/qt4/ui/sprefs_subtitles.h:212
 #: modules/gui/qt4/ui/video_effects.h:884
 #: modules/gui/qt4/ui/video_effects.h:886
 #: modules/gui/qt4/ui/video_effects.h:888
@@ -19313,6 +19404,10 @@ msgstr ""
 #: modules/gui/skins2/src/skin_main.cpp:521
 msgid "Use a skinned playlist"
 msgstr "Використовувати оформлений список відтворення"
+
+#: modules/gui/skins2/src/skin_main.cpp:544
+msgid "Skins"
+msgstr "Скіни"
 
 #: modules/gui/skins2/src/skin_main.cpp:545
 msgid "Skinnable Interface"
@@ -19825,15 +19920,15 @@ msgstr "Фіктивний відеовивід"
 msgid "Dummy font renderer function"
 msgstr "Функція фіктивного генератора шрифтів"
 
-#: modules/misc/freetype.c:84 modules/misc/win32text.c:58
+#: modules/misc/freetype.c:88 modules/misc/win32text.c:58
 msgid "Filename for the font you want to use"
 msgstr "Ім'я файлу шрифту, який Ви бажаєте використовувати"
 
-#: modules/misc/freetype.c:85 modules/misc/win32text.c:59
+#: modules/misc/freetype.c:89 modules/misc/win32text.c:59
 msgid "Font size in pixels"
 msgstr "Розмір шрифту в пікселях"
 
-#: modules/misc/freetype.c:86 modules/misc/win32text.c:60
+#: modules/misc/freetype.c:90 modules/misc/win32text.c:60
 msgid ""
 "This is the default size of the fonts that will be rendered on the video. If "
 "set to something different than 0 this option will override the relative "
@@ -19842,7 +19937,7 @@ msgstr ""
 "Розмір шрифтів, які будуть виводитися на відео. Якщо значення цього "
 "параметра відмінне від 0, то воно перепише відносний розмір шрифту."
 
-#: modules/misc/freetype.c:91 modules/misc/win32text.c:65
+#: modules/misc/freetype.c:95 modules/misc/win32text.c:65
 msgid ""
 "The opacity (inverse of transparency) of the text that will be rendered on "
 "the video. 0 = transparent, 255 = totally opaque. "
@@ -19850,12 +19945,12 @@ msgstr ""
 "Непрозорість тексту, який буде виводитися на відео. 0 = прозорий, 255 = "
 "повністю непрозорий."
 
-#: modules/misc/freetype.c:94 modules/misc/quartztext.c:98
+#: modules/misc/freetype.c:98 modules/misc/quartztext.c:98
 #: modules/misc/win32text.c:68
 msgid "Text default color"
 msgstr "Колір тексту за змовчуванням"
 
-#: modules/misc/freetype.c:95 modules/misc/quartztext.c:99
+#: modules/misc/freetype.c:99 modules/misc/quartztext.c:99
 #: modules/misc/win32text.c:69
 msgid ""
 "The color of the text that will be rendered on the video. This must be an "
@@ -19868,12 +19963,12 @@ msgstr ""
 "потім зелений і жовтий. #000000 = чорний, #FF0000 = червоний, #00FF00 = "
 "зелений, #FFF00 = жовтий (червоний + зелений), #FFFFFF = білий"
 
-#: modules/misc/freetype.c:99 modules/misc/quartztext.c:94
+#: modules/misc/freetype.c:103 modules/misc/quartztext.c:94
 #: modules/misc/win32text.c:73
 msgid "Relative font size"
 msgstr "Відносний розмір шрифту"
 
-#: modules/misc/freetype.c:100 modules/misc/quartztext.c:95
+#: modules/misc/freetype.c:104 modules/misc/quartztext.c:95
 #: modules/misc/win32text.c:74
 msgid ""
 "This is the relative default size of the fonts that will be rendered on the "
@@ -19882,31 +19977,31 @@ msgstr ""
 "Відносний розмір шрифтів, які буде виводитися на відео. Якщо зазначений "
 "абсолютний розмір шрифту, відносний буде ігноровано."
 
-#: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
+#: modules/misc/freetype.c:110 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Smaller"
 msgstr "Менший"
 
-#: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
+#: modules/misc/freetype.c:110 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Small"
 msgstr "Маленький"
 
-#: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
+#: modules/misc/freetype.c:110 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Large"
 msgstr "Великий"
 
-#: modules/misc/freetype.c:106 modules/misc/quartztext.c:116
+#: modules/misc/freetype.c:110 modules/misc/quartztext.c:116
 #: modules/misc/win32text.c:80
 msgid "Larger"
 msgstr "Більше"
 
-#: modules/misc/freetype.c:107
+#: modules/misc/freetype.c:111
 msgid "Use YUVP renderer"
 msgstr "Використовувати генератор YUVP"
 
-#: modules/misc/freetype.c:108
+#: modules/misc/freetype.c:112
 msgid ""
 "This renders the font using \"paletized YUV\". This option is only needed if "
 "you want to encode into DVB subtitles"
@@ -19914,11 +20009,11 @@ msgstr ""
 "Генерує шрифти, використовуючи «YUV з палітрою». Цей параметр необхідний "
 "тільки якщо Ви бажаєте кодувати у субтитри DVB"
 
-#: modules/misc/freetype.c:110
+#: modules/misc/freetype.c:114
 msgid "Font Effect"
 msgstr "Ефект шрифтів"
 
-#: modules/misc/freetype.c:111
+#: modules/misc/freetype.c:115
 msgid ""
 "It is possible to apply effects to the rendered text to improve its "
 "readability."
@@ -19926,19 +20021,19 @@ msgstr ""
 "Можливе накладення ефектів на генерований текст для підвищення його "
 "читабельності."
 
-#: modules/misc/freetype.c:120
+#: modules/misc/freetype.c:124
 msgid "Background"
 msgstr "Фон"
 
-#: modules/misc/freetype.c:120
+#: modules/misc/freetype.c:124
 msgid "Fat Outline"
 msgstr "Обвести жирним"
 
-#: modules/misc/freetype.c:132 modules/misc/win32text.c:92
+#: modules/misc/freetype.c:136 modules/misc/win32text.c:92
 msgid "Text renderer"
 msgstr "Генератор тексту"
 
-#: modules/misc/freetype.c:133
+#: modules/misc/freetype.c:137
 msgid "Freetype2 font renderer"
 msgstr "Генератор шрифтів Freetype2"
 
@@ -21576,7 +21671,6 @@ msgid "This is the video codec that will be used."
 msgstr "Буде використано цей відеокодек."
 
 #: modules/stream_out/transcode.c:62
-#: modules/stream_out/transrate/transrate.c:60
 msgid "Video bitrate"
 msgstr "Бітрейт відео"
 
@@ -21772,38 +21866,6 @@ msgstr "Перекодувати вихідний потік"
 #: modules/stream_out/transcode.c:217
 msgid "Overlays/Subtitles"
 msgstr "Шари/субтитри"
-
-#: modules/stream_out/transrate/transrate.c:63
-#, no-c-format
-msgid ""
-"New target video bitrate. Quality is ok for -10/15\\% of the originalbitrate."
-msgstr ""
-"Новий цільовий відеобітрейт. Нормальна якість досягається при -10/15\\% "
-"оригінального бітрейту."
-
-#: modules/stream_out/transrate/transrate.c:66
-msgid "Shaping delay"
-msgstr "Затримка формування"
-
-#: modules/stream_out/transrate/transrate.c:68
-msgid "Amount of data used for transrating in ms."
-msgstr "Кількість даних, використовуваних для зміни швидкості, у мс."
-
-#: modules/stream_out/transrate/transrate.c:70
-msgid "Use MPEG4 matrix"
-msgstr "Використовувати матрицю MPEG4"
-
-#: modules/stream_out/transrate/transrate.c:72
-msgid "Use the MPEG4 quantification matrix."
-msgstr "Використовувати матрицю квантування MPEG4."
-
-#: modules/stream_out/transrate/transrate.c:79
-msgid "MPEG2 video transrating stream output"
-msgstr "Виведення потоку через MPEG2 зі зміною швидкості"
-
-#: modules/stream_out/transrate/transrate.c:82
-msgid "Transrate"
-msgstr "Зміна швидкості"
 
 #: modules/video_chroma/grey_yuv.c:55 modules/video_chroma/i420_ymga.c:54
 #: modules/video_chroma/i420_yuy2.c:89 modules/video_chroma/i422_i420.c:57
@@ -22477,25 +22539,43 @@ msgstr "Відеофільтр синього екрану"
 msgid "Bluescreen"
 msgstr "Синій екран"
 
-#: modules/video_filter/canvas.c:47 modules/video_filter/canvas.c:49
-#: modules/video_filter/scene.c:60
-msgid "Image width"
-msgstr "Ширина зображення"
+#: modules/video_filter/canvas.c:84
+#, fuzzy
+msgid "Output width"
+msgstr "Ширина виводу відео."
 
-#: modules/video_filter/canvas.c:50 modules/video_filter/canvas.c:52
-#: modules/video_filter/scene.c:65
-msgid "Image height"
-msgstr "Висота зображення"
+#: modules/video_filter/canvas.c:86
+#, fuzzy
+msgid "Output (canvas) image width"
+msgstr "Ширина виводу відео."
 
-#: modules/video_filter/canvas.c:55
-msgid "Set aspect (like 4:3) of the video canvas"
-msgstr "Встановлює співвідношення сторін полотна відео (наприклад 4:3)"
+#: modules/video_filter/canvas.c:87
+#, fuzzy
+msgid "Output height"
+msgstr "Висота виводу відео."
 
-#: modules/video_filter/canvas.c:56
-msgid "Padd video"
+#: modules/video_filter/canvas.c:89
+#, fuzzy
+msgid "Output (canvas) image height"
+msgstr "Висота виводу відео."
+
+#: modules/video_filter/canvas.c:90
+#, fuzzy
+msgid "Output picture aspect ratio"
+msgstr "Вихідне співвідношення сторін"
+
+#: modules/video_filter/canvas.c:92
+msgid ""
+"Set the canvas' picture aspect ratio. If omitted, the canvas is assumed to "
+"have the same SAR as the input."
+msgstr ""
+
+#: modules/video_filter/canvas.c:94
+#, fuzzy
+msgid "Pad video"
 msgstr "Заповнення відео"
 
-#: modules/video_filter/canvas.c:58
+#: modules/video_filter/canvas.c:96
 msgid ""
 "If enabled, video will be padded to fit in canvas after scaling. Otherwise, "
 "video will be cropped to fix in canvas after scaling."
@@ -22503,8 +22583,9 @@ msgstr ""
 "Якщо увімкнено, відео буде вміщене у полотно після масштабування. Інакше "
 "відео буде обрізане по полотну після масштабування."
 
-#: modules/video_filter/canvas.c:67
-msgid "Automatically resize and padd a video"
+#: modules/video_filter/canvas.c:105
+#, fuzzy
+msgid "Automatically resize and pad a video"
 msgstr "Автоматично масштабувати та вміщувати відео"
 
 #: modules/video_filter/chain.c:43
@@ -23973,6 +24054,10 @@ msgstr "Формат зображення"
 msgid "Format of the output images (png, jpeg, ...)."
 msgstr "Формат вихідного зображення (png, jpeg,…)."
 
+#: modules/video_filter/scene.c:60
+msgid "Image width"
+msgstr "Ширина зображення"
+
 #: modules/video_filter/scene.c:61
 msgid ""
 "You can enforce the image width. By default (-1) VLC will adapt to the video "
@@ -23980,6 +24065,10 @@ msgid ""
 msgstr ""
 "Ви можете задати ширину відео. За змовчуванням (-1) VLC буде адаптувати "
 "ширину під характеристики відео."
+
+#: modules/video_filter/scene.c:65
+msgid "Image height"
+msgstr "Висота зображення"
 
 #: modules/video_filter/scene.c:66
 msgid ""
@@ -24911,6 +25000,67 @@ msgstr "Фільтр візуалізатора"
 msgid "Spectrum analyser"
 msgstr "Аналізатор спектра"
 
+#~ msgid "Alignment:"
+#~ msgstr "Вирівнювання:"
+
+#~ msgid "Default volume"
+#~ msgstr "Гучність за змовчуванням"
+
+#~ msgid "256 corresponds to 100%, 1024 to 400%"
+#~ msgstr "256 відповідає 100%, 1024 — 400%"
+
+#~ msgid "Save volume on exit"
+#~ msgstr "Зберігати гучність при виході"
+
+#~ msgid "last.fm"
+#~ msgstr "last.fm"
+
+#~ msgid "Enable last.fm submission"
+#~ msgstr "Включити публікацію на last.fm"
+
+#~ msgid "Association Setup"
+#~ msgstr "Налаштування асоціації"
+
+#~ msgid "Filter"
+#~ msgstr "Фільтр"
+
+#~ msgid "Interface Type"
+#~ msgstr "Тип інтерфейсу"
+
+#~ msgid "Native"
+#~ msgstr "Рідний"
+
+#~ msgid "Show a controller in fullscreen"
+#~ msgstr "Показати керуючий елемент у повноекранному режимі"
+
+#~ msgid ""
+#~ "New target video bitrate. Quality is ok for -10/15\\% of the "
+#~ "originalbitrate."
+#~ msgstr ""
+#~ "Новий цільовий відеобітрейт. Нормальна якість досягається при -10/15\\% "
+#~ "оригінального бітрейту."
+
+#~ msgid "Shaping delay"
+#~ msgstr "Затримка формування"
+
+#~ msgid "Amount of data used for transrating in ms."
+#~ msgstr "Кількість даних, використовуваних для зміни швидкості, у мс."
+
+#~ msgid "Use MPEG4 matrix"
+#~ msgstr "Використовувати матрицю MPEG4"
+
+#~ msgid "Use the MPEG4 quantification matrix."
+#~ msgstr "Використовувати матрицю квантування MPEG4."
+
+#~ msgid "MPEG2 video transrating stream output"
+#~ msgstr "Виведення потоку через MPEG2 зі зміною швидкості"
+
+#~ msgid "Transrate"
+#~ msgstr "Зміна швидкості"
+
+#~ msgid "Set aspect (like 4:3) of the video canvas"
+#~ msgstr "Встановлює співвідношення сторін полотна відео (наприклад 4:3)"
+
 #~ msgid "VIDEO_TS directory"
 #~ msgstr "Каталог VIDEO_TS"
 
@@ -24936,10 +25086,6 @@ msgstr "Аналізатор спектра"
 #, fuzzy
 #~ msgid "Login:"
 #~ msgstr "Ім'я користувача"
-
-#, fuzzy
-#~ msgid "Password:"
-#~ msgstr "Пароль"
 
 #, fuzzy
 #~ msgid "New Node"
