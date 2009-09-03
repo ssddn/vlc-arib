@@ -2314,9 +2314,6 @@ end:
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSRunInformationalAlertPanel(_NS("Crash Report successfully sent"),
-                _NS("Thanks for your report!"),
-                _NS("OK"), nil, nil, nil);
     [crashLogURLConnection release];
     crashLogURLConnection = nil;
 }
