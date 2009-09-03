@@ -894,6 +894,13 @@ static const struct
     { VLC_FOURCC('w','m','a','2'), CODEC_ID_WMAV2,
       AUDIO_ES, "Windows Media Audio 2" },
 
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 52, 35, 0 )
+    { VLC_FOURCC('W','M','A','P'), CODEC_ID_WMAPRO,
+      AUDIO_ES, "Windows Media Audio Professional" },
+    { VLC_FOURCC('w','m','a','p'), CODEC_ID_WMAPRO,
+      AUDIO_ES, "Windows Media Audio Professional" },
+#endif
+
     /* DV Audio */
     { VLC_FOURCC('d','v','a','u'), CODEC_ID_DVAUDIO,
       AUDIO_ES, "DV Audio" },
