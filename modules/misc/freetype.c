@@ -51,6 +51,10 @@
 #define FT_MulFix(v, s) (((v)*(s))>>16)
 
 #ifdef __APPLE__
+#import <Carbon/Carbon.h>
+#endif
+
+#ifdef __APPLE__
 #define DEFAULT_FONT "/System/Library/Fonts/LucidaGrande.dfont"
 #define FC_DEFAULT_FONT "Lucida Grande"
 #elif defined( SYS_BEOS )
@@ -328,7 +332,18 @@ static int Create( vlc_object_t *p_this )
         GetWindowsDirectory( psz_fontfile, PATH_MAX + 1 );
         strcat( psz_fontfile, "\\fonts\\arial.ttf" );
 #elif defined(__APPLE__)
-        strcpy( psz_fontfile, DEFAULT_FONT );
+        SInt32 MacVersion;
+        if (Gestalt(gestaltSystemVersion, &MacVersion) == noErr)
+        {
+            if (MacVersion >= 0x1060)
+            {
+                strcpy( psz_fontfile, "/System/Library/Fonts/LucidaGrande.ttc" );
+            }
+            else
+            {
+                strcpy( psz_fontfile, DEFAULT_FONT );
+            }
+        }
 #else
         msg_Err( p_filter, "user didn't specify a font" );
         goto error;
