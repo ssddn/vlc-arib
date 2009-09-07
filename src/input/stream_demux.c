@@ -92,9 +92,12 @@ stream_t *__stream_DemuxNew( vlc_object_t *p_obj, const char *psz_demux,
         return NULL;
     }
 
+    vlc_object_attach( s, p_obj );
+
     if( vlc_thread_create( s, "stream out", DStreamThread,
                            VLC_THREAD_PRIORITY_INPUT ) )
     {
+        vlc_object_detach( s );
         stream_CommonDelete( s );
         free( p_sys->psz_name );
         free( p_sys );
@@ -131,7 +134,7 @@ static void DStreamDelete( stream_t *s )
     block_FifoRelease( p_sys->p_fifo );
     free( p_sys->psz_name );
     free( p_sys );
-
+    vlc_object_detach( s );
     stream_CommonDelete( s );
 }
 
