@@ -35,9 +35,6 @@
 #ifdef HAVE_CONFIG_H
 # include "config.h"
 #endif
-#ifdef HAVE_SYS_STAT_H
-#   include <sys/stat.h>
-#endif
 
 #include <vlc_common.h>
 #include <vlc_update.h>
@@ -1540,7 +1537,6 @@ static void* update_DownloadReal( vlc_object_t *p_this )
     char *psz_tmpdestfile = NULL;
 
     FILE *p_file = NULL;
-    struct stat p_stat;
     stream_t *p_stream = NULL;
     void* p_buffer = NULL;
     int i_read;
@@ -1573,15 +1569,8 @@ static void* update_DownloadReal( vlc_object_t *p_this )
     }
     psz_tmpdestfile++;
 
-    if( utf8_stat( psz_destination, &p_stat) == 0 && (p_stat.st_mode & S_IFDIR) )
-    {
-        if( asprintf( &psz_destfile, "%s%c%s", psz_destination, DIR_SEP_CHAR, psz_tmpdestfile ) == -1 )
-            goto end;
-    }
-    else if( psz_destination )
-        psz_destfile = strdup( psz_destination );
-    else
-        psz_destfile = strdup( psz_tmpdestfile );
+    if( asprintf( &psz_destfile, "%s%s", psz_destdir, psz_tmpdestfile ) == -1 )
+        goto end;
 
     p_file = utf8_fopen( psz_destfile, "w" );
     if( !p_file )
