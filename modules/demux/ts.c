@@ -2999,7 +2999,8 @@ static void EITCallBack( demux_t *p_demux, dvbpsi_eit_t *p_eit )
 
         /* */
         if( i_start > 0 )
-            vlc_epg_AddEvent( p_epg, i_start, i_duration, psz_name, psz_text, psz_extra );
+            vlc_epg_AddEvent( p_epg, i_start, i_duration, psz_name, psz_text,
+                              *psz_extra ? psz_extra : NULL );
 
         /* Update "now playing" field */
         if( p_evt->i_running_status == 0x04 && i_start > 0 )
