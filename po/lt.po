@@ -1,4 +1,4 @@
-# translation of vlc.po to lietuvių
+# translation of lt.po to lietuvių
 # Lithuanian translation for vlc
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
 # This file is distributed under the same license as the vlc package.
@@ -6,10 +6,10 @@
 # Mindaugas Baranauskas <embar@super.lt>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vlc\n"
+"Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-09-03 19:41+0200\n"
-"PO-Revision-Date: 2009-08-26 19:05+0300\n"
+"POT-Creation-Date: 2009-09-14 22:17+0100\n"
+"PO-Revision-Date: 2009-09-04 21:37+0300\n"
 "Last-Translator: Mindaugas Baranauskas <embar@super.lt>\n"
 "Language-Team: lietuvių\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Spartieji klavišai"
 #: modules/gui/macosx/intf.m:659 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
-#: modules/gui/qt4/components/info_panels.cpp:517
+#: modules/gui/qt4/components/info_panels.cpp:519
 #: modules/gui/qt4/components/simple_preferences.cpp:79
 #: modules/gui/qt4/ui/profiles.h:487 modules/stream_out/es.c:93
 #: modules/stream_out/transcode.c:200
@@ -134,7 +134,7 @@ msgstr "Kitos garso nuostatos ir moduliai."
 #: src/libvlc-module.c:1565 modules/gui/macosx/intf.m:672
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
 #: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
-#: modules/gui/qt4/components/info_panels.cpp:518
+#: modules/gui/qt4/components/info_panels.cpp:520
 #: modules/gui/qt4/components/simple_preferences.cpp:80
 #: modules/gui/qt4/ui/profiles.h:469 modules/gui/qt4/ui/sprefs_video.h:291
 #: modules/misc/dummy/dummy.c:109 modules/stream_out/es.c:101
@@ -543,7 +543,7 @@ msgstr "Gauti informaciją"
 
 #: include/vlc_intf_strings.h:54 modules/gui/macosx/playlist.m:439
 #: modules/gui/pda/pda_interface.c:1252
-#: modules/gui/qt4/dialogs/bookmarks.cpp:46
+#: modules/gui/qt4/dialogs/bookmarks.cpp:46 modules/gui/qt4/ui/open_file.h:207
 #: modules/gui/qt4/ui/podcast_configuration.h:105
 #: modules/gui/qt4/ui/streampanel.h:173
 msgid "Delete"
@@ -939,8 +939,8 @@ msgstr "%i žymelė"
 
 #: src/input/decoder.c:278 src/input/decoder.c:291 src/input/decoder.c:444
 #: modules/codec/avcodec/encoder.c:227 modules/codec/avcodec/encoder.c:235
-#: modules/codec/avcodec/encoder.c:251 modules/codec/avcodec/encoder.c:680
-#: modules/codec/avcodec/encoder.c:689 modules/stream_out/es.c:373
+#: modules/codec/avcodec/encoder.c:257 modules/codec/avcodec/encoder.c:686
+#: modules/codec/avcodec/encoder.c:695 modules/stream_out/es.c:373
 #: modules/stream_out/es.c:388
 msgid "Streaming / Transcoding failed"
 msgstr "Srauto siuntimo ar perkodavimo klaida"
@@ -1008,6 +1008,7 @@ msgstr "Subtitrai"
 
 #: src/input/es_out.c:2671 src/input/es_out.c:2691 src/input/es_out.c:2740
 #: src/input/es_out.c:2771 modules/gui/macosx/output.m:153
+#: modules/gui/qt4/ui/sprefs_audio.h:345
 msgid "Type"
 msgstr "Tipas"
 
@@ -1023,7 +1024,7 @@ msgstr "Kodavimas"
 #: src/input/es_out.c:2681 src/input/meta.c:50 src/libvlc-module.c:205
 #: modules/gui/beos/InterfaceWindow.cpp:279
 #: modules/gui/macosx/simple_prefs.m:264
-#: modules/gui/qt4/ui/sprefs_interface.h:373
+#: modules/gui/qt4/ui/sprefs_interface.h:314
 msgid "Language"
 msgstr "Kalba"
 
@@ -1540,7 +1541,7 @@ msgstr ""
 "Tai VLC naudojama garso išvedimo priemonė. Numatytoji elgsena yra "
 "automatiškai pasirinkti geriausią prieinamą priemonę."
 
-#: src/libvlc-module.c:250 modules/gui/qt4/ui/sprefs_audio.h:422
+#: src/libvlc-module.c:250 modules/gui/qt4/ui/sprefs_audio.h:333
 #: modules/stream_out/display.c:41
 msgid "Enable audio"
 msgstr "Įgalinti garsą"
@@ -1647,7 +1648,7 @@ msgstr ""
 "metu)."
 
 #: src/libvlc-module.c:299 modules/gui/macosx/simple_prefs.m:232
-#: modules/gui/qt4/ui/sprefs_audio.h:431
+#: modules/gui/qt4/ui/sprefs_audio.h:340
 msgid "Use S/PDIF when available"
 msgstr "Naudoti S/PDIF kai tik įmanoma"
 
@@ -1660,6 +1661,7 @@ msgstr ""
 "garso srauto grojimo metu."
 
 #: src/libvlc-module.c:304 modules/gui/macosx/simple_prefs.m:222
+#: modules/gui/qt4/ui/sprefs_audio.h:342
 msgid "Force detection of Dolby Surround"
 msgstr "Dolby Surround aptikimas"
 
@@ -1697,7 +1699,7 @@ msgstr "Garso vaizdiniai"
 msgid "This adds visualization modules (spectrum analyzer, etc.)."
 msgstr "Naudoti vaizdinių modulius (spektro analizatorių ir kt.)."
 
-#: src/libvlc-module.c:327
+#: src/libvlc-module.c:327 modules/gui/qt4/ui/sprefs_audio.h:352
 msgid "Replay gain mode"
 msgstr "Kartojimo režimas"
 
@@ -1986,7 +1988,7 @@ msgstr "Visada viršuje"
 msgid "Always place the video window on top of other windows."
 msgstr "Visuomet vaizdo langą rodyti virš kitų langų."
 
-#: src/libvlc-module.c:439
+#: src/libvlc-module.c:439 modules/gui/qt4/ui/sprefs_subtitles.h:210
 msgid "Show media title on video"
 msgstr "Rodyti pavadinimą ekrane"
 
@@ -2633,7 +2635,7 @@ msgid ""
 "section. You can also set many miscellaneous subpictures options."
 msgstr ""
 
-#: src/libvlc-module.c:755 modules/gui/qt4/ui/sprefs_subtitles.h:213
+#: src/libvlc-module.c:755 modules/gui/qt4/ui/sprefs_subtitles.h:221
 msgid "Force subtitle position"
 msgstr "Subtitrų padėtis"
 
@@ -2655,7 +2657,7 @@ msgstr ""
 
 #: src/libvlc-module.c:764 src/libvlc-module.c:1680
 #: modules/gui/macosx/simple_prefs.m:279
-#: modules/gui/qt4/ui/sprefs_subtitles.h:201
+#: modules/gui/qt4/ui/sprefs_subtitles.h:208
 #: modules/stream_out/transcode.c:228
 msgid "On Screen Display"
 msgstr "Ekrane Rodomi Pranešimai"
@@ -4463,7 +4465,7 @@ msgstr "Iškodavimas"
 
 #: src/libvlc-module.c:1854 modules/access/v4l2.c:77
 #: modules/gui/macosx/playlistinfo.m:97
-#: modules/gui/qt4/components/info_panels.cpp:519
+#: modules/gui/qt4/components/info_panels.cpp:521
 msgid "Input"
 msgstr "Įvestis"
 
@@ -4562,36 +4564,36 @@ msgstr "spausdinti informaciją apie versiją"
 msgid "main program"
 msgstr "pagrindinė programa"
 
-#: src/misc/update.c:1471
+#: src/misc/update.c:1468
 #, c-format
 msgid "%.1f GB"
 msgstr "%.1f GB"
 
-#: src/misc/update.c:1473
+#: src/misc/update.c:1470
 #, c-format
 msgid "%.1f MB"
 msgstr "%.1f MB"
 
-#: src/misc/update.c:1475
+#: src/misc/update.c:1472
 #, c-format
 msgid "%.1f kB"
 msgstr "%.1f kB"
 
-#: src/misc/update.c:1477
+#: src/misc/update.c:1474
 #, c-format
 msgid "%ld B"
 msgstr "%ld B"
 
-#: src/misc/update.c:1590
+#: src/misc/update.c:1577
 msgid "Saving file failed"
 msgstr "Įrašant rinkmeną įvyko klaida"
 
-#: src/misc/update.c:1591
+#: src/misc/update.c:1578
 #, c-format
 msgid "Failed to open \"%s\" for writing"
 msgstr "Mėginant įrašyti į „%s“ rinkmeną įvyko klaida"
 
-#: src/misc/update.c:1607 src/misc/update.c:1629
+#: src/misc/update.c:1594 src/misc/update.c:1616
 #, c-format
 msgid ""
 "%s\n"
@@ -4600,11 +4602,11 @@ msgstr ""
 "%s\n"
 "Atsiunčiama... %s/%s %.1f%% atlikta"
 
-#: src/misc/update.c:1610
+#: src/misc/update.c:1597
 msgid "Downloading ..."
 msgstr "Atsiunčiama ..."
 
-#: src/misc/update.c:1611 modules/access/dvb/scan.c:334
+#: src/misc/update.c:1598 modules/access/dvb/scan.c:334
 #: modules/demux/avi/avi.c:694 modules/demux/avi/avi.c:2415
 #: modules/gui/beos/InterfaceWindow.cpp:161 modules/gui/macosx/bookmarks.m:102
 #: modules/gui/macosx/controls.m:84 modules/gui/macosx/coredialogs.m:66
@@ -4619,7 +4621,7 @@ msgstr "Atsiunčiama ..."
 msgid "Cancel"
 msgstr "Atšaukti"
 
-#: src/misc/update.c:1646
+#: src/misc/update.c:1633
 #, c-format
 msgid ""
 "%s\n"
@@ -4628,11 +4630,11 @@ msgstr ""
 "%s\n"
 "Atlikta %s (100.0%%)"
 
-#: src/misc/update.c:1666
+#: src/misc/update.c:1653
 msgid "File could not be verified"
 msgstr "Rinkmena negali būti patikrinta"
 
-#: src/misc/update.c:1667
+#: src/misc/update.c:1654
 #, c-format
 msgid ""
 "It was not possible to download a cryptographic signature for the downloaded "
@@ -4641,11 +4643,11 @@ msgstr ""
 "Nepavyko atsisiųsti šifravimo parašo atsiųstai rinkmenai „%s“. Todėl ji "
 "ištrinta."
 
-#: src/misc/update.c:1678 src/misc/update.c:1690
+#: src/misc/update.c:1665 src/misc/update.c:1677
 msgid "Invalid signature"
 msgstr "Netinkamas parašas"
 
-#: src/misc/update.c:1679 src/misc/update.c:1691
+#: src/misc/update.c:1666 src/misc/update.c:1678
 #, c-format
 msgid ""
 "The cryptographic signature for the downloaded file \"%s\" was invalid and "
@@ -4654,11 +4656,11 @@ msgstr ""
 "Rinkmenai „%s“ atsiųstas šifravimo parašas buvo netinkamas ir negalėjo būti "
 "naudojamos jos patikrinimui. Todėl rinkmena ištrinta."
 
-#: src/misc/update.c:1703
+#: src/misc/update.c:1690
 msgid "File not verifiable"
 msgstr "Rinkmena nepatikrinama"
 
-#: src/misc/update.c:1704
+#: src/misc/update.c:1691
 #, c-format
 msgid ""
 "It was not possible to securely verify the downloaded file \"%s\". Thus, it "
@@ -4666,11 +4668,11 @@ msgid ""
 msgstr ""
 "Nepavyko saugiai patikrinti atsiųstos rinkmenos „%s“. Todėl ji ištrinta."
 
-#: src/misc/update.c:1715 src/misc/update.c:1727
+#: src/misc/update.c:1702 src/misc/update.c:1714
 msgid "File corrupted"
 msgstr "Sugadinta rinkmena"
 
-#: src/misc/update.c:1716 src/misc/update.c:1728
+#: src/misc/update.c:1703 src/misc/update.c:1715
 #, c-format
 msgid "Downloaded file \"%s\" was corrupted. Thus, it was deleted."
 msgstr "Atsiųsta rinkmena „%s“ buvo sugadinta. Todėl ji ištrinta."
@@ -5485,7 +5487,6 @@ msgid "Media Catalog Number (MCN)"
 msgstr "Medijos Katalogo Numeris (MCN)"
 
 #: modules/access/cdda/info.c:338 modules/access/vcdx/info.c:106
-#: modules/gui/qt4/ui/sprefs_audio.h:439
 msgid "Tracks"
 msgstr "Takeliai"
 
@@ -6132,6 +6133,7 @@ msgstr "Rinkmenos įvestis"
 #: modules/gui/macosx/open.m:451 modules/gui/macosx/output.m:142
 #: modules/gui/macosx/output.m:230 modules/gui/macosx/output.m:369
 #: modules/gui/pda/pda_interface.c:364 modules/gui/qt4/dialogs/sout.cpp:73
+#: modules/gui/qt4/ui/sprefs_audio.h:346
 msgid "File"
 msgstr "Rinkmena"
 
@@ -6550,8 +6552,7 @@ msgstr "Bitų kaukė, kurią gauna garso plokštė."
 
 #: modules/access/pvr.c:110 modules/access/v4l2.c:160
 #: modules/access/vcdx/info.c:100 modules/gui/macosx/intf.m:599
-#: modules/gui/qt4/dialogs/toolbar.cpp:343
-#: modules/gui/qt4/ui/sprefs_audio.h:423 modules/stream_out/raop.c:143
+#: modules/gui/qt4/dialogs/toolbar.cpp:343 modules/stream_out/raop.c:143
 msgid "Volume"
 msgstr "Garsumas"
 
@@ -7361,7 +7362,7 @@ msgstr "v4l2 tvarkyklės valdikliai, jei juos palaiko jūsų v4l2 tvarkyklė."
 msgid "Video4Linux2 Compressed A/V"
 msgstr "Video4Linux2 suspaustas G/V"
 
-#: modules/access/v4l2.c:2766
+#: modules/access/v4l2.c:2776
 msgid "Reset controls to default"
 msgstr "Atstatyti numatytuosius valdiklius"
 
@@ -7555,7 +7556,8 @@ msgstr "Toliau rašyti į rinkmeną, o ne perrašyti ją."
 msgid "File stream output"
 msgstr "Srauto išvestis į rinkmeną"
 
-#: modules/access_output/http.c:65 modules/misc/audioscrobbler.c:133
+#: modules/access_output/http.c:65 modules/gui/qt4/ui/sprefs_audio.h:355
+#: modules/misc/audioscrobbler.c:133
 msgid "Username"
 msgstr "Vartotojo vardas"
 
@@ -7565,7 +7567,8 @@ msgstr "Vartotojo vardas, kuriuo bus prašoma jungiantis prie srauto."
 
 #: modules/access_output/http.c:68 modules/control/telnet.c:87
 #: modules/gui/macosx/coredialogs.m:65 modules/gui/macosx/simple_prefs.m:229
-#: modules/gui/qt4/dialogs/external.cpp:145 modules/misc/audioscrobbler.c:135
+#: modules/gui/qt4/dialogs/external.cpp:145
+#: modules/gui/qt4/ui/sprefs_audio.h:356 modules/misc/audioscrobbler.c:135
 #: modules/misc/notify/growl_udp.c:64
 msgid "Password"
 msgstr "Slaptažodis"
@@ -8061,7 +8064,7 @@ msgstr ""
 "vertės nuo 0,5 iki 10."
 
 #: modules/audio_filter/normvol.c:83 modules/audio_filter/normvol.c:84
-#: modules/gui/macosx/simple_prefs.m:231
+#: modules/gui/macosx/simple_prefs.m:231 modules/gui/qt4/ui/sprefs_audio.h:350
 msgid "Volume normalizer"
 msgstr "Garsumo normalizavimas"
 
@@ -8959,7 +8962,7 @@ msgstr "„%s“ nėra vaizdo įkodavimo priemonė."
 msgid "\"%s\" is no audio encoder."
 msgstr "„%s“ nėra garso įkodavimo priemonė."
 
-#: modules/codec/avcodec/encoder.c:256
+#: modules/codec/avcodec/encoder.c:262
 #, c-format
 msgid ""
 "It seems your FFMPEG (libavcodec) installation lacks the following encoder:\n"
@@ -8970,7 +8973,7 @@ msgid ""
 "Do not contact the VideoLAN project about this issue.\n"
 msgstr ""
 
-#: modules/codec/avcodec/encoder.c:681 modules/codec/avcodec/encoder.c:690
+#: modules/codec/avcodec/encoder.c:687 modules/codec/avcodec/encoder.c:696
 msgid "VLC could not open the encoder."
 msgstr "VLC negali atverti įkodavimo priemonės."
 
@@ -9276,7 +9279,7 @@ msgstr "Įkoduojamo subtitro Y koordinatė"
 msgid "DVB subtitles decoder"
 msgstr "DVB subtitrų iškodavimas"
 
-#: modules/codec/dvbsub.c:92 modules/demux/ts.c:3361 modules/demux/ts.c:3418
+#: modules/codec/dvbsub.c:92 modules/demux/ts.c:3386 modules/demux/ts.c:3443
 msgid "DVB subtitles"
 msgstr "DVB subtitrai"
 
@@ -9950,9 +9953,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "Graikų (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-#, fuzzy
 msgid "Greek (Windows-1253)"
-msgstr "Graikų (Windows-1256)"
+msgstr "Graikų (Windows-1253)"
 
 #: modules/codec/subtitles/subsdec.c:126
 msgid "Hebrew (ISO 8859-8)"
@@ -11033,7 +11035,7 @@ msgstr "Garsumo valdymas"
 msgid "Position Control"
 msgstr "Padėties valdymas"
 
-#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2446
+#: modules/control/hotkeys.c:98 modules/gui/macosx/intf.m:2443
 msgid "Ignore"
 msgstr "Nepaisyti"
 
@@ -12475,19 +12477,19 @@ msgstr "iTunes muzikos bibliotekos importavimas"
 #: modules/demux/playlist/podcast.c:254 modules/demux/playlist/podcast.c:268
 #: modules/demux/playlist/podcast.c:298 modules/demux/playlist/podcast.c:311
 msgid "Podcast Info"
-msgstr ""
+msgstr "Prenumeruojamos laidos informacija"
 
 #: modules/demux/playlist/podcast.c:268
 msgid "Podcast Summary"
-msgstr ""
+msgstr "Prenumeruojamos laidos santrauka"
 
 #: modules/demux/playlist/podcast.c:312
 msgid "Podcast Size"
-msgstr ""
+msgstr "Prenumeruojamos laidos dydis"
 
 #: modules/demux/playlist/shoutcast.c:407
 msgid "Shoutcast"
-msgstr ""
+msgstr "Tiesioginės laidos"
 
 #: modules/demux/playlist/shoutcast.c:411
 msgid "Listeners"
@@ -12568,7 +12570,7 @@ msgstr ""
 
 #: modules/demux/rawvid.c:66
 msgid "Raw video demuxer"
-msgstr ""
+msgstr "Neapdorotų duomenų demultiplekseris"
 
 #: modules/demux/real.c:70
 msgid "Real demuxer"
@@ -12576,7 +12578,7 @@ msgstr ""
 
 #: modules/demux/smf.c:43
 msgid "SMF demuxer"
-msgstr ""
+msgstr "SMF demultiplekseris"
 
 #: modules/demux/subtitle.c:54 modules/demux/subtitle_asa.c:56
 msgid "Apply a delay to all subtitles (in 1/10s, eg 100 means 10s)."
@@ -12764,25 +12766,25 @@ msgstr "Teletekstas: programos tvarkaraštis"
 msgid "Teletext subtitles: hearing impaired"
 msgstr ""
 
-#: modules/demux/ts.c:3424
+#: modules/demux/ts.c:3449
 msgid "DVB subtitles: hearing impaired"
 msgstr ""
 
-#: modules/demux/ts.c:3680 modules/demux/ts.c:3722
+#: modules/demux/ts.c:3705 modules/demux/ts.c:3747
 msgid "clean effects"
 msgstr "išvalyti efektus"
 
-#: modules/demux/ts.c:3684 modules/demux/ts.c:3726
+#: modules/demux/ts.c:3709 modules/demux/ts.c:3751
 msgid "hearing impaired"
 msgstr ""
 
-#: modules/demux/ts.c:3688 modules/demux/ts.c:3730
+#: modules/demux/ts.c:3713 modules/demux/ts.c:3755
 msgid "visual impaired commentary"
 msgstr ""
 
 #: modules/demux/tta.c:45
 msgid "TTA demuxer"
-msgstr ""
+msgstr "TTA demultiplekseris"
 
 #: modules/demux/ty.c:59
 msgid "TY"
@@ -12869,7 +12871,7 @@ msgstr "Pranešimai"
 #: modules/gui/beos/InterfaceWindow.cpp:266
 #: modules/gui/beos/PlayListWindow.cpp:90 modules/gui/macosx/open.m:587
 #: modules/gui/macosx/open.m:959 modules/gui/macosx/open.m:1195
-#: modules/gui/qt4/ui/open_file.h:217
+#: modules/gui/qt4/ui/open_file.h:200
 msgid "Open File"
 msgstr "Atverti rinkmeną"
 
@@ -12918,15 +12920,14 @@ msgstr "Langas"
 #: modules/gui/macosx/bookmarks.m:271 modules/gui/macosx/bookmarks.m:279
 #: modules/gui/macosx/controls.m:85 modules/gui/macosx/coredialogs.m:67
 #: modules/gui/macosx/coredialogs.m:105 modules/gui/macosx/coredialogs.m:163
-#: modules/gui/macosx/extended.m:519 modules/gui/macosx/intf.m:2319
-#: modules/gui/macosx/open.m:320 modules/gui/macosx/output.m:138
-#: modules/gui/macosx/playlistinfo.m:430 modules/gui/macosx/simple_prefs.m:240
-#: modules/gui/macosx/update.m:77 modules/gui/macosx/wizard.m:600
-#: modules/gui/macosx/wizard.m:664 modules/gui/macosx/wizard.m:1063
-#: modules/gui/macosx/wizard.m:1148 modules/gui/macosx/wizard.m:1155
-#: modules/gui/macosx/wizard.m:1678 modules/gui/macosx/wizard.m:1686
-#: modules/gui/macosx/wizard.m:1867 modules/gui/macosx/wizard.m:1878
-#: modules/gui/macosx/wizard.m:1891
+#: modules/gui/macosx/extended.m:519 modules/gui/macosx/open.m:320
+#: modules/gui/macosx/output.m:138 modules/gui/macosx/playlistinfo.m:430
+#: modules/gui/macosx/simple_prefs.m:240 modules/gui/macosx/update.m:77
+#: modules/gui/macosx/wizard.m:600 modules/gui/macosx/wizard.m:664
+#: modules/gui/macosx/wizard.m:1063 modules/gui/macosx/wizard.m:1148
+#: modules/gui/macosx/wizard.m:1155 modules/gui/macosx/wizard.m:1678
+#: modules/gui/macosx/wizard.m:1686 modules/gui/macosx/wizard.m:1867
+#: modules/gui/macosx/wizard.m:1878 modules/gui/macosx/wizard.m:1891
 #: modules/gui/qt4/components/open_panels.cpp:1314
 #: modules/gui/qt4/components/preferences_widgets.cpp:1366
 #: modules/gui/qt4/main_interface.cpp:552
@@ -12951,7 +12952,7 @@ msgstr "grojaraštis"
 
 #: modules/gui/beos/PlayListWindow.cpp:99
 msgid "Close"
-msgstr "Uždaryti"
+msgstr "Užverti"
 
 #: modules/gui/beos/PlayListWindow.cpp:104 modules/gui/macosx/bookmarks.m:90
 #: modules/gui/macosx/intf.m:631
@@ -12984,7 +12985,6 @@ msgid "Randomize"
 msgstr "Atsitiktinai"
 
 #: modules/gui/beos/PlayListWindow.cpp:130 modules/gui/macosx/bookmarks.m:92
-#: modules/gui/qt4/ui/open_file.h:224
 msgid "Remove"
 msgstr "Pašalinti"
 
@@ -13179,7 +13179,7 @@ msgid ""
 msgstr ""
 
 #: modules/gui/fbosd.c:203 modules/gui/macosx/simple_prefs.m:276
-#: modules/gui/qt4/ui/sprefs_subtitles.h:211 modules/misc/freetype.c:87
+#: modules/gui/qt4/ui/sprefs_subtitles.h:219 modules/misc/freetype.c:87
 #: modules/misc/notify/xosd.c:80 modules/misc/quartztext.c:92
 #: modules/misc/win32text.c:57 modules/video_filter/marq.c:161
 #: modules/video_filter/rss.c:203
@@ -13205,7 +13205,7 @@ msgstr "Sukompiliavo %s"
 
 #: modules/gui/macosx/about.m:98
 msgid "VLC was brought to you by:"
-msgstr ""
+msgstr "VLC kūrėjai:"
 
 #: modules/gui/macosx/about.m:108 modules/gui/macosx/about.m:171
 #: modules/gui/macosx/intf.m:720 modules/gui/qt4/dialogs/help.cpp:166
@@ -13242,7 +13242,7 @@ msgstr "Išvalyti"
 #: modules/gui/macosx/bookmarks.m:91 modules/gui/qt4/dialogs/bookmarks.cpp:51
 #: modules/video_filter/extract.c:76
 msgid "Extract"
-msgstr ""
+msgstr "Išskleisti"
 
 #: modules/gui/macosx/bookmarks.m:98 modules/gui/macosx/bookmarks.m:104
 #: modules/gui/pda/pda.c:274 modules/gui/qt4/dialogs/bookmarks.cpp:68
@@ -13292,7 +13292,7 @@ msgstr "Įvestis nerasta"
 
 #: modules/gui/macosx/bookmarks.m:281
 msgid "The stream must be playing or paused for bookmarks to work."
-msgstr ""
+msgstr "Žymelės veikia grojamam arba pristabdytam srautui."
 
 #: modules/gui/macosx/controls.m:83 modules/gui/macosx/controls.m:1081
 msgid "Jump To Time"
@@ -13527,7 +13527,7 @@ msgstr ""
 
 #: modules/gui/macosx/extended.m:172 modules/gui/macosx/extended.m:234
 msgid "Adjust Image"
-msgstr ""
+msgstr "Derinti paveikslą"
 
 #: modules/gui/macosx/extended.m:173 modules/gui/macosx/extended.m:238
 msgid "Video Filter"
@@ -13650,7 +13650,7 @@ msgstr "Atverti įrašymo įrenginį..."
 msgid "Open Recent"
 msgstr "Atverti vėliausią"
 
-#: modules/gui/macosx/intf.m:628 modules/gui/macosx/intf.m:2735
+#: modules/gui/macosx/intf.m:628 modules/gui/macosx/intf.m:2732
 msgid "Clear Menu"
 msgstr "Išvalyti meniu"
 
@@ -13823,44 +13823,36 @@ msgstr "Atnaujinimų tikrinimo klaida"
 msgid "Checking for updates was not enabled in this build."
 msgstr "Programa sukompiliuota be atnaujinimų patikrinimų."
 
-#: modules/gui/macosx/intf.m:2317
-msgid "Crash Report successfully sent"
-msgstr "Nulūžimo pranešimas sėkmingas išsiųstas"
-
-#: modules/gui/macosx/intf.m:2318
-msgid "Thanks for your report!"
-msgstr "Dėkojame už jūsų pranešimą!"
-
-#: modules/gui/macosx/intf.m:2326
+#: modules/gui/macosx/intf.m:2323
 msgid "Error when sending the Crash Report"
 msgstr "Siunčiant nulūžimo pranešimą įvyko klaida"
 
-#: modules/gui/macosx/intf.m:2417
+#: modules/gui/macosx/intf.m:2414
 msgid "No CrashLog found"
 msgstr "Nerasta jokio pranešimo apie nulūžimą"
 
-#: modules/gui/macosx/intf.m:2417 modules/gui/macosx/prefs.m:226
+#: modules/gui/macosx/intf.m:2414 modules/gui/macosx/prefs.m:226
 #: modules/gui/macosx/simple_prefs.m:685
 msgid "Continue"
 msgstr "Tęsti"
 
-#: modules/gui/macosx/intf.m:2417
+#: modules/gui/macosx/intf.m:2414
 msgid "Couldn't find any trace of a previous crash."
 msgstr "Nepavyko aptikti jokio paskutinio nulūžimo pėdsako."
 
-#: modules/gui/macosx/intf.m:2444
+#: modules/gui/macosx/intf.m:2441
 msgid "Remove old preferences?"
 msgstr "Pašalinti seną konfigūraciją?"
 
-#: modules/gui/macosx/intf.m:2445
+#: modules/gui/macosx/intf.m:2442
 msgid "We just found an older version of VLC's preferences files."
 msgstr "Mes ką tik aptikome senesnės VLC versijos parinkčių rinkmeną."
 
-#: modules/gui/macosx/intf.m:2446
+#: modules/gui/macosx/intf.m:2443
 msgid "Move To Trash and Relaunch VLC"
 msgstr "Perkelti į šiukšlinę ir iš naujo paleisti VLC"
 
-#: modules/gui/macosx/intf.m:2580
+#: modules/gui/macosx/intf.m:2577
 #, c-format
 msgid "VLC Debug Log (%s).rtfd"
 msgstr "VLC derinimo žurnalas (%s).rtfd"
@@ -14020,8 +14012,10 @@ msgstr "Įrašymas"
 #: modules/gui/qt4/components/simple_preferences.cpp:245
 #: modules/gui/qt4/components/sout/sout_widgets.cpp:98
 #: modules/gui/qt4/ui/open.h:262 modules/gui/qt4/ui/open_disk.h:300
-#: modules/gui/qt4/ui/open_file.h:232 modules/gui/qt4/ui/sprefs_audio.h:430
+#: modules/gui/qt4/ui/open_file.h:217 modules/gui/qt4/ui/sprefs_audio.h:347
 #: modules/gui/qt4/ui/sprefs_input.h:237 modules/gui/qt4/ui/sprefs_input.h:239
+#: modules/gui/qt4/ui/sprefs_interface.h:338
+#: modules/gui/qt4/ui/sprefs_subtitles.h:218
 #: modules/gui/qt4/ui/sprefs_video.h:295
 #: modules/gui/wince/preferences_widgets.cpp:510
 msgid "Browse..."
@@ -14032,13 +14026,11 @@ msgid "Treat as a pipe rather than as a file"
 msgstr ""
 
 #: modules/gui/macosx/open.m:185
-#, fuzzy
 msgid "Play another media synchronously"
-msgstr "Kartu groti kitą kūrinį (kitą garso rinkmeną...)"
+msgstr "Kartu groti kitą kūrinį"
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
-#: modules/gui/qt4/ui/sprefs_interface.h:381
 msgid "Choose..."
 msgstr "Pasirinkti..."
 
@@ -14065,15 +14057,14 @@ msgid "IP Address"
 msgstr "IP adresas"
 
 #: modules/gui/macosx/open.m:204
-#, fuzzy
 msgid ""
 "To Open a usual network stream (HTTP, RTSP, RTMP, MMS, FTP, etc.), just "
 "enter the URL in the field above. If you want to open a RTP or UDP stream, "
 "press the button below."
 msgstr ""
-"Norėdami arverti įprastą tinklo srautą (HTTP, RTSP, MMS, FTP ir kitus), "
-"tiesiogįveskite URL į aukščiau esantį langelį. Jei norite atverti RTP ar UDP "
-"srautą, nuspauskite žemiau esantį mygtuką."
+"Norėdami atverti įprastą tinklo srautą (HTTP, RTSP, MMS, FTP ir kitus), "
+"tiesiog įveskite URL į aukščiau esantį langelį. Jei norite atverti RTP ar "
+"UDP srautą, nuspauskite žemiau esantį mygtuką."
 
 #: modules/gui/macosx/open.m:205
 msgid ""
@@ -14208,7 +14199,7 @@ msgstr "FPS"
 msgid "Subtitles encoding"
 msgstr "Subtitrų koduotė"
 
-#: modules/gui/macosx/open.m:316 modules/gui/qt4/ui/sprefs_subtitles.h:210
+#: modules/gui/macosx/open.m:316 modules/gui/qt4/ui/sprefs_subtitles.h:217
 msgid "Font size"
 msgstr "Šrifto dydis"
 
@@ -14432,55 +14423,55 @@ msgid "Codec Details"
 msgstr "Kodavimo detalės"
 
 #: modules/gui/macosx/playlistinfo.m:98
-#: modules/gui/qt4/components/info_panels.cpp:522
+#: modules/gui/qt4/components/info_panels.cpp:524
 msgid "Read at media"
 msgstr "Perskaityta iš rinkmenos"
 
 #: modules/gui/macosx/playlistinfo.m:99
-#: modules/gui/qt4/components/info_panels.cpp:524
+#: modules/gui/qt4/components/info_panels.cpp:526
 msgid "Input bitrate"
 msgstr "Įvesties bitų dažnis"
 
 #: modules/gui/macosx/playlistinfo.m:100
-#: modules/gui/qt4/components/info_panels.cpp:526
+#: modules/gui/qt4/components/info_panels.cpp:528
 msgid "Demuxed"
 msgstr "Atskirta"
 
 #: modules/gui/macosx/playlistinfo.m:101
-#: modules/gui/qt4/components/info_panels.cpp:527
+#: modules/gui/qt4/components/info_panels.cpp:529
 msgid "Stream bitrate"
 msgstr "Srauto bitų dažnis"
 
 #: modules/gui/macosx/playlistinfo.m:104 modules/gui/macosx/playlistinfo.m:115
-#: modules/gui/qt4/components/info_panels.cpp:534
-#: modules/gui/qt4/components/info_panels.cpp:547
+#: modules/gui/qt4/components/info_panels.cpp:536
+#: modules/gui/qt4/components/info_panels.cpp:549
 msgid "Decoded blocks"
 msgstr "Iškoduoti blokai"
 
 #: modules/gui/macosx/playlistinfo.m:105
-#: modules/gui/qt4/components/info_panels.cpp:536
+#: modules/gui/qt4/components/info_panels.cpp:538
 msgid "Displayed frames"
 msgstr "Parodyti kadrai"
 
 #: modules/gui/macosx/playlistinfo.m:106
-#: modules/gui/qt4/components/info_panels.cpp:538
+#: modules/gui/qt4/components/info_panels.cpp:540
 msgid "Lost frames"
 msgstr "Prarasti kadrai"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
-#: modules/gui/qt4/components/info_panels.cpp:520
+#: modules/gui/qt4/components/info_panels.cpp:522
 #: modules/gui/qt4/dialogs_provider.cpp:608
 #: modules/video_filter/deinterlace.c:143
 msgid "Streaming"
 msgstr "Srautinis siuntimas"
 
 #: modules/gui/macosx/playlistinfo.m:110
-#: modules/gui/qt4/components/info_panels.cpp:541
+#: modules/gui/qt4/components/info_panels.cpp:543
 msgid "Sent packets"
 msgstr "Išsiųsti paketai"
 
 #: modules/gui/macosx/playlistinfo.m:111
-#: modules/gui/qt4/components/info_panels.cpp:542
+#: modules/gui/qt4/components/info_panels.cpp:544
 msgid "Sent bytes"
 msgstr "Išsiųsta baitų"
 
@@ -14489,12 +14480,12 @@ msgid "Send rate"
 msgstr "Siuntimo dažnis"
 
 #: modules/gui/macosx/playlistinfo.m:116
-#: modules/gui/qt4/components/info_panels.cpp:549
+#: modules/gui/qt4/components/info_panels.cpp:551
 msgid "Played buffers"
 msgstr "Groti buferiai"
 
 #: modules/gui/macosx/playlistinfo.m:117
-#: modules/gui/qt4/components/info_panels.cpp:551
+#: modules/gui/qt4/components/info_panels.cpp:553
 msgid "Lost buffers"
 msgstr "Prarasti buferiai"
 
@@ -14578,7 +14569,7 @@ msgstr "Įvestis ir kodavimas"
 msgid "Input & Codec settings"
 msgstr "Įvesties ir kodavimo nuostatos"
 
-#: modules/gui/macosx/simple_prefs.m:223
+#: modules/gui/macosx/simple_prefs.m:223 modules/gui/qt4/ui/sprefs_audio.h:348
 msgid "Effects"
 msgstr "Vaizdo kodekai"
 
@@ -14586,11 +14577,11 @@ msgstr "Vaizdo kodekai"
 msgid "Enable Audio"
 msgstr "Įgalinti garsą"
 
-#: modules/gui/macosx/simple_prefs.m:225
+#: modules/gui/macosx/simple_prefs.m:225 modules/gui/qt4/ui/sprefs_audio.h:334
 msgid "General Audio"
 msgstr "Bendras garsas"
 
-#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:433
+#: modules/gui/macosx/simple_prefs.m:226 modules/gui/qt4/ui/sprefs_audio.h:349
 msgid "Headphone surround effect"
 msgstr "Ausinių efektas"
 
@@ -14602,7 +14593,7 @@ msgstr "Pageidaujama garso kalba"
 msgid "Enable Last.fm submissions"
 msgstr ""
 
-#: modules/gui/macosx/simple_prefs.m:233
+#: modules/gui/macosx/simple_prefs.m:233 modules/gui/qt4/ui/sprefs_audio.h:351
 msgid "Visualization"
 msgstr "Vaizdiniai"
 
@@ -14671,6 +14662,7 @@ msgid "Default Server Port"
 msgstr "Numatytasis serverio prievadas"
 
 #: modules/gui/macosx/simple_prefs.m:261
+#: modules/gui/qt4/ui/sprefs_interface.h:321
 msgid "Album art download policy"
 msgstr "Viršelių atsiuntimas"
 
@@ -14683,7 +14675,7 @@ msgid "Show Fullscreen Controller"
 msgstr "Rodyti viso ekrano režimo valdyklę"
 
 #: modules/gui/macosx/simple_prefs.m:265
-#: modules/gui/qt4/ui/sprefs_interface.h:363
+#: modules/gui/qt4/ui/sprefs_interface.h:320
 msgid "Privacy / Network Interaction"
 msgstr "Privatumas / Tinklo sąveika"
 
@@ -14696,7 +14688,7 @@ msgid "Default Encoding"
 msgstr "Numatytoji koduotė"
 
 #: modules/gui/macosx/simple_prefs.m:272
-#: modules/gui/qt4/ui/sprefs_subtitles.h:207
+#: modules/gui/qt4/ui/sprefs_subtitles.h:214
 msgid "Display Settings"
 msgstr "Rodymo nuostatos"
 
@@ -14717,6 +14709,7 @@ msgid "Preferred Subtitle Language"
 msgstr "Pageidaujama subtitrų kalba"
 
 #: modules/gui/macosx/simple_prefs.m:280
+#: modules/gui/qt4/ui/sprefs_subtitles.h:209
 msgid "Enable OSD"
 msgstr "Įgalinti ERP"
 
@@ -15896,7 +15889,7 @@ msgstr "Kanalas:"
 msgid "Norm:"
 msgstr ""
 
-#: modules/gui/pda/pda_interface.c:609
+#: modules/gui/pda/pda_interface.c:609 modules/gui/qt4/ui/open_file.h:212
 msgid "Size:"
 msgstr "Dydis:"
 
@@ -16398,19 +16391,19 @@ msgstr ""
 "Informacija apie tai, iš ko sudarytas kūrinys ar srautas.\n"
 "Rodomas tankintuvas, garso ir vaizdo kodekai, subtitrai."
 
-#: modules/gui/qt4/components/info_panels.cpp:493
+#: modules/gui/qt4/components/info_panels.cpp:495
 msgid "Statistics about the currently playing media or stream."
 msgstr "Statistika apie šiuo metu grojamą kūrinį ar srautą."
 
-#: modules/gui/qt4/components/info_panels.cpp:529
+#: modules/gui/qt4/components/info_panels.cpp:531
 msgid "Corrupted"
 msgstr "Sugadinta"
 
-#: modules/gui/qt4/components/info_panels.cpp:531
+#: modules/gui/qt4/components/info_panels.cpp:533
 msgid "Discontinuities"
 msgstr "Pertrūkiai"
 
-#: modules/gui/qt4/components/info_panels.cpp:544
+#: modules/gui/qt4/components/info_panels.cpp:546
 msgid "Sent bitrate"
 msgstr "Siunčiamas bitų dažnis"
 
@@ -16452,7 +16445,6 @@ msgid "File names:"
 msgstr "Rinkmenos pavadinimas:"
 
 #: modules/gui/qt4/components/open_panels.cpp:144
-#: modules/gui/qt4/ui/sprefs_interface.h:369
 msgid "Filter:"
 msgstr "Filtras:"
 
@@ -16781,7 +16773,6 @@ msgid "Convert"
 msgstr "Konvertuoti"
 
 #: modules/gui/qt4/dialogs/convert.cpp:57
-#: modules/gui/qt4/ui/sprefs_audio.h:429
 msgid "Destination file:"
 msgstr "Paskirties rinkmena:"
 
@@ -17302,7 +17293,7 @@ msgid "Repeat delay:"
 msgstr "Kartojimo užlaikymas:"
 
 #: modules/gui/qt4/dialogs/vlm.cpp:114
-#: modules/gui/qt4/ui/sprefs_interface.h:366
+#: modules/gui/qt4/ui/sprefs_interface.h:323
 msgid " days"
 msgstr " dienos"
 
@@ -17347,14 +17338,12 @@ msgid "Open playlist..."
 msgstr "Atverti grojaraštį..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xpsf)"
-msgstr "XSPF grojaraštis (*.xspf);; "
+msgstr "XSPF grojaraštis (*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
-#, fuzzy
 msgid "M3U playlist (*.m3u)"
-msgstr "M3U grojaraštis (*.m3u);;"
+msgstr "M3U grojaraštis (*.m3u)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:537
 msgid "HTML playlist (*.html)"
@@ -17614,7 +17603,7 @@ msgstr "&Programa"
 
 #: modules/gui/qt4/menus.cpp:674
 msgid "Configure podcasts..."
-msgstr ""
+msgstr "Konfigūruoti laidų prenumeratą"
 
 #: modules/gui/qt4/menus.cpp:693
 msgid "&Help..."
@@ -17704,7 +17693,8 @@ msgstr ""
 "Kai atveriamas parinkčių langas, rodyti ne paprastąsias nuostatas, o "
 "sudėtingesnias."
 
-#: modules/gui/qt4/qt4.cpp:79 modules/gui/skins2/src/skin_main.cpp:512
+#: modules/gui/qt4/qt4.cpp:79 modules/gui/qt4/ui/sprefs_interface.h:339
+#: modules/gui/skins2/src/skin_main.cpp:512
 msgid "Systray icon"
 msgstr "Ženkliukas sistemos dėkle"
 
@@ -17783,20 +17773,18 @@ msgstr ""
 "X11 su atitinkamais plėtiniais."
 
 #: modules/gui/qt4/qt4.cpp:113
-#, fuzzy
 msgid "Fullscreen controller opacity opacity between 0.1 and 1."
-msgstr "Lango nepermatomumas tarp 0,1 ir 1."
+msgstr "Viso ekrano veiksenos valdiklių nepermatomumas tarp 0.1 ir 1."
 
 #: modules/gui/qt4/qt4.cpp:114
-#, fuzzy
 msgid ""
 "Sets the fullscreen controller opacity between 0.1 and 1 for main interface, "
 "playlist and extended panel. This option only works with Windows and X11 "
 "with composite extensions."
 msgstr ""
-"Nustato lango nepermatomumo lygį tarp 0,1 ir 1 pagrindinei sąsajai, "
-"grojaraščiui ir išplėstiems skydeliams. Ši parinktis veikia tik Windows ir "
-"X11 su atitinkamais plėtiniais."
+"Nustato viso ekrano veiksenos valdiklių nepermatomumo lygį tarp 0,1 ir 1 "
+"pagrindinei sąsajai, grojaraščiui ir išplėstiems skydeliams. Ši parinktis "
+"veikia tik Windows ir X11 su atitinkamais plėtiniais."
 
 #: modules/gui/qt4/qt4.cpp:120
 msgid "Show unimportant error and warnings dialogs"
@@ -17911,9 +17899,9 @@ msgstr "Qt išvaizda"
 
 #: modules/gui/qt4/ui/equalizer.h:126 modules/gui/qt4/ui/open_disk.h:290
 #: modules/gui/qt4/ui/open_net.h:116 modules/gui/qt4/ui/profiles.h:454
-#: modules/gui/qt4/ui/sprefs_audio.h:421 modules/gui/qt4/ui/sprefs_input.h:234
-#: modules/gui/qt4/ui/sprefs_interface.h:359
-#: modules/gui/qt4/ui/sprefs_subtitles.h:200
+#: modules/gui/qt4/ui/sprefs_audio.h:332 modules/gui/qt4/ui/sprefs_input.h:234
+#: modules/gui/qt4/ui/sprefs_interface.h:313
+#: modules/gui/qt4/ui/sprefs_subtitles.h:207
 #: modules/gui/qt4/ui/sprefs_video.h:278 modules/gui/qt4/ui/streampanel.h:168
 #: modules/gui/qt4/ui/v4l2.h:58
 msgid "Form"
@@ -18028,45 +18016,39 @@ msgstr "Pradinė padėtis"
 msgid "Audio and Subtitles"
 msgstr "Garsas ir subtitrai"
 
-#: modules/gui/qt4/ui/open_file.h:219
+#: modules/gui/qt4/ui/open_file.h:202
 msgid "Choose one or more media file to open"
 msgstr "Pasirinkite vieną ar daugiau atvertinų kūrinių"
 
-#: modules/gui/qt4/ui/open_file.h:221
+#: modules/gui/qt4/ui/open_file.h:204
 msgid "File Selection"
 msgstr "Rinkmenos pasirinkimas"
 
-#: modules/gui/qt4/ui/open_file.h:222
+#: modules/gui/qt4/ui/open_file.h:205
 msgid "You can select local files with the following list and buttons."
 msgstr ""
 "Galite pasirinkti vietines rinkmenas naudodamiesi pateikiamu sąrašu ir "
 "mygtukais."
 
-#: modules/gui/qt4/ui/open_file.h:223
+#: modules/gui/qt4/ui/open_file.h:206
 msgid "Add..."
 msgstr "Įkelti..."
 
-#: modules/gui/qt4/ui/open_file.h:226
+#: modules/gui/qt4/ui/open_file.h:209
 msgid "Add a subtitles file"
 msgstr "Įkelti subtitrų rinkmeną"
 
-#: modules/gui/qt4/ui/open_file.h:228
+#: modules/gui/qt4/ui/open_file.h:211
 msgid "Use a sub&titles file"
 msgstr "Naudoti sub&titrų rinkmeną"
 
-#: modules/gui/qt4/ui/open_file.h:230
+#: modules/gui/qt4/ui/open_file.h:213
+msgid "Alignment:"
+msgstr "Lygiuotė:"
+
+#: modules/gui/qt4/ui/open_file.h:215
 msgid "Select the subtitles file"
 msgstr "Pasirinkite subtitrų rinkmeną"
-
-#: modules/gui/qt4/ui/open_file.h:233
-#, fuzzy
-msgid "Font size:"
-msgstr "Šrifto dydis"
-
-#: modules/gui/qt4/ui/open_file.h:234
-#, fuzzy
-msgid "Text alignment:"
-msgstr "Teleteksto lygiuotė"
 
 #: modules/gui/qt4/ui/open_net.h:117
 msgid "Network Protocol"
@@ -18087,7 +18069,7 @@ msgstr "Čia įveskite srauto URL, su arba be protokolo."
 #: modules/gui/qt4/ui/podcast_configuration.h:102
 #: modules/services_discovery/podcast.c:61
 msgid "Podcast URLs list"
-msgstr ""
+msgstr "Prenumeruojamų URL sąrašas"
 
 #: modules/gui/qt4/ui/profiles.h:456
 msgid "MPEG-TS"
@@ -18221,75 +18203,37 @@ msgstr "Grupės pavadinimas"
 msgid "Generated stream output string"
 msgstr "Sudarytas srauto išvesties kodas"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:424
-msgid "Keep audio level between sessions"
-msgstr ""
+#: modules/gui/qt4/ui/sprefs_audio.h:335
+msgid "Default volume"
+msgstr "Numatytasis garsas"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:425
-msgid "Always reset audio start level to:"
-msgstr ""
+#: modules/gui/qt4/ui/sprefs_audio.h:337
+msgid "256 corresponds to 100%, 1024 to 400%"
+msgstr "256 atitinka 100%, 1024 atitinka 400%"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:426
+#: modules/gui/qt4/ui/sprefs_audio.h:339
 msgid " %"
 msgstr " %"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:427 modules/gui/qt4/ui/sprefs_video.h:284
+#: modules/gui/qt4/ui/sprefs_audio.h:341
+msgid "Save volume on exit"
+msgstr "Prisiminti garsumą išeinant iš programos"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:343
+msgid "Preferred audio language"
+msgstr "Pageidaujama garso kalba"
+
+#: modules/gui/qt4/ui/sprefs_audio.h:344 modules/gui/qt4/ui/sprefs_video.h:284
 msgid "Output"
 msgstr "Išvestis"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:428
-#, fuzzy
-msgid "Output module:"
-msgstr "Išvesties moduliai"
+#: modules/gui/qt4/ui/sprefs_audio.h:353
+msgid "last.fm"
+msgstr "last.fm"
 
-#: modules/gui/qt4/ui/sprefs_audio.h:432
-#, fuzzy
-msgid "Spatialization"
-msgstr "Vaizdiniai"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:434
-#, fuzzy
-msgid "Dolby Surround:"
-msgstr "Dolby Surround"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:435
-#, fuzzy
-msgid "Processing"
-msgstr "Galutinis apdorojimas"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:436
-#, fuzzy
-msgid "Visualization:"
-msgstr "Vaizdiniai"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:437
-#, fuzzy
-msgid "Replay gain mode:"
-msgstr "Kartojimo režimas"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:438
-msgid "Normalize volume to:"
-msgstr ""
-
-#: modules/gui/qt4/ui/sprefs_audio.h:440
-#, fuzzy
-msgid "Preferred audio language:"
-msgstr "Pageidaujama garso kalba"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:441
-#, fuzzy
-msgid "Password:"
-msgstr "Slaptažodis"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:442
-#, fuzzy
-msgid "Username:"
-msgstr "Vartotojo vardas"
-
-#: modules/gui/qt4/ui/sprefs_audio.h:443
-#, fuzzy
-msgid "Submit played tracks stats to Last.fm"
-msgstr "Grotų kūrinių informacijos siuntimas į last.fm"
+#: modules/gui/qt4/ui/sprefs_audio.h:354
+msgid "Enable last.fm submission"
+msgstr "Siųsti klausomų dainų sąrašą į last.fm "
 
 #: modules/gui/qt4/ui/sprefs_input.h:235
 msgid "Disc Devices"
@@ -18319,150 +18263,100 @@ msgstr "Taisyti AVI rinkmenas"
 msgid "Use system codecs if available (better quality)"
 msgstr "Naudoti sistemos kodekus kai tik  įmanoma (geresnė kokybė)"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:360
+#: modules/gui/qt4/ui/sprefs_interface.h:315
 msgid "Instances"
 msgstr "VLC programų skaičius"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:361
+#: modules/gui/qt4/ui/sprefs_interface.h:316
 msgid "Allow only one instance"
 msgstr "Tik viena VLC programa vienu metu"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:362
+#: modules/gui/qt4/ui/sprefs_interface.h:317
+msgid "File associations:"
+msgstr "Rinkmenų susiejimai:"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:318
 msgid "Enqueue files when in one instance mode"
 msgstr "ir tuomet naujas rinkmenas dėti įtraukti į grojimo eilę"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:364
-#, fuzzy
-msgid "Album art download policy:"
-msgstr "Viršelių atsiuntimas"
+#: modules/gui/qt4/ui/sprefs_interface.h:319
+msgid "Association Setup"
+msgstr "Susiejimų nuostatos"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:365
+#: modules/gui/qt4/ui/sprefs_interface.h:322
 msgid "Activate update notifier"
 msgstr "Priminti apie atnaujinimus"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:367
-msgid "Every "
-msgstr ""
-
-#: modules/gui/qt4/ui/sprefs_interface.h:368
+#: modules/gui/qt4/ui/sprefs_interface.h:324
 msgid "Save recently played items"
 msgstr "Prisiminti vėliausiai grotus kūrinius"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:371
+#: modules/gui/qt4/ui/sprefs_interface.h:325
+msgid "Filter"
+msgstr "Filtras"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:327
 msgid "Separate words by | (without space)"
 msgstr "Žodžius atskirkite | (be tarpų)"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:374
-#, fuzzy
-msgid "Menus language:"
-msgstr "Garso kalba"
+#: modules/gui/qt4/ui/sprefs_interface.h:329
+msgid "Interface Type"
+msgstr "Sąsajos tipas"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:375
-#, fuzzy
-msgid "File associations"
-msgstr "Rinkmenų susiejimai:"
+#: modules/gui/qt4/ui/sprefs_interface.h:330
+msgid "Native"
+msgstr "Įprasta"
 
-#: modules/gui/qt4/ui/sprefs_interface.h:376
-#, fuzzy
-msgid "Set up associations..."
-msgstr "Rinkmenų susiejimai:"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:377
-msgid "Look and feel"
-msgstr ""
-
-#: modules/gui/qt4/ui/sprefs_interface.h:378
-#, fuzzy
-msgid "Use custom skin"
-msgstr "Pasirinkite apipavidalinimą"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:380
-#, fuzzy
-msgid "Skin resource file:"
-msgstr "Apipavidalinimo rinkmena"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:382
-#, fuzzy
-msgid "Show controls in full screen mode"
-msgstr "Rodyti valdiklius viso ekrano režime"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:383
-#, fuzzy
-msgid "Display mode:"
-msgstr "Rodymo režimas"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:384
-#, fuzzy
-msgid "Show systray icon"
-msgstr "Ženkliukas sistemos dėkle"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:385
-msgid "Resize interface to video size"
-msgstr "Pritaikyti prie vaizdo dydžio"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:386 modules/gui/wince/wince.cpp:61
-msgid "Embed video in interface"
-msgstr "Vaizdas pagrindiniame lange"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:387
-#, fuzzy
-msgid "Force window style:"
-msgstr "Naujas"
-
-#: modules/gui/qt4/ui/sprefs_interface.h:388
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/prefsmenu/"
-"sample_skins\" /></p></body></html>"
-msgstr ""
-
-#: modules/gui/qt4/ui/sprefs_interface.h:394
+#: modules/gui/qt4/ui/sprefs_interface.h:331
 msgid "This is VLC's default interface, with a native look and feel."
 msgstr "Tai pagrindinė VLC sąsaja su numatytąja išvaizda."
 
-#: modules/gui/qt4/ui/sprefs_interface.h:396
-#, fuzzy
-msgid "Use native style"
-msgstr "Naudoti subtitrų rinkmeną"
+#: modules/gui/qt4/ui/sprefs_interface.h:332
+msgid "Display mode"
+msgstr "Rodymo režimas"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:202
-#, fuzzy
-msgid "Enable On Screen Display (OSD)"
-msgstr "Ekrane Rodomi Pranešimai"
+#: modules/gui/qt4/ui/sprefs_interface.h:333 modules/gui/wince/wince.cpp:61
+msgid "Embed video in interface"
+msgstr "Vaizdas pagrindiniame lange"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:203
-#, fuzzy
-msgid "Show media title on video start"
-msgstr "Rodyti pavadinimą ekrane"
+#: modules/gui/qt4/ui/sprefs_interface.h:334
+msgid "Show a controller in fullscreen"
+msgstr "Valdyklė ir viso ekrano režime"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:204
+#: modules/gui/qt4/ui/sprefs_interface.h:335
+#: modules/gui/skins2/src/skin_main.cpp:544
+msgid "Skins"
+msgstr "Apipavidalinimai"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:337
+msgid "Skin file"
+msgstr "Apipavidalinimo rinkmena"
+
+#: modules/gui/qt4/ui/sprefs_interface.h:340
+msgid "Resize interface to video size"
+msgstr "Pritaikyti prie vaizdo dydžio"
+
+#: modules/gui/qt4/ui/sprefs_subtitles.h:211
 msgid "Subtitles Language"
 msgstr "Subtitrų kalba"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:205
+#: modules/gui/qt4/ui/sprefs_subtitles.h:212
 msgid "Preferred subtitles language"
 msgstr "Pageidaujama subtitrų kalba"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:206
+#: modules/gui/qt4/ui/sprefs_subtitles.h:213
 msgid "Default encoding"
 msgstr "Numatytoji koduotė"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:208
+#: modules/gui/qt4/ui/sprefs_subtitles.h:215
 msgid "Effect"
 msgstr "Efektai"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:209
+#: modules/gui/qt4/ui/sprefs_subtitles.h:216
 msgid "Font color"
 msgstr "Šrifto spalva"
 
-#: modules/gui/qt4/ui/sprefs_subtitles.h:212
+#: modules/gui/qt4/ui/sprefs_subtitles.h:220
 #: modules/gui/qt4/ui/video_effects.h:884
 #: modules/gui/qt4/ui/video_effects.h:886
 #: modules/gui/qt4/ui/video_effects.h:888
@@ -18856,10 +18750,6 @@ msgstr ""
 #: modules/gui/skins2/src/skin_main.cpp:521
 msgid "Use a skinned playlist"
 msgstr "Grojaraščiui naudoti apipavidalinimą"
-
-#: modules/gui/skins2/src/skin_main.cpp:544
-msgid "Skins"
-msgstr "Apipavidalinimai"
 
 #: modules/gui/skins2/src/skin_main.cpp:545
 msgid "Skinnable Interface"
@@ -20278,7 +20168,7 @@ msgstr ""
 
 #: modules/services_discovery/podcast.c:67
 msgid "Podcasts"
-msgstr ""
+msgstr "Prenumeruojamos laidos"
 
 #: modules/services_discovery/sap.c:85
 msgid "SAP multicast address"
@@ -21852,29 +21742,24 @@ msgid "Bluescreen"
 msgstr "Mėlynas ekranas"
 
 #: modules/video_filter/canvas.c:84
-#, fuzzy
 msgid "Output width"
-msgstr "Vaizdo išvesties plotis."
+msgstr "Išvesties plotis"
 
 #: modules/video_filter/canvas.c:86
-#, fuzzy
 msgid "Output (canvas) image width"
-msgstr "Vaizdo išvesties plotis."
+msgstr "Išvesties (vaizdo) plotis"
 
 #: modules/video_filter/canvas.c:87
-#, fuzzy
 msgid "Output height"
-msgstr "Vaizdo išvesties aukštis."
+msgstr "Išvesties aukštis"
 
 #: modules/video_filter/canvas.c:89
-#, fuzzy
 msgid "Output (canvas) image height"
-msgstr "Vaizdo išvesties aukštis."
+msgstr "Išvesties (vaizdo) aukštis"
 
 #: modules/video_filter/canvas.c:90
-#, fuzzy
 msgid "Output picture aspect ratio"
-msgstr "Šaltinio vaizdo santykis"
+msgstr "Išvesties vaizdo santykis"
 
 #: modules/video_filter/canvas.c:92
 msgid ""
@@ -21883,9 +21768,8 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/canvas.c:94
-#, fuzzy
 msgid "Pad video"
-msgstr "vaizdas"
+msgstr ""
 
 #: modules/video_filter/canvas.c:96
 msgid ""
@@ -21894,9 +21778,8 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Automatically resize and pad a video"
-msgstr "Automatiškai peržiūrėti rinkmenas"
+msgstr ""
 
 #: modules/video_filter/chain.c:43
 msgid "Video filtering using a chain of video filter modules"
@@ -24204,47 +24087,111 @@ msgstr "Vaizdinio filtras"
 msgid "Spectrum analyser"
 msgstr "Spektro analizatorius"
 
-#~ msgid "Alignment:"
-#~ msgstr "Lygiuotė:"
-
-#~ msgid "Default volume"
-#~ msgstr "Numatytasis garsas"
-
-#~ msgid "256 corresponds to 100%, 1024 to 400%"
-#~ msgstr "256 atitinka 100%, 1024 atitinka 400%"
-
-#~ msgid "Save volume on exit"
-#~ msgstr "Prisiminti garsumą išeinant iš programos"
-
-#~ msgid "last.fm"
-#~ msgstr "last.fm"
-
-#~ msgid "Enable last.fm submission"
-#~ msgstr "Siųsti klausomų dainų sąrašą į last.fm "
-
-#~ msgid "Association Setup"
-#~ msgstr "Susiejimų nuostatos"
-
-#~ msgid "Filter"
-#~ msgstr "Filtras"
-
-#~ msgid "Interface Type"
-#~ msgstr "Sąsajos tipas"
-
-#~ msgid "Native"
-#~ msgstr "Įprasta"
-
-#~ msgid "Show a controller in fullscreen"
-#~ msgstr "Valdyklė ir viso ekrano režime"
-
-#~ msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
-#~ msgstr "Garso formatas, skirtas MPEG4, (naudojamas su MPEG TS ir MPEG4)"
-
 #~ msgid "Use MPEG4 matrix"
 #~ msgstr "Naudoti MPEG4 matricą"
 
-#~ msgid "MPEG2 video transrating stream output"
-#~ msgstr "MPEG2 vaizdo dažnio keitimo srauto išvestis"
+#~ msgid "Crash Report successfully sent"
+#~ msgstr "Nulūžimo pranešimas sėkmingas išsiųstas"
 
+#~ msgid "Thanks for your report!"
+#~ msgstr "Dėkojame už jūsų pranešimą!"
+
+#, fuzzy
+#~ msgid "Font size:"
+#~ msgstr "Šrifto dydis"
+
+#, fuzzy
+#~ msgid "Text alignment:"
+#~ msgstr "Teleteksto lygiuotė"
+
+#, fuzzy
+#~ msgid "Output module:"
+#~ msgstr "Išvesties moduliai"
+
+#, fuzzy
+#~ msgid "Spatialization"
+#~ msgstr "Vaizdiniai"
+
+#, fuzzy
+#~ msgid "Dolby Surround:"
+#~ msgstr "Dolby Surround"
+
+#, fuzzy
+#~ msgid "Processing"
+#~ msgstr "Galutinis apdorojimas"
+
+#, fuzzy
+#~ msgid "Visualization:"
+#~ msgstr "Vaizdiniai"
+
+#, fuzzy
+#~ msgid "Replay gain mode:"
+#~ msgstr "Kartojimo režimas"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Slaptažodis"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Vartotojo vardas"
+
+#, fuzzy
+#~ msgid "Submit played tracks stats to Last.fm"
+#~ msgstr "Grotų kūrinių informacijos siuntimas į last.fm"
+
+#, fuzzy
+#~ msgid "Album art download policy:"
+#~ msgstr "Viršelių atsiuntimas"
+
+#, fuzzy
+#~ msgid "Menus language:"
+#~ msgstr "Garso kalba"
+
+#, fuzzy
+#~ msgid "Set up associations..."
+#~ msgstr "Rinkmenų susiejimai:"
+
+#, fuzzy
+#~ msgid "Use custom skin"
+#~ msgstr "Pasirinkite apipavidalinimą"
+
+#, fuzzy
+#~ msgid "Skin resource file:"
+#~ msgstr "Apipavidalinimo rinkmena"
+
+#, fuzzy
+#~ msgid "Show controls in full screen mode"
+#~ msgstr "Rodyti valdiklius viso ekrano režime"
+
+#, fuzzy
+#~ msgid "Show systray icon"
+#~ msgstr "Ženkliukas sistemos dėkle"
+
+#, fuzzy
+#~ msgid "Force window style:"
+#~ msgstr "Naujas"
+
+#, fuzzy
+#~ msgid "Use native style"
+#~ msgstr "Naudoti subtitrų rinkmeną"
+
+#, fuzzy
+#~ msgid "Enable On Screen Display (OSD)"
+#~ msgstr "Ekrane Rodomi Pranešimai"
+
+#, fuzzy
+#~ msgid "Show media title on video start"
+#~ msgstr "Rodyti pavadinimą ekrane"
+
+#, fuzzy
+#~ msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
+#~ msgstr "H264 yra naujas vaizdo kodekas (naudojamas su MPEG TS ir MP4)"
+
+#, fuzzy
+#~ msgid "MPEG2 video transrating stream output"
+#~ msgstr "MPEG2 vaizdo perjungimo srauito išvestis"
+
+#, fuzzy
 #~ msgid "Transrate"
-#~ msgstr "Dažnio keitimas"
+#~ msgstr "Transkripcija"
