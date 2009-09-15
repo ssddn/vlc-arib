@@ -1,13 +1,17 @@
-Changes between 1.0.1 and 1.0.2-git:
+Changes between 1.0.1 and 1.0.2-rc:
 --------------------------------
 
 Decoders:
  * Native support for WMA Professional, without the use of the Win32 dlls
  * Fix issues in subtitles, especially SSA ones
  * Various fixes on theora and ogg
- 
+
 Demuxers:
  * Various fixes for EPG support in MPEG-TS demuxer
+ * Fixes for potential stack overflow in .avi, .mp4 and .asf demuxers
+
+Access:
+ * Fixes for v4l2 devices
 
 Qt Interface:
  * Fix some playlist sorting issues
@@ -38,7 +42,7 @@ Unix builds:
 Translations:
  * New Kazakh translation
  * Lithunanian translation is available on Windows
- * Galician, Korean, Nepali, Vietnamese, Ukrainian, Brazilian, Arabic translation updates
+ * Galician, Korean, Nepali, Vietnamese, Ukrainian, Brazilian, Arabic and French translation updates
 
 
 Changes between 1.0.0 and 1.0.1:
