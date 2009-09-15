@@ -55,8 +55,8 @@
 #endif
 
 #ifdef __APPLE__
-#define DEFAULT_FONT "/System/Library/Fonts/LucidaGrande.dfont"
-#define FC_DEFAULT_FONT "Lucida Grande"
+#define DEFAULT_FONT "/Library/Fonts/Arial Black.ttf"
+#define FC_DEFAULT_FONT "Arial Black"
 #elif defined( SYS_BEOS )
 #define DEFAULT_FONT "/boot/beos/etc/fonts/ttfonts/Swiss721.ttf"
 #define FC_DEFAULT_FONT "Swiss"
@@ -331,19 +331,6 @@ static int Create( vlc_object_t *p_this )
 #ifdef WIN32
         GetWindowsDirectory( psz_fontfile, PATH_MAX + 1 );
         strcat( psz_fontfile, "\\fonts\\arial.ttf" );
-#elif defined(__APPLE__)
-        SInt32 MacVersion;
-        if (Gestalt(gestaltSystemVersion, &MacVersion) == noErr)
-        {
-            if (MacVersion >= 0x1060)
-            {
-                strcpy( psz_fontfile, "/System/Library/Fonts/LucidaGrande.ttc" );
-            }
-            else
-            {
-                strcpy( psz_fontfile, DEFAULT_FONT );
-            }
-        }
 #else
         msg_Err( p_filter, "user didn't specify a font" );
         goto error;
