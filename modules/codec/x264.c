@@ -33,6 +33,7 @@
 #include <vlc_vout.h>
 #include <vlc_sout.h>
 #include <vlc_codec.h>
+#include <vlc_charset.h>
 
 #ifdef PTW32_STATIC_LIB
 #include <pthread.h>
@@ -899,8 +900,9 @@ static int  Open ( vlc_object_t *p_this )
     var_Get( p_enc, SOUT_CFG_PREFIX "level", &val );
     if( val.psz_string )
     {
-        if( atof (val.psz_string) < 6 )
-            p_sys->param.i_level_idc = (int) ( 10 * atof (val.psz_string) + .5);
+        if( us_atof (val.psz_string) < 6 )
+            p_sys->param.i_level_idc = (int) (10 * us_atof (val.psz_string)
+                                              + .5);
         else
             p_sys->param.i_level_idc = atoi (val.psz_string);
         free( val.psz_string );
