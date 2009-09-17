@@ -32,6 +32,15 @@ Mac OS X Port:
 
 Encoders:
  * MPEG2 transrate stream output removed
+ * x264 default-values closer to x264.exe defaults.
+ * x264 rc-behaviour fixes:
+   - if user defines qp-value, CQP-mode is used
+   - otherwise if user defines vb=0, CRF-mode is used
+   - otherwise ABR-mode is used
+ * x264 set vbv-bufsize/vbv-maxsize better if user hasn't defined these:
+   - ABR mode set vbv-max-bitrate=bitrate
+   - vbv-bufsize is bitrate * seconds between keyframes (keyint/fps)
+
 
 Playlist:
  * Lua scripts for Mpora and Vimeo playback
