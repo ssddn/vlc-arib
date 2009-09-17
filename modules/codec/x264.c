@@ -818,36 +818,6 @@ static int  Open ( vlc_object_t *p_this )
     var_Get( p_enc, SOUT_CFG_PREFIX "qcomp", &val );
     p_sys->param.rc.f_qcompress = val.f_float;
 
-    /* transcode-default bitrate is 0,
-     * set more to ABR if user specifies bitrate */
-    if( p_enc->fmt_out.i_bitrate > 0 )
-    {
-        p_sys->param.rc.i_bitrate = p_enc->fmt_out.i_bitrate / 1000;
-#if X264_BUILD < 48
-    /* cbr = 1 overrides qp or crf and sets an average bitrate
-       but maxrate = average bitrate is needed for "real" CBR */
-        p_sys->param.rc.b_cbr=1;
-#endif
-        p_sys->param.rc.i_rc_method = X264_RC_ABR;
-    }
-    else /* Set default to CRF */
-    {
-#if X264_BUILD >= 37
-        var_Get( p_enc, SOUT_CFG_PREFIX "crf", &val );
-        if( val.i_int > 0 && val.i_int <= 51 )
-        {
-#   if X264_BUILD >= 54
-            p_sys->param.rc.f_rf_constant = val.i_int;
-#   else
-            p_sys->param.rc.i_rf_constant = val.i_int;
-#   endif
-#   if X264_BUILD >= 48
-            p_sys->param.rc.i_rc_method = X264_RC_CRF;
-#   endif
-        }
-#endif
-    }
-
     var_Get( p_enc, SOUT_CFG_PREFIX "qpstep", &val );
     if( val.i_int >= 0 && val.i_int <= 51 ) p_sys->param.rc.i_qp_step = val.i_int;
     var_Get( p_enc, SOUT_CFG_PREFIX "qpmin", &val );
@@ -877,15 +847,35 @@ static int  Open ( vlc_object_t *p_this )
 #else
         p_sys->param.i_qp_constant = val.i_int;
 #endif
-    }
-
+    } else if( p_enc->fmt_out.i_bitrate > 0 )
+    {
+        /* set more to ABR if user specifies bitrate, but qp ain't defined */
+        p_sys->param.rc.i_bitrate = p_enc->fmt_out.i_bitrate / 1000;
 #if X264_BUILD < 48
     /* cbr = 1 overrides qp or crf and sets an average bitrate
        but maxrate = average bitrate is needed for "real" CBR */
-    if( p_sys->param.rc.i_bitrate > 0 ) p_sys->param.rc.b_cbr = 1;
-#else
-    if( p_sys->param.rc.i_bitrate > 0 ) p_sys->param.rc.i_rc_method = X264_RC_ABR;
+        p_sys->param.rc.b_cbr=1;
 #endif
+        p_sys->param.rc.i_rc_method = X264_RC_ABR;
+    }
+    else /* Set default to CRF */
+    {
+#if X264_BUILD >= 37
+        var_Get( p_enc, SOUT_CFG_PREFIX "crf", &val );
+#   if X264_BUILD >= 48
+        p_sys->param.rc.i_rc_method = X264_RC_CRF;
+#   endif
+        if( val.i_int > 0 && val.i_int <= 51 )
+        {
+#   if X264_BUILD >= 54
+            p_sys->param.rc.f_rf_constant = val.i_int;
+#   else
+            p_sys->param.rc.i_rf_constant = val.i_int;
+#   endif
+        }
+#endif
+    }
+
 
 #if X264_BUILD >= 24
     var_Get( p_enc, SOUT_CFG_PREFIX "ratetol", &val );
@@ -1125,21 +1115,6 @@ static int  Open ( vlc_object_t *p_this )
 #if X264_BUILD >= 36
     var_Get( p_enc, SOUT_CFG_PREFIX "mixed-refs", &val );
     p_sys->param.analyse.b_mixed_references = val.b_bool;
-#endif
-
-#if X264_BUILD >= 37
-    var_Get( p_enc, SOUT_CFG_PREFIX "crf", &val );
-    if( val.i_int > 0 && val.i_int <= 51 )
-    {
-#   if X264_BUILD >= 54
-        p_sys->param.rc.f_rf_constant = val.i_int;
-#   else
-        p_sys->param.rc.i_rf_constant = val.i_int;
-#   endif
-#   if X264_BUILD >= 48
-        p_sys->param.rc.i_rc_method = X264_RC_CRF;
-#   endif
-    }
 #endif
 
 #if X264_BUILD >= 39
