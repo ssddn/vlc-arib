@@ -164,6 +164,7 @@ static int OpenDecoder( vlc_object_t *p_this )
     p_sys->i_previous_pts = 0;
     p_sys->i_current_dts  = 0;
     p_sys->i_previous_dts = 0;
+    p_sys->i_aspect = 0;
     p_sys->b_garbage_pic = false;
     p_sys->b_slice_i  = false;
     p_sys->b_second_field = false;
@@ -698,6 +699,7 @@ static block_t *GetCc( decoder_t *p_dec, bool pb_present[4] )
 static void GetAR( decoder_t *p_dec )
 {
     decoder_sys_t *p_sys = p_dec->p_sys;
+    int i_old_aspect = p_sys->i_aspect;
 
     /* Check whether the input gave a particular aspect ratio */
     if( p_dec->fmt_in.video.i_aspect )
@@ -728,6 +730,9 @@ static void GetAR( decoder_t *p_dec )
             p_sys->i_sar_den = p_sys->p_info->sequence->picture_width * 3;
         }
     }
+
+    if( p_sys->i_aspect == i_old_aspect )
+        return;
 
     if( p_sys->p_info->sequence->frame_period > 0 )
         msg_Dbg( p_dec,
