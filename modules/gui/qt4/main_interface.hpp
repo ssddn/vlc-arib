@@ -180,7 +180,7 @@ private slots:
     void showCryptedLabel( bool );
 signals:
     void askGetVideo( WId *p_id, vout_thread_t *, int *pi_x, int *pi_y,
-                      unsigned int *pi_width, unsigned int *pi_height );
+                      unsigned *pi_width, unsigned *pi_height );
     void askReleaseVideo( );
     void askVideoToResize( unsigned int, unsigned int );
     void askUpdate();
