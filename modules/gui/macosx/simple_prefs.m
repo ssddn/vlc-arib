@@ -622,6 +622,7 @@ static inline char * __config_GetLabel( vlc_object_t *p_this, const char *psz_na
 	else 
 	{
         /* fallback on freetype */
+        [o_osd_font_fld setEditable: YES];
 		[self setupField: o_osd_font_fld forOption: "freetype-font"];
 		[self setupButton: o_osd_font_color_pop forIntList: "freetype-color"];
 		[self setupButton: o_osd_font_size_pop forIntList: "freetype-rel-fontsize"];
