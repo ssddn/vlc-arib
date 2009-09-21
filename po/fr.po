@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-09-19 19:11+0100\n"
-"PO-Revision-Date: 2009-09-10 17:00+0100\n"
+"POT-Creation-Date: 2009-09-21 22:41+0100\n"
+"PO-Revision-Date: 2009-09-21 17:04+0100\n"
 "Last-Translator: Éric lassauge <lassauge {AT} users {dot} sourceforge {dot} "
 "net>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -2387,7 +2387,7 @@ msgstr ""
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
 #: modules/gui/macosx/simple_prefs.m:407 modules/gui/macosx/simple_prefs.m:524
-#: modules/gui/macosx/simple_prefs.m:758 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:759 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -4729,7 +4729,7 @@ msgstr "Téléchargement…"
 #: modules/gui/macosx/open.m:176 modules/gui/macosx/open.m:206
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:301
-#: modules/gui/macosx/simple_prefs.m:684 modules/gui/macosx/wizard.m:320
+#: modules/gui/macosx/simple_prefs.m:685 modules/gui/macosx/wizard.m:320
 #: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
@@ -10155,7 +10155,7 @@ msgstr "Transmission discontinue"
 
 #: modules/codec/speex.c:84
 msgid "Enable discontinuous transmission (DTX)."
-msgstr ""
+msgstr "Autoriser les transmissions discontinues (DTX)."
 
 #: modules/codec/speex.c:88
 msgid "Narrow-band (8kHz)"
@@ -12903,6 +12903,8 @@ msgid ""
 "Use playlist options usually used to prevent ads skipping to detect ads and "
 "prevent adding them to the playlist."
 msgstr ""
+"Utiliser les options de listes de lecture habituellement prévues pour éviter "
+"les publicités (pour les détecter et éviter de les ajouter à la liste)."
 
 #: modules/demux/playlist/playlist.c:69
 msgid "M3U playlist import"
@@ -12979,7 +12981,7 @@ msgstr "Shoutcast"
 
 #: modules/demux/playlist/shoutcast.c:411
 msgid "Listeners"
-msgstr ""
+msgstr "Auditeurs"
 
 #: modules/demux/playlist/shoutcast.c:412
 msgid "Load"
@@ -12995,6 +12997,9 @@ msgid ""
 "duration. However sometimes this might not be usable. Disable this option to "
 "calculate from the bitrate instead."
 msgstr ""
+"Habituellement on utilise la date des fichiers MPEG pour calculer position "
+"et durée. Cependant ceci n'est parfois pas utilisable. Inhiber cette option "
+"pour calculer en utilisant le débit binaire."
 
 #: modules/demux/ps.c:56 modules/demux/ps.c:69
 msgid "MPEG-PS demuxer"
@@ -13673,6 +13678,9 @@ msgid ""
 "transparent. All previously rendered images and text will be cleared from "
 "the cache."
 msgstr ""
+"L'image affichée en superposition est effacée en rendant le tampon de "
+"superposition complètement transparent. Toutes les images et textes "
+"précédents seront effacés du cache."
 
 #: modules/gui/fbosd.c:152
 msgid "Render text or image"
@@ -14358,7 +14366,7 @@ msgid "No CrashLog found"
 msgstr "Aucun fichier CrashLog trouvé"
 
 #: modules/gui/macosx/intf.m:2414 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:685
+#: modules/gui/macosx/simple_prefs.m:686
 msgid "Continue"
 msgstr "Continuer"
 
@@ -14615,6 +14623,12 @@ msgid ""
 "To open a stream using a different protocol, just press Cancel to close this "
 "sheet."
 msgstr ""
+"Si vous voulez ouvrir un flux multicast, donnez l'adresse IP indiquée par le "
+"fournisseur du flux. En mode unicast, VLC utilisare automatiquement l'IP de "
+"la machine.\n"
+"\n"
+"Pour ouvrir un flux avec un protocole différent, cliquez [Annuler] pour "
+"fermer cette fenêtre."
 
 #: modules/gui/macosx/open.m:208
 msgid "Open RTP/UDP Stream"
@@ -14697,6 +14711,8 @@ msgid ""
 "VLC could not connect to EyeTV.\n"
 "Make sure that you installed VLC's EyeTV plugin."
 msgstr ""
+"VLC ne peut pas se connecter à EyeTV.\n"
+"Vérifiez que le greffon Eye TV de VLC est installé."
 
 #: modules/gui/macosx/open.m:239
 msgid "Launch EyeTV now"
@@ -15042,12 +15058,12 @@ msgstr "Tout rétablir"
 msgid "Basic"
 msgstr "Basique"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:684
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:685
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "Rétablir"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:687
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:688
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -15285,7 +15301,7 @@ msgid "Sequential numbering"
 msgstr "Numérotation séquentielle"
 
 #: modules/gui/macosx/simple_prefs.m:560 modules/gui/macosx/simple_prefs.m:604
-#: modules/gui/macosx/simple_prefs.m:1216
+#: modules/gui/macosx/simple_prefs.m:1217
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "Personnalisé"
@@ -15317,49 +15333,49 @@ msgstr "Haute latence"
 msgid "Higher latency"
 msgstr "Très haute latence"
 
-#: modules/gui/macosx/simple_prefs.m:803
+#: modules/gui/macosx/simple_prefs.m:804
 msgid "Interface Settings not saved"
 msgstr "Réglages de l’interface non enregistrés"
 
-#: modules/gui/macosx/simple_prefs.m:804 modules/gui/macosx/simple_prefs.m:879
-#: modules/gui/macosx/simple_prefs.m:912 modules/gui/macosx/simple_prefs.m:978
-#: modules/gui/macosx/simple_prefs.m:1017
-#: modules/gui/macosx/simple_prefs.m:1042
+#: modules/gui/macosx/simple_prefs.m:805 modules/gui/macosx/simple_prefs.m:880
+#: modules/gui/macosx/simple_prefs.m:913 modules/gui/macosx/simple_prefs.m:979
+#: modules/gui/macosx/simple_prefs.m:1018
+#: modules/gui/macosx/simple_prefs.m:1043
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 "Une erreur est survenue lors de l'enregistrement des paramètres via "
 "« SimplePrefs » (%i)."
 
-#: modules/gui/macosx/simple_prefs.m:878
+#: modules/gui/macosx/simple_prefs.m:879
 msgid "Audio Settings not saved"
 msgstr "Paramètres audio nopn enregistrés"
 
-#: modules/gui/macosx/simple_prefs.m:911
+#: modules/gui/macosx/simple_prefs.m:912
 msgid "Video Settings not saved"
 msgstr "Paramètres vidéo non enregsitrés"
 
-#: modules/gui/macosx/simple_prefs.m:977
+#: modules/gui/macosx/simple_prefs.m:978
 msgid "Input Settings not saved"
 msgstr "Paramètres d'entrée non enregistrés"
 
-#: modules/gui/macosx/simple_prefs.m:1016
+#: modules/gui/macosx/simple_prefs.m:1017
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr "Paramètres OSD/sous-titres non enregistrés"
 
-#: modules/gui/macosx/simple_prefs.m:1041
+#: modules/gui/macosx/simple_prefs.m:1042
 msgid "Hotkeys not saved"
 msgstr "Raccourcis clavier non enregistrés"
 
-#: modules/gui/macosx/simple_prefs.m:1142
+#: modules/gui/macosx/simple_prefs.m:1143
 msgid "Choose the folder to save your video snapshots to."
 msgstr "Choisissez le dossier pour enregister les captures d'écran."
 
-#: modules/gui/macosx/simple_prefs.m:1144
+#: modules/gui/macosx/simple_prefs.m:1145
 msgid "Choose"
 msgstr "Choisir"
 
-#: modules/gui/macosx/simple_prefs.m:1234
+#: modules/gui/macosx/simple_prefs.m:1235
 msgid ""
 "Press new keys for\n"
 "\"%@\""
@@ -15367,15 +15383,15 @@ msgstr ""
 "Appuyez sur la nouvelle combinaison pour\n"
 "« %@ »"
 
-#: modules/gui/macosx/simple_prefs.m:1308
+#: modules/gui/macosx/simple_prefs.m:1309
 msgid "Invalid combination"
 msgstr "Combinaison invalide"
 
-#: modules/gui/macosx/simple_prefs.m:1309
+#: modules/gui/macosx/simple_prefs.m:1310
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr "Désolé, mais cette combinaison de touches ne peut pas être utilisée."
 
-#: modules/gui/macosx/simple_prefs.m:1327
+#: modules/gui/macosx/simple_prefs.m:1328
 msgid "This combination is already taken by \"%@\"."
 msgstr "Cette combinaison est déjà utilisée par « %@ »."
 
@@ -20389,7 +20405,7 @@ msgstr ""
 
 #: modules/misc/rtsp.c:73
 msgid "MUX for RAW RTSP transport"
-msgstr ""
+msgstr "MUX pour le transport RTSP brut"
 
 #: modules/misc/rtsp.c:75
 msgid "Sets the timeout option in the RTSP session string"
@@ -21114,9 +21130,8 @@ msgid ""
 msgstr ""
 
 #: modules/stream_out/bridge.c:72
-#, fuzzy
 msgid "Placeholder delay"
-msgstr "Délai :  Aucun"
+msgstr "Délai  de substitution"
 
 #: modules/stream_out/bridge.c:74
 msgid "Delay (in ms) before the placeholder kicks in."
@@ -21341,7 +21356,7 @@ msgstr "RAOP"
 
 #: modules/stream_out/raop.c:149
 msgid "Remote Audio Output Protocol stream output"
-msgstr ""
+msgstr "Flux de sortie « Remote Audio Output Protocol »"
 
 #: modules/stream_out/record.c:50
 msgid "Destination prefix"
@@ -22124,9 +22139,8 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/atmo/atmo.cpp:193
-#, fuzzy
 msgid "Edge Weightning"
-msgstr "Coté d'attachement :"
+msgstr "Importance du cadre"
 
 #: modules/video_filter/atmo/atmo.cpp:194
 msgid ""
@@ -22149,7 +22163,6 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/atmo/atmo.cpp:202
-#, fuzzy
 msgid "Hue windowing"
 msgstr "Ajustement de teinte"
 
@@ -22159,7 +22172,6 @@ msgid "Used for statistics."
 msgstr "Collecter des statistiques"
 
 #: modules/video_filter/atmo/atmo.cpp:204
-#, fuzzy
 msgid "Sat windowing"
 msgstr "Ajustement de saturation"
 
@@ -22219,12 +22231,8 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/atmo/atmo.cpp:237
-#, fuzzy
 msgid "Channel summary"
-msgstr ""
-"\n"
-"Sommaire d'exécution:\n"
-"\n"
+msgstr "Sommaire des canaux"
 
 #: modules/video_filter/atmo/atmo.cpp:238
 msgid "Channel left"
@@ -22272,9 +22280,8 @@ msgid "bottom"
 msgstr "bas"
 
 #: modules/video_filter/atmo/atmo.cpp:262
-#, fuzzy
 msgid "Summary gradient"
-msgstr "Dégradé de couleur"
+msgstr "Sommaire des gradients"
 
 #: modules/video_filter/atmo/atmo.cpp:263
 msgid "Left gradient"
