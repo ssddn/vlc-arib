@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the VideoLAN package.
 #
 # Iván Seoane Pardo <ivam.sp@gmail.com>, 2008.
-# Tagen Ata <localizacion@tagenata.com>, 2009.
+# Paula Iglesias - Tagen Ata <localizacion@tagenata.com>, 2009.
+# Gonçalo Cordeiro - Tagen Ata <localizacion@tagenata.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vlc 1.0.1\n"
+"Project-Id-Version: vlc 1.0.2\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-09-19 19:11+0100\n"
-"PO-Revision-Date: 2009-08-27 11:13+0200\n"
-"Last-Translator: Paula Iglesias <localizacion@tagenata.net>\n"
-"Language-Team: Galician <localizacion@tagenata.net>\n"
+"POT-Creation-Date: 2009-09-21 22:41+0100\n"
+"PO-Revision-Date: 2009-09-23 16:37+0200\n"
+"Last-Translator: Gonçalo Cordeiro <gonzalo@tagenata.com>\n"
+"Language-Team: Tagen Ata <localizacion@tagenata.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2393,7 +2394,7 @@ msgstr ""
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
 #: modules/gui/macosx/simple_prefs.m:407 modules/gui/macosx/simple_prefs.m:524
-#: modules/gui/macosx/simple_prefs.m:758 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:759 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -4713,7 +4714,7 @@ msgstr "Descargando..."
 #: modules/gui/macosx/open.m:176 modules/gui/macosx/open.m:206
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:301
-#: modules/gui/macosx/simple_prefs.m:684 modules/gui/macosx/wizard.m:320
+#: modules/gui/macosx/simple_prefs.m:685 modules/gui/macosx/wizard.m:320
 #: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
@@ -10379,9 +10380,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "Grego (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-#, fuzzy
 msgid "Greek (Windows-1253)"
-msgstr "Grego (Windows-1256)"
+msgstr "Grego (Windows-1253)"
 
 #: modules/codec/subtitles/subsdec.c:126
 msgid "Hebrew (ISO 8859-8)"
@@ -10987,7 +10987,6 @@ msgid "How AQ distributes bits"
 msgstr "Como o AQ distribúe os bits"
 
 #: modules/codec/x264.c:178
-#, fuzzy
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10996,10 +10995,10 @@ msgid ""
 "frame"
 msgstr ""
 "Define o modo de distribución de bits para AQ, a opción predeterminada é a "
-"2\n"
+"1\n"
 " - 0: Desactivado\n"
-" - 1: Evitar mover os bits entre fotogramas\n"
-" - 2: Mover os bits entre fotogramas"
+" - 1: Modo predeterminado actual x264\n"
+" - 2: usa log(var)^2 en vez de log(var) e tenta adaptar a forza por fotograma"
 
 #: modules/codec/x264.c:183
 msgid "Strength of AQ"
@@ -14523,7 +14522,7 @@ msgid "No CrashLog found"
 msgstr "Non se encontrou ningún rexistro de erros"
 
 #: modules/gui/macosx/intf.m:2414 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:685
+#: modules/gui/macosx/simple_prefs.m:686
 msgid "Continue"
 msgstr "Continuar"
 
@@ -14732,10 +14731,8 @@ msgid "Treat as a pipe rather than as a file"
 msgstr "Tratar como unha canalización en vez de como un ficheiro"
 
 #: modules/gui/macosx/open.m:185
-#, fuzzy
 msgid "Play another media synchronously"
-msgstr ""
-"Reproducir outro soporte de forma sincronizada (ficheiro de son extra,...)"
+msgstr "Reproducir outro soporte de forma sincronizada"
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
@@ -14765,14 +14762,13 @@ msgid "IP Address"
 msgstr "Enderezo IP"
 
 #: modules/gui/macosx/open.m:204
-#, fuzzy
 msgid ""
 "To Open a usual network stream (HTTP, RTSP, RTMP, MMS, FTP, etc.), just "
 "enter the URL in the field above. If you want to open a RTP or UDP stream, "
 "press the button below."
 msgstr ""
 "Para abrir un fluxo de rede normal (HTTP, RTSP, MMS, FTP etc.) simplemente "
-"introduza o URL do campo de abaixo. Se quere abrir un fluxo RTP ou UDP prema "
+"introduza o URL no campo de abaixo. Se quere abrir un fluxo RTP ou UDP prema "
 "no botón de abaixo."
 
 #: modules/gui/macosx/open.m:205
@@ -15225,12 +15221,12 @@ msgstr "Reiniciar todo"
 msgid "Basic"
 msgstr "Básico"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:684
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:685
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "Redefinir preferencias"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:687
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:688
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -15469,7 +15465,7 @@ msgid "Sequential numbering"
 msgstr "Numeración secuencial"
 
 #: modules/gui/macosx/simple_prefs.m:560 modules/gui/macosx/simple_prefs.m:604
-#: modules/gui/macosx/simple_prefs.m:1216
+#: modules/gui/macosx/simple_prefs.m:1217
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "Personalizar"
@@ -15501,48 +15497,48 @@ msgstr "Latencia alta"
 msgid "Higher latency"
 msgstr "Latencia máis alta"
 
-#: modules/gui/macosx/simple_prefs.m:803
+#: modules/gui/macosx/simple_prefs.m:804
 msgid "Interface Settings not saved"
 msgstr "Non se gardaron as configuracións da interface"
 
-#: modules/gui/macosx/simple_prefs.m:804 modules/gui/macosx/simple_prefs.m:879
-#: modules/gui/macosx/simple_prefs.m:912 modules/gui/macosx/simple_prefs.m:978
-#: modules/gui/macosx/simple_prefs.m:1017
-#: modules/gui/macosx/simple_prefs.m:1042
+#: modules/gui/macosx/simple_prefs.m:805 modules/gui/macosx/simple_prefs.m:880
+#: modules/gui/macosx/simple_prefs.m:913 modules/gui/macosx/simple_prefs.m:979
+#: modules/gui/macosx/simple_prefs.m:1018
+#: modules/gui/macosx/simple_prefs.m:1043
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 "Houbo un erro ao gardar as súas configuracións mediante SimplePrefs (%i)."
 
-#: modules/gui/macosx/simple_prefs.m:878
+#: modules/gui/macosx/simple_prefs.m:879
 msgid "Audio Settings not saved"
 msgstr "Non se gardaron as configuracións de son"
 
-#: modules/gui/macosx/simple_prefs.m:911
+#: modules/gui/macosx/simple_prefs.m:912
 msgid "Video Settings not saved"
 msgstr "Non se gardaron as configuracións de vídeo"
 
-#: modules/gui/macosx/simple_prefs.m:977
+#: modules/gui/macosx/simple_prefs.m:978
 msgid "Input Settings not saved"
 msgstr "Non se gardaron as configuracións de entrada"
 
-#: modules/gui/macosx/simple_prefs.m:1016
+#: modules/gui/macosx/simple_prefs.m:1017
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr "Non se gardaron as configuracións de OSD/subtítulos"
 
-#: modules/gui/macosx/simple_prefs.m:1041
+#: modules/gui/macosx/simple_prefs.m:1042
 msgid "Hotkeys not saved"
 msgstr "Non se gardaron as teclas rápidas"
 
-#: modules/gui/macosx/simple_prefs.m:1142
+#: modules/gui/macosx/simple_prefs.m:1143
 msgid "Choose the folder to save your video snapshots to."
 msgstr "Escolla o cartafol no que vai gardar as instantáneas de vídeo."
 
-#: modules/gui/macosx/simple_prefs.m:1144
+#: modules/gui/macosx/simple_prefs.m:1145
 msgid "Choose"
 msgstr "Escoller"
 
-#: modules/gui/macosx/simple_prefs.m:1234
+#: modules/gui/macosx/simple_prefs.m:1235
 msgid ""
 "Press new keys for\n"
 "\"%@\""
@@ -15550,17 +15546,17 @@ msgstr ""
 "Prema en teclas novas para\n"
 "\"%@\""
 
-#: modules/gui/macosx/simple_prefs.m:1308
+#: modules/gui/macosx/simple_prefs.m:1309
 msgid "Invalid combination"
 msgstr "A combinación non é válida"
 
-#: modules/gui/macosx/simple_prefs.m:1309
+#: modules/gui/macosx/simple_prefs.m:1310
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr ""
 "Por desgraza, estas teclas non se poden empregar como atallos de teclas "
 "rápidas."
 
-#: modules/gui/macosx/simple_prefs.m:1327
+#: modules/gui/macosx/simple_prefs.m:1328
 msgid "This combination is already taken by \"%@\"."
 msgstr "Esta combinación xa está en uso para \"%@\"."
 
@@ -18151,14 +18147,12 @@ msgid "Open playlist..."
 msgstr "Abrir lista de reprodución..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xpsf)"
-msgstr "Lista de reprodución XSPF(*.xspf);; "
+msgstr "Lista de reprodución XSPF(*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
-#, fuzzy
 msgid "M3U playlist (*.m3u)"
-msgstr "Lista de reprodución M3U (*.m3u);; "
+msgstr "Lista de reprodución M3U (*.m3u)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:537
 msgid "HTML playlist (*.html)"
@@ -19039,7 +19033,6 @@ msgid "Save volume on exit"
 msgstr "Gardar o volume ao saír"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:343
-#, fuzzy
 msgid "Preferred audio language"
 msgstr "Linguaxe de son preferida"
 
@@ -19092,9 +19085,8 @@ msgid "Allow only one instance"
 msgstr "Permitir só unha instancia"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:317
-#, fuzzy
 msgid "File associations:"
-msgstr "Asociación de ficheiros:"
+msgstr "Asociacións de ficheiros:"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:318
 msgid "Enqueue files when in one instance mode"
@@ -19134,7 +19126,6 @@ msgstr ""
 "Esta é a interface predeterminada do VLC cunha aparencia gráfica nativa."
 
 #: modules/gui/qt4/ui/sprefs_interface.h:332
-#, fuzzy
 msgid "Display mode"
 msgstr "Modo de visualización"
 
@@ -19152,9 +19143,8 @@ msgid "Skins"
 msgstr "Aparencias gráficas"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:337
-#, fuzzy
 msgid "Skin file"
-msgstr "Fallou a sesión"
+msgstr "Ficheiro de aparencia"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:340
 msgid "Resize interface to video size"
@@ -22748,38 +22738,34 @@ msgid "Bluescreen"
 msgstr "Pantalla azul"
 
 #: modules/video_filter/canvas.c:84
-#, fuzzy
 msgid "Output width"
-msgstr "Largura do vídeo de saída."
+msgstr "Largura da saída"
 
 #: modules/video_filter/canvas.c:86
-#, fuzzy
 msgid "Output (canvas) image width"
-msgstr "Largura do vídeo de saída."
+msgstr "Largura da imaxe de saída (lenzo)"
 
 #: modules/video_filter/canvas.c:87
-#, fuzzy
 msgid "Output height"
-msgstr "Altura do vídeo de saída."
+msgstr "Altura da saída"
 
 #: modules/video_filter/canvas.c:89
-#, fuzzy
 msgid "Output (canvas) image height"
-msgstr "Altura do vídeo de saída."
+msgstr "Altura da imaxe de saída (lenzo)"
 
 #: modules/video_filter/canvas.c:90
-#, fuzzy
 msgid "Output picture aspect ratio"
-msgstr "Proporción de aspecto fonte"
+msgstr "Proporción de aspecto da imaxe de saída"
 
 #: modules/video_filter/canvas.c:92
 msgid ""
 "Set the canvas' picture aspect ratio. If omitted, the canvas is assumed to "
 "have the same SAR as the input."
 msgstr ""
+"Definir a proporción de aspecto da imaxe do lenzo. Se se omite, asúmese que "
+"o lenzo ten a mesma SAR que a entrada."
 
 #: modules/video_filter/canvas.c:94
-#, fuzzy
 msgid "Pad video"
 msgstr "Recheo do vídeo"
 
@@ -22793,9 +22779,8 @@ msgstr ""
 "despois de escalalo."
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Automatically resize and pad a video"
-msgstr "Redimensionar e reencher automaticamente un vídeo"
+msgstr "Redimensiona e reenche automaticamente un vídeo"
 
 #: modules/video_filter/chain.c:43
 msgid "Video filtering using a chain of video filter modules"
@@ -25265,97 +25250,6 @@ msgstr "Analizador de espectro"
 
 #~ msgid "Thanks for your report!"
 #~ msgstr "Grazas polo seu informe!"
-
-#, fuzzy
-#~ msgid "Font size:"
-#~ msgstr "Tamaño do tipo de letra"
-
-#, fuzzy
-#~ msgid "Text alignment:"
-#~ msgstr "Aliñamento do teletexto"
-
-#, fuzzy
-#~ msgid "Output module:"
-#~ msgstr "Módulo de saída"
-
-#, fuzzy
-#~ msgid "Spatialization"
-#~ msgstr "Visualización"
-
-#, fuzzy
-#~ msgid "Dolby Surround:"
-#~ msgstr "Dolby Surround"
-
-#, fuzzy
-#~ msgid "Processing"
-#~ msgstr "Procesamento posterior"
-
-#, fuzzy
-#~ msgid "Visualization:"
-#~ msgstr "Visualización"
-
-#, fuzzy
-#~ msgid "Replay gain mode:"
-#~ msgstr "Modo reproducir ganancia"
-
-#~ msgid "Password:"
-#~ msgstr "Contrasinal:"
-
-#, fuzzy
-#~ msgid "Username:"
-#~ msgstr "Nome de usuario"
-
-#, fuzzy
-#~ msgid "Submit played tracks stats to Last.fm"
-#~ msgstr "Submisión das cancións reproducidas a Last.fm"
-
-#, fuzzy
-#~ msgid "Album art download policy:"
-#~ msgstr "Política de descargar do álbum artístico"
-
-#, fuzzy
-#~ msgid "Every "
-#~ msgstr "Superposición"
-
-#, fuzzy
-#~ msgid "Menus language:"
-#~ msgstr "Idioma de son"
-
-#, fuzzy
-#~ msgid "Set up associations..."
-#~ msgstr "Asociación de ficheiros:"
-
-#, fuzzy
-#~ msgid "Use custom skin"
-#~ msgstr "Seleccionar aparencia"
-
-#, fuzzy
-#~ msgid "Skin resource file:"
-#~ msgstr "Ficheiro de aparencia"
-
-#, fuzzy
-#~ msgid "Show controls in full screen mode"
-#~ msgstr "Mostrar un controlador no modo pantalla completa"
-
-#, fuzzy
-#~ msgid "Show systray icon"
-#~ msgstr "Icona da bandexa do sistema"
-
-#, fuzzy
-#~ msgid "Force window style:"
-#~ msgstr "Seguinte estilo de widget:"
-
-#, fuzzy
-#~ msgid "Use native style"
-#~ msgstr "Usar ficheiro de subtítulo"
-
-#, fuzzy
-#~ msgid "Enable On Screen Display (OSD)"
-#~ msgstr "Visualización en pantalla"
-
-#, fuzzy
-#~ msgid "Show media title on video start"
-#~ msgstr "Mostrar o título do soporte no vídeo"
 
 #~ msgid ""
 #~ "New target video bitrate. Quality is ok for -10/15\\% of the "
