@@ -1359,6 +1359,21 @@ static int  Open ( vlc_object_t *p_this )
     p_enc->fmt_out.i_extra = 0;
     p_enc->fmt_out.p_extra = NULL;
 
+#if X264_BUILD >= 76
+    p_enc->fmt_out.i_extra = x264_encoder_headers( p_sys->h, &nal, &i_nal );
+    p_enc->fmt_out.p_extra = malloc( p_enc->fmt_out.i_extra );
+    if( !p_enc->fmt_out.p_extra )
+    {
+        Close( VLC_OBJECT(p_enc) );
+        return VLC_ENOMEM;
+    }
+    void *p_tmp = p_enc->fmt_out.p_extra;
+    for( i = 0; i < i_nal; i++ )
+    {
+        memcpy( p_tmp, nal[i].p_payload, nal[i].i_payload );
+        p_tmp += nal[i].i_payload;
+    }
+#else
     x264_encoder_headers( p_sys->h, &nal, &i_nal );
     for( i = 0; i < i_nal; i++ )
     {
@@ -1380,6 +1395,7 @@ static int  Open ( vlc_object_t *p_this )
 
         p_enc->fmt_out.i_extra += i_size;
     }
+#endif
 
     return VLC_SUCCESS;
 }
@@ -1416,10 +1432,15 @@ static block_t *Encode( encoder_t *p_enc, picture_t *p_pict )
 
     for( i = 0, i_out = 0; i < i_nal; i++ )
     {
+#if X264_BUILD >= 76
+        memcpy( p_sys->p_buffer + i_out, nal[i].p_payload, nal[i].i_payload );
+        i_out += nal[i].i_payload;
+#else
         int i_size = p_sys->i_buffer - i_out;
         x264_nal_encode( p_sys->p_buffer + i_out, &i_size, 1, &nal[i] );
 
         i_out += i_size;
+#endif
     }
 
     p_block = block_New( p_enc, i_out );
