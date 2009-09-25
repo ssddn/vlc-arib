@@ -1,5 +1,5 @@
 # Ukrainian translation for VLC.
-# Copyright (C) 2008 VideoLAN <videolan@videolan.org>
+# Copyright (C) 2008-2009 VideoLAN <videolan@videolan.org>
 # This file is distributed under the same license as the VLC package.
 #
 # Alexey Lugin, 2008.
@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-09-19 19:11+0100\n"
-"PO-Revision-Date: 2009-08-14 13:31+0300\n"
+"POT-Creation-Date: 2009-09-25 20:30+0100\n"
+"PO-Revision-Date: 2009-09-25 21:23+0300\n"
 "Last-Translator: Oleksandr Natalenko <pfactum@gmail.com>\n"
-"Language-Team: Ukrainian <pfactum@gmail.com>\n"
+"Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2365,7 +2365,7 @@ msgstr ""
 #: modules/audio_output/alsa.c:105 modules/gui/fbosd.c:171
 #: modules/gui/macosx/prefs_widgets.m:1297
 #: modules/gui/macosx/simple_prefs.m:407 modules/gui/macosx/simple_prefs.m:524
-#: modules/gui/macosx/simple_prefs.m:758 modules/gui/macosx/vout.m:215
+#: modules/gui/macosx/simple_prefs.m:759 modules/gui/macosx/vout.m:215
 #: modules/gui/qt4/components/preferences_widgets.cpp:568
 #: modules/video_filter/marq.c:61 modules/video_filter/rss.c:70
 #: modules/video_filter/rss.c:182 modules/video_output/msw/directx.c:162
@@ -4652,7 +4652,7 @@ msgstr "Завантаження…"
 #: modules/gui/macosx/open.m:176 modules/gui/macosx/open.m:206
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:301
-#: modules/gui/macosx/simple_prefs.m:684 modules/gui/macosx/wizard.m:320
+#: modules/gui/macosx/simple_prefs.m:685 modules/gui/macosx/wizard.m:320
 #: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
@@ -4737,7 +4737,7 @@ msgstr "Деінтерлейс"
 
 #: src/video_output/vout_intf.c:311 modules/gui/macosx/intf.m:684
 #: modules/gui/macosx/intf.m:685 modules/gui/qt4/ui/video_effects.h:893
-#: modules/video_filter/crop.c:105 modules/video_filter/croppadd.c:86
+#: modules/video_filter/crop.c:105 modules/video_filter/croppadd.c:87
 #: modules/video_output/x11/xvmc.c:133
 msgid "Crop"
 msgstr "Обрізати"
@@ -7612,6 +7612,26 @@ msgstr "Формат поля «виконавець» елементів спи
 msgid "Format to use in the playlist's \"title\" field."
 msgstr "Формат поля «назва» елементів списку відтворення."
 
+#: modules/access/zip/zipstream.c:38
+#, fuzzy
+msgid "Media in Zip"
+msgstr "Медіафайли"
+
+#: modules/access/zip/zipstream.c:39
+#, fuzzy
+msgid "Path to the media in the Zip archive"
+msgstr "Шлях до використовуваного скіна."
+
+#: modules/access/zip/zipstream.c:48
+#, fuzzy
+msgid "Zip files filter"
+msgstr "Вимкнути loop-фільтр"
+
+#: modules/access/zip/zipstream.c:53
+#, fuzzy
+msgid "Zip access"
+msgstr "Доступ до DAAP"
+
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
 msgstr "Пустий вихідний потік"
@@ -9938,13 +9958,15 @@ msgstr "Рендери субтитрів з використанням libass"
 
 #: modules/codec/libass.c:726
 msgid "Building font cache"
-msgstr ""
+msgstr "Побудова кешу шрифтів"
 
 #: modules/codec/libass.c:727
 msgid ""
 "Please wait while your font cache is rebuild.\n"
 "This should take less than a minute."
 msgstr ""
+"Будь ласка, зачекайте, доки перебудується кеш шрифтів.\n"
+"Це повинно тривати менше хвилини."
 
 #: modules/codec/libmpeg2.c:127
 msgid "MPEG I/II video decoder (using libmpeg2)"
@@ -10180,9 +10202,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "Грецька (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-#, fuzzy
 msgid "Greek (Windows-1253)"
-msgstr "Грецька (Windows-1256)"
+msgstr "Грецька (Windows-1253)"
 
 #: modules/codec/subtitles/subsdec.c:126
 msgid "Hebrew (ISO 8859-8)"
@@ -10245,9 +10266,8 @@ msgid "Japanese (Shift JIS)"
 msgstr "Японська (Shift JIS)"
 
 #: modules/codec/subtitles/subsdec.c:150
-#, fuzzy
 msgid "Korean (EUC-KR/CP949)"
-msgstr "Корейська Unix (EUC-KR)"
+msgstr "Корейська (EUC-KR/CP949)"
 
 #: modules/codec/subtitles/subsdec.c:151
 msgid "Korean (ISO-2022-KR)"
@@ -10777,7 +10797,6 @@ msgid "How AQ distributes bits"
 msgstr "Як AQ розподіляє біти"
 
 #: modules/codec/x264.c:178
-#, fuzzy
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10785,10 +10804,11 @@ msgid ""
 " - 2: uses log(var)^2 instead of log(var) and attempts to adapt strength per "
 "frame"
 msgstr ""
-"Визначає режим розподілу AQ, за змовчуванням 2\n"
+"Визначає режим розподілу AQ, за змовчуванням 1\n"
 " - 0: Вимкнено\n"
-" - 1: Уникати переміщення бітів між кадрами\n"
-" - 2: Переміщувати біти між кадрами"
+" - 1: Поточний режим x264 за змовчуванням\n"
+" - 2: використовувати  log(var)^2 замість log(var) та намагатися адаптувати "
+"інтенсивність по кадрах"
 
 #: modules/codec/x264.c:183
 msgid "Strength of AQ"
@@ -13798,9 +13818,8 @@ msgid "Fit to Screen"
 msgstr "Екранний розмір"
 
 #: modules/gui/macosx/controls.m:826
-#, fuzzy
 msgid "Lock Aspect Ratio"
-msgstr "Вимушене співвідношення сторін"
+msgstr "Заблокувати співвідношення сторін"
 
 #: modules/gui/macosx/controls.m:838 modules/gui/macosx/intf.m:623
 #: modules/gui/macosx/intf.m:690 modules/gui/qt4/menus.cpp:552
@@ -13826,19 +13845,16 @@ msgid "User name"
 msgstr "Ім'я користувача"
 
 #: modules/gui/macosx/coredialogs.m:244
-#, fuzzy
 msgid "Errors and Warnings"
-msgstr "Помилки та попередження…"
+msgstr "Помилки та попередження"
 
 #: modules/gui/macosx/coredialogs.m:245
-#, fuzzy
 msgid "Clean up"
-msgstr " Очистити "
+msgstr "Очистити"
 
 #: modules/gui/macosx/coredialogs.m:246
-#, fuzzy
 msgid "Show Details"
-msgstr "Показати все"
+msgstr "Показати деталі"
 
 #: modules/gui/macosx/embeddedwindow.m:64 modules/gui/macosx/intf.m:593
 #: modules/gui/pda/pda_interface.c:236 modules/gui/pda/pda_interface.c:237
@@ -14284,7 +14300,7 @@ msgid "No CrashLog found"
 msgstr "Журнал збою не знайдено"
 
 #: modules/gui/macosx/intf.m:2414 modules/gui/macosx/prefs.m:226
-#: modules/gui/macosx/simple_prefs.m:685
+#: modules/gui/macosx/simple_prefs.m:686
 msgid "Continue"
 msgstr "Продовжити"
 
@@ -14407,30 +14423,35 @@ msgstr ""
 
 #: modules/gui/macosx/macosx.m:90 modules/gui/macosx/simple_prefs.m:266
 msgid "Control playback with the Apple Remote"
-msgstr ""
+msgstr "Керувати відтворенням за допомогою Apple Remote"
 
 #: modules/gui/macosx/macosx.m:91
 msgid "By default, VLC can be remotely controlled with the Apple Remote."
-msgstr ""
+msgstr "За змовчуванням, VLC може віддалено контролюватися через Apple Remote."
 
 #: modules/gui/macosx/macosx.m:93 modules/gui/macosx/simple_prefs.m:267
 msgid "Control playback with media keys"
-msgstr ""
+msgstr "Контролювати відтворення медіаклавішами"
 
 #: modules/gui/macosx/macosx.m:94
 msgid ""
 "By default, VLC can be controlled using the media keys on modern Apple "
 "keyboards."
 msgstr ""
+"За змовчуванням, VLC може контролюватися медіаклавішами на сучасних "
+"клавіатурах Apple."
 
 #: modules/gui/macosx/macosx.m:97
 msgid "Use media key control when VLC is in background"
 msgstr ""
+"Використовувати керування медіаклавішами тоді, коли VLC знаходиться у фоні"
 
 #: modules/gui/macosx/macosx.m:98
 msgid ""
 "By default, VLC will accept media key events also when being in background."
 msgstr ""
+"За змовчуванням, VLC буде сприймати медіаклавіші також тоді, коли "
+"знаходиться у фоні."
 
 #: modules/gui/macosx/macosx.m:102
 msgid "Mac OS X interface"
@@ -14487,9 +14508,8 @@ msgid "Treat as a pipe rather than as a file"
 msgstr "Вважати трубою замість файлу"
 
 #: modules/gui/macosx/open.m:185
-#, fuzzy
 msgid "Play another media synchronously"
-msgstr "Відтворити синхронно інше медіа (зовнішній аудіофайл…)"
+msgstr "Відтворити синхронно інше медіа"
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
@@ -14519,14 +14539,13 @@ msgid "IP Address"
 msgstr "IP-адреса"
 
 #: modules/gui/macosx/open.m:204
-#, fuzzy
 msgid ""
 "To Open a usual network stream (HTTP, RTSP, RTMP, MMS, FTP, etc.), just "
 "enter the URL in the field above. If you want to open a RTP or UDP stream, "
 "press the button below."
 msgstr ""
-"Для відкриття звичайного мережевого потоку (HTTP, RTSP, MMS, FTP…) просто "
-"введіть URL в полі нижче. Якщо Ви хочете відкрити потік RTP чи UDP, "
+"Для відкриття звичайного мережевого потоку (HTTP, RTSP, RTMP, MMS, FTP…) "
+"просто введіть URL в полі вище. Якщо Ви хочете відкрити потік RTP чи UDP, "
 "натисніть кнопку нижче."
 
 #: modules/gui/macosx/open.m:205
@@ -14979,12 +14998,12 @@ msgstr "Скинути все"
 msgid "Basic"
 msgstr "Основне"
 
-#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:684
+#: modules/gui/macosx/prefs.m:225 modules/gui/macosx/simple_prefs.m:685
 #: modules/gui/qt4/dialogs/preferences.cpp:309
 msgid "Reset Preferences"
 msgstr "Скинути налаштування"
 
-#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:687
+#: modules/gui/macosx/prefs.m:228 modules/gui/macosx/simple_prefs.m:688
 msgid ""
 "Beware this will reset the VLC media player preferences.\n"
 "Are you sure you want to continue?"
@@ -15152,7 +15171,7 @@ msgstr "Приватність/мережева взаємодія"
 
 #: modules/gui/macosx/simple_prefs.m:268
 msgid "...when VLC is in background"
-msgstr ""
+msgstr "…коли VLC у фоні"
 
 #: modules/gui/macosx/simple_prefs.m:271
 msgid "Default Encoding"
@@ -15222,7 +15241,7 @@ msgid "Sequential numbering"
 msgstr "Послідовна нумерація"
 
 #: modules/gui/macosx/simple_prefs.m:560 modules/gui/macosx/simple_prefs.m:604
-#: modules/gui/macosx/simple_prefs.m:1216
+#: modules/gui/macosx/simple_prefs.m:1217
 #: modules/gui/qt4/components/simple_preferences.cpp:412
 msgid "Custom"
 msgstr "Довільно"
@@ -15254,48 +15273,48 @@ msgstr "Висока затримка"
 msgid "Higher latency"
 msgstr "Вища затримка"
 
-#: modules/gui/macosx/simple_prefs.m:803
+#: modules/gui/macosx/simple_prefs.m:804
 msgid "Interface Settings not saved"
 msgstr "Налаштування інтерфейсу не збережені"
 
-#: modules/gui/macosx/simple_prefs.m:804 modules/gui/macosx/simple_prefs.m:879
-#: modules/gui/macosx/simple_prefs.m:912 modules/gui/macosx/simple_prefs.m:978
-#: modules/gui/macosx/simple_prefs.m:1017
-#: modules/gui/macosx/simple_prefs.m:1042
+#: modules/gui/macosx/simple_prefs.m:805 modules/gui/macosx/simple_prefs.m:880
+#: modules/gui/macosx/simple_prefs.m:913 modules/gui/macosx/simple_prefs.m:979
+#: modules/gui/macosx/simple_prefs.m:1018
+#: modules/gui/macosx/simple_prefs.m:1043
 #, c-format
 msgid "An error occured while saving your settings via SimplePrefs (%i)."
 msgstr ""
 "Сталася помилка під час збереження Ваших налаштувань через SimplePrefs (%i)."
 
-#: modules/gui/macosx/simple_prefs.m:878
+#: modules/gui/macosx/simple_prefs.m:879
 msgid "Audio Settings not saved"
 msgstr "Налаштування звуку не збережено"
 
-#: modules/gui/macosx/simple_prefs.m:911
+#: modules/gui/macosx/simple_prefs.m:912
 msgid "Video Settings not saved"
 msgstr "Налаштування відео не збережено"
 
-#: modules/gui/macosx/simple_prefs.m:977
+#: modules/gui/macosx/simple_prefs.m:978
 msgid "Input Settings not saved"
 msgstr "Налаштування входу не збережено"
 
-#: modules/gui/macosx/simple_prefs.m:1016
+#: modules/gui/macosx/simple_prefs.m:1017
 msgid "On Screen Display/Subtitle Settings not saved"
 msgstr "Налаштування OSD/субтитрів не збережено"
 
-#: modules/gui/macosx/simple_prefs.m:1041
+#: modules/gui/macosx/simple_prefs.m:1042
 msgid "Hotkeys not saved"
 msgstr "Гарячі клавіші не збережені"
 
-#: modules/gui/macosx/simple_prefs.m:1142
+#: modules/gui/macosx/simple_prefs.m:1143
 msgid "Choose the folder to save your video snapshots to."
 msgstr "Оберіть каталог, до якого зберігати стоп-кадри"
 
-#: modules/gui/macosx/simple_prefs.m:1144
+#: modules/gui/macosx/simple_prefs.m:1145
 msgid "Choose"
 msgstr "Вибрати"
 
-#: modules/gui/macosx/simple_prefs.m:1234
+#: modules/gui/macosx/simple_prefs.m:1235
 msgid ""
 "Press new keys for\n"
 "\"%@\""
@@ -15303,15 +15322,15 @@ msgstr ""
 "Натисніть клавішу для\n"
 "\"%@\""
 
-#: modules/gui/macosx/simple_prefs.m:1308
+#: modules/gui/macosx/simple_prefs.m:1309
 msgid "Invalid combination"
 msgstr "Неправильна комбінація"
 
-#: modules/gui/macosx/simple_prefs.m:1309
+#: modules/gui/macosx/simple_prefs.m:1310
 msgid "Regrettably, these keys cannot be assigned as hotkey shortcuts."
 msgstr "Нажаль, ці клавіші не можуть бути комбінацією гарячих клавіш."
 
-#: modules/gui/macosx/simple_prefs.m:1327
+#: modules/gui/macosx/simple_prefs.m:1328
 msgid "This combination is already taken by \"%@\"."
 msgstr "Ця комбінація вже зайнята \"%@\"."
 
@@ -17885,14 +17904,12 @@ msgid "Open playlist..."
 msgstr "Відкрити список відтворення…"
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xpsf)"
-msgstr "Список відтворення XSPF (*.xspf);; "
+msgstr "Список відтворення XSPF (*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
-#, fuzzy
 msgid "M3U playlist (*.m3u)"
-msgstr "Список відтворення M3U (*.m3u);; "
+msgstr "Список відтворення M3U (*.m3u)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:537
 msgid "HTML playlist (*.html)"
@@ -18322,20 +18339,18 @@ msgstr ""
 "з композитним розширенням."
 
 #: modules/gui/qt4/qt4.cpp:113
-#, fuzzy
 msgid "Fullscreen controller opacity opacity between 0.1 and 1."
-msgstr "Прозорість вікна між 0.1 та 1."
+msgstr "Прозорість керування прозорістю вікна між 0.1 та 1."
 
 #: modules/gui/qt4/qt4.cpp:114
-#, fuzzy
 msgid ""
 "Sets the fullscreen controller opacity between 0.1 and 1 for main interface, "
 "playlist and extended panel. This option only works with Windows and X11 "
 "with composite extensions."
 msgstr ""
-"Задає прозорість вікна між 0.1 та 1 для головного інтерфейсу, списку "
-"відтворення та розширеної панелі. Цей параметр працює лише з Windows та X11 "
-"з композитним розширенням."
+"Задає прозорість повноекранного контролера між 0.1 та 1 для головного "
+"інтерфейсу, списку відтворення та розширеної панелі. Цей параметр працює "
+"лише з Windows та X11 з композитним розширенням."
 
 #: modules/gui/qt4/qt4.cpp:120
 msgid "Show unimportant error and warnings dialogs"
@@ -18771,7 +18786,6 @@ msgid "Save volume on exit"
 msgstr "Зберігати гучність при виході"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:343
-#, fuzzy
 msgid "Preferred audio language"
 msgstr "Бажана мова звуку"
 
@@ -18824,7 +18838,6 @@ msgid "Allow only one instance"
 msgstr "Дозволяти тільки одну копію"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:317
-#, fuzzy
 msgid "File associations:"
 msgstr "Файлові асоціації:"
 
@@ -18865,7 +18878,6 @@ msgid "This is VLC's default interface, with a native look and feel."
 msgstr "Це інтерфейс VLC за змовчуванням з рідним виглядом."
 
 #: modules/gui/qt4/ui/sprefs_interface.h:332
-#, fuzzy
 msgid "Display mode"
 msgstr "Режим відображення"
 
@@ -18883,9 +18895,8 @@ msgid "Skins"
 msgstr "Скіни"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:337
-#, fuzzy
 msgid "Skin file"
-msgstr "Помилка сесії"
+msgstr "Файл скіну"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:340
 msgid "Resize interface to video size"
@@ -22440,38 +22451,34 @@ msgid "Bluescreen"
 msgstr "Синій екран"
 
 #: modules/video_filter/canvas.c:84
-#, fuzzy
 msgid "Output width"
-msgstr "Ширина виводу відео."
+msgstr "Ширина виводу"
 
 #: modules/video_filter/canvas.c:86
-#, fuzzy
 msgid "Output (canvas) image width"
-msgstr "Ширина виводу відео."
+msgstr "Ширина (полотно) виводу зображення"
 
 #: modules/video_filter/canvas.c:87
-#, fuzzy
 msgid "Output height"
-msgstr "Висота виводу відео."
+msgstr "Висота виводу"
 
 #: modules/video_filter/canvas.c:89
-#, fuzzy
 msgid "Output (canvas) image height"
-msgstr "Висота виводу відео."
+msgstr "Висота (полотно) виводу зображення"
 
 #: modules/video_filter/canvas.c:90
-#, fuzzy
 msgid "Output picture aspect ratio"
-msgstr "Вихідне співвідношення сторін"
+msgstr "Вихідне співвідношення сторін малюнка"
 
 #: modules/video_filter/canvas.c:92
 msgid ""
 "Set the canvas' picture aspect ratio. If omitted, the canvas is assumed to "
 "have the same SAR as the input."
 msgstr ""
+"Задає співвідношення сторін полотна. Якщо опущене, вважається, що полотно "
+"має таке ж співвідношення сторін, що і ввід."
 
 #: modules/video_filter/canvas.c:94
-#, fuzzy
 msgid "Pad video"
 msgstr "Заповнення відео"
 
@@ -22485,6 +22492,10 @@ msgstr ""
 
 #: modules/video_filter/canvas.c:105
 #, fuzzy
+msgid "Canvas"
+msgstr "Канал +"
+
+#: modules/video_filter/canvas.c:106
 msgid "Automatically resize and pad a video"
 msgstr "Автоматично масштабувати та вміщувати відео"
 
@@ -22712,12 +22723,17 @@ msgstr "Пікселів відступу справа"
 msgid "Number of pixels to padd to the right of the image after cropping."
 msgstr "Кількість пікселів для відступу справа зображення після обрізання."
 
-#: modules/video_filter/croppadd.c:79 modules/video_filter/scale.c:59
+#: modules/video_filter/croppadd.c:79
+#, fuzzy
+msgid "Cropadd"
+msgstr "Обрізати"
+
+#: modules/video_filter/croppadd.c:80 modules/video_filter/scale.c:59
 #: modules/video_filter/swscale.c:68 modules/video_filter/swscale_maemo.c:52
 msgid "Video scaling filter"
 msgstr "Фільтр масштабування відео"
 
-#: modules/video_filter/croppadd.c:96
+#: modules/video_filter/croppadd.c:97
 msgid "Padd"
 msgstr "Відступ"
 
@@ -24689,7 +24705,6 @@ msgid "VLC"
 msgstr "VLC"
 
 #: modules/video_output/xcb/window.c:235
-#, fuzzy
 msgid "VLC"
 msgstr "VLC"
 
@@ -26268,9 +26283,6 @@ msgstr "Аналізатор спектра"
 
 #~ msgid "D&elete"
 #~ msgstr "В&далити"
-
-#~ msgid "DAAP access"
-#~ msgstr "Доступ до DAAP"
 
 #~ msgid "DAAP shares"
 #~ msgstr "Загальні ресурси DAAP"
