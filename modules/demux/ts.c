@@ -2084,7 +2084,7 @@ static int PIDFillFormat( ts_pid_t *pid, int i_stream_type )
         es_format_Init( fmt, AUDIO_ES, VLC_FOURCC( 'd', 't', 's', ' ' ) );
         break;
     case 0x87: /* E-AC3 */
-        es_format_Init( fmt, AUDIO_ES, VLC_CODEC_EAC3 );
+        es_format_Init( fmt, AUDIO_ES, VLC_FOURCC( 'e', 'a', 'c', '3' ) );
         break;
 
     case 0x91:  /* A52 vls (audio) */
