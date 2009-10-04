@@ -87,15 +87,11 @@ StandardPLPanel::StandardPLPanel( PlaylistWidget *_parent,
         view->header()->resizeSection( 0, 200 );
         view->header()->resizeSection( 1, 80 );
     }
+    view->header()->setSortIndicatorShown( true );
     view->header()->setClickable( true );
     view->header()->setContextMenuPolicy( Qt::CustomContextMenu );
     getSettings()->endGroup();
 
-    /* Set sorting enable by hand, so it doesn't run sort on start */
-    view->header()->setSortIndicator( -1, Qt::AscendingOrder );
-    view->header()->setSortIndicatorShown( true );
-    CONNECT( view->header(), sortIndicatorChanged( int, Qt::SortOrder ),
-             view, sortByColumn( int ) );
     /* Connections for the TreeView */
     CONNECT( view, activated( const QModelIndex& ) ,
              model,activateItem( const QModelIndex& ) );
