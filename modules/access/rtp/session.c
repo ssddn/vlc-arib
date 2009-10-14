@@ -496,9 +496,6 @@ bool rtp_dequeue (demux_t *demux, const rtp_session_t *session,
                 deadline += UINT64_C(3) * CLOCK_FREQ * src->jitter
                             / pt->frequency;
 
-            /* Make sure we wait at least for 25 msec */
-            deadline = __MAX(deadline, src->ref_ts + CLOCK_FREQ / 40);
-
             if (now >= deadline)
             {
                 rtp_decode (demux, session, src);
