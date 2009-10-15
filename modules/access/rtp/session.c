@@ -146,7 +146,7 @@ struct rtp_source_t
 
     uint16_t last_seq; /* sequence of the next dequeued packet */
     block_t *blocks; /* re-ordered blocks queue */
-    mtime_t  last_dq; /* last dequeued (decoded) packet local timestamp */
+    mtime_t  ref_ts; /* reference timestamp for reordering */
     void    *opaque[0]; /* Per-source private payload data */
 };
 
@@ -316,7 +316,6 @@ rtp_queue (demux_t *demux, rtp_session_t *session, block_t *block)
         }
     }
     src->last_rx = now;
-    block->i_pts = now;
     src->last_ts = rtp_timestamp (block);
 
     /* Check sequence number */
@@ -413,8 +412,8 @@ rtp_decode (demux_t *demux, const rtp_session_t *session, rtp_source_t *src)
     /* FIXME: handle timestamp wrap properly */
     /* TODO: inter-medias/sessions sync (using RTCP-SR) */
     const uint32_t timestamp = rtp_timestamp (block);
-    src->last_dq = block->i_pts;
-    block->i_pts = UINT64_C(1) * CLOCK_FREQ * timestamp / pt->frequency;
+    src->ref_ts = 0;
+    block->i_pts = CLOCK_FREQ * timestamp / pt->frequency;
 
     /* CSRC count */
     size_t skip = 12u + (block->p_buffer[0] & 0x0F) * 4;
@@ -491,8 +490,10 @@ bool rtp_dequeue (demux_t *demux, const rtp_session_t *session,
              * match for random gaussian jitter). Additionnaly, we implicitly
              * wait for misordering times the packetization time.
              */
-            mtime_t deadline = src->last_dq;
+            mtime_t deadline = src->ref_ts;
             const rtp_pt_t *pt = rtp_find_ptype (session, src, block, NULL);
+            if (!deadline)
+                deadline = src->ref_ts = now;
             if (pt)
                 deadline += UINT64_C(3) * CLOCK_FREQ * src->jitter
                             / pt->frequency;
