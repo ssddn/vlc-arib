@@ -984,7 +984,7 @@ dnl Check for libudev
 AC_ARG_ENABLE(udev,
   [  --enable-udev           Linux udev services discovery (default auto)])
 AS_IF([test "$enable_udev" != "no"], [
-  PKG_CHECK_MODULES(UDEV, libudev, [
+  PKG_CHECK_MODULES(UDEV, [libudev >= 142], [
     VLC_ADD_PLUGIN([udev])
     VLC_ADD_LIBS([udev],[$UDEV_LIBS])
     VLC_ADD_CFLAGS([udev],[$UDEV_CFLAGS])
