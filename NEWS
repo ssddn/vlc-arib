@@ -44,6 +44,8 @@ Encoders:
  * x264 set vbv-bufsize/vbv-maxsize better if user hasn't defined these:
    - ABR mode set vbv-max-bitrate=bitrate
    - vbv-bufsize is bitrate * seconds between keyframes (keyint/fps)
+ * x264 has profile-limitter, like:
+    #transcode{vcodec=h264,venc=x264{profile=baseline,level=12}..}
 
 
 Playlist:
