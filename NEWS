@@ -1,5 +1,32 @@
-Changes between 1.0.1 and 1.0.3-git:
+Changes between 1.0.2 and 1.0.3:
 --------------------------------
+
+Video outputs:
+ * Fix video quality when resizing the video on Windows Vista and 7, due to
+   regressions in most popular drivers
+ * New deinterlacers based on yadif and yadif(x2) algorithms
+
+Encoders:
+ * x264 has profile-limitter, like:
+    #transcode{vcodec=h264,venc=x264{profile=baseline,level=12}..}
+
+Service discovery:
+ * New udev module for linux
+
+Input:
+ * Update for appletrailers lua script
+ * Fixes on the RAR stream filter
+ * Fix for E-AC3 in ATSC/TS streams
+ * Various fixes for v4l and v4l2
+
+Qt4 interface:
+ * Fixes on the playlist and the stream output panels
+
+Mac OS X:
+ * Fix Apple Remote support for OS X.6
+
+Translations:
+ * Russian, Korean, Ukrainian, French, Polish, Slovak and Galician updates
 
 Changes between 1.0.1 and 1.0.2:
 --------------------------------
@@ -44,8 +71,6 @@ Encoders:
  * x264 set vbv-bufsize/vbv-maxsize better if user hasn't defined these:
    - ABR mode set vbv-max-bitrate=bitrate
    - vbv-bufsize is bitrate * seconds between keyframes (keyint/fps)
- * x264 has profile-limitter, like:
-    #transcode{vcodec=h264,venc=x264{profile=baseline,level=12}..}
 
 
 Playlist:
