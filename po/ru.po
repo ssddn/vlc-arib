@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-19 21:41+0100\n"
+"POT-Creation-Date: 2009-10-20 23:08+0100\n"
 "PO-Revision-Date: 2009-10-18 09:30+0500\n"
 "Last-Translator: Roustam Ghizdatov <rustahm@gmail.com>\n"
 "Language-Team: Russian <translators@videolan.org>\n"
@@ -86,7 +86,7 @@ msgstr "Настройка горячих клавиш"
 #: modules/gui/macosx/intf.m:660 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
-#: modules/gui/qt4/components/info_panels.cpp:519
+#: modules/gui/qt4/components/info_panels.cpp:520
 #: modules/gui/qt4/components/simple_preferences.cpp:79
 #: modules/gui/qt4/ui/profiles.h:487 modules/stream_out/es.c:93
 #: modules/stream_out/transcode.c:200
@@ -140,7 +140,7 @@ msgstr "Прочие настройки и модули аудио."
 #: src/libvlc-module.c:1567 modules/gui/macosx/intf.m:673
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
 #: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
-#: modules/gui/qt4/components/info_panels.cpp:520
+#: modules/gui/qt4/components/info_panels.cpp:521
 #: modules/gui/qt4/components/simple_preferences.cpp:80
 #: modules/gui/qt4/ui/profiles.h:469 modules/gui/qt4/ui/sprefs_video.h:291
 #: modules/misc/dummy/dummy.c:109 modules/stream_out/es.c:101
@@ -4509,7 +4509,7 @@ msgstr "Декодеры"
 
 #: src/libvlc-module.c:1856 modules/access/v4l2.c:78
 #: modules/gui/macosx/playlistinfo.m:97
-#: modules/gui/qt4/components/info_panels.cpp:521
+#: modules/gui/qt4/components/info_panels.cpp:522
 msgid "Input"
 msgstr "Вход"
 
@@ -5296,8 +5296,8 @@ msgid "VLC could not get a new block of size: %i."
 msgstr "VLC не смог получить новый блок размером: %i."
 
 #: modules/access/cdda/cdda.c:46 modules/access/directory.c:79
-#: modules/codec/dirac.c:80 modules/codec/x264.c:404 modules/codec/x264.c:410
-#: modules/codec/x264.c:415
+#: modules/codec/dirac.c:80 modules/codec/x264.c:427 modules/codec/x264.c:433
+#: modules/codec/x264.c:438
 msgid "none"
 msgstr "нет"
 
@@ -6075,12 +6075,12 @@ msgstr "DVD с меню"
 msgid "DVDnav Input"
 msgstr "Ввод DVDnav"
 
-#: modules/access/dvdnav.c:317 modules/access/dvdread.c:251
+#: modules/access/dvdnav.c:320 modules/access/dvdread.c:251
 #: modules/access/dvdread.c:511 modules/access/dvdread.c:573
 msgid "Playback failure"
 msgstr "Воспроизведение не удалось"
 
-#: modules/access/dvdnav.c:318
+#: modules/access/dvdnav.c:321
 msgid ""
 "VLC cannot set the DVD's title. It possibly cannot decrypt the entire disc."
 msgstr ""
@@ -9037,7 +9037,7 @@ msgstr ""
 "Фактор квантования I-кадров, в сравнении с P-кадрами (например при 1.0 "
 "масштаб квантования I и P-кадров будет одинаковым)"
 
-#: modules/codec/avcodec/avcodec.h:172 modules/codec/x264.c:336
+#: modules/codec/avcodec/avcodec.h:172 modules/codec/x264.c:351
 #: modules/demux/mod.c:78
 msgid "Noise reduction"
 msgstr "Уменьшение шума"
@@ -10654,11 +10654,25 @@ msgstr ""
 "Плотность вставки B-кадров. При положительных значениях будет вставляться "
 "больше B-кадров, при отрицательных - меньше."
 
-#: modules/codec/x264.c:103
+#: modules/codec/x264.c:104
 msgid "Keep some B-frames as references"
 msgstr "Использовать некоторые B-кадры как референсные"
 
-#: modules/codec/x264.c:104
+#: modules/codec/x264.c:106
+#, fuzzy
+msgid ""
+"Allows B-frames to be used as references for predicting other frames. Keeps "
+"the middle of 2+ consecutive B-frames as a reference, and reorders frame "
+"appropriately.\n"
+" - none: Disabled\n"
+" - strict: Strictly hierarchical pyramid\n"
+" - normal: Non-strict (not Blu-ray compatible)\n"
+msgstr ""
+"Позволяет использовать B-кадры как референсные для прогнозирования других "
+"кадров. Помечает середину из 2-х и больше последовательных B-кадров как "
+"референсный кадр и формирует кадр соответсвующе."
+
+#: modules/codec/x264.c:114
 msgid ""
 "Allows B-frames to be used as references for predicting other frames. Keeps "
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
@@ -10668,11 +10682,11 @@ msgstr ""
 "кадров. Помечает середину из 2-х и больше последовательных B-кадров как "
 "референсный кадр и формирует кадр соответсвующе."
 
-#: modules/codec/x264.c:108
+#: modules/codec/x264.c:119
 msgid "CABAC"
 msgstr "CABAC"
 
-#: modules/codec/x264.c:109
+#: modules/codec/x264.c:120
 msgid ""
 "CABAC (Context-Adaptive Binary Arithmetic Coding). Slightly slows down "
 "encoding and decoding, but should save 10 to 15% bitrate."
@@ -10681,11 +10695,11 @@ msgstr ""
 "замедляет процесс кодирования и декодирования, но позволяет сохранить 10-15% "
 "битрейта."
 
-#: modules/codec/x264.c:113
+#: modules/codec/x264.c:124
 msgid "Number of reference frames"
 msgstr "Количество референсных кадров"
 
-#: modules/codec/x264.c:114
+#: modules/codec/x264.c:125
 msgid ""
 "Number of previous frames used as predictors. This is effective in Anime, "
 "but seems to make little difference in live-action source material. Some "
@@ -10696,21 +10710,21 @@ msgstr ""
 "Некоторые декодеры не могут обрабатывать большие значения этого параметра. "
 "От 1 до 16."
 
-#: modules/codec/x264.c:119
+#: modules/codec/x264.c:130
 msgid "Skip loop filter"
 msgstr "Пропускать фильтр устранения блочности"
 
-#: modules/codec/x264.c:120
+#: modules/codec/x264.c:131
 msgid "Deactivate the deblocking loop filter (decreases quality)."
 msgstr ""
 "Отключить фильтр устранения блочности изобрачения (деблокинга). Приводит к "
 "снижению качества."
 
-#: modules/codec/x264.c:122
+#: modules/codec/x264.c:133
 msgid "Loop filter AlphaC0 and Beta parameters alpha:beta"
 msgstr "AlphaC0 и Beta фильтра устранения блочности, alpha:beta"
 
-#: modules/codec/x264.c:123
+#: modules/codec/x264.c:134
 msgid ""
 "Loop filter AlphaC0 and Beta parameters. Range -6 to 6 for both alpha and "
 "beta parameters. -6 means light filter, 6 means strong."
@@ -10719,11 +10733,11 @@ msgstr ""
 "от -6 до 6 как для параметра alpha, так и для beta. -6 - лёгкий фильтр, 6 - "
 "сильный."
 
-#: modules/codec/x264.c:127
+#: modules/codec/x264.c:138
 msgid "H.264 level"
 msgstr "Уровень H.264"
 
-#: modules/codec/x264.c:128
+#: modules/codec/x264.c:139
 msgid ""
 "Specify H.264 level (as defined by Annex A of the standard). Levels are not "
 "enforced; it's up to the user to select a level compatible with the rest of "
@@ -10733,19 +10747,28 @@ msgstr ""
 "применяются принудительно; пользователь должен выбрать уровень, совместимый "
 "с остальными опциями кодирования. Диапазон от 1 до 5.1 (или от 10 до 51)"
 
-#: modules/codec/x264.c:137
+#: modules/codec/x264.c:144
+#, fuzzy
+msgid "H.264 profile"
+msgstr "Уровень H.264"
+
+#: modules/codec/x264.c:145
+msgid "Specify H.264 profile which limits are enforced overother settings"
+msgstr ""
+
+#: modules/codec/x264.c:152
 msgid "Interlaced mode"
 msgstr "Режим чересстрочной развёртки"
 
-#: modules/codec/x264.c:138
+#: modules/codec/x264.c:153
 msgid "Pure-interlaced mode."
 msgstr "Режим полной чересстрочной развёртки."
 
-#: modules/codec/x264.c:143
+#: modules/codec/x264.c:158
 msgid "Set QP"
 msgstr "Коэффициент квантования"
 
-#: modules/codec/x264.c:144
+#: modules/codec/x264.c:159
 msgid ""
 "This selects the quantizer to use. Lower values result in better fidelity, "
 "but higher bitrates. 26 is a good default value. Range 0 (lossless) to 51."
@@ -10754,77 +10777,77 @@ msgstr ""
 "но больший битрейт. От 0 до 51 (26 - по-умолчанию, 0 означает сжатие без "
 "потерь)."
 
-#: modules/codec/x264.c:148
+#: modules/codec/x264.c:163
 msgid "Quality-based VBR"
 msgstr "Режим VBR с фиксированным качеством"
 
-#: modules/codec/x264.c:149
+#: modules/codec/x264.c:164
 msgid "1-pass Quality-based VBR. Range 0 to 51."
 msgstr "1-проходный режим VBR с фиксированным качеством. Значение от 0 до 51"
 
-#: modules/codec/x264.c:151
+#: modules/codec/x264.c:166
 msgid "Min QP"
 msgstr "Минимальный коэффициент квантования (QP)"
 
-#: modules/codec/x264.c:152
+#: modules/codec/x264.c:167
 msgid "Minimum quantizer parameter. 15 to 35 seems to be a useful range."
 msgstr "Минимальный коэффициент квантования, обычно в интервале от 15 до 35."
 
-#: modules/codec/x264.c:155
+#: modules/codec/x264.c:170
 msgid "Max QP"
 msgstr "Максимальный коэффициент квантования (QP)"
 
-#: modules/codec/x264.c:156
+#: modules/codec/x264.c:171
 msgid "Maximum quantizer parameter."
 msgstr "Максимальный коэффициент квантования."
 
-#: modules/codec/x264.c:158
+#: modules/codec/x264.c:173
 msgid "Max QP step"
 msgstr "Максимальный шаг изменения QP"
 
-#: modules/codec/x264.c:159
+#: modules/codec/x264.c:174
 msgid "Max QP step between frames."
 msgstr "Максимальный шаг изменения коэффициента квантования между кадрами."
 
-#: modules/codec/x264.c:161
+#: modules/codec/x264.c:176
 msgid "Average bitrate tolerance"
 msgstr "Среднее допустимое отклонение битрейта"
 
-#: modules/codec/x264.c:162
+#: modules/codec/x264.c:177
 msgid "Allowed variance in average bitrate (in kbits/s)."
 msgstr "Среднее допустимое отклонение битрейта (в кбит/сек)."
 
-#: modules/codec/x264.c:165
+#: modules/codec/x264.c:180
 msgid "Max local bitrate"
 msgstr "Максимальный локальный битрейт"
 
-#: modules/codec/x264.c:166
+#: modules/codec/x264.c:181
 msgid "Sets a maximum local bitrate (in kbits/s)."
 msgstr "Максимальный локальный битрейт в кбит/сек"
 
-#: modules/codec/x264.c:168
+#: modules/codec/x264.c:183
 msgid "VBV buffer"
 msgstr "Буфер VBV"
 
-#: modules/codec/x264.c:169
+#: modules/codec/x264.c:184
 msgid "Averaging period for the maximum local bitrate (in kbits)."
 msgstr "Средний период для максимального локального битрейта (в кбитах)."
 
-#: modules/codec/x264.c:172
+#: modules/codec/x264.c:187
 msgid "Initial VBV buffer occupancy"
 msgstr "Начальная заполненность буфера VBV"
 
-#: modules/codec/x264.c:173
+#: modules/codec/x264.c:188
 msgid ""
 "Sets the initial buffer occupancy as a fraction of the buffer size. Range "
 "0.0 to 1.0."
 msgstr "Начальная заполненность буфера VBV, в диапазоне от 0.0 до 1.0."
 
-#: modules/codec/x264.c:177
+#: modules/codec/x264.c:192
 msgid "How AQ distributes bits"
 msgstr "Как АК распределяет биты"
 
-#: modules/codec/x264.c:178
+#: modules/codec/x264.c:193
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10838,11 +10861,11 @@ msgstr ""
 " - 2: Использовать log(var)^2 вместо log(var) и пытаться адаптировать силу "
 "на кадр"
 
-#: modules/codec/x264.c:183
+#: modules/codec/x264.c:198
 msgid "Strength of AQ"
 msgstr "Интенсивность АК"
 
-#: modules/codec/x264.c:184
+#: modules/codec/x264.c:199
 msgid ""
 "Strength to reduce blocking and blurring in flat\n"
 "and textured areas, default 1.0 recommented to be between 0..2\n"
@@ -10854,39 +10877,39 @@ msgstr ""
 " - 0,5: слабое АК\n"
 " - 1,5: сильное АК"
 
-#: modules/codec/x264.c:191
+#: modules/codec/x264.c:206
 msgid "QP factor between I and P"
 msgstr "Множитель QP между I и P"
 
-#: modules/codec/x264.c:192
+#: modules/codec/x264.c:207
 msgid "QP factor between I and P. Range 1.0 to 2.0."
 msgstr ""
 "Множитель коэффициента квантования между I и P-кадрами, в диапазоне от 1.0 "
 "до 2.0."
 
-#: modules/codec/x264.c:195
+#: modules/codec/x264.c:210
 msgid "QP factor between P and B"
 msgstr "Множитель QP между P и B"
 
-#: modules/codec/x264.c:196
+#: modules/codec/x264.c:211
 msgid "QP factor between P and B. Range 1.0 to 2.0."
 msgstr ""
 "Множитель коэффициента квантования между P и B-кадрами, в диапазоне от 1.0 "
 "до 2.0."
 
-#: modules/codec/x264.c:198
+#: modules/codec/x264.c:213
 msgid "QP difference between chroma and luma"
 msgstr "Разница QP между цветностью и яркостью"
 
-#: modules/codec/x264.c:199
+#: modules/codec/x264.c:214
 msgid "QP difference between chroma and luma."
 msgstr "Разница коэффициента квантования между цветностью и яркостью."
 
-#: modules/codec/x264.c:201
+#: modules/codec/x264.c:216
 msgid "Multipass ratecontrol"
 msgstr "Контроль скорости для нескольких проходов"
 
-#: modules/codec/x264.c:202
+#: modules/codec/x264.c:217
 msgid ""
 "Multipass ratecontrol:\n"
 " - 1: First pass, creates stats file\n"
@@ -10898,19 +10921,19 @@ msgstr ""
 " - 2: Последний проход не переписывает файл статистики\n"
 " - 3: N-й проход переписывает файл статистики\n"
 
-#: modules/codec/x264.c:207
+#: modules/codec/x264.c:222
 msgid "QP curve compression"
 msgstr "Сжатие кривой QP"
 
-#: modules/codec/x264.c:208
+#: modules/codec/x264.c:223
 msgid "QP curve compression. Range 0.0 (CBR) to 1.0 (QCP)."
 msgstr "Коэффициент сжатия кривой квантования (от 0.0=CBR до 1.0=QCP)"
 
-#: modules/codec/x264.c:210 modules/codec/x264.c:214
+#: modules/codec/x264.c:225 modules/codec/x264.c:229
 msgid "Reduce fluctuations in QP"
 msgstr "Уменьшать колебания в QP"
 
-#: modules/codec/x264.c:211
+#: modules/codec/x264.c:226
 msgid ""
 "This reduces the fluctuations in QP before curve compression. Temporally "
 "blurs complexity."
@@ -10918,7 +10941,7 @@ msgstr ""
 "Уменьшать колебания в коэффициентах квантования перед сжатием кривой. "
 "Временно уменьшает сложность."
 
-#: modules/codec/x264.c:215
+#: modules/codec/x264.c:230
 msgid ""
 "This reduces the fluctations in QP after curve compression. Temporally blurs "
 "quants."
@@ -10926,11 +10949,11 @@ msgstr ""
 "Уменьшать колебания в коэффициентах квантования после сжатия кривой. "
 "Временно уменьшает сложность."
 
-#: modules/codec/x264.c:220
+#: modules/codec/x264.c:235
 msgid "Partitions to consider"
 msgstr "Работа с макроблоками"
 
-#: modules/codec/x264.c:221
+#: modules/codec/x264.c:236
 msgid ""
 "Partitions to consider in analyse mode: \n"
 " - none  : \n"
@@ -10948,19 +10971,19 @@ msgstr ""
 " - все       : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
 "(p4x4 требует p8x8. i8x8 требует 8x8dct)."
 
-#: modules/codec/x264.c:229
+#: modules/codec/x264.c:244
 msgid "Direct MV prediction mode"
 msgstr "Режим прямого предсказания вектора движения"
 
-#: modules/codec/x264.c:230
+#: modules/codec/x264.c:245
 msgid "Direct MV prediction mode."
 msgstr "Режим прямого предсказания вектора движения."
 
-#: modules/codec/x264.c:233
+#: modules/codec/x264.c:248
 msgid "Direct prediction size"
 msgstr "Размер для прямого предсказания"
 
-#: modules/codec/x264.c:234
+#: modules/codec/x264.c:249
 msgid ""
 "Direct prediction size:  -  0: 4x4\n"
 " -  1: 8x8\n"
@@ -10969,19 +10992,19 @@ msgstr ""
 "Размер для прямого предсказания: 0 - 4x4, 1 - 8x8, -1 - минимально возможный "
 "в соответствии с уровнем\n"
 
-#: modules/codec/x264.c:240
+#: modules/codec/x264.c:255
 msgid "Weighted prediction for B-frames"
 msgstr "Взвешенное предсказание для B-кадров"
 
-#: modules/codec/x264.c:241
+#: modules/codec/x264.c:256
 msgid "Weighted prediction for B-frames."
 msgstr "Взвешенное предсказание для B-кадров."
 
-#: modules/codec/x264.c:243
+#: modules/codec/x264.c:258
 msgid "Integer pixel motion estimation method"
 msgstr "Целочисленный пиксельный метод оценки движения"
 
-#: modules/codec/x264.c:245
+#: modules/codec/x264.c:260
 msgid ""
 "Selects the motion estimation algorithm:  - dia: diamond search, radius 1 "
 "(fast)\n"
@@ -10996,7 +11019,7 @@ msgstr ""
 "медленный, в основном для тестирования); tesa - исчерпывающий поиск Адамара "
 "(очень медленный, в основном для тестирования)\n"
 
-#: modules/codec/x264.c:252
+#: modules/codec/x264.c:267
 msgid ""
 "Selects the motion estimation algorithm:  - dia: diamond search, radius 1 "
 "(fast)\n"
@@ -11010,11 +11033,11 @@ msgstr ""
 " - umh: нечетный мульти-угольный поиск (лучше, но медленнее)\n"
 " - esa: исчерпывающий поиск (очень медленно, в основном для тестирования)\n"
 
-#: modules/codec/x264.c:260
+#: modules/codec/x264.c:275
 msgid "Maximum motion vector search range"
 msgstr "Максимальный диапазон поиска векторов движения"
 
-#: modules/codec/x264.c:261
+#: modules/codec/x264.c:276
 msgid ""
 "Maximum distance to search for motion estimation, measured from predicted "
 "position(s). Default of 16 is good for most footage, high motion sequences "
@@ -11025,22 +11048,22 @@ msgstr ""
 "части метража. Для последовательностей с быстрым движением могут подойти "
 "значения между 24 и 32. Диапазон от 0 до 64."
 
-#: modules/codec/x264.c:266
+#: modules/codec/x264.c:281
 msgid "Maximum motion vector length"
 msgstr "Максимальная длина вектора движения"
 
-#: modules/codec/x264.c:267
+#: modules/codec/x264.c:282
 msgid ""
 "Maximum motion vector length in pixels. -1 is automatic, based on level."
 msgstr ""
 "Максимальная длина вектора движения в пикселах. -1 - автоматически, в "
 "зависимости от уровня."
 
-#: modules/codec/x264.c:272
+#: modules/codec/x264.c:287
 msgid "Minimum buffer space between threads"
 msgstr "Минимальное буферное пространство между потоками"
 
-#: modules/codec/x264.c:273
+#: modules/codec/x264.c:288
 msgid ""
 "Minimum buffer space between threads. -1 is automatic, based on number of "
 "threads."
@@ -11048,11 +11071,11 @@ msgstr ""
 "Минимальное буферное пространство между потоками. -1 - определять "
 "автоматически, в зависимости от количества потоков."
 
-#: modules/codec/x264.c:277
+#: modules/codec/x264.c:292
 msgid "Subpixel motion estimation and partition decision quality"
 msgstr "Субпиксельная оценка движения и качество макроблоков"
 
-#: modules/codec/x264.c:281
+#: modules/codec/x264.c:296
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
@@ -11062,7 +11085,7 @@ msgstr ""
 "принятия решений при оценке движения (меньше - быстрее, больше - "
 "качественнее). Диапазон от 1 до 9."
 
-#: modules/codec/x264.c:286
+#: modules/codec/x264.c:301
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
@@ -11072,7 +11095,7 @@ msgstr ""
 "принятия решений при оценке движения (меньше - быстрее, больше - "
 "качественнее). Диапазон от 1 до 7."
 
-#: modules/codec/x264.c:291
+#: modules/codec/x264.c:306
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
@@ -11082,7 +11105,7 @@ msgstr ""
 "принятия решений при оценке движения (меньше - быстрее, больше - "
 "качественнее). Диапазон от 1 до 6."
 
-#: modules/codec/x264.c:296
+#: modules/codec/x264.c:311
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
@@ -11092,19 +11115,19 @@ msgstr ""
 "принятия решений при оценке движения (меньше - быстрее, больше - "
 "качественнее). Диапазон от 1 до 5."
 
-#: modules/codec/x264.c:301
+#: modules/codec/x264.c:316
 msgid "RD based mode decision for B-frames"
 msgstr "Режим rate distortion (RD) для B-кадров"
 
-#: modules/codec/x264.c:302
+#: modules/codec/x264.c:317
 msgid "RD based mode decision for B-frames. This requires subme 6 (or higher)."
 msgstr "Режим rate distortion (RD) для B-кадров. Требует subme 6 или выше."
 
-#: modules/codec/x264.c:305
+#: modules/codec/x264.c:320
 msgid "Decide references on a per partition basis"
 msgstr "Выбор референсных кадров на основе макроблоков"
 
-#: modules/codec/x264.c:306
+#: modules/codec/x264.c:321
 msgid ""
 "Allows each 8x8 or 16x8 partition to independently select a reference frame, "
 "as opposed to only one ref per macroblock."
@@ -11112,35 +11135,35 @@ msgstr ""
 "Позволяет каждому из 8x8 или 16x8 макроблоку независимо выбирать референсный "
 "кадр вместо одного референсного кадра на каждый макроблок."
 
-#: modules/codec/x264.c:310
+#: modules/codec/x264.c:325
 msgid "Chroma in motion estimation"
 msgstr "Цветность при оценке движения"
 
-#: modules/codec/x264.c:311
+#: modules/codec/x264.c:326
 msgid "Chroma ME for subpel and mode decision in P-frames."
 msgstr "Игнорировать цветность при оценке движения для субпикселей в P-кадрах"
 
-#: modules/codec/x264.c:314
+#: modules/codec/x264.c:329
 msgid "Jointly optimize both MVs in B-frames"
 msgstr "Оптимизация обоих видов векторов движения в B-кадрах"
 
-#: modules/codec/x264.c:315
+#: modules/codec/x264.c:330
 msgid "Joint bidirectional motion refinement."
 msgstr "Общая двунаправленная обработка движения."
 
-#: modules/codec/x264.c:317
+#: modules/codec/x264.c:332
 msgid "Adaptive spatial transform size"
 msgstr "Адаптивная пространственная трансформация"
 
-#: modules/codec/x264.c:319
+#: modules/codec/x264.c:334
 msgid "SATD-based decision for 8x8 transform in inter-MBs."
 msgstr "Метод SATD для трансформации 8x8 во внутренних MB."
 
-#: modules/codec/x264.c:321
+#: modules/codec/x264.c:336
 msgid "Trellis RD quantization"
 msgstr "Квантование trellis RD"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:337
 msgid ""
 "Trellis RD quantization: \n"
 " - 0: disabled\n"
@@ -11154,19 +11177,19 @@ msgstr ""
 " - 2: включено на всех стадиях\n"
 "Требуется CABAC."
 
-#: modules/codec/x264.c:328
+#: modules/codec/x264.c:343
 msgid "Early SKIP detection on P-frames"
 msgstr "Раннее определение пропущенных P-кадров"
 
-#: modules/codec/x264.c:329
+#: modules/codec/x264.c:344
 msgid "Early SKIP detection on P-frames."
 msgstr "Раннее определение пропущенных P-кадров."
 
-#: modules/codec/x264.c:331
+#: modules/codec/x264.c:346
 msgid "Coefficient thresholding on P-frames"
 msgstr "Задание порога коэффициента на P-кадрах"
 
-#: modules/codec/x264.c:332
+#: modules/codec/x264.c:347
 msgid ""
 "Coefficient thresholding on P-frames.Eliminate dct blocks containing only a "
 "small single coefficient."
@@ -11174,7 +11197,7 @@ msgstr ""
 "Задание порога коэффициента на P-кадрах. Удаляет блоки дискретного "
 "косинусного преобразования, содержащие только малый одиночный коэффициент."
 
-#: modules/codec/x264.c:337
+#: modules/codec/x264.c:352
 msgid ""
 "Dct-domain noise reduction. Adaptive pseudo-deadzone. 10 to 1000 seems to be "
 "a useful range."
@@ -11182,57 +11205,57 @@ msgstr ""
 "Шумоподавление в домене DCT. Адаптивная псевдомертвая зона. Диапазон от 10 "
 "до 1000."
 
-#: modules/codec/x264.c:341
+#: modules/codec/x264.c:356
 msgid "Inter luma quantization deadzone"
 msgstr "Мёртвая зона временного квантования яркости"
 
-#: modules/codec/x264.c:342
+#: modules/codec/x264.c:357
 msgid "Set the size of the inter luma quantization deadzone. Range 0 to 32."
 msgstr ""
 "Указать размер мёртвой зоны временного квантования яркости. Диапазон от 0 до "
 "32."
 
-#: modules/codec/x264.c:345
+#: modules/codec/x264.c:360
 msgid "Intra luma quantization deadzone"
 msgstr "Мёртвая зона пространственного квантования яркости"
 
-#: modules/codec/x264.c:346
+#: modules/codec/x264.c:361
 msgid "Set the size of the intra luma quantization deadzone. Range 0 to 32."
 msgstr ""
 "Указать размер мёртвой зоны пространственного квантования яркости. Диапазон "
 "от 0 до 32."
 
-#: modules/codec/x264.c:353
+#: modules/codec/x264.c:368
 msgid "Non-deterministic optimizations when threaded"
 msgstr "Недетерминированные оптимизации при поточности"
 
-#: modules/codec/x264.c:354
+#: modules/codec/x264.c:369
 msgid "Slightly improve quality of SMP, at the cost of repeatability."
 msgstr ""
 "Несколько улучшает качество симметричной многопроцессорной обработки за счёт "
 "повторяемости."
 
-#: modules/codec/x264.c:358
+#: modules/codec/x264.c:373
 msgid "CPU optimizations"
 msgstr "Оптимизация CPU"
 
-#: modules/codec/x264.c:359
+#: modules/codec/x264.c:374
 msgid "Use assembler CPU optimizations."
 msgstr "Использовать ассемблерную оптимизацию CPU"
 
-#: modules/codec/x264.c:361
+#: modules/codec/x264.c:376
 msgid "Filename for 2 pass stats file"
 msgstr "Название файла статистики 2-го прохода"
 
-#: modules/codec/x264.c:362
+#: modules/codec/x264.c:377
 msgid "Filename for 2 pass stats file for multi-pass encoding."
 msgstr "Название файла статистики 2-го прохода при многопроходном кодировании."
 
-#: modules/codec/x264.c:364
+#: modules/codec/x264.c:379
 msgid "PSNR computation"
 msgstr "Вычисление PSNR"
 
-#: modules/codec/x264.c:365
+#: modules/codec/x264.c:380
 msgid ""
 "Compute and print PSNR stats. This has no effect on the actual encoding "
 "quality."
@@ -11240,11 +11263,11 @@ msgstr ""
 "Расчитать и напечатать статистику пикового отношения сигнала к шуму. Не "
 "оказывает влияния на реальное качество кодирования."
 
-#: modules/codec/x264.c:368
+#: modules/codec/x264.c:383
 msgid "SSIM computation"
 msgstr "Вычисление SSIM"
 
-#: modules/codec/x264.c:369
+#: modules/codec/x264.c:384
 msgid ""
 "Compute and print SSIM stats. This has no effect on the actual encoding "
 "quality."
@@ -11252,28 +11275,28 @@ msgstr ""
 "Расчитать и напечатать статистику структурного сходства. Не оказывает "
 "влияния на реальное качество кодирования."
 
-#: modules/codec/x264.c:372
+#: modules/codec/x264.c:387
 msgid "Quiet mode"
 msgstr "Тихий режим"
 
-#: modules/codec/x264.c:373
+#: modules/codec/x264.c:388
 msgid "Quiet mode."
 msgstr "Тихий режим"
 
-#: modules/codec/x264.c:375 modules/gui/macosx/playlistinfo.m:82
+#: modules/codec/x264.c:390 modules/gui/macosx/playlistinfo.m:82
 #: modules/gui/qt4/ui/streampanel.h:171
 msgid "Statistics"
 msgstr "Статистика"
 
-#: modules/codec/x264.c:376
+#: modules/codec/x264.c:391
 msgid "Print stats for each frame."
 msgstr "Показывать статистику каждого кадра."
 
-#: modules/codec/x264.c:379
+#: modules/codec/x264.c:394
 msgid "SPS and PPS id numbers"
 msgstr "Идентификационные номера НПП и НПИ"
 
-#: modules/codec/x264.c:380
+#: modules/codec/x264.c:395
 msgid ""
 "Set SPS and PPS id numbers to allow concatenating streams with different "
 "settings."
@@ -11282,66 +11305,66 @@ msgstr ""
 "набора параметров изображения для возможности последовательного соединения "
 "потоков с разными параметрами."
 
-#: modules/codec/x264.c:384
+#: modules/codec/x264.c:399
 msgid "Access unit delimiters"
 msgstr "Разделители пакетов доступа"
 
-#: modules/codec/x264.c:385
+#: modules/codec/x264.c:400
 msgid "Generate access unit delimiter NAL units."
 msgstr ""
 "Генерировать разделители пакетов доступа для пакетов уровня сетевой "
 "абстракции (NAL)."
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "dia"
 msgstr "dia"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "hex"
 msgstr "hex"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "umh"
 msgstr "umh"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "esa"
 msgstr "esa"
 
-#: modules/codec/x264.c:398
+#: modules/codec/x264.c:413
 msgid "tesa"
 msgstr "tesa"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "fast"
 msgstr "быстрый"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "normal"
 msgstr "обычный"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "slow"
 msgstr "медленный"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "all"
 msgstr "все"
 
-#: modules/codec/x264.c:410 modules/codec/x264.c:415
+#: modules/codec/x264.c:433 modules/codec/x264.c:438
 msgid "spatial"
 msgstr "пространственный"
 
-#: modules/codec/x264.c:410 modules/codec/x264.c:415
+#: modules/codec/x264.c:433 modules/codec/x264.c:438
 msgid "temporal"
 msgstr "временной"
 
-#: modules/codec/x264.c:410 modules/gui/pda/pda_interface.c:741
+#: modules/codec/x264.c:433 modules/gui/pda/pda_interface.c:741
 #: modules/video_filter/mosaic.c:168
 msgid "auto"
 msgstr "автоматический"
 
-#: modules/codec/x264.c:419
+#: modules/codec/x264.c:442
 msgid "H.264/MPEG4 AVC encoder (x264)"
 msgstr "Кодировщик AVC H.264/MPEG4 (x264)"
 
@@ -14934,55 +14957,55 @@ msgid "Codec Details"
 msgstr "Информация о кодеке"
 
 #: modules/gui/macosx/playlistinfo.m:98
-#: modules/gui/qt4/components/info_panels.cpp:524
+#: modules/gui/qt4/components/info_panels.cpp:525
 msgid "Read at media"
 msgstr "Прочитано"
 
 #: modules/gui/macosx/playlistinfo.m:99
-#: modules/gui/qt4/components/info_panels.cpp:526
+#: modules/gui/qt4/components/info_panels.cpp:527
 msgid "Input bitrate"
 msgstr "Битрейт входящего потока"
 
 #: modules/gui/macosx/playlistinfo.m:100
-#: modules/gui/qt4/components/info_panels.cpp:528
+#: modules/gui/qt4/components/info_panels.cpp:529
 msgid "Demuxed"
 msgstr "Демультиплексировано"
 
 #: modules/gui/macosx/playlistinfo.m:101
-#: modules/gui/qt4/components/info_panels.cpp:529
+#: modules/gui/qt4/components/info_panels.cpp:530
 msgid "Stream bitrate"
 msgstr "Битрейт потока"
 
 #: modules/gui/macosx/playlistinfo.m:104 modules/gui/macosx/playlistinfo.m:115
-#: modules/gui/qt4/components/info_panels.cpp:536
-#: modules/gui/qt4/components/info_panels.cpp:549
+#: modules/gui/qt4/components/info_panels.cpp:537
+#: modules/gui/qt4/components/info_panels.cpp:550
 msgid "Decoded blocks"
 msgstr "Декодировано блоков"
 
 #: modules/gui/macosx/playlistinfo.m:105
-#: modules/gui/qt4/components/info_panels.cpp:538
+#: modules/gui/qt4/components/info_panels.cpp:539
 msgid "Displayed frames"
 msgstr "Показано кадров"
 
 #: modules/gui/macosx/playlistinfo.m:106
-#: modules/gui/qt4/components/info_panels.cpp:540
+#: modules/gui/qt4/components/info_panels.cpp:541
 msgid "Lost frames"
 msgstr "Потеряно кадров"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
-#: modules/gui/qt4/components/info_panels.cpp:522
+#: modules/gui/qt4/components/info_panels.cpp:523
 #: modules/gui/qt4/dialogs_provider.cpp:608
 #: modules/video_filter/deinterlace.c:147
 msgid "Streaming"
 msgstr "Потоковая передача"
 
 #: modules/gui/macosx/playlistinfo.m:110
-#: modules/gui/qt4/components/info_panels.cpp:543
+#: modules/gui/qt4/components/info_panels.cpp:544
 msgid "Sent packets"
 msgstr "Выслано пакетов"
 
 #: modules/gui/macosx/playlistinfo.m:111
-#: modules/gui/qt4/components/info_panels.cpp:544
+#: modules/gui/qt4/components/info_panels.cpp:545
 msgid "Sent bytes"
 msgstr "Выслано байт"
 
@@ -14991,12 +15014,12 @@ msgid "Send rate"
 msgstr "Битрейт исходящего потока"
 
 #: modules/gui/macosx/playlistinfo.m:116
-#: modules/gui/qt4/components/info_panels.cpp:551
+#: modules/gui/qt4/components/info_panels.cpp:552
 msgid "Played buffers"
 msgstr "Воспроизведено буферов"
 
 #: modules/gui/macosx/playlistinfo.m:117
-#: modules/gui/qt4/components/info_panels.cpp:553
+#: modules/gui/qt4/components/info_panels.cpp:554
 msgid "Lost buffers"
 msgstr "Потеряно буферов"
 
@@ -16968,19 +16991,19 @@ msgstr ""
 "Информация об этом медиа-файле или потоке.\n"
 "Показаны мультиплексор, аудио- и видео-кодеки, субтитры."
 
-#: modules/gui/qt4/components/info_panels.cpp:495
+#: modules/gui/qt4/components/info_panels.cpp:496
 msgid "Statistics about the currently playing media or stream."
 msgstr "Статистика о воспроизводимом сейчас медиа-файле или потоке."
 
-#: modules/gui/qt4/components/info_panels.cpp:531
+#: modules/gui/qt4/components/info_panels.cpp:532
 msgid "Corrupted"
 msgstr "Повреждено"
 
-#: modules/gui/qt4/components/info_panels.cpp:533
+#: modules/gui/qt4/components/info_panels.cpp:534
 msgid "Discontinuities"
 msgstr "Разрывы"
 
-#: modules/gui/qt4/components/info_panels.cpp:546
+#: modules/gui/qt4/components/info_panels.cpp:547
 msgid "Sent bitrate"
 msgstr "Битрейт исходящего потока"
 

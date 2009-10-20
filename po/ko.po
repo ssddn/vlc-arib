@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vlc korean lang\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-15 20:57+0100\n"
+"POT-Creation-Date: 2009-10-20 23:08+0100\n"
 "PO-Revision-Date: 2009-10-08 15:41+0900\n"
 "Last-Translator: airplanez <airplanez@gmail.com>\n"
 "Language-Team: \n"
@@ -82,7 +82,7 @@ msgstr "단축키 설정"
 #: modules/gui/macosx/intf.m:660 modules/gui/macosx/output.m:170
 #: modules/gui/macosx/playlistinfo.m:114 modules/gui/macosx/simple_prefs.m:179
 #: modules/gui/macosx/wizard.m:380
-#: modules/gui/qt4/components/info_panels.cpp:519
+#: modules/gui/qt4/components/info_panels.cpp:520
 #: modules/gui/qt4/components/simple_preferences.cpp:79
 #: modules/gui/qt4/ui/profiles.h:487 modules/stream_out/es.c:93
 #: modules/stream_out/transcode.c:200
@@ -136,7 +136,7 @@ msgstr "기타 오디오 설정 및 모듈"
 #: src/libvlc-module.c:1567 modules/gui/macosx/intf.m:673
 #: modules/gui/macosx/output.m:160 modules/gui/macosx/playlistinfo.m:103
 #: modules/gui/macosx/simple_prefs.m:183 modules/gui/macosx/wizard.m:381
-#: modules/gui/qt4/components/info_panels.cpp:520
+#: modules/gui/qt4/components/info_panels.cpp:521
 #: modules/gui/qt4/components/simple_preferences.cpp:80
 #: modules/gui/qt4/ui/profiles.h:469 modules/gui/qt4/ui/sprefs_video.h:291
 #: modules/misc/dummy/dummy.c:109 modules/stream_out/es.c:101
@@ -1039,7 +1039,7 @@ msgstr "비트/샘플"
 
 #: src/input/es_out.c:2731 modules/access/pvr.c:97
 #: modules/access_output/shout.c:91 modules/demux/playlist/shoutcast.c:410
-#: modules/gui/qt4/components/open_panels.cpp:957
+#: modules/gui/qt4/components/open_panels.cpp:958
 #: modules/gui/qt4/ui/profiles.h:471 modules/gui/qt4/ui/profiles.h:490
 msgid "Bitrate"
 msgstr "비트 레이트"
@@ -1355,7 +1355,7 @@ msgstr "2:1 2배"
 
 #: src/libvlc-module.c:98 src/libvlc-module.c:315 modules/access/bda/bda.c:69
 #: modules/codec/subtitles/subsdec.c:97
-#: modules/gui/qt4/components/open_panels.cpp:1033
+#: modules/gui/qt4/components/open_panels.cpp:1034
 msgid "Auto"
 msgstr "자동"
 
@@ -4264,7 +4264,7 @@ msgstr "디코더"
 
 #: src/libvlc-module.c:1856 modules/access/v4l2.c:78
 #: modules/gui/macosx/playlistinfo.m:97
-#: modules/gui/qt4/components/info_panels.cpp:521
+#: modules/gui/qt4/components/info_panels.cpp:522
 msgid "Input"
 msgstr "입력"
 
@@ -4411,7 +4411,7 @@ msgstr "다운로드중..."
 #: modules/gui/macosx/prefs.m:204 modules/gui/macosx/prefs.m:225
 #: modules/gui/macosx/simple_prefs.m:239 modules/gui/macosx/simple_prefs.m:301
 #: modules/gui/macosx/simple_prefs.m:685 modules/gui/macosx/wizard.m:320
-#: modules/gui/qt4/components/open_panels.cpp:1315
+#: modules/gui/qt4/components/open_panels.cpp:1316
 #: modules/gui/qt4/components/preferences_widgets.cpp:1367
 #: modules/gui/qt4/components/sout/profile_selector.cpp:253
 msgid "Cancel"
@@ -4578,7 +4578,7 @@ msgid ""
 msgstr "DVB 스트림 캐싱 값. 이 값은 밀리초로 설정되어야 합니다."
 
 #: modules/access/bda/bda.c:51 modules/access/dvb/access.c:89
-#: modules/gui/qt4/components/open_panels.cpp:984
+#: modules/gui/qt4/components/open_panels.cpp:985
 msgid "Adapter card to tune"
 msgstr "튜닝할 어댑터 카드"
 
@@ -4593,8 +4593,8 @@ msgid "Device number to use on adapter"
 msgstr "어댑터에서 사용할 장치 번호"
 
 #: modules/access/bda/bda.c:58 modules/access/dvb/access.c:95
-#: modules/gui/qt4/components/open_panels.cpp:741
-#: modules/gui/qt4/components/open_panels.cpp:1006
+#: modules/gui/qt4/components/open_panels.cpp:742
+#: modules/gui/qt4/components/open_panels.cpp:1007
 msgid "Transponder/multiplex frequency"
 msgstr "트렌스폰더/멀티플렉스 주파수"
 
@@ -4810,17 +4810,17 @@ msgid "Terrestrial bandwidth [0=auto,6,7,8 in MHz]"
 msgstr "지상파 대역폭 [0=자동,6,7,8 (MHz)]"
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1034
+#: modules/gui/qt4/components/open_panels.cpp:1035
 msgid "6 MHz"
 msgstr "6 MHz"
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1035
+#: modules/gui/qt4/components/open_panels.cpp:1036
 msgid "7 MHz"
 msgstr "7 MHz"
 
 #: modules/access/bda/bda.c:151
-#: modules/gui/qt4/components/open_panels.cpp:1036
+#: modules/gui/qt4/components/open_panels.cpp:1037
 msgid "8 MHz"
 msgstr "8 MHz"
 
@@ -5015,8 +5015,8 @@ msgid "VLC could not get a new block of size: %i."
 msgstr "VLC 가 다음 크기의 블록을 가져올수 없습니다: %i."
 
 #: modules/access/cdda/cdda.c:46 modules/access/directory.c:79
-#: modules/codec/dirac.c:80 modules/codec/x264.c:404 modules/codec/x264.c:410
-#: modules/codec/x264.c:415
+#: modules/codec/dirac.c:80 modules/codec/x264.c:427 modules/codec/x264.c:433
+#: modules/codec/x264.c:438
 msgid "none"
 msgstr "없음"
 
@@ -5346,8 +5346,8 @@ msgid ""
 msgstr "DirectShow 스트림 캐싱 값. 이 값은 밀리초로 설정되어야 합니다."
 
 #: modules/access/dshow/dshow.cpp:103 modules/access/v4l.c:76
-#: modules/gui/qt4/components/open_panels.cpp:794
-#: modules/gui/qt4/components/open_panels.cpp:829
+#: modules/gui/qt4/components/open_panels.cpp:795
+#: modules/gui/qt4/components/open_panels.cpp:830
 msgid "Video device name"
 msgstr "비디오 장치 이름"
 
@@ -5360,8 +5360,8 @@ msgstr ""
 "본 장치가 사용됩니다."
 
 #: modules/access/dshow/dshow.cpp:108
-#: modules/gui/qt4/components/open_panels.cpp:800
-#: modules/gui/qt4/components/open_panels.cpp:835
+#: modules/gui/qt4/components/open_panels.cpp:801
+#: modules/gui/qt4/components/open_panels.cpp:836
 msgid "Audio device name"
 msgstr "오디오 장치 이름"
 
@@ -5374,7 +5374,7 @@ msgstr ""
 "본 장치가 사용됩니다."
 
 #: modules/access/dshow/dshow.cpp:113
-#: modules/gui/qt4/components/open_panels.cpp:704
+#: modules/gui/qt4/components/open_panels.cpp:705
 msgid "Video size"
 msgstr "영상 크기"
 
@@ -5724,12 +5724,12 @@ msgstr "메뉴있는 DVD"
 msgid "DVDnav Input"
 msgstr "DVDnav 입력"
 
-#: modules/access/dvdnav.c:317 modules/access/dvdread.c:251
+#: modules/access/dvdnav.c:320 modules/access/dvdread.c:251
 #: modules/access/dvdread.c:511 modules/access/dvdread.c:573
 msgid "Playback failure"
 msgstr "재생 실패"
 
-#: modules/access/dvdnav.c:318
+#: modules/access/dvdnav.c:321
 msgid ""
 "VLC cannot set the DVD's title. It possibly cannot decrypt the entire disc."
 msgstr ""
@@ -6169,8 +6169,8 @@ msgid "PVR radio device"
 msgstr "PVR 라디오 장치"
 
 #: modules/access/pvr.c:71 modules/access/v4l.c:91
-#: modules/gui/qt4/components/open_panels.cpp:842
-#: modules/gui/qt4/components/open_panels.cpp:941
+#: modules/gui/qt4/components/open_panels.cpp:843
+#: modules/gui/qt4/components/open_panels.cpp:942
 msgid "Norm"
 msgstr "기준"
 
@@ -6201,8 +6201,8 @@ msgid "Height of the stream to capture (-1 for autodetection)."
 msgstr "갈무리할 스트림 높이 (-1 : 자동감지)."
 
 #: modules/access/pvr.c:83 modules/access/v4l.c:84 modules/access/v4l2.c:195
-#: modules/gui/qt4/components/open_panels.cpp:849
-#: modules/gui/qt4/components/open_panels.cpp:948
+#: modules/gui/qt4/components/open_panels.cpp:850
+#: modules/gui/qt4/components/open_panels.cpp:949
 msgid "Frequency"
 msgstr "주파수"
 
@@ -6457,7 +6457,7 @@ msgid ""
 msgstr "화면 갈무리 캐싱 값. 이 값은 밀리초로 설정되어야 합니다."
 
 #: modules/access/screen/screen.c:46
-#: modules/gui/qt4/components/open_panels.cpp:1072
+#: modules/gui/qt4/components/open_panels.cpp:1073
 msgid "Desired frame rate for the capture."
 msgstr "갈무리에 요구되는 프레임 레이트."
 
@@ -6698,7 +6698,7 @@ msgstr "Video4Linux"
 msgid "Video4Linux input"
 msgstr "Video4Linux 입력"
 
-#: modules/access/v4l2.c:69 modules/gui/qt4/components/open_panels.cpp:807
+#: modules/access/v4l2.c:69 modules/gui/qt4/components/open_panels.cpp:808
 #: modules/stream_out/standard.c:100
 msgid "Standard"
 msgstr "표준"
@@ -7056,7 +7056,7 @@ msgstr "v4l2 드라이버가 지원하면 v4l2 드라이버 제어."
 msgid "Video4Linux2 Compressed A/V"
 msgstr "Video4Linux2 압축된 A/V"
 
-#: modules/access/v4l2.c:2930
+#: modules/access/v4l2.c:2932
 msgid "Reset controls to default"
 msgstr "제어 기본값으로 초기화"
 
@@ -8506,7 +8506,7 @@ msgstr ""
 "P 프레임과 비교한 프레임의 양자화 요소 (인스턴스가 1.0 => 이면 I 및 P 프레임"
 "의 qscale 과 같음)."
 
-#: modules/codec/avcodec/avcodec.h:172 modules/codec/x264.c:336
+#: modules/codec/avcodec/avcodec.h:172 modules/codec/x264.c:351
 #: modules/demux/mod.c:78
 msgid "Noise reduction"
 msgstr "노이즈 제거"
@@ -10033,156 +10033,175 @@ msgid ""
 "negative values cause less B-frames."
 msgstr ""
 
-#: modules/codec/x264.c:103
+#: modules/codec/x264.c:104
 msgid "Keep some B-frames as references"
 msgstr "몇몇 B 프레임은 참조로 유지"
 
-#: modules/codec/x264.c:104
+#: modules/codec/x264.c:106
+msgid ""
+"Allows B-frames to be used as references for predicting other frames. Keeps "
+"the middle of 2+ consecutive B-frames as a reference, and reorders frame "
+"appropriately.\n"
+" - none: Disabled\n"
+" - strict: Strictly hierarchical pyramid\n"
+" - normal: Non-strict (not Blu-ray compatible)\n"
+msgstr ""
+
+#: modules/codec/x264.c:114
 msgid ""
 "Allows B-frames to be used as references for predicting other frames. Keeps "
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
 "appropriately."
 msgstr ""
 
-#: modules/codec/x264.c:108
+#: modules/codec/x264.c:119
 msgid "CABAC"
 msgstr "CABAC"
 
-#: modules/codec/x264.c:109
+#: modules/codec/x264.c:120
 msgid ""
 "CABAC (Context-Adaptive Binary Arithmetic Coding). Slightly slows down "
 "encoding and decoding, but should save 10 to 15% bitrate."
 msgstr ""
 
-#: modules/codec/x264.c:113
+#: modules/codec/x264.c:124
 msgid "Number of reference frames"
 msgstr "참조 프레임 수"
 
-#: modules/codec/x264.c:114
+#: modules/codec/x264.c:125
 msgid ""
 "Number of previous frames used as predictors. This is effective in Anime, "
 "but seems to make little difference in live-action source material. Some "
 "decoders are unable to deal with large frameref values. Range 1 to 16."
 msgstr ""
 
-#: modules/codec/x264.c:119
+#: modules/codec/x264.c:130
 msgid "Skip loop filter"
 msgstr "순환 필터 건너뛰기"
 
-#: modules/codec/x264.c:120
+#: modules/codec/x264.c:131
 msgid "Deactivate the deblocking loop filter (decreases quality)."
 msgstr "디블로킹 순환 필터 비활성화 (품질이 나빠짐)."
 
-#: modules/codec/x264.c:122
+#: modules/codec/x264.c:133
 msgid "Loop filter AlphaC0 and Beta parameters alpha:beta"
 msgstr ""
 
-#: modules/codec/x264.c:123
+#: modules/codec/x264.c:134
 msgid ""
 "Loop filter AlphaC0 and Beta parameters. Range -6 to 6 for both alpha and "
 "beta parameters. -6 means light filter, 6 means strong."
 msgstr ""
 
-#: modules/codec/x264.c:127
+#: modules/codec/x264.c:138
 msgid "H.264 level"
 msgstr "H.264 레벨"
 
-#: modules/codec/x264.c:128
+#: modules/codec/x264.c:139
 msgid ""
 "Specify H.264 level (as defined by Annex A of the standard). Levels are not "
 "enforced; it's up to the user to select a level compatible with the rest of "
 "the encoding options. Range 1 to 5.1 (10 to 51 is also allowed)."
 msgstr ""
 
-#: modules/codec/x264.c:137
+#: modules/codec/x264.c:144
+#, fuzzy
+msgid "H.264 profile"
+msgstr "H.264 레벨"
+
+#: modules/codec/x264.c:145
+msgid "Specify H.264 profile which limits are enforced overother settings"
+msgstr ""
+
+#: modules/codec/x264.c:152
 msgid "Interlaced mode"
 msgstr "인터레이스 모드"
 
-#: modules/codec/x264.c:138
+#: modules/codec/x264.c:153
 msgid "Pure-interlaced mode."
 msgstr "순수-인터레이스 모드."
 
-#: modules/codec/x264.c:143
+#: modules/codec/x264.c:158
 msgid "Set QP"
 msgstr "QP 설정"
 
-#: modules/codec/x264.c:144
+#: modules/codec/x264.c:159
 msgid ""
 "This selects the quantizer to use. Lower values result in better fidelity, "
 "but higher bitrates. 26 is a good default value. Range 0 (lossless) to 51."
 msgstr ""
 
-#: modules/codec/x264.c:148
+#: modules/codec/x264.c:163
 msgid "Quality-based VBR"
 msgstr "품질-기반 VBR"
 
-#: modules/codec/x264.c:149
+#: modules/codec/x264.c:164
 msgid "1-pass Quality-based VBR. Range 0 to 51."
 msgstr ""
 
-#: modules/codec/x264.c:151
+#: modules/codec/x264.c:166
 msgid "Min QP"
 msgstr "최소 QP"
 
-#: modules/codec/x264.c:152
+#: modules/codec/x264.c:167
 msgid "Minimum quantizer parameter. 15 to 35 seems to be a useful range."
 msgstr ""
 
-#: modules/codec/x264.c:155
+#: modules/codec/x264.c:170
 msgid "Max QP"
 msgstr "최대 QP"
 
-#: modules/codec/x264.c:156
+#: modules/codec/x264.c:171
 msgid "Maximum quantizer parameter."
 msgstr "최대 양자화기 매개변수"
 
-#: modules/codec/x264.c:158
+#: modules/codec/x264.c:173
 msgid "Max QP step"
 msgstr "최대 QP 단계"
 
-#: modules/codec/x264.c:159
+#: modules/codec/x264.c:174
 msgid "Max QP step between frames."
 msgstr ""
 
-#: modules/codec/x264.c:161
+#: modules/codec/x264.c:176
 msgid "Average bitrate tolerance"
 msgstr "평균 비트레이트 허용오차"
 
-#: modules/codec/x264.c:162
+#: modules/codec/x264.c:177
 msgid "Allowed variance in average bitrate (in kbits/s)."
 msgstr ""
 
-#: modules/codec/x264.c:165
+#: modules/codec/x264.c:180
 msgid "Max local bitrate"
 msgstr "최대 로컬 비트레이트"
 
-#: modules/codec/x264.c:166
+#: modules/codec/x264.c:181
 msgid "Sets a maximum local bitrate (in kbits/s)."
 msgstr ""
 
-#: modules/codec/x264.c:168
+#: modules/codec/x264.c:183
 msgid "VBV buffer"
 msgstr "VBV 버퍼"
 
-#: modules/codec/x264.c:169
+#: modules/codec/x264.c:184
 msgid "Averaging period for the maximum local bitrate (in kbits)."
 msgstr ""
 
-#: modules/codec/x264.c:172
+#: modules/codec/x264.c:187
 msgid "Initial VBV buffer occupancy"
 msgstr "초기 VBV 버퍼 점유율"
 
-#: modules/codec/x264.c:173
+#: modules/codec/x264.c:188
 msgid ""
 "Sets the initial buffer occupancy as a fraction of the buffer size. Range "
 "0.0 to 1.0."
 msgstr "버퍼 크기의 초기 버퍼 점유율 설정(소수). 범위 0.0 에서 1.0."
 
-#: modules/codec/x264.c:177
+#: modules/codec/x264.c:192
 msgid "How AQ distributes bits"
 msgstr ""
 
-#: modules/codec/x264.c:178
+#: modules/codec/x264.c:193
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10191,11 +10210,11 @@ msgid ""
 "frame"
 msgstr ""
 
-#: modules/codec/x264.c:183
+#: modules/codec/x264.c:198
 msgid "Strength of AQ"
 msgstr "AQ 강도"
 
-#: modules/codec/x264.c:184
+#: modules/codec/x264.c:199
 msgid ""
 "Strength to reduce blocking and blurring in flat\n"
 "and textured areas, default 1.0 recommented to be between 0..2\n"
@@ -10203,35 +10222,35 @@ msgid ""
 " - 1.5: strong AQ"
 msgstr ""
 
-#: modules/codec/x264.c:191
+#: modules/codec/x264.c:206
 msgid "QP factor between I and P"
 msgstr "I 와 P 사이의 QP 팩터"
 
-#: modules/codec/x264.c:192
+#: modules/codec/x264.c:207
 msgid "QP factor between I and P. Range 1.0 to 2.0."
 msgstr "I 와 P 사이의 QP 요소. 범위 1.0 에서 2.0."
 
-#: modules/codec/x264.c:195
+#: modules/codec/x264.c:210
 msgid "QP factor between P and B"
 msgstr "P 와 B 사이의 QP 팩터"
 
-#: modules/codec/x264.c:196
+#: modules/codec/x264.c:211
 msgid "QP factor between P and B. Range 1.0 to 2.0."
 msgstr "P 와 B 사이의 QP 요소. 범위 1.0 에서 2.0."
 
-#: modules/codec/x264.c:198
+#: modules/codec/x264.c:213
 msgid "QP difference between chroma and luma"
 msgstr "채도와 휘도 사이의 QP 차이"
 
-#: modules/codec/x264.c:199
+#: modules/codec/x264.c:214
 msgid "QP difference between chroma and luma."
 msgstr "채도와 루마 사이의 QP 차이."
 
-#: modules/codec/x264.c:201
+#: modules/codec/x264.c:216
 msgid "Multipass ratecontrol"
 msgstr "멀티패스 레이트 컨트롤"
 
-#: modules/codec/x264.c:202
+#: modules/codec/x264.c:217
 msgid ""
 "Multipass ratecontrol:\n"
 " - 1: First pass, creates stats file\n"
@@ -10239,37 +10258,37 @@ msgid ""
 " - 3: Nth pass, overwrites stats file\n"
 msgstr ""
 
-#: modules/codec/x264.c:207
+#: modules/codec/x264.c:222
 msgid "QP curve compression"
 msgstr "QP 곡선 압축"
 
-#: modules/codec/x264.c:208
+#: modules/codec/x264.c:223
 msgid "QP curve compression. Range 0.0 (CBR) to 1.0 (QCP)."
 msgstr "QP 곡선 압축. 범위 0.0 (CBR) 에서 1.0 (QCP)."
 
-#: modules/codec/x264.c:210 modules/codec/x264.c:214
+#: modules/codec/x264.c:225 modules/codec/x264.c:229
 msgid "Reduce fluctuations in QP"
 msgstr "QP 의 변동 줄이기"
 
-#: modules/codec/x264.c:211
+#: modules/codec/x264.c:226
 msgid ""
 "This reduces the fluctuations in QP before curve compression. Temporally "
 "blurs complexity."
 msgstr ""
 "곡선 압축전에 QP 의 변동을 줄입니다. 일시적으로 복잡성을 무디게 합니다."
 
-#: modules/codec/x264.c:215
+#: modules/codec/x264.c:230
 msgid ""
 "This reduces the fluctations in QP after curve compression. Temporally blurs "
 "quants."
 msgstr ""
 "곡선 압축전에 QP 의 변동을 줄입니다. 일시적으로 양자화를 무디게 합니다."
 
-#: modules/codec/x264.c:220
+#: modules/codec/x264.c:235
 msgid "Partitions to consider"
 msgstr ""
 
-#: modules/codec/x264.c:221
+#: modules/codec/x264.c:236
 msgid ""
 "Partitions to consider in analyse mode: \n"
 " - none  : \n"
@@ -10287,38 +10306,38 @@ msgstr ""
 " - 모두   : i4x4,p8x8,(i8x8),b8x8,p4x4\n"
 "(p4x4 는 p8x8 필요. i8x8 는 8x8dct 필요)."
 
-#: modules/codec/x264.c:229
+#: modules/codec/x264.c:244
 msgid "Direct MV prediction mode"
 msgstr "Direct MV 예측 모드"
 
-#: modules/codec/x264.c:230
+#: modules/codec/x264.c:245
 msgid "Direct MV prediction mode."
 msgstr "Direct MV 예측 모드."
 
-#: modules/codec/x264.c:233
+#: modules/codec/x264.c:248
 msgid "Direct prediction size"
 msgstr "다이렉트 예측 크기"
 
-#: modules/codec/x264.c:234
+#: modules/codec/x264.c:249
 msgid ""
 "Direct prediction size:  -  0: 4x4\n"
 " -  1: 8x8\n"
 " - -1: smallest possible according to level\n"
 msgstr ""
 
-#: modules/codec/x264.c:240
+#: modules/codec/x264.c:255
 msgid "Weighted prediction for B-frames"
 msgstr "B 프레임 가중 예측"
 
-#: modules/codec/x264.c:241
+#: modules/codec/x264.c:256
 msgid "Weighted prediction for B-frames."
 msgstr ""
 
-#: modules/codec/x264.c:243
+#: modules/codec/x264.c:258
 msgid "Integer pixel motion estimation method"
 msgstr "정수 픽셀 모션 예측 방식"
 
-#: modules/codec/x264.c:245
+#: modules/codec/x264.c:260
 msgid ""
 "Selects the motion estimation algorithm:  - dia: diamond search, radius 1 "
 "(fast)\n"
@@ -10328,7 +10347,7 @@ msgid ""
 " - tesa: hadamard exhaustive search (extremely slow, primarily for testing)\n"
 msgstr ""
 
-#: modules/codec/x264.c:252
+#: modules/codec/x264.c:267
 msgid ""
 "Selects the motion estimation algorithm:  - dia: diamond search, radius 1 "
 "(fast)\n"
@@ -10337,115 +10356,115 @@ msgid ""
 " - esa: exhaustive search (extremely slow, primarily for testing)\n"
 msgstr ""
 
-#: modules/codec/x264.c:260
+#: modules/codec/x264.c:275
 msgid "Maximum motion vector search range"
 msgstr "최대 모션 벡터 검색 범위"
 
-#: modules/codec/x264.c:261
+#: modules/codec/x264.c:276
 msgid ""
 "Maximum distance to search for motion estimation, measured from predicted "
 "position(s). Default of 16 is good for most footage, high motion sequences "
 "may benefit from settings between 24 and 32. Range 0 to 64."
 msgstr ""
 
-#: modules/codec/x264.c:266
+#: modules/codec/x264.c:281
 msgid "Maximum motion vector length"
 msgstr "최대 모션 벡터 길이"
 
-#: modules/codec/x264.c:267
+#: modules/codec/x264.c:282
 msgid ""
 "Maximum motion vector length in pixels. -1 is automatic, based on level."
 msgstr ""
 
-#: modules/codec/x264.c:272
+#: modules/codec/x264.c:287
 msgid "Minimum buffer space between threads"
 msgstr "쓰레드 간의 최소 버퍼 공간"
 
-#: modules/codec/x264.c:273
+#: modules/codec/x264.c:288
 msgid ""
 "Minimum buffer space between threads. -1 is automatic, based on number of "
 "threads."
 msgstr ""
 
-#: modules/codec/x264.c:277
+#: modules/codec/x264.c:292
 msgid "Subpixel motion estimation and partition decision quality"
 msgstr "서브픽셀 모션 예측 및 파티션 결정 품질"
 
-#: modules/codec/x264.c:281
+#: modules/codec/x264.c:296
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
 "quality). Range 1 to 9."
 msgstr ""
 
-#: modules/codec/x264.c:286
+#: modules/codec/x264.c:301
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
 "quality). Range 1 to 7."
 msgstr ""
 
-#: modules/codec/x264.c:291
+#: modules/codec/x264.c:306
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
 "quality). Range 1 to 6."
 msgstr ""
 
-#: modules/codec/x264.c:296
+#: modules/codec/x264.c:311
 msgid ""
 "This parameter controls quality versus speed tradeoffs involved in the "
 "motion estimation decision process (lower = quicker and higher = better "
 "quality). Range 1 to 5."
 msgstr ""
 
-#: modules/codec/x264.c:301
+#: modules/codec/x264.c:316
 msgid "RD based mode decision for B-frames"
 msgstr "B 프레임에 대한 RD 기반의 모드 결정"
 
-#: modules/codec/x264.c:302
+#: modules/codec/x264.c:317
 msgid "RD based mode decision for B-frames. This requires subme 6 (or higher)."
 msgstr ""
 
-#: modules/codec/x264.c:305
+#: modules/codec/x264.c:320
 msgid "Decide references on a per partition basis"
 msgstr ""
 
-#: modules/codec/x264.c:306
+#: modules/codec/x264.c:321
 msgid ""
 "Allows each 8x8 or 16x8 partition to independently select a reference frame, "
 "as opposed to only one ref per macroblock."
 msgstr ""
 
-#: modules/codec/x264.c:310
+#: modules/codec/x264.c:325
 msgid "Chroma in motion estimation"
 msgstr "모션 예측 시 채도"
 
-#: modules/codec/x264.c:311
+#: modules/codec/x264.c:326
 msgid "Chroma ME for subpel and mode decision in P-frames."
 msgstr ""
 
-#: modules/codec/x264.c:314
+#: modules/codec/x264.c:329
 msgid "Jointly optimize both MVs in B-frames"
 msgstr ""
 
-#: modules/codec/x264.c:315
+#: modules/codec/x264.c:330
 msgid "Joint bidirectional motion refinement."
 msgstr ""
 
-#: modules/codec/x264.c:317
+#: modules/codec/x264.c:332
 msgid "Adaptive spatial transform size"
 msgstr "적응형 공간 변환 크기"
 
-#: modules/codec/x264.c:319
+#: modules/codec/x264.c:334
 msgid "SATD-based decision for 8x8 transform in inter-MBs."
 msgstr ""
 
-#: modules/codec/x264.c:321
+#: modules/codec/x264.c:336
 msgid "Trellis RD quantization"
 msgstr "Trellis RD 양자화"
 
-#: modules/codec/x264.c:322
+#: modules/codec/x264.c:337
 msgid ""
 "Trellis RD quantization: \n"
 " - 0: disabled\n"
@@ -10454,175 +10473,175 @@ msgid ""
 "This requires CABAC."
 msgstr ""
 
-#: modules/codec/x264.c:328
+#: modules/codec/x264.c:343
 msgid "Early SKIP detection on P-frames"
 msgstr ""
 
-#: modules/codec/x264.c:329
+#: modules/codec/x264.c:344
 msgid "Early SKIP detection on P-frames."
 msgstr ""
 
-#: modules/codec/x264.c:331
+#: modules/codec/x264.c:346
 msgid "Coefficient thresholding on P-frames"
 msgstr ""
 
-#: modules/codec/x264.c:332
+#: modules/codec/x264.c:347
 msgid ""
 "Coefficient thresholding on P-frames.Eliminate dct blocks containing only a "
 "small single coefficient."
 msgstr ""
 
-#: modules/codec/x264.c:337
+#: modules/codec/x264.c:352
 msgid ""
 "Dct-domain noise reduction. Adaptive pseudo-deadzone. 10 to 1000 seems to be "
 "a useful range."
 msgstr ""
 
-#: modules/codec/x264.c:341
+#: modules/codec/x264.c:356
 msgid "Inter luma quantization deadzone"
 msgstr ""
 
-#: modules/codec/x264.c:342
+#: modules/codec/x264.c:357
 msgid "Set the size of the inter luma quantization deadzone. Range 0 to 32."
 msgstr ""
 
-#: modules/codec/x264.c:345
+#: modules/codec/x264.c:360
 msgid "Intra luma quantization deadzone"
 msgstr ""
 
-#: modules/codec/x264.c:346
+#: modules/codec/x264.c:361
 msgid "Set the size of the intra luma quantization deadzone. Range 0 to 32."
 msgstr ""
 
-#: modules/codec/x264.c:353
+#: modules/codec/x264.c:368
 msgid "Non-deterministic optimizations when threaded"
 msgstr ""
 
-#: modules/codec/x264.c:354
+#: modules/codec/x264.c:369
 msgid "Slightly improve quality of SMP, at the cost of repeatability."
 msgstr ""
 
-#: modules/codec/x264.c:358
+#: modules/codec/x264.c:373
 msgid "CPU optimizations"
 msgstr "CPU 최적화"
 
-#: modules/codec/x264.c:359
+#: modules/codec/x264.c:374
 msgid "Use assembler CPU optimizations."
 msgstr "어셈블러 CPU 최적화 사용."
 
-#: modules/codec/x264.c:361
+#: modules/codec/x264.c:376
 msgid "Filename for 2 pass stats file"
 msgstr "2 패스 통계 파일 파일명"
 
-#: modules/codec/x264.c:362
+#: modules/codec/x264.c:377
 msgid "Filename for 2 pass stats file for multi-pass encoding."
 msgstr ""
 
-#: modules/codec/x264.c:364
+#: modules/codec/x264.c:379
 msgid "PSNR computation"
 msgstr "PSNR 계산"
 
-#: modules/codec/x264.c:365
+#: modules/codec/x264.c:380
 msgid ""
 "Compute and print PSNR stats. This has no effect on the actual encoding "
 "quality."
 msgstr ""
 
-#: modules/codec/x264.c:368
+#: modules/codec/x264.c:383
 msgid "SSIM computation"
 msgstr "SSIM 계산"
 
-#: modules/codec/x264.c:369
+#: modules/codec/x264.c:384
 msgid ""
 "Compute and print SSIM stats. This has no effect on the actual encoding "
 "quality."
 msgstr ""
 
-#: modules/codec/x264.c:372
+#: modules/codec/x264.c:387
 msgid "Quiet mode"
 msgstr "무소음 모드"
 
-#: modules/codec/x264.c:373
+#: modules/codec/x264.c:388
 msgid "Quiet mode."
 msgstr "무소음 모드."
 
-#: modules/codec/x264.c:375 modules/gui/macosx/playlistinfo.m:82
+#: modules/codec/x264.c:390 modules/gui/macosx/playlistinfo.m:82
 #: modules/gui/qt4/ui/streampanel.h:171
 msgid "Statistics"
 msgstr "통계"
 
-#: modules/codec/x264.c:376
+#: modules/codec/x264.c:391
 msgid "Print stats for each frame."
 msgstr "각각의 프레임 통계 인쇄."
 
-#: modules/codec/x264.c:379
+#: modules/codec/x264.c:394
 msgid "SPS and PPS id numbers"
 msgstr "SPS 와 PPS ID 번호"
 
-#: modules/codec/x264.c:380
+#: modules/codec/x264.c:395
 msgid ""
 "Set SPS and PPS id numbers to allow concatenating streams with different "
 "settings."
 msgstr ""
 
-#: modules/codec/x264.c:384
+#: modules/codec/x264.c:399
 msgid "Access unit delimiters"
 msgstr "접근 유닛 제한자"
 
-#: modules/codec/x264.c:385
+#: modules/codec/x264.c:400
 msgid "Generate access unit delimiter NAL units."
 msgstr ""
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "dia"
 msgstr "dia"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "hex"
 msgstr "hex"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "umh"
 msgstr "umh"
 
-#: modules/codec/x264.c:391 modules/codec/x264.c:398
+#: modules/codec/x264.c:406 modules/codec/x264.c:413
 msgid "esa"
 msgstr "esa"
 
-#: modules/codec/x264.c:398
+#: modules/codec/x264.c:413
 msgid "tesa"
 msgstr ""
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "fast"
 msgstr "fast"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "normal"
 msgstr "normal"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "slow"
 msgstr "slow"
 
-#: modules/codec/x264.c:404
+#: modules/codec/x264.c:427
 msgid "all"
 msgstr "all"
 
-#: modules/codec/x264.c:410 modules/codec/x264.c:415
+#: modules/codec/x264.c:433 modules/codec/x264.c:438
 msgid "spatial"
 msgstr "spatial"
 
-#: modules/codec/x264.c:410 modules/codec/x264.c:415
+#: modules/codec/x264.c:433 modules/codec/x264.c:438
 msgid "temporal"
 msgstr "temporal"
 
-#: modules/codec/x264.c:410 modules/gui/pda/pda_interface.c:741
+#: modules/codec/x264.c:433 modules/gui/pda/pda_interface.c:741
 #: modules/video_filter/mosaic.c:168
 msgid "auto"
 msgstr "auto"
 
-#: modules/codec/x264.c:419
+#: modules/codec/x264.c:442
 msgid "H.264/MPEG4 AVC encoder (x264)"
 msgstr "H.264/MPEG4 AVC 인코더 (x264)"
 
@@ -12611,7 +12630,7 @@ msgstr "창"
 #: modules/gui/macosx/wizard.m:1154 modules/gui/macosx/wizard.m:1677
 #: modules/gui/macosx/wizard.m:1685 modules/gui/macosx/wizard.m:1866
 #: modules/gui/macosx/wizard.m:1877 modules/gui/macosx/wizard.m:1890
-#: modules/gui/qt4/components/open_panels.cpp:1314
+#: modules/gui/qt4/components/open_panels.cpp:1315
 #: modules/gui/qt4/components/preferences_widgets.cpp:1366
 #: modules/gui/qt4/main_interface.cpp:552
 msgid "OK"
@@ -13716,7 +13735,7 @@ msgid "Choose..."
 msgstr "선택..."
 
 #: modules/gui/macosx/open.m:189
-#: modules/gui/qt4/components/open_panels.cpp:928
+#: modules/gui/qt4/components/open_panels.cpp:929
 msgid "Device name"
 msgstr "장치 이름"
 
@@ -14095,55 +14114,55 @@ msgid "Codec Details"
 msgstr "코덱 상세정보"
 
 #: modules/gui/macosx/playlistinfo.m:98
-#: modules/gui/qt4/components/info_panels.cpp:524
+#: modules/gui/qt4/components/info_panels.cpp:525
 msgid "Read at media"
 msgstr ""
 
 #: modules/gui/macosx/playlistinfo.m:99
-#: modules/gui/qt4/components/info_panels.cpp:526
+#: modules/gui/qt4/components/info_panels.cpp:527
 msgid "Input bitrate"
 msgstr "입력 비트레이트"
 
 #: modules/gui/macosx/playlistinfo.m:100
-#: modules/gui/qt4/components/info_panels.cpp:528
+#: modules/gui/qt4/components/info_panels.cpp:529
 msgid "Demuxed"
 msgstr ""
 
 #: modules/gui/macosx/playlistinfo.m:101
-#: modules/gui/qt4/components/info_panels.cpp:529
+#: modules/gui/qt4/components/info_panels.cpp:530
 msgid "Stream bitrate"
 msgstr "스트림 비트레이트"
 
 #: modules/gui/macosx/playlistinfo.m:104 modules/gui/macosx/playlistinfo.m:115
-#: modules/gui/qt4/components/info_panels.cpp:536
-#: modules/gui/qt4/components/info_panels.cpp:549
+#: modules/gui/qt4/components/info_panels.cpp:537
+#: modules/gui/qt4/components/info_panels.cpp:550
 msgid "Decoded blocks"
 msgstr "디코딩된 블록"
 
 #: modules/gui/macosx/playlistinfo.m:105
-#: modules/gui/qt4/components/info_panels.cpp:538
+#: modules/gui/qt4/components/info_panels.cpp:539
 msgid "Displayed frames"
 msgstr "표시된 프레임"
 
 #: modules/gui/macosx/playlistinfo.m:106
-#: modules/gui/qt4/components/info_panels.cpp:540
+#: modules/gui/qt4/components/info_panels.cpp:541
 msgid "Lost frames"
 msgstr "잃어버린 프레임"
 
 #: modules/gui/macosx/playlistinfo.m:109 modules/gui/macosx/wizard.m:363
-#: modules/gui/qt4/components/info_panels.cpp:522
+#: modules/gui/qt4/components/info_panels.cpp:523
 #: modules/gui/qt4/dialogs_provider.cpp:608
 #: modules/video_filter/deinterlace.c:147
 msgid "Streaming"
 msgstr "스트리밍"
 
 #: modules/gui/macosx/playlistinfo.m:110
-#: modules/gui/qt4/components/info_panels.cpp:543
+#: modules/gui/qt4/components/info_panels.cpp:544
 msgid "Sent packets"
 msgstr "전송한 패킷"
 
 #: modules/gui/macosx/playlistinfo.m:111
-#: modules/gui/qt4/components/info_panels.cpp:544
+#: modules/gui/qt4/components/info_panels.cpp:545
 msgid "Sent bytes"
 msgstr "전송한 바이트"
 
@@ -14152,12 +14171,12 @@ msgid "Send rate"
 msgstr "전송률"
 
 #: modules/gui/macosx/playlistinfo.m:116
-#: modules/gui/qt4/components/info_panels.cpp:551
+#: modules/gui/qt4/components/info_panels.cpp:552
 msgid "Played buffers"
 msgstr "재생된 버퍼"
 
 #: modules/gui/macosx/playlistinfo.m:117
-#: modules/gui/qt4/components/info_panels.cpp:553
+#: modules/gui/qt4/components/info_panels.cpp:554
 msgid "Lost buffers"
 msgstr "잃어버린 버퍼"
 
@@ -16063,19 +16082,19 @@ msgid ""
 "Muxer, Audio and Video Codecs, Subtitles are shown."
 msgstr ""
 
-#: modules/gui/qt4/components/info_panels.cpp:495
+#: modules/gui/qt4/components/info_panels.cpp:496
 msgid "Statistics about the currently playing media or stream."
 msgstr ""
 
-#: modules/gui/qt4/components/info_panels.cpp:531
+#: modules/gui/qt4/components/info_panels.cpp:532
 msgid "Corrupted"
 msgstr "손상됨"
 
-#: modules/gui/qt4/components/info_panels.cpp:533
+#: modules/gui/qt4/components/info_panels.cpp:534
 msgid "Discontinuities"
 msgstr ""
 
-#: modules/gui/qt4/components/info_panels.cpp:546
+#: modules/gui/qt4/components/info_panels.cpp:547
 msgid "Sent bitrate"
 msgstr "전송 비트레이트"
 
@@ -16126,54 +16145,54 @@ msgstr "자막 파일 열기"
 msgid "Eject the disc"
 msgstr "디스크 꺼내기"
 
-#: modules/gui/qt4/components/open_panels.cpp:725
-#: modules/gui/qt4/components/open_panels.cpp:985
+#: modules/gui/qt4/components/open_panels.cpp:726
+#: modules/gui/qt4/components/open_panels.cpp:986
 msgid "DVB Type:"
 msgstr "DVB 타입:"
 
-#: modules/gui/qt4/components/open_panels.cpp:751
-#: modules/gui/qt4/components/open_panels.cpp:1016
+#: modules/gui/qt4/components/open_panels.cpp:752
+#: modules/gui/qt4/components/open_panels.cpp:1017
 msgid "Transponder symbol rate"
 msgstr "트랜스폰더 심볼 레이트"
 
-#: modules/gui/qt4/components/open_panels.cpp:760
-#: modules/gui/qt4/components/open_panels.cpp:1025
+#: modules/gui/qt4/components/open_panels.cpp:761
+#: modules/gui/qt4/components/open_panels.cpp:1026
 msgid "Bandwidth"
 msgstr "대역폭"
 
-#: modules/gui/qt4/components/open_panels.cpp:875
+#: modules/gui/qt4/components/open_panels.cpp:876
 msgid "Channels:"
 msgstr "채널:"
 
-#: modules/gui/qt4/components/open_panels.cpp:886
+#: modules/gui/qt4/components/open_panels.cpp:887
 msgid "Selected ports:"
 msgstr "선택된 포트:"
 
-#: modules/gui/qt4/components/open_panels.cpp:889
+#: modules/gui/qt4/components/open_panels.cpp:890
 msgid ".*"
 msgstr ".*"
 
-#: modules/gui/qt4/components/open_panels.cpp:896
+#: modules/gui/qt4/components/open_panels.cpp:897
 msgid "Input caching:"
 msgstr "입력 캐싱:"
 
-#: modules/gui/qt4/components/open_panels.cpp:906
+#: modules/gui/qt4/components/open_panels.cpp:907
 msgid "Use VLC pace"
 msgstr "VLC 페이스 사용"
 
-#: modules/gui/qt4/components/open_panels.cpp:910
+#: modules/gui/qt4/components/open_panels.cpp:911
 msgid "Auto connnection"
 msgstr "자동 연결"
 
-#: modules/gui/qt4/components/open_panels.cpp:934
+#: modules/gui/qt4/components/open_panels.cpp:935
 msgid "Radio device name"
 msgstr "무선 장치 이름"
 
-#: modules/gui/qt4/components/open_panels.cpp:1066
+#: modules/gui/qt4/components/open_panels.cpp:1067
 msgid "Your display will be opened and played in order to stream or save it."
 msgstr ""
 
-#: modules/gui/qt4/components/open_panels.cpp:1288
+#: modules/gui/qt4/components/open_panels.cpp:1289
 msgid "Advanced Options"
 msgstr "고급 옵션"
 
@@ -17003,7 +17022,7 @@ msgstr "HTML 재생목록 (*.html)"
 msgid "Save playlist as..."
 msgstr "재생목록을 다른 이름으로 저장..."
 
-#: modules/gui/qt4/dialogs_provider.cpp:659
+#: modules/gui/qt4/dialogs_provider.cpp:658
 msgid "Open subtitles..."
 msgstr "자막 열기..."
 
@@ -18769,11 +18788,11 @@ msgstr ""
 "요.\n"
 "계정을 얻으려면 http://www.last.fm/join/ 를 방문하세요."
 
-#: modules/misc/audioscrobbler.c:834
+#: modules/misc/audioscrobbler.c:837
 msgid "last.fm: Authentication failed"
 msgstr "last.fm: 인증 실패"
 
-#: modules/misc/audioscrobbler.c:835
+#: modules/misc/audioscrobbler.c:838
 msgid ""
 "last.fm username or password is incorrect. Please verify your settings and "
 "relaunch VLC."
