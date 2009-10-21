@@ -6,6 +6,9 @@ Video outputs:
    regressions in most popular drivers
  * New deinterlacers based on yadif and yadif(x2) algorithms
 
+Decoders:
+ * Windows version supports now natively the WMA Professional codec, as it
+   didn't work in the packaged version of 1.0.2
 Encoders:
  * x264 has profile-limitter, like:
     #transcode{vcodec=h264,venc=x264{profile=baseline,level=12}..}
@@ -21,9 +24,6 @@ Input:
 
 Qt4 interface:
  * Fixes on the playlist and the stream output panels
-
-Mac OS X:
- * Fix Apple Remote support for OS X.6
 
 Translations:
  * Russian, Korean, Ukrainian, French, Polish, Slovak and Galician updates
