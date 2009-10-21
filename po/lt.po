@@ -4,20 +4,21 @@
 # This file is distributed under the same license as the vlc package.
 #
 # Mindaugas Baranauskas <embar@super.lt>, 2009.
+# Mindaugas Baranauskas <embar@micro.lt>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-20 23:08+0100\n"
-"PO-Revision-Date: 2009-09-04 21:37+0300\n"
-"Last-Translator: Mindaugas Baranauskas <embar@super.lt>\n"
-"Language-Team: lietuvių\n"
+"POT-Creation-Date: 2009-10-21 22:16+0100\n"
+"PO-Revision-Date: 2009-10-21 16:41+0300\n"
+"Last-Translator: Mindaugas Baranauskas <embar@micro.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
 "100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: include/vlc_common.h:869
 msgid ""
@@ -604,7 +605,7 @@ msgstr "Papildyti fonoteką"
 
 #: include/vlc_intf_strings.h:74
 msgid "Add file..."
-msgstr "Įdėti rinkmeną..."
+msgstr "Pridėti rinkmeną..."
 
 #: include/vlc_intf_strings.h:75
 msgid "Advanced open..."
@@ -612,7 +613,7 @@ msgstr "Sudėtingesnis atvėrimas..."
 
 #: include/vlc_intf_strings.h:76
 msgid "Add directory..."
-msgstr "Įdėti aplanką..."
+msgstr "Pridėti aplanką..."
 
 #: include/vlc_intf_strings.h:78
 msgid "Save Playlist to &File..."
@@ -4622,13 +4623,13 @@ msgid "Cancel"
 msgstr "Atšaukti"
 
 #: src/misc/update.c:1616
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Downloading... %s/%s - %.1f%% done"
 msgstr ""
 "%s\n"
-"Atsiunčiama... %s/%s %.1f%% atlikta"
+"Parsiunčiama... %s/%s - %.1f%% atlikta"
 
 #: src/misc/update.c:1633
 #, c-format
@@ -7313,9 +7314,8 @@ msgstr ""
 "naudoti „v4l2:// :input-slave=alsa://“ ar „v4l2:// :input-slave=oss://“."
 
 #: modules/access/v4l2.c:207
-#, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "Išvesties vaizdo santykis"
+msgstr "Vaizdo santykis n:m"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
@@ -7559,23 +7559,20 @@ msgid "Format to use in the playlist's \"title\" field."
 msgstr "Formatas, naudojamas grojaraščio laukelyje „pavadinimas“."
 
 #: modules/access/zip/zipstream.c:38
-#, fuzzy
 msgid "Media in Zip"
-msgstr "Garso ir vaizdo rinkmenos"
+msgstr "Kūrinys Zip archyve"
 
 #: modules/access/zip/zipstream.c:39
-#, fuzzy
 msgid "Path to the media in the Zip archive"
-msgstr "Kelias iki naudojamos išvaizdos rinkmenos."
+msgstr "Kelias iki kūrinio Zip archyve"
 
 #: modules/access/zip/zipstream.c:48
-#, fuzzy
 msgid "Zip files filter"
-msgstr "Praleisti kartojimo filtrą"
+msgstr "Zip rinkmenų filtras"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
+msgstr "Zip prieiga"
 
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
@@ -10452,9 +10449,8 @@ msgid ""
 msgstr ""
 
 #: modules/codec/x264.c:144
-#, fuzzy
 msgid "H.264 profile"
-msgstr "H.264 lygis"
+msgstr "H.264 profilis"
 
 #: modules/codec/x264.c:145
 msgid "Specify H.264 profile which limits are enforced overother settings"
@@ -11233,7 +11229,7 @@ msgstr ""
 
 #: modules/control/http/http.c:52
 msgid "Export album art as /art."
-msgstr ""
+msgstr "Eksportuoti albumų viršelius į /art."
 
 #: modules/control/http/http.c:54
 msgid ""
@@ -11401,7 +11397,7 @@ msgstr "Klaida"
 
 #: modules/control/rc.c:166
 msgid "Show stream position"
-msgstr "Rodyti sruto padėtį"
+msgstr "Rodyti srauto padėtį"
 
 #: modules/control/rc.c:167
 msgid ""
@@ -12462,7 +12458,7 @@ msgstr "Automatiškai groti grojaraščio turinį kai tik jis įkeliamas."
 
 #: modules/demux/playlist/playlist.c:44
 msgid "Show shoutcast adult content"
-msgstr ""
+msgstr "Rodyti suaugusiems skirtą tiesioginių laidų turinį"
 
 #: modules/demux/playlist/playlist.c:45
 msgid "Show NC17 rated video streams when using shoutcast video playlists."
@@ -17398,7 +17394,6 @@ msgid "Open playlist..."
 msgstr "Atverti grojaraštį..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xspf)"
 msgstr "XSPF grojaraštis (*.xspf)"
 
@@ -17728,7 +17723,7 @@ msgstr "Rodyti VLC grotuvą"
 
 #: modules/gui/qt4/menus.cpp:1045
 msgid "&Open Media"
-msgstr "&Atverti media"
+msgstr "&Atverti kūrinį"
 
 #: modules/gui/qt4/menus.cpp:1435
 msgid " - Empty - "
@@ -20342,11 +20337,11 @@ msgstr "Canal +"
 
 #: modules/services_discovery/shout.c:73
 msgid "Shoutcast Radio"
-msgstr ""
+msgstr "Tiesioginės radijo laidos"
 
 #: modules/services_discovery/shout.c:74
 msgid "Shoutcast TV"
-msgstr ""
+msgstr "Tiesioginės TV laidos"
 
 #: modules/services_discovery/shout.c:75
 msgid "Freebox TV"
@@ -20359,11 +20354,11 @@ msgstr "Prancūzijos televizija"
 
 #: modules/services_discovery/shout.c:110
 msgid "Shoutcast radio listings"
-msgstr ""
+msgstr "Tiesioginių radijo transliacijų sąrašai"
 
 #: modules/services_discovery/shout.c:117
 msgid "Shoutcast TV listings"
-msgstr ""
+msgstr "Tiesioginių TV transliacijų sąrašai"
 
 #: modules/services_discovery/shout.c:131
 msgid "Freebox TV listing (French ISP free.fr services)"
@@ -21839,9 +21834,8 @@ msgid ""
 msgstr ""
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Canvas"
-msgstr "Canal +"
+msgstr ""
 
 #: modules/video_filter/canvas.c:106
 msgid "Automatically resize and pad a video"
@@ -22061,9 +22055,8 @@ msgid "Number of pixels to padd to the right of the image after cropping."
 msgstr ""
 
 #: modules/video_filter/croppadd.c:79
-#, fuzzy
 msgid "Cropadd"
-msgstr "Apkirpimas"
+msgstr ""
 
 #: modules/video_filter/croppadd.c:80 modules/video_filter/scale.c:59
 #: modules/video_filter/swscale.c:68 modules/video_filter/swscale_maemo.c:52
