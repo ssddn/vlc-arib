@@ -177,7 +177,7 @@ typedef enum vlc_dialog {
                          "*.ogg;*.ogm;*.ogv;*.ogx;*.ps;" \
                          "*.rec;*.rm;*.rmvb;*.tod;*.ts;*.vob;*.wmv"
 
-#define EXTENSIONS_PLAYLIST "*.asx;*.b4s;*.m3u;*.pls;*.ram;*.vlc;*.xspf"
+#define EXTENSIONS_PLAYLIST "*.asx;*.b4s;*.ifo;*.m3u;*.pls;*.ram;*.vlc;*.xspf"
 
 #define EXTENSIONS_MEDIA EXTENSIONS_VIDEO ";" EXTENSIONS_AUDIO ";" \
                           EXTENSIONS_PLAYLIST
