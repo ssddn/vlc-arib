@@ -7,9 +7,9 @@
 # Gonçalo Cordeiro - Tagen Ata <localizacion@tagenata.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vlc 1.0.2\n"
+"Project-Id-Version: vlc 1.0.3\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-20 23:08+0100\n"
+"POT-Creation-Date: 2009-10-21 22:16+0100\n"
 "PO-Revision-Date: 2009-09-23 16:37+0200\n"
 "Last-Translator: Gonçalo Cordeiro <gonzalo@tagenata.com>\n"
 "Language-Team: Tagen Ata <localizacion@tagenata.com>\n"
@@ -4722,13 +4722,13 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: src/misc/update.c:1616
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Downloading... %s/%s - %.1f%% done"
 msgstr ""
 "%s\n"
-"Descargando... %s/%s %.1f%% feito"
+"Descargando... %s/%s - %.1f%% feito"
 
 #: src/misc/update.c:1633
 #, c-format
@@ -7552,17 +7552,17 @@ msgstr ""
 "'v4l2:// :input-slave=alsa://' ou 'v4l2:// :input-slave=oss://'."
 
 #: modules/access/v4l2.c:207
-#, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "Proporción de aspecto da imaxe de saída"
+msgstr "Proporción de aspecto da imaxe n:m"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
 msgstr ""
+"Define a proporción de aspecto que hai que usar. A predeterminada é 4:3"
 
 #: modules/access/v4l2.c:225
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 #: modules/access/v4l2.c:225
 msgid "READ"
@@ -7807,23 +7807,20 @@ msgid "Format to use in the playlist's \"title\" field."
 msgstr "Formato que se vai usar no campo Título da lista de reprodución."
 
 #: modules/access/zip/zipstream.c:38
-#, fuzzy
 msgid "Media in Zip"
-msgstr "Ficheiros multimedia"
+msgstr "Ficheiros multimedia no zip"
 
 #: modules/access/zip/zipstream.c:39
-#, fuzzy
 msgid "Path to the media in the Zip archive"
-msgstr "Camiño para a aparencia para usar."
+msgstr "Camiño para os ficheiros multimedia no arquivo zip"
 
 #: modules/access/zip/zipstream.c:48
-#, fuzzy
 msgid "Zip files filter"
-msgstr "Saltar o filtro bucle"
+msgstr "Filtro de arquivos zip"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
+msgstr "Acceso a Zip"
 
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
@@ -10861,7 +10858,6 @@ msgid "Keep some B-frames as references"
 msgstr "Manter algúns fotogramas B como referencia"
 
 #: modules/codec/x264.c:106
-#, fuzzy
 msgid ""
 "Allows B-frames to be used as references for predicting other frames. Keeps "
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
@@ -10872,7 +10868,10 @@ msgid ""
 msgstr ""
 "Permite o uso dos fotogramas B como referencia para prever outros "
 "fotogramas. Mantén o medio de dous fotogramas B consecutivos 2+ como "
-"referencia e reordena o fotograma adecuadamente."
+"referencia e reordena o fotograma adecuadamente.\n"
+" - ningún: Desactivado\n"
+" - estrito: Pirámide xerárquica estrita\n"
+" - normal: Non estrito (non é compatíbel con Blu-ray)\n"
 
 #: modules/codec/x264.c:114
 msgid ""
@@ -10948,13 +10947,14 @@ msgstr ""
 "51 tamén está permitido)."
 
 #: modules/codec/x264.c:144
-#, fuzzy
 msgid "H.264 profile"
-msgstr "Nivel H.264"
+msgstr "Perfil H.264"
 
 #: modules/codec/x264.c:145
 msgid "Specify H.264 profile which limits are enforced overother settings"
 msgstr ""
+"Especificar o perfil H.264 cuxos límites son forzados sobre outras "
+"configuracións"
 
 #: modules/codec/x264.c:152
 msgid "Interlaced mode"
@@ -18211,9 +18211,8 @@ msgid "Open playlist..."
 msgstr "Abrir lista de reprodución..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xspf)"
-msgstr "Lista de reprodución XSPF(*.xspf)"
+msgstr "Lista de reprodución XSPF (*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
 msgid "M3U playlist (*.m3u)"
@@ -22844,9 +22843,8 @@ msgstr ""
 "despois de escalalo."
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Canvas"
-msgstr "Canal +"
+msgstr "Lenzo"
 
 #: modules/video_filter/canvas.c:106
 msgid "Automatically resize and pad a video"
@@ -23083,9 +23081,8 @@ msgstr ""
 "Número de píxeles que se van engadir á dereita da imaxe despois do recorte."
 
 #: modules/video_filter/croppadd.c:79
-#, fuzzy
 msgid "Cropadd"
-msgstr "Recortar"
+msgstr "Recortar e engadir"
 
 #: modules/video_filter/croppadd.c:80 modules/video_filter/scale.c:59
 #: modules/video_filter/swscale.c:68 modules/video_filter/swscale_maemo.c:52
@@ -23094,7 +23091,7 @@ msgstr "Filtro de escalado de vídeo"
 
 #: modules/video_filter/croppadd.c:97
 msgid "Padd"
-msgstr "Engadir"
+msgstr "Recheo"
 
 #: modules/video_filter/deinterlace.c:116 modules/video_output/x11/xvmc.c:130
 msgid "Deinterlace mode"
