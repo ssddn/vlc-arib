@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-20 23:08+0100\n"
-"PO-Revision-Date: 2009-08-13 23:44-0300\n"
+"POT-Creation-Date: 2009-10-21 22:16+0100\n"
+"PO-Revision-Date: 2009-10-21 18:56-0300\n"
 "Last-Translator: Sidney Doria <ssdoria@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -7484,7 +7484,7 @@ msgstr ""
 #: modules/access/v4l2.c:207
 #, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "Proporção da fonte"
+msgstr "Proporção da imagem de saída"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
@@ -10328,9 +10328,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "Grego (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-#, fuzzy
 msgid "Greek (Windows-1253)"
-msgstr "Grego (Windows-1256)"
+msgstr "Grego (Windows-1253)"
 
 #: modules/codec/subtitles/subsdec.c:126
 msgid "Hebrew (ISO 8859-8)"
@@ -10954,7 +10953,6 @@ msgid "How AQ distributes bits"
 msgstr "Como o AQ distribui os bits"
 
 #: modules/codec/x264.c:193
-#, fuzzy
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10962,10 +10960,10 @@ msgid ""
 " - 2: uses log(var)^2 instead of log(var) and attempts to adapt strength per "
 "frame"
 msgstr ""
-"Define o modo de distribuição de bits para o AQ. Padrão 2\n"
+"Define o modo de distribuição de bits para o AQ. Padrão 1\n"
 " - 0: Desativar\n"
-" - 1: Evitar mover bits entre quadros\n"
-" - 2: Mover bits entre quadros"
+" - 1: Modo padrão atual do x264\n"
+" - 2: Usa log(var)^2 em vez de log(var) e tenta adaptar a força por quadro"
 
 #: modules/codec/x264.c:198
 msgid "Strength of AQ"
@@ -14687,10 +14685,8 @@ msgid "Treat as a pipe rather than as a file"
 msgstr "Tatar como um pipe em vez de um arquivo"
 
 #: modules/gui/macosx/open.m:185
-#, fuzzy
 msgid "Play another media synchronously"
-msgstr ""
-"Reproduzir outra mídia de forma síncrona (arquivo de áudio extra, etc.)"
+msgstr "Reproduzir outra mídia de forma síncrona"
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
@@ -14720,15 +14716,14 @@ msgid "IP Address"
 msgstr "Endereço IP"
 
 #: modules/gui/macosx/open.m:204
-#, fuzzy
 msgid ""
 "To Open a usual network stream (HTTP, RTSP, RTMP, MMS, FTP, etc.), just "
 "enter the URL in the field above. If you want to open a RTP or UDP stream, "
 "press the button below."
 msgstr ""
-"Para abrir um fluxo de rede normal (HTTP, RTSP, MMS, FTP, etc.), digite a "
-"URL no campo acima. Se desejar abrir um fluxo RTP ou UDP, pressione o botão "
-"abaixo."
+"Para abrir um fluxo de rede comum  (HTTP, RTSP, RTMP, MMS, FTP, etc.), "
+"digite a URL no campo acima. Se desejar abrir um fluxo RTP ou UDP, pressione "
+"o botão abaixo."
 
 #: modules/gui/macosx/open.m:205
 msgid ""
@@ -17665,7 +17660,7 @@ msgstr "Autores"
 
 #: modules/gui/qt4/dialogs/help.cpp:165
 msgid "Thanks"
-msgstr "Obrigado"
+msgstr "Agradecimentos"
 
 #: modules/gui/qt4/dialogs/help.cpp:203
 msgid "VLC media player updates"
@@ -18105,12 +18100,11 @@ msgstr "Abrir lista de reprodução..."
 #: modules/gui/qt4/dialogs_provider.cpp:535
 #, fuzzy
 msgid "XSPF playlist (*.xspf)"
-msgstr "Lista de reprodução XSPF (*.xspf);; "
+msgstr "Lista de reprodução XSPF (*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
-#, fuzzy
 msgid "M3U playlist (*.m3u)"
-msgstr "Lista de reprodução M3U (*.m3u);;"
+msgstr "Lista de reprodução M3U (*.m3u)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:537
 msgid "HTML playlist (*.html)"
@@ -18985,9 +18979,8 @@ msgid "Save volume on exit"
 msgstr "Salvar o volume ao sair"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:343
-#, fuzzy
 msgid "Preferred audio language"
-msgstr "Língua de áudio preferida"
+msgstr "Idioma de áudio preferido"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:344 modules/gui/qt4/ui/sprefs_video.h:284
 msgid "Output"
@@ -19038,9 +19031,8 @@ msgid "Allow only one instance"
 msgstr "Permitir somente uma instância"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:317
-#, fuzzy
 msgid "File associations:"
-msgstr "Associações com arquivos:"
+msgstr "Associações de arquivos:"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:318
 msgid "Enqueue files when in one instance mode"
@@ -19079,7 +19071,6 @@ msgid "This is VLC's default interface, with a native look and feel."
 msgstr "Esta é a interface padrão do VLC com o aspecto nativo."
 
 #: modules/gui/qt4/ui/sprefs_interface.h:332
-#, fuzzy
 msgid "Display mode"
 msgstr "Modo de exibição"
 
@@ -19097,9 +19088,8 @@ msgid "Skins"
 msgstr "Capas"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:337
-#, fuzzy
 msgid "Skin file"
-msgstr "Falha na sessão"
+msgstr "Arquivo de capa"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:340
 msgid "Resize interface to video size"
@@ -22672,40 +22662,36 @@ msgid "Bluescreen"
 msgstr "Tela azul"
 
 #: modules/video_filter/canvas.c:84
-#, fuzzy
 msgid "Output width"
-msgstr "Largura da saída de vídeo."
+msgstr "Largura da saída"
 
 #: modules/video_filter/canvas.c:86
-#, fuzzy
 msgid "Output (canvas) image width"
-msgstr "Largura da saída de vídeo."
+msgstr "Largura da imagem de saída"
 
 #: modules/video_filter/canvas.c:87
-#, fuzzy
 msgid "Output height"
-msgstr "Altura da saída de vídeo."
+msgstr "Altura da saída"
 
 #: modules/video_filter/canvas.c:89
-#, fuzzy
 msgid "Output (canvas) image height"
-msgstr "Altura da saída de vídeo."
+msgstr "Altura da imagem de saída"
 
 #: modules/video_filter/canvas.c:90
-#, fuzzy
 msgid "Output picture aspect ratio"
-msgstr "Proporção da fonte"
+msgstr "Proporção da imagem de saída"
 
 #: modules/video_filter/canvas.c:92
 msgid ""
 "Set the canvas' picture aspect ratio. If omitted, the canvas is assumed to "
 "have the same SAR as the input."
 msgstr ""
+"Ajusta a proporção da imagem. Se omitido, a tela assumirá o mesmo SAR da "
+"entrada."
 
 #: modules/video_filter/canvas.c:94
-#, fuzzy
 msgid "Pad video"
-msgstr "Vídeo Padd"
+msgstr "Realinhamento de vídeo"
 
 #: modules/video_filter/canvas.c:96
 msgid ""
@@ -22722,7 +22708,6 @@ msgid "Canvas"
 msgstr "Canal +"
 
 #: modules/video_filter/canvas.c:106
-#, fuzzy
 msgid "Automatically resize and pad a video"
 msgstr "Redimensiona e realinha automaticamente um vídeo"
 
