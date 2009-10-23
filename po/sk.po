@@ -1,15 +1,15 @@
-# Copyright (C) 2006 the VideoLAN team
+# Copyright (C) 2006-2009 the VideoLAN team
 # This file is distributed under the same license as the VLC package.
-# FIRST AUTHOR <PODNETY-AT-MOJEPREKLADY.NET>, 2006.
+# FIRST AUTHOR <WWW.MOJEPREKLADY.NET>, 2006-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Slovak translation for VLC Media Player\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-20 23:08+0100\n"
-"PO-Revision-Date: 2009-09-24 21:18+0100\n"
-"Last-Translator: Marián Hikaník <podnety-at-mojepreklady.net>\n"
-"Language-Team: Marián Hikaník, translation controlled by: Pavel Kříž\n"
+"POT-Creation-Date: 2009-10-21 22:16+0100\n"
+"PO-Revision-Date: 2009-10-23 12:54+0100\n"
+"Last-Translator: Marián Hikaník <www.mojepreklady.net>\n"
+"Language-Team: Marián Hikaník (controlled by Pavel Kříž)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4753,13 +4753,13 @@ msgid "Cancel"
 msgstr "Storno"
 
 #: src/misc/update.c:1616
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Downloading... %s/%s - %.1f%% done"
 msgstr ""
 "%s\n"
-"Prebieha sťahovanie... hotových: %s/%s %.1f%%"
+"Prebieha sťahovanie... hotových: %s/%s - %.1f%%"
 
 #: src/misc/update.c:1633
 #, c-format
@@ -7604,17 +7604,17 @@ msgstr ""
 "alebo 'v4l2:// :input-slave=oss://'."
 
 #: modules/access/v4l2.c:207
-#, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "Stranový pomer obrázka na výstupe"
+msgstr "Stranový pomer obrázka n:m"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
 msgstr ""
+"Definovať použitý stranový pomer vstupného obrázka. Predvolený pomer je 4:3"
 
 #: modules/access/v4l2.c:225
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 #: modules/access/v4l2.c:225
 msgid "READ"
@@ -7858,23 +7858,20 @@ msgid "Format to use in the playlist's \"title\" field."
 msgstr "Formát, ktorý sa bude používať v playliste, v políčku \"title\""
 
 #: modules/access/zip/zipstream.c:38
-#, fuzzy
 msgid "Media in Zip"
-msgstr "Súbory s médiami"
+msgstr "Médium v ZIP archíve"
 
 #: modules/access/zip/zipstream.c:39
-#, fuzzy
 msgid "Path to the media in the Zip archive"
-msgstr "Cesta k súboru s týmto vzhľadom."
+msgstr "Cesta k médiu v ZIP archíve"
 
 #: modules/access/zip/zipstream.c:48
-#, fuzzy
 msgid "Zip files filter"
-msgstr "Filter pre preskakovanie slučiek"
+msgstr "Filter súborov v ZIP archíve"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
+msgstr "Prístup ZIP"
 
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
@@ -10900,7 +10897,6 @@ msgid "Keep some B-frames as references"
 msgstr "Ponechať niektoré B-snímky ako referenčné"
 
 #: modules/codec/x264.c:106
-#, fuzzy
 msgid ""
 "Allows B-frames to be used as references for predicting other frames. Keeps "
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
@@ -10909,8 +10905,13 @@ msgid ""
 " - strict: Strictly hierarchical pyramid\n"
 " - normal: Non-strict (not Blu-ray compatible)\n"
 msgstr ""
-"Povoľuje použitie B-snímok ako referenčných. Podľa výskytu referenčných "
-"snímok možno v predstihu predpovedať výskyt iných snímok. "
+"Povoľuje použitie B-snímok ako referenčných pre predikciu ostatných snímok. "
+"Zachováva stred z 2+ konzekutívnych B-snímok ako referenciu a príslušný "
+"spôsobom zmení usporiadanie snímok.\n"
+" - žiadne: zablokované\n"
+" - sktriktné: prísne hierarchická pyramída\n"
+" - normálne: nie je striktne určené (avšak je nekompatibilné s formátom Blu-"
+"ray)\n"
 
 #: modules/codec/x264.c:114
 msgid ""
@@ -10918,8 +10919,9 @@ msgid ""
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
 "appropriately."
 msgstr ""
-"Povoľuje použitie B-snímok ako referenčných. Podľa výskytu referenčných "
-"snímok možno v predstihu predpovedať výskyt iných snímok. "
+"Povoľuje použitie B-snímok ako referenčných pre predikciu ďalších snímok. "
+"Zachováva stred 2+ konzekutívnych B-snímok ako referencie a príslušným "
+"spôsobom mení usporiadanie snímok."
 
 #: modules/codec/x264.c:119
 msgid "CABAC"
@@ -10985,13 +10987,14 @@ msgstr ""
 "od 1 do 5.1 (hodnoty od 10 do 51 sú tiež povolené)."
 
 #: modules/codec/x264.c:144
-#, fuzzy
 msgid "H.264 profile"
-msgstr "Úroveň H.264"
+msgstr "Profil H.264"
 
 #: modules/codec/x264.c:145
 msgid "Specify H.264 profile which limits are enforced overother settings"
 msgstr ""
+"Zadajte profil H.264, ktorého limity majú prednosť pred ostatnými "
+"nastaveniami"
 
 #: modules/codec/x264.c:152
 msgid "Interlaced mode"
@@ -18298,7 +18301,6 @@ msgid "Open playlist..."
 msgstr "Otvoriť playlist..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xspf)"
 msgstr "XSPF playlist (*.xspf)"
 
@@ -22952,9 +22954,8 @@ msgstr ""
 "zmestilo na plátno."
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Canvas"
-msgstr "Canal +"
+msgstr "Plátno"
 
 #: modules/video_filter/canvas.c:106
 msgid "Automatically resize and pad a video"
@@ -23190,9 +23191,8 @@ msgstr ""
 "Počet pixelov, ktoré sa pridajú do pravej časti po odstrihnutí obrázka."
 
 #: modules/video_filter/croppadd.c:79
-#, fuzzy
 msgid "Cropadd"
-msgstr "Vystrihnúť"
+msgstr "Zväčšiť odstrihnutie"
 
 #: modules/video_filter/croppadd.c:80 modules/video_filter/scale.c:59
 #: modules/video_filter/swscale.c:68 modules/video_filter/swscale_maemo.c:52
