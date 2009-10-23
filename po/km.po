@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2009-10-20 23:08+0100\n"
-"PO-Revision-Date: 2009-06-11 08:17+0700\n"
+"POT-Creation-Date: 2009-10-21 22:16+0100\n"
+"PO-Revision-Date: 2009-10-23 09:25+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
 "MIME-Version: 1.0\n"
@@ -4505,13 +4505,13 @@ msgid "Cancel"
 msgstr "បោះបង់"
 
 #: src/misc/update.c:1616
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Downloading... %s/%s - %.1f%% done"
 msgstr ""
 "%s\n"
-"កំពុង​ទាញយក... បាន %s/%s %.1f%%"
+"កំពុង​ទាញយក... %s/%s - %.1f%% បាន​ធ្វើ​រួច"
 
 #: src/misc/update.c:1633
 #, c-format
@@ -7173,17 +7173,16 @@ msgstr ""
 "slave=alsa://' or 'v4l2:// :input-slave=oss://' ជំនួស​វិញ ។"
 
 #: modules/access/v4l2.c:207
-#, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "សមាមាត្រ​ទិដ្ឋភាព​ប្រភព"
+msgstr "មាត្រដ្ឋាន​រូបភាព n:m"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
-msgstr ""
+msgstr "កំណត់​សមាមាត្រ​រូបភាព​បញ្ចូល​ត្រូវ​ប្រើ ។ លំនាំដើម​គឺ 4:3"
 
 #: modules/access/v4l2.c:225
 msgid "AUTO"
-msgstr ""
+msgstr "ស្វ័យ​ប្រវត្តិ"
 
 #: modules/access/v4l2.c:225
 msgid "READ"
@@ -7423,23 +7422,20 @@ msgid "Format to use in the playlist's \"title\" field."
 msgstr "ទ្រង់ទ្រាយ​ដែល​ត្រូវប្រើ​នៅ​ក្នុង​វាល \"ចំណងជើង\" របស់​បញ្ជី​ចាក់ ។"
 
 #: modules/access/zip/zipstream.c:38
-#, fuzzy
 msgid "Media in Zip"
-msgstr "ឯកសារ​មេឌៀ"
+msgstr "មេឌៀ​ក្នុង Zip"
 
 #: modules/access/zip/zipstream.c:39
-#, fuzzy
 msgid "Path to the media in the Zip archive"
-msgstr "ផ្លូវ​ទៅកាន់​ស្បែក​ដែល​ត្រូវ​ប្រើ ។"
+msgstr "ផ្លូវ​ទៅកាន់​មេឌៀ​នៅ​ក្នុង​ប័ណ្ណសារ Zip"
 
 #: modules/access/zip/zipstream.c:48
-#, fuzzy
 msgid "Zip files filter"
-msgstr "រំលង​តម្រង​រង្វិល​ជុំ"
+msgstr "តម្រង​ឯកសារ Zip"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
+msgstr "ចូលដំណើរការ Zip"
 
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
@@ -9698,13 +9694,15 @@ msgstr "កម្មវិធី​បង្ហាញ​ចំណងជើង​
 
 #: modules/codec/libass.c:726
 msgid "Building font cache"
-msgstr ""
+msgstr "ស្ថាបនា​ឃ្លាំងសម្ងាត់​ពុម្ពអក្សរ"
 
 #: modules/codec/libass.c:727
 msgid ""
 "Please wait while your font cache is rebuild.\n"
 "This should take less than a minute."
 msgstr ""
+"សូម​រង់ចាំ ខណៈពេល​ដែល​​ឃ្លាំង​សម្ងាត់​ពុម្ពអក្សរ​របស់​អ្នក​ត្រូវ​បាន​ស្ថាបនា ។\n"
+"វា​គួរ​តែ​ចំណាយ​ពេល​តិចតួច ។"
 
 #: modules/codec/libmpeg2.c:127
 msgid "MPEG I/II video decoder (using libmpeg2)"
@@ -9939,9 +9937,8 @@ msgid "Greek (ISO 8859-7)"
 msgstr "ក្រិក (ISO 8859-7)"
 
 #: modules/codec/subtitles/subsdec.c:124
-#, fuzzy
 msgid "Greek (Windows-1253)"
-msgstr "ក្រិក (Windows-1256)"
+msgstr "ក្រិក (Windows-1253)"
 
 #: modules/codec/subtitles/subsdec.c:126
 msgid "Hebrew (ISO 8859-8)"
@@ -10004,9 +10001,8 @@ msgid "Japanese (Shift JIS)"
 msgstr "ជប៉ុន (Shift JIS)"
 
 #: modules/codec/subtitles/subsdec.c:150
-#, fuzzy
 msgid "Korean (EUC-KR/CP949)"
-msgstr "កូរ៉េ​យូនីក (EUC-KR)"
+msgstr "កូរ៉េ (EUC-KR/CP949)"
 
 #: modules/codec/subtitles/subsdec.c:151
 msgid "Korean (ISO-2022-KR)"
@@ -10358,7 +10354,6 @@ msgid "Keep some B-frames as references"
 msgstr "រក្សាទុក​​ B-frames មួយ​ចំនួន​ជា​សេចក្ដី​យោង"
 
 #: modules/codec/x264.c:106
-#, fuzzy
 msgid ""
 "Allows B-frames to be used as references for predicting other frames. Keeps "
 "the middle of 2+ consecutive B-frames as a reference, and reorders frame "
@@ -10367,8 +10362,11 @@ msgid ""
 " - strict: Strictly hierarchical pyramid\n"
 " - normal: Non-strict (not Blu-ray compatible)\n"
 msgstr ""
-"អនុញ្ញាត​ឲ្យ​ប្រើ​ស៊ុម B-frames ជា​សេចក្ដី​យោង​សម្រាប់​ការ​ទស្សន៍ទាយ​ស៊ុម​ផ្សេង ។ ទុក​​កណ្ដាល 2+ "
-"consecutive B-frames ជា​សេចក្ដី​យោង និង​តម្រៀប​ស៊ុម​ឲ្យ​បាន​ត្រឹមត្រូវ​ឡើងវិញ ។"
+"អនុញ្ញាត​ឲ្យ B ត្រូវ​ប្រើ​ជា​សេចក្ដី​យោង​សម្រាប់ទាញ​ស៊ុម​ផ្សេង​ទៀត ។ ទុក​កណ្ដាល 2+ តៗគ្នា ស៊ុម B ជា​សេចក្ដី​"
+"យោង​ និង​តម្រៀប​ស៊ុម​ឡើង​វិញ​យ៉ាង​សមរម្យ ។\n"
+" - គ្មាន ៖ បិទ\n"
+" - ដាក់​កម្រិត ៖ ដាក់កម្រិត​ពីរ៉ាមីត​តាម​ឋានានុក្រម​យ៉ាង​តឹងរឹង\n"
+" - ធម្មតា ៖ គ្មាន​ការ​ដាក់​កម្រិត (មិនឆបគ្នា​នឹង​កាំរស្មី Blu)\n"
 
 #: modules/codec/x264.c:114
 msgid ""
@@ -10440,13 +10438,12 @@ msgstr ""
 "51 ក៏​ត្រូវបាន​អនុញ្ញាត​ដែរ) ។"
 
 #: modules/codec/x264.c:144
-#, fuzzy
 msgid "H.264 profile"
-msgstr "កម្រិត H.264"
+msgstr "ទម្រង់ H.264"
 
 #: modules/codec/x264.c:145
 msgid "Specify H.264 profile which limits are enforced overother settings"
-msgstr ""
+msgstr "បញ្ជាក់​ទម្រង់ H.264 ដែល​ដែល​កំណត់​ត្រូវ​បាន​បង្ខំ​លើ​ការ​កំណត់​ផ្សេង​ទៀត"
 
 #: modules/codec/x264.c:152
 msgid "Interlaced mode"
@@ -10540,7 +10537,6 @@ msgid "How AQ distributes bits"
 msgstr "អំពី​ប៊ីត​ចែកចាយ​របស់ AQ"
 
 #: modules/codec/x264.c:193
-#, fuzzy
 msgid ""
 "Defines bitdistribution mode for AQ, default 1\n"
 " - 0: Disabled\n"
@@ -10548,10 +10544,10 @@ msgid ""
 " - 2: uses log(var)^2 instead of log(var) and attempts to adapt strength per "
 "frame"
 msgstr ""
-"កំណត់​របៀប bitdistribution សម្រាប់ AQ លំនាំដើម 2\n"
-" - 0 ៖ បិទ\n"
-" - 1 ៖ ជៀសវាង​ពីការ​ផ្លាស់ទី​ប៊ីត រវាង​ស៊ុម​នីមួយៗ\n"
-" - 2 ៖ ផ្លាស់ទី​ប៊ីត​រវាង​ស៊ុម"
+"កំណត់​របៀប​ចែកចាយ​ប៊ីត​សម្រាប់ AQ លំនាំដើម ១\n"
+" - 0 ៖ បាន​បិទ\n"
+" - 1 ៖ របៀប​លំនាំដើម​ x264 បច្ចុប្បន្ន\n"
+" - 2 ៖ ប្រើ​កំណត់​ហេតុ(var)^2 ជំនួស​ឲ្យ​កំណត់​ហេតុ(var) និង​ប៉ុនប៉ង​សម្រួល​តាម​កម្លាំង​ក្នុង​មួយ​ស៊ុម"
 
 #: modules/codec/x264.c:198
 msgid "Strength of AQ"
@@ -14083,30 +14079,31 @@ msgstr ""
 
 #: modules/gui/macosx/macosx.m:90 modules/gui/macosx/simple_prefs.m:266
 msgid "Control playback with the Apple Remote"
-msgstr ""
+msgstr "ត្រួតពិនិត្យ​ការ​ចាក់​ឡើងវិញ​ដោយ​ប្រើ​វត្ថុ​បញ្ជា​ពី​ចម្ងាយ​របស់ Apple"
 
 #: modules/gui/macosx/macosx.m:91
 msgid "By default, VLC can be remotely controlled with the Apple Remote."
-msgstr ""
+msgstr "តាម​លំនាំដើម VLC អាច​ត្រូវ​បាន​ត្រួតពិនិត្យ​ពីចម្ងាយ​ដោយ​ប្រើ​ Apple ពី​ចម្ងាយ ។"
 
 #: modules/gui/macosx/macosx.m:93 modules/gui/macosx/simple_prefs.m:267
 msgid "Control playback with media keys"
-msgstr ""
+msgstr "ត្រួតពិនិត្យ​ការ​ចាក់​ឡើង​វិញ​ជា​មួយ​នឹង​សោ​មេឌៀ"
 
 #: modules/gui/macosx/macosx.m:94
 msgid ""
 "By default, VLC can be controlled using the media keys on modern Apple "
 "keyboards."
 msgstr ""
+"តាម​លំនាំដើម VLC អាច​ត្រូវ​បាន​ត្រួតពិនិត្យ ដោយ​ប្រើសោ​មេឌៀ​នៅ​លើ​ក្ដារចុច​របស់ Apple ដែល​ទំនើប ។"
 
 #: modules/gui/macosx/macosx.m:97
 msgid "Use media key control when VLC is in background"
-msgstr ""
+msgstr "ប្រើ​វត្ថុ​បញ្ជា​សោ​មេឌៀ​ នៅពេល​ដែល VLC ស្ថិត​ក្នុង​ផ្ទៃ​ខាងក្រោយ"
 
 #: modules/gui/macosx/macosx.m:98
 msgid ""
 "By default, VLC will accept media key events also when being in background."
-msgstr ""
+msgstr "តាម​លំនាំដើម VLC នឹង​ទទួល​ព្រឹត្តិការណ៍​សោ​មេឌៀ​​នៅពេល​កំពុង​ស្ថិត​ក្នុង​ផ្ទៃ​ខាងក្រោយ ។"
 
 #: modules/gui/macosx/macosx.m:102
 msgid "Mac OS X interface"
@@ -14159,9 +14156,8 @@ msgid "Treat as a pipe rather than as a file"
 msgstr "ចាត់ទុក​ជា​បំពង់ ប្រសើរ​ជាង​ឯកសារ"
 
 #: modules/gui/macosx/open.m:185
-#, fuzzy
 msgid "Play another media synchronously"
-msgstr "ចាក់​មេឌៀ​ផ្សេងទៀត​តំណាល​គ្នា (ឯកសារ​អូឌីយ៉ូ​បន្ថែម ...)"
+msgstr "ចាក់​មេឌៀ​ផ្សេង​ទៀត​ដំណាល​គ្នា"
 
 #: modules/gui/macosx/open.m:186 modules/gui/macosx/simple_prefs.m:273
 #: modules/gui/macosx/wizard.m:346 modules/gui/macosx/wizard.m:414
@@ -14191,14 +14187,13 @@ msgid "IP Address"
 msgstr "អាសយដ្ឋាន IP"
 
 #: modules/gui/macosx/open.m:204
-#, fuzzy
 msgid ""
 "To Open a usual network stream (HTTP, RTSP, RTMP, MMS, FTP, etc.), just "
 "enter the URL in the field above. If you want to open a RTP or UDP stream, "
 "press the button below."
 msgstr ""
-"ដើម្បី​បើក​ស្ទ្រីម​បណ្ដាញ​ធម្មតា (HTTP, RTSP, MMS, FTP, ។ល។) គ្រាន់​តែ​បញ្ចូល​URL នៅ​ក្នុង​វាល​ខាង​"
-"លើ ។ ប្រសិនបើ​​អ្នក​ចង់​បើក​ស្ទ្រីម RTP ឬ UDP ចុច​ប៊ូតុង​ខាង​ក្រោម ។"
+"ដើម្បី​ស្ទ្រីម​បណ្ដាញ​ធម្មតា (HTTP, RTSP, RTMP, MMS, FTP ។ល។) គ្រាប់​តែ​បញ្ចូល URL ក្នុង​វាល​ខាង​"
+"លើ ។ ប្រសិនបើ​អ្នក​ចង់​បើក​ស្ទ្រីម RTP ឬ UDP ចុច​ប៊ូតុង​ខាងក្រោម ។"
 
 #: modules/gui/macosx/open.m:205
 msgid ""
@@ -14820,7 +14815,7 @@ msgstr "អន្ដរ​អំពើ​ភាព​ឯកជន / បណ្ដ
 
 #: modules/gui/macosx/simple_prefs.m:268
 msgid "...when VLC is in background"
-msgstr ""
+msgstr "...នៅពេល VLC នៅ​ក្នុង​ផ្ទៃ​ខាងក្រោយ"
 
 #: modules/gui/macosx/simple_prefs.m:271
 msgid "Default Encoding"
@@ -17514,14 +17509,12 @@ msgid "Open playlist..."
 msgstr "បើក​បញ្ជី​ចាក់..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xspf)"
-msgstr "បញ្ជី​ចាក់ XSPF (*.xspf);; "
+msgstr "បញ្ជី​ចាក់ XSPF (*.xspf)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:536
-#, fuzzy
 msgid "M3U playlist (*.m3u)"
-msgstr "បញ្ជី​ចាក់ M3U (*.m3u);; "
+msgstr "បញ្ជីចាក់ M3U (*.m3u)"
 
 #: modules/gui/qt4/dialogs_provider.cpp:537
 msgid "HTML playlist (*.html)"
@@ -17946,19 +17939,17 @@ msgstr ""
 "ជម្រើស​នេះ​ដំណើរការ​តែ​ជាមួយ Windows និង X11 ទេ​ដោយ​មាន​ផ្នែក​បន្ថែម​សមាសធាតុ ។"
 
 #: modules/gui/qt4/qt4.cpp:113
-#, fuzzy
 msgid "Fullscreen controller opacity opacity between 0.1 and 1."
-msgstr "ភាព​ស្រអាប់​​បង្អួច​ពី 0.1 និង 1 ។"
+msgstr "ភាព​ស្រអាប់ ភាព​ស្រអាប់​វត្ថុ​បញ្ជា​ពេញ​អេក្រង់​រវាង ០.១ និង ១ ​។"
 
 #: modules/gui/qt4/qt4.cpp:114
-#, fuzzy
 msgid ""
 "Sets the fullscreen controller opacity between 0.1 and 1 for main interface, "
 "playlist and extended panel. This option only works with Windows and X11 "
 "with composite extensions."
 msgstr ""
-"កំណត់​ភាព​ស្រអាប់​របស់​បង្អួច​ពី 0.1 និង 1 សម្រាប់​ចំណុច​ប្រទាក់​មេឮ បញ្ជី​ចាក់ និង​បន្ទះ​ដែល​បាន​បន្ថែម ។ "
-"ជម្រើស​នេះ​ដំណើរការ​តែ​ជាមួយ Windows និង X11 ទេ​ដោយ​មាន​ផ្នែក​បន្ថែម​សមាសធាតុ ។"
+"កំណត់​ភាព​ស្រអាប់​​វត្ថុ​បញ្ជា​ពេញអេក្រង់​រវាង ០.១ និង ១ សម្រាប់​ចំណុច​ប្រទាប់​ចម្បងបញ្ជី​ចាក់ និង​បន្ទះ​"
+"ដែលបានពង្រីក ។ ជម្រើស​នេះ​ដំណើរការ​តែ​ជា​មួយ​នឹងវីនដូ និង​ X11 ដែល​មាន​ផ្នែក​បន្ថែម​ខុស​គ្នា ។"
 
 #: modules/gui/qt4/qt4.cpp:120
 msgid "Show unimportant error and warnings dialogs"
@@ -18387,9 +18378,8 @@ msgid "Save volume on exit"
 msgstr "រក្សាទុក​កម្រិត​សំឡេង​នៅពេល​ចេញ"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:343
-#, fuzzy
 msgid "Preferred audio language"
-msgstr "ភាសា​អូឌីយ៉ូ​សំណព្វ"
+msgstr "ភាសា​អូឌីយ៉ូ​​ដែល​ពេញចិត្ត"
 
 #: modules/gui/qt4/ui/sprefs_audio.h:344 modules/gui/qt4/ui/sprefs_video.h:284
 msgid "Output"
@@ -18440,7 +18430,6 @@ msgid "Allow only one instance"
 msgstr "អនុញ្ញាត​តែ​វត្ថុ​តែ​មួយ​ប៉ុណ្ណោះ"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:317
-#, fuzzy
 msgid "File associations:"
 msgstr "ការ​ភ្ជាប់​ឯកសារ ៖"
 
@@ -18481,7 +18470,6 @@ msgid "This is VLC's default interface, with a native look and feel."
 msgstr "នេះ​ជា​ចំណុច​ប្រទាក់​លំនាំដើម​របស់ VLC ដោយ​មាន​រូបរាង និង​តួនាទី​ដើម ។"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:332
-#, fuzzy
 msgid "Display mode"
 msgstr "របៀប​បង្ហាញ"
 
@@ -18499,9 +18487,8 @@ msgid "Skins"
 msgstr "ស្បែក"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:337
-#, fuzzy
 msgid "Skin file"
-msgstr "សម័យ​បាន​បរាជ័យ"
+msgstr "ឯកសារ​ស្បែក"
 
 #: modules/gui/qt4/ui/sprefs_interface.h:340
 msgid "Resize interface to video size"
@@ -21982,40 +21969,36 @@ msgid "Bluescreen"
 msgstr "អេក្រង់​ពណ៌​ខៀវ"
 
 #: modules/video_filter/canvas.c:84
-#, fuzzy
 msgid "Output width"
-msgstr "បង្ហាញ​ទទឹង​វីដេអូ ។"
+msgstr "ទទឹង​លទ្ធផល"
 
 #: modules/video_filter/canvas.c:86
-#, fuzzy
 msgid "Output (canvas) image width"
-msgstr "បង្ហាញ​ទទឹង​វីដេអូ ។"
+msgstr "ទទឹង​រូបភាព​លទ្ធផល (ផ្ទាំង​កំណាត់)"
 
 #: modules/video_filter/canvas.c:87
-#, fuzzy
 msgid "Output height"
-msgstr "បង្ហាញ​កម្ពស់​វីដេអូ ។"
+msgstr "កម្ពស់​លទ្ធផល"
 
 #: modules/video_filter/canvas.c:89
-#, fuzzy
 msgid "Output (canvas) image height"
-msgstr "បង្ហាញ​កម្ពស់​វីដេអូ ។"
+msgstr "កម្ពស់​រូបភាព​​លទ្ធផល (ផ្ទាំង​កំណាត់)"
 
 #: modules/video_filter/canvas.c:90
-#, fuzzy
 msgid "Output picture aspect ratio"
-msgstr "សមាមាត្រ​ទិដ្ឋភាព​ប្រភព"
+msgstr "សមាមាត្រ​រូបភាព​លទ្ធផល"
 
 #: modules/video_filter/canvas.c:92
 msgid ""
 "Set the canvas' picture aspect ratio. If omitted, the canvas is assumed to "
 "have the same SAR as the input."
 msgstr ""
+"កំណត់​សមាមាត្រ​​រូបភាព​របស់ផ្ទាំង​កំណាត់ ។ ប្រសិនបើ​បានលុប ផ្ទាំង​កំណាត់​ត្រូវ​បាន​សន្មត់​ថា​មាន​ SAR ដូច​គ្នា​នឹង​"
+"ការ​បញ្ចូល ។"
 
 #: modules/video_filter/canvas.c:94
-#, fuzzy
 msgid "Pad video"
-msgstr "ទ្រនាប់​វីដេអូ"
+msgstr "វីដេអូ​បន្ទះ"
 
 #: modules/video_filter/canvas.c:96
 msgid ""
@@ -22026,14 +22009,12 @@ msgstr ""
 "នឹង​ត្រូវ​បាន​ច្រឹប​ឲ្យ​សម​នឹង​ខ្សែកោង​បន្ទាប់ពីធ្វើ​មាត្រដ្ឋាន ។"
 
 #: modules/video_filter/canvas.c:105
-#, fuzzy
 msgid "Canvas"
-msgstr "Canal +"
+msgstr "ផ្ទាំង​កំណាត់"
 
 #: modules/video_filter/canvas.c:106
-#, fuzzy
 msgid "Automatically resize and pad a video"
-msgstr "ប្ដូរ​ទំហំ​ និង padd វីដេអូ​ដោយ​ស្វ័យប្រវត្តិ"
+msgstr "ផ្លាស់ប្ដូរ​ទំហំ​ និង​វីដេអូ​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
 #: modules/video_filter/chain.c:43
 msgid "Video filtering using a chain of video filter modules"
@@ -22253,9 +22234,8 @@ msgid "Number of pixels to padd to the right of the image after cropping."
 msgstr "ចំនួន​ភីកសែល​ដែល​ត្រូវ padd ទៅ​ខាង​ស្ដាំ​រូបភាព​បន្ទាប់​ពី​ច្រឹប ។"
 
 #: modules/video_filter/croppadd.c:79
-#, fuzzy
 msgid "Cropadd"
-msgstr "ច្រឹប"
+msgstr "Cropadd"
 
 #: modules/video_filter/croppadd.c:80 modules/video_filter/scale.c:59
 #: modules/video_filter/swscale.c:68 modules/video_filter/swscale_maemo.c:52
@@ -24380,136 +24360,3 @@ msgstr "តម្រង​ឧបករណ៍​ចាប់​សញ្ញា"
 #: modules/visualization/visual/visual.c:123
 msgid "Spectrum analyser"
 msgstr "កម្មវិធី​វិភាគ​​វិសាលគម"
-
-#~ msgid "Crash Report successfully sent"
-#~ msgstr "បាន​ផ្ញើ​របាយការណ៍​អំពី​ការ​គាំង​ដោយ​ជោគជ័យ"
-
-#~ msgid "Thanks for your report!"
-#~ msgstr "អរគុណ​ចំពោះ​ការ​រាយការណ៍​របស់​អ្នក !"
-
-#, fuzzy
-#~ msgid "Font size:"
-#~ msgstr "ទំហំ​ពុម្ពអក្សរ"
-
-#, fuzzy
-#~ msgid "Text alignment:"
-#~ msgstr "ការ​តម្រឹម Teletext"
-
-#, fuzzy
-#~ msgid "Output module:"
-#~ msgstr "ម៉ូឌុល​លទ្ធផល"
-
-#, fuzzy
-#~ msgid "Spatialization"
-#~ msgstr "រូបភាព​មើល​ឃើញ"
-
-#, fuzzy
-#~ msgid "Dolby Surround:"
-#~ msgstr "Dolby Surround"
-
-#, fuzzy
-#~ msgid "Processing"
-#~ msgstr "ការ​ដំណើរការ​តាម​ក្រោយ"
-
-#, fuzzy
-#~ msgid "Visualization:"
-#~ msgstr "រូបភាព​មើល​ឃើញ"
-
-#, fuzzy
-#~ msgid "Replay gain mode:"
-#~ msgstr "ចាក់​របៀប​កើនឡើង​ឡើងវិញ"
-
-#, fuzzy
-#~ msgid "Password:"
-#~ msgstr "ពាក្យ​សម្ងាត់"
-
-#, fuzzy
-#~ msgid "Username:"
-#~ msgstr "ឈ្មោះ​អ្នក​ប្រើ"
-
-#, fuzzy
-#~ msgid "Submit played tracks stats to Last.fm"
-#~ msgstr "ការ​ដាក់​ស្នើ​បទ​ចម្រៀង​ដែល​បាន​ចាក់​ទៅ last.fm"
-
-#, fuzzy
-#~ msgid "Album art download policy:"
-#~ msgstr "គោលការ​ទាញយក​សិល្បៈ​អាល់ប៊ុម"
-
-#, fuzzy
-#~ msgid "Every "
-#~ msgstr "ត្រួត​គ្នា"
-
-#, fuzzy
-#~ msgid "Menus language:"
-#~ msgstr "ភាសា​អូឌីយ៉ូ"
-
-#, fuzzy
-#~ msgid "Set up associations..."
-#~ msgstr "ការ​ភ្ជាប់​ឯកសារ ៖"
-
-#, fuzzy
-#~ msgid "Use custom skin"
-#~ msgstr "ជ្រើស​ស្បែក"
-
-#, fuzzy
-#~ msgid "Skin resource file:"
-#~ msgstr "ឯកសារ​ស្បែក"
-
-#, fuzzy
-#~ msgid "Show controls in full screen mode"
-#~ msgstr "បង្ហាញ​កម្មវិធី​បញ្ជា ក្នុង​របៀប​ពេញ​អេក្រង់"
-
-#, fuzzy
-#~ msgid "Show systray icon"
-#~ msgstr "រូបតំណាង​ថាស​ប្រព័ន្ធ"
-
-#, fuzzy
-#~ msgid "Force window style:"
-#~ msgstr "រចនាប័ទ្ម​ធាតុក្រាហ្វិក​បន្ទាប់ ៖"
-
-#, fuzzy
-#~ msgid "Use native style"
-#~ msgstr "ប្រើ​ឯកសារ​ចំណងជើង​រង"
-
-#, fuzzy
-#~ msgid "Enable On Screen Display (OSD)"
-#~ msgstr "បង្ហាញ​លើ​អេក្រង់"
-
-#, fuzzy
-#~ msgid "Show media title on video start"
-#~ msgstr "បង្ហាញ​ចំណងជើង​មេឌៀ​នៅ​លើ​វីដេអូ"
-
-#~ msgid ""
-#~ "New target video bitrate. Quality is ok for -10/15\\% of the "
-#~ "originalbitrate."
-#~ msgstr "អត្រាប៊ីត​វីដេអូ​គោលដៅ​ថ្មី ។ គុណភាព​គឺ​គ្មាន​បញ្ហា​សម្រាប់ -10/15\\% នៃ​អត្រាប៊ីត​ដើម ។"
-
-#~ msgid "Shaping delay"
-#~ msgstr "ពន្យាពេល​ការ​ធ្វើ​រូបរាង"
-
-#~ msgid "Amount of data used for transrating in ms."
-#~ msgstr "ចំនួន​ទិន្នន័យ​បានប្រើ​ដើម្បី​បកប្រែ​គិត​ជា​មិល្លីវិនាទី ។"
-
-#~ msgid "Use MPEG4 matrix"
-#~ msgstr "ប្រើ​ម៉ាទ្រីស MPEG4"
-
-#~ msgid "Use the MPEG4 quantification matrix."
-#~ msgstr "ប្រើ​ម៉ាទ្រីស​កំណត់​គុណភាព MPEG4 ។"
-
-#~ msgid "MPEG2 video transrating stream output"
-#~ msgstr "លទ្ធផល​ស្ទ្រីម​បកប្រែ​វីដេអូ MPEG2"
-
-#~ msgid "Transrate"
-#~ msgstr "បកប្រែ"
-
-#~ msgid "Set aspect (like 4:3) of the video canvas"
-#~ msgstr "កំណត់​ទិដ្ឋភាព (ដូចជា 4:3) របស់​ផ្ទាំង​កំណត់​វីដេអូ"
-
-#~ msgid "Audio format for MPEG4 (useable with MPEG TS and MPEG4)"
-#~ msgstr "ទ្រង់ទ្រាយ​អូឌីយ៉ូ​សម្រាប់ MPEG4 (អាច​ប្រើបាន​ជាមួយ MPEG TS និង MPEG4)"
-
-#~ msgid "Path to use in openfile dialog"
-#~ msgstr "ផ្លូវ​ដែល​ត្រូវ​ប្រើ​ក្នុង​ប្រអប់ បើក​ឯកសារ"
-
-#~ msgid "VIDEO_TS directory"
-#~ msgstr "ថត VIDEO_TS"
