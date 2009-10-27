@@ -804,6 +804,11 @@ libtheora: libtheora-$(THEORA_VERSION).tar.bz2
 ifdef HAVE_WIN32
 	patch -p0 < Patches/theora-doc.patch
 endif
+ifdef HAVE_DARWIN_OS
+ifndef HAVE_DARWIN_10
+	patch -p0 < Patches/libtheora-xcode31.patch
+endif
+endif
 	(cd $@; autoconf)
 
 THEORACONF = --disable-sdltest --disable-oggtest --disable-vorbistest --disable-examples
@@ -819,7 +824,7 @@ endif
 ifdef HAVE_BEOS
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) $(THEORACONF) --disable-asm && make && make install)
 else
-	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) $(THEORACONF)&& make && make install)
+	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) $(THEORACONF) && make && make install)
 endif
 	$(INSTALL_NAME)
 	touch $@
