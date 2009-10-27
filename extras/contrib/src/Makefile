@@ -1052,7 +1052,7 @@ DISTCLEAN_PKG += amrwb-$(LIBAMR_WB_VERSION).tar.bz2
 
 ifdef SVN
 ffmpeg:
-	$(SVN) co $(FFMPEG_SVN) ffmpeg
+	$(SVN) co $(FFMPEG_SVN) ffmpeg -r 20342
 ifeq ($(HOST),i586-pc-beos)
 	(cd $@; patch -p0 < ../Patches/ffmpeg-svn-beos.patch)
 endif
@@ -1836,11 +1836,8 @@ libgpg-error: libgpg-error-$(GPGERROR_VERSION).tar.bz2
 	$(EXTRACT_BZ2)
 
 .gpg-error: libgpg-error
-ifdef HAVE_DARWIN_OS_ON_INTEL
-	(cd $<; ./autogen.sh)
-endif
 	(cd $<; $(HOSTCC) ./configure $(HOSTCONF) --prefix=$(PREFIX) --disable-nls --disable-shared --disable-languages && make && make install)
-#	$(INSTALL_NAME)
+	$(INSTALL_NAME)
 	touch $@
 
 CLEAN_FILE += .gpg-error
