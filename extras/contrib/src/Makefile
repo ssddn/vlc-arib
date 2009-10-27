@@ -1340,9 +1340,6 @@ libcaca-$(LIBCACA_VERSION).tar.gz:
 libcaca: libcaca-$(LIBCACA_VERSION).tar.gz
 	$(EXTRACT_GZ)
 ifdef HAVE_DARWIN_OS
-	#remove me at next libcaca upgrade
-	patch -p0 < Patches/libcaca_driver_cocoa.diff
-	patch -p0 < Patches/libcaca_macosx.diff
 	patch -p0 < Patches/libcaca-osx-sdkofourchoice.patch
 	(cd $@; sed -e 's%/Developer/SDKs/MacOSX10.4u.sdk%$(MACOSX_SDK)%' -i.orig  configure)
 endif
