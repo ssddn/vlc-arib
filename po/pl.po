@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: VLC 1.0.x\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
 "POT-Creation-Date: 2009-10-25 19:22+0000\n"
-"PO-Revision-Date: 2009-10-25 14:39+0100\n"
+"PO-Revision-Date: 2009-10-27 00:53+0100\n"
 "Last-Translator: Michał Trzebiatowski <hippie_1968@hotmail.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -4654,13 +4654,13 @@ msgid "Cancel"
 msgstr "Anuluj"
 
 #: src/misc/update.c:1616
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Downloading... %s/%s - %.1f%% done"
 msgstr ""
 "%s\n"
-"Pobieranie... %s/%s %.1f%% gotowe"
+"Pobieranie... %s/%s - %.1f%% gotowe"
 
 #: src/misc/update.c:1633
 #, c-format
@@ -5973,7 +5973,7 @@ msgstr "serwer HTTP"
 
 #: modules/access/dvb/access.c:942
 msgid "Input syntax is deprecated"
-msgstr ""
+msgstr "Składnia wejściowa jest przestarzała"
 
 #: modules/access/dvb/access.c:943
 msgid ""
@@ -7329,9 +7329,8 @@ msgid ""
 msgstr ""
 
 #: modules/access/v4l2.c:207
-#, fuzzy
 msgid "Picture aspect-ratio n:m"
-msgstr "Proporcje wyjścia obrazu"
+msgstr "Proporcje wyjścia obrazu n:m"
 
 #: modules/access/v4l2.c:208
 msgid "Define input picture aspect-ratio to use. Default is 4:3"
@@ -7339,7 +7338,7 @@ msgstr ""
 
 #: modules/access/v4l2.c:225
 msgid "AUTO"
-msgstr ""
+msgstr "AUTO"
 
 #: modules/access/v4l2.c:225
 msgid "READ"
@@ -7575,23 +7574,20 @@ msgid "Format to use in the playlist's \"title\" field."
 msgstr "Używany format w polu \"tytuł\" listy odtwarzania."
 
 #: modules/access/zip/zipstream.c:38
-#, fuzzy
 msgid "Media in Zip"
-msgstr "Pliki mediów"
+msgstr "Media w archiwum ZIP"
 
 #: modules/access/zip/zipstream.c:39
-#, fuzzy
 msgid "Path to the media in the Zip archive"
-msgstr "Ścieżka skóry do użycia"
+msgstr "Ścieżka do mediów w archiwum ZIP"
 
 #: modules/access/zip/zipstream.c:48
-#, fuzzy
 msgid "Zip files filter"
-msgstr "Omiń powtórkę filtru"
+msgstr "Filtr plików Zip"
 
 #: modules/access/zip/zipstream.c:53
 msgid "Zip access"
-msgstr ""
+msgstr "Dostęp Zip"
 
 #: modules/access_output/dummy.c:45 modules/stream_out/dummy.c:51
 msgid "Dummy stream output"
@@ -10498,9 +10494,8 @@ msgid ""
 msgstr ""
 
 #: modules/codec/x264.c:144
-#, fuzzy
 msgid "H.264 profile"
-msgstr "poziom H.264"
+msgstr "Profil H.264"
 
 #: modules/codec/x264.c:145
 msgid "Specify H.264 profile which limits are enforced overother settings"
@@ -12132,9 +12127,8 @@ msgid "CDG demuxer"
 msgstr "Demuxer CDG"
 
 #: modules/demux/demuxdump.c:42
-#, fuzzy
 msgid "Dump filename"
-msgstr "Nazwa pliku zrzutu"
+msgstr "Fikcyjna nazwa pliku"
 
 #: modules/demux/demuxdump.c:44
 msgid "Name of the file to which the raw stream will be dumped."
@@ -12863,9 +12857,8 @@ msgid ""
 msgstr ""
 
 #: modules/demux/ts.c:141
-#, fuzzy
 msgid "Dump buffer size"
-msgstr "Rozmiar bufora tekstowego"
+msgstr "Fikcyjny rozmiar bufora"
 
 #: modules/demux/ts.c:143
 msgid ""
@@ -17586,7 +17579,6 @@ msgid "Open playlist..."
 msgstr "Otwórz listę odtwarzania..."
 
 #: modules/gui/qt4/dialogs_provider.cpp:535
-#, fuzzy
 msgid "XSPF playlist (*.xspf)"
 msgstr "Lista odtwarzania XSPF (*.xpsf)"
 
@@ -19478,7 +19470,6 @@ msgid "Dump decoder"
 msgstr "Fikcyjny dekoder"
 
 #: modules/misc/dummy/dummy.c:90
-#, fuzzy
 msgid "Dump decoder function"
 msgstr "Fikcyjna funkcja dekodera"
 
@@ -24107,6 +24098,8 @@ msgid ""
 "Screen to use in fullscreen mode. For instance set it to 0 for first screen, "
 "1 for the second."
 msgstr ""
+"Ekran, używany w trybie pełnoekranowym. Ustaw na przykład 0 dla pierwszego "
+"ekranu, 1 dla drugiego."
 
 #: modules/video_output/x11/glx.c:122
 msgid "OpenGL(GLX) provider"
@@ -24173,6 +24166,8 @@ msgid ""
 "Choose the screen you want to use in fullscreen mode. For instance set it to "
 "0 for first screen, 1 for the second."
 msgstr ""
+"Wybierz ekran, którego chcesz używać w trybie pełnoekranowym. Ustaw na "
+"przykład 0 dla pierwszego ekranu, 1 dla drugiego."
 
 #: modules/video_output/x11/xvmc.c:131
 msgid "You can choose the default deinterlace mode"
